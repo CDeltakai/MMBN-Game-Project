@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
 
     public string Name => "Megaman";
 
-    public Transform worldPosition { get; set;}
+    public Transform worldTransform { get; set;}
 
     public int ID => 3;
 
@@ -99,6 +99,8 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
 
         opaque.a = 1;
         
+        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
+
 
         //Vector3 testPosition = battleStageHandler.battleStageTilemap.GetCellCenterWorld(new Vector3Int(4,1,0));
         
@@ -126,8 +128,7 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
     {
 
        //Debug.Log(currentCellPos.ToString());
-
-
+        
         if(playerHP <= 0)
         {
             isAlive = false;

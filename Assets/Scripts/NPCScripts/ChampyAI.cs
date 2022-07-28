@@ -6,6 +6,7 @@ public class ChampyAI : MonoBehaviour
 {
 
     PlayerMovement player;
+    BattleStageHandler stageHandler;
     Champy champy;
     const string CHAMPY_ATTACK = "Champy_Attack";
     const string CHAMPY_IDLE = "ChampyIdle";
@@ -25,8 +26,9 @@ public class ChampyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         player = FindObjectOfType<PlayerMovement>();
         champy = GetComponent<Champy>();
-        champyTransform = champy.worldPosition;
+        champyTransform = champy.worldTransform;
         champyWorldPosition = champyTransform.localPosition;
+        stageHandler = GetComponent<BattleStageHandler>();
         isAttacking = false;
 
         
@@ -40,7 +42,7 @@ public class ChampyAI : MonoBehaviour
         //Check target position every frame
         targetPosition = player.getCurrentCellPos();
         //Debug.Log("MettaurAI Target Position: " + targetPosition.ToString());
-        champyWorldPosition = champy.worldPosition.localPosition;
+        champyWorldPosition = champy.worldTransform.localPosition;
         champyCellPosition = GetComponent<Champy>().getCellPosition();
         
 
@@ -65,6 +67,8 @@ public class ChampyAI : MonoBehaviour
     {
         Vector3Int previousCellPosition = champyCellPosition;
         champy.setCellPosition(player.getCellPosition().x + 1, champyCellPosition.y);
+        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(champyCellPosition)].isOccupied = true;
+
 
         animator.Play(CHAMPY_ATTACK);
         float delay = 0.417f;
@@ -73,6 +77,7 @@ public class ChampyAI : MonoBehaviour
         animator.Play(CHAMPY_IDLE);
         yield return new WaitForSeconds(1);
 
+        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(champyCellPosition)].isOccupied = false;
         champy.setCellPosition(previousCellPosition.x, previousCellPosition.y);
         previousCellPosition = champyCellPosition;
 

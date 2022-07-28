@@ -31,7 +31,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity
     public bool stunnable => true;
     public bool vulnerable {get;set;} = false;
 
-    public Transform worldPosition {get;set;}
+    public Transform worldTransform {get;set;}
     public float AttackMultiplier {get;set;} = 1;
     public float DefenseMultiplier {get;set;}= 1;
 

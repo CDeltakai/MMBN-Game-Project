@@ -6,7 +6,7 @@ public interface IBattleStageEntity
 {
 
     public string Name { get;}
-    public Transform worldPosition{get;set;}
+    public Transform worldTransform{get;set;}
     [SerializeField] public float AttackMultiplier{get;set;}
     [SerializeField] public float DefenseMultiplier{get;set;}
     public int ID { get; }

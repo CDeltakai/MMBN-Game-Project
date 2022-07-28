@@ -9,14 +9,14 @@ public class Champy : MonoBehaviour, IBattleStageEntity
     public string Name => "Champy";
 
     public int ID => 1;
-    BattleStageHandler battleStageHandler;
+    BattleStageHandler stageHandler;
     Animator animator;
 
 
     public bool stunnable => false;
 
     public bool vulnerable { get; set; } = false;
-    public Transform worldPosition {get; set;}
+    public Transform worldTransform {get; set;}
     [SerializeField]public float AttackMultiplier {get;set;} = 1;
     [SerializeField]public float DefenseMultiplier {get;set;} = 1;
 
@@ -27,37 +27,39 @@ public class Champy : MonoBehaviour, IBattleStageEntity
 
 
     void Awake() {
-        worldPosition = transform.parent.gameObject.GetComponent<Transform>();
-        currentCellPos.x = (int)(worldPosition.localPosition.x/1.6);
-        currentCellPos.y = (int)(worldPosition.localPosition.y);
+        worldTransform = transform.parent.gameObject.GetComponent<Transform>();
+        currentCellPos.x = (int)(worldTransform.localPosition.x/1.6);
+        currentCellPos.y = (int)(worldTransform.localPosition.y);
         
     }
 
     void Start()
     {
-        battleStageHandler = FindObjectOfType<BattleStageHandler>();
+        stageHandler = FindObjectOfType<BattleStageHandler>();
         healthText.text = currentHP.ToString();
         animator = GetComponent<Animator>();
+        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
+
 
     }
 
     public Transform getWorldPosition()
     {
-        return worldPosition;
+        return worldTransform;
     }
 
 
     void Update()
     {
-        worldPosition = transform.parent.gameObject.GetComponent<Transform>();
+        worldTransform = transform.parent.gameObject.GetComponent<Transform>();
         //print(worldPosition.localPosition.ToString());
 
     }
 
     public Vector3Int getCellPosition()
     {
-        currentCellPos.x = (int)(worldPosition.localPosition.x/1.6);
-        currentCellPos.y = (int)(worldPosition.localPosition.y);
+        currentCellPos.x = (int)(worldTransform.localPosition.x/1.6);
+        currentCellPos.y = (int)(worldTransform.localPosition.y);
         return currentCellPos;
     }
 
@@ -69,8 +71,10 @@ public class Champy : MonoBehaviour, IBattleStageEntity
         if(postMitigationDmg >= currentHP)
         {
             currentHP = 0;
-            Destroy(gameObject);
             healthText.text = "0";
+            stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
+
+            Destroy(gameObject);
             return;
         }
 
@@ -82,7 +86,7 @@ public class Champy : MonoBehaviour, IBattleStageEntity
     public void setCellPosition(int x, int y)
     {
         currentCellPos.Set(x, y, currentCellPos.z);
-        worldPosition.transform.localPosition = battleStageHandler.stageTilemap.
+        worldTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
     }
 
