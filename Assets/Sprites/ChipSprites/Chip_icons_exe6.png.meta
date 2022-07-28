@@ -1,0 +1,5652 @@
+fileFormatVersion: 2
+guid: bffe3a1b303a4224c90419d66aed44b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -630318841660285189
+    second: Chip_icons_exe6_0
+  - first:
+      213: -7838258733328740157
+    second: Chip_icons_exe6_1
+  - first:
+      213: -7879312815606531093
+    second: Chip_icons_exe6_2
+  - first:
+      213: -8926504595820933864
+    second: Chip_icons_exe6_3
+  - first:
+      213: -8654738730210548499
+    second: Chip_AirShot
+  - first:
+      213: -6805912628375705734
+    second: Chip_icons_exe6_5
+  - first:
+      213: 2018223361717047133
+    second: Chip_icons_exe6_6
+  - first:
+      213: -6638643157862689374
+    second: Chip_icons_exe6_7
+  - first:
+      213: 7061089168226753030
+    second: Chip_icons_exe6_8
+  - first:
+      213: 7500376310556908072
+    second: Chip_icons_exe6_9
+  - first:
+      213: 6857804372182023719
+    second: Chip_icons_exe6_10
+  - first:
+      213: 6563608528557449046
+    second: Chip_icons_exe6_11
+  - first:
+      213: -6415563019705439980
+    second: Chip_icons_exe6_12
+  - first:
+      213: 717908692378185139
+    second: Chip_icons_exe6_13
+  - first:
+      213: -6656864835576582152
+    second: Chip_icons_exe6_14
+  - first:
+      213: -9003299816495069765
+    second: Chip_icons_exe6_15
+  - first:
+      213: -7342997554222022440
+    second: Chip_icons_exe6_16
+  - first:
+      213: 288029922189403031
+    second: Chip_icons_exe6_17
+  - first:
+      213: 4747412906834820864
+    second: Chip_icons_exe6_18
+  - first:
+      213: 149921506009836209
+    second: Chip_icons_exe6_19
+  - first:
+      213: -1706762511640150155
+    second: Chip_icons_exe6_20
+  - first:
+      213: 6705442538428588017
+    second: Chip_icons_exe6_21
+  - first:
+      213: 3481376659802152226
+    second: Chip_icons_exe6_22
+  - first:
+      213: -5383074481200812793
+    second: Chip_icons_exe6_23
+  - first:
+      213: 4788316085400382261
+    second: Chip_icons_exe6_24
+  - first:
+      213: -974094431237757853
+    second: Chip_icons_exe6_25
+  - first:
+      213: -3717626610550994291
+    second: Chip_icons_exe6_26
+  - first:
+      213: -1615559488374695588
+    second: Chip_icons_exe6_27
+  - first:
+      213: -487173783802331879
+    second: Chip_icons_exe6_28
+  - first:
+      213: -8780773328766991361
+    second: Chip_icons_exe6_29
+  - first:
+      213: 6889658470000891767
+    second: Chip_icons_exe6_30
+  - first:
+      213: -2770921879420639620
+    second: Chip_icons_exe6_31
+  - first:
+      213: -1572366598246365554
+    second: Chip_icons_exe6_32
+  - first:
+      213: -5197241262812262641
+    second: Chip_icons_exe6_33
+  - first:
+      213: -6787810684305597400
+    second: Chip_icons_exe6_34
+  - first:
+      213: -5644977166239867558
+    second: Chip_icons_exe6_35
+  - first:
+      213: 5671666639497110861
+    second: Chip_icons_exe6_36
+  - first:
+      213: 2895372263364457139
+    second: Chip_icons_exe6_37
+  - first:
+      213: 7263803404989994119
+    second: Chip_icons_exe6_38
+  - first:
+      213: -8331681219260050513
+    second: Chip_icons_exe6_39
+  - first:
+      213: -1758628204780102145
+    second: Chip_icons_exe6_40
+  - first:
+      213: 4576684464406417937
+    second: Chip_icons_exe6_41
+  - first:
+      213: 3343013396328944025
+    second: Chip_icons_exe6_42
+  - first:
+      213: -3070443387381869577
+    second: Chip_icons_exe6_43
+  - first:
+      213: -4350794589238483670
+    second: Chip_icons_exe6_44
+  - first:
+      213: 7167887143343949416
+    second: Chip_icons_exe6_45
+  - first:
+      213: 6742323649525630839
+    second: Chip_icons_exe6_46
+  - first:
+      213: -2784176366877075384
+    second: Chip_icons_exe6_47
+  - first:
+      213: -5367337410807847949
+    second: Chip_icons_exe6_48
+  - first:
+      213: -7123682333437401421
+    second: Chip_icons_exe6_49
+  - first:
+      213: 8264027325618557715
+    second: Chip_icons_exe6_50
+  - first:
+      213: -2181421393321553712
+    second: Chip_icons_exe6_51
+  - first:
+      213: 3476773775699594281
+    second: Chip_icons_exe6_52
+  - first:
+      213: 6454033486350446491
+    second: Chip_icons_exe6_53
+  - first:
+      213: 8803355929822962066
+    second: Chip_icons_exe6_54
+  - first:
+      213: 3058210992914247739
+    second: Chip_icons_exe6_55
+  - first:
+      213: 842608682422991800
+    second: Chip_icons_exe6_56
+  - first:
+      213: -4665630456058655107
+    second: Chip_icons_exe6_57
+  - first:
+      213: -7048965785020668844
+    second: Chip_icons_exe6_58
+  - first:
+      213: 8449758837213926248
+    second: Chip_icons_exe6_59
+  - first:
+      213: -9168428118247650306
+    second: Chip_icons_exe6_60
+  - first:
+      213: 990459868370132045
+    second: Chip_icons_exe6_61
+  - first:
+      213: 1048399094426598117
+    second: Chip_icons_exe6_62
+  - first:
+      213: 1403982470539534345
+    second: Chip_icons_exe6_63
+  - first:
+      213: -7237028239042217289
+    second: Chip_icons_exe6_64
+  - first:
+      213: -587018246755904136
+    second: Chip_icons_exe6_65
+  - first:
+      213: -7946761822355408147
+    second: Chip_icons_exe6_66
+  - first:
+      213: 2419132902779075167
+    second: Chip_icons_exe6_67
+  - first:
+      213: -7452349582938437504
+    second: Chip_icons_exe6_68
+  - first:
+      213: 7588009966858653828
+    second: Chip_icons_exe6_69
+  - first:
+      213: 12723549034420621
+    second: Chip_icons_exe6_70
+  - first:
+      213: 5731572295673346416
+    second: Chip_icons_exe6_71
+  - first:
+      213: -4611406389132694472
+    second: Chip_icons_exe6_72
+  - first:
+      213: 3702733806151467343
+    second: Chip_icons_exe6_73
+  - first:
+      213: -7336577804863842005
+    second: Chip_icons_exe6_74
+  - first:
+      213: -1116765523474534261
+    second: Chip_icons_exe6_75
+  - first:
+      213: -4282620966927016679
+    second: Chip_icons_exe6_76
+  - first:
+      213: -5753013369830880189
+    second: Chip_icons_exe6_77
+  - first:
+      213: -4465656257907132707
+    second: Chip_icons_exe6_78
+  - first:
+      213: -612649245341880042
+    second: Chip_icons_exe6_79
+  - first:
+      213: 2976473923858693715
+    second: Chip_icons_exe6_80
+  - first:
+      213: 1291222072269486736
+    second: Chip_icons_exe6_81
+  - first:
+      213: 6982950119602224066
+    second: Chip_icons_exe6_82
+  - first:
+      213: -2365757514849594402
+    second: Chip_icons_exe6_83
+  - first:
+      213: 60604203640247720
+    second: Chip_icons_exe6_84
+  - first:
+      213: -2833423640304094435
+    second: Chip_icons_exe6_85
+  - first:
+      213: -7597342727440890417
+    second: Chip_icons_exe6_86
+  - first:
+      213: -6518862792627526644
+    second: Chip_icons_exe6_87
+  - first:
+      213: 7488016221681996888
+    second: Chip_icons_exe6_88
+  - first:
+      213: -330067901977801358
+    second: Chip_icons_exe6_89
+  - first:
+      213: -4429877064479941256
+    second: Chip_icons_exe6_90
+  - first:
+      213: -942932389605699906
+    second: Chip_icons_exe6_91
+  - first:
+      213: -6715040109331938413
+    second: Chip_icons_exe6_92
+  - first:
+      213: -987675286208789733
+    second: Chip_icons_exe6_93
+  - first:
+      213: -581287822379060119
+    second: Chip_icons_exe6_94
+  - first:
+      213: 2611784824568030969
+    second: Chip_icons_exe6_95
+  - first:
+      213: -6489221329039103525
+    second: Chip_icons_exe6_96
+  - first:
+      213: -295074706416661221
+    second: Chip_icons_exe6_97
+  - first:
+      213: 689158255278588182
+    second: Chip_icons_exe6_98
+  - first:
+      213: 1800124526391692886
+    second: Chip_icons_exe6_99
+  - first:
+      213: 7518815560707126746
+    second: Chip_icons_exe6_100
+  - first:
+      213: -4835251647841377847
+    second: Chip_icons_exe6_101
+  - first:
+      213: -6029704702073279983
+    second: Chip_icons_exe6_102
+  - first:
+      213: 2589186847217729967
+    second: Chip_icons_exe6_103
+  - first:
+      213: 7008830137836913718
+    second: Chip_icons_exe6_104
+  - first:
+      213: -7942417615736421429
+    second: Chip_icons_exe6_105
+  - first:
+      213: -3758687555540222951
+    second: Chip_icons_exe6_106
+  - first:
+      213: -4331549438051004606
+    second: Chip_icons_exe6_107
+  - first:
+      213: 4508888156045919644
+    second: Chip_icons_exe6_108
+  - first:
+      213: 3995626932714887499
+    second: Chip_icons_exe6_109
+  - first:
+      213: -1451108959802701228
+    second: Chip_icons_exe6_110
+  - first:
+      213: 6669164724892258824
+    second: Chip_icons_exe6_111
+  - first:
+      213: 8903384586016200207
+    second: Chip_icons_exe6_112
+  - first:
+      213: -8294152949220822924
+    second: Chip_icons_exe6_113
+  - first:
+      213: -8053777947981605797
+    second: Chip_icons_exe6_114
+  - first:
+      213: 5984535185920592618
+    second: Chip_icons_exe6_115
+  - first:
+      213: -3029139637269329593
+    second: Chip_icons_exe6_116
+  - first:
+      213: 8883917765357134417
+    second: Chip_icons_exe6_117
+  - first:
+      213: 7539391710563676249
+    second: Chip_icons_exe6_118
+  - first:
+      213: -6003180486406446071
+    second: Chip_icons_exe6_119
+  - first:
+      213: 1662159189463948080
+    second: Chip_icons_exe6_120
+  - first:
+      213: -923665265808139166
+    second: Chip_icons_exe6_121
+  - first:
+      213: -5240676675947043337
+    second: Chip_icons_exe6_122
+  - first:
+      213: 8263520823092479173
+    second: Chip_icons_exe6_123
+  - first:
+      213: 5816908583649335113
+    second: Chip_icons_exe6_124
+  - first:
+      213: -2082586316862955166
+    second: Chip_icons_exe6_125
+  - first:
+      213: -5778126457465290198
+    second: Chip_icons_exe6_126
+  - first:
+      213: -1406249772116901930
+    second: Chip_icons_exe6_127
+  - first:
+      213: -490694890964405255
+    second: Chip_icons_exe6_128
+  - first:
+      213: -5109977092774809398
+    second: Chip_icons_exe6_129
+  - first:
+      213: -3921749828443012000
+    second: Chip_icons_exe6_130
+  - first:
+      213: -3884806430001189192
+    second: Chip_icons_exe6_131
+  - first:
+      213: -4353867915387910494
+    second: Chip_icons_exe6_132
+  - first:
+      213: -2047859576963978222
+    second: Chip_icons_exe6_133
+  - first:
+      213: 9052670680807096766
+    second: Chip_icons_exe6_134
+  - first:
+      213: 6179412810096488791
+    second: Chip_icons_exe6_135
+  - first:
+      213: -3502093759162192622
+    second: Chip_icons_exe6_136
+  - first:
+      213: -8299500336250202801
+    second: Chip_icons_exe6_137
+  - first:
+      213: -2734573538545809773
+    second: Chip_icons_exe6_138
+  - first:
+      213: 5849276368747922697
+    second: Chip_icons_exe6_139
+  - first:
+      213: -1309198156368420345
+    second: Chip_icons_exe6_140
+  - first:
+      213: -7818572119471600933
+    second: Chip_icons_exe6_141
+  - first:
+      213: -7763102057669775180
+    second: Chip_icons_exe6_142
+  - first:
+      213: -2989671174550951829
+    second: Chip_icons_exe6_143
+  - first:
+      213: 8531644781855130670
+    second: Chip_icons_exe6_144
+  - first:
+      213: -637536474474043377
+    second: Chip_icons_exe6_145
+  - first:
+      213: -6304256001475452354
+    second: Chip_icons_exe6_146
+  - first:
+      213: 6975964511891391509
+    second: Chip_icons_exe6_147
+  - first:
+      213: 2225880736292820742
+    second: Chip_icons_exe6_148
+  - first:
+      213: -1288723501097808367
+    second: Chip_icons_exe6_149
+  - first:
+      213: 1642997394347444948
+    second: Chip_icons_exe6_150
+  - first:
+      213: -5647781024346873216
+    second: Chip_icons_exe6_151
+  - first:
+      213: 4287912490938871132
+    second: Chip_icons_exe6_152
+  - first:
+      213: 7742198684870587605
+    second: Chip_icons_exe6_153
+  - first:
+      213: -8337392952985277287
+    second: Chip_icons_exe6_154
+  - first:
+      213: 1095615101154542296
+    second: Chip_icons_exe6_155
+  - first:
+      213: -9108575481499939512
+    second: Chip_icons_exe6_156
+  - first:
+      213: 1259103863715294975
+    second: Chip_icons_exe6_157
+  - first:
+      213: 8030618943106461806
+    second: Chip_icons_exe6_158
+  - first:
+      213: -4520905572888605484
+    second: Chip_icons_exe6_159
+  - first:
+      213: -2497134436886284257
+    second: Chip_icons_exe6_160
+  - first:
+      213: -5330786849969680574
+    second: Chip_icons_exe6_161
+  - first:
+      213: -1994938963728185428
+    second: Chip_icons_exe6_162
+  - first:
+      213: -9020262044801079121
+    second: Chip_icons_exe6_163
+  - first:
+      213: -8391037730965931059
+    second: Chip_icons_exe6_164
+  - first:
+      213: 7114307388850522012
+    second: Chip_icons_exe6_165
+  - first:
+      213: -1520523960047881146
+    second: Chip_icons_exe6_166
+  - first:
+      213: -8830059751953845806
+    second: Chip_icons_exe6_167
+  - first:
+      213: -2292756305206026064
+    second: Chip_icons_exe6_168
+  - first:
+      213: 6501663726325872449
+    second: Chip_icons_exe6_169
+  - first:
+      213: -7821600376504515972
+    second: Chip_icons_exe6_170
+  - first:
+      213: 1209808415834133183
+    second: Chip_icons_exe6_171
+  - first:
+      213: -7799045436748682318
+    second: Chip_icons_exe6_172
+  - first:
+      213: -7601561574453163254
+    second: Chip_icons_exe6_173
+  - first:
+      213: 5426468283904418855
+    second: Chip_icons_exe6_174
+  - first:
+      213: -2381756767528628679
+    second: Chip_icons_exe6_175
+  - first:
+      213: -3483419530918252164
+    second: Chip_icons_exe6_176
+  - first:
+      213: 4725797930721440317
+    second: Chip_icons_exe6_177
+  - first:
+      213: -4697785918128586512
+    second: Chip_icons_exe6_178
+  - first:
+      213: -8893785009033600189
+    second: Chip_icons_exe6_179
+  - first:
+      213: 3350166778422464292
+    second: Chip_icons_exe6_180
+  - first:
+      213: 3439497930508326031
+    second: Chip_icons_exe6_181
+  - first:
+      213: -5720549330838375936
+    second: Chip_icons_exe6_182
+  - first:
+      213: -3321613169607532571
+    second: Chip_icons_exe6_183
+  - first:
+      213: 5021984692813991444
+    second: Chip_icons_exe6_184
+  - first:
+      213: -5661314404543101429
+    second: Chip_icons_exe6_185
+  - first:
+      213: 3721316089266384226
+    second: Chip_icons_exe6_186
+  - first:
+      213: -2423970746366658058
+    second: Chip_icons_exe6_187
+  - first:
+      213: -3479651207334828478
+    second: Chip_icons_exe6_188
+  - first:
+      213: 2651251419074772835
+    second: Chip_icons_exe6_189
+  - first:
+      213: -6129531672875069125
+    second: Chip_icons_exe6_190
+  - first:
+      213: 3239834133897163617
+    second: Chip_icons_exe6_191
+  - first:
+      213: 7169232461321082053
+    second: Chip_icons_exe6_192
+  - first:
+      213: -6108149471166836939
+    second: Chip_icons_exe6_193
+  - first:
+      213: -8658275318296169808
+    second: Chip_icons_exe6_194
+  - first:
+      213: -8236580749686040124
+    second: Chip_icons_exe6_195
+  - first:
+      213: 4817113933932827911
+    second: Chip_icons_exe6_196
+  - first:
+      213: -8846280821567401515
+    second: Chip_icons_exe6_197
+  - first:
+      213: -4480306696608044578
+    second: Chip_icons_exe6_198
+  - first:
+      213: -2971354180994567916
+    second: Chip_icons_exe6_199
+  - first:
+      213: 8198649883769124423
+    second: Chip_icons_exe6_200
+  - first:
+      213: -960667821348120634
+    second: Chip_icons_exe6_201
+  - first:
+      213: -3159708080412450081
+    second: Chip_icons_exe6_202
+  - first:
+      213: -527792569945143138
+    second: Chip_icons_exe6_203
+  - first:
+      213: 6382753557810684213
+    second: Chip_icons_exe6_204
+  - first:
+      213: 4523724315134386183
+    second: Chip_icons_exe6_205
+  - first:
+      213: -6097005959139602903
+    second: Chip_icons_exe6_206
+  - first:
+      213: -243133499580278893
+    second: Chip_icons_exe6_207
+  - first:
+      213: 7708604645690858802
+    second: Chip_icons_exe6_208
+  - first:
+      213: 5613323156100193464
+    second: Chip_icons_exe6_209
+  - first:
+      213: -8126152100604819008
+    second: Chip_icons_exe6_210
+  - first:
+      213: -4012044015760693109
+    second: Chip_icons_exe6_211
+  - first:
+      213: 5687875374415404164
+    second: Chip_icons_exe6_212
+  - first:
+      213: 1239237557989866612
+    second: Chip_icons_exe6_213
+  - first:
+      213: -2329538609665495991
+    second: Chip_icons_exe6_214
+  - first:
+      213: 5351074481262350303
+    second: Chip_icons_exe6_215
+  - first:
+      213: -8907373409872718953
+    second: Chip_icons_exe6_216
+  - first:
+      213: 2770737856027137715
+    second: Chip_icons_exe6_217
+  - first:
+      213: 2449339174399333729
+    second: Chip_icons_exe6_218
+  - first:
+      213: -7377195961910406483
+    second: Chip_icons_exe6_219
+  - first:
+      213: -4083388759031281184
+    second: Chip_icons_exe6_220
+  - first:
+      213: 8876380867905875501
+    second: Chip_icons_exe6_221
+  - first:
+      213: 8185005773725983907
+    second: Chip_icons_exe6_222
+  - first:
+      213: 7882085317049581771
+    second: Chip_icons_exe6_223
+  - first:
+      213: -2310782838525436335
+    second: Chip_icons_exe6_224
+  - first:
+      213: -6697230505673660761
+    second: Chip_icons_exe6_225
+  - first:
+      213: 2370179115461158649
+    second: Chip_icons_exe6_226
+  - first:
+      213: 7174028219934195931
+    second: Chip_icons_exe6_227
+  - first:
+      213: 1612944094465354552
+    second: Chip_icons_exe6_228
+  - first:
+      213: 1508661230916160437
+    second: Chip_icons_exe6_229
+  - first:
+      213: 3119652499095097773
+    second: Chip_icons_exe6_230
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chip_icons_exe6_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe5a936a58a047f0800000000000000
+      internalID: -630318841660285189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0565ef539e83390800000000000000
+      internalID: -7838258733328740157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebf6979dbe07a290800000000000000
+      internalID: -7879312815606531093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_3
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d83306d5fae1480800000000000000
+      internalID: -8926504595820933864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_AirShot
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de42cf9caf034e780800000000000000
+      internalID: -8654738730210548499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_5
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a772255168a8c81a0800000000000000
+      internalID: -6805912628375705734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_6
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f0a88547b220c10800000000000000
+      internalID: 2018223361717047133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_7
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a55401983dced3a0800000000000000
+      internalID: -6638643157862689374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_8
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a938fef270ef160800000000000000
+      internalID: 7061089168226753030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_9
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82adf780480b61860800000000000000
+      internalID: 7500376310556908072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72eb7070eb0db2f50800000000000000
+      internalID: 6857804372182023719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_11
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f14656e2f961b50800000000000000
+      internalID: 6563608528557449046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_12
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4192358bc6757f6a0800000000000000
+      internalID: -6415563019705439980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_13
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bded5ee62686f900800000000000000
+      internalID: 717908692378185139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_14
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff2bad93b01e93a0800000000000000
+      internalID: -6656864835576582152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_15
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 254
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5c877b48add0380800000000000000
+      internalID: -9003299816495069765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_16
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0c80a11ae681a90800000000000000
+      internalID: -7342997554222022440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_17
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79368cc20b94ff300800000000000000
+      internalID: 288029922189403031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_18
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f7ef9c2e232e140800000000000000
+      internalID: 4747412906834820864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_19
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba68edb0d0a41200800000000000000
+      internalID: 149921506009836209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_20
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f3cb9d98c5058e0800000000000000
+      internalID: -1706762511640150155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_21
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff54d436748e0d50800000000000000
+      internalID: 6705442538428588017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_22
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22dd7d080a5505030800000000000000
+      internalID: 3481376659802152226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_23
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d2e84b74a7b45b0800000000000000
+      internalID: -5383074481200812793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_24
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b249e2c14837240800000000000000
+      internalID: 4788316085400382261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_25
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364236896425b72f0800000000000000
+      internalID: -974094431237757853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a81966b46586cc0800000000000000
+      internalID: -3717626610550994291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_27
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c591ae574316499e0800000000000000
+      internalID: -1615559488374695588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_28
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d349856063d39f0800000000000000
+      internalID: -487173783802331879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_29
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff38e951e2d642680800000000000000
+      internalID: -8780773328766991361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_30
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7771a2020ebfc9f50800000000000000
+      internalID: 6889658470000891767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_31
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7666cc4b35bb89d0800000000000000
+      internalID: -2770921879420639620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8606ded8e4dd2ae0800000000000000
+      internalID: -1572366598246365554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_33
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f821e8b90bfd7b0800000000000000
+      internalID: -5197241262812262641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_34
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c1d5f552adcc1a0800000000000000
+      internalID: -6787810684305597400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_35
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5dd419fc2309a1b0800000000000000
+      internalID: -5644977166239867558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_36
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45a8a342cec5be40800000000000000
+      internalID: 5671666639497110861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_37
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b27b52bbbd6e2820800000000000000
+      internalID: 2895372263364457139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_38
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78493b826b63ec460800000000000000
+      internalID: 7263803404989994119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_39
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa31630031cef5c80800000000000000
+      internalID: -8331681219260050513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_40
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd591227f81897e0800000000000000
+      internalID: -1758628204780102145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_41
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1125ef5a546a38f30800000000000000
+      internalID: 4576684464406417937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9911f8fc8f4c46e20800000000000000
+      internalID: 3343013396328944025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_43
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f31820d1089365d0800000000000000
+      internalID: -3070443387381869577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_44
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25afb16f5fde93c0800000000000000
+      internalID: -4350794589238483670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_45
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8660b193163797360800000000000000
+      internalID: 7167887143343949416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_46
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777c0ba03ab819d50800000000000000
+      internalID: 6742323649525630839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_47
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 218
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8481144785e9c59d0800000000000000
+      internalID: -2784176366877075384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_48
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3222fef036385b0800000000000000
+      internalID: -5367337410807847949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_49
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6ecbe19a8932d90800000000000000
+      internalID: -7123682333437401421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_50
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3139d956119bfa270800000000000000
+      internalID: 8264027325618557715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_51
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d091a9ecc80ab1e0800000000000000
+      internalID: -2181421393321553712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_52
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92cc7f8045bff3030800000000000000
+      internalID: 3476773775699594281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_53
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fe46ac245519950800000000000000
+      internalID: 6454033486350446491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_54
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2912d64739dcb2a70800000000000000
+      internalID: 8803355929822962066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_55
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3039d8e1b2f07a20800000000000000
+      internalID: 3058210992914247739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_56
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb7b70e12c81bb00800000000000000
+      internalID: 842608682422991800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_57
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e416dd1d9504fb0800000000000000
+      internalID: -4665630456058655107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_58
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454e5fd27fa0d2e90800000000000000
+      internalID: -7048965785020668844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_59
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8639ad9c4e2934570800000000000000
+      internalID: 8449758837213926248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_60
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb452fe33333c080800000000000000
+      internalID: -9168428118247650306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_61
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c5b7aa002debd00800000000000000
+      internalID: 990459868370132045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_62
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea7326fb69ac8e00800000000000000
+      internalID: 1048399094426598117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_63
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900626b4e92fb7310800000000000000
+      internalID: 1403982470539534345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_64
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bafa66f829e09b90800000000000000
+      internalID: -7237028239042217289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_65
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8751175c30e7ad7f0800000000000000
+      internalID: -587018246755904136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_66
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deabedfe93e67b190800000000000000
+      internalID: -7946761822355408147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_67
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a3b96de8c729120800000000000000
+      internalID: 2419132902779075167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_68
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0888ceed98fe39890800000000000000
+      internalID: -7452349582938437504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_69
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480dbb2acd60e4960800000000000000
+      internalID: 7588009966858653828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_70
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d899a7c10043d2000800000000000000
+      internalID: 12723549034420621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_71
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0797410c2a2aa8f40800000000000000
+      internalID: 5731572295673346416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_72
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c67c4425ef000c0800000000000000
+      internalID: -4611406389132694472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_73
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f410d7d57c0c26330800000000000000
+      internalID: 3702733806151467343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_74
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29531a7b5d3f2a90800000000000000
+      internalID: -7336577804863842005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_75
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80b5eb5ca37080f0800000000000000
+      internalID: -1116765523474534261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_76
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ddcaebbe21194c0800000000000000
+      internalID: -4282620966927016679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_77
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c482722d03920b0800000000000000
+      internalID: -5753013369830880189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_78
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6f1722b4dc602c0800000000000000
+      internalID: -4465656257907132707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_79
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 182
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6117c7fd1ce6f77f0800000000000000
+      internalID: -612649245341880042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_80
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e7fc2834f8e4920800000000000000
+      internalID: 2976473923858693715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_81
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a34cf22a75be110800000000000000
+      internalID: 1291222072269486736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_82
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb7923f22c68e060800000000000000
+      internalID: 6982950119602224066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_83
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3dda613142b2fd0800000000000000
+      internalID: -2365757514849594402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_84
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a55fddb33f47d000800000000000000
+      internalID: 60604203640247720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_85
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13fa751638ada8d0800000000000000
+      internalID: -2833423640304094435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_86
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc50df5ba01d09690800000000000000
+      internalID: -7597342727440890417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_87
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c04ece914d85885a0800000000000000
+      internalID: -6518862792627526644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_88
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854d7b59417cae760800000000000000
+      internalID: 7488016221681996888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_89
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27dcadeedfc5b6bf0800000000000000
+      internalID: -330067901977801358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_90
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87dd505c74ae582c0800000000000000
+      internalID: -4429877064479941256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_91
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe875eccf70ae2f0800000000000000
+      internalID: -942932389605699906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_92
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39305ce29926fc2a0800000000000000
+      internalID: -6715040109331938413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_93
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13c7146f821b42f0800000000000000
+      internalID: -987675286208789733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_94
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964f5da2ec9dee7f0800000000000000
+      internalID: -581287822379060119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_95
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6222ac57cee3420800000000000000
+      internalID: 2611784824568030969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_96
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd96cb52597a1f5a0800000000000000
+      internalID: -6489221329039103525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_97
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d05dd2e1fa7ebf0800000000000000
+      internalID: -295074706416661221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_98
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61188e728c1609900800000000000000
+      internalID: 689158255278588182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_99
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e8b0328b35bf810800000000000000
+      internalID: 1800124526391692886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_100
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5b0a38ae2385860800000000000000
+      internalID: 7518815560707126746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_101
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1eaca9e3cb5ecb0800000000000000
+      internalID: -4835251647841377847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_102
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a6b6c258f225ca0800000000000000
+      internalID: -6029704702073279983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_103
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1c68d28b3aee320800000000000000
+      internalID: 2589186847217729967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_104
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63442d040ed544160800000000000000
+      internalID: 7008830137836913718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_105
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc3c93c524dd6c190800000000000000
+      internalID: -7942417615736421429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_106
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91cf756259576dbc0800000000000000
+      internalID: -3758687555540222951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_107
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f4de15cbe33e3c0800000000000000
+      internalID: -4331549438051004606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_108
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95451983e9c29e30800000000000000
+      internalID: 4508888156045919644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_109
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49547b8681537730800000000000000
+      internalID: 3995626932714887499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_110
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ac290e610acdbe0800000000000000
+      internalID: -1451108959802701228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_111
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802d4c78bf1ad8c50800000000000000
+      internalID: 6669164724892258824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_112
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f061f2cdb1d2f8b70800000000000000
+      internalID: 8903384586016200207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_113
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4703fe446df35ec80800000000000000
+      internalID: -8294152949220822924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_114
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b549ea680ab3b3090800000000000000
+      internalID: -8053777947981605797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_115
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea8f9e4b075d0350800000000000000
+      internalID: 5984535185920592618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_116
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74981898c8556f5d0800000000000000
+      internalID: -3029139637269329593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_117
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152e4e973240a4b70800000000000000
+      internalID: 8883917765357134417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_118
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9503caab0dc41a860800000000000000
+      internalID: 7539391710563676249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_119
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904ef21672b60bca0800000000000000
+      internalID: -6003180486406446071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_120
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b5620f9fc211710800000000000000
+      internalID: 1662159189463948080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_121
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c9324a55b7e23f0800000000000000
+      internalID: -923665265808139166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_122
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5608b54506547b0800000000000000
+      internalID: -5240676675947043337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_123
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c48876186ceda270800000000000000
+      internalID: 8263520823092479173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_124
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947d65b998fc9b050800000000000000
+      internalID: 5816908583649335113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_125
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2616b4167ca2913e0800000000000000
+      internalID: -2082586316862955166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_126
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22ce7bc998ffcfa0800000000000000
+      internalID: -5778126457465290198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_127
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df7f7b684ffb7ce0800000000000000
+      internalID: -1406249772116901930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_128
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3b7f2b893b039f0800000000000000
+      internalID: -490694890964405255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_129
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac036ce68e6b519b0800000000000000
+      internalID: -5109977092774809398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_130
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06484b13f452399c0800000000000000
+      internalID: -3921749828443012000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_131
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be20ae6225661ac0800000000000000
+      internalID: -3884806430001189192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_132
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a64550e234f393c0800000000000000
+      internalID: -4353867915387910494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_133
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c2e25909a8493e0800000000000000
+      internalID: -2047859576963978222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_134
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1c916650c81ad70800000000000000
+      internalID: 9052670680807096766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_135
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751bc4af53fa1c550800000000000000
+      internalID: 6179412810096488791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_136
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d660be740166fc0800000000000000
+      internalID: -3502093759162192622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_137
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f455294ba6042dc80800000000000000
+      internalID: -8299500336250202801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_138
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3964bc6ead7dc0ad0800000000000000
+      internalID: -2734573538545809773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_139
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9058e48ddddcc2150800000000000000
+      internalID: 5849276368747922697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_140
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7026015963bc4dde0800000000000000
+      internalID: -1309198156368420345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_141
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda4f18f41ade7390800000000000000
+      internalID: -7818572119471600933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_142
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b03d792fcbe34490800000000000000
+      internalID: -7763102057669775180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_143
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 110
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b686aad18ed8286d0800000000000000
+      internalID: -2989671174550951829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_144
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e244a4cf9bd766670800000000000000
+      internalID: 8531644781855130670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_145
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08ae9b44f30727f0800000000000000
+      internalID: -637536474474043377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_146
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e326eea6198c288a0800000000000000
+      internalID: -6304256001475452354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_147
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514840963ca9fc060800000000000000
+      internalID: 6975964511891391509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_148
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6075e178cbae3ee10800000000000000
+      internalID: 2225880736292820742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_149
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e0e5fbdc88d1ee0800000000000000
+      internalID: -1288723501097808367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_150
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dac8f8dc691dc610800000000000000
+      internalID: 1642997394347444948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_151
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082ec92e41d0f91b0800000000000000
+      internalID: -5647781024346873216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_152
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d2f5231b9b18b30800000000000000
+      internalID: 4287912490938871132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_153
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d435381fa0d17b60800000000000000
+      internalID: 7742198684870587605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_154
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ca77c5841ab4c80800000000000000
+      internalID: -8337392952985277287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_155
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2ced23128643f00800000000000000
+      internalID: 1095615101154542296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_156
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d0d5fdbd6d79180800000000000000
+      internalID: -9108575481499939512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_157
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe62140b4c397110800000000000000
+      internalID: 1259103863715294975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_158
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e603266716d727f60800000000000000
+      internalID: 8030618943106461806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_159
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc04e095548241c0800000000000000
+      internalID: -4520905572888605484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_160
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f187ff4c575685dd0800000000000000
+      internalID: -2497134436886284257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_161
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24fcb3a8a9d3506b0800000000000000
+      internalID: -5330786849969680574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_162
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca74566059d8054e0800000000000000
+      internalID: -1994938963728185428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_163
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa861be267791d280800000000000000
+      internalID: -9020262044801079121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_164
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb30ec24ab0d8b80800000000000000
+      internalID: -8391037730965931059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_165
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c974f5f70e81bb260800000000000000
+      internalID: 7114307388850522012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_166
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64430e0b38306eae0800000000000000
+      internalID: -1520523960047881146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_167
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d131537073557580800000000000000
+      internalID: -8830059751953845806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_168
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b068a7b94e7e20e0800000000000000
+      internalID: -2292756305206026064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_169
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14732b836bc8a3a50800000000000000
+      internalID: 6501663726325872449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_170
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72036fe5e7147390800000000000000
+      internalID: -7821600376504515972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_171
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb25218285a1ac010800000000000000
+      internalID: 1209808415834133183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_172
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bba6731f7934c390800000000000000
+      internalID: -7799045436748682318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_173
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0bc578d504d18690800000000000000
+      internalID: -7601561574453163254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_174
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724eb0f4720be4b40800000000000000
+      internalID: 5426468283904418855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_175
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 74
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ec21ac6dc42fed0800000000000000
+      internalID: -2381756767528628679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_176
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71b5ff746868afc0800000000000000
+      internalID: -3483419530918252164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_177
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d327decfd28659140800000000000000
+      internalID: 4725797930721440317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_178
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f00d1fe89c1eceb0800000000000000
+      internalID: -4697785918128586512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_179
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343abd3d7ade29480800000000000000
+      internalID: -8893785009033600189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_180
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f8f2e5fee2e7e20800000000000000
+      internalID: 3350166778422464292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_181
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84d3a1052d8bbf20800000000000000
+      internalID: 3439497930508326031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_182
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002b74f31b68c90b0800000000000000
+      internalID: -5720549330838375936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_183
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef9840cb6247e1d0800000000000000
+      internalID: -3321613169607532571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_184
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e80a2787ca1b540800000000000000
+      internalID: 5021984692813991444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_185
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0608634b88fe61b0800000000000000
+      internalID: -5661314404543101429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_186
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d2bad4445c4a330800000000000000
+      internalID: 3721316089266384226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_187
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f970ece2735c5ed0800000000000000
+      internalID: -2423970746366658058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_188
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2466c84b9abc5bfc0800000000000000
+      internalID: -3479651207334828478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_189
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fb3346e132bc420800000000000000
+      internalID: 2651251419074772835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_190
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3196ce4b678feaa0800000000000000
+      internalID: -6129531672875069125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_191
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163302abaf336fc20800000000000000
+      internalID: 3239834133897163617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_192
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c41e3970fa3e7360800000000000000
+      internalID: 7169232461321082053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_193
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f4c181b6e7b3ba0800000000000000
+      internalID: -6108149471166836939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_194
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2bc65b870a7d780800000000000000
+      internalID: -8658275318296169808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_195
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9942b8279c1bd80800000000000000
+      internalID: -8236580749686040124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_196
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70596aac993d9d240800000000000000
+      internalID: 4817113933932827911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_197
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1df1f5672bb3580800000000000000
+      internalID: -8846280821567401515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_198
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9afdf0cc0c2d1c0800000000000000
+      internalID: -4480306696608044578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_199
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41172f38d11a3c6d0800000000000000
+      internalID: -2971354180994567916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_200
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7463bd781a477c170800000000000000
+      internalID: 8198649883769124423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_201
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c79561d4b50ba2f0800000000000000
+      internalID: -960667821348120634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_202
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2a511ed367624d0800000000000000
+      internalID: -3159708080412450081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_203
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9844593477eca8f0800000000000000
+      internalID: -527792569945143138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_204
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 531aa262b88149850800000000000000
+      internalID: 6382753557810684213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_205
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700e1610c4f77ce30800000000000000
+      internalID: 4523724315134386183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_206
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e4b0c2265136ba0800000000000000
+      internalID: -6097005959139602903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_207
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 38
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397158cce5730acf0800000000000000
+      internalID: -243133499580278893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_208
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d545455177afa60800000000000000
+      internalID: 7708604645690858802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_209
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc93d87ba786ed40800000000000000
+      internalID: 5613323156100193464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_210
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9c7acf7bb1a3f80800000000000000
+      internalID: -8126152100604819008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_211
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b882a51793b5258c0800000000000000
+      internalID: -4012044015760693109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_212
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cd8b274846fee40800000000000000
+      internalID: 5687875374415404164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_213
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cfe444ef7a23110800000000000000
+      internalID: 1239237557989866612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_214
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ca4581af0dbafd0800000000000000
+      internalID: -2329538609665495991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_215
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdfcc46b3e5d24a40800000000000000
+      internalID: 5351074481262350303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_216
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793d6c6b317a26480800000000000000
+      internalID: -8907373409872718953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_217
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6993a6663a37620800000000000000
+      internalID: 2770737856027137715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_218
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1655580800dcdf120800000000000000
+      internalID: 2449339174399333729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_219
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da252e3db5fee9990800000000000000
+      internalID: -7377195961910406483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_220
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e90e12fe83e457c0800000000000000
+      internalID: -4083388759031281184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_221
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e6a9ace5d3f2b70800000000000000
+      internalID: 8876380867905875501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_222
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4657b926bf69170800000000000000
+      internalID: 8185005773725983907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_223
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 20
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc00014b5dac26d60800000000000000
+      internalID: 7882085317049581771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_224
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e5f9c50437eefd0800000000000000
+      internalID: -2310782838525436335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_225
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6696aa658ae03a0800000000000000
+      internalID: -6697230505673660761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_226
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6ac17095194e020800000000000000
+      internalID: 2370179115461158649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_227
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd04ec908a44f8360800000000000000
+      internalID: 7174028219934195931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_228
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83beb21bb14526610800000000000000
+      internalID: 1612944094465354552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_229
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb49237567dfe410800000000000000
+      internalID: 1508661230916160437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chip_icons_exe6_230
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da119375b6b3b4b20800000000000000
+      internalID: 3119652499095097773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

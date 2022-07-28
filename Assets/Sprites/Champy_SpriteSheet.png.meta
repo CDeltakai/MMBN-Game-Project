@@ -1,0 +1,660 @@
+fileFormatVersion: 2
+guid: 8b1bb3a330faeca44827ebb2c3851292
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -608365045819827981
+    second: Champy_Idle1
+  - first:
+      213: 7785007503318212889
+    second: Champy_Idle2
+  - first:
+      213: 6270313764295898504
+    second: Champy_Idle3
+  - first:
+      213: -571807182586391800
+    second: Champy_SpriteSheet_3
+  - first:
+      213: -7673523618369690494
+    second: Champy_SpriteSheet_4
+  - first:
+      213: -6572797809411756012
+    second: Champy_Uppercut1
+  - first:
+      213: -4647948779701925290
+    second: Champy_Uppercut3
+  - first:
+      213: -5714491865603260520
+    second: Champy_SpriteSheet_7
+  - first:
+      213: -3520672268912608682
+    second: Champy_SpriteSheet_8
+  - first:
+      213: -3095087400570324111
+    second: Champy_SpriteSheet_9
+  - first:
+      213: -5980470299358026398
+    second: Champy_SpriteSheet_10
+  - first:
+      213: 2112220923381221242
+    second: Champy_SpriteSheet_11
+  - first:
+      213: 2859980515399281355
+    second: Champy_Uppercut2
+  - first:
+      213: -8571130780980095654
+    second: Champy_Uppercut4
+  - first:
+      213: 7368319362392741220
+    second: Champy_Uppercut5
+  - first:
+      213: 4751299080191339890
+    second: Champy_SpriteSheet_15
+  - first:
+      213: -1595472371038142956
+    second: Champy_SpriteSheet_16
+  - first:
+      213: 3425182351419284447
+    second: Champy_Straight1
+  - first:
+      213: -8049998943483836436
+    second: Champy_SpriteSheet_18
+  - first:
+      213: 102740614010856988
+    second: Champy_Straight2
+  - first:
+      213: 2961814836991203701
+    second: Champy_Straight3
+  - first:
+      213: 6839535814754601633
+    second: Champy_Straight4
+  - first:
+      213: 3941964231550526306
+    second: Champy_Straight5
+  - first:
+      213: -2343329801800773064
+    second: Champy_SpriteSheet_23
+  - first:
+      213: -6377016074552405582
+    second: Champy_SpriteSheet_24
+  - first:
+      213: -2803115997449051745
+    second: Champy_SpriteSheet_25
+  - first:
+      213: -3985477455827167614
+    second: Champy_SpriteSheet_26
+  - first:
+      213: 8579191423243939473
+    second: Champy_SpriteSheet_27
+  - first:
+      213: -4706462377238349286
+    second: Champy_SpriteSheet_28
+  - first:
+      213: -6270700874977095796
+    second: Champy_SpriteSheet_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Champy_Idle1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 190
+        width: 44
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47727275, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8152ec637ae87f0800000000000000
+      internalID: -608365045819827981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Idle2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 190
+        width: 44
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4318182, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9116809d317e90c60800000000000000
+      internalID: 7785007503318212889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Idle3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 190
+        width: 44
+        height: 46
+      alignment: 9
+      pivot: {x: 0.40909094, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8857917a521a40750800000000000000
+      internalID: 6270313764295898504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 195
+        width: 30
+        height: 40
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2842187dcea228590800000000000000
+      internalID: -7673523618369690494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Uppercut1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 128
+        width: 54
+        height: 49
+      alignment: 9
+      pivot: {x: 0.46296296, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410fb8d673bb8c4a0800000000000000
+      internalID: -6572797809411756012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Uppercut3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 128
+        width: 54
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6296296, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a08a3f53b2f7fb0800000000000000
+      internalID: -4647948779701925290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Uppercut2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 128
+        width: 54
+        height: 49
+      alignment: 9
+      pivot: {x: 0.44444445, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcaa9ec3021b0b720800000000000000
+      internalID: 2859980515399281355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Uppercut4
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 128
+        width: 54
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55d34c67f93d0980800000000000000
+      internalID: -8571130780980095654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Uppercut5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 54
+        height: 49
+      alignment: 9
+      pivot: {x: 0.537037, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4655d0bcb67814660800000000000000
+      internalID: 7368319362392741220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Straight1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 69
+        width: 44
+        height: 43
+      alignment: 9
+      pivot: {x: 0.38636366, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb98438331b88f20800000000000000
+      internalID: 3425182351419284447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Straight2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 69
+        width: 42
+        height: 44
+      alignment: 9
+      pivot: {x: 0.47619048, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c166f1a4b020d6100800000000000000
+      internalID: 102740614010856988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Straight3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 69
+        width: 49
+        height: 43
+      alignment: 9
+      pivot: {x: 0.53061223, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5799751e6ea7a1920800000000000000
+      internalID: 2961814836991203701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Straight4
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 69
+        width: 63
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5873016, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa820b0699eaee50800000000000000
+      internalID: 6839535814754601633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_Straight5
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 69
+        width: 75
+        height: 43
+      alignment: 9
+      pivot: {x: 0.62666667, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2636dda459ba4b630800000000000000
+      internalID: 3941964231550526306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 8
+        width: 43
+        height: 46
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8321414f5f1da7fd0800000000000000
+      internalID: -2343329801800773064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 8
+        width: 42
+        height: 45
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b11955caa94087a0800000000000000
+      internalID: -6377016074552405582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 8
+        width: 42
+        height: 45
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91a5d31ad45919d0800000000000000
+      internalID: -2803115997449051745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 8
+        width: 42
+        height: 45
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2861811be5db0b8c0800000000000000
+      internalID: -3985477455827167614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 8
+        width: 42
+        height: 45
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e688a15296f0770800000000000000
+      internalID: 8579191423243939473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 8
+        width: 42
+        height: 45
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ab7ff57694faeb0800000000000000
+      internalID: -4706462377238349286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 8
+        width: 42
+        height: 45
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f424e17cef9f8a0800000000000000
+      internalID: -6270700874977095796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Champy_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 195
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803dbe1a5688018f0800000000000000
+      internalID: -571807182586391800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

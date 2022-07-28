@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Projectile
+  - Enemy_Attack_Reflectable
+  - Player_Ally
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - BattleStage
+  - Water
+  - UI
+  - Penetrating Projectile
+  - Player
+  - Player_Ally
+  - Enemies
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BattleStage
+    uniqueID: 1814936829
+    locked: 0
+  - name: NPCs
+    uniqueID: 958031707
+    locked: 0
+  - name: Player
+    uniqueID: 2374245137
+    locked: 0
+  - name: Penetrating Projectile
+    uniqueID: 3907100569
+    locked: 0
+  - name: ActiveChipUI
+    uniqueID: 1889383739
+    locked: 0
+  - name: BattleStageUI
+    uniqueID: 3231309173
+    locked: 0

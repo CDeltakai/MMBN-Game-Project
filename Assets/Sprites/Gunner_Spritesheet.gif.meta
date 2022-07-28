@@ -1,0 +1,828 @@
+fileFormatVersion: 2
+guid: c21c07364ed3b4444a56201d73648504
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2352396172207114864
+    second: Gunner_Spritesheet_0
+  - first:
+      213: -1687535614227793083
+    second: Gunner_Spritesheet_1
+  - first:
+      213: 5417259171099516720
+    second: Gunner_Spritesheet_2
+  - first:
+      213: 7731099482118802521
+    second: Gunner_Spritesheet_3
+  - first:
+      213: -2324523987285302655
+    second: Gunner_Spritesheet_4
+  - first:
+      213: 852971648950143629
+    second: Gunner_Spritesheet_5
+  - first:
+      213: 3169750377946940153
+    second: Gunner_Spritesheet_6
+  - first:
+      213: 6697491086123820857
+    second: Gunner_Spritesheet_7
+  - first:
+      213: 2205438535268666524
+    second: Gunner_Spritesheet_8
+  - first:
+      213: 3373735427953470746
+    second: Gunner_Spritesheet_9
+  - first:
+      213: 5391446963954949678
+    second: Gunner_Spritesheet_10
+  - first:
+      213: 3301981084509779788
+    second: Gunner_Spritesheet_11
+  - first:
+      213: -5282810157665785566
+    second: Gunner_Spritesheet_12
+  - first:
+      213: 3207484579522887609
+    second: Gunner_Spritesheet_13
+  - first:
+      213: -6492861802220483785
+    second: Gunner_Spritesheet_14
+  - first:
+      213: -8250925749513076681
+    second: Gunner_Spritesheet_15
+  - first:
+      213: 883229561619769969
+    second: Gunner_Spritesheet_16
+  - first:
+      213: 1774947060364555822
+    second: Gunner_Spritesheet_17
+  - first:
+      213: 2501663062264723630
+    second: Gunner_Spritesheet_18
+  - first:
+      213: -7849143493986484652
+    second: Gunner_Spritesheet_19
+  - first:
+      213: -7389485531217764754
+    second: Gunner_Spritesheet_20
+  - first:
+      213: -1164655841609465585
+    second: Gunner_Spritesheet_21
+  - first:
+      213: 6070739431403846351
+    second: Gunner_Spritesheet_22
+  - first:
+      213: 4245067520714442276
+    second: Gunner_Spritesheet_23
+  - first:
+      213: 3172840498209105845
+    second: Gunner_Spritesheet_24
+  - first:
+      213: -6934617261270267061
+    second: Gunner_Spritesheet_25
+  - first:
+      213: -4212053719358129226
+    second: Gunner_Spritesheet_26
+  - first:
+      213: -9037049720729000051
+    second: Gunner_Spritesheet_27
+  - first:
+      213: 6494300414354088288
+    second: Gunner_Spritesheet_28
+  - first:
+      213: -5331889966647146825
+    second: Gunner_Spritesheet_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 252
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ac467ead365a020800000000000000
+      internalID: 2352396172207114864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 252
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54bb120cc4ba498e0800000000000000
+      internalID: -1687535614227793083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 252
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f1d95a388fd2b40800000000000000
+      internalID: 5417259171099516720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 252
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cc5e294026a4b60800000000000000
+      internalID: 7731099482118802521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 196
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1822cf9dfb1adbfd0800000000000000
+      internalID: -2324523987285302655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 196
+        width: 69
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a072b023d56db00800000000000000
+      internalID: 852971648950143629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 196
+        width: 72
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f20038bc273dfb20800000000000000
+      internalID: 3169750377946940153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 196
+        width: 63
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93761c278a442fc50800000000000000
+      internalID: 6697491086123820857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 141
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c85a4b9aa4b9e10800000000000000
+      internalID: 2205438535268666524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 141
+        width: 72
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d21553f7ae1de20800000000000000
+      internalID: 3373735427953470746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 173
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e94e7d27442da40800000000000000
+      internalID: 5391446963954949678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 141
+        width: 66
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47b34d3d4ef2dd20800000000000000
+      internalID: 3301981084509779788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 141
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2296180b620bfa6b0800000000000000
+      internalID: -5282810157665785566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 95
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf31092b36438c20800000000000000
+      internalID: 3207484579522887609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 95
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b02fe6798b4e5a0800000000000000
+      internalID: -6492861802220483785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 95
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73046200fb2de7d80800000000000000
+      internalID: -8250925749513076681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 108
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a68735b9cd14c00800000000000000
+      internalID: 883229561619769969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 115
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26372482f0e1a810800000000000000
+      internalID: 1774947060364555822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 95
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8310efc41b7b220800000000000000
+      internalID: 2501663062264723630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 97
+        width: 5
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45efdd9249d321390800000000000000
+      internalID: -7849143493986484652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 97
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e50ee7f06437990800000000000000
+      internalID: -7389485531217764754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 58
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01c843ceaf46dfe0800000000000000
+      internalID: -1164655841609465585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 57
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca78c449599f3450800000000000000
+      internalID: 6070739431403846351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 59
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4268bb33b6289ea30800000000000000
+      internalID: 4245067520714442276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 59
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b72ab86f91380c20800000000000000
+      internalID: 3172840498209105845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b81b0975a43cf90800000000000000
+      internalID: -6934617261270267061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbbbca6577cb85c0800000000000000
+      internalID: -4212053719358129226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87a76ac823f59280800000000000000
+      internalID: -9037049720729000051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0616f3e81d3602a50800000000000000
+      internalID: 6494300414354088288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6078c23525106b0800000000000000
+      internalID: -5331889966647146825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

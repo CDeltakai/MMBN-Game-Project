@@ -1,0 +1,2148 @@
+fileFormatVersion: 2
+guid: 54a020d80ca2bd640a01900b14ba6e43
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6784006102532304594
+    second: MMBN6_MegamanBasePoses_SpriteSheet_0
+  - first:
+      213: 817578033492910040
+    second: MMBN6_MegamanBasePoses_SpriteSheet_1
+  - first:
+      213: -8397762886636374142
+    second: MMBN6_MegamanBasePoses_SpriteSheet_2
+  - first:
+      213: 4253561915775800141
+    second: MMBN6_MegamanBasePoses_SpriteSheet_3
+  - first:
+      213: 4102238268729214399
+    second: MMBN6_MegamanBasePoses_SpriteSheet_4
+  - first:
+      213: -7998434706512134136
+    second: MMBN6_MegamanBasePoses_SpriteSheet_5
+  - first:
+      213: -5831661084623747289
+    second: MMBN6_MegamanBasePoses_SpriteSheet_6
+  - first:
+      213: -7231815899255995909
+    second: MMBN6_MegamanBasePoses_SpriteSheet_7
+  - first:
+      213: -6177315644357044137
+    second: MMBN6_MegamanBasePoses_SpriteSheet_8
+  - first:
+      213: -3379953783172961561
+    second: MMBN6_MegamanBasePoses_SpriteSheet_9
+  - first:
+      213: 8720785500645604998
+    second: MMBN6_MegamanBasePoses_SpriteSheet_10
+  - first:
+      213: 8142525387561395000
+    second: MMBN6_MegamanBasePoses_SpriteSheet_11
+  - first:
+      213: 4821645631600541473
+    second: MMBN6_MegamanBasePoses_SpriteSheet_12
+  - first:
+      213: 4053991765944762158
+    second: MMBN6_MegamanBasePoses_SpriteSheet_13
+  - first:
+      213: 8057266284045694691
+    second: MMBN6_MegamanBasePoses_SpriteSheet_14
+  - first:
+      213: 1197150867879905184
+    second: MMBN6_MegamanBasePoses_SpriteSheet_15
+  - first:
+      213: 3006868643852502105
+    second: MMBN6_MegamanBasePoses_SpriteSheet_16
+  - first:
+      213: 7460596490000521831
+    second: MMBN6_MegamanBasePoses_SpriteSheet_17
+  - first:
+      213: 4744288873041022779
+    second: MMBN6_MegamanBasePoses_SpriteSheet_18
+  - first:
+      213: -5455006971084140874
+    second: MMBN6_MegamanBasePoses_SpriteSheet_19
+  - first:
+      213: 6304600743624612739
+    second: MMBN6_MegamanBasePoses_SpriteSheet_20
+  - first:
+      213: -1548911652523776864
+    second: MMBN6_MegamanBasePoses_SpriteSheet_21
+  - first:
+      213: -1289783452647258678
+    second: MMBN6_MegamanBasePoses_SpriteSheet_22
+  - first:
+      213: 5788010014240496878
+    second: MMBN6_MegamanBasePoses_SpriteSheet_23
+  - first:
+      213: 3974656071015176962
+    second: MMBN6_MegamanBasePoses_SpriteSheet_24
+  - first:
+      213: 1069839420964258381
+    second: MMBN6_MegamanBasePoses_SpriteSheet_25
+  - first:
+      213: 3662935000304198943
+    second: MMBN6_MegamanBasePoses_SpriteSheet_26
+  - first:
+      213: 7421344254023643227
+    second: MMBN6_MegamanBasePoses_SpriteSheet_27
+  - first:
+      213: 3272608770566709799
+    second: MMBN6_MegamanBasePoses_SpriteSheet_28
+  - first:
+      213: 6215581126846935411
+    second: MMBN6_MegamanBasePoses_SpriteSheet_29
+  - first:
+      213: 8282761027395278121
+    second: MMBN6_MegamanBasePoses_SpriteSheet_30
+  - first:
+      213: 8191405154597423877
+    second: MMBN6_MegamanBasePoses_SpriteSheet_31
+  - first:
+      213: 2309631907525609062
+    second: MMBN6_MegamanBasePoses_SpriteSheet_32
+  - first:
+      213: 2322462472752176829
+    second: MMBN6_MegamanBasePoses_SpriteSheet_33
+  - first:
+      213: -8743248594331047696
+    second: MMBN6_MegamanBasePoses_SpriteSheet_34
+  - first:
+      213: 7439924779922527375
+    second: MMBN6_MegamanBasePoses_SpriteSheet_35
+  - first:
+      213: 5522901394879588408
+    second: MMBN6_MegamanBasePoses_SpriteSheet_36
+  - first:
+      213: 7771670279733294397
+    second: MMBN6_MegamanBasePoses_SpriteSheet_37
+  - first:
+      213: -4137385862392602139
+    second: MMBN6_MegamanBasePoses_SpriteSheet_38
+  - first:
+      213: -4736768511756999954
+    second: MMBN6_MegamanBasePoses_SpriteSheet_39
+  - first:
+      213: -2950871047959598711
+    second: MMBN6_MegamanBasePoses_SpriteSheet_40
+  - first:
+      213: -5157614956319396777
+    second: MMBN6_MegamanBasePoses_SpriteSheet_41
+  - first:
+      213: 1458490257148471190
+    second: MMBN6_MegamanBasePoses_SpriteSheet_42
+  - first:
+      213: -5301878517483992395
+    second: MMBN6_MegamanBasePoses_SpriteSheet_43
+  - first:
+      213: -4101077474674436081
+    second: MMBN6_MegamanBasePoses_SpriteSheet_44
+  - first:
+      213: 5912971804334346340
+    second: MMBN6_MegamanBasePoses_SpriteSheet_45
+  - first:
+      213: 3566300221365110047
+    second: MMBN6_MegamanBasePoses_SpriteSheet_46
+  - first:
+      213: -6618357106331727861
+    second: MMBN6_MegamanBasePoses_SpriteSheet_47
+  - first:
+      213: 4587707554477186112
+    second: MMBN6_MegamanBasePoses_SpriteSheet_48
+  - first:
+      213: -8796281560571051838
+    second: MMBN6_MegamanBasePoses_SpriteSheet_49
+  - first:
+      213: 4058938927029350447
+    second: MMBN6_MegamanBasePoses_SpriteSheet_50
+  - first:
+      213: 6784733248139969785
+    second: MMBN6_MegamanBasePoses_SpriteSheet_51
+  - first:
+      213: 8448336595386956914
+    second: MMBN6_MegamanBasePoses_SpriteSheet_52
+  - first:
+      213: -6839522020013273731
+    second: MMBN6_MegamanBasePoses_SpriteSheet_53
+  - first:
+      213: -773498557294228925
+    second: MMBN6_MegamanBasePoses_SpriteSheet_54
+  - first:
+      213: 8337856762051328190
+    second: MMBN6_MegamanBasePoses_SpriteSheet_55
+  - first:
+      213: -3782550623922311841
+    second: MMBN6_MegamanBasePoses_SpriteSheet_56
+  - first:
+      213: 3020208978146379836
+    second: MMBN6_MegamanBasePoses_SpriteSheet_57
+  - first:
+      213: -9221775105458105216
+    second: MMBN6_MegamanBasePoses_SpriteSheet_58
+  - first:
+      213: 6475564847653076105
+    second: MMBN6_MegamanBasePoses_SpriteSheet_59
+  - first:
+      213: -1724479959321497185
+    second: MMBN6_MegamanBasePoses_SpriteSheet_60
+  - first:
+      213: -131562028525480478
+    second: MMBN6_MegamanBasePoses_SpriteSheet_61
+  - first:
+      213: -581347175755383545
+    second: MMBN6_MegamanBasePoses_SpriteSheet_62
+  - first:
+      213: -2010618625345814297
+    second: MMBN6_MegamanBasePoses_SpriteSheet_63
+  - first:
+      213: 1866703723548668963
+    second: MMBN6_MegamanBasePoses_SpriteSheet_64
+  - first:
+      213: 1793634972527530253
+    second: MMBN6_MegamanBasePoses_SpriteSheet_65
+  - first:
+      213: -3448135030910017895
+    second: MMBN6_MegamanBasePoses_SpriteSheet_66
+  - first:
+      213: -2494365960584780696
+    second: MMBN6_MegamanBasePoses_SpriteSheet_67
+  - first:
+      213: 6659823010661880559
+    second: MMBN6_MegamanBasePoses_SpriteSheet_68
+  - first:
+      213: 2457272027822691147
+    second: MMBN6_MegamanBasePoses_SpriteSheet_69
+  - first:
+      213: -4659224909520078041
+    second: MMBN6_MegamanBasePoses_SpriteSheet_70
+  - first:
+      213: 618230399663221088
+    second: MMBN6_MegamanBasePoses_SpriteSheet_71
+  - first:
+      213: 6902573840703465622
+    second: MMBN6_MegamanBasePoses_SpriteSheet_72
+  - first:
+      213: 5851860540442231802
+    second: MMBN6_MegamanBasePoses_SpriteSheet_73
+  - first:
+      213: -3074739322433577088
+    second: MMBN6_MegamanBasePoses_SpriteSheet_74
+  - first:
+      213: -2918118833159358953
+    second: MMBN6_MegamanBasePoses_SpriteSheet_75
+  - first:
+      213: -3167421576099920635
+    second: MMBN6_MegamanBasePoses_SpriteSheet_76
+  - first:
+      213: -5986689456868662801
+    second: MMBN6_MegamanBasePoses_SpriteSheet_77
+  - first:
+      213: -7550056732076866546
+    second: MMBN6_MegamanBasePoses_SpriteSheet_78
+  - first:
+      213: -840554564906899913
+    second: MMBN6_MegamanBasePoses_SpriteSheet_79
+  - first:
+      213: 3805455077752120327
+    second: MMBN6_MegamanBasePoses_SpriteSheet_80
+  - first:
+      213: -574023460949429357
+    second: MMBN6_MegamanBasePoses_SpriteSheet_81
+  - first:
+      213: -8151656278002574779
+    second: MMBN6_MegamanBasePoses_SpriteSheet_82
+  - first:
+      213: -8107256698436686978
+    second: MMBN6_MegamanBasePoses_SpriteSheet_83
+  - first:
+      213: -8223044845535614623
+    second: MMBN6_MegamanBasePoses_SpriteSheet_84
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1176
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21da78946e5ad1a0800000000000000
+      internalID: -6784006102532304594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1119
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfd186c3ee985b00800000000000000
+      internalID: 817578033492910040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1119
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287741ad527257b80800000000000000
+      internalID: -8397762886636374142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1119
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4352fba600b70b30800000000000000
+      internalID: 4253561915775800141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1119
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb54e9788f31ee830800000000000000
+      internalID: 4102238268729214399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1119
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800403f030adff090800000000000000
+      internalID: -7998434706512134136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1119
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72748881427c11fa0800000000000000
+      internalID: -5831661084623747289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1119
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf103d361cd63ab90800000000000000
+      internalID: -7231815899255995909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1119
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75892a87624c54aa0800000000000000
+      internalID: -6177315644357044137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1062
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eaecb421fdf711d0800000000000000
+      internalID: -3379953783172961561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 998
+        width: 31
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ebb584534760970800000000000000
+      internalID: 8720785500645604998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 997
+        width: 13
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8336234f2bf000170800000000000000
+      internalID: 8142525387561395000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1000
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f3d50e72de9e240800000000000000
+      internalID: 4821645631600541473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 928
+        width: 36
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ffe7b380ca24830800000000000000
+      internalID: 4053991765944762158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 997
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e676410ff821df60800000000000000
+      internalID: 8057266284045694691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 928
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7488e1f522d9010800000000000000
+      internalID: 1197150867879905184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 928
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954c61bb91b8ab920800000000000000
+      internalID: 3006868643852502105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 928
+        width: 5
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ad10fcafc598760800000000000000
+      internalID: 7460596490000521831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 932
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3fc27df79917d140800000000000000
+      internalID: 4744288873041022779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 929
+        width: 31
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be0049cf0ceb44b0800000000000000
+      internalID: -5455006971084140874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 872
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b986e19f07e7750800000000000000
+      internalID: 6304600743624612739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 872
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a46bdafe09218ae0800000000000000
+      internalID: -1548911652523776864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 872
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac588cb88c4c91ee0800000000000000
+      internalID: -1289783452647258678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 872
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec55371174235050800000000000000
+      internalID: 5788010014240496878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 806
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b953153a0d82730800000000000000
+      internalID: 3974656071015176962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 806
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42c84df845d8de00800000000000000
+      internalID: 1069839420964258381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 806
+        width: 55
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f152a78c9fb55d230800000000000000
+      internalID: 3662935000304198943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 806
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5037f07749edf660800000000000000
+      internalID: 7421344254023643227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 806
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722e47a7654aa6d20800000000000000
+      internalID: 3272608770566709799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 806
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37175527a1e224650800000000000000
+      internalID: 6215581126846935411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 806
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925585d354742f270800000000000000
+      internalID: 8282761027395278121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 754
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b45139697bda170800000000000000
+      internalID: 8191405154597423877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 754
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666c8f1abf57d0020800000000000000
+      internalID: 2309631907525609062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 754
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe9194605b0b3020800000000000000
+      internalID: 2322462472752176829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 754
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8e6f72abdb9a680800000000000000
+      internalID: -8743248594331047696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 702
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8498ee3b2cef3760800000000000000
+      internalID: 7439924779922527375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 702
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838ae4b9e8945ac40800000000000000
+      internalID: 5522901394879588408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 702
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35b6fe71f48adb60800000000000000
+      internalID: 7771670279733294397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 702
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1ad5d9a7d0596c0800000000000000
+      internalID: -4137385862392602139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 702
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2e771922e934eb0800000000000000
+      internalID: -4736768511756999954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 702
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98922609a666c07d0800000000000000
+      internalID: -2950871047959598711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 702
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c275006887c68b0800000000000000
+      internalID: -5157614956319396777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 702
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697e3b559299d3410800000000000000
+      internalID: 1458490257148471190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 650
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba87133491fb66b0800000000000000
+      internalID: -5301878517483992395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 650
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f089ca5e3cb0617c0800000000000000
+      internalID: -4101077474674436081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 650
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460df3c17881f0250800000000000000
+      internalID: 5912971804334346340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 650
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f154dd0082b0e7130800000000000000
+      internalID: 3566300221365110047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 598
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b084a60074fd624a0800000000000000
+      internalID: -6618357106331727861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 546
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c1dfdc6bfcaaf30800000000000000
+      internalID: 4587707554477186112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 546
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c008dd76845de580800000000000000
+      internalID: -8796281560571051838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 546
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20f69ee27f345830800000000000000
+      internalID: 4058938927029350447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 546
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f44a2f21f6382e50800000000000000
+      internalID: 6784733248139969785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 488
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cf8fe4f558e3570800000000000000
+      internalID: 8448336595386956914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 488
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d85abc5f22511a0800000000000000
+      internalID: -6839522020013273731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 488
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a433a092bf345f0800000000000000
+      internalID: -773498557294228925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 488
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8782a9c8406b370800000000000000
+      internalID: 8337856762051328190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 436
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5dad249f3ea18bc0800000000000000
+      internalID: -3782550623922311841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 436
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c384cd95010f9e920800000000000000
+      internalID: 3020208978146379836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 384
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08411a0966ca50080800000000000000
+      internalID: -9221775105458105216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 384
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c3e508be3ddd950800000000000000
+      internalID: 6475564847653076105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91bc5a1d9a6118e0800000000000000
+      internalID: -1724479959321497185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 384
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e51fc738099c2ef0800000000000000
+      internalID: -131562028525480478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 334
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d7ce1e2d3aee7f0800000000000000
+      internalID: -581347175755383545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 284
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e08a715309d814e0800000000000000
+      internalID: -2010618625345814297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 284
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3247407752dd7e910800000000000000
+      internalID: 1866703723548668963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 284
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d019832218544e810800000000000000
+      internalID: 1793634972527530253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 284
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e17095573c520d0800000000000000
+      internalID: -3448135030910017895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 232
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864a483ef5b326dd0800000000000000
+      internalID: -2494365960584780696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 232
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe259713eb17c6c50800000000000000
+      internalID: 6659823010661880559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 174
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4310eed3ebf91220800000000000000
+      internalID: 2457272027822691147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 118
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b776361ab175fb0800000000000000
+      internalID: -4659224909520078041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 118
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0692641e545649800800000000000000
+      internalID: 618230399663221088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 118
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698a803365edacf50800000000000000
+      internalID: 6902573840703465622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 118
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af34f24382cf53150800000000000000
+      internalID: 5851860540442231802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 121
+        width: 126
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08fdb6d70e45455d0800000000000000
+      internalID: -3074739322433577088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 70
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716b821d162c087d0800000000000000
+      internalID: -2918118833159358953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_76
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 92
+        width: 126
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50508a6bbde0b04d0800000000000000
+      internalID: -3167421576099920635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 63
+        width: 126
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe164c668a10beca0800000000000000
+      internalID: -5986689456868662801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_78
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 50
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e040382776fc83790800000000000000
+      internalID: -7550056732076866546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_79
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 50
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7362460a310c554f0800000000000000
+      internalID: -840554564906899913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_80
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 34
+        width: 126
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7042f162b31bfc430800000000000000
+      internalID: 3805455077752120327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 30
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3937e5d14b8a808f0800000000000000
+      internalID: -574023460949429357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_82
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 5
+        width: 126
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ad292fdcf7fde80800000000000000
+      internalID: -8151656278002574779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_83
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 10
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b66c2acfc3d7f80800000000000000
+      internalID: -8107256698436686978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MMBN6_MegamanBasePoses_SpriteSheet_84
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 10
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1692eb1d740e1ed80800000000000000
+      internalID: -8223044845535614623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
