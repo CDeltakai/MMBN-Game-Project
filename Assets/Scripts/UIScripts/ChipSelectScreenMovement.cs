@@ -2,6 +2,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ChipSelectScreenMovement : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class ChipSelectScreenMovement : MonoBehaviour
     private Vector3 endPosition = new Vector3 (-690, 170, 0);
     private Vector3 startPosition = new Vector3 (-1229, 170, 0);
     ChipInventory chipInventory;
-    int maxSelectableChips = 5;
+    int chipHandCapacity = 8;
+    int maxSelectableChips = 8;
     [SerializeField] float desiredDuration = 1f;
 
     private float elapsedTime = 0;
@@ -95,10 +97,19 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     void populateChipSelect()
     {
-            foreach(var chip in chipInventory.getChipInventory())
+            var random = new System.Random();
+
+            // foreach(var chip in chipInventory.getChipInventory())
+            // {
+            //     selectableChips.Add(chip);
+            // }
+
+            for (int i = 0; i < maxSelectableChips; i++)
             {
-                selectableChips.Add(chip);
+                int index = random.Next(chipInventory.getChipInventory().Count);
+                selectableChips.Add(chipInventory.getChipInventory()[index]);
             }
+
             for (int i = 0; i < selectableChips.Count; i++)
             {
                 chipButtons[i].GetComponent<ChipSlot>().changeChip(selectableChips[i]);
