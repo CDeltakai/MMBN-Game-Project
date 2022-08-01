@@ -6,7 +6,7 @@ public class Crate_Indestructible : MonoBehaviour
 {
 
     BattleStageHandler stageHandler;
-    public Transform parentTransform;
+    [HideInInspector] public Transform parentTransform;
     public Vector3Int currentCellPos;
 
 
