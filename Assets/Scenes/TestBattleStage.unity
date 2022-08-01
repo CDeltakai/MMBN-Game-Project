@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
@@ -1500,13 +1501,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194cb4ce12ef6fd42bb01780c354465b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleStageTilemap: {fileID: 1660261417}
+  stageTilemap: {fileID: 1660261417}
   defaultTile: {fileID: 11400000, guid: 55436f029c4aa7946beb85bccdcafdd1, type: 2}
   PlayerTile: {fileID: 11400000, guid: 55436f029c4aa7946beb85bccdcafdd1, type: 2}
   NPCTile: {fileID: 11400000, guid: 3f5f6671e5c8fcc48ac76dcc812c3225, type: 2}
-  PlayerSideObjects:
-  - {fileID: 0}
-  NPCSideObjects: []
 --- !u!19719996 &1660261419
 TilemapCollider2D:
   m_ObjectHideFlags: 0
