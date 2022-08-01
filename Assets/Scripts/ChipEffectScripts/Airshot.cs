@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Airshot : MonoBehaviour, IChip
+{
+    public Transform firePoint;
+    PlayerMovement player;
+    public int BaseDamage {get;} = 20;
+    public int AdditionalDamage{get; set;} = 0;
+    public EChipTypes ChipType => EChipTypes.Active;
+
+    public EChipElements chipElement => EChipElements.Air;
+
+    public EStatusEffects statusEffect {get;set;} = EStatusEffects.Default;
+
+    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default)
+    {
+
+        AdditionalDamage += AddDamage;
+        player = GetComponent<PlayerMovement>();
+        Debug.Log("Attempted airshot effect");
+        firePoint = FindObjectOfType<ChipEffects>().firePoint;
+
+        RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies", "Obstacle"));
+        if(hitInfo)
+        {
+
+            
+
+            IBattleStageEntity script = hitInfo.transform.gameObject.GetComponent<IBattleStageEntity>();
+            if(script == null)
+            {return;}
+
+            script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true);
+            
+            script.setCellPosition(script.getCellPosition().x + 1, script.getCellPosition().y);
+        }
+        
+        AdditionalDamage = 0;
+
+
+
+    }
+
+
+
+
+}
