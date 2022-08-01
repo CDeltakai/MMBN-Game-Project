@@ -77,9 +77,6 @@ public class MettaurAI : MonoBehaviour
     void mettaurMoveDown()
     {
         mettaur.cellMoveDown();
-
-        
-
     }
 
 

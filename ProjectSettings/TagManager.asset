@@ -57,6 +57,9 @@ TagManager:
   - name: Penetrating Projectile
     uniqueID: 3907100569
     locked: 0
+  - name: UnitStats
+    uniqueID: 3519100819
+    locked: 0
   - name: ActiveChipUI
     uniqueID: 1889383739
     locked: 0

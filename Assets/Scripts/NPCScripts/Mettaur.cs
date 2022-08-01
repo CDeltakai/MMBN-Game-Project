@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Mettaur : MonoBehaviour, IBattleStageEntity
+public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 {
 
     BoxCollider2D mettaurCollider;
-    BattleStageHandler battleStageHandler;
+    BattleStageHandler stageHandler;
     Animator animator;
     float animationLength;
     string currentAnimation;
@@ -47,11 +47,14 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity
         animator = GetComponent<Animator>();
         healthText.text = currentHP.ToString();
         parentTransform = transform.parent.gameObject.GetComponent<Transform>();
-        battleStageHandler = FindObjectOfType<BattleStageHandler>();
+        stageHandler = FindObjectOfType<BattleStageHandler>();
         
 
         currentCellPos.x = (int)(parentTransform.localPosition.x/1.6f);
         currentCellPos.y = (int)parentTransform.localPosition.y;
+
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+        
 
 
     }
@@ -103,33 +106,54 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity
 
     public void cellMoveRight()
     {
+        if(!checkValidTile(currentCellPos.x + 1, currentCellPos.y, currentCellPos.z))
+        {return;}
+
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
         currentCellPos.Set(currentCellPos.x + 1, currentCellPos.y, currentCellPos.z);
-        
-        parentTransform.transform.localPosition = battleStageHandler.stageTilemap.
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+
+        parentTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
                                     //isMoving = false;
     }
     public void cellMoveLeft()
     {
-        currentCellPos.Set(currentCellPos.x - 1, currentCellPos.y, currentCellPos.z);
 
-        parentTransform.transform.localPosition = battleStageHandler.stageTilemap.
+        if(!checkValidTile(currentCellPos.x - 1, currentCellPos.y, currentCellPos.z))
+        {return;}
+
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        currentCellPos.Set(currentCellPos.x - 1, currentCellPos.y, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+
+        parentTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
                                     //isMoving = false;
     }
     public void cellMoveUp()
     {
+        if(!checkValidTile(currentCellPos.x, currentCellPos.y + 1, currentCellPos.z))
+        {return;}
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
         currentCellPos.Set(currentCellPos.x, currentCellPos.y + 1, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
 
-        parentTransform.transform.localPosition = battleStageHandler.stageTilemap.
+        parentTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
                                     //isMoving = false;
     }
     public void cellMoveDown()
     {
-        currentCellPos.Set(currentCellPos.x, currentCellPos.y - 1, currentCellPos.z);
 
-        parentTransform.transform.localPosition = battleStageHandler.stageTilemap.
+        if(!checkValidTile(currentCellPos.x, currentCellPos.y - 1, currentCellPos.z))
+        {return;}
+
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        currentCellPos.Set(currentCellPos.x, currentCellPos.y - 1, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+
+        parentTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
                                     //isMoving = false;
     }
@@ -181,6 +205,29 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity
         animator.speed = 0;
         yield return new WaitForSeconds(1.5f);
         animator.speed = 1;
+
+    }
+
+    public bool checkValidTile(int x, int y, int z)
+    {
+        Vector3Int coordToCheck = new Vector3Int(x, y, z);
+        
+
+            if(stageHandler.stageTilemap.GetTile
+            (coordToCheck) == stageHandler.PlayerTile
+                ||
+            stageHandler.stageTilemap.GetTile
+            (coordToCheck) == null
+                ||
+            stageHandler.stageTiles
+            [stageHandler.stageTilemap.CellToWorld(coordToCheck)].isOccupied
+            )
+            {
+                return false;
+            }
+
+        return true;
+
 
     }
 }

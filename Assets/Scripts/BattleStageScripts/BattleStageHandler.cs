@@ -116,6 +116,16 @@ public class BattleStageHandler : MonoBehaviour
         stageTiles.Add(position, tile);
     }
 
+
+    public void setCellOccupied(int x, int y, bool condition)
+    {
+        Vector3Int cell = new Vector3Int(x, y, 0);
+
+        stageTiles[stageTilemap.CellToWorld(cell)].isOccupied = condition;
+
+
+    }
+
     public void setOccupied(StageTile tile, bool condition)
     {
         tile.isOccupied = condition;
