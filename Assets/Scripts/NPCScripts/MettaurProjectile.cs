@@ -57,7 +57,12 @@ public class MettaurProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {   
-        
+        if(other.tag == "Obstacle")
+        {
+            Destroy(transform.parent.gameObject);
+            Destroy(gameObject);
+            return; 
+        }
 
         if(other.tag == "Player" && !isTriggered)
         {

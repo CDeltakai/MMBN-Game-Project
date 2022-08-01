@@ -8,6 +8,7 @@ TagManager:
   - Enemy_Attack_Reflectable
   - Player_Ally
   - Enemy
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Player
   - Player_Ally
   - Enemies
-  - 
+  - Obstacle
   - 
   - 
   - 
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: Penetrating Projectile
     uniqueID: 3907100569
+    locked: 0
+  - name: Obstacles
+    uniqueID: 631951225
     locked: 0
   - name: UnitStats
     uniqueID: 3519100819
