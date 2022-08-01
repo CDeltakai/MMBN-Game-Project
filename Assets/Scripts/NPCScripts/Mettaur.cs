@@ -29,6 +29,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     public int ID => 0;
 
     public bool stunnable => true;
+    public bool stationary => false;
     public bool vulnerable {get;set;} = false;
 
     public Transform worldTransform {get;set;}
@@ -180,7 +181,11 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
     public void setCellPosition(int x, int y)
     {
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
         currentCellPos.Set(x, y, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+        parentTransform.transform.localPosition = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
     }
 
     public void hurtEntity(int damage, bool lightAttack, bool hitStun, bool pierceCloaking = false)
@@ -189,6 +194,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
         {
             currentHP = 0;
             healthText.text = currentHP.ToString();
+            Destroy(transform.parent.gameObject);
             Destroy(gameObject);
             return;
 

@@ -20,6 +20,6 @@ MonoBehaviour:
   ChipDescription: Pushes enemy 1 tile back
   ChipElement: 1
   ChipSize: 4
-  AnimationDuration: 0
+  AnimationDuration: 0.25
   ChipType: 1
-  EffectScript: 
+  EffectScript: Airshot

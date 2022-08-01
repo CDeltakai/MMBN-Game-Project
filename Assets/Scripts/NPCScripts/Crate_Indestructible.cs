@@ -23,6 +23,14 @@ public class Crate_Indestructible : MonoBehaviour
 
     }
 
+
+    public void removeObject()
+    {
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {

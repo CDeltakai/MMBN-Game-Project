@@ -52,14 +52,14 @@ TagManager:
   - name: NPCs
     uniqueID: 958031707
     locked: 0
+  - name: Obstacles
+    uniqueID: 631951225
+    locked: 0
   - name: Player
     uniqueID: 2374245137
     locked: 0
   - name: Penetrating Projectile
     uniqueID: 3907100569
-    locked: 0
-  - name: Obstacles
-    uniqueID: 631951225
     locked: 0
   - name: UnitStats
     uniqueID: 3519100819

@@ -220,10 +220,10 @@ TextureImporter:
     second: Chip_icons_exe6_71
   - first:
       213: -4611406389132694472
-    second: Chip_icons_exe6_72
+    second: Chip_Widesword
   - first:
       213: 3702733806151467343
-    second: Chip_icons_exe6_73
+    second: Chip_Longsword
   - first:
       213: -7336577804863842005
     second: Chip_icons_exe6_74
@@ -2296,7 +2296,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chip_icons_exe6_72
+      name: Chip_Widesword
       rect:
         serializedVersion: 2
         x: 154
@@ -2317,7 +2317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chip_icons_exe6_73
+      name: Chip_Longsword
       rect:
         serializedVersion: 2
         x: 173

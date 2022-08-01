@@ -16,7 +16,7 @@ MonoBehaviour:
   Chip: 105
   ChipName: 
   ChipDamage: 0
-  ChipImage: {fileID: 0}
+  ChipImage: {fileID: 3702733806151467343, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   ChipDescription: 
   ChipElement: 0
   ChipSize: 0

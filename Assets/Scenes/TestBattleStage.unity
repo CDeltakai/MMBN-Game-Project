@@ -1983,7 +1983,7 @@ PrefabInstance:
       objectReference: {fileID: 2042424202}
     - target: {fileID: 1645725280, guid: b8181ba0437ec144098831057b1a7631, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2503680530704742596, guid: b8181ba0437ec144098831057b1a7631, type: 3}
       propertyPath: m_fontSize

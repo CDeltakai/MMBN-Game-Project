@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
     public int ID => 3;
 
     public bool stunnable => true;
-
+    public bool stationary => false;
     public bool vulnerable { get;set;} = false;
 
     public bool Rooted;

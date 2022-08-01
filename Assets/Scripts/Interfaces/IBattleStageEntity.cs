@@ -10,7 +10,12 @@ public interface IBattleStageEntity
     [SerializeField] public float AttackMultiplier{get;set;}
     [SerializeField] public float DefenseMultiplier{get;set;}
     public int ID { get; }
+
+    //stunnable enemies can be affected by crowd-control effects like paralyze and root
     public bool stunnable{get;}
+
+    //stationary entities cannot be moved by attacks
+    public bool stationary{get;}
     public bool vulnerable{get; set;}
     public Vector3Int getCellPosition();
     public void setCellPosition(int x, int y);

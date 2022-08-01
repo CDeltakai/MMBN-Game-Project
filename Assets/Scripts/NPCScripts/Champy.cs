@@ -4,7 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 
-public class Champy : MonoBehaviour, IBattleStageEntity
+public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 {
     public string Name => "Champy";
 
@@ -14,6 +14,7 @@ public class Champy : MonoBehaviour, IBattleStageEntity
 
 
     public bool stunnable => false;
+    public bool stationary => false;
 
     public bool vulnerable { get; set; } = false;
     public Transform worldTransform {get; set;}
@@ -24,6 +25,8 @@ public class Champy : MonoBehaviour, IBattleStageEntity
 
     [SerializeField] public int currentHP = 60;
     [SerializeField] TextMeshProUGUI healthText;
+
+    public bool hasMoved = false;
 
 
     void Awake() {
@@ -38,7 +41,8 @@ public class Champy : MonoBehaviour, IBattleStageEntity
         stageHandler = FindObjectOfType<BattleStageHandler>();
         healthText.text = currentHP.ToString();
         animator = GetComponent<Animator>();
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
+        //stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
 
 
     }
@@ -73,7 +77,7 @@ public class Champy : MonoBehaviour, IBattleStageEntity
             currentHP = 0;
             healthText.text = "0";
             stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
-
+            Destroy(transform.parent.gameObject);
             Destroy(gameObject);
             return;
         }
@@ -85,7 +89,27 @@ public class Champy : MonoBehaviour, IBattleStageEntity
 
     public void setCellPosition(int x, int y)
     {
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
         currentCellPos.Set(x, y, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+
+        worldTransform.transform.localPosition = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
+    }
+
+
+    public void setCellPosition_MaintainOccupied(int x, int y)
+    {
+
+        if(hasMoved)
+        {
+            stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+            currentCellPos.Set(x, y, currentCellPos.z);
+        }
+
+        currentCellPos.Set(x, y, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+
         worldTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
     }
@@ -107,4 +131,44 @@ public class Champy : MonoBehaviour, IBattleStageEntity
 
     }
 
+    public bool checkValidTile(int x, int y, int z)
+    {
+        Vector3Int coordToCheck = new Vector3Int(x, y, z);
+        
+
+            if(stageHandler.stageTilemap.GetTile
+            (coordToCheck) == stageHandler.PlayerTile
+                ||
+            stageHandler.stageTilemap.GetTile
+            (coordToCheck) == null
+                ||
+            stageHandler.stageTiles
+            [stageHandler.stageTilemap.CellToWorld(coordToCheck)].isOccupied
+            )
+            {
+                return false;
+            }
+
+        return true;
+    }
+
+    public void cellMoveUp()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void cellMoveDown()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void cellMoveRight()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void cellMoveLeft()
+    {
+        throw new System.NotImplementedException();
+    }
 }

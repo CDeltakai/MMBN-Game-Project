@@ -66,8 +66,9 @@ public class ChampyAI : MonoBehaviour
     public IEnumerator AttackAnimation()
     {
         Vector3Int previousCellPosition = champyCellPosition;
-        champy.setCellPosition(player.getCellPosition().x + 1, champyCellPosition.y);
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(champyCellPosition)].isOccupied = true;
+        champy.setCellPosition_MaintainOccupied(player.getCellPosition().x + 1, champyCellPosition.y);
+        champy.hasMoved = true;
+
 
 
         animator.Play(CHAMPY_ATTACK);
@@ -77,8 +78,9 @@ public class ChampyAI : MonoBehaviour
         animator.Play(CHAMPY_IDLE);
         yield return new WaitForSeconds(1);
 
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(champyCellPosition)].isOccupied = false;
-        champy.setCellPosition(previousCellPosition.x, previousCellPosition.y);
+        champy.setCellPosition_MaintainOccupied(previousCellPosition.x, previousCellPosition.y);
+        champy.hasMoved = false;
+
         previousCellPosition = champyCellPosition;
 
         yield return new WaitForSeconds(1.5f);

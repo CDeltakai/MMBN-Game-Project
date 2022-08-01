@@ -73,6 +73,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
         if(!isTriggered)
         {
+            populateChipSelect();
             Pause();
             isTriggered = true;
             elapsedTime = 0;
@@ -97,7 +98,15 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     void populateChipSelect()
     {
+        int randomIndex = 0;
             var random = new System.Random();
+        
+        selectableChips.Clear();
+        for (int i = 0; i < 8; i++)
+        {
+            chipButtons[i].GetComponent<ChipSlot>().clearChip();
+
+        }
 
             // foreach(var chip in chipInventory.getChipInventory())
             // {
@@ -106,8 +115,19 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
             for (int i = 0; i < maxSelectableChips; i++)
             {
-                int index = random.Next(chipInventory.getChipInventory().Count);
-                selectableChips.Add(chipInventory.getChipInventory()[index]);
+                
+
+                randomIndex = random.Next(0, chipInventory.getChipInventory().Count);
+
+                if(selectableChips.Contains(chipInventory.getChipInventory()[randomIndex]))
+                {
+                    i--;
+                    continue;
+                }
+
+
+
+                selectableChips.Add(chipInventory.getChipInventory()[randomIndex]);
             }
 
             for (int i = 0; i < selectableChips.Count; i++)
