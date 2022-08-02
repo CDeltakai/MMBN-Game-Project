@@ -16,7 +16,11 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 5edf58b933899e64dbaa37baca9fba0c
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: ce7f017a1a4011946b9ee01835319606
+    m_Address: VFX_Longsword_pos
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 143f498d0d4592042938bc1a6e56d09a, type: 2}
   m_SchemaSet:

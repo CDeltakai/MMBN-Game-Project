@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets; 
 
 public class Longsword : MonoBehaviour, IChip
 {
@@ -15,9 +16,16 @@ public class Longsword : MonoBehaviour, IChip
 
     PlayerMovement player;
 
+    void Start()
+    {
+
+    }
+
+
     public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default)
     {
-        throw new System.NotImplementedException();
+
+
     }
 
     
