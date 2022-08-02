@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1960042379803707409}
   m_Layer: 9
   m_Name: Champy
-  m_TagString: Untagged
+  m_TagString: Enemy_Attack_Reflectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 1960042379803707420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.001, y: -0.226, z: 0}
-  m_LocalScale: {x: 2.7840164, y: 2.7089663, z: 1}
+  m_LocalScale: {x: 2.7840164, y: 2.7089663, z: 0}
   m_Children:
   - {fileID: 5074019988801750799}
   m_Father: {fileID: 1960042378351672795}
@@ -104,8 +104,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 958031707
-  m_SortingLayer: 2
+  m_SortingLayerID: 1126852281
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -608365045819827981, guid: 8b1bb3a330faeca44827ebb2c3851292, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -178,6 +178,7 @@ MonoBehaviour:
   currentCellPos: {x: 0, y: 0, z: 0}
   currentHP: 60
   healthText: {fileID: 1702255416732104399}
+  hasMoved: 0
 --- !u!114 &1960042379803707409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +186,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960042379803707420}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f8d9567d47c7eb40b0ea9428dd13a8c, type: 3}
   m_Name: 
@@ -318,7 +319,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 100.82727, y: 25.352577, z: 98.647224, w: 24.180475}
+  m_margin: {x: 100.387115, y: 25.352577, z: 98.16913, w: 24.180475}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -379,6 +380,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 958031707
-  m_SortingOrder: 0
+  m_SortingLayerID: -775866477
+  m_SortingOrder: 2
   m_TargetDisplay: 0

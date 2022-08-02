@@ -39,7 +39,7 @@ public class MettaurProjectile : MonoBehaviour
             time -= interval;
         }
 
-        if(currentPosition.position.x < -6.4)
+        if(currentPosition.position.x < 0)
         {
             Destroy(transform.parent.gameObject);
             Destroy(gameObject);
