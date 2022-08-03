@@ -21,6 +21,14 @@ MonoBehaviour:
     m_Address: VFX_Longsword_pos
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 0a1e2cb7b94970045944090e69cde296
+    m_Address: VFX_Widesword_pos
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ddd9f48c2c7af9145b6905bf35063c60
+    m_Address: VFX_Destruction_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 143f498d0d4592042938bc1a6e56d09a, type: 2}
   m_SchemaSet:

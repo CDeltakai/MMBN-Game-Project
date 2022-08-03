@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Longsword_trail
+  m_Name: VFX_Widesword_Slash
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 3941755858038807863, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
+      value: {fileID: -4892899070598711267, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
     - time: 0.041666668
-      value: {fileID: -3389183874257378313, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
+      value: {fileID: -6744629151000648916, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
     - time: 0.083333336
-      value: {fileID: -2436291386614513808, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
+      value: {fileID: -4155062477558081303, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 3941755858038807863, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
-    - {fileID: -3389183874257378313, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
-    - {fileID: -2436291386614513808, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
+    - {fileID: -4892899070598711267, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
+    - {fileID: -6744629151000648916, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
+    - {fileID: -4155062477558081303, guid: 8af9890b1384f4240a928db518bc129a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

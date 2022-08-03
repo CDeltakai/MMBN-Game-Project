@@ -11,6 +11,24 @@ TextureImporter:
   - first:
       213: -2436291386614513808
     second: Longsword_trail3
+  - first:
+      213: -4892899070598711267
+    second: Widesword_trail1
+  - first:
+      213: -6744629151000648916
+    second: Widesword_trail2
+  - first:
+      213: -4155062477558081303
+    second: Widesword_trail3
+  - first:
+      213: 2754345737163151891
+    second: Sword_trail1
+  - first:
+      213: -4024620492027477612
+    second: Sword_trail2
+  - first:
+      213: 1068028503311144527
+    second: Sword_trail3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +188,132 @@ TextureImporter:
       bones: []
       spriteID: 07f7f7354ed803ed0800000000000000
       internalID: -2436291386614513808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Widesword_trail1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 401
+        width: 37
+        height: 70
+      alignment: 9
+      pivot: {x: 0.32432434, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d18ff1f083ee81cb0800000000000000
+      internalID: -4892899070598711267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Widesword_trail2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 419
+        width: 26
+        height: 52
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23acd095834662a0800000000000000
+      internalID: -6744629151000648916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Widesword_trail3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 448
+        width: 26
+        height: 23
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8989de0b04656c0800000000000000
+      internalID: -4155062477558081303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_trail1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 313
+        width: 37
+        height: 22
+      alignment: 9
+      pivot: {x: 0.2702703, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a9834dad6693620800000000000000
+      internalID: 2754345737163151891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_trail2
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 319
+        width: 30
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491c1f06cfca528c0800000000000000
+      internalID: -4024620492027477612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_trail3
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 327
+        width: 31
+        height: 8
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f465addd34662de00800000000000000
+      internalID: 1068028503311144527
       vertices: []
       indices: 
       edges: []

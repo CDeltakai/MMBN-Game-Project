@@ -2,40 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VFX_Longsword_slash : MonoBehaviour
+public class Generic_VFX_Slash_Controller : MonoBehaviour
 {
 
     BoxCollider2D boxCollider;
-    Longsword longsword;
+    Generic_Sword sword;
     PlayerMovement player;
+
     // Start is called before the first frame update
     
     void Awake() {
         player = FindObjectOfType<PlayerMovement>();
         boxCollider = GetComponent<BoxCollider2D>();
-        longsword = FindObjectOfType<Longsword>();
+        sword = FindObjectOfType<Generic_Sword>();
     }
     
     void Start()
     {
+        StartCoroutine(SelfDestruct());
 
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        print("Longsword hit collider");
+        print("Sword slash hit collider");
         if(other.tag == "Enemy")
         {
 
-            print("Longsword hit enemy");
+            print("Sword slash hit enemy");
             IBattleStageEntity script = other.GetComponent<IBattleStageEntity>();
-            script.hurtEntity((int)((longsword.BaseDamage + longsword.AdditionalDamage)*player.AttackMultiplier), false, true);
+            script.hurtEntity((int)((sword.BaseDamage + sword.AdditionalDamage)*player.AttackMultiplier), false, true);
         }
 
     }
 
     IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(0.375f);
+        yield return new WaitForSecondsRealtime(0.025f);
+        boxCollider.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
 
     }
 

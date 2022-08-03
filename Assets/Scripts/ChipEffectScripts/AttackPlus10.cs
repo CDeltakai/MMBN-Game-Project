@@ -17,7 +17,7 @@ public class AttackPlus10 : MonoBehaviour, IChip
     IChip[] otherchipsArray;
     IChip chipToBuff;
 
-    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default)
+    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
     {
 
         otherchipsArray = GetComponents<IChip>();

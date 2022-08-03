@@ -159,22 +159,11 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
 
     IEnumerator OnUseChipIEnumerator()
     {
-        // if (PlayerChipQueue.Count == 0)
-        // {Debug.Log("Chip Queue Empty");
-        //     return;}
 
         if (chipLoadManager.nextChipLoad.Count == 0)
         {Debug.Log("Chip Queue Empty");
             yield break;}
-        
 
-        //activeChip = PlayerChipQueue[0];
-        
-        //PlayerChipQueue.Remove(PlayerChipQueue[0]);
-
-
-
-        //playerChipAnimations.playAnimationID(activeChip.GetChipID(), activeChip.GetAnimationDuration());
         if(chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Passive ){
 
         playerChipAnimations.playAnimationEnum(chipLoadManager.nextChipLoad[0].GetChipEnum(), chipLoadManager.nextChipLoad[0].GetAnimationDuration());
@@ -214,7 +203,7 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
             isMoving = true;
             animationLength = myAnimator.GetCurrentAnimatorStateInfo(index).length;
             //Debug.Log("animation length = " + animationLength);
-            Invoke("cellMoveRight", animationLength);
+            Invoke("cellMoveRight", 0.104f);
             
         }
         if(Keyboard.current.aKey.wasPressedThisFrame)
@@ -226,7 +215,7 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
             isMoving = true;
             animationLength = myAnimator.GetCurrentAnimatorStateInfo(index).length;
             //Debug.Log("animation length = " + animationLength);
-            Invoke("cellMoveLeft", animationLength);
+            Invoke("cellMoveLeft", 0.104f);
             
         }
         if(Keyboard.current.wKey.wasPressedThisFrame)
@@ -339,7 +328,8 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
     public void hurtEntity(int damageAmount,
         bool lightAttack,
         bool hitStun,
-        bool pierceCloaking = false)
+        bool pierceCloaking = false,
+        EStatusEffects statusEffect = EStatusEffects.Default)
     {
         if(isInvincible){return;}
 

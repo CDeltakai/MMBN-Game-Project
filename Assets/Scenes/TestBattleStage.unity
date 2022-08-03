@@ -928,6 +928,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250205638}
   m_CullTransparentMesh: 1
+--- !u!1 &1370241242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1960042379803707420, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+  m_PrefabInstance: {fileID: 1960042378531070618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1370241249
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370241242}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1448304500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1802,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1702255416732104399, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: m_text
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1960042378351672794, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: m_Name
       value: ChampyPos
@@ -1826,7 +1856,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960042379803707409, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960042379803707410, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960042379803707414, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: currentHP
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1960042379803707420, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: m_TagString

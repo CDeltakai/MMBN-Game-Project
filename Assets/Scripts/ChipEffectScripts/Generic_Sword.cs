@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets; 
+using UnityEngine.AddressableAssets;
 
-public class Longsword : MonoBehaviour, IChip
+public class Generic_Sword : MonoBehaviour, IChip
 {
-    
     BattleStageHandler stageHandler;
     public int BaseDamage {get;set;} = 80;
 
@@ -36,9 +35,7 @@ public class Longsword : MonoBehaviour, IChip
 
     public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
     {
-        Addressables.InstantiateAsync("VFX_Longsword_pos", new Vector2(player.parentTransform.position.x + 1.6f, player.parentTransform.position.y), transform.rotation);
+        Addressables.InstantiateAsync(AddressableKey, new Vector2(player.parentTransform.position.x + 1.6f, player.parentTransform.position.y), transform.rotation);
         //Instantiate(vfx, initPosition, transform.rotation);
     }
-
-
 }

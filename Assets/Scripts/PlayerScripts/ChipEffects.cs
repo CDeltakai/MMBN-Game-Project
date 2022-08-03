@@ -68,7 +68,7 @@ public class ChipEffects : MonoBehaviour
     }
 
 
-    public void ApplyChipEffectV3()
+    public void ApplyChipEffectV3(string GivenAddressableKey = null)
     {
 
         chipList = chipLoadManager.nextChipLoad;
@@ -77,7 +77,7 @@ public class ChipEffects : MonoBehaviour
         {
             Type chipScript = Type.GetType(chipLoadManager.nextChipLoad[0].GetEffectScript());
             IChip chipEffect = gameObject.AddComponent(chipScript) as IChip;
-            chipEffect.Effect();
+            chipEffect.Effect(AddressableKey: GivenAddressableKey);
             StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipScript));
             //Destroy(GetComponent(chipScript));
             print("Used ApplyChipEffectV3, with chip count at 1");
@@ -97,9 +97,7 @@ public class ChipEffects : MonoBehaviour
         }
 
         chipObjectList = GetComponents<IChip>().ToList();
-        //print(chipObjectList.ToString());
 
-        //bool nonPassiveChipFound = false;
 
         foreach(IChip chip in chipObjectList)
         {
@@ -118,8 +116,12 @@ public class ChipEffects : MonoBehaviour
 
         }
 
-        chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect();
-        Destroy(GetComponent(chipObjectList.Find(x => x.ChipType != EChipTypes.Passive).GetType()));
+        //Finds the non-passive chip within the chipObjectList and attempts its effect
+        // 
+        chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect(AddressableKey: GivenAddressableKey);
+        StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipObjectList.Find(x => x.ChipType != EChipTypes.Passive).GetType()));
+
+        //Destroy(GetComponent(chipObjectList.Find(x => x.ChipType != EChipTypes.Passive).GetType()));
 
         
 

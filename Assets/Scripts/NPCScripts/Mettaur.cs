@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 {
@@ -188,14 +189,21 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
                                     GetCellCenterWorld(currentCellPos);
     }
 
-    public void hurtEntity(int damage, bool lightAttack, bool hitStun, bool pierceCloaking = false)
+    public void hurtEntity(int damage,
+        bool lightAttack,
+        bool hitStun,
+        bool pierceCloaking = false,
+        EStatusEffects statusEffect = EStatusEffects.Default)
     {
         if(damage >= currentHP)
         {
             currentHP = 0;
+            animator.speed = 0;
             healthText.text = currentHP.ToString();
-            Destroy(transform.parent.gameObject);
-            Destroy(gameObject);
+            healthText.enabled = false;
+            StartCoroutine(DestroyEntity());
+            //Destroy(transform.parent.gameObject);
+            //Destroy(gameObject);
             return;
 
         }
@@ -213,6 +221,15 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
         animator.speed = 1;
 
     }
+
+    IEnumerator DestroyEntity()
+    {
+        Addressables.InstantiateAsync("VFX_Destruction_Explosion", parentTransform.position, transform.rotation);
+        yield return new WaitForSeconds(0.320f);
+        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
+    }
+
 
     public bool checkValidTile(int x, int y, int z)
     {

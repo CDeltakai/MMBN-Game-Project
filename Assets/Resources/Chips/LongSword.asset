@@ -22,4 +22,4 @@ MonoBehaviour:
   ChipSize: 24
   AnimationDuration: 0.375
   ChipType: 1
-  EffectScript: Longsword
+  EffectScript: Generic_Sword

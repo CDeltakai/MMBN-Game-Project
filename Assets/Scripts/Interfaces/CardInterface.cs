@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IChip
 {
 
-    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default);
+    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null);
     public int AdditionalDamage{get;set;}
     public int BaseDamage{get;}
 

@@ -23,7 +23,7 @@ public interface IBattleStageEntity
     //light attack means that the attack will not trigger InvincibilityFrames
     //hitStun means the attack will interrupt animations. Some enemies cannot be hitStunned
     //pierceCloaking means the attack will be able to hit targets that are concealed
-    public void hurtEntity(int damage, bool lightAttack, bool hitStun, bool pierceCloaking = false);
+    public void hurtEntity(int damage, bool lightAttack, bool hitStun, bool pierceCloaking = false, EStatusEffects statusEffect = EStatusEffects.Default);
     public int getHealth();
     public void setHealth(int value);
     public IEnumerator setStatusEffect(EStatusEffects status);

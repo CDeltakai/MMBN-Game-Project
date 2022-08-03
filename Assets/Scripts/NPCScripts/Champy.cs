@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Animations;
 
 public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 {
@@ -67,7 +69,7 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
         return currentCellPos;
     }
 
-    public void hurtEntity(int damage, bool lightAttack, bool hitStun, bool pierceCloaking = false)
+    public void hurtEntity(int damage, bool lightAttack, bool hitStun, bool pierceCloaking = false, EStatusEffects statusEffect = EStatusEffects.Default)
     {
 
         int postMitigationDmg = (int)(damage * DefenseMultiplier);
@@ -75,10 +77,14 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
         if(postMitigationDmg >= currentHP)
         {
             currentHP = 0;
+            
             healthText.text = "0";
+            healthText.enabled = false;
             stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
-            Destroy(transform.parent.gameObject);
-            Destroy(gameObject);
+            animator.speed = 0;
+            StartCoroutine(DestroyEntity());
+            //Destroy(transform.parent.gameObject);
+            //Destroy(gameObject);
             return;
         }
 
@@ -130,6 +136,15 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
         animator.speed = 1;
 
     }
+
+    IEnumerator DestroyEntity()
+    {
+        Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, transform.rotation);
+        yield return new WaitForSeconds(0.320f);
+        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
+    }
+
 
     public bool checkValidTile(int x, int y, int z)
     {

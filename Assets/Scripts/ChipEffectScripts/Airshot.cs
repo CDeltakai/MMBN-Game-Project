@@ -14,7 +14,7 @@ public class Airshot : MonoBehaviour, IChip
 
     public EStatusEffects statusEffect {get;set;} = EStatusEffects.Default;
 
-    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default)
+    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
     {
 
         AdditionalDamage += AddDamage;
