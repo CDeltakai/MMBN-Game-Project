@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   ChipID: 1
-  Chip: 107
+  Chip: 108
   ChipName: Sword
   ChipDamage: 80
   ChipImage: {fileID: 154113881004409158, guid: 6f426017257e93d4190ce509171cd07e, type: 3}

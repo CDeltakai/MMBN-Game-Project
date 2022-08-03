@@ -16,6 +16,7 @@ public enum EMegamanAnimations
     Megaman_Sword = EChips.Sword,
     Megaman_Vulcan = EChips.Vulcan,
     Megaman_Airshot = EChips.AirShot,
+    Megaman_Longsword = EChips.LongSword,
     ShieldActivate = EChips.Reflect,
     ShieldDissipate = 5
 

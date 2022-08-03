@@ -11,11 +11,11 @@ public enum EChips
     Cannon,
     Invisible,
     LongSword,
+    WideSword,
     Reflect,
     Sword,
     Vulcan,
     WhiteCapsule,
-    WideSword
 
 
 

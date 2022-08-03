@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Reflect
   m_EditorClassIdentifier: 
   ChipID: 2
-  Chip: 106
+  Chip: 107
   ChipName: Reflect
   ChipDamage: 50
   ChipImage: {fileID: -4636090895220145685, guid: 6f426017257e93d4190ce509171cd07e, type: 3}

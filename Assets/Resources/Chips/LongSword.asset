@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChipID: 0
   Chip: 105
-  ChipName: 
-  ChipDamage: 0
+  ChipName: LongSword
+  ChipDamage: 80
   ChipImage: {fileID: 3702733806151467343, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
-  ChipDescription: 
-  ChipElement: 0
-  ChipSize: 0
-  AnimationDuration: 0
-  ChipType: 0
-  EffectScript: 
+  ChipDescription: Swing sword 2 tiles forward
+  ChipElement: 2
+  ChipSize: 24
+  AnimationDuration: 0.375
+  ChipType: 1
+  EffectScript: Longsword

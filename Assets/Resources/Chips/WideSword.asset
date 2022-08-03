@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WideSword
   m_EditorClassIdentifier: 
   ChipID: 0
-  Chip: 110
+  Chip: 106
   ChipName: 
   ChipDamage: 0
   ChipImage: {fileID: -4611406389132694472, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}

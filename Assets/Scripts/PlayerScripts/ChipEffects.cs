@@ -78,7 +78,8 @@ public class ChipEffects : MonoBehaviour
             Type chipScript = Type.GetType(chipLoadManager.nextChipLoad[0].GetEffectScript());
             IChip chipEffect = gameObject.AddComponent(chipScript) as IChip;
             chipEffect.Effect();
-            Destroy(GetComponent(chipScript));
+            StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipScript));
+            //Destroy(GetComponent(chipScript));
             print("Used ApplyChipEffectV3, with chip count at 1");
             return;
         }
@@ -126,7 +127,11 @@ public class ChipEffects : MonoBehaviour
 
     }
 
-
+    IEnumerator removeChipFromLoad(float duration, Type chipToDestroy)
+    {
+        yield return new WaitForSecondsRealtime(duration);
+        Destroy(GetComponent(chipToDestroy));
+    }
 
 
     object Reflect(object arg)

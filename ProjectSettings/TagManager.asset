@@ -9,6 +9,7 @@ TagManager:
   - Player_Ally
   - Enemy
   - Obstacle
+  - ChipVFX
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,8 @@ using UnityEngine.AddressableAssets;
 
 public class Longsword : MonoBehaviour, IChip
 {
-    public Transform firePoint;
+    
+    public AssetReference reference;
     BattleStageHandler stageHandler;
     public int BaseDamage {get;set;} = 80;
 
@@ -14,25 +15,31 @@ public class Longsword : MonoBehaviour, IChip
     public EChipTypes ChipType => EChipTypes.Active;
     public EStatusEffects statusEffect {get;set;} = EStatusEffects.Default;
     public EChipElements chipElement => EChipElements.Blade;
+    //[SerializeField] GameObject vfx; 
 
     PlayerMovement player;
-    public Vector3 initPosition;
+    public Vector2 initPosition;
+
+
+    void Awake() {
+        player = GetComponent<PlayerMovement>();
+
+
+
+    }
 
     void Start()
     {
-        player = FindObjectOfType<PlayerMovement>();
-        stageHandler = FindObjectOfType<BattleStageHandler>();
-        initPosition.Set(player.transform.localPosition.x + 1.6f, player.transform.localPosition.y, 0);
-        firePoint.localPosition = initPosition;
-
+        stageHandler = FindObjectOfType<BattleStageHandler>();        
+        
     }
 
 
     public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default)
     {
-
-        Addressables.InstantiateAsync("VFX_Longsword_pos", firePoint);
+        Addressables.InstantiateAsync("VFX_Longsword_pos", new Vector2(player.parentTransform.position.x + 1.6f, player.parentTransform.position.y), transform.rotation);
+        //Instantiate(vfx, initPosition, transform.rotation);
     }
 
-    
+
 }

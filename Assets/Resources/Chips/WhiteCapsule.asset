@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WhiteCapsule
   m_EditorClassIdentifier: 
   ChipID: 6
-  Chip: 109
+  Chip: 110
   ChipName: White Capsule
   ChipDamage: 0
   ChipImage: {fileID: -1821607153479355049, guid: 6f426017257e93d4190ce509171cd07e, type: 3}

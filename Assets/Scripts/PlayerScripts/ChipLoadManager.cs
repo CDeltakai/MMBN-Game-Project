@@ -5,8 +5,8 @@ using UnityEngine;
 public class ChipLoadManager : MonoBehaviour
 {
 
-[SerializeField] public List<ChipSO> chipQueue = new List<ChipSO>();
 [SerializeField] public List<ChipSO> nextChipLoad = new List<ChipSO>();
+[SerializeField] public List<ChipSO> chipQueue = new List<ChipSO>();
 List<int> chipsToRemoveIndexes = new List<int>();
 [SerializeField] public float damageAmp = 0;
 [SerializeField] public int damageAdd = 0;
