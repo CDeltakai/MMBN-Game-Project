@@ -1,3 +1,4 @@
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -6,6 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
+using UnityEditor.UIElements;
 
 public class BattleStageHandler : MonoBehaviour
 {
@@ -20,7 +22,8 @@ public class BattleStageHandler : MonoBehaviour
     [SerializeField] Tile defaultTile;
     [SerializeField] public Tile PlayerTile;
     [SerializeField] public Tile NPCTile;
-
+    [SerializeField] public List<TilesSO> PlayerTiles;
+    [SerializeField] public List<TilesSO> NPCTiles;
 
 
 

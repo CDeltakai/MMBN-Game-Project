@@ -198,9 +198,10 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
         if(damage >= currentHP)
         {
             currentHP = 0;
-            animator.speed = 0;
             healthText.text = currentHP.ToString();
+            stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
             healthText.enabled = false;
+            animator.speed = 0;
             StartCoroutine(DestroyEntity());
             //Destroy(transform.parent.gameObject);
             //Destroy(gameObject);
@@ -224,7 +225,10 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
     IEnumerator DestroyEntity()
     {
-        Addressables.InstantiateAsync("VFX_Destruction_Explosion", parentTransform.position, transform.rotation);
+        yield return new WaitForSeconds(0.0005f);
+
+        var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", parentTransform.position, transform.rotation, transform.parent.transform);
+        
         yield return new WaitForSeconds(0.320f);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);

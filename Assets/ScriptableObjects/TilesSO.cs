@@ -8,9 +8,35 @@ using UnityEngine.Tilemaps;
 public class TilesSO : ScriptableObject
 {
 
-[SerializeField] string TileName;
+[SerializeField] string tileName;
+[SerializeField] ETiles tileEnum;
 [SerializeField] Tile tile;
-[SerializeField] String TileScriptName;
+[SerializeField] string tileScriptName;
+
+
+
+public Tile GetTile()
+{
+    return tile;
+}
+public ETiles GetTileEnum()
+{
+    return tileEnum;
+}
+public string GetName()
+{
+    return tileName;
+}
+
+public string getTileScriptName()
+{
+    return tileScriptName;
+}
+public Type getTileScript()
+{
+    return Type.GetType(tileScriptName);
+}
+
 
 
 }

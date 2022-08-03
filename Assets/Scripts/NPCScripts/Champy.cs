@@ -69,7 +69,11 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
         return currentCellPos;
     }
 
-    public void hurtEntity(int damage, bool lightAttack, bool hitStun, bool pierceCloaking = false, EStatusEffects statusEffect = EStatusEffects.Default)
+    public void hurtEntity(int damage,
+                           bool lightAttack,
+                           bool hitStun,
+                           bool pierceCloaking = false,
+                           EStatusEffects statusEffect = EStatusEffects.Default)
     {
 
         int postMitigationDmg = (int)(damage * DefenseMultiplier);
@@ -139,7 +143,9 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
     IEnumerator DestroyEntity()
     {
-        Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, transform.rotation);
+        var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
+                                                transform.rotation, transform.parent.transform);
+
         yield return new WaitForSeconds(0.320f);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
