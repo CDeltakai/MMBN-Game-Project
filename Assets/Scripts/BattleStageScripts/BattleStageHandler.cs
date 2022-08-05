@@ -73,8 +73,10 @@ public class BattleStageHandler : MonoBehaviour
         
         bounds = stageTilemap.cellBounds;
         
+        
 
         Debug.Log("Bounds coordinates: " +bounds.ToString());
+        getCustTile(new Vector3Int(0, 0, 0));
         //battleStageTilemap.SetTile(new Vector3Int(0, 0, 0), PlayerTile);
 
         //Vector3 testPosition = battleStageTilemap.GetCellCenterWorld(new Vector3Int(4,1,0));
@@ -97,6 +99,7 @@ public class BattleStageHandler : MonoBehaviour
             var localPos = new Vector3Int(pos.x, pos.y, pos.z);
 
             if(!stageTilemap.HasTile(localPos)) {continue;}
+            
 
             var tile = new StageTile
             {
@@ -113,7 +116,24 @@ public class BattleStageHandler : MonoBehaviour
 
     }
 
-    
+    public CustomTile getCustTile(Vector3Int position)
+    {
+        var custTile = stageTilemap.GetTile(position);
+        if (custTile is CustomTile)
+        {
+            var selectedTile = (CustomTile) custTile;
+            print("Tile at " + position.ToString() + "Is a custom tile, name:" + selectedTile.tileSO.GetName());
+            return selectedTile;
+
+        }else
+        {
+            print("Tile at "+ position.ToString() + "is not a CustomTile, retuned null");
+        }
+
+        return null;
+
+
+    }
     public void addTile(StageTile tile, Vector3 position)
     {
         stageTiles.Add(position, tile);

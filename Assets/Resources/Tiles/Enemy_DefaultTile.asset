@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98bd9b5ab8fe1714baaa668f8d40f5a0, type: 3}
   m_Name: Enemy_DefaultTile
   m_EditorClassIdentifier: 
-  TileName: Enemy_DefaultTile
+  tileName: Enemy_DefaultTile
+  tileEnum: 1
+  tileTeam: 1
   tile: {fileID: 11400000, guid: 3f5f6671e5c8fcc48ac76dcc812c3225, type: 2}
-  TileScriptName: 
+  tileScriptName: 

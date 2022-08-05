@@ -10,8 +10,11 @@ public class TilesSO : ScriptableObject
 
 [SerializeField] string tileName;
 [SerializeField] ETiles tileEnum;
+[SerializeField] ETileTeam tileTeam;
 [SerializeField] Tile tile;
+[SerializeField] Animation tileAnimation;
 [SerializeField] string tileScriptName;
+[SerializeField] bool isPassable = true;
 
 
 
@@ -26,6 +29,11 @@ public ETiles GetTileEnum()
 public string GetName()
 {
     return tileName;
+}
+
+public ETileTeam GetTileTeam()
+{
+    return tileTeam;
 }
 
 public string getTileScriptName()

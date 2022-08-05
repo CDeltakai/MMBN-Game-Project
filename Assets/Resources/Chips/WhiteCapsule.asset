@@ -22,4 +22,4 @@ MonoBehaviour:
   ChipSize: 32
   AnimationDuration: 0
   ChipType: 0
-  EffectScript: 
+  EffectScript: WhiteCapsule

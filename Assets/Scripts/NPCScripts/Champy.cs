@@ -143,6 +143,8 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
     IEnumerator DestroyEntity()
     {
+        yield return new WaitForSeconds(0.0005f);
+
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
                                                 transform.rotation, transform.parent.transform);
 
