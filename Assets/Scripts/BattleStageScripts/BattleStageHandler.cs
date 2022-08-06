@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 using UnityEditor.UIElements;
+using Pathfinding.Util;
 
 public class BattleStageHandler : MonoBehaviour
 {
@@ -22,8 +23,8 @@ public class BattleStageHandler : MonoBehaviour
     [SerializeField] Tile defaultTile;
     [SerializeField] public Tile PlayerTile;
     [SerializeField] public Tile NPCTile;
-    [SerializeField] public List<TilesSO> PlayerTiles;
-    [SerializeField] public List<TilesSO> NPCTiles;
+    [SerializeField] public List<CustomTile> PlayerTiles;
+    [SerializeField] public List<CustomTile> NPCTiles;
 
 
 
@@ -40,8 +41,7 @@ public class BattleStageHandler : MonoBehaviour
     Vector3Int playerPosition;
     Vector3Int worldCellBounds;
 
-    TileBase[] tileArray;
-
+    CustomTile[] tileLoad;
     public Dictionary<Vector3, StageTile> stageTiles;
  
 
@@ -57,7 +57,9 @@ public class BattleStageHandler : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        PlayerTiles.Clear();
+        NPCTiles.Clear();
+        LoadTiles();
         GetStageTiles();
 
 
@@ -85,6 +87,27 @@ public class BattleStageHandler : MonoBehaviour
 
         
         
+    }
+
+    //Should load CustomTiles from the Resources/Tiles folder and place the tiles into
+    //corresponding NPCTiles/PlayerTiles list
+    public void LoadTiles()
+    {
+        tileLoad = Resources.LoadAll<CustomTile>("Tiles");
+
+        foreach(var tile in tileLoad)
+        {
+            if(tile.GetTileTeam() == ETileTeam.Player)
+            {
+                PlayerTiles.Add(tile);
+            }else
+            {
+                NPCTiles.Add(tile);
+            }
+
+        }
+
+
     }
 
 

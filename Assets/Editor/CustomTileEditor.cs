@@ -22,7 +22,7 @@ public class CustomTileEditor : Editor
     public override void OnInspectorGUI() 
     {
         base.OnInspectorGUI();
-        if(customTile.sprite == null) return;
+        if(customTile.GetTile().sprite == null) return;
 
         
 

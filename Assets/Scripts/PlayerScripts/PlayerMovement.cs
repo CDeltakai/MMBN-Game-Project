@@ -247,6 +247,10 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
     public bool checkValidTile(int xDirection, int yDirection)
     {
 
+           //     ||
+           // !stageHandler.stageTilemap.GetTile<CustomTile>(coordToCheck).isPassable
+
+
         Vector3Int coordToCheck = new Vector3Int(currentCellPos.x + xDirection, currentCellPos.y + yDirection, currentCellPos.z);
 
             if(stageHandler.stageTilemap.GetTile
@@ -257,6 +261,8 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
                 ||
             stageHandler.stageTiles
             [stageHandler.stageTilemap.CellToWorld(coordToCheck)].isOccupied
+                ||
+            !stageHandler.stageTilemap.GetTile<CustomTile>(coordToCheck).isPassable
             )
             {
                 

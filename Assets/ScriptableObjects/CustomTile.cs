@@ -19,7 +19,7 @@ public class CustomTile : Tile
 [SerializeField] Tile tile;
 [SerializeField] Animation tileAnimation;
 [SerializeField] string tileScriptName;
-[SerializeField] bool isPassable = true;
+[SerializeField] public bool isPassable = true;
 [SerializeField] public TilesSO tileSO;
 
 

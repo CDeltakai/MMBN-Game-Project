@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98bd9b5ab8fe1714baaa668f8d40f5a0, type: 3}
-  m_Name: Player_DefaultTile
+  m_Name: (Obsolete)Enemy_DefaultTile
   m_EditorClassIdentifier: 
-  tileName: Player_DefaultTile
-  tileEnum: 0
-  tileTeam: 0
-  tile: {fileID: 11400000, guid: 55436f029c4aa7946beb85bccdcafdd1, type: 2}
+  tileName: Enemy_DefaultTile
+  tileEnum: 1
+  tileTeam: 1
+  tile: {fileID: 11400000, guid: 3f5f6671e5c8fcc48ac76dcc812c3225, type: 2}
   tileScriptName: 
