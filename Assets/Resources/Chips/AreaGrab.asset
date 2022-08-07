@@ -20,6 +20,6 @@ MonoBehaviour:
   ChipDescription: Steals 4 tiles in front
   ChipElement: 0
   ChipSize: 8
-  AnimationDuration: 0
+  AnimationDuration: 0.05
   ChipType: 3
   EffectScript: AreaGrab

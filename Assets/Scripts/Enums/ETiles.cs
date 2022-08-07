@@ -22,6 +22,10 @@ public enum ETiles
     Enemy_IceTile,
     Enemy_GrassTile,
     
+    Default_Tile,
+    Empty_Tile,
+    Cracked_Tile,
+    Cracked_Empty_Tile,
 
 
 }

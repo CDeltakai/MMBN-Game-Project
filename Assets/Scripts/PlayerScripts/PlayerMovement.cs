@@ -61,8 +61,9 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
 
     Color invisible;
     Color opaque;
-    Color yellow;
 
+    public Shader shaderGUItext;
+    public Shader shaderSpritesDefault;
 
     void Awake() {
         QualitySettings.vSyncCount = 0;
@@ -91,10 +92,11 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
 
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        shaderGUItext = Shader.Find("GUI/Text Shader");
+        shaderSpritesDefault = Shader.Find("Sprites/Default");
 
         invisible = spriteRenderer.color;
         opaque = spriteRenderer.color;
-
         invisible.a = 0;
 
         opaque.a = 1;
@@ -105,6 +107,18 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
         //Vector3 testPosition = battleStageHandler.battleStageTilemap.GetCellCenterWorld(new Vector3Int(4,1,0));
         
     }
+
+    void setSolidColor(Color color)
+    {
+        spriteRenderer.material.shader = shaderGUItext;
+        spriteRenderer.color = color;
+    }
+    void setNormalSprite()
+    {
+        spriteRenderer.material.shader = shaderSpritesDefault;
+        spriteRenderer.color = Color.white;
+    }
+
 
     void Shoot()
     {
@@ -152,7 +166,7 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
 
 
     void OnUseChip()
-    {   
+    {
         if(isUsingChip){return;}
         StartCoroutine(OnUseChipIEnumerator());
     }
@@ -164,11 +178,15 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
         {Debug.Log("Chip Queue Empty");
             yield break;}
 
-        if(chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Passive ){
+        if(chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Special ){
 
         playerChipAnimations.playAnimationEnum(chipLoadManager.nextChipLoad[0].GetChipEnum(), chipLoadManager.nextChipLoad[0].GetAnimationDuration());
         isUsingChip = true;
+        } 
 
+        if(chipLoadManager.nextChipLoad[0].GetChipType() == EChipTypes.Special)
+        {
+            chipEffect.ApplyChipEffectV3();
         }
 
         yield return new WaitForSecondsRealtime(chipLoadManager.nextChipLoad[0].GetAnimationDuration());
@@ -263,6 +281,8 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
             [stageHandler.stageTilemap.CellToWorld(coordToCheck)].isOccupied
                 ||
             !stageHandler.stageTilemap.GetTile<CustomTile>(coordToCheck).isPassable
+            ||
+            stageHandler.getCustTile(coordToCheck).GetTileTeam() == ETileTeam.Enemy
             )
             {
                 

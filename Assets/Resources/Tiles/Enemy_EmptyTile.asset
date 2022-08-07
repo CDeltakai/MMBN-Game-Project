@@ -37,8 +37,10 @@ MonoBehaviour:
   tileName: Enemy_EmptyTile
   tileEnum: 9
   tileTeam: 1
-  tile: {fileID: 11400000, guid: 2ac88759f7cb27e48b3aa810686f05b0, type: 2}
+  CurrentTile: {fileID: 11400000, guid: 2ac88759f7cb27e48b3aa810686f05b0, type: 2}
   tileAnimation: {fileID: 0}
   tileScriptName: 
   isPassable: 1
   tileSO: {fileID: 0}
+  PlayerTile: {fileID: 0}
+  EnemyTile: {fileID: 0}

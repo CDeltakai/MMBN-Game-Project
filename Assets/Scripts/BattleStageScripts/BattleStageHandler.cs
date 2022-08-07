@@ -32,18 +32,19 @@ public class BattleStageHandler : MonoBehaviour
 
     BattleStageNPCInventory NPCInventory;
     TilemapCollider2D tilemapCollider2D;
-    Grid grid;
+    public Grid grid;
 
     BoundsInt bounds;
-    BoundsInt playerBounds;
-    BoundsInt NPCBounds;
 
     Vector3Int playerPosition;
     Vector3Int worldCellBounds;
 
     CustomTile[] tileLoad;
     public Dictionary<Vector3, StageTile> stageTiles;
- 
+
+    //int value is the row
+    public Dictionary<Vector3Int, int> playerBoundsDict = new Dictionary<Vector3Int, int>();
+    public List<Vector3Int> playerBoundsList = new List<Vector3Int>();
 
     
 
@@ -79,6 +80,7 @@ public class BattleStageHandler : MonoBehaviour
 
         Debug.Log("Bounds coordinates: " +bounds.ToString());
         getCustTile(new Vector3Int(0, 0, 0));
+        CalculatePlayerBounds();
         //battleStageTilemap.SetTile(new Vector3Int(0, 0, 0), PlayerTile);
 
         //Vector3 testPosition = battleStageTilemap.GetCellCenterWorld(new Vector3Int(4,1,0));
@@ -88,6 +90,51 @@ public class BattleStageHandler : MonoBehaviour
         
         
     }
+
+    public void CalculatePlayerBounds()
+    {
+        playerBoundsDict.Clear();
+        playerBoundsList.Clear();
+        print("Attempting to calculate player bounds");
+        Vector3Int coordToCheck = new Vector3Int(1,0,0);
+
+        for(int row = 0; row < 4; row++)
+        {
+            coordToCheck.Set(1, row, 0);
+
+            while(   stageTilemap.GetTile<CustomTile>(coordToCheck).GetTileTeam() == ETileTeam.Player )
+            {
+                coordToCheck.Set(coordToCheck.x + 2, row, 0);
+
+                if(stageTilemap.GetTile<CustomTile>(coordToCheck).GetTileTeam() == ETileTeam.Enemy)
+                {
+                    coordToCheck.Set(coordToCheck.x - 1, row, 0);
+                    if(stageTilemap.GetTile<CustomTile>(coordToCheck).GetTileTeam() == ETileTeam.Player)
+                    {
+                        playerBoundsDict.Add(new Vector3Int(coordToCheck.x, row, 0), row);
+                        playerBoundsList.Add(new Vector3Int(coordToCheck.x, row, 0));
+                        //print("Added player bounds at: " + coordToCheck.ToString() + "at row: " +row);
+                        break;
+                    }else
+                    {
+                        playerBoundsDict.Add(new Vector3Int(coordToCheck.x - 1, row, 0), row);
+                        playerBoundsList.Add(new Vector3Int(coordToCheck.x - 1, row, 0));
+
+                        //Vector3Int stringVector = new Vector3Int(coordToCheck.x - 1, row, 0);
+                        //print("Added player bounds at: " + stringVector.ToString() + "at row: " +row);
+
+                        break;
+                    }
+
+                }
+
+            }
+
+            
+        }
+
+    }
+
 
     //Should load CustomTiles from the Resources/Tiles folder and place the tiles into
     //corresponding NPCTiles/PlayerTiles list
@@ -145,7 +192,7 @@ public class BattleStageHandler : MonoBehaviour
         if (custTile is CustomTile)
         {
             var selectedTile = (CustomTile) custTile;
-            print("Tile at " + position.ToString() + "Is a custom tile, name:" + selectedTile.tileSO.GetName());
+            //print("Tile at " + position.ToString() + "Is a custom tile, name:" + selectedTile.tileSO.GetName());
             return selectedTile;
 
         }else

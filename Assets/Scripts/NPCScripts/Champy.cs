@@ -13,6 +13,7 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     public int ID => 1;
     BattleStageHandler stageHandler;
     Animator animator;
+    SpriteRenderer spriteRenderer;
 
 
     public bool stunnable => false;
@@ -28,6 +29,9 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     [SerializeField] public int currentHP = 60;
     [SerializeField] TextMeshProUGUI healthText;
 
+    public Shader shaderGUItext;
+    public Shader shaderSpritesDefault;
+
     public bool hasMoved = false;
 
 
@@ -41,6 +45,7 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     void Start()
     {
         stageHandler = FindObjectOfType<BattleStageHandler>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         healthText.text = currentHP.ToString();
         animator = GetComponent<Animator>();
         //stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
@@ -60,6 +65,17 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
         worldTransform = transform.parent.gameObject.GetComponent<Transform>();
         //print(worldPosition.localPosition.ToString());
 
+    }
+
+    void setSolidColor(Color color)
+    {
+        spriteRenderer.material.shader = shaderGUItext;
+        spriteRenderer.color = color;
+    }
+    void setNormalSprite()
+    {
+        spriteRenderer.material.shader = shaderSpritesDefault;
+        spriteRenderer.color = Color.white;
     }
 
     public Vector3Int getCellPosition()

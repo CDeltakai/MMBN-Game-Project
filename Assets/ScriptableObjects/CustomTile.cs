@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.InputSystem.Interactions;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -16,16 +17,21 @@ public class CustomTile : Tile
 [SerializeField] string tileName;
 [SerializeField] ETiles tileEnum;
 [SerializeField] ETileTeam tileTeam;
-[SerializeField] Tile tile;
+
+//DO NOT CHANGE THE NAME OF THE CurrentTile OR ELSE THE WHOLE TILEMAP WILL BREAK!!!
+[SerializeField] Tile CurrentTile;
 [SerializeField] Animation tileAnimation;
 [SerializeField] string tileScriptName;
 [SerializeField] public bool isPassable = true;
 [SerializeField] public TilesSO tileSO;
 
+[SerializeField] Tile PlayerTile;
+[SerializeField] Tile EnemyTile;
+
 
 public Tile GetTile()
 {
-    return tile;
+    return CurrentTile;
 }
 public ETiles GetTileEnum()
 {
@@ -51,6 +57,32 @@ public Type getTileScript()
 
 }
 
+public Tile getPlayerTile()
+{
+    return PlayerTile;
+}
+public Tile getEnemyTile()
+{
+    return EnemyTile;
+}
+
+public void switchToTileTeam(ETileTeam team)
+{   
+
+    if(getPlayerTile() == null || getEnemyTile() == null)
+    {
+        Debug.Log("Error: player or enemy tile variant not set");
+        return;
+    }
+
+    if(team == ETileTeam.Player)
+    {
+        CurrentTile = getPlayerTile();
+    }else
+    {
+        CurrentTile = getEnemyTile();
+    }
+}
 
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
     {

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -43,7 +44,6 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
     void Start()
     {
-        //vulnerable = false;
         currentCellPos.z = 0;
         mettaurCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
@@ -52,8 +52,14 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
         stageHandler = FindObjectOfType<BattleStageHandler>();
         
 
-        currentCellPos.x = (int)(parentTransform.localPosition.x/1.6f);
-        currentCellPos.y = (int)parentTransform.localPosition.y;
+        //Due to floating point number imprecision of transform, I have to add a 0.01 to the x value otherwise the int cast
+        //will return the wrong number in some cases.
+        
+        //currentCellPos.x = (int)((transform.parent.position.x+0.01f)/1.6f);
+        currentCellPos.x = (int)(Math.Round((transform.parent.position.x/1.6f), MidpointRounding.AwayFromZero));
+
+
+        currentCellPos.y = (int)transform.parent.position.y;
 
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
         
@@ -90,6 +96,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
     void Update()
     {
+
         //Debug.Log("Mettaur Current CellPos: " + currentCellPos.ToString());
 
         //time += Time.deltaTime;
@@ -103,6 +110,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     {
         Instantiate(mettaurProjectile, new Vector2 (parentTransform.position.x - 1.6f, parentTransform.position.y), transform.rotation);
     }
+
 
 
 
@@ -135,6 +143,9 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     }
     public void cellMoveUp()
     {
+
+
+
         if(!checkValidTile(currentCellPos.x, currentCellPos.y + 1, currentCellPos.z))
         {return;}
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
