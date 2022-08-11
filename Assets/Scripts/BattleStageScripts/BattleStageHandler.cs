@@ -74,6 +74,7 @@ public class BattleStageHandler : MonoBehaviour
         grid = GetComponentInParent<Grid>();
         player = FindObjectOfType<PlayerMovement>();
         
+        
         bounds = stageTilemap.cellBounds;
         
         
@@ -81,6 +82,8 @@ public class BattleStageHandler : MonoBehaviour
         Debug.Log("Bounds coordinates: " +bounds.ToString());
         getCustTile(new Vector3Int(0, 0, 0));
         CalculatePlayerBounds();
+
+        
         //battleStageTilemap.SetTile(new Vector3Int(0, 0, 0), PlayerTile);
 
         //Vector3 testPosition = battleStageTilemap.GetCellCenterWorld(new Vector3Int(4,1,0));
