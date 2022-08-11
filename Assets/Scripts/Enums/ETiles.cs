@@ -26,6 +26,11 @@ public enum ETiles
     Empty_Tile,
     Cracked_Tile,
     Cracked_Empty_Tile,
+    Poison_Tile,
+    Sanctuary_Tile,
+    Grass_Tile,
+    Ice_Tile,
+    Water_Tile,
 
 
 }
