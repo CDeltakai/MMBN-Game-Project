@@ -37,6 +37,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     public Transform worldTransform {get;set;}
     public float AttackMultiplier {get;set;} = 1;
     public float DefenseMultiplier {get;set;}= 1;
+    public bool isGrounded { get; set; } = true;
 
     public Vector3Int currentCellPos;
 

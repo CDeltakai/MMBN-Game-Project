@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f9f3d7cdc7cedd4eb03f1642d5edef4, type: 3}
+  m_Script: {fileID: 11500000, guid: a2f05bf6db0d07f40afd426692966510, type: 3}
   m_Name: Enemy_DefaultTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1556477092007218985, guid: 52280c823d2c9a445919a36b3fd62c6c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -32,15 +32,12 @@ MonoBehaviour:
     e32: 0
     e33: 1
   m_InstancedGameObject: {fileID: 0}
-  m_Flags: 0
+  m_Flags: 1
   m_ColliderType: 1
-  tileName: Enemy_DefaultTile
-  tileEnum: 1
+  tileName: Enemy_Default_BaseTile
+  tileEnum: 14
   tileTeam: 1
   CurrentTile: {fileID: 11400000, guid: 3f5f6671e5c8fcc48ac76dcc812c3225, type: 2}
   tileAnimation: {fileID: 0}
   tileScriptName: 
   isPassable: 1
-  tileSO: {fileID: 11400000, guid: 80e18014e0d5b5542b25f12516cc5a67, type: 2}
-  PlayerTile: {fileID: 0}
-  EnemyTile: {fileID: 0}

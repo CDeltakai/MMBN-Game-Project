@@ -23,6 +23,7 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     public Transform worldTransform {get; set;}
     [SerializeField]public float AttackMultiplier {get;set;} = 1;
     [SerializeField]public float DefenseMultiplier {get;set;} = 1;
+    public bool isGrounded {get; set;} = false;
 
     public Vector3Int currentCellPos;
 

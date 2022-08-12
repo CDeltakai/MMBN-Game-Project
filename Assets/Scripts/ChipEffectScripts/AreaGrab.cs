@@ -24,7 +24,8 @@ public class AreaGrab : MonoBehaviour, IChip
     {
         stageHandler = FindObjectOfType<BattleStageHandler>();
         stageTilemap = stageHandler.stageTilemap;
-        //tile = stageHandler.PlayerTiles.Find(tile => tile.GetTileEnum() == ETiles.Player_DefaultTile);
+        //tile = stageHandler.PlayerTiles.Find(tile => tile.GetTileEnum() == ETiles.Player_DefaultTile &&
+        //                                        tile.GetTileTeam() == ETileTeam.Player);
     }
 
 
@@ -38,10 +39,11 @@ public class AreaGrab : MonoBehaviour, IChip
         {
             Vector3Int localPos = new Vector3Int(pos.x + 1, pos.y, 0);
             tile = stageTilemap.GetTile<CustomTile>(localPos);
-            tile.switchToTileTeam(ETileTeam.Player);
+            
 
 
-            stageTilemap.SetTile(new Vector3Int(pos.x + 1, pos.y, 0) , tile);
+            stageTilemap.SetTile(new Vector3Int(pos.x + 1, pos.y, 0) , tile.getCustomPlayerTile());
+            
         }
 
     }

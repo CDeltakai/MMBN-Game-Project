@@ -26,7 +26,7 @@ public class BattleStageHandler : MonoBehaviour
     [SerializeField] public List<CustomTile> PlayerTiles;
     [SerializeField] public List<CustomTile> NPCTiles;
 
-
+    TileManager tileManager = new TileManager();
 
     PlayerMovement player;
 
@@ -45,7 +45,6 @@ public class BattleStageHandler : MonoBehaviour
     //int value is the row
     public Dictionary<Vector3Int, int> playerBoundsDict = new Dictionary<Vector3Int, int>();
     public List<Vector3Int> playerBoundsList = new List<Vector3Int>();
-
     
 
     private void Awake()
@@ -178,7 +177,7 @@ public class BattleStageHandler : MonoBehaviour
             {
                 localCoords = localPos,
                 worldPosition = stageTilemap.CellToWorld(localPos),
-                tileBase = stageTilemap.GetTile(localPos),
+                custTile = stageTilemap.GetTile<CustomTile>(localPos),
                 TilemapMember = stageTilemap,
                 tileName = localPos.x + ", " + localPos.y
             };
@@ -222,9 +221,12 @@ public class BattleStageHandler : MonoBehaviour
 
     }
 
-    public void setOccupied(StageTile tile, bool condition)
+    public void changeInternalTile(int x, int y, ETiles tileType, ETileTeam tileTeam)
     {
-        tile.isOccupied = condition;
+        Vector3Int cell = new Vector3Int(x, y, 0);
+        stageTiles[stageTilemap.CellToWorld(cell)].custTile =
+        PlayerTiles.Find(tile => tile.GetTileEnum() == tileType &&
+                                                tile.GetTileTeam() == tileTeam);
     }
 
 

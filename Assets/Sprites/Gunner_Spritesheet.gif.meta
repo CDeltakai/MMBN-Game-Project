@@ -4,43 +4,43 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2352396172207114864
-    second: Gunner_Spritesheet_0
+    second: Gunner_Search1
   - first:
       213: -1687535614227793083
-    second: Gunner_Spritesheet_1
+    second: Gunner_Search2
   - first:
       213: 5417259171099516720
-    second: Gunner_Spritesheet_2
+    second: Gunner_Target1
   - first:
       213: 7731099482118802521
-    second: Gunner_Spritesheet_3
+    second: Gunner_Target2
   - first:
       213: -2324523987285302655
-    second: Gunner_Spritesheet_4
+    second: Gunner_Shoot1
   - first:
       213: 852971648950143629
-    second: Gunner_Spritesheet_5
+    second: Gunner_Shoot2
   - first:
       213: 3169750377946940153
-    second: Gunner_Spritesheet_6
+    second: Gunner_Shoot3
   - first:
       213: 6697491086123820857
-    second: Gunner_Spritesheet_7
+    second: Gunner_Shoot4
   - first:
       213: 2205438535268666524
-    second: Gunner_Spritesheet_8
+    second: Gunner_Shoot5
   - first:
       213: 3373735427953470746
-    second: Gunner_Spritesheet_9
+    second: Gunner_Shoot6
   - first:
       213: 5391446963954949678
     second: Gunner_Spritesheet_10
   - first:
       213: 3301981084509779788
-    second: Gunner_Spritesheet_11
+    second: Gunner_Shoot7
   - first:
       213: -5282810157665785566
-    second: Gunner_Spritesheet_12
+    second: Gunner_Shoot8
   - first:
       213: 3207484579522887609
     second: Gunner_Spritesheet_13
@@ -67,16 +67,16 @@ TextureImporter:
     second: Gunner_Spritesheet_20
   - first:
       213: -1164655841609465585
-    second: Gunner_Spritesheet_21
+    second: Reticle_Search1
   - first:
       213: 6070739431403846351
-    second: Gunner_Spritesheet_22
+    second: Reticle_Search2
   - first:
       213: 4245067520714442276
-    second: Gunner_Spritesheet_23
+    second: Reticle_Found1
   - first:
       213: 3172840498209105845
-    second: Gunner_Spritesheet_24
+    second: Reticle_Found2
   - first:
       213: -6934617261270267061
     second: Gunner_Spritesheet_25
@@ -136,7 +136,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -177,19 +177,55 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gunner_Spritesheet_0
+      name: Gunner_Search1
       rect:
         serializedVersion: 2
-        x: 34
+        x: 35
         y: 252
-        width: 50
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 49
+        height: 54
+      alignment: 9
+      pivot: {x: 0.8163265, y: 0.018518519}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,15 +238,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_1
+      name: Gunner_Search2
       rect:
         serializedVersion: 2
         x: 86
         y: 252
         width: 50
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 53
+      alignment: 9
+      pivot: {x: 0.82, y: 0.018867925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,15 +259,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_2
+      name: Gunner_Target1
       rect:
         serializedVersion: 2
         x: 138
         y: 252
         width: 50
         height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.82, y: 0.018181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,15 +280,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_3
+      name: Gunner_Target2
       rect:
         serializedVersion: 2
         x: 190
         y: 252
         width: 50
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 53
+      alignment: 9
+      pivot: {x: 0.82, y: 0.018867925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,15 +301,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_4
+      name: Gunner_Shoot1
       rect:
         serializedVersion: 2
         x: 7
         y: 196
         width: 50
         height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.82, y: 0.018181818}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,15 +322,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_5
+      name: Gunner_Shoot2
       rect:
         serializedVersion: 2
         x: 59
         y: 196
         width: 69
         height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.86956525, y: 0.018867925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,15 +343,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_6
+      name: Gunner_Shoot3
       rect:
         serializedVersion: 2
         x: 130
         y: 196
         width: 72
         height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.875, y: 0.018867925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,15 +364,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_7
+      name: Gunner_Shoot4
       rect:
         serializedVersion: 2
         x: 204
         y: 196
         width: 63
         height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.8571429, y: 0.018867925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,15 +385,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_8
+      name: Gunner_Shoot5
       rect:
         serializedVersion: 2
         x: 4
         y: 141
         width: 48
         height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.8125, y: 0.018867925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -370,15 +406,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_9
+      name: Gunner_Shoot6
       rect:
         serializedVersion: 2
         x: 54
         y: 141
         width: 72
         height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.875, y: 0.018867925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -391,36 +427,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_10
+      name: Gunner_Shoot7
       rect:
         serializedVersion: 2
         x: 128
-        y: 173
-        width: 24
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2e94e7d27442da40800000000000000
-      internalID: 5391446963954949678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunner_Spritesheet_11
-      rect:
-        serializedVersion: 2
-        x: 153
         y: 141
-        width: 66
+        width: 75
         height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.8666667, y: 0.018867925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -433,15 +448,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_12
+      name: Gunner_Shoot8
       rect:
         serializedVersion: 2
-        x: 223
-        y: 141
-        width: 48
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 205
+        y: 140
+        width: 66
+        height: 54
+      alignment: 9
+      pivot: {x: 0.8636364, y: 0.037037037}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -462,7 +477,7 @@ TextureImporter:
         width: 38
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,7 +498,7 @@ TextureImporter:
         width: 38
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -504,7 +519,7 @@ TextureImporter:
         width: 37
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -525,7 +540,7 @@ TextureImporter:
         width: 25
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -546,7 +561,7 @@ TextureImporter:
         width: 12
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,7 +582,7 @@ TextureImporter:
         width: 27
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -588,7 +603,7 @@ TextureImporter:
         width: 5
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -609,7 +624,7 @@ TextureImporter:
         width: 14
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -622,7 +637,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_21
+      name: Reticle_Search1
       rect:
         serializedVersion: 2
         x: 74
@@ -630,7 +645,7 @@ TextureImporter:
         width: 30
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -643,7 +658,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_22
+      name: Reticle_Search2
       rect:
         serializedVersion: 2
         x: 107
@@ -651,7 +666,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -664,7 +679,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_23
+      name: Reticle_Found1
       rect:
         serializedVersion: 2
         x: 142
@@ -672,7 +687,7 @@ TextureImporter:
         width: 28
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -685,7 +700,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_24
+      name: Reticle_Found2
       rect:
         serializedVersion: 2
         x: 173
@@ -693,7 +708,7 @@ TextureImporter:
         width: 28
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -714,7 +729,7 @@ TextureImporter:
         width: 50
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -735,7 +750,7 @@ TextureImporter:
         width: 50
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -756,7 +771,7 @@ TextureImporter:
         width: 50
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -777,7 +792,7 @@ TextureImporter:
         width: 50
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -798,7 +813,7 @@ TextureImporter:
         width: 50
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

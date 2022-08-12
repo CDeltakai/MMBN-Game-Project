@@ -16,6 +16,7 @@ public interface IBattleStageEntity
 
     //stationary entities cannot be moved by attacks
     public bool stationary{get;}
+    public bool isGrounded{get;set;}
     public bool vulnerable{get; set;}
     public Vector3Int getCellPosition();
     public void setCellPosition(int x, int y);

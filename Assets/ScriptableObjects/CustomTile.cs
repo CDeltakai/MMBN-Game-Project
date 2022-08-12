@@ -16,7 +16,7 @@ public class CustomTile : Tile
 
 [SerializeField] string tileName;
 [SerializeField] ETiles tileEnum;
-[SerializeField] ETileTeam tileTeam;
+[SerializeField] public ETileTeam tileTeam;
 
 //DO NOT CHANGE THE NAME OF THE CurrentTile OR ELSE THE WHOLE TILEMAP WILL BREAK!!!
 [SerializeField] Tile CurrentTile;
@@ -27,11 +27,18 @@ public class CustomTile : Tile
 
 [SerializeField] Tile PlayerTile;
 [SerializeField] Tile EnemyTile;
-
+[SerializeField] CustomTile CustomPlayerTile;
+[SerializeField] CustomTile CustomEnemyTile;
 
 public Tile GetTile()
 {
-    return CurrentTile;
+    if(tileTeam == ETileTeam.Player)
+    {
+        return PlayerTile;
+    }else
+    {
+        return EnemyTile;
+    }
 }
 public ETiles GetTileEnum()
 {
@@ -60,6 +67,14 @@ public Type getTileScript()
 public Tile getPlayerTile()
 {
     return PlayerTile;
+}
+public CustomTile getCustomPlayerTile()
+{
+    return CustomPlayerTile;
+}
+public CustomTile getCustomEnemyTile()
+{
+    return CustomEnemyTile;
 }
 public Tile getEnemyTile()
 {

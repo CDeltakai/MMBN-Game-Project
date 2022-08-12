@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f9f3d7cdc7cedd4eb03f1642d5edef4, type: 3}
-  m_Name: (Enemy)Variable_EmptyTile
+  m_Name: (Player)Variable_CrackedTile
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -35,12 +35,14 @@ MonoBehaviour:
   m_Flags: 1
   m_ColliderType: 1
   tileName: 
-  tileEnum: 0
+  tileEnum: 16
   tileTeam: 0
-  CurrentTile: {fileID: 0}
+  CurrentTile: {fileID: 11400000, guid: 0bdf4d0b08094fb449a8a20c2ede64fc, type: 2}
   tileAnimation: {fileID: 0}
   tileScriptName: 
   isPassable: 1
   tileSO: {fileID: 0}
-  PlayerTile: {fileID: 0}
-  EnemyTile: {fileID: 0}
+  PlayerTile: {fileID: 11400000, guid: 665c7fe801c77e149ba7e595e08714ed, type: 2}
+  EnemyTile: {fileID: 11400000, guid: 903214f36e8bacd4d862d14f38de96a2, type: 2}
+  CustomPlayerTile: {fileID: 11400000}
+  CustomEnemyTile: {fileID: 11400000, guid: d53ab79d9cba01849bc4eb8bb6873139, type: 2}

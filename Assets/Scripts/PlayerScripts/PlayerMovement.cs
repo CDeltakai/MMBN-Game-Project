@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
     public bool stunnable => true;
     public bool stationary => false;
     public bool vulnerable { get;set;} = false;
+    public bool isGrounded { get; set; } = true;
 
     public bool Rooted;
 
@@ -271,9 +272,7 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
 
         Vector3Int coordToCheck = new Vector3Int(currentCellPos.x + xDirection, currentCellPos.y + yDirection, currentCellPos.z);
 
-            if(stageHandler.stageTilemap.GetTile
-            (coordToCheck) == stageHandler.NPCTile
-                ||
+            if(
             stageHandler.stageTilemap.GetTile
             (coordToCheck) == null
                 ||
