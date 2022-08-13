@@ -117,7 +117,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
     public void cellMoveRight()
     {
-        if(!checkValidTile(currentCellPos.x + 1, currentCellPos.y, currentCellPos.z))
+        if(!checkValidTile(currentCellPos.x + 1, currentCellPos.y))
         {return;}
 
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
@@ -131,7 +131,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     public void cellMoveLeft()
     {
 
-        if(!checkValidTile(currentCellPos.x - 1, currentCellPos.y, currentCellPos.z))
+        if(!checkValidTile(currentCellPos.x - 1, currentCellPos.y))
         {return;}
 
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
@@ -147,7 +147,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
 
 
-        if(!checkValidTile(currentCellPos.x, currentCellPos.y + 1, currentCellPos.z))
+        if(!checkValidTile(currentCellPos.x, currentCellPos.y + 1))
         {return;}
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
         currentCellPos.Set(currentCellPos.x, currentCellPos.y + 1, currentCellPos.z);
@@ -160,7 +160,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     public void cellMoveDown()
     {
 
-        if(!checkValidTile(currentCellPos.x, currentCellPos.y - 1, currentCellPos.z))
+        if(!checkValidTile(currentCellPos.x, currentCellPos.y - 1))
         {return;}
 
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
@@ -247,9 +247,9 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     }
 
 
-    public bool checkValidTile(int x, int y, int z)
+    public bool checkValidTile(int x, int y)
     {
-        Vector3Int coordToCheck = new Vector3Int(x, y, z);
+        Vector3Int coordToCheck = new Vector3Int(x, y, 0);
         
 
             if(stageHandler.stageTilemap.GetTile
@@ -264,9 +264,6 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
             {
                 return false;
             }
-
         return true;
-
-
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IStage_MoveableEntity
 {
 
-    public bool checkValidTile(int x, int y, int z);
+    public bool checkValidTile(int x, int y);
     public void cellMoveUp();
     public void cellMoveDown();
     public void cellMoveRight();

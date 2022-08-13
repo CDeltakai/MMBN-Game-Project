@@ -171,9 +171,9 @@ public class Champy : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     }
 
 
-    public bool checkValidTile(int x, int y, int z)
+    public bool checkValidTile(int x, int y)
     {
-        Vector3Int coordToCheck = new Vector3Int(x, y, z);
+        Vector3Int coordToCheck = new Vector3Int(x, y, 0);
         
 
             if(stageHandler.stageTilemap.GetTile

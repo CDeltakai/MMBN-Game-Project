@@ -9,16 +9,19 @@ using UnityEngine.AddressableAssets;
 public abstract class BStageEntity : MonoBehaviour
 {
     protected BattleStageHandler stageHandler;
-    protected Transform worldTransform;
+    public Transform worldTransform;
     protected SpriteRenderer spriteRenderer;
+    protected Shader shaderGUItext;
+    protected Shader shaderSpritesDefault;
     [SerializeField] public TextMeshProUGUI healthText;
 
-    public Vector3Int currentCellPos;
     public abstract bool isGrounded{get;set;}
     public abstract bool isStationary{get;}
     public abstract bool isStunnable{get;}
     public abstract int maxHP{get;}
+    public abstract ETileTeam team{get;}
 
+    public Vector3Int currentCellPos;
     [SerializeField] public int currentHP;
     [SerializeField] public int shieldPoints;
     [SerializeField] public float DefenseMultiplier = 1;
@@ -71,6 +74,39 @@ public abstract class BStageEntity : MonoBehaviour
             stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
             worldTransform.localPosition = stageHandler.stageTilemap.
                                         GetCellCenterWorld(currentCellPos);
+    }
+
+    public void setSolidColor(Color color)
+    {
+        spriteRenderer.material.shader = shaderGUItext;
+        spriteRenderer.color = color;
+    }
+    public void setNormalSprite()
+    {
+        spriteRenderer.material.shader = shaderSpritesDefault;
+        spriteRenderer.color = Color.white;
+    }
+
+    public bool checkValidTile(int x, int y)
+    {
+        Vector3Int coordToCheck = new Vector3Int(x, y, 0);
+        
+            if(stageHandler.getCustTile(coordToCheck).GetTileTeam() != team
+                ||
+            stageHandler.stageTilemap.GetTile
+            (coordToCheck) == null
+                ||
+            stageHandler.stageTiles
+            [stageHandler.stageTilemap.CellToWorld(coordToCheck)].isOccupied
+                ||
+            (isGrounded && !stageHandler.getCustTile(coordToCheck).isPassable)
+            )
+            {
+
+
+                return false;
+            }
+        return true;
     }
 
 

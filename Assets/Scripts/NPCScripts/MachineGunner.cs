@@ -2,14 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal enum GunnerAnims
-{
 
-    Gunner_Search,
-    Gunner_Target,
-    Gunner_Shoot
-
-}
 
 
 public class MachineGunner : BStageEntity
@@ -18,8 +11,8 @@ public class MachineGunner : BStageEntity
     public override bool isStationary => true;
     public override bool isStunnable => true;
     public override int maxHP => 60;
-    Animator animator;
-
+    public override ETileTeam team{get;}
+    private Animator animator;
 
 
     // Start is called before the first frame update
@@ -34,7 +27,15 @@ public class MachineGunner : BStageEntity
     void Update()
     {
         
+
+
     }
+
+
+    
+
+
+
     public override void hurtEntity(int damage,
                            bool lightAttack,
                            bool hitStun,
@@ -54,4 +55,8 @@ public class MachineGunner : BStageEntity
         healthText.text = currentHP.ToString();
         return;    
     }
+
+
+
+
 }

@@ -37,7 +37,13 @@ public class AreaGrab : MonoBehaviour, IChip
         print("Attempted area grab");
         foreach(Vector3Int pos in stageHandler.playerBoundsList)
         {
+
             Vector3Int localPos = new Vector3Int(pos.x + 1, pos.y, 0);
+            
+            if(localPos.x >= 6 || stageHandler.isOccupied(localPos.x, localPos.y))
+            {
+                continue;
+            }
             tile = stageTilemap.GetTile<CustomTile>(localPos);
             
 

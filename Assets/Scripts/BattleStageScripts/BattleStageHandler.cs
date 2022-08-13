@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
@@ -104,7 +105,7 @@ public class BattleStageHandler : MonoBehaviour
         {
             coordToCheck.Set(1, row, 0);
 
-            while(   stageTilemap.GetTile<CustomTile>(coordToCheck).GetTileTeam() == ETileTeam.Player )
+            while( stageTilemap.GetTile<CustomTile>(coordToCheck).GetTileTeam() == ETileTeam.Player )
             {
                 coordToCheck.Set(coordToCheck.x + 2, row, 0);
 
@@ -172,7 +173,6 @@ public class BattleStageHandler : MonoBehaviour
 
             if(!stageTilemap.HasTile(localPos)) {continue;}
             
-
             var tile = new StageTile
             {
                 localCoords = localPos,
@@ -201,9 +201,7 @@ public class BattleStageHandler : MonoBehaviour
         {
             print("Tile at "+ position.ToString() + "is not a CustomTile, retuned null");
         }
-
         return null;
-
 
     }
     public void addTile(StageTile tile, Vector3 position)
@@ -215,10 +213,18 @@ public class BattleStageHandler : MonoBehaviour
     public void setCellOccupied(int x, int y, bool condition)
     {
         Vector3Int cell = new Vector3Int(x, y, 0);
-
         stageTiles[stageTilemap.CellToWorld(cell)].isOccupied = condition;
+    }
 
+    public bool isOccupied(int x, int y)
+    {
+        Vector3Int coordToCheck = new Vector3Int(x, y,0);
+        if(stageTiles[stageTilemap.CellToWorld(coordToCheck)].isOccupied)
+        {
+            return true;
+        }
 
+        return false;
     }
 
     public void changeInternalTile(int x, int y, ETiles tileType, ETileTeam tileTeam)
@@ -228,6 +234,7 @@ public class BattleStageHandler : MonoBehaviour
         PlayerTiles.Find(tile => tile.GetTileEnum() == tileType &&
                                                 tile.GetTileTeam() == tileTeam);
     }
+
 
 
     // Update is called once per frame

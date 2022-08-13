@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 794688108}
   - component: {fileID: 794688107}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ChipInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,6 +263,8 @@ MonoBehaviour:
   isInvincible: 0
   SuperArmor: 0
   Rooted: 0
+  shaderGUItext: {fileID: 0}
+  shaderSpritesDefault: {fileID: 0}
 --- !u!114 &7999841461838093156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,8 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9247c4c5c6be80741af5e3577a362156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chipQueue: []
   nextChipLoad: []
+  chipQueue: []
   damageAmp: 0
   damageAdd: 0
 --- !u!114 &-2004937168775528106
