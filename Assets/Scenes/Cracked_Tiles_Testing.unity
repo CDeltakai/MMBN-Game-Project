@@ -239,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 231985514}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MegamanPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1056,6 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec65c325b338414c829fbf15c2b04dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldTransform: {fileID: 0}
   healthText: {fileID: 0}
   currentCellPos: {x: 0, y: 0, z: 0}
   currentHP: 60
@@ -2354,30 +2355,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 231985514}
     m_Modifications:
-    - target: {fileID: 1018368735, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
-      propertyPath: m_Name
-      value: Longsword_slash
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018368738, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018368738, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018368738, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -609054473
-      objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985700, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: m_Name
       value: Megaman
       objectReference: {fileID: 0}
-    - target: {fileID: 2717528050190985706, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3022468580385308911, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: m_RootOrder
       value: 0
