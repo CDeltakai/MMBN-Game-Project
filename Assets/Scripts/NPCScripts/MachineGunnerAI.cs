@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal enum Anims
+internal enum GunnerAnims
 {
     Gunner_Search,
     Gunner_Target,
@@ -30,7 +30,7 @@ public class MachineGunnerAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.Play(Anims.Gunner_Search.ToString(), 0);
+        animator.Play(GunnerAnims.Gunner_Search.ToString(), 0);
 
     }
 
@@ -55,7 +55,7 @@ public class MachineGunnerAI : MonoBehaviour
             if(hitInfo)
             {
                 foundTarget = true;
-                animator.Play(Anims.Gunner_Target.ToString(), 0);
+                animator.Play(GunnerAnims.Gunner_Target.ToString(), 0);
                 
 
             }

@@ -126,7 +126,6 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
         parentTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
-                                    //isMoving = false;
     }
     public void cellMoveLeft()
     {
@@ -140,13 +139,9 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
         parentTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
-                                    //isMoving = false;
     }
     public void cellMoveUp()
     {
-
-
-
         if(!checkValidTile(currentCellPos.x, currentCellPos.y + 1))
         {return;}
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
@@ -155,7 +150,6 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
         parentTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
-                                    //isMoving = false;
     }
     public void cellMoveDown()
     {
@@ -169,7 +163,6 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
 
         parentTransform.transform.localPosition = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
-                                    //isMoving = false;
     }
     
 

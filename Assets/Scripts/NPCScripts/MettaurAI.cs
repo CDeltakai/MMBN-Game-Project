@@ -5,10 +5,11 @@ using UnityEngine;
 public class MettaurAI : MonoBehaviour
 {
 
-    [SerializeField] GameObject target;
+    //[SerializeField] GameObject target;
     PlayerMovement player;
     Mettaur mettaur;
-    float movementCooldown = 1;
+    float movementCooldownTimer;
+    float movementCooldown = 0.9f;
 
     Vector3Int targetPosition;
     Vector3Int mettaurPosition;
@@ -16,9 +17,10 @@ public class MettaurAI : MonoBehaviour
 
     void Start()
     {
-        player = target.GetComponent<PlayerMovement>();
+        player = FindObjectOfType<PlayerMovement>();
         //mettaurPosition = GetComponent<Mettaur>().currentCellPos;
         mettaur = GetComponent<Mettaur>();
+        movementCooldownTimer = movementCooldown;
 
     }
 
@@ -32,29 +34,29 @@ public class MettaurAI : MonoBehaviour
         mettaurPosition = GetComponent<Mettaur>().getCellPosition();
 
 
-        if(movementCooldown > 0)
+        if(movementCooldownTimer > 0)
         {
-            movementCooldown -= Time.deltaTime;
+            movementCooldownTimer -= Time.deltaTime;
         }
 
-        if(movementCooldown <= 0){
+        if(movementCooldownTimer <= 0){
 
         if(mettaurPosition.y == targetPosition.y)
         {
             mettaurAttack();
-            movementCooldown = 1;
+            movementCooldownTimer = movementCooldown;
 
         }
         else
         if(mettaurPosition.y < targetPosition.y)
         {
             mettaurMoveUp();
-            movementCooldown = 1;
+            movementCooldownTimer = movementCooldown;
         }else
         if(mettaurPosition.y > targetPosition.y)
         {
             mettaurMoveDown();
-            movementCooldown = 1;
+            movementCooldownTimer = movementCooldown;
 
         }
         }

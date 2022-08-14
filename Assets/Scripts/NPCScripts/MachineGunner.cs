@@ -11,14 +11,13 @@ public class MachineGunner : BStageEntity
     public override bool isStationary => true;
     public override bool isStunnable => true;
     public override int maxHP => 60;
-    public override ETileTeam team{get;}
-    private Animator animator;
-
+    public override ETileTeam team{get;set;} = ETileTeam.Enemy;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+
         
 
     }

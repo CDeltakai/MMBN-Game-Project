@@ -4,24 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.AddressableAssets;
-
+using System;
 
 public abstract class BStageEntity : MonoBehaviour
 {
-    protected BattleStageHandler stageHandler;
-    public Transform worldTransform;
+    protected static BattleStageHandler stageHandler;
     protected SpriteRenderer spriteRenderer;
-    protected Shader shaderGUItext;
-    protected Shader shaderSpritesDefault;
+    protected static Shader shaderGUItext;
+    protected static Shader shaderSpritesDefault;
+    protected Animator animator;
     [SerializeField] public TextMeshProUGUI healthText;
 
+    [HideInInspector] public Transform worldTransform;
     public abstract bool isGrounded{get;set;}
     public abstract bool isStationary{get;}
     public abstract bool isStunnable{get;}
     public abstract int maxHP{get;}
-    public abstract ETileTeam team{get;}
+    public abstract ETileTeam team{get; set;}
 
     public Vector3Int currentCellPos;
+    [SerializeField] bool isInvincible = false;
     [SerializeField] public int currentHP;
     [SerializeField] public int shieldPoints;
     [SerializeField] public float DefenseMultiplier = 1;
@@ -33,6 +35,12 @@ public abstract class BStageEntity : MonoBehaviour
         stageHandler = FindObjectOfType<BattleStageHandler>();
         worldTransform = transform.parent.transform;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        shaderGUItext = Shader.Find("GUI/Text Shader");
+        shaderSpritesDefault = shaderSpritesDefault = Shader.Find("Sprites/Default");
+
+
+
     }
 
 
@@ -42,12 +50,16 @@ public abstract class BStageEntity : MonoBehaviour
                                    bool pierceCloaking = false,
                                    EStatusEffects statusEffect = EStatusEffects.Default)
     {
+
+        if(isInvincible)
+        {return;}
+
         if(damage >= currentHP)
         {
             currentHP = 0;
             healthText.text = currentHP.ToString();
-            stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
             healthText.enabled = false;
+            animator.speed = 0;
             StartCoroutine(DestroyEntity());
             return;
         }
@@ -56,6 +68,11 @@ public abstract class BStageEntity : MonoBehaviour
         return; 
     }
     
+    public int getHealth()
+    {
+        return currentHP;
+    }
+
 
     public virtual IEnumerator DestroyEntity()
     {
@@ -63,8 +80,10 @@ public abstract class BStageEntity : MonoBehaviour
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
                                                 transform.rotation, transform.parent.transform);
         yield return new WaitForSeconds(0.320f);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
+
     }
 
     public void setCellPosition(int x, int y)
@@ -102,11 +121,64 @@ public abstract class BStageEntity : MonoBehaviour
             (isGrounded && !stageHandler.getCustTile(coordToCheck).isPassable)
             )
             {
-
-
                 return false;
             }
         return true;
+    }
+
+    public void cellMoveRight()
+    {
+        if(!checkValidTile(currentCellPos.x + 1, currentCellPos.y))
+        {return;}
+
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        currentCellPos.Set(currentCellPos.x + 1, currentCellPos.y, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+
+        worldTransform.position = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
+    }
+    public void cellMoveLeft()
+    {
+
+        if(!checkValidTile(currentCellPos.x - 1, currentCellPos.y))
+        {return;}
+
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        currentCellPos.Set(currentCellPos.x - 1, currentCellPos.y, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+
+        worldTransform.position = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
+    }
+    public void cellMoveUp()
+    {
+        if(!checkValidTile(currentCellPos.x, currentCellPos.y + 1))
+        {return;}
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        currentCellPos.Set(currentCellPos.x, currentCellPos.y + 1, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+
+        worldTransform.position = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
+    }
+    public void cellMoveDown()
+    {
+
+        if(!checkValidTile(currentCellPos.x, currentCellPos.y - 1))
+        {return;}
+
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        currentCellPos.Set(currentCellPos.x, currentCellPos.y - 1, currentCellPos.z);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+
+        worldTransform.position = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
+    }
+    
+    public Vector3Int getCurrentCellPos()
+    {
+        return currentCellPos;
     }
 
 

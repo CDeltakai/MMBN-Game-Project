@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: VFX_Destruction_Explosion
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 422d30284ee6b6a4f8c4e4d2d3dc3893
+    m_Address: mettaurProjectile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 143f498d0d4592042938bc1a6e56d09a, type: 2}
   m_SchemaSet:

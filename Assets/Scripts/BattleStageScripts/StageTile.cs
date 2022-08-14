@@ -7,17 +7,18 @@ public class StageTile
 {
 
 
-    public Vector3Int localCoords{get;set;}
-    public Vector3 worldPosition{get;set;}
-    public CustomTile custTile {get;set;}
+    internal Vector3Int localCoords{get;set;}
+    internal Vector3 worldPosition{get;set;}
+    internal CustomTile custTile {get;set;}
 
-    public ETileTeam tileTeam{get;set;}
+    internal ETileTeam tileTeam{get;set;}
 
-    public string tileName{get;set;}
+    internal string tileName{get;set;}
 
     //TilemapMember property that defines which Tilemap the tile belongs to
-    public Tilemap TilemapMember{get;set;}
-    public bool isOccupied{get;set;} = false;
+    internal Tilemap TilemapMember{get;set;}
+    internal bool isOccupied{get;set;} = false;
+    internal BStageEntity entity{get;set;}
 
 
 }

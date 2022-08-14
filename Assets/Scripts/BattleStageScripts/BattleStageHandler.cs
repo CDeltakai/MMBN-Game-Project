@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Globalization;
 using System.IO;
 using System.Collections;
@@ -26,6 +27,7 @@ public class BattleStageHandler : MonoBehaviour
     [SerializeField] public Tile NPCTile;
     [SerializeField] public List<CustomTile> PlayerTiles;
     [SerializeField] public List<CustomTile> NPCTiles;
+    public List<BStageEntity> EntityList;
 
     TileManager tileManager = new TileManager();
 
@@ -73,6 +75,7 @@ public class BattleStageHandler : MonoBehaviour
         NPCInventory = GetComponent<BattleStageNPCInventory>();
         grid = GetComponentInParent<Grid>();
         player = FindObjectOfType<PlayerMovement>();
+        EntityList = FindObjectsOfType<BStageEntity>().ToList();
         
         
         bounds = stageTilemap.cellBounds;
@@ -89,8 +92,6 @@ public class BattleStageHandler : MonoBehaviour
         //Vector3 testPosition = battleStageTilemap.GetCellCenterWorld(new Vector3Int(4,1,0));
 
         //Instantiate(NPCInventory.getNPCObject(0), testPosition, Quaternion.identity);
-
-        
         
     }
 
