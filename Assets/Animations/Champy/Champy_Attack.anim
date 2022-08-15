@@ -117,14 +117,14 @@ AnimationClip:
   - time: 0.29166666
     functionName: straightHitRegister
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 3f8d9567d47c7eb40b0ea9428dd13a8c, type: 3}
+    objectReferenceParameter: {fileID: 11500000, guid: 75f82e54b30152e4b8743ae6c78d87d4, type: 3}
     floatParameter: 0
     intParameter: 15
     messageOptions: 0
   - time: 0.7083333
     functionName: uppercutHitRegister
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 3f8d9567d47c7eb40b0ea9428dd13a8c, type: 3}
+    objectReferenceParameter: {fileID: 11500000, guid: 75f82e54b30152e4b8743ae6c78d87d4, type: 3}
     floatParameter: 0
     intParameter: 25
     messageOptions: 0

@@ -30,6 +30,7 @@ public class CustomTile : Tile
 [SerializeField] CustomTile CustomPlayerTile;
 [SerializeField] CustomTile CustomEnemyTile;
 
+
 public Tile GetTile()
 {
     if(tileTeam == ETileTeam.Player)

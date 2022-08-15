@@ -77,20 +77,27 @@ public abstract class BStageEntity : MonoBehaviour
     public virtual IEnumerator DestroyEntity()
     {
         yield return new WaitForSeconds(0.0005f);
+        setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
                                                 transform.rotation, transform.parent.transform);
-        yield return new WaitForSeconds(0.320f);
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        yield return new WaitForSeconds(0.533f);
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
 
     }
 
-    public void setCellPosition(int x, int y)
+    public void teleportToCell(int x, int y)
     {
-            stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
-            currentCellPos.Set(x, y, currentCellPos.z);
-            stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+        
+            //stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+            //stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, false);
+            stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+            currentCellPos.Set(x, y, 0);
+            //stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+            //stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, true);
+            stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+
             worldTransform.localPosition = stageHandler.stageTilemap.
                                         GetCellCenterWorld(currentCellPos);
     }
@@ -126,14 +133,31 @@ public abstract class BStageEntity : MonoBehaviour
         return true;
     }
 
+    public void cellMove(int x, int y)
+    {
+        if(!checkValidTile(currentCellPos.x + x, currentCellPos.y + y))
+        {return;}
+
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+        currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+        worldTransform.position = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
+    }
+
+
     public void cellMoveRight()
     {
         if(!checkValidTile(currentCellPos.x + 1, currentCellPos.y))
         {return;}
 
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, false);
+
         currentCellPos.Set(currentCellPos.x + 1, currentCellPos.y, currentCellPos.z);
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+        stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, true);
+        
 
         worldTransform.position = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
@@ -145,8 +169,10 @@ public abstract class BStageEntity : MonoBehaviour
         {return;}
 
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
+        stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, false);
         currentCellPos.Set(currentCellPos.x - 1, currentCellPos.y, currentCellPos.z);
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+        stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, true);
 
         worldTransform.position = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
@@ -180,6 +206,8 @@ public abstract class BStageEntity : MonoBehaviour
     {
         return currentCellPos;
     }
+
+
 
 
 }

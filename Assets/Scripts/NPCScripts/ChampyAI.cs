@@ -41,7 +41,6 @@ public class ChampyAI : MonoBehaviour
 
         //Check target position every frame
         targetPosition = player.getCurrentCellPos();
-        //Debug.Log("MettaurAI Target Position: " + targetPosition.ToString());
         champyWorldPosition = champy.worldTransform.localPosition;
         champyCellPosition = GetComponent<Champy>().getCellPosition();
         
@@ -68,8 +67,6 @@ public class ChampyAI : MonoBehaviour
         Vector3Int previousCellPosition = champyCellPosition;
         champy.setCellPosition_MaintainOccupied(player.getCellPosition().x + 1, champyCellPosition.y);
         champy.hasMoved = true;
-
-
 
         animator.Play(CHAMPY_ATTACK);
         float delay = 0.417f;

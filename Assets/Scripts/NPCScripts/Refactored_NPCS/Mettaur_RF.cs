@@ -31,7 +31,7 @@ public class Mettaur_RF : BStageEntity
         currentCellPos.Set((int)(Math.Round((worldTransform.position.x/1.6f), MidpointRounding.AwayFromZero)),
                             (int)transform.parent.position.y, 0);
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
-        currentHP = maxHP;
+        //currentHP = maxHP;
         healthText.text = currentHP.ToString();
 
 

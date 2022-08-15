@@ -145,10 +145,10 @@ GameObject:
   - component: {fileID: 5140241249024038990}
   - component: {fileID: 5140241249024038986}
   - component: {fileID: 5140241249024038985}
-  - component: {fileID: 5140241249024038984}
   - component: {fileID: 5140241249024038991}
-  - component: {fileID: 1645725280}
   - component: {fileID: 339450256}
+  - component: {fileID: 1777973944}
+  - component: {fileID: 1777973945}
   m_Layer: 9
   m_Name: MettaurModel
   m_TagString: Enemy
@@ -241,24 +241,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5140241249024038984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5140241249024038989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f7349412532c34abb8b5b3ab2b1676, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentTransform: {fileID: 0}
-  mettaurProjectile: {fileID: 2143134814924321685, guid: 422d30284ee6b6a4f8c4e4d2d3dc3893, type: 3}
-  currentHP: 40
-  healthText: {fileID: 2503680530704742596}
-  isAttacking: 0
-  currentCellPos: {x: 0, y: 0, z: 0}
 --- !u!61 &5140241249024038991
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -285,19 +267,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2986898, y: 0.73129976}
   m_EdgeRadius: 0
---- !u!114 &1645725280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5140241249024038989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2454c4422efc0c84297e5a99f196b7e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!50 &339450256
 Rigidbody2D:
   serializedVersion: 4
@@ -319,6 +288,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1777973944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140241249024038989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dc133c8d2abf64a9ce886d4cb0a1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 2503680530704742596}
+  worldTransform: {fileID: 0}
+  currentCellPos: {x: 0, y: 0, z: 0}
+  isInvincible: 0
+  currentHP: 0
+  shieldPoints: 0
+  DefenseMultiplier: 1
+  AttackMultiplier: 1
+  isAttacking: 0
+--- !u!114 &1777973945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140241249024038989}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6feb73d6b756c3a4986ac165c7731665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5140241249680576332
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5140241249680576333}
   m_Layer: 9
-  m_Name: MettaurPivot
+  m_Name: Mettaur
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

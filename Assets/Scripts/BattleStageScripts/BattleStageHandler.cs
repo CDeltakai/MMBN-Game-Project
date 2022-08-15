@@ -217,6 +217,39 @@ public class BattleStageHandler : MonoBehaviour
         stageTiles[stageTilemap.CellToWorld(cell)].isOccupied = condition;
     }
 
+
+    public void setEntityAtCell(int x, int y, BStageEntity entity, bool condition)
+    {
+        Vector3Int cell = new Vector3Int(x, y, 0);
+        if(condition)
+        {
+        stageTiles[stageTilemap.CellToWorld(cell)].entity = entity;
+        }else
+        {
+        stageTiles[stageTilemap.CellToWorld(cell)].entity = null;
+        }
+
+    }
+
+    ///<summary>
+    ///Wrapper method for both setCellOccupied and setEntityAtCell
+    ///</summary>
+    public void setCellEntity(int x, int y, BStageEntity entity, bool condition)
+    {
+
+        Vector3Int cell = new Vector3Int(x, y, 0);
+        stageTiles[stageTilemap.CellToWorld(cell)].isOccupied = condition;
+        if(condition)
+        {
+        stageTiles[stageTilemap.CellToWorld(cell)].entity = entity;
+        }else
+        {
+        stageTiles[stageTilemap.CellToWorld(cell)].entity = null;
+        }
+
+
+    }
+
     public bool isOccupied(int x, int y)
     {
         Vector3Int coordToCheck = new Vector3Int(x, y,0);
