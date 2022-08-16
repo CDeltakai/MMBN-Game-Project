@@ -25,13 +25,12 @@ public class Mettaur_RF : BStageEntity
 
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
         mettaurCollider = GetComponent<BoxCollider2D>();
         currentCellPos.Set((int)(Math.Round((worldTransform.position.x/1.6f), MidpointRounding.AwayFromZero)),
                             (int)transform.parent.position.y, 0);
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
-        //currentHP = maxHP;
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
         healthText.text = currentHP.ToString();
 
 

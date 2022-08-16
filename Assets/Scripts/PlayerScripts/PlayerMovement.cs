@@ -4,86 +4,65 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using Pathfinding.Util;
+using System;
 
-public class PlayerMovement : MonoBehaviour, IBattleStageEntity
+public class PlayerMovement : BStageEntity
 {
 
     [SerializeField] public ChipSO activeChip;
     [SerializeField] public List<ChipSO> PlayerChipQueue = new List<ChipSO>();
-    [SerializeField] public List<ChipSO> buffChipQueue = new List<ChipSO>();
-    [SerializeField] public TextMeshProUGUI healthText;
-    [SerializeField] public int playerHP = 100;
-    [SerializeField] public float DefenseMultiplier{get;set;} = 1;
-    [SerializeField] public float AttackMultiplier {get;set;} = 1;
-    BattleStageHandler stageHandler;
-    SpriteRenderer spriteRenderer;
+
+
     TimeManager timeManager;
     ChipLoadManager chipLoadManager;
 
     PlayerInput playerInput;
 
-    public Transform parentTransform;
-    Vector3 currentPos;
-    public Vector3Int currentCellPos;
 
 
-    public BoxCollider2D boxCollider2D;
+    [HideInInspector] public BoxCollider2D boxCollider2D;
     PlayerChipAnimations playerChipAnimations; 
     ChipEffects chipEffect;
-    Vector2 moveInput;
-    Animator myAnimator;
 
     bool isAlive = true;
-    float animationLength;
     bool isMoving = false;
     bool isUsingChip = false;
+    float animationLength;
 
     ChipSelectScreenMovement chipSelectScreenMovement;
+    [SerializeField] Transform firePoint;
 
-    BasicShot basicShot;
     public int shotDamage = 5;
 
-    public Collider2D lastContactedCollider = null;
-    public bool isInvincible = false;
     public bool SuperArmor = false;
 
     public string Name => "Megaman";
 
-    public Transform worldTransform { get; set;}
 
     public int ID => 3;
 
-    public bool stunnable => true;
-    public bool stationary => false;
     public bool vulnerable { get;set;} = false;
-    public bool isGrounded { get; set; } = true;
-
+    public override bool isGrounded { get ; set ; } = true;
+    public override bool isStationary => false;
+    public override bool isStunnable => true;
+    public override int maxHP => 9999;
+    public override ETileTeam team { get;set;} = ETileTeam.Player;
     public bool Rooted;
 
     Color invisible;
     Color opaque;
 
-    public Shader shaderGUItext;
-    public Shader shaderSpritesDefault;
+    AnimationCurve movementSpeedCurve;
 
-    void Awake() {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
-    }
 
-    void Start()
+    public override void Start()
     {
-        parentTransform = GetComponentInParent<Transform>();
-        myAnimator = GetComponent<Animator>();
-        healthText.text = playerHP.ToString();
-        basicShot = FindObjectOfType<BasicShot>();
         chipEffect = FindObjectOfType<ChipEffects>();
         chipSelectScreenMovement = FindObjectOfType<ChipSelectScreenMovement>();
         playerChipAnimations = GetComponent<PlayerChipAnimations>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         stageHandler = FindObjectOfType<BattleStageHandler>();
-        parentTransform = transform.parent.gameObject.GetComponent<Transform>();
-        currentCellPos = new Vector3Int ((int)(parentTransform.localPosition.x/1.6f), (int)parentTransform.localPosition.y,0);
+
 
         chipLoadManager = GetComponent<ChipLoadManager>();
 
@@ -99,31 +78,30 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
         invisible = spriteRenderer.color;
         opaque = spriteRenderer.color;
         invisible.a = 0;
-
         opaque.a = 1;
         
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
+        currentCellPos.Set((int)(Math.Round((worldTransform.position.x/1.6f), MidpointRounding.AwayFromZero)),
+                            (int)transform.parent.position.y, 0);
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+        healthText.text = currentHP.ToString();
 
-
-        //Vector3 testPosition = battleStageHandler.battleStageTilemap.GetCellCenterWorld(new Vector3Int(4,1,0));
         
     }
 
-    void setSolidColor(Color color)
-    {
-        spriteRenderer.material.shader = shaderGUItext;
-        spriteRenderer.color = color;
-    }
-    void setNormalSprite()
-    {
-        spriteRenderer.material.shader = shaderSpritesDefault;
-        spriteRenderer.color = Color.white;
-    }
 
 
-    void Shoot()
+    public void Shoot()
     {
-        basicShot.Shoot();
+      RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies","Obstacle"));
+
+      if(hitInfo)
+      {
+
+          BStageEntity target = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
+          if(target == null)
+          {return;}
+          target.hurtEntity(shotDamage, true, false);
+      }
     }
 
     void setInvincible()
@@ -133,18 +111,10 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
         
     }
 
-    public Collider2D OnTriggerEnter2D(Collider2D other) 
-    {
-        lastContactedCollider = other;
-        return other;
-    }
 
     void Update()
-    {
-
-       //Debug.Log(currentCellPos.ToString());
-        
-        if(playerHP <= 0)
+    {        
+        if(currentHP <= 0)
         {
             isAlive = false;
         }
@@ -195,8 +165,6 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
         chipLoadManager.nextChipLoad.Clear();
         chipLoadManager.calcNextChipLoad();
         isUsingChip = false;
-
-
         
     }
 
@@ -205,147 +173,62 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
         chipSelectScreenMovement.EnableChipMenu();
     }
 
+    IEnumerator teleMoveWithDelay(int x, int y, float delay)
+    {
+        if(isMoving)
+        {yield break;}
+        if(!checkValidTile(currentCellPos.x + x, currentCellPos.y + y))
+        {
+            yield break;
+        }
+        animator.SetTrigger("Move");
+        isMoving = true; 
+        yield return new WaitForSeconds(delay);
+
+        cellMove(x, y);
+        isMoving = false;
+    }
+
+    IEnumerator animatedMovewithDelay(int x, int y, float delay)
+    {
+        yield return 1;
+    }
 
     void simpleMove()
     {
-         if(!isAlive){return;}
-         if(Rooted){return;}
-        
-        int index = myAnimator.GetLayerIndex("Base Layer");
+        if(!isAlive){return;}
+        if(Rooted){return;}
+        if(isMoving){return;}
+        int index = animator.GetLayerIndex("Base Layer");
         
         if(Keyboard.current.dKey.wasPressedThisFrame)
         {
-            if(!checkValidTile(1, 0))
-            {return;}
-
-            myAnimator.SetTrigger("Move");
-            isMoving = true;
-            animationLength = myAnimator.GetCurrentAnimatorStateInfo(index).length;
-            //Debug.Log("animation length = " + animationLength);
-            Invoke("cellMoveRight", 0.104f);
-            
+            StartCoroutine(teleMoveWithDelay(1, 0, 0.106f));            
         }
         if(Keyboard.current.aKey.wasPressedThisFrame)
         {
-            if(!checkValidTile(-1, 0))
-            {return;}
-
-            myAnimator.SetTrigger("Move");
-            isMoving = true;
-            animationLength = myAnimator.GetCurrentAnimatorStateInfo(index).length;
-            //Debug.Log("animation length = " + animationLength);
-            Invoke("cellMoveLeft", 0.104f);
-            
+            StartCoroutine(teleMoveWithDelay(-1, 0, 0.106f));   
         }
         if(Keyboard.current.wKey.wasPressedThisFrame)
         {
-            if(!checkValidTile(0, 1))
-            {return;}
-            myAnimator.SetTrigger("Move");
-            isMoving = true;
-            animationLength = myAnimator.GetCurrentAnimatorStateInfo(index).length;
-            //Debug.Log("animation length = " + animationLength);
-            Invoke("cellMoveUp", animationLength);
-            
+            StartCoroutine(teleMoveWithDelay(0, 1, 0.106f));   
         }
         if(Keyboard.current.sKey.wasPressedThisFrame)
         {
-            if(!checkValidTile(0, -1))
-            {return;}
-
-            myAnimator.SetTrigger("Move");
-            isMoving = true;
-            animationLength = myAnimator.GetCurrentAnimatorStateInfo(index).length;
-            //Debug.Log("animation length = " + animationLength);
-            Invoke("cellMoveDown", animationLength);
+            StartCoroutine(teleMoveWithDelay(0, -1, 0.106f));
         }
 
     }
-
-
-    public bool checkValidTile(int xDirection, int yDirection)
-    {
-        Vector3Int coordToCheck = new Vector3Int(currentCellPos.x + xDirection, currentCellPos.y + yDirection, currentCellPos.z);
-
-            if(
-            stageHandler.stageTilemap.GetTile
-            (coordToCheck) == null
-                ||
-            stageHandler.stageTiles
-            [stageHandler.stageTilemap.CellToWorld(coordToCheck)].isOccupied
-                ||
-            !stageHandler.stageTilemap.GetTile<CustomTile>(coordToCheck).isPassable
-            ||
-            stageHandler.getCustTile(coordToCheck).GetTileTeam() == ETileTeam.Enemy
-            )
-            {
-                
-                return false;
-            }
-
-
-        return true;
-    }
-
-    public Vector3Int getCurrentCellPos()
-    {
-        return currentCellPos;
-    }
-
-    void cellMoveRight()
-    {
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
-        currentCellPos.Set(currentCellPos.x + 1, currentCellPos.y, currentCellPos.z);
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
-        parentTransform.transform.localPosition = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-                                    isMoving = false;
-    }
-    void cellMoveLeft()
-    {
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
-        currentCellPos.Set(currentCellPos.x - 1, currentCellPos.y, currentCellPos.z);
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
-        parentTransform.transform.localPosition = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-                                    isMoving = false;
-    }
-    void cellMoveUp()
-    {
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
-        currentCellPos.Set(currentCellPos.x, currentCellPos.y + 1, currentCellPos.z);
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
-        parentTransform.transform.localPosition = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-                                    isMoving = false;
-    }
-    void cellMoveDown()
-    {
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
-        currentCellPos.Set(currentCellPos.x, currentCellPos.y - 1, currentCellPos.z);
-        stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = true;
-        parentTransform.transform.localPosition = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-                                    isMoving = false;
-    }
-    
-
    
 
-    public IEnumerator WaitForAnimation()
-    {
-        yield return new WaitForSeconds(animationLength);
-    }
 
     void OnFire()
     {
-        
-            myAnimator.SetTrigger("Shoot");
-        
+        animator.SetTrigger("Shoot");   
     }
 
 
-    public void hurtEntity(int damageAmount,
+    public override void hurtEntity(int damageAmount,
         bool lightAttack,
         bool hitStun,
         bool pierceCloaking = false,
@@ -354,18 +237,18 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
         if(isInvincible){return;}
 
         if(!SuperArmor || hitStun ){
-            myAnimator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
+            animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
         }
         
-        if(damageAmount * DefenseMultiplier >= playerHP)
+        if(damageAmount * DefenseMultiplier >= currentHP)
         {
             isAlive = false;
-            playerHP = 0;
+            currentHP = 0;
             return;
         }
 
-        playerHP = playerHP - (int)(damageAmount * DefenseMultiplier);
-        healthText.text = playerHP.ToString();
+        currentHP = currentHP - (int)(damageAmount * DefenseMultiplier);
+        healthText.text = currentHP.ToString();
 
         if(!lightAttack){
         StartCoroutine(InvincibilityFrames(1f));
@@ -378,13 +261,13 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
     IEnumerator ChangeAnimState(string stateName, string transitionState)
     {
         yield return new WaitForSeconds(GetAnimationLength(transitionState));
-        myAnimator.Play(stateName);
+        animator.Play(stateName);
     }
 
     float GetAnimationLength(string stateName)
     {
-        int index = myAnimator.GetLayerIndex("Base Layer");
-        animationLength = myAnimator.GetCurrentAnimatorStateInfo(index).length;
+        int index = animator.GetLayerIndex("Base Layer");
+        animationLength = animator.GetCurrentAnimatorStateInfo(index).length;
         return animationLength * 2f;
     }
 
@@ -408,43 +291,18 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
         }
 
         isInvincible = false;
-    
-
     }
 
 
-    public int getHealth()
-    {
-        return playerHP;
-    }
 
-    public int basicShotDamage()
-    {
-        return shotDamage;
-    }
 
-    public void setHealthText(int number)
-    {
-        number = playerHP;
-        healthText.text = number.ToString();
-    }
 
     public Vector3Int getCellPosition()
     {
         return currentCellPos;
     }
 
-    public void setCellPosition(int x, int y)
-    {
-        currentCellPos.Set(x, y, currentCellPos.z);
-        parentTransform.transform.localPosition = stageHandler.stageTilemap.
-                                                    GetCellCenterWorld(currentCellPos);
-    }
 
-    public void setHealth(int value)
-    {
-        playerHP = value;
-    }
 
     public IEnumerator setStatusEffect(EStatusEffects status)
     {
@@ -452,9 +310,9 @@ public class PlayerMovement : MonoBehaviour, IBattleStageEntity
        switch (status) 
        {
         case EStatusEffects.Paralyzed: 
-            myAnimator.speed = 0f;
+            animator.speed = 0f;
             yield return new WaitForSecondsRealtime(1f);
-            myAnimator.speed = 1f;
+            animator.speed = 1f;
             break;
 
         case EStatusEffects.Rooted:

@@ -36,7 +36,7 @@ public class Longsword : MonoBehaviour, IChip
 
     public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
     {
-        Addressables.InstantiateAsync("VFX_Longsword_pos", new Vector2(player.parentTransform.position.x + 1.6f, player.parentTransform.position.y), transform.rotation);
+        Addressables.InstantiateAsync("VFX_Longsword_pos", new Vector2(player.worldTransform.position.x + 1.6f, player.worldTransform.position.y), transform.rotation);
         //Instantiate(vfx, initPosition, transform.rotation);
     }
 

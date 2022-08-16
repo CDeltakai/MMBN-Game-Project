@@ -14,7 +14,7 @@ public class MachineGunner : BStageEntity
     public override ETileTeam team{get;set;} = ETileTeam.Enemy;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
 
         

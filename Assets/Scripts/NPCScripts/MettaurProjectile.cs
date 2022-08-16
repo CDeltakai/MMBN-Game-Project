@@ -67,8 +67,8 @@ public class MettaurProjectile : MonoBehaviour
         if(other.tag == "Player" && !isTriggered)
         {
             player.hurtEntity(damage, false, true);
-            player.healthText.text = player.playerHP.ToString();
-            Debug.Log("Player damaged:" + player.playerHP.ToString());
+            player.healthText.text = player.currentHP.ToString();
+            Debug.Log("Player damaged:" + player.currentHP.ToString());
             isTriggered = true;
         }
     }

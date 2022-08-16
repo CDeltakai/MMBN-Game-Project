@@ -35,7 +35,7 @@ public class Generic_Sword : MonoBehaviour, IChip
 
     public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
     {
-        Addressables.InstantiateAsync(AddressableKey, new Vector2(player.parentTransform.position.x + 1.6f, player.parentTransform.position.y), transform.rotation);
+        Addressables.InstantiateAsync(AddressableKey, new Vector2(player.worldTransform.position.x + 1.6f, player.worldTransform.position.y), transform.rotation);
         //Instantiate(vfx, initPosition, transform.rotation);
     }
 }

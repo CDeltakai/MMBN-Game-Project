@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 internal enum ChampyAnims
 {
@@ -24,15 +25,16 @@ public class Champy_RF : BStageEntity
     [HideInInspector] public bool hasMoved = false;
     [HideInInspector] public bool isAttacking = false;
 
+    Vector3Int previousCellPosition; 
 
-    void Start()
+
+    public override void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
         champyCollider = GetComponent<BoxCollider2D>();
         currentCellPos.Set((int)(Math.Round((worldTransform.position.x/1.6f), MidpointRounding.AwayFromZero)),
                             (int)transform.parent.position.y, 0);
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
-        //currentHP = maxHP;
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
         healthText.text = currentHP.ToString();
 
 
@@ -65,7 +67,7 @@ public class Champy_RF : BStageEntity
 
     public IEnumerator AttackAnimation()
     {
-        Vector3Int previousCellPosition = currentCellPos;
+        previousCellPosition = currentCellPos;
         setCellPosition_MaintainOccupied(player.getCellPosition().x + 1, currentCellPos.y);
         hasMoved = true;
 
@@ -85,6 +87,21 @@ public class Champy_RF : BStageEntity
         isAttacking = false;
     }
 
+    public override IEnumerator DestroyEntity()
+    {
+        StopCoroutine(AttackAnimation());
+        yield return new WaitForSeconds(0.0005f);
+        setSolidColor(Color.white);
+        var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
+                                                transform.rotation, transform.parent.transform);
+        yield return new WaitForSeconds(0.533f);
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+        stageHandler.setCellEntity(previousCellPosition.x, previousCellPosition.y, this, false);
+        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
+
+    }
+
     public void straightHitRegister(int damage)
     {
         RaycastHit2D hitInfo = Physics2D.Raycast (worldTransform.position, new Vector2(-1, 0), 1, LayerMask.GetMask("Player", "Player_Ally"));
@@ -93,7 +110,7 @@ public class Champy_RF : BStageEntity
 
             hitInfo.collider.gameObject.SendMessage("HitByRay", SendMessageOptions.DontRequireReceiver);
             print("Champy Attacked (Straight)");
-            IBattleStageEntity script = hitInfo.transform.gameObject.GetComponent<IBattleStageEntity>();
+            BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
             if(script != null)
             {
                 script.hurtEntity(damage, true, true);
@@ -108,7 +125,7 @@ public class Champy_RF : BStageEntity
         {
             hitInfo.collider.gameObject.SendMessage("HitByRay", SendMessageOptions.DontRequireReceiver);
             print("Champy Attacked (Uppercut)");
-            IBattleStageEntity script = hitInfo.transform.gameObject.GetComponent<IBattleStageEntity>();
+            BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
             if(script != null)
             {
                 script.hurtEntity(damage, false, true);

@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 public class StageTile
 {
 
+    public delegate void TileEvent();
+    public event TileEvent moveOntoTile;
 
     internal Vector3Int localCoords{get;set;}
     internal Vector3 worldPosition{get;set;}

@@ -20,7 +20,7 @@ public class ReflectCollider : MonoBehaviour
         boxCollider2D = GetComponent<BoxCollider2D>();
         Collider2D[] detectedColliders = new Collider2D[10];
         ContactFilter2D filter2D = new ContactFilter2D().NoFilter();
-        boxCollider2D.offset = new Vector2(player.parentTransform.localPosition.x, player.parentTransform.localPosition.y - 0.5f);
+        boxCollider2D.offset = new Vector2(player.worldTransform.localPosition.x, player.worldTransform.localPosition.y - 0.5f);
 
         StartCoroutine(SelfDestruct());
 

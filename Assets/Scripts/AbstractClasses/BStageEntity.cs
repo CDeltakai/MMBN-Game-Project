@@ -8,6 +8,10 @@ using System;
 
 public abstract class BStageEntity : MonoBehaviour
 {
+    public delegate void TileEvent(int x, int y);
+    public event TileEvent moveOntoTile;
+    TileEventManager tileEventManager;
+
     protected static BattleStageHandler stageHandler;
     protected SpriteRenderer spriteRenderer;
     protected static Shader shaderGUItext;
@@ -23,7 +27,7 @@ public abstract class BStageEntity : MonoBehaviour
     public abstract ETileTeam team{get; set;}
 
     public Vector3Int currentCellPos;
-    [SerializeField] bool isInvincible = false;
+    [SerializeField] public bool isInvincible = false;
     [SerializeField] public int currentHP;
     [SerializeField] public int shieldPoints;
     [SerializeField] public float DefenseMultiplier = 1;
@@ -32,6 +36,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     public virtual void Awake()
     {
+        tileEventManager = FindObjectOfType<TileEventManager>();
         stageHandler = FindObjectOfType<BattleStageHandler>();
         worldTransform = transform.parent.transform;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -41,6 +46,14 @@ public abstract class BStageEntity : MonoBehaviour
 
 
 
+    }
+
+    public virtual void Start()
+    {
+        currentCellPos.Set((int)(Math.Round((worldTransform.position.x/1.6f), MidpointRounding.AwayFromZero)),
+                            (int)transform.parent.position.y, 0);
+        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
+        healthText.text = currentHP.ToString();
     }
 
 
@@ -56,10 +69,10 @@ public abstract class BStageEntity : MonoBehaviour
 
         if(damage >= currentHP)
         {
+            animator.speed = Mathf.Epsilon;
             currentHP = 0;
             healthText.text = currentHP.ToString();
             healthText.enabled = false;
-            animator.speed = 0;
             StartCoroutine(DestroyEntity());
             return;
         }
@@ -113,14 +126,17 @@ public abstract class BStageEntity : MonoBehaviour
         spriteRenderer.color = Color.white;
     }
 
+    ///<summary>
+    ///Checks if the tile at the exact x and y position given is valid
+    ///</summary>
     public bool checkValidTile(int x, int y)
     {
         Vector3Int coordToCheck = new Vector3Int(x, y, 0);
         
-            if(stageHandler.getCustTile(coordToCheck).GetTileTeam() != team
-                ||
-            stageHandler.stageTilemap.GetTile
+            if(stageHandler.stageTilemap.GetTile
             (coordToCheck) == null
+                ||
+            stageHandler.getCustTile(coordToCheck).GetTileTeam() != team
                 ||
             stageHandler.stageTiles
             [stageHandler.stageTilemap.CellToWorld(coordToCheck)].isOccupied
@@ -133,7 +149,10 @@ public abstract class BStageEntity : MonoBehaviour
         return true;
     }
 
-    public void cellMove(int x, int y)
+    ///<summary>
+    ///Wrapper method for cellMove which includes checkValidTile before moving
+    ///</summary>
+    public void cellMove_verified(int x, int y)
     {
         if(!checkValidTile(currentCellPos.x + x, currentCellPos.y + y))
         {return;}
@@ -145,6 +164,19 @@ public abstract class BStageEntity : MonoBehaviour
                                     GetCellCenterWorld(currentCellPos);
     }
 
+    ///<summary>
+    ///Moves the entity the given x and y value (x for row, y for column). 
+    ///This method does not validate the tile it is attempting to move onto.
+    ///</summary>
+    public void cellMove(int x, int y)
+    {
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+        currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
+        moveOntoTile(currentCellPos.x, currentCellPos.y);
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+        worldTransform.position = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
+    }
 
     public void cellMoveRight()
     {

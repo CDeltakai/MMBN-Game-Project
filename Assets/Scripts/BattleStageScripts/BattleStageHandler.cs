@@ -16,7 +16,7 @@ public class BattleStageHandler : MonoBehaviour
 {
 
     public static BattleStageHandler instance;
-
+    TileEventManager tileEffectsManager;
 
 
 
@@ -29,7 +29,7 @@ public class BattleStageHandler : MonoBehaviour
     [SerializeField] public List<CustomTile> NPCTiles;
     public List<BStageEntity> EntityList;
 
-    TileManager tileManager = new TileManager();
+
 
     PlayerMovement player;
 
@@ -52,6 +52,12 @@ public class BattleStageHandler : MonoBehaviour
 
     private void Awake()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+
+        tileEffectsManager = GetComponent<TileEventManager>();
+        EntityList = FindObjectsOfType<BStageEntity>().ToList();
+
         if(instance == null)
         {
             instance = this;
@@ -75,23 +81,12 @@ public class BattleStageHandler : MonoBehaviour
         NPCInventory = GetComponent<BattleStageNPCInventory>();
         grid = GetComponentInParent<Grid>();
         player = FindObjectOfType<PlayerMovement>();
-        EntityList = FindObjectsOfType<BStageEntity>().ToList();
-        
-        
+            
         bounds = stageTilemap.cellBounds;
-        
-        
-
+    
         Debug.Log("Bounds coordinates: " +bounds.ToString());
         getCustTile(new Vector3Int(0, 0, 0));
-        CalculatePlayerBounds();
-
-        
-        //battleStageTilemap.SetTile(new Vector3Int(0, 0, 0), PlayerTile);
-
-        //Vector3 testPosition = battleStageTilemap.GetCellCenterWorld(new Vector3Int(4,1,0));
-
-        //Instantiate(NPCInventory.getNPCObject(0), testPosition, Quaternion.identity);
+        CalculatePlayerBounds();    
         
     }
 
@@ -195,16 +190,22 @@ public class BattleStageHandler : MonoBehaviour
         if (custTile is CustomTile)
         {
             var selectedTile = (CustomTile) custTile;
-            //print("Tile at " + position.ToString() + "Is a custom tile, name:" + selectedTile.tileSO.GetName());
             return selectedTile;
 
         }else
         {
-            print("Tile at "+ position.ToString() + "is not a CustomTile, retuned null");
+            Debug.LogWarning("Tile at "+ position.ToString() + "is not a CustomTile, retuned null");
         }
         return null;
+    }
+
+    public BStageEntity getEntityAtCell(int x , int y)
+    {
+        Vector3Int cell = new Vector3Int(x, y, 0);
+        return stageTiles[stageTilemap.CellToWorld(cell)].entity;
 
     }
+
     public void addTile(StageTile tile, Vector3 position)
     {
         stageTiles.Add(position, tile);
@@ -228,7 +229,6 @@ public class BattleStageHandler : MonoBehaviour
         {
         stageTiles[stageTilemap.CellToWorld(cell)].entity = null;
         }
-
     }
 
     ///<summary>
@@ -241,10 +241,10 @@ public class BattleStageHandler : MonoBehaviour
         stageTiles[stageTilemap.CellToWorld(cell)].isOccupied = condition;
         if(condition)
         {
-        stageTiles[stageTilemap.CellToWorld(cell)].entity = entity;
+            stageTiles[stageTilemap.CellToWorld(cell)].entity = entity;
         }else
         {
-        stageTiles[stageTilemap.CellToWorld(cell)].entity = null;
+            stageTiles[stageTilemap.CellToWorld(cell)].entity = null;
         }
 
 
@@ -278,4 +278,7 @@ public class BattleStageHandler : MonoBehaviour
 
 
     }
+
+
+
 }

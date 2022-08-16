@@ -49,13 +49,13 @@ public class MettaurAI_RF : MonoBehaviour
             if(mettaurPosition.y < targetPosition.y)
             {
                 //mettaur.cellMoveUp();
-                mettaur.cellMove(0, 1);
+                mettaur.cellMove_verified(0, 1);
                 movementCooldownTimer = movementCooldown;
             }else
             if(mettaurPosition.y > targetPosition.y)
             {
                 //mettaur.cellMoveDown();
-                mettaur.cellMove(0, -1);
+                mettaur.cellMove_verified(0, -1);
                 movementCooldownTimer = movementCooldown;
             }
 
