@@ -247,6 +247,18 @@ public class BattleStageHandler : MonoBehaviour
             stageTiles[stageTilemap.CellToWorld(cell)].entity = null;
         }
 
+    }
+
+    public void previousSeenEntity(int x, int y, BStageEntity entity, bool condition)
+    {
+        Vector3Int cell = new Vector3Int(x, y, 0);
+        if(condition)
+        {
+            stageTiles[stageTilemap.CellToWorld(cell)].lastSeenEntity = entity;
+        }else
+        {
+            stageTiles[stageTilemap.CellToWorld(cell)].lastSeenEntity = null;
+        }
 
     }
 
@@ -264,9 +276,38 @@ public class BattleStageHandler : MonoBehaviour
     public void changeInternalTile(int x, int y, ETiles tileType, ETileTeam tileTeam)
     {
         Vector3Int cell = new Vector3Int(x, y, 0);
+
+        if(tileTeam == ETileTeam.Player){
         stageTiles[stageTilemap.CellToWorld(cell)].custTile =
-        PlayerTiles.Find(tile => tile.GetTileEnum() == tileType &&
-                                                tile.GetTileTeam() == tileTeam);
+        PlayerTiles.Find(tile => tile.GetTileEnum() == tileType);
+        }else
+        {
+        stageTiles[stageTilemap.CellToWorld(cell)].custTile =
+        NPCTiles.Find(tile => tile.GetTileEnum() == tileType);            
+        }
+    }
+
+
+///<summary>
+///Wrapper method for both changeInternalTile and SetTile for CustomTiles
+///</summary>
+    public void SetCustomTile(Vector3Int cell, ETiles tileType, ETileTeam tileTeam)
+    {
+
+    
+        if(tileTeam == ETileTeam.Player){
+            CustomTile tile = PlayerTiles.Find(tile => tile.GetTileEnum() == tileType);
+            stageTiles[stageTilemap.CellToWorld(cell)].custTile = tile;
+            stageTilemap.SetTile(cell, tile);
+        
+        }else
+        {
+            CustomTile tile = NPCTiles.Find(tile => tile.GetTileEnum() == tileType);
+            stageTiles[stageTilemap.CellToWorld(cell)].custTile = tile;
+            stageTilemap.SetTile(cell, tile);      
+        }
+
+
     }
 
 

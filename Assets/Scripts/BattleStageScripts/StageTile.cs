@@ -21,6 +21,7 @@ public class StageTile
     internal Tilemap TilemapMember{get;set;}
     internal bool isOccupied{get;set;} = false;
     internal BStageEntity entity{get;set;}
+    internal BStageEntity lastSeenEntity{get;set;}
 
 
 }

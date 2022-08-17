@@ -8,8 +8,12 @@ using System;
 
 public abstract class BStageEntity : MonoBehaviour
 {
-    public delegate void TileEvent(int x, int y);
-    public event TileEvent moveOntoTile;
+    public delegate void MoveOntoTileEvent(int x, int y, BStageEntity entity);
+    public event MoveOntoTileEvent moveOntoTile;
+
+    public delegate void MoveOffTileEvent(int x, int y, BStageEntity entity);
+    public event MoveOffTileEvent moveOffTile;
+
     TileEventManager tileEventManager;
 
     protected static BattleStageHandler stageHandler;
@@ -102,13 +106,11 @@ public abstract class BStageEntity : MonoBehaviour
 
     public void teleportToCell(int x, int y)
     {
-        
-            //stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
-            //stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, false);
             stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+            stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+
             currentCellPos.Set(x, y, 0);
-            //stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
-            //stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, true);
+
             stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
 
             worldTransform.localPosition = stageHandler.stageTilemap.
@@ -171,69 +173,18 @@ public abstract class BStageEntity : MonoBehaviour
     public void cellMove(int x, int y)
     {
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+        stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        moveOffTile(currentCellPos.x, currentCellPos.y, this);
+
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
-        moveOntoTile(currentCellPos.x, currentCellPos.y);
+
+        moveOntoTile(currentCellPos.x, currentCellPos.y, this);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
         worldTransform.position = stageHandler.stageTilemap.
                                     GetCellCenterWorld(currentCellPos);
     }
 
-    public void cellMoveRight()
-    {
-        if(!checkValidTile(currentCellPos.x + 1, currentCellPos.y))
-        {return;}
-
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
-        stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, false);
-
-        currentCellPos.Set(currentCellPos.x + 1, currentCellPos.y, currentCellPos.z);
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
-        stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, true);
-        
-
-        worldTransform.position = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-    }
-    public void cellMoveLeft()
-    {
-
-        if(!checkValidTile(currentCellPos.x - 1, currentCellPos.y))
-        {return;}
-
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
-        stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, false);
-        currentCellPos.Set(currentCellPos.x - 1, currentCellPos.y, currentCellPos.z);
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
-        stageHandler.setEntityAtCell(currentCellPos.x, currentCellPos.y, this, true);
-
-        worldTransform.position = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-    }
-    public void cellMoveUp()
-    {
-        if(!checkValidTile(currentCellPos.x, currentCellPos.y + 1))
-        {return;}
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
-        currentCellPos.Set(currentCellPos.x, currentCellPos.y + 1, currentCellPos.z);
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
-
-        worldTransform.position = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-    }
-    public void cellMoveDown()
-    {
-
-        if(!checkValidTile(currentCellPos.x, currentCellPos.y - 1))
-        {return;}
-
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, false);
-        currentCellPos.Set(currentCellPos.x, currentCellPos.y - 1, currentCellPos.z);
-        stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
-
-        worldTransform.position = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-    }
-    
+ 
     public Vector3Int getCurrentCellPos()
     {
         return currentCellPos;
