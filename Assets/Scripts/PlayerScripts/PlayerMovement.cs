@@ -47,12 +47,11 @@ public class PlayerMovement : BStageEntity
     public override bool isStunnable => true;
     public override int maxHP => 9999;
     public override ETileTeam team { get;set;} = ETileTeam.Player;
-    public bool Rooted;
 
     Color invisible;
     Color opaque;
 
-    AnimationCurve movementSpeedCurve;
+    [SerializeField] AnimationCurve movementSpeedCurve;
 
 
     public override void Start()
@@ -102,13 +101,6 @@ public class PlayerMovement : BStageEntity
           {return;}
           target.hurtEntity(shotDamage, true, false);
       }
-    }
-
-    void setInvincible()
-    {
-        if(isInvincible){isInvincible = false; return;}
-        isInvincible = true;
-        
     }
 
 
@@ -181,8 +173,8 @@ public class PlayerMovement : BStageEntity
         {
             yield break;
         }
-        animator.SetTrigger("Move");
         isMoving = true; 
+        animator.SetTrigger("Move");
         yield return new WaitForSeconds(delay);
 
         cellMove(x, y);
@@ -197,7 +189,7 @@ public class PlayerMovement : BStageEntity
     void simpleMove()
     {
         if(!isAlive){return;}
-        if(Rooted){return;}
+        if(isRooted){return;}
         if(isMoving){return;}
         int index = animator.GetLayerIndex("Base Layer");
         
@@ -230,14 +222,17 @@ public class PlayerMovement : BStageEntity
 
     public override void hurtEntity(int damageAmount,
         bool lightAttack,
-        bool hitStun,
+        bool hitFlinch,
         bool pierceCloaking = false,
         EStatusEffects statusEffect = EStatusEffects.Default)
     {
         if(isInvincible){return;}
 
-        if(!SuperArmor || hitStun ){
+        if(!SuperArmor || hitFlinch ){
             animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
+            StartCoroutine(ChangeAnimState(EMegamanAnimations.Megaman_Idle.ToString(), EMegamanAnimations.Megaman_Hurt.ToString()));
+            StartCoroutine(setStatusEffect(EStatusEffects.Rooted, 0.111f));
+
         }
         
         if(damageAmount * DefenseMultiplier >= currentHP)
@@ -253,10 +248,12 @@ public class PlayerMovement : BStageEntity
         if(!lightAttack){
         StartCoroutine(InvincibilityFrames(1f));
         }
-        StartCoroutine(ChangeAnimState(EMegamanAnimations.Megaman_Idle.ToString(), EMegamanAnimations.Megaman_Hurt.ToString()));
         
         return;
     }
+
+
+
 
     IEnumerator ChangeAnimState(string stateName, string transitionState)
     {
@@ -304,29 +301,23 @@ public class PlayerMovement : BStageEntity
 
 
 
-    public IEnumerator setStatusEffect(EStatusEffects status)
+    public IEnumerator setStatusEffect(EStatusEffects status, float duration)
     {
 
        switch (status) 
        {
         case EStatusEffects.Paralyzed: 
             animator.speed = 0f;
-            yield return new WaitForSecondsRealtime(1f);
+            yield return new WaitForSecondsRealtime(duration);
             animator.speed = 1f;
             break;
 
         case EStatusEffects.Rooted:
-            Rooted = true;
-            yield return new WaitForSecondsRealtime(1f);
+            isRooted = true;
+            yield return new WaitForSecondsRealtime(duration);
+            isRooted = false;
             break;
-        
 
-
-
-
-        default :
-        
-            break;
        }
 
 

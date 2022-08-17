@@ -222,6 +222,86 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 1857731100}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_PostInfinity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[2].inSlope
+      value: 1.2360595
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[2].outSlope
+      value: 1.2360595
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985706, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3022468580385308911, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -277,9 +357,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 219285273}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MachineGunner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -461,7 +541,7 @@ GameObject:
   - component: {fileID: 502204922}
   - component: {fileID: 502204924}
   - component: {fileID: 502204923}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: HP Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +766,9 @@ GameObject:
   - component: {fileID: 627287019}
   - component: {fileID: 627287018}
   - component: {fileID: 627287017}
-  m_Layer: 0
+  - component: {fileID: 627287020}
+  - component: {fileID: 627287021}
+  m_Layer: 11
   m_Name: TargetingReticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,6 +801,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97383d85a012f004dac6123a207dea10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  yCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  speed: 4
 --- !u!95 &627287018
 Animator:
   serializedVersion: 3
@@ -775,8 +870,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1126852281
-  m_SortingLayer: 6
+  m_SortingLayerID: -769762895
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1164655841609465585, guid: c21c07364ed3b4444a56201d73648504, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -789,6 +884,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &627287020
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627287015}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.002096653, y: 0.009743452}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9375, y: 0.9375}
+    newSize: {x: 0.9375, y: 0.9375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.30178165, y: 0.3096757}
+  m_EdgeRadius: 0
+--- !u!50 &627287021
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627287015}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!224 &644380062 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 854223893155274716, guid: 646490780f2dfce4ead887e6f0c97190, type: 3}
@@ -998,9 +1140,11 @@ GameObject:
   - component: {fileID: 834408279}
   - component: {fileID: 834408278}
   - component: {fileID: 834408280}
-  m_Layer: 0
+  - component: {fileID: 834408281}
+  - component: {fileID: 834408282}
+  m_Layer: 9
   m_Name: MachineGunnerObject
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1083,6 +1227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d265d1840196cb04fa039a70e2f42d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  isAttacking: 0
+  foundTarget: 0
 --- !u!114 &834408279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,14 +1242,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec65c325b338414c829fbf15c2b04dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
+  healthText: {fileID: 502204923}
   worldTransform: {fileID: 0}
+  isRooted: 0
   currentCellPos: {x: 0, y: 0, z: 0}
   isInvincible: 0
   currentHP: 60
   shieldPoints: 0
   DefenseMultiplier: 1
   AttackMultiplier: 1
+  reticle: {fileID: 627287017}
 --- !u!95 &834408280
 Animator:
   serializedVersion: 3
@@ -1113,7 +1262,7 @@ Animator:
   m_GameObject: {fileID: 834408275}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56fe7b009a073774e9f68699ea2ec798, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1122,6 +1271,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &834408281
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834408275}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.4316244, y: 0.18412507}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.8163265, y: 0.018518519}
+    oldSize: {x: 1.53125, y: 1.6875}
+    newSize: {x: 1.53125, y: 1.6875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.348671, y: 0.6903603}
+  m_EdgeRadius: 0
+--- !u!50 &834408282
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834408275}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &962924666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,7 +2267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1728712952}
   - component: {fileID: 1728712953}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: HP Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}

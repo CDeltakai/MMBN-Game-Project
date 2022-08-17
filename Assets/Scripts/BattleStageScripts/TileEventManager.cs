@@ -42,9 +42,7 @@ public class TileEventManager : MonoBehaviour
 
         switch(tile.GetTileEnum())
         {
-            case ETiles.Cracked_Tile:
-            
-                break;
+
             case ETiles.Poison_Tile:
 
                 break;
@@ -83,7 +81,6 @@ public class TileEventManager : MonoBehaviour
 
     void CrackTile(Vector3Int cell, ETileTeam tileTeam)
     {
-        print("Attempted to crack tile");
 
         if(stageHandler.getCustTile(cell).GetTileEnum() == ETiles.Cracked_Tile)
         {

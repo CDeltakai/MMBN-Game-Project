@@ -22,7 +22,7 @@ TagManager:
   - Player_Ally
   - Enemies
   - Obstacle
-  - 
+  - EnemyVFX
   - 
   - 
   - 
@@ -67,6 +67,9 @@ TagManager:
     locked: 0
   - name: ChipVFX
     uniqueID: 3685912823
+    locked: 0
+  - name: EnemyVFX
+    uniqueID: 3525204401
     locked: 0
   - name: UnitStats
     uniqueID: 3519100819

@@ -17,7 +17,7 @@ public class ChipEffects : MonoBehaviour
     PlayerMovement player;
     BoxCollider2D playerCollider;
     [SerializeField] public GameObject ParryCollider;
-    [SerializeField] string ChipScript;
+    string ChipScript;
     Time time;
     float timeElapsed = 0f;
     ChipSO chip;

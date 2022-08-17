@@ -28,6 +28,8 @@ public class MettaurAI_RF : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(mettaur.currentHP <= 0)
+        {return;}
         if(mettaur.isAttacking){return;}
         targetPosition = player.getCurrentCellPos();
         mettaurPosition = mettaur.getCurrentCellPos();

@@ -13,8 +13,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     public delegate void MoveOffTileEvent(int x, int y, BStageEntity entity);
     public event MoveOffTileEvent moveOffTile;
-
-    TileEventManager tileEventManager;
+    protected static TileEventManager tileEventManager;
 
     protected static BattleStageHandler stageHandler;
     protected SpriteRenderer spriteRenderer;
@@ -29,6 +28,8 @@ public abstract class BStageEntity : MonoBehaviour
     public abstract bool isStunnable{get;}
     public abstract int maxHP{get;}
     public abstract ETileTeam team{get; set;}
+    public bool isRooted = false;
+    
 
     public Vector3Int currentCellPos;
     [SerializeField] public bool isInvincible = false;
@@ -93,6 +94,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     public virtual IEnumerator DestroyEntity()
     {
+        tileEventManager.UnsubscribeEntity(this);
         yield return new WaitForSeconds(0.0005f);
         setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 

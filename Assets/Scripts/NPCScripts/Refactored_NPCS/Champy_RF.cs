@@ -67,6 +67,7 @@ public class Champy_RF : BStageEntity
 
     public IEnumerator AttackAnimation()
     {
+        if(currentHP <= 0){yield break;}
         previousCellPosition = currentCellPos;
         setCellPosition_MaintainOccupied(player.getCellPosition().x + 1, currentCellPos.y);
         hasMoved = true;
@@ -90,6 +91,7 @@ public class Champy_RF : BStageEntity
     public override IEnumerator DestroyEntity()
     {
         StopCoroutine(AttackAnimation());
+        tileEventManager.UnsubscribeEntity(this);
         yield return new WaitForSeconds(0.0005f);
         setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
