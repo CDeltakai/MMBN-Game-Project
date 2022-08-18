@@ -106,7 +106,7 @@ public class Champy_RF : BStageEntity
 
     public void straightHitRegister(int damage)
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast (worldTransform.position, new Vector2(-1, 0), 1, LayerMask.GetMask("Player", "Player_Ally"));
+        RaycastHit2D hitInfo = Physics2D.Raycast (worldTransform.position, new Vector2(-1, 0), 1.5f, LayerMask.GetMask("Player", "Player_Ally"));
         if(hitInfo)
         {
 
@@ -122,7 +122,7 @@ public class Champy_RF : BStageEntity
 
     public void uppercutHitRegister(int damage)
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast (worldTransform.position, new Vector2(-1, 0), 1, LayerMask.GetMask("Player", "Player_Ally"));
+        RaycastHit2D hitInfo = Physics2D.Raycast (worldTransform.position, new Vector2(-1, 0), 1.5f, LayerMask.GetMask("Player", "Player_Ally"));
         if(hitInfo)
         {
             hitInfo.collider.gameObject.SendMessage("HitByRay", SendMessageOptions.DontRequireReceiver);

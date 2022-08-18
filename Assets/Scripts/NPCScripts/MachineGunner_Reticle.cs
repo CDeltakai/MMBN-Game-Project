@@ -15,6 +15,9 @@ public class MachineGunner_Reticle : MonoBehaviour
     Transform worldTransform;
     Rigidbody2D body;
     [SerializeField] float speed = 1f;
+    [SerializeField] BoxCollider2D attackVFXCollider;
+    [SerializeField] Animator attackVFXAnimator;
+    [SerializeField] SpriteRenderer attackVFXSpriteRenderer;
     bool started = false;
     bool lockedOn = false;
 
@@ -37,6 +40,9 @@ public class MachineGunner_Reticle : MonoBehaviour
     {
         spriteRenderer.enabled = false;
         boxCollider2D.enabled = false;
+        attackVFXCollider.enabled = false;
+        attackVFXSpriteRenderer.enabled = false;
+        attackVFXAnimator.enabled = false;
 
     }
 
@@ -79,10 +85,45 @@ public class MachineGunner_Reticle : MonoBehaviour
     {
         if(other.tag == "Player" || other.tag == "Player_Ally")
         {
-            
+            lockedOn = true;
+            transform.position = other.transform.position;
+            StartCoroutine(FireAtTarget());
         }
         print("Reticle found: " + other.gameObject.name);
     }
+
+    IEnumerator FireAtTarget()
+    {
+        animator.Play("Reticle_Found");
+        yield return new WaitForSeconds(0.4f);
+
+        gunnerAI.animator.Play(GunnerAnims.Gunner_Shoot.ToString());
+        attackVFXSpriteRenderer.enabled = true;
+        attackVFXAnimator.enabled = true;
+
+        attackVFXAnimator.Play("Gunner_Attack_VFX");
+        animator.Play("Reticle_Search");
+
+        spriteRenderer.enabled = false;
+        boxCollider2D.enabled = false;        
+        yield return new WaitForSeconds(1.04f);
+        gunnerAI.animator.Play(GunnerAnims.Gunner_Target.ToString());
+        attackVFXSpriteRenderer.enabled = false;
+        attackVFXAnimator.enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        gunnerAI.animator.Play(GunnerAnims.Gunner_Search.ToString());
+
+        lockedOn = false;
+        gunnerAI.foundTarget = false;
+        
+
+        transform.position = stageHandler.stageTilemap.GetCellCenterWorld
+        (stageHandler.playerBoundsList.Find(cell => cell.y == gunner.currentCellPos.y));
+        
+
+    }
+
+
 
 
     void moveReticle(Vector2 direction, float speed)
