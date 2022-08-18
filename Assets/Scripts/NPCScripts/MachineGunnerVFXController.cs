@@ -21,8 +21,7 @@ public class MachineGunnerVFXController : MonoBehaviour
         RaycastHit2D hitInfo = Physics2D.Raycast (transform.position, new Vector2(-1, 0), 0.2f, LayerMask.GetMask("Player", "Player_Ally"));
         if(hitInfo)
         {
-
-            print("Gunner hit target");
+            hitInfo.collider.gameObject.SendMessage("HitByRay", SendMessageOptions.DontRequireReceiver);
             BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
             if(script != null)
             {

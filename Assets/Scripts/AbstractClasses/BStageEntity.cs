@@ -38,6 +38,9 @@ public abstract class BStageEntity : MonoBehaviour
     [SerializeField] public float DefenseMultiplier = 1;
     [SerializeField] public float AttackMultiplier = 1;
 
+    Color invisible;
+    Color opaque;
+
 
     public virtual void Awake()
     {
@@ -48,6 +51,11 @@ public abstract class BStageEntity : MonoBehaviour
         animator = GetComponent<Animator>();
         shaderGUItext = Shader.Find("GUI/Text Shader");
         shaderSpritesDefault = shaderSpritesDefault = Shader.Find("Sprites/Default");
+
+        invisible = spriteRenderer.color;
+        opaque = spriteRenderer.color;
+        invisible.a = 0;
+        opaque.a = 1;
 
 
 
@@ -192,6 +200,52 @@ public abstract class BStageEntity : MonoBehaviour
         return currentCellPos;
     }
 
+
+
+    public virtual IEnumerator setStatusEffect(EStatusEffects status, float duration)
+    {
+
+       switch (status) 
+       {
+        case EStatusEffects.Paralyzed: 
+            animator.speed = 0f;
+
+            yield return new WaitForSecondsRealtime(duration);
+            animator.speed = 1f;
+            break;
+
+        case EStatusEffects.Rooted:
+            isRooted = true;
+            yield return new WaitForSecondsRealtime(duration);
+            isRooted = false;
+            break;
+
+       }
+
+    }
+
+
+   protected virtual IEnumerator InvincibilityFrames(float duration)
+    {
+        float gracePeriod = duration;
+        isInvincible = true;
+
+        while (gracePeriod>=0){
+            
+
+            spriteRenderer.color = invisible;
+            gracePeriod -= 0.05f;
+
+            yield return new WaitForSecondsRealtime(0.05f);
+            spriteRenderer.color = opaque;
+            gracePeriod -= 0.05f;
+
+            yield return new WaitForSecondsRealtime(0.05f);
+            
+        }
+
+        isInvincible = false;
+    }
 
 
 

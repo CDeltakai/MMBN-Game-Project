@@ -54,6 +54,7 @@ public class MachineGunner : BStageEntity
             healthText.text = currentHP.ToString();
             stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
             healthText.enabled = false;
+            animator.speed = 0;
             StartCoroutine(DestroyEntity());
             return;
         }

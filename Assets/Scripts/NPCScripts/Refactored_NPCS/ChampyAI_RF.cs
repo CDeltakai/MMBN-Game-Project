@@ -26,6 +26,7 @@ public class ChampyAI_RF : MonoBehaviour
 
             if(hitInfo)
             {
+                hitInfo.collider.gameObject.SendMessage("HitByRay", SendMessageOptions.DontRequireReceiver);
                 champy.isAttacking = true;
                 StartCoroutine(champy.AttackAnimation());
 

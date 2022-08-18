@@ -17,7 +17,7 @@ public class MachineGunnerAI : MonoBehaviour
     public event FoundTargetEvent foundTargetEvent;
 
     private MachineGunner machineGunner;
-    public Animator animator;
+    [HideInInspector]public Animator animator;
     public bool isAttacking = false;
     public bool foundTarget = false;
 
@@ -46,6 +46,7 @@ public class MachineGunnerAI : MonoBehaviour
 
             if(hitInfo)
             {
+                
                 foundTarget = true;
 
                 animator.Play(GunnerAnims.Gunner_Target.ToString(), 0);

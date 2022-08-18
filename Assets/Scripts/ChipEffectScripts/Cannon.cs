@@ -31,7 +31,7 @@ public class Cannon : MonoBehaviour, IChip
 
             
 
-            IBattleStageEntity script = hitInfo.transform.gameObject.GetComponent<IBattleStageEntity>();
+            BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
             script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true);
         }
         

@@ -28,13 +28,13 @@ public class Airshot : MonoBehaviour, IChip
 
             
 
-            IBattleStageEntity script = hitInfo.transform.gameObject.GetComponent<IBattleStageEntity>();
+            BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
             if(script == null)
             {return;}
 
             script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true);
             
-            script.setCellPosition(script.getCellPosition().x + 1, script.getCellPosition().y);
+            //script.setCellPosition(script.getCellPosition().x + 1, script.getCellPosition().y);
         }
         
         AdditionalDamage = 0;

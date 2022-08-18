@@ -268,7 +268,7 @@ public class PlayerMovement : BStageEntity
         return animationLength * 2f;
     }
 
-    IEnumerator InvincibilityFrames(float duration)
+    protected override IEnumerator InvincibilityFrames(float duration)
     {
         float gracePeriod = duration;
         isInvincible = true;
@@ -301,7 +301,7 @@ public class PlayerMovement : BStageEntity
 
 
 
-    public IEnumerator setStatusEffect(EStatusEffects status, float duration)
+    public override IEnumerator setStatusEffect(EStatusEffects status, float duration)
     {
 
        switch (status) 
@@ -319,9 +319,6 @@ public class PlayerMovement : BStageEntity
             break;
 
        }
-
-
-
 
     }
 
