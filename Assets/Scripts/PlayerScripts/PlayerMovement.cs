@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 using Pathfinding.Util;
 using System;
+using DG.Tweening;
 
 public class PlayerMovement : BStageEntity
 {
@@ -25,7 +26,6 @@ public class PlayerMovement : BStageEntity
     ChipEffects chipEffect;
 
     bool isAlive = true;
-    bool isMoving = false;
     bool isUsingChip = false;
     float animationLength;
 
@@ -48,10 +48,8 @@ public class PlayerMovement : BStageEntity
     public override int maxHP => 9999;
     public override ETileTeam team { get;set;} = ETileTeam.Player;
 
-    Color invisible;
-    Color opaque;
-
-    [SerializeField] AnimationCurve movementSpeedCurve;
+  
+    [SerializeField] bool useTranslateMovement = false;
 
 
     public override void Start()
@@ -131,6 +129,7 @@ public class PlayerMovement : BStageEntity
     void OnUseChip()
     {
         if(isUsingChip){return;}
+        if(isMoving){return;}
         StartCoroutine(OnUseChipIEnumerator());
     }
 
@@ -195,19 +194,28 @@ public class PlayerMovement : BStageEntity
         
         if(Keyboard.current.dKey.wasPressedThisFrame)
         {
-            StartCoroutine(teleMoveWithDelay(1, 0, 0.106f));            
+            if(useTranslateMovement)
+            {StartCoroutine(translateMoveCell(1, 0, Vector2.right));}
+            else{StartCoroutine(teleMoveWithDelay(1, 0, 0.106f));}
+
         }
         if(Keyboard.current.aKey.wasPressedThisFrame)
         {
-            StartCoroutine(teleMoveWithDelay(-1, 0, 0.106f));   
+            if(useTranslateMovement)
+            {StartCoroutine(translateMoveCell(-1, 0, Vector2.left));}
+            else{StartCoroutine(teleMoveWithDelay(-1, 0, 0.106f));}             
         }
         if(Keyboard.current.wKey.wasPressedThisFrame)
         {
-            StartCoroutine(teleMoveWithDelay(0, 1, 0.106f));   
+            if(useTranslateMovement)
+            {StartCoroutine(translateMoveCell(0, 1, Vector2.up));}
+            else{StartCoroutine(teleMoveWithDelay(0, 1, 0.106f));}               
         }
         if(Keyboard.current.sKey.wasPressedThisFrame)
         {
-            StartCoroutine(teleMoveWithDelay(0, -1, 0.106f));
+            if(useTranslateMovement)
+            {StartCoroutine(translateMoveCell(0, -1, Vector2.down));}
+            else{StartCoroutine(teleMoveWithDelay(0, -1, 0.106f));}            
         }
 
     }
@@ -216,6 +224,7 @@ public class PlayerMovement : BStageEntity
 
     void OnFire()
     {
+        if(isMoving){return;}
         animator.SetTrigger("Shoot");   
     }
 

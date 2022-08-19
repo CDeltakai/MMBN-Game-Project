@@ -239,6 +239,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1857731100}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: useTranslateMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: movementSpeedCurve.m_PostInfinity
       value: 2
       objectReference: {fileID: 0}
@@ -248,15 +252,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: movementSpeedCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: movementSpeedCurve.m_Curve.Array.data[2].time
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: movementSpeedCurve.m_Curve.Array.data[0].value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: movementSpeedCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: movementSpeedCurve.m_Curve.Array.data[2].value
@@ -1265,12 +1273,20 @@ MonoBehaviour:
   healthText: {fileID: 502204923}
   worldTransform: {fileID: 0}
   isRooted: 0
+  isMoving: 0
   currentCellPos: {x: 0, y: 0, z: 0}
   isInvincible: 0
   currentHP: 60
   shieldPoints: 0
   DefenseMultiplier: 1
   AttackMultiplier: 1
+  movementSpeedCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  movementSpeedTime: 0
   reticle: {fileID: 627287017}
 --- !u!95 &834408280
 Animator:

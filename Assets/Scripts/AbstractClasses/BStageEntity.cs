@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,6 +6,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.AddressableAssets;
 using System;
+using DG.Tweening;
+
+
 
 public abstract class BStageEntity : MonoBehaviour
 {
@@ -29,6 +33,7 @@ public abstract class BStageEntity : MonoBehaviour
     public abstract int maxHP{get;}
     public abstract ETileTeam team{get; set;}
     public bool isRooted = false;
+    public bool isMoving = false;
     
 
     public Vector3Int currentCellPos;
@@ -38,12 +43,15 @@ public abstract class BStageEntity : MonoBehaviour
     [SerializeField] public float DefenseMultiplier = 1;
     [SerializeField] public float AttackMultiplier = 1;
 
-    Color invisible;
-    Color opaque;
+    protected Color invisible;
+    protected Color opaque;
 
+    [SerializeField] AnimationCurve movementSpeedCurve;
+    [SerializeField] float movementSpeedTime;
 
     public virtual void Awake()
     {
+           
         tileEventManager = FindObjectOfType<TileEventManager>();
         stageHandler = FindObjectOfType<BattleStageHandler>();
         worldTransform = transform.parent.transform;
@@ -245,6 +253,109 @@ public abstract class BStageEntity : MonoBehaviour
         }
 
         isInvincible = false;
+    }
+
+
+
+    public virtual IEnumerator translateMoveCell(int x, int y, Vector2 direction)
+    {
+        if(isMoving)
+        {yield break;}
+        Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
+        if(!checkValidTile(destinationCell.x, destinationCell.y))
+        {
+            yield break;
+        }
+        isMoving = true;
+        movementSpeedTime = 0;
+        float speed = movementSpeedCurve.Evaluate(movementSpeedTime);
+        float maxDistance = Vector3.Distance(stageHandler.stageTilemap.GetCellCenterWorld(currentCellPos),
+         stageHandler.stageTilemap.GetCellCenterWorld(destinationCell));
+        float currentDistance;
+        float percentageDone = 0;
+        float maxPercentage;
+        bool changedTile = false;
+        if(Mathf.Approximately(direction.y, Vector2.up.y) || Mathf.Approximately(direction.y, Vector2.down.y))
+        {maxPercentage = 0.75f;}
+        else
+        {maxPercentage = 0.85f;}
+
+            while(percentageDone <= maxPercentage)
+            {
+
+                if(percentageDone >= 0.3 && !changedTile)
+                {
+                    stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+                    stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+                    moveOffTile(currentCellPos.x, currentCellPos.y, this);
+
+                    currentCellPos.Set(destinationCell.x, destinationCell.y, 0);
+
+                    moveOntoTile(currentCellPos.x, currentCellPos.y, this);
+                    stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+                    changedTile = true;
+                }
+
+                worldTransform.Translate(direction * speed * Time.deltaTime);
+                movementSpeedTime += Time.deltaTime;
+                speed = movementSpeedCurve.Evaluate(movementSpeedTime);
+
+                currentDistance = Vector3.Distance(worldTransform.position,
+                stageHandler.stageTilemap.GetCellCenterWorld(destinationCell));
+
+                percentageDone = 
+                
+                    (Mathf.Clamp((maxDistance - currentDistance), 0, maxDistance)/maxDistance);
+                    
+                    
+                
+                // percentageDone = Mathf.Clamp
+                // (
+                //     (Mathf.Clamp((maxDistance - currentDistance), 0, maxDistance)/maxDistance),
+                //     Mathf.Epsilon,
+                //     1.001f
+                // );
+
+                //print("Percentage done: " + percentageDone + "current distance:" + currentDistance.ToString());
+
+                speed = movementSpeedCurve.Evaluate(movementSpeedTime);
+                yield return null;
+            }
+        movementSpeedTime = 0;
+        worldTransform.position = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
+
+        // if(x < 0 && !Mathf.Approximately(x, 0))
+        // {
+
+        //     while(transform.position.x >= stageHandler.stageTilemap.GetCellCenterWorld(destinationCell).x)
+        //     {
+
+        //         transform.Translate(direction * speed * Time.deltaTime);
+        //         movementSpeedTime += Time.deltaTime;
+        //         speed = movementSpeedCurve.Evaluate(movementSpeedTime);
+        //         yield return null;
+        //     }
+        
+
+
+        // }
+        // else if(x > 0 && !Mathf.Approximately(x, 0))
+        // {
+        //     while(transform.position.x <= stageHandler.stageTilemap.GetCellCenterWorld(destinationCell).x)
+        //     {
+        //         transform.Translate(direction * speed * Time.deltaTime);
+        //         movementSpeedTime += Time.deltaTime;
+        //         speed = movementSpeedCurve.Evaluate(movementSpeedTime);
+        //         yield return null;
+        //     }            
+        // }
+
+
+
+
+
+        isMoving = false;
     }
 
 
