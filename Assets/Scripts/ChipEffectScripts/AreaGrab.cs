@@ -51,6 +51,7 @@ public class AreaGrab : MonoBehaviour, IChip
             stageTilemap.SetTile(new Vector3Int(pos.x + 1, pos.y, 0) , tile.getCustomPlayerTile());
             
         }
+        stageHandler.CalculatePlayerBounds();
 
     }
 

@@ -12,6 +12,9 @@ public class PlayerMovement : BStageEntity
 
     [SerializeField] public ChipSO activeChip;
     [SerializeField] public List<ChipSO> PlayerChipQueue = new List<ChipSO>();
+    public override event MoveOntoTileEvent moveOntoTile;
+    public override event MoveOffTileEvent moveOffTile;
+
 
 
     TimeManager timeManager;
@@ -20,21 +23,21 @@ public class PlayerMovement : BStageEntity
     PlayerInput playerInput;
 
 
-
+    //firePoint is used for effects or chips that use raycasts to deal their effect.
+    [SerializeField] Transform firePoint;
     [HideInInspector] public BoxCollider2D boxCollider2D;
     PlayerChipAnimations playerChipAnimations; 
     ChipEffects chipEffect;
+    [SerializeField] bool SuperArmor = false;
 
     bool isAlive = true;
     bool isUsingChip = false;
     float animationLength;
 
     ChipSelectScreenMovement chipSelectScreenMovement;
-    [SerializeField] Transform firePoint;
 
     public int shotDamage = 5;
 
-    public bool SuperArmor = false;
 
     public string Name => "Megaman";
 
@@ -48,7 +51,7 @@ public class PlayerMovement : BStageEntity
     public override int maxHP => 9999;
     public override ETileTeam team { get;set;} = ETileTeam.Player;
 
-  
+  [Header("Experimental Features")]
     [SerializeField] bool useTranslateMovement = false;
 
 
@@ -180,11 +183,6 @@ public class PlayerMovement : BStageEntity
         isMoving = false;
     }
 
-    IEnumerator animatedMovewithDelay(int x, int y, float delay)
-    {
-        yield return 1;
-    }
-
     void simpleMove()
     {
         if(!isAlive){return;}
@@ -237,7 +235,7 @@ public class PlayerMovement : BStageEntity
     {
         if(isInvincible){return;}
 
-        if(!SuperArmor || hitFlinch ){
+        if(!SuperArmor && hitFlinch ){
             animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
             StartCoroutine(ChangeAnimState(EMegamanAnimations.Megaman_Idle.ToString(), EMegamanAnimations.Megaman_Hurt.ToString()));
             StartCoroutine(setStatusEffect(EStatusEffects.Rooted, 0.111f));
@@ -330,5 +328,121 @@ public class PlayerMovement : BStageEntity
        }
 
     }
+
+
+    public override IEnumerator translateMoveCell(int x, int y, Vector2 direction)
+    {
+        if(isMoving || isUsingChip)
+        {yield break;}
+        Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
+        if(!checkValidTile(destinationCell.x, destinationCell.y))
+        {
+            yield break;
+        }
+        isMoving = true;
+        movementSpeedTime = 0;
+        float speed = movementSpeedCurve.Evaluate(movementSpeedTime);
+        float maxDistance = Vector3.Distance(stageHandler.stageTilemap.GetCellCenterWorld(currentCellPos),
+         stageHandler.stageTilemap.GetCellCenterWorld(destinationCell));
+        float currentDistance;
+        float percentageDone = 0;
+        float maxPercentage;
+        float speedMultiplier = 1;
+        bool changedTile = false;
+        if(Mathf.Approximately(direction.y, Vector2.up.y) || Mathf.Approximately(direction.y, Vector2.down.y))
+        {maxPercentage = 0.75f;
+        speedMultiplier = 0.6f;}
+        else
+        {maxPercentage = 0.85f;}
+
+            while(percentageDone <= maxPercentage)
+            {
+
+                if(percentageDone >= 0.3 && !changedTile)
+                {
+                    stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+                    stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+                    moveOffTile(currentCellPos.x, currentCellPos.y, this);
+
+                    currentCellPos.Set(destinationCell.x, destinationCell.y, 0);
+
+                    moveOntoTile(currentCellPos.x, currentCellPos.y, this);
+                    stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+                    changedTile = true;
+                }
+
+                worldTransform.Translate(direction * (speed*speedMultiplier) * Time.deltaTime);
+                movementSpeedTime += Time.deltaTime;
+                speed = movementSpeedCurve.Evaluate(movementSpeedTime);
+
+                currentDistance = Vector3.Distance(worldTransform.position,
+                stageHandler.stageTilemap.GetCellCenterWorld(destinationCell));
+
+                percentageDone = (Mathf.Clamp((maxDistance - currentDistance), 0, maxDistance)/maxDistance);
+                    
+
+                speed = movementSpeedCurve.Evaluate(movementSpeedTime);
+                //yield return null unblocks the thread and allows update to draw the next frame before 
+                //returning to this coroutine.
+                yield return null;
+            }
+        movementSpeedTime = 0;
+        worldTransform.position = stageHandler.stageTilemap.
+                                    GetCellCenterWorld(currentCellPos);
+        isMoving = false;
+    }
+
+    public override IEnumerator translateMove_Fixed(int x, int y)
+    {
+        if(isMoving)
+        {yield break;}
+        Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
+        if(!checkValidTile(destinationCell.x, destinationCell.y))
+        {
+            yield break;
+        }
+        isMoving = true;
+        Vector2Int direction = new Vector2Int(x, y);
+        movementSpeedTime = 0;
+        float yPosOnCurve = 0;
+        float xPosOnCurve = 0;
+        bool changedTile = false;
+
+
+        while(movementSpeedTime <= 0.1f)
+        {
+
+            if(movementSpeedTime >= 0.05f && !changedTile)
+            {
+                stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+                stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+                moveOffTile(currentCellPos.x, currentCellPos.y, this);
+
+                currentCellPos.Set(destinationCell.x, destinationCell.y, 0);
+
+                moveOntoTile(currentCellPos.x, currentCellPos.y, this);
+                stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+                changedTile = true;
+            }
+
+
+            movementSpeedTime += Time.deltaTime;
+            if(direction == Vector2Int.down || direction == Vector2Int.up)
+            {yPosOnCurve = Mathf.Clamp(yDistanceTimeCurve.Evaluate(movementSpeedTime), 0, 1.001f);}
+            else
+            {xPosOnCurve = Mathf.Clamp(xDistanceTimeCurve.Evaluate(movementSpeedTime), 0, 1.601f);}
+            worldTransform.position = new Vector3 (worldTransform.position.x + xPosOnCurve, worldTransform.position.y + yPosOnCurve, 0);
+
+            yield return null;
+        }
+        movementSpeedTime = 0;
+        //worldTransform.position = stageHandler.stageTilemap.
+        //                            GetCellCenterWorld(currentCellPos);    
+        isMoving = false;
+
+
+    }
+
+
 
 }

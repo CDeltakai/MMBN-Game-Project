@@ -1,7 +1,70 @@
 fileFormatVersion: 2
 guid: e0942bb6f3970f7459647cc33eaa09ae
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2875401954409383694
+    second: Thunder_exe6_Spritesheet_0
+  - first:
+      213: 8631676342048984470
+    second: Thunder_exe6_Spritesheet_1
+  - first:
+      213: -3760995410444080752
+    second: Thunder_exe6_Spritesheet_2
+  - first:
+      213: -8668537615471655885
+    second: Thunder_exe6_Spritesheet_3
+  - first:
+      213: 8684435876665524342
+    second: Thunder_exe6_Spritesheet_5
+  - first:
+      213: 5892440503181460974
+    second: Thunder_exe6_Spritesheet_6
+  - first:
+      213: -8757123129828730775
+    second: Thunder_exe6_Spritesheet_8
+  - first:
+      213: -5278256565976379762
+    second: Thunder_exe6_Spritesheet_4
+  - first:
+      213: 8777341184943735135
+    second: Thunder_exe6_Spritesheet_7
+  - first:
+      213: -7989480383479390371
+    second: Thunder_exe6_Spritesheet_9
+  - first:
+      213: -6072072649436561112
+    second: Thunder_exe6_Spritesheet_11
+  - first:
+      213: 2414903064670122765
+    second: Thunder_exe6_Spritesheet_12
+  - first:
+      213: 7098972430498618161
+    second: Thunder_exe6_Spritesheet_13
+  - first:
+      213: -4399624035186157857
+    second: Thunder_exe6_Spritesheet_10
+  - first:
+      213: 6757755868843383808
+    second: Thunder_exe6_Spritesheet_23
+  - first:
+      213: -9129218192615802627
+    second: Thunder_exe6_Spritesheet_24
+  - first:
+      213: 7808842019224309777
+    second: Thunder_exe6_Spritesheet_25
+  - first:
+      213: -1074589833624016766
+    second: Thunder_exe6_Spritesheet_28
+  - first:
+      213: -7905273630998424057
+    second: Thunder_exe6_Spritesheet_29
+  - first:
+      213: 6777331793998862866
+    second: Thunder_exe6_Spritesheet_30
+  - first:
+      213: 8523132602297061520
+    second: Thunder_exe6_Spritesheet_31
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +104,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +138,498 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 161
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8f6f038258818d0800000000000000
+      internalID: -2875401954409383694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 158
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d09f786efd9c770800000000000000
+      internalID: 8631676342048984470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 158
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0992b9ec9924ecbc0800000000000000
+      internalID: -3760995410444080752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 157
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33443b377fa23b780800000000000000
+      internalID: -8668537615471655885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 116
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6708e4fea60558870800000000000000
+      internalID: 8684435876665524342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 117
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5414c0b6726c150800000000000000
+      internalID: 5892440503181460974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 121
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968933029e2787680800000000000000
+      internalID: -8757123129828730775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 122
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8eca9f5e9ddfb6b0800000000000000
+      internalID: -5278256565976379762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 116
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f514af8ad416fc970800000000000000
+      internalID: 8777341184943735135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 120
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f52cadbe9af1190800000000000000
+      internalID: -7989480383479390371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 83
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82108f7b81aabbba0800000000000000
+      internalID: -6072072649436561112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 82
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d033aa8ea85738120800000000000000
+      internalID: 2414903064670122765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 81
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b592640dd948260800000000000000
+      internalID: 7098972430498618161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6557d004561f2c0800000000000000
+      internalID: -4399624035186157857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 48
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c9839982f58cd50800000000000000
+      internalID: 6757755868843383808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 56
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8f9182c608e4180800000000000000
+      internalID: -9129218192615802627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 58
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110520781749e5c60800000000000000
+      internalID: 7808842019224309777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 8
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288289f5d3a4611f0800000000000000
+      internalID: -1074589833624016766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 8
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706931c3483da4290800000000000000
+      internalID: -7905273630998424057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 6
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a534adb5bed0e50800000000000000
+      internalID: 6777331793998862866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunder_exe6_Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 8
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090977db1ff384670800000000000000
+      internalID: 8523132602297061520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

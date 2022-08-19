@@ -33,8 +33,7 @@ public class Airshot : MonoBehaviour, IChip
             {return;}
 
             script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true);
-            
-            //script.setCellPosition(script.getCellPosition().x + 1, script.getCellPosition().y);
+            StartCoroutine(script.Shove(1, 0));            
         }
         
         AdditionalDamage = 0;
