@@ -37,6 +37,7 @@ public enum EChips
     Sword,
     Vulcan,
     WhiteCapsule,
+    Bomb,
 
 
 

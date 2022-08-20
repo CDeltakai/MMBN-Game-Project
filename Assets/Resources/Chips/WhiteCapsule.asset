@@ -18,7 +18,7 @@ MonoBehaviour:
   ChipDamage: 0
   ChipImage: {fileID: -1821607153479355049, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   ChipDescription: Adds paralyze effect to following chip
-  ChipElement: 8
+  ChipElement: 9
   ChipSize: 32
   AnimationDuration: 0
   ChipType: 0

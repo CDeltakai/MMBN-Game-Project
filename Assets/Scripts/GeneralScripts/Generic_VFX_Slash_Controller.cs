@@ -32,14 +32,11 @@ public class Generic_VFX_Slash_Controller : MonoBehaviour
 
             if(other.GetComponent<BStageEntity>()){
             BStageEntity abstractScript = other.GetComponent<BStageEntity>();
-            abstractScript.hurtEntity((int)((sword.BaseDamage + sword.AdditionalDamage)*player.AttackMultiplier), false, true);
+            abstractScript.hurtEntity((int)((sword.BaseDamage + sword.AdditionalDamage)*player.AttackMultiplier),
+            false, true, statusEffect: sword.chipStatusEffect);
             return;
             }
-                
-
-
-            IBattleStageEntity script = other.GetComponent<IBattleStageEntity>();
-            script.hurtEntity((int)((sword.BaseDamage + sword.AdditionalDamage)*player.AttackMultiplier), false, true);
+            
 
 
         }

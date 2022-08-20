@@ -166,7 +166,7 @@ TextureImporter:
     second: Chip_icons_exe6_53
   - first:
       213: 8803355929822962066
-    second: Chip_icons_exe6_54
+    second: Chip_Bomb
   - first:
       213: 3058210992914247739
     second: Chip_icons_exe6_55
@@ -1918,7 +1918,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chip_icons_exe6_54
+      name: Chip_Bomb
       rect:
         serializedVersion: 2
         x: 116

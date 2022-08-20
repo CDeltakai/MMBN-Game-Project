@@ -40,7 +40,7 @@ MonoBehaviour:
   CurrentTile: {fileID: 11400000, guid: 2ac88759f7cb27e48b3aa810686f05b0, type: 2}
   tileAnimation: {fileID: 0}
   tileScriptName: 
-  isPassable: 1
+  isPassable: 0
   tileSO: {fileID: 0}
   PlayerTile: {fileID: 11400000, guid: 68f88d3f1a53a7546b2151008ccdf463, type: 2}
   EnemyTile: {fileID: 11400000, guid: 2ac88759f7cb27e48b3aa810686f05b0, type: 2}

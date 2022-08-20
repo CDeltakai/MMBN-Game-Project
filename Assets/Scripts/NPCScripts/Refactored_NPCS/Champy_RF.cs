@@ -67,6 +67,7 @@ public class Champy_RF : BStageEntity
 
     public IEnumerator AttackAnimation()
     {
+        if(currentHP <= 0){yield break;}
         previousCellPosition = currentCellPos;
         setCellPosition_MaintainOccupied(player.getCellPosition().x + 1, currentCellPos.y);
         hasMoved = true;
@@ -90,6 +91,7 @@ public class Champy_RF : BStageEntity
     public override IEnumerator DestroyEntity()
     {
         StopCoroutine(AttackAnimation());
+        tileEventManager.UnsubscribeEntity(this);
         yield return new WaitForSeconds(0.0005f);
         setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
@@ -104,7 +106,7 @@ public class Champy_RF : BStageEntity
 
     public void straightHitRegister(int damage)
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast (worldTransform.position, new Vector2(-1, 0), 1, LayerMask.GetMask("Player", "Player_Ally"));
+        RaycastHit2D hitInfo = Physics2D.Raycast (worldTransform.position, new Vector2(-1, 0), 1.5f, LayerMask.GetMask("Player", "Player_Ally"));
         if(hitInfo)
         {
 
@@ -120,7 +122,7 @@ public class Champy_RF : BStageEntity
 
     public void uppercutHitRegister(int damage)
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast (worldTransform.position, new Vector2(-1, 0), 1, LayerMask.GetMask("Player", "Player_Ally"));
+        RaycastHit2D hitInfo = Physics2D.Raycast (worldTransform.position, new Vector2(-1, 0), 1.5f, LayerMask.GetMask("Player", "Player_Ally"));
         if(hitInfo)
         {
             hitInfo.collider.gameObject.SendMessage("HitByRay", SendMessageOptions.DontRequireReceiver);

@@ -13,12 +13,13 @@ internal enum GunnerAnims
 public class MachineGunnerAI : MonoBehaviour
 {
 
-
+    public delegate void FoundTargetEvent();
+    public event FoundTargetEvent foundTargetEvent;
 
     private MachineGunner machineGunner;
-    private Animator animator;
-    private bool isAttacking = false;
-    private bool foundTarget = false;
+    [HideInInspector]public Animator animator;
+    public bool isAttacking = false;
+    public bool foundTarget = false;
 
 
     void Awake()
@@ -38,7 +39,22 @@ public class MachineGunnerAI : MonoBehaviour
     void Update()
     {
         
+        if(!isAttacking && !foundTarget)
+        {
+        RaycastHit2D hitInfo = Physics2D.Raycast (machineGunner.worldTransform.position, new Vector2(-1, 0),
+                                                 Mathf.Infinity, LayerMask.GetMask("Player", "Player_Ally"));
 
+            if(hitInfo)
+            {
+                
+                foundTarget = true;
+
+                animator.Play(GunnerAnims.Gunner_Target.ToString(), 0);
+                
+
+            }
+
+        }
 
 
 
@@ -71,6 +87,9 @@ public class MachineGunnerAI : MonoBehaviour
 
     IEnumerator Fire()
     {
+
+
+        animator.Play(GunnerAnims.Gunner_Shoot.ToString(), 0);
         yield return null;
     }
 

@@ -8,6 +8,7 @@ public class ChipLoadManager : MonoBehaviour
 [SerializeField] public List<ChipSO> nextChipLoad = new List<ChipSO>();
 [SerializeField] public List<ChipSO> chipQueue = new List<ChipSO>();
 List<int> chipsToRemoveIndexes = new List<int>();
+List<ChipSO> chipsToRemove = new List<ChipSO>();
 [SerializeField] public float damageAmp = 0;
 [SerializeField] public int damageAdd = 0;
 PlayerMovement player;
@@ -43,7 +44,8 @@ PlayerMovement player;
             {
                 nextChipLoad.Add(chip);
                 //chipQueue.Remove(chip);
-                chipsToRemoveIndexes.Add(chipQueue.IndexOf(chip)); 
+                chipsToRemove.Add(chip);
+                //chipsToRemoveIndexes.Add(chipQueue.IndexOf(chip)); 
 
 
             }else
@@ -52,11 +54,19 @@ PlayerMovement player;
             }
         }
 
-        foreach(int index in chipsToRemoveIndexes)
+        foreach(ChipSO chip in chipsToRemove)
         {
-            chipQueue.RemoveAt(index);
+            chipQueue.Remove(chip);
         }
+
+        // foreach(int index in chipsToRemoveIndexes)
+        // {
+        //     chipQueue.RemoveAt(index);
+        // }
+
+
         chipsToRemoveIndexes.Clear();
+        //nextChipLoad.Clear();
 
 
 

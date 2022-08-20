@@ -18,7 +18,7 @@ public class AreaGrab : MonoBehaviour, IChip
 
     public EChipElements chipElement => EChipElements.Normal;
 
-    public EStatusEffects statusEffect {get;set;} = EStatusEffects.Default;
+    public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
 
     private void Awake() 
     {
@@ -51,6 +51,7 @@ public class AreaGrab : MonoBehaviour, IChip
             stageTilemap.SetTile(new Vector3Int(pos.x + 1, pos.y, 0) , tile.getCustomPlayerTile());
             
         }
+        stageHandler.CalculatePlayerBounds();
 
     }
 

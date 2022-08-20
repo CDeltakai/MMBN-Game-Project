@@ -13,7 +13,7 @@ public interface IChip
 
     
 
-    public EStatusEffects statusEffect{get; set;}
+    public EStatusEffects chipStatusEffect{get; set;}
 
     public EChipElements chipElement{get;}
 

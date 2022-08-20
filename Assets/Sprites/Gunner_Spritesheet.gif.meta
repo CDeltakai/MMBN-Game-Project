@@ -43,13 +43,13 @@ TextureImporter:
     second: Gunner_Shoot8
   - first:
       213: 3207484579522887609
-    second: Gunner_Spritesheet_13
+    second: Attack_VFX2
   - first:
       213: -6492861802220483785
-    second: Gunner_Spritesheet_14
+    second: Attack_VFX3
   - first:
       213: -8250925749513076681
-    second: Gunner_Spritesheet_15
+    second: Attack_VFX4
   - first:
       213: 883229561619769969
     second: Gunner_Spritesheet_16
@@ -58,10 +58,10 @@ TextureImporter:
     second: Gunner_Spritesheet_17
   - first:
       213: 2501663062264723630
-    second: Gunner_Spritesheet_18
+    second: Attack_VFX1
   - first:
       213: -7849143493986484652
-    second: Gunner_Spritesheet_19
+    second: Attack_VFX5
   - first:
       213: -7389485531217764754
     second: Gunner_Spritesheet_20
@@ -469,15 +469,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_13
+      name: Attack_VFX2
       rect:
         serializedVersion: 2
         x: 49
         y: 95
         width: 38
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -490,15 +490,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_14
+      name: Attack_VFX3
       rect:
         serializedVersion: 2
         x: 110
         y: 95
         width: 38
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -511,15 +511,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_15
+      name: Attack_VFX4
       rect:
         serializedVersion: 2
         x: 174
         y: 95
-        width: 37
+        width: 38
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -532,57 +532,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_16
-      rect:
-        serializedVersion: 2
-        x: 233
-        y: 108
-        width: 25
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17a68735b9cd14c00800000000000000
-      internalID: 883229561619769969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunner_Spritesheet_17
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 115
-        width: 12
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e26372482f0e1a810800000000000000
-      internalID: 1774947060364555822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunner_Spritesheet_18
+      name: Attack_VFX1
       rect:
         serializedVersion: 2
         x: 1
         y: 95
         width: 27
         height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -595,15 +553,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Spritesheet_19
+      name: Attack_VFX5
       rect:
         serializedVersion: 2
         x: 227
         y: 97
-        width: 5
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 46
+        height: 41
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -611,27 +569,6 @@ TextureImporter:
       bones: []
       spriteID: 45efdd9249d321390800000000000000
       internalID: -7849143493986484652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunner_Spritesheet_20
-      rect:
-        serializedVersion: 2
-        x: 259
-        y: 97
-        width: 14
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6e50ee7f06437990800000000000000
-      internalID: -7389485531217764754
       vertices: []
       indices: 
       edges: []

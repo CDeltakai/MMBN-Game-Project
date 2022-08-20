@@ -12,9 +12,9 @@ public class Airshot : MonoBehaviour, IChip
 
     public EChipElements chipElement => EChipElements.Air;
 
-    public EStatusEffects statusEffect {get;set;} = EStatusEffects.Default;
+    public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
 
-    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
+    public void Effect(int AddDamage = 0, EStatusEffects status = EStatusEffects.Default, string AddressableKey = null)
     {
 
         AdditionalDamage += AddDamage;
@@ -28,13 +28,12 @@ public class Airshot : MonoBehaviour, IChip
 
             
 
-            IBattleStageEntity script = hitInfo.transform.gameObject.GetComponent<IBattleStageEntity>();
-            if(script == null)
+            BStageEntity target = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
+            if(target == null)
             {return;}
 
-            script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true);
-            
-            script.setCellPosition(script.getCellPosition().x + 1, script.getCellPosition().y);
+            target.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true, statusEffect:chipStatusEffect);
+            StartCoroutine(target.Shove(1, 0));            
         }
         
         AdditionalDamage = 0;

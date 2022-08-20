@@ -45,6 +45,7 @@ public class Mettaur_RF : BStageEntity
 
     public IEnumerator AttackAnimation()
     {
+        if(currentHP <= 0){yield break;}
         isAttacking = true;
         animator.Play(MettaurAnims.Mettaur_Attack.ToString(), 0);
         yield return new WaitForSeconds(attackAnimationDuration);

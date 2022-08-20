@@ -45,7 +45,7 @@ public class ReflectCollider : MonoBehaviour
             RaycastHit2D hitInfo = Physics2D.Raycast (chipEffects.firePoint.position, chipEffects.firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies"));
             if(hitInfo)
             {
-                IBattleStageEntity script = hitInfo.transform.gameObject.GetComponent<IBattleStageEntity>();
+                BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
                 script.hurtEntity((int)((reflect.BaseDamage + reflect.AdditionalDamage)*player.AttackMultiplier), false, true);
             }
         }
@@ -62,7 +62,7 @@ public class ReflectCollider : MonoBehaviour
             RaycastHit2D hitInfo = Physics2D.Raycast (chipEffects.firePoint.position, chipEffects.firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies"));
             if(hitInfo)
             {
-                IBattleStageEntity script = hitInfo.transform.gameObject.GetComponent<IBattleStageEntity>();
+                BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
                 script.hurtEntity((int)((reflect.BaseDamage + reflect.AdditionalDamage)*player.AttackMultiplier), false, true);
                 
             }

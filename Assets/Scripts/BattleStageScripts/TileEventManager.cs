@@ -20,20 +20,43 @@ public class TileEventManager : MonoBehaviour
     {
         foreach(BStageEntity entity in stageHandler.EntityList)
         {
-            entity.moveOntoTile += TileEffect;
-
+            entity.moveOntoTile += MoveOntoTileEffect;
+            entity.moveOffTile += MoveOffTileEffect;
         }
     }
 
     public void UnsubscribeEntity(BStageEntity entity)
     {
-        entity.moveOntoTile -= TileEffect;
+        entity.moveOntoTile -= MoveOntoTileEffect;
+        entity.moveOffTile -= MoveOffTileEffect;
     }
 
 
 
-    public void TileEffect(int x, int y)
+    public void MoveOntoTileEffect(int x, int y, BStageEntity entity)
     {
+
+        Vector3Int cell = new Vector3Int(x, y, 0);
+
+        CustomTile tile = stageHandler.getCustTile(cell);
+
+        switch(tile.GetTileEnum())
+        {
+
+            case ETiles.Poison_Tile:
+
+                break;
+
+
+
+        }
+
+
+    }
+
+    public void MoveOffTileEffect(int x, int y, BStageEntity entity)
+    {
+
         Vector3Int cell = new Vector3Int(x, y, 0);
 
         CustomTile tile = stageHandler.getCustTile(cell);
@@ -41,7 +64,7 @@ public class TileEventManager : MonoBehaviour
         switch(tile.GetTileEnum())
         {
             case ETiles.Cracked_Tile:
-                CrackTile(cell);
+                CrackTile(cell, tile.tileTeam);
                 break;
             case ETiles.Poison_Tile:
 
@@ -52,13 +75,22 @@ public class TileEventManager : MonoBehaviour
         }
 
 
-
-
     }
 
 
-    void CrackTile(Vector3Int cell)
+
+    void CrackTile(Vector3Int cell, ETileTeam tileTeam)
     {
+
+        if(stageHandler.getCustTile(cell).GetTileEnum() == ETiles.Cracked_Tile)
+        {
+            stageHandler.SetCustomTile(cell, ETiles.Cracked_Empty_Tile, tileTeam);
+            
+        }else
+        {
+            stageHandler.SetCustomTile(cell, ETiles.Cracked_Tile, tileTeam);
+
+        }
 
     }
 
