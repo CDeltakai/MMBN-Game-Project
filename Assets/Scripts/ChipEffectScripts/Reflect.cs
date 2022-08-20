@@ -14,7 +14,7 @@ public class Reflect : MonoBehaviour, IChip
     public EChipTypes ChipType => EChipTypes.Active;
     public EChipElements chipElement => EChipElements.Normal;
 
-    public EStatusEffects statusEffect {get;set;} = EStatusEffects.Default;
+    public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
 
 
     public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)

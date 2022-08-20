@@ -12,9 +12,10 @@ public class PlayerMovement : BStageEntity
 
     [SerializeField] public ChipSO activeChip;
     [SerializeField] public List<ChipSO> PlayerChipQueue = new List<ChipSO>();
-    public override event MoveOntoTileEvent moveOntoTile;
-    public override event MoveOffTileEvent moveOffTile;
+    public new bool usingOverridenMovementMethod = true;
 
+    public override event MoveOffTileEvent moveOnToTileOverriden;
+    public override event MoveOffTileEvent moveOffTileOverriden;
 
 
     TimeManager timeManager;
@@ -227,7 +228,7 @@ public class PlayerMovement : BStageEntity
     }
 
 
-    public override void hurtEntity(int damageAmount,
+    public override void hurtEntity(int damage,
         bool lightAttack,
         bool hitFlinch,
         bool pierceCloaking = false,
@@ -242,14 +243,14 @@ public class PlayerMovement : BStageEntity
 
         }
         
-        if(damageAmount * DefenseMultiplier >= currentHP)
+        if(damage * DefenseMultiplier >= currentHP)
         {
             isAlive = false;
             currentHP = 0;
             return;
         }
 
-        currentHP = currentHP - (int)(damageAmount * DefenseMultiplier);
+        currentHP = currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999);
         healthText.text = currentHP.ToString();
 
         if(!lightAttack){
@@ -362,11 +363,11 @@ public class PlayerMovement : BStageEntity
                 {
                     stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
                     stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
-                    moveOffTile(currentCellPos.x, currentCellPos.y, this);
+                    moveOffTileOverriden(currentCellPos.x, currentCellPos.y, this);
 
                     currentCellPos.Set(destinationCell.x, destinationCell.y, 0);
 
-                    moveOntoTile(currentCellPos.x, currentCellPos.y, this);
+                    moveOnToTileOverriden(currentCellPos.x, currentCellPos.y, this);
                     stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
                     changedTile = true;
                 }
@@ -416,11 +417,11 @@ public class PlayerMovement : BStageEntity
             {
                 stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
                 stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
-                moveOffTile(currentCellPos.x, currentCellPos.y, this);
+                moveOffTileOverriden(currentCellPos.x, currentCellPos.y, this);
 
                 currentCellPos.Set(destinationCell.x, destinationCell.y, 0);
 
-                moveOntoTile(currentCellPos.x, currentCellPos.y, this);
+                moveOnToTileOverriden(currentCellPos.x, currentCellPos.y, this);
                 stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
                 changedTile = true;
             }

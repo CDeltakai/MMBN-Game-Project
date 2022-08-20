@@ -10,7 +10,7 @@ public class Sword : MonoBehaviour, IChip
     public int AdditionalDamage{get; set;} = 0;
 
     public EChipTypes ChipType => EChipTypes.Active;
-    public EStatusEffects statusEffect {get;set;} = EStatusEffects.Default;
+    public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
     public EChipElements chipElement => EChipElements.Blade;
 
 
@@ -18,7 +18,7 @@ public class Sword : MonoBehaviour, IChip
     PlayerMovement player;
 
 
-    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
+    public void Effect(int AddDamage = 0, EStatusEffects status = EStatusEffects.Default, string AddressableKey = null)
     {
 
         AdditionalDamage += AddDamage;
@@ -31,7 +31,7 @@ public class Sword : MonoBehaviour, IChip
         {
           
           BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
-          script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true);
+          script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true, statusEffect: chipStatusEffect);
           Debug.Log(hitInfo.transform.name + "HP:" + script.getHealth() + "Distance: " + hitInfo.distance.ToString() + "Chip Used: Sword");
         }
 

@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: useTranslateMovement
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: movementSpeedCurve.m_PostInfinity
@@ -1585,7 +1585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &968591414
 Transform:
   m_ObjectHideFlags: 0

@@ -13,10 +13,15 @@ using DG.Tweening;
 public abstract class BStageEntity : MonoBehaviour
 {
     public delegate void MoveOntoTileEvent(int x, int y, BStageEntity entity);
-    public virtual event MoveOntoTileEvent moveOntoTile;
+    public event MoveOntoTileEvent moveOntoTile;
+    public virtual event MoveOffTileEvent moveOnToTileOverriden;
+    public bool usingOverridenMovementMethod = false;
+
+
 
     public delegate void MoveOffTileEvent(int x, int y, BStageEntity entity);
-    public virtual event MoveOffTileEvent moveOffTile;
+    public event MoveOffTileEvent moveOffTile;
+    public virtual event MoveOffTileEvent moveOffTileOverriden;
     protected static TileEventManager tileEventManager;
 
     protected static BattleStageHandler stageHandler;
@@ -86,10 +91,13 @@ public abstract class BStageEntity : MonoBehaviour
         healthText.text = currentHP.ToString();
     }
 
-
+    ///<summary>
+    ///lightAttack dictates whether the attack triggers invincibility frames.
+    ///hitFlinch dictates whether the attack will trigger a flinch animation on the target.
+    ///</summary>
     public virtual void hurtEntity(int damage,
                                    bool lightAttack,
-                                   bool hitStun,
+                                   bool hitFlinch,
                                    bool pierceCloaking = false,
                                    EStatusEffects statusEffect = EStatusEffects.Default)
     {
@@ -97,6 +105,9 @@ public abstract class BStageEntity : MonoBehaviour
         if(isInvincible)
         {return;}
 
+        if(statusEffect != EStatusEffects.Default)
+        {StartCoroutine(setStatusEffect(statusEffect, 1));}
+            
         if(damage >= currentHP)
         {
             animator.speed = Mathf.Epsilon;
@@ -106,7 +117,7 @@ public abstract class BStageEntity : MonoBehaviour
             StartCoroutine(DestroyEntity());
             return;
         }
-        currentHP = currentHP - (int)(damage * DefenseMultiplier);
+        currentHP = currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999);
         healthText.text = currentHP.ToString();
         return; 
     }
@@ -198,7 +209,7 @@ public abstract class BStageEntity : MonoBehaviour
     ///Moves the entity the given x and y value (x for row, y for column). 
     ///This method does not validate the tile it is attempting to move onto.
     ///</summary>
-    public void cellMove(int x, int y)
+    public virtual void cellMove(int x, int y)
     {
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);

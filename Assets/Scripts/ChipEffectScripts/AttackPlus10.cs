@@ -9,7 +9,7 @@ public class AttackPlus10 : MonoBehaviour, IChip
     public int BaseDamage => 0;
 
     public EChipTypes ChipType => EChipTypes.Passive;
-    public EStatusEffects statusEffect {get;set;} = EStatusEffects.Default;
+    public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
     public EChipElements chipElement => EChipElements.Multiplier;
 
 

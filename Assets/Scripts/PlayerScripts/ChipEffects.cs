@@ -68,6 +68,20 @@ public class ChipEffects : MonoBehaviour
     }
 
 
+    public void UseChipEffect(string GivenAddressableKey = null)
+    {
+        chipList = chipLoadManager.nextChipLoad;
+
+        if(chipLoadManager.nextChipLoad.Count() == 1)
+        {
+            Type chipScript = Type.GetType(chipLoadManager.nextChipLoad[0].GetEffectScript());
+            StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipScript));
+            print("Used ApplyChipEffectV3, with chip count at 1");
+            return;
+        }
+    }
+
+
     public void ApplyChipEffectV3(string GivenAddressableKey = null)
     {
 
