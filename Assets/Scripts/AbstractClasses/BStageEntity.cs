@@ -79,9 +79,8 @@ public abstract class BStageEntity : MonoBehaviour
         invisible.a = 0;
         opaque.a = 1;
 
-
-
     }
+
 
     public virtual void Start()
     {
@@ -377,7 +376,6 @@ public abstract class BStageEntity : MonoBehaviour
 
     public IEnumerator Shove(int x, int y)
     {
-        if(isMoving){yield break;}
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
         if(!checkValidTile(destinationCell.x, destinationCell.y))
         {yield break;}
@@ -387,14 +385,37 @@ public abstract class BStageEntity : MonoBehaviour
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
-        worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), 0.1f );
-        yield return new WaitForSeconds(0.05f);
+        worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), 0.15f ).SetEase(Ease.OutCubic);
+        yield return new WaitForSeconds(0.075f);
 
         moveOntoTile(currentCellPos.x, currentCellPos.y, this);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
 
 
     }
+
+    public IEnumerator TweenMove(int x, int y, float duration, Ease easeType)
+    {
+        if(isMoving){yield break;}
+        
+        Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
+        if(!checkValidTile(destinationCell.x, destinationCell.y))
+        {yield break;}
+
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+        stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        moveOffTile(currentCellPos.x, currentCellPos.y, this);
+
+        currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
+        worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), duration ).SetEase(easeType);
+        yield return new WaitForSeconds(duration * 0.5f);
+
+        moveOntoTile(currentCellPos.x, currentCellPos.y, this);
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+
+        yield return null;
+    }
+
 
 
     public virtual IEnumerator translateMove_Fixed(int x, int y)

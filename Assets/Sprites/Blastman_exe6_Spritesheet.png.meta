@@ -11,6 +11,150 @@ TextureImporter:
   - first:
       213: -5662326290130675025
     second: blastman_crate3
+  - first:
+      213: 2956805219825421375
+    second: Explosion1
+  - first:
+      213: -7654516608427025329
+    second: Explosion2
+  - first:
+      213: -4491305047095094540
+    second: Blastman_exe6_Spritesheet_5
+  - first:
+      213: -5973117812556189865
+    second: Blastman_exe6_Spritesheet_6
+  - first:
+      213: 4134403439951656019
+    second: Blastman_exe6_Spritesheet_7
+  - first:
+      213: 6452271230410753569
+    second: Blastman_exe6_Spritesheet_8
+  - first:
+      213: -6858692128549242533
+    second: Blastman_exe6_Spritesheet_9
+  - first:
+      213: 5167552104930142377
+    second: Blastman_exe6_Spritesheet_10
+  - first:
+      213: -28681209764174790
+    second: Blastman_exe6_Spritesheet_11
+  - first:
+      213: -3958427653254721504
+    second: Blastman_exe6_Spritesheet_12
+  - first:
+      213: 3142519989960332339
+    second: Blastman_exe6_Spritesheet_13
+  - first:
+      213: 8600214075801101711
+    second: Blastman_exe6_Spritesheet_14
+  - first:
+      213: 7311011709885322952
+    second: Blastman_exe6_Spritesheet_15
+  - first:
+      213: -6347905121370650207
+    second: Blastman_exe6_Spritesheet_16
+  - first:
+      213: -4612041552836939466
+    second: Blastman_exe6_Spritesheet_17
+  - first:
+      213: 4335682883731562852
+    second: Blastman_exe6_Spritesheet_18
+  - first:
+      213: -4669853345080978642
+    second: Blastman_exe6_Spritesheet_19
+  - first:
+      213: 7612544094329539399
+    second: Blastman_exe6_Spritesheet_20
+  - first:
+      213: 8493161037661601759
+    second: Blastman_exe6_Spritesheet_21
+  - first:
+      213: 2099942625954857663
+    second: Blastman_exe6_Spritesheet_22
+  - first:
+      213: 5368871318448651091
+    second: Blastman_exe6_Spritesheet_23
+  - first:
+      213: -1811133810390713328
+    second: Blastman_exe6_Spritesheet_24
+  - first:
+      213: -4474838820629206169
+    second: Blastman_exe6_Spritesheet_25
+  - first:
+      213: 4244139799656048515
+    second: Blastman_exe6_Spritesheet_26
+  - first:
+      213: -4581855735729133513
+    second: Blastman_exe6_Spritesheet_27
+  - first:
+      213: 572079107272759088
+    second: Blastman_exe6_Spritesheet_28
+  - first:
+      213: 3506925197918032683
+    second: Blastman_exe6_Spritesheet_29
+  - first:
+      213: -2975580857085831035
+    second: Blastman_exe6_Spritesheet_30
+  - first:
+      213: 6203728238841371340
+    second: Blastman_exe6_Spritesheet_31
+  - first:
+      213: -5720729664980251950
+    second: Blastman_exe6_Spritesheet_32
+  - first:
+      213: 5105692999128485313
+    second: Blastman_exe6_Spritesheet_33
+  - first:
+      213: -7823704898362509413
+    second: Blastman_exe6_Spritesheet_34
+  - first:
+      213: 6659293304803587989
+    second: Blastman_exe6_Spritesheet_35
+  - first:
+      213: -824741011586865202
+    second: Blastman_exe6_Spritesheet_36
+  - first:
+      213: -3457918548488918571
+    second: Blastman_exe6_Spritesheet_37
+  - first:
+      213: 1420729676956292109
+    second: Blastman_exe6_Spritesheet_38
+  - first:
+      213: -872257103727526534
+    second: Blastman_exe6_Spritesheet_39
+  - first:
+      213: 3991168031664239518
+    second: Blastman_exe6_Spritesheet_40
+  - first:
+      213: 52196526851998420
+    second: Blastman_exe6_Spritesheet_41
+  - first:
+      213: 5073163068240574327
+    second: Blastman_exe6_Spritesheet_42
+  - first:
+      213: 3240488902959903406
+    second: Blastman_exe6_Spritesheet_43
+  - first:
+      213: 872607155107737414
+    second: Blastman_exe6_Spritesheet_44
+  - first:
+      213: -561574202686736492
+    second: Blastman_exe6_Spritesheet_45
+  - first:
+      213: 663303617071147259
+    second: Blastman_exe6_Spritesheet_46
+  - first:
+      213: -4856442745382241275
+    second: Explosion3
+  - first:
+      213: 3856518922198926883
+    second: Explosion4
+  - first:
+      213: -7163685086599959880
+    second: Explosion5
+  - first:
+      213: -3790093806144411325
+    second: Explosion6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,7 +264,7 @@ TextureImporter:
         width: 30
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,7 +285,7 @@ TextureImporter:
         width: 30
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,7 +306,7 @@ TextureImporter:
         width: 30
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,6 +314,1014 @@ TextureImporter:
       bones: []
       spriteID: faad76a4d306b61b0800000000000000
       internalID: -5662326290130675025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 68
+        width: 49
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c07bd7eaea80920800000000000000
+      internalID: 2956805219825421375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 72
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c116333b1b5c590800000000000000
+      internalID: -7654516608427025329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 733
+        width: 50
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f25af90bddaba1c0800000000000000
+      internalID: -4491305047095094540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 818
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75fa7051ff83b1da0800000000000000
+      internalID: -5973117812556189865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 818
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354b87c060a506930800000000000000
+      internalID: 4134403439951656019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 733
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1260b1b9f721b8950800000000000000
+      internalID: 6452271230410753569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 818
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b59fd0619d701d0a0800000000000000
+      internalID: -6858692128549242533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 818
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8eea4b245d6b740800000000000000
+      internalID: 5167552104930142377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 733
+        width: 61
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a342748779a1a9ff0800000000000000
+      internalID: -28681209764174790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 735
+        width: 4
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0205ba2a507d019c0800000000000000
+      internalID: -3958427653254721504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 733
+        width: 38
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3345625f7497c9b20800000000000000
+      internalID: 3142519989960332339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 641
+        width: 39
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f856074d2291a5770800000000000000
+      internalID: 8600214075801101711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 640
+        width: 37
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c69f6c2a6ee57560800000000000000
+      internalID: 7311011709885322952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 640
+        width: 45
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9c1dcbce5b7e7a0800000000000000
+      internalID: -6347905121370650207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 640
+        width: 44
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63130d1b4acbeffb0800000000000000
+      internalID: -4612041552836939466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 551
+        width: 55
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 461af8f7c907b2c30800000000000000
+      internalID: 4335682883731562852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 550
+        width: 55
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e235745ef19513fb0800000000000000
+      internalID: -4669853345080978642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 551
+        width: 66
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b8283558035a960800000000000000
+      internalID: 7612544094329539399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 551
+        width: 57
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdff10e07f4cdd570800000000000000
+      internalID: 8493161037661601759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 453
+        width: 32
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb28dbc31be742d10800000000000000
+      internalID: 2099942625954857663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 453
+        width: 52
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b3ae4c400128a40800000000000000
+      internalID: 5368871318448651091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 456
+        width: 52
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c36fe256f8dd6e0800000000000000
+      internalID: -1811133810390713328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 453
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ba4452dcd26e1c0800000000000000
+      internalID: -4474838820629206169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 453
+        width: 52
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 387a89f49a636ea30800000000000000
+      internalID: 4244139799656048515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 453
+        width: 52
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73867cbeb7af960c0800000000000000
+      internalID: -4581855735729133513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 372
+        width: 53
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0375a64caee60f700800000000000000
+      internalID: 572079107272759088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 371
+        width: 53
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2355c313e91ba030800000000000000
+      internalID: 3506925197918032683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 336
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58852fcc9fc94b6d0800000000000000
+      internalID: -2975580857085831035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 336
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca1337e6f1181650800000000000000
+      internalID: 6203728238841371340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 337
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da00deeda2eb90b0800000000000000
+      internalID: -5720729664980251950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 196
+        width: 87
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd80494bb01bd640800000000000000
+      internalID: 5105692999128485313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 193
+        width: 50
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b977e91c8dd9c6390800000000000000
+      internalID: -7823704898362509413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 294
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59774ff6aff8a6c50800000000000000
+      internalID: 6659293304803587989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 197
+        width: 83
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec72bac6b6eed84f0800000000000000
+      internalID: -824741011586865202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 297
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d96517a6610300d0800000000000000
+      internalID: -3457918548488918571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 134
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04d5d42d1277b310800000000000000
+      internalID: 1420729676956292109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 174
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d728b19ce15e3f0800000000000000
+      internalID: -872257103727526534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 169
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93fd3ebd2a736730800000000000000
+      internalID: 3991168031664239518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 140
+        width: 51
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2c581f67079b000800000000000000
+      internalID: 52196526851998420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 139
+        width: 52
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7773c1a8eee776640800000000000000
+      internalID: 5073163068240574327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 138
+        width: 39
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea235870d7788fc20800000000000000
+      internalID: 3240488902959903406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 152
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f29a4959f1c1c00800000000000000
+      internalID: 872607155107737414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 134
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49775ddec33e438f0800000000000000
+      internalID: -561574202686736492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blastman_exe6_Spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 143
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8e1c91027843900800000000000000
+      internalID: 663303617071147259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion3
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 70
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50cf779bd037a9cb0800000000000000
+      internalID: -4856442745382241275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 69
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3264d3be68b158530800000000000000
+      internalID: 3856518922198926883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion5
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 71
+        width: 48
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba227a5e5a759c90800000000000000
+      internalID: -7163685086599959880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion6
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 71
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349aa5b93c1e66bc0800000000000000
+      internalID: -3790093806144411325
       vertices: []
       indices: 
       edges: []
