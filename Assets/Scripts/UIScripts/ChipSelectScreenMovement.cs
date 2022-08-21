@@ -99,7 +99,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     void populateChipSelect()
     {
         int randomIndex = 0;
-            var random = new System.Random();
+        var random = new System.Random();
         
         selectableChips.Clear();
         for (int i = 0; i < 8; i++)
