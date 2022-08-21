@@ -33,6 +33,10 @@ MonoBehaviour:
     m_Address: mettaurProjectile
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: c229946d3b6bfb949adc91fd4afd9d1b
+    m_Address: Chip_Bomb
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 143f498d0d4592042938bc1a6e56d09a, type: 2}
   m_SchemaSet:

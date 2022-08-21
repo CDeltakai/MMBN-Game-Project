@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 338488530}
   - component: {fileID: 338488532}
-  - component: {fileID: 338488531}
   m_Layer: 7
   m_Name: ShotRayCastPosition
   m_TagString: Untagged
@@ -51,19 +50,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &338488531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338488529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ce3fa397ed0e4479050ba99a1eb0d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 338488530}
 --- !u!1 &794688106
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chipInventory: []
+  chipDeck: []
 --- !u!1 &497568039300456502
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,21 +237,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf6f029452a4a141ae77e52108bb313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usingOverridenMovementMethod: 0
+  healthText: {fileID: 5850369198440397647}
+  worldTransform: {fileID: 0}
+  isRooted: 0
+  isMoving: 0
+  nonVolatileStatus: 0
+  currentCellPos: {x: 0, y: 0, z: 0}
+  currentHP: 9000
+  shieldPoints: 0
+  DefenseMultiplier: 1
+  AttackMultiplier: 1
+  isInvincible: 0
+  movementSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 20
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.11
+      value: 15
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  movementSpeedTime: 0
+  xDistanceTimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 1.6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  yDistanceTimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   activeChip: {fileID: 0}
   PlayerChipQueue: []
-  buffChipQueue: []
-  healthText: {fileID: 5850369198440397647}
-  playerHP: 9000
-  parentTransform: {fileID: 0}
-  currentCellPos: {x: 0, y: 0, z: 0}
+  usingOverridenMovementMethod: 1
+  firePoint: {fileID: 338488530}
   boxCollider2D: {fileID: 0}
-  shotDamage: 5
-  lastContactedCollider: {fileID: 0}
-  isInvincible: 0
   SuperArmor: 0
-  Rooted: 0
-  shaderGUItext: {fileID: 0}
-  shaderSpritesDefault: {fileID: 0}
+  shotDamage: 5
+  useTranslateMovement: 0
 --- !u!114 &7999841461838093156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +372,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 338488530}
   ParryCollider: {fileID: 7458899536759710124, guid: df0f7c9fba8931245aa4d1b9c8e60e1d, type: 3}
-  ChipScript: 
 --- !u!114 &2717528050190985705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,7 +561,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.001978457, y: -0.4864922}
+  m_Offset: {x: 0.004076481, y: -0.43201244}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -508,7 +572,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3676897, y: 0.7649215}
+  m_Size: {x: 1.1172488, y: 0.55192924}
   m_EdgeRadius: 0
 --- !u!1 &8277886504622691699
 GameObject:

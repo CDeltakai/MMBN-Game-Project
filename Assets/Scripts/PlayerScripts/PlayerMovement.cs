@@ -12,7 +12,6 @@ public class PlayerMovement : BStageEntity
 
     [SerializeField] public ChipSO activeChip;
     [SerializeField] public List<ChipSO> PlayerChipQueue = new List<ChipSO>();
-    public new bool usingOverridenMovementMethod = true;
 
     public override event MoveOffTileEvent moveOnToTileOverriden;
     public override event MoveOffTileEvent moveOffTileOverriden;
@@ -54,10 +53,12 @@ public class PlayerMovement : BStageEntity
 
   [Header("Experimental Features")]
     [SerializeField] bool useTranslateMovement = false;
+    [SerializeField] bool useTweenMovement = false;
 
 
     public override void Start()
     {
+        usingOverridenMovementMethod = true;
         chipEffect = FindObjectOfType<ChipEffects>();
         chipSelectScreenMovement = FindObjectOfType<ChipSelectScreenMovement>();
         playerChipAnimations = GetComponent<PlayerChipAnimations>();
@@ -112,7 +113,7 @@ public class PlayerMovement : BStageEntity
         {
             isAlive = false;
         }
-        if(!isMoving)
+        if(!isMoving && !isUsingChip)
         {simpleMove();}else{return;}
 
        if(Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -184,6 +185,7 @@ public class PlayerMovement : BStageEntity
         isMoving = false;
     }
 
+    Ease movementEase = Ease.OutCubic;
     void simpleMove()
     {
         if(!isAlive){return;}
@@ -195,25 +197,42 @@ public class PlayerMovement : BStageEntity
         {
             if(useTranslateMovement)
             {StartCoroutine(translateMoveCell(1, 0, Vector2.right));}
-            else{StartCoroutine(teleMoveWithDelay(1, 0, 0.106f));}
+            else if(useTweenMovement)
+            {
+                StartCoroutine(TweenMove(1, 0, 0.1f, movementEase));
+            }
+            else
+            {StartCoroutine(teleMoveWithDelay(1, 0, 0.106f));}
 
         }
         if(Keyboard.current.aKey.wasPressedThisFrame)
         {
             if(useTranslateMovement)
             {StartCoroutine(translateMoveCell(-1, 0, Vector2.left));}
+            else if(useTweenMovement)
+            {
+                StartCoroutine(TweenMove(-1, 0, 0.1f, movementEase));
+            }            
             else{StartCoroutine(teleMoveWithDelay(-1, 0, 0.106f));}             
         }
         if(Keyboard.current.wKey.wasPressedThisFrame)
         {
             if(useTranslateMovement)
             {StartCoroutine(translateMoveCell(0, 1, Vector2.up));}
+            else if(useTweenMovement)
+            {
+                StartCoroutine(TweenMove(0, 1, 0.1f, movementEase));
+            }            
             else{StartCoroutine(teleMoveWithDelay(0, 1, 0.106f));}               
         }
         if(Keyboard.current.sKey.wasPressedThisFrame)
         {
             if(useTranslateMovement)
             {StartCoroutine(translateMoveCell(0, -1, Vector2.down));}
+            else if(useTweenMovement)
+            {
+                StartCoroutine(TweenMove(0, -1, 0.1f, movementEase));
+            }            
             else{StartCoroutine(teleMoveWithDelay(0, -1, 0.106f));}            
         }
 
