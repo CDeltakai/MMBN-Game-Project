@@ -40,7 +40,7 @@ public class MachineGunner_Reticle : MonoBehaviour
     {
         spriteRenderer.enabled = false;
         boxCollider2D.enabled = false;
-        attackVFXCollider.enabled = false;
+        //attackVFXCollider.enabled = false;
         attackVFXSpriteRenderer.enabled = false;
         attackVFXAnimator.enabled = false;
 
@@ -49,7 +49,16 @@ public class MachineGunner_Reticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(gunner.getHealth() <= 0)
+        {
+            //StopCoroutine(FireAtTarget());
+            StopAllCoroutines();
+            boxCollider2D.enabled = false;
+            attackVFXAnimator.enabled = false;
+            attackVFXSpriteRenderer.enabled = false;
+            attackVFXAnimator.speed = 0;
+            animator.speed = 0;
+        }
         if(gunnerAI.foundTarget && !lockedOn)
         {
 

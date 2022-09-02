@@ -267,6 +267,20 @@ public class PlayerMovement : BStageEntity
             StartCoroutine(setStatusEffect(EStatusEffects.Rooted, 0.111f));
 
         }
+
+
+        if(damage >= 10)
+        {
+            isAnimatingHP = true;
+
+            if(AnimateHPCoroutine != null)
+            {
+                StopCoroutine(AnimateHPCoroutine);
+            }
+
+            AnimateHPCoroutine = StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
+
+        }
         
         if(damage * DefenseMultiplier >= currentHP)
         {
@@ -276,7 +290,10 @@ public class PlayerMovement : BStageEntity
         }
 
         currentHP = currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999);
-        healthText.text = currentHP.ToString();
+        if(AnimateHPCoroutine == null)
+        {
+            healthText.text = currentHP.ToString();
+        }
 
         if(!lightAttack){
         StartCoroutine(InvincibilityFrames(1f));

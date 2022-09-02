@@ -64,7 +64,7 @@ public abstract class BStageEntity : MonoBehaviour
     [SerializeField] protected AnimationCurve xDistanceTimeCurve;
     [SerializeField] protected AnimationCurve yDistanceTimeCurve;
 
-    Coroutine AnimateHPCoroutine;
+    protected Coroutine AnimateHPCoroutine;
 
 
     public virtual void Awake()
@@ -94,7 +94,7 @@ public abstract class BStageEntity : MonoBehaviour
         healthText.text = currentHP.ToString();
     }
 
-    bool isAnimatingHP = false;
+    protected bool isAnimatingHP = false;
     ///<summary>
     ///lightAttack dictates whether the attack triggers invincibility frames.
     ///hitFlinch dictates whether the attack will trigger a flinch animation on the target.
@@ -122,11 +122,8 @@ public abstract class BStageEntity : MonoBehaviour
 
             AnimateHPCoroutine = StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
 
-            //StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999) ));
         }
 
-        currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
-        healthText.text = currentHP.ToString();
 
         if(damage >= currentHP)
         {
@@ -143,6 +140,13 @@ public abstract class BStageEntity : MonoBehaviour
             return;
         }
 
+        StartCoroutine(DamageFlash());
+
+        currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
+        if(AnimateHPCoroutine == null)
+        {
+            healthText.text = currentHP.ToString();
+        }
 
 
         return; 
@@ -153,6 +157,13 @@ public abstract class BStageEntity : MonoBehaviour
         return currentHP;
     }
 
+    public IEnumerator DamageFlash()
+    {
+        setSolidColor(Color.white);
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();        
+        setNormalSprite();
+    }
 
     public virtual IEnumerator DestroyEntity()
     {
@@ -508,20 +519,20 @@ public abstract class BStageEntity : MonoBehaviour
     public IEnumerator animateHP(int initialHP, int finalHP)
     {
         int startHP = initialHP;
-        print("StartHP: " + startHP);
+        //print("StartHP: " + startHP);
         int endHP = finalHP;
-        print("EndHP: " + endHP);
+        //print("EndHP: " + endHP);
         int stepAmount;
         float defaultDelay = countDuration / countFPS;
         int numOfSteps = (int) Math.Round((countDuration/defaultDelay), MidpointRounding.AwayFromZero);
-        print("numOfSteps: " + numOfSteps);
+        //print("numOfSteps: " + numOfSteps);
 
         var difference = Mathf.Abs(startHP - endHP);
 
         stepAmount = Mathf.CeilToInt(((float)difference/(float)numOfSteps));
-        print("stepAmount: " + stepAmount);
+        //print("stepAmount: " + stepAmount);
         int updatedNumSteps = difference / stepAmount;
-        print("updatedNumSteps: " + updatedNumSteps);
+        //print("updatedNumSteps: " + updatedNumSteps);
 
 
         WaitForSecondsRealtime wait = new WaitForSecondsRealtime(countDuration/updatedNumSteps);
@@ -535,6 +546,11 @@ public abstract class BStageEntity : MonoBehaviour
                 stepCounter++;
                 startHP -= stepAmount;
                 healthText.text = Mathf.Clamp(startHP, 0, startHP).ToString();
+                if(startHP <= 0)
+                {
+                    healthText.enabled = false;
+                    yield break;
+                }
                 yield return wait;
 
             }
@@ -549,6 +565,9 @@ public abstract class BStageEntity : MonoBehaviour
                 stepCounter++;
                 startHP += stepAmount;
                 healthText.text = Mathf.Clamp(startHP, 0, startHP).ToString();
+
+
+
                 yield return wait;
             }
             healthText.text = endHP.ToString();
@@ -556,10 +575,7 @@ public abstract class BStageEntity : MonoBehaviour
     
         }
 
-        if(currentHP <= 0)
-        {
-            healthText.enabled = false;
-        }
+
 
 
 
