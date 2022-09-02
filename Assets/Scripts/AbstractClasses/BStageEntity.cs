@@ -16,7 +16,7 @@ public abstract class BStageEntity : MonoBehaviour
     public event MoveOntoTileEvent moveOntoTile;
     public virtual event MoveOffTileEvent moveOnToTileOverriden;
     public bool usingOverridenMovementMethod = false;
-
+    public float objectTimeScale = 1f;
 
 
     public delegate void MoveOffTileEvent(int x, int y, BStageEntity entity);
@@ -49,6 +49,7 @@ public abstract class BStageEntity : MonoBehaviour
     
 
     public Vector3Int currentCellPos;
+    public Vector3Int previousCellPos;
     [SerializeField] public int currentHP;
     [SerializeField] public int shieldPoints;
     [SerializeField] public float DefenseMultiplier = 1;
@@ -62,6 +63,9 @@ public abstract class BStageEntity : MonoBehaviour
     [SerializeField] protected float movementSpeedTime;
     [SerializeField] protected AnimationCurve xDistanceTimeCurve;
     [SerializeField] protected AnimationCurve yDistanceTimeCurve;
+
+    Coroutine AnimateHPCoroutine;
+
 
     public virtual void Awake()
     {
@@ -90,6 +94,7 @@ public abstract class BStageEntity : MonoBehaviour
         healthText.text = currentHP.ToString();
     }
 
+    bool isAnimatingHP = false;
     ///<summary>
     ///lightAttack dictates whether the attack triggers invincibility frames.
     ///hitFlinch dictates whether the attack will trigger a flinch animation on the target.
@@ -100,24 +105,46 @@ public abstract class BStageEntity : MonoBehaviour
                                    bool pierceCloaking = false,
                                    EStatusEffects statusEffect = EStatusEffects.Default)
     {
-
         if(isInvincible)
         {return;}
 
         if(statusEffect != EStatusEffects.Default)
         {StartCoroutine(setStatusEffect(statusEffect, 1));}
-            
+
+        if(damage >= 10)
+        {
+            isAnimatingHP = true;
+
+            if(AnimateHPCoroutine != null)
+            {
+                StopCoroutine(AnimateHPCoroutine);
+            }
+
+            AnimateHPCoroutine = StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
+
+            //StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999) ));
+        }
+
+        currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
+        healthText.text = currentHP.ToString();
+
         if(damage >= currentHP)
         {
             animator.speed = Mathf.Epsilon;
             currentHP = 0;
             healthText.text = currentHP.ToString();
-            healthText.enabled = false;
+            
+            if(AnimateHPCoroutine == null)
+            {
+                healthText.enabled = false;
+            }
+
             StartCoroutine(DestroyEntity());
             return;
         }
-        currentHP = currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999);
-        healthText.text = currentHP.ToString();
+
+
+
         return; 
     }
     
@@ -145,6 +172,7 @@ public abstract class BStageEntity : MonoBehaviour
     {
             stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
             stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+            previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
 
             currentCellPos.Set(x, y, 0);
 
@@ -212,6 +240,8 @@ public abstract class BStageEntity : MonoBehaviour
     {
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
+
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
@@ -382,6 +412,8 @@ public abstract class BStageEntity : MonoBehaviour
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
+
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
@@ -394,7 +426,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     }
 
-    public IEnumerator TweenMove(int x, int y, float duration, Ease easeType)
+    public virtual IEnumerator TweenMove(int x, int y, float duration, Ease easeType)
     {
         if(isMoving){yield break;}
         
@@ -404,6 +436,7 @@ public abstract class BStageEntity : MonoBehaviour
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
@@ -468,5 +501,68 @@ public abstract class BStageEntity : MonoBehaviour
 
     }
 
+
+    float countFPS = 24;
+    float countDuration = 0.15f;
+    
+    public IEnumerator animateHP(int initialHP, int finalHP)
+    {
+        int startHP = initialHP;
+        print("StartHP: " + startHP);
+        int endHP = finalHP;
+        print("EndHP: " + endHP);
+        int stepAmount;
+        float defaultDelay = countDuration / countFPS;
+        int numOfSteps = (int) Math.Round((countDuration/defaultDelay), MidpointRounding.AwayFromZero);
+        print("numOfSteps: " + numOfSteps);
+
+        var difference = Mathf.Abs(startHP - endHP);
+
+        stepAmount = Mathf.CeilToInt(((float)difference/(float)numOfSteps));
+        print("stepAmount: " + stepAmount);
+        int updatedNumSteps = difference / stepAmount;
+        print("updatedNumSteps: " + updatedNumSteps);
+
+
+        WaitForSecondsRealtime wait = new WaitForSecondsRealtime(countDuration/updatedNumSteps);
+
+
+        int stepCounter = 0;
+        if(startHP > endHP)
+        {
+            while(stepCounter < updatedNumSteps)
+            {
+                stepCounter++;
+                startHP -= stepAmount;
+                healthText.text = Mathf.Clamp(startHP, 0, startHP).ToString();
+                yield return wait;
+
+            }
+            healthText.text = endHP.ToString();
+            stepCounter = 0;
+
+        }else 
+        if(startHP<endHP)
+        {
+            while(stepCounter < updatedNumSteps)
+            {
+                stepCounter++;
+                startHP += stepAmount;
+                healthText.text = Mathf.Clamp(startHP, 0, startHP).ToString();
+                yield return wait;
+            }
+            healthText.text = endHP.ToString();
+            stepCounter = 0;
+    
+        }
+
+        if(currentHP <= 0)
+        {
+            healthText.enabled = false;
+        }
+
+
+
+    }
 
 }

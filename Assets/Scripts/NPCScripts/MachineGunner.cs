@@ -42,26 +42,26 @@ public class MachineGunner : BStageEntity
 
 
 
-    public override void hurtEntity(int damage,
-                           bool lightAttack,
-                           bool hitStun,
-                           bool pierceCloaking = false,
-                           EStatusEffects statusEffect = EStatusEffects.Default)
-    {
-        if(damage >= currentHP)
-        {
-            currentHP = 0;
-            healthText.text = currentHP.ToString();
-            stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
-            healthText.enabled = false;
-            animator.speed = 0;
-            StartCoroutine(DestroyEntity());
-            return;
-        }
-        currentHP = currentHP - (int)(damage * DefenseMultiplier);
-        healthText.text = currentHP.ToString();
-        return;    
-    }
+    // public override void hurtEntity(int damage,
+    //                        bool lightAttack,
+    //                        bool hitStun,
+    //                        bool pierceCloaking = false,
+    //                        EStatusEffects statusEffect = EStatusEffects.Default)
+    // {
+    //     if(damage >= currentHP)
+    //     {
+    //         currentHP = 0;
+    //         healthText.text = currentHP.ToString();
+    //         stageHandler.stageTiles[stageHandler.stageTilemap.CellToWorld(currentCellPos)].isOccupied = false;
+    //         healthText.enabled = false;
+    //         animator.speed = 0;
+    //         StartCoroutine(DestroyEntity());
+    //         return;
+    //     }
+    //     currentHP = currentHP - (int)(damage * DefenseMultiplier);
+    //     healthText.text = currentHP.ToString();
+    //     return;    
+    // }
 
 
 

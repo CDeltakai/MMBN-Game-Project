@@ -91,7 +91,7 @@ public class PlayerMovement : BStageEntity
     }
 
 
-
+//Tied to Megaman_Shoot animation
     public void Shoot()
     {
       RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies","Obstacle"));
@@ -133,6 +133,8 @@ public class PlayerMovement : BStageEntity
 
     void OnUseChip()
     {
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}        
         if(isUsingChip){return;}
         if(isMoving){return;}
         StartCoroutine(OnUseChipIEnumerator());
@@ -188,6 +190,8 @@ public class PlayerMovement : BStageEntity
     Ease movementEase = Ease.OutCubic;
     void simpleMove()
     {
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}
         if(!isAlive){return;}
         if(isRooted){return;}
         if(isMoving){return;}
@@ -242,6 +246,8 @@ public class PlayerMovement : BStageEntity
 
     void OnFire()
     {
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}        
         if(isMoving){return;}
         animator.SetTrigger("Shoot");   
     }
