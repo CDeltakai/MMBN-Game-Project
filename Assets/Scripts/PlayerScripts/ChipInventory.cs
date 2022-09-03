@@ -8,29 +8,28 @@ public class ChipInventory : MonoBehaviour
 private Dictionary<int, ChipSO> chipDictionary = new Dictionary<int, ChipSO>();
 
 [SerializeField] public List<ChipSO> chipInventory = new List<ChipSO>();
+[SerializeField] public List<ChipSO> chipDeck = new List<ChipSO>();
 private ChipSO[] chipLoad;
 ChipSO newChip;
 
 private void Awake() {
-    AddChip();
+    FillChipInventory();
 }
 
 
-void AddChip()
+void FillChipInventory()
 {
     chipLoad = Resources.LoadAll<ChipSO>("Chips");
 
-    foreach(var chip in chipLoad)
+    foreach(ChipSO chip in chipLoad)
     {
         chipInventory.Add(chip);
         chipDictionary.Add(chip.GetChipID(), chip);
     }
 }
 
-public ChipSO GetChip(int id)
-    {
-        return chipDictionary[id];
-    }
+
+
 
 public List<ChipSO> getChipInventory()
 {

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Megaman_BombThrow
+  m_Name: BombExplosionVFX
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,17 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -7019166574637151028, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
+      value: {fileID: 2956805219825421375, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
     - time: 0.041666668
-      value: {fileID: -81003977697209037, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
+      value: {fileID: -7654516608427025329, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
     - time: 0.083333336
-      value: {fileID: 5818894662245105088, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
+      value: {fileID: -4856442745382241275, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
     - time: 0.125
-      value: {fileID: -3735345329852585636, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
+      value: {fileID: 3856518922198926883, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
+    - time: 0.16666667
+      value: {fileID: -7163685086599959880, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
+    - time: 0.20833333
+      value: {fileID: -3790093806144411325, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,16 +50,18 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -7019166574637151028, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
-    - {fileID: -81003977697209037, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
-    - {fileID: 5818894662245105088, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
-    - {fileID: -3735345329852585636, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
+    - {fileID: 2956805219825421375, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
+    - {fileID: -7654516608427025329, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
+    - {fileID: -4856442745382241275, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
+    - {fileID: 3856518922198926883, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
+    - {fileID: -7163685086599959880, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
+    - {fileID: -3790093806144411325, guid: 9e29ef10e754b65469efecd31aab7f3c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 0.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -74,11 +80,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.041666668
-    functionName: ApplyChipEffectV3
-    data: Chip_Bomb
-    objectReferenceParameter: {fileID: 11500000, guid: 9ed8c7a04f6c218448493c3f796d8655, type: 3}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

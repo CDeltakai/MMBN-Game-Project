@@ -98,8 +98,6 @@ public class ChipEffects : MonoBehaviour
             return;
         }
 
-
-
         foreach(ChipSO chip in chipLoadManager.nextChipLoad)
         {
             scriptList.Add(Type.GetType(chip.GetEffectScript()));
@@ -133,10 +131,10 @@ public class ChipEffects : MonoBehaviour
         //Finds the non-passive chip within the chipObjectList and attempts its effect
         // 
         if(GivenAddressableKey == null){
-        chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect();
+            chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect();
 
         }else{
-        chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect(AddressableKey: GivenAddressableKey);
+            chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect(AddressableKey: GivenAddressableKey);
 
         }
         StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipObjectList.Find(x => x.ChipType != EChipTypes.Passive).GetType()));

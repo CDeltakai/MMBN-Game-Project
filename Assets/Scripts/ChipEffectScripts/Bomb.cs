@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Tilemaps;
 
 public class Bomb : MonoBehaviour, IChip
 {
 
     BattleStageHandler stageHandler;
-
+    PlayerMovement player;
     public Tilemap stageTilemap;
     public CustomTile tile;
     public int AdditionalDamage{get; set;} = 0;
@@ -22,6 +23,7 @@ public class Bomb : MonoBehaviour, IChip
     void Awake()
     {
         stageHandler = FindObjectOfType<BattleStageHandler>();
+        player = GetComponent<PlayerMovement>();
     }
 
     void Start()
@@ -36,8 +38,9 @@ public class Bomb : MonoBehaviour, IChip
 
     public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
     {
+        Addressables.InstantiateAsync(AddressableKey, new Vector2(player.worldTransform.position.x, player.worldTransform.position.y), transform.rotation);
 
-
+        
 
     }
 }
