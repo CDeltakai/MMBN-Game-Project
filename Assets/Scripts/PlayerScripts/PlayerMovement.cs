@@ -91,7 +91,7 @@ public class PlayerMovement : BStageEntity
     }
 
 
-
+//Tied to Megaman_Shoot animation
     public void Shoot()
     {
       RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies","Obstacle"));
@@ -133,6 +133,8 @@ public class PlayerMovement : BStageEntity
 
     void OnUseChip()
     {
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}        
         if(isUsingChip){return;}
         if(isMoving){return;}
         StartCoroutine(OnUseChipIEnumerator());
@@ -188,6 +190,8 @@ public class PlayerMovement : BStageEntity
     Ease movementEase = Ease.OutCubic;
     void simpleMove()
     {
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}
         if(!isAlive){return;}
         if(isRooted){return;}
         if(isMoving){return;}
@@ -199,7 +203,8 @@ public class PlayerMovement : BStageEntity
             {StartCoroutine(translateMoveCell(1, 0, Vector2.right));}
             else if(useTweenMovement)
             {
-                StartCoroutine(TweenMove(1, 0, 0.1f, movementEase));
+                isMovingCoroutine = StartCoroutine(TweenMove(1, 0, 0.1f, movementEase));
+                
             }
             else
             {StartCoroutine(teleMoveWithDelay(1, 0, 0.106f));}
@@ -211,7 +216,7 @@ public class PlayerMovement : BStageEntity
             {StartCoroutine(translateMoveCell(-1, 0, Vector2.left));}
             else if(useTweenMovement)
             {
-                StartCoroutine(TweenMove(-1, 0, 0.1f, movementEase));
+                isMovingCoroutine = StartCoroutine(TweenMove(-1, 0, 0.1f, movementEase));
             }            
             else{StartCoroutine(teleMoveWithDelay(-1, 0, 0.106f));}             
         }
@@ -221,7 +226,7 @@ public class PlayerMovement : BStageEntity
             {StartCoroutine(translateMoveCell(0, 1, Vector2.up));}
             else if(useTweenMovement)
             {
-                StartCoroutine(TweenMove(0, 1, 0.1f, movementEase));
+                isMovingCoroutine = StartCoroutine(TweenMove(0, 1, 0.1f, movementEase));
             }            
             else{StartCoroutine(teleMoveWithDelay(0, 1, 0.106f));}               
         }
@@ -231,7 +236,7 @@ public class PlayerMovement : BStageEntity
             {StartCoroutine(translateMoveCell(0, -1, Vector2.down));}
             else if(useTweenMovement)
             {
-                StartCoroutine(TweenMove(0, -1, 0.1f, movementEase));
+                isMovingCoroutine = StartCoroutine(TweenMove(0, -1, 0.1f, movementEase));
             }            
             else{StartCoroutine(teleMoveWithDelay(0, -1, 0.106f));}            
         }
@@ -242,6 +247,8 @@ public class PlayerMovement : BStageEntity
 
     void OnFire()
     {
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}        
         if(isMoving){return;}
         animator.SetTrigger("Shoot");   
     }
@@ -253,12 +260,26 @@ public class PlayerMovement : BStageEntity
         bool pierceCloaking = false,
         EStatusEffects statusEffect = EStatusEffects.Default)
     {
-        if(isInvincible){return;}
+        if(isUntargetable){return;}
 
         if(!SuperArmor && hitFlinch ){
             animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
             StartCoroutine(ChangeAnimState(EMegamanAnimations.Megaman_Idle.ToString(), EMegamanAnimations.Megaman_Hurt.ToString()));
             StartCoroutine(setStatusEffect(EStatusEffects.Rooted, 0.111f));
+
+        }
+
+
+        if(damage >= 10)
+        {
+            isAnimatingHP = true;
+
+            if(AnimateHPCoroutine != null)
+            {
+                StopCoroutine(AnimateHPCoroutine);
+            }
+
+            AnimateHPCoroutine = StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
 
         }
         
@@ -270,7 +291,10 @@ public class PlayerMovement : BStageEntity
         }
 
         currentHP = currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999);
-        healthText.text = currentHP.ToString();
+        if(AnimateHPCoroutine == null)
+        {
+            healthText.text = currentHP.ToString();
+        }
 
         if(!lightAttack){
         StartCoroutine(InvincibilityFrames(1f));
@@ -298,7 +322,7 @@ public class PlayerMovement : BStageEntity
     protected override IEnumerator InvincibilityFrames(float duration)
     {
         float gracePeriod = duration;
-        isInvincible = true;
+        isUntargetable = true;
 
         while (gracePeriod>=0){
             
@@ -314,11 +338,8 @@ public class PlayerMovement : BStageEntity
             
         }
 
-        isInvincible = false;
+        isUntargetable = false;
     }
-
-
-
 
 
     public Vector3Int getCellPosition()

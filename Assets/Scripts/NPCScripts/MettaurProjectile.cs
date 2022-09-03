@@ -13,7 +13,6 @@ public class MettaurProjectile : MonoBehaviour
     Rigidbody2D projectileBody;
     Rigidbody2D parentBody;
     PlayerMovement player;
-    DamageFunctions damageFunctions;
     BoxCollider2D boxCollider2D;
     bool isTriggered = false;
     bool isMoving = false;
@@ -67,7 +66,7 @@ public class MettaurProjectile : MonoBehaviour
         if(other.tag == "Player" && !isTriggered)
         {
             player.hurtEntity(damage, false, true);
-            player.healthText.text = player.currentHP.ToString();
+            //player.healthText.text = player.currentHP.ToString();
             Debug.Log("Player damaged:" + player.currentHP.ToString());
             isTriggered = true;
         }
