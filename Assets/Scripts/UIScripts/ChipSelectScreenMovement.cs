@@ -168,7 +168,8 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
         ActiveChipSlotAccumulator = 0;
         chipLoadManager.calcNextChipLoad(); 
-        print("Class: ChipSelectScreenMovement, attempted calcNextChipLoad()");       
+        print("Class: ChipSelectScreenMovement, attempted calcNextChipLoad()");
+        EnableChipMenu();       
     }
 
 }

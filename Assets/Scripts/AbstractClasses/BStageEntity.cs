@@ -12,18 +12,27 @@ using DG.Tweening;
 
 public abstract class BStageEntity : MonoBehaviour
 {
+
+#region Events and Delegates
+
+    public delegate void OnDeathEvent(BStageEntity entity);
+    public virtual event OnDeathEvent deathEvent;
+    public delegate void OnParryEvent(BStageEntity entity);
+    public virtual event OnParryEvent parryEvent;
+
+
     public delegate void MoveOntoTileEvent(int x, int y, BStageEntity entity);
     public event MoveOntoTileEvent moveOntoTile;
-    public virtual event MoveOffTileEvent moveOnToTileOverriden;
-    public bool usingOverridenMovementMethod = false;
-
-
-
     public delegate void MoveOffTileEvent(int x, int y, BStageEntity entity);
     public event MoveOffTileEvent moveOffTile;
     public virtual event MoveOffTileEvent moveOffTileOverriden;
-    protected static TileEventManager tileEventManager;
+    public virtual event MoveOffTileEvent moveOnToTileOverriden;
 
+#endregion
+
+#region Initialized Variables and Classes
+
+    protected static TileEventManager tileEventManager;
     protected static BattleStageHandler stageHandler;
     protected SpriteRenderer spriteRenderer;
     protected static Shader shaderGUItext;
@@ -31,6 +40,8 @@ public abstract class BStageEntity : MonoBehaviour
     protected Animator animator;
     [SerializeField] public TextMeshProUGUI healthText;
 
+    public bool usingOverridenMovementMethod = false;
+    public float objectTimeScale = 1f;
     [HideInInspector] public Transform worldTransform;
     public abstract bool isGrounded{get;set;}
     public abstract bool isStationary{get;}
@@ -39,7 +50,7 @@ public abstract class BStageEntity : MonoBehaviour
     public abstract ETileTeam team{get; set;}
 
     [HideInInspector] public bool isRooted = false;
-    [HideInInspector] public bool isMoving = false;
+    [HideInInspector] protected bool isMoving = false;
 
     ///<summary>
     ///A non-volatile status effect is a status which cannot be overriden
@@ -49,11 +60,16 @@ public abstract class BStageEntity : MonoBehaviour
     
 
     public Vector3Int currentCellPos;
+    public Vector3Int previousCellPos;
+    
     [SerializeField] public int currentHP;
-    [SerializeField] public int shieldPoints;
-    [SerializeField] public float DefenseMultiplier = 1;
-    [SerializeField] public float AttackMultiplier = 1;
-    [SerializeField] public bool isInvincible = false;
+    [SerializeField] public int shieldHP;
+    [SerializeField] public double DefenseMultiplier = 1;
+    [SerializeField] public double AttackMultiplier = 1;
+    [SerializeField] public bool isUntargetable = false;
+    [SerializeField] public bool fullInvincible = false;
+    [SerializeField] public bool isStunned = false;
+
 
     protected Color invisible;
     protected Color opaque;
@@ -62,6 +78,11 @@ public abstract class BStageEntity : MonoBehaviour
     [SerializeField] protected float movementSpeedTime;
     [SerializeField] protected AnimationCurve xDistanceTimeCurve;
     [SerializeField] protected AnimationCurve yDistanceTimeCurve;
+
+    protected Coroutine AnimateHPCoroutine;
+    protected Coroutine isMovingCoroutine;
+
+#endregion
 
     public virtual void Awake()
     {
@@ -90,6 +111,7 @@ public abstract class BStageEntity : MonoBehaviour
         healthText.text = currentHP.ToString();
     }
 
+    protected bool isAnimatingHP = false;
     ///<summary>
     ///lightAttack dictates whether the attack triggers invincibility frames.
     ///hitFlinch dictates whether the attack will trigger a flinch animation on the target.
@@ -97,27 +119,55 @@ public abstract class BStageEntity : MonoBehaviour
     public virtual void hurtEntity(int damage,
                                    bool lightAttack,
                                    bool hitFlinch,
-                                   bool pierceCloaking = false,
+                                   bool pierceUntargetable = false,
                                    EStatusEffects statusEffect = EStatusEffects.Default)
     {
-
-        if(isInvincible)
+        if(fullInvincible)
+        {return;}
+        if(isUntargetable && !pierceUntargetable)
         {return;}
 
         if(statusEffect != EStatusEffects.Default)
         {StartCoroutine(setStatusEffect(statusEffect, 1));}
-            
+
+        if(damage >= 10)
+        {
+            isAnimatingHP = true;
+
+            if(AnimateHPCoroutine != null)
+            {
+                StopCoroutine(AnimateHPCoroutine);
+            }
+
+            AnimateHPCoroutine = StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
+
+        }
+
+
         if(damage >= currentHP)
         {
             animator.speed = Mathf.Epsilon;
             currentHP = 0;
             healthText.text = currentHP.ToString();
-            healthText.enabled = false;
+            
+            if(AnimateHPCoroutine == null)
+            {
+                healthText.enabled = false;
+            }
+
             StartCoroutine(DestroyEntity());
             return;
         }
-        currentHP = currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999);
-        healthText.text = currentHP.ToString();
+
+        StartCoroutine(DamageFlash());
+
+        currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
+        if(AnimateHPCoroutine == null)
+        {
+            healthText.text = currentHP.ToString();
+        }
+
+
         return; 
     }
     
@@ -126,15 +176,27 @@ public abstract class BStageEntity : MonoBehaviour
         return currentHP;
     }
 
+    public IEnumerator DamageFlash()
+    {
+        setSolidColor(Color.white);
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();        
+        setNormalSprite();
+    }
 
     public virtual IEnumerator DestroyEntity()
     {
         tileEventManager.UnsubscribeEntity(this);
-        yield return new WaitForSeconds(0.0005f);
+        yield return new WaitForSecondsRealtime(0.0005f);
         setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
                                                 transform.rotation, transform.parent.transform);
-        yield return new WaitForSeconds(0.533f);
+        yield return new WaitForSecondsRealtime(0.533f);
+        if(deathEvent != null)
+        {
+            deathEvent(this);
+        }
+
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
@@ -145,6 +207,7 @@ public abstract class BStageEntity : MonoBehaviour
     {
             stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
             stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+            previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
 
             currentCellPos.Set(x, y, 0);
 
@@ -212,6 +275,8 @@ public abstract class BStageEntity : MonoBehaviour
     {
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
+
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
@@ -237,6 +302,7 @@ public abstract class BStageEntity : MonoBehaviour
        {
         case EStatusEffects.Paralyzed:
             if(nonVolatileStatus){yield break;}
+            isStunned = true;
             nonVolatileStatus = true; 
             animator.speed = 0f;
             StartCoroutine(FlashColor(Color.yellow, duration));
@@ -255,6 +321,7 @@ public abstract class BStageEntity : MonoBehaviour
         case EStatusEffects.Frozen:
 
             if(nonVolatileStatus){yield break;}
+            isStunned = true;
             nonVolatileStatus = true; 
             animator.speed = 0f;
             yield return new WaitForSeconds(duration);
@@ -290,7 +357,7 @@ public abstract class BStageEntity : MonoBehaviour
     protected virtual IEnumerator InvincibilityFrames(float duration)
     {
         float gracePeriod = duration;
-        isInvincible = true;
+        isUntargetable = true;
 
         while (gracePeriod>=0){
             
@@ -306,7 +373,7 @@ public abstract class BStageEntity : MonoBehaviour
             
         }
 
-        isInvincible = false;
+        isUntargetable = false;
     }
 
 
@@ -373,7 +440,6 @@ public abstract class BStageEntity : MonoBehaviour
         isMoving = false;
     }
 
-
     public IEnumerator Shove(int x, int y)
     {
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
@@ -382,6 +448,8 @@ public abstract class BStageEntity : MonoBehaviour
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
+
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
@@ -394,9 +462,12 @@ public abstract class BStageEntity : MonoBehaviour
 
     }
 
-    public IEnumerator TweenMove(int x, int y, float duration, Ease easeType)
+    public virtual IEnumerator TweenMove(int x, int y, float duration, Ease easeType)
     {
-        if(isMoving){yield break;}
+        //if(isMoving){yield break;}
+        if(isMovingCoroutine != null)
+        {yield break;}
+        //isMoving = true;
         
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
         if(!checkValidTile(destinationCell.x, destinationCell.y))
@@ -404,6 +475,7 @@ public abstract class BStageEntity : MonoBehaviour
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
@@ -413,7 +485,10 @@ public abstract class BStageEntity : MonoBehaviour
         moveOntoTile(currentCellPos.x, currentCellPos.y, this);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
 
+        //isMoving = false;
+        isMovingCoroutine = null;
         yield return null;
+
     }
 
 
@@ -468,5 +543,72 @@ public abstract class BStageEntity : MonoBehaviour
 
     }
 
+
+    float countFPS = 24;
+    float countDuration = 0.12f;
+    public IEnumerator animateHP(int initialHP, int finalHP)
+    {
+        int startHP = initialHP;
+        //print("StartHP: " + startHP);
+        int endHP = finalHP;
+        //print("EndHP: " + endHP);
+        int stepAmount;
+        float defaultDelay = countDuration / countFPS;
+        int numOfSteps = (int) Math.Round((countDuration/defaultDelay), MidpointRounding.AwayFromZero);
+        //print("numOfSteps: " + numOfSteps);
+
+        var difference = Mathf.Abs(startHP - endHP);
+
+        stepAmount = Mathf.CeilToInt(((float)difference/(float)numOfSteps));
+        //print("stepAmount: " + stepAmount);
+        int updatedNumSteps = difference / stepAmount;
+        //print("updatedNumSteps: " + updatedNumSteps);
+
+
+        WaitForSecondsRealtime wait = new WaitForSecondsRealtime(countDuration/updatedNumSteps);
+
+
+        int stepCounter = 0;
+        if(startHP > endHP)
+        {
+            while(stepCounter < updatedNumSteps)
+            {
+                stepCounter++;
+                startHP -= stepAmount;
+                healthText.text = Mathf.Clamp(startHP, 0, startHP).ToString();
+                if(startHP <= 0)
+                {
+                    healthText.enabled = false;
+                    AnimateHPCoroutine = null;
+                    yield break;
+                    
+                }
+                yield return wait;
+
+            }
+            healthText.text = endHP.ToString();
+            stepCounter = 0;
+
+        }else 
+        if(startHP<endHP)
+        {
+            while(stepCounter < updatedNumSteps)
+            {
+                stepCounter++;
+                startHP += stepAmount;
+                healthText.text = Mathf.Clamp(startHP, 0, startHP).ToString();
+
+
+
+                yield return wait;
+            }
+            healthText.text = endHP.ToString();
+            stepCounter = 0;
+    
+        }
+
+        AnimateHPCoroutine = null;
+
+    }
 
 }
