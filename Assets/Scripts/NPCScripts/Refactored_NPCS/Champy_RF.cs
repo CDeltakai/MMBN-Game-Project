@@ -16,6 +16,7 @@ public class Champy_RF : BStageEntity
 {
     public override event MoveOffTileEvent moveOnToTileOverriden;
     public override event MoveOffTileEvent moveOffTileOverriden;
+    public override event OnDeathEvent deathEvent;
 
     public override bool isGrounded { get; set; } = false;
     public override bool isStationary => false;
@@ -130,6 +131,11 @@ public class Champy_RF : BStageEntity
         yield return new WaitForSeconds(0.533f);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.setCellEntity(previousCellPosition.x, previousCellPosition.y, this, false);
+        if(deathEvent != null)
+        {
+            deathEvent(this);
+        }
+
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
 
