@@ -5,6 +5,9 @@ using UnityEngine;
 public class ChipLoadManager : MonoBehaviour
 {
 
+public delegate void LoadChipsEvent();
+public event LoadChipsEvent loadChipsEvent;
+
 [SerializeField] public List<ChipSO> nextChipLoad = new List<ChipSO>();
 [SerializeField] public List<ChipSO> chipQueue = new List<ChipSO>();
 List<int> chipsToRemoveIndexes = new List<int>();
@@ -65,7 +68,10 @@ PlayerMovement player;
         // }
 
 
+
         chipsToRemoveIndexes.Clear();
+        if(loadChipsEvent != null)
+        {loadChipsEvent();} 
         //nextChipLoad.Clear();
 
 

@@ -9,6 +9,9 @@ using DG.Tweening;
 
 public class PlayerMovement : BStageEntity
 {
+    public delegate void UsedChipEvent();
+    public event UsedChipEvent usedChip;
+
 
     [SerializeField] public ChipSO activeChip;
     [SerializeField] public List<ChipSO> PlayerChipQueue = new List<ChipSO>();
@@ -55,9 +58,13 @@ public class PlayerMovement : BStageEntity
     [SerializeField] bool useTranslateMovement = false;
     [SerializeField] bool useTweenMovement = false;
 
+InputAction parry = new InputAction("parry");
 
     public override void Start()
     {
+
+        parry.AddBinding(Keyboard.current.leftShiftKey);
+
         usingOverridenMovementMethod = true;
         chipEffect = FindObjectOfType<ChipEffects>();
         chipSelectScreenMovement = FindObjectOfType<ChipSelectScreenMovement>();
@@ -131,6 +138,13 @@ public class PlayerMovement : BStageEntity
     }
 
 
+
+    void Parry()
+    {
+    
+    }
+
+
     void OnUseChip()
     {
         if(ChipSelectScreenMovement.GameIsPaused)
@@ -145,7 +159,7 @@ public class PlayerMovement : BStageEntity
 
         if (chipLoadManager.nextChipLoad.Count == 0)
         {Debug.Log("Chip Queue Empty");
-            yield break;}
+        yield break;}
 
         if(chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Special ){
 
@@ -159,16 +173,18 @@ public class PlayerMovement : BStageEntity
         }
 
         yield return new WaitForSecondsRealtime(chipLoadManager.nextChipLoad[0].GetAnimationDuration());
-        
         chipLoadManager.nextChipLoad.Clear();
         chipLoadManager.calcNextChipLoad();
+
+        if(usedChip != null){usedChip();}
+        
         isUsingChip = false;
         
     }
 
     void OnOpenDeck()
     {
-        chipSelectScreenMovement.EnableChipMenu();
+        chipSelectScreenMovement.ToggleChipMenu();
     }
 
     IEnumerator teleMoveWithDelay(int x, int y, float delay)

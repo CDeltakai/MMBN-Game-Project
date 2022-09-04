@@ -17,6 +17,7 @@ Image activeImage;
     
 
 private void Awake() {
+
     activeImage = GetComponent<Image>();
     activeImage.enabled = false;
     

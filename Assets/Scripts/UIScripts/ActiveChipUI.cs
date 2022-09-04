@@ -7,25 +7,25 @@ using UnityEngine.UI;
 public class ActiveChipUI : MonoBehaviour
 {
 
-    [SerializeField] Sprite[] chipQeueImages = new Sprite[5];
-    [SerializeField] GameObject[] ActiveChipSlots = new GameObject[5];
+    //[SerializeField] Sprite[] chipQeueImages = new Sprite[5];
+    [SerializeField] List<ChipSlot> ActiveChipSlots = new List<ChipSlot>();
 
-    public PlayerMovement player;
-    public Image chipImage;
+    PlayerMovement player;
+    ChipLoadManager chipLoadManager;
+    Image chipImage;
     bool hasLoadedChips;
 
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
+        chipLoadManager = FindObjectOfType<ChipLoadManager>();
+
     }
 
     void Update()
     {
     
-        if(player.PlayerChipQueue.Count > 0)
-        {
-            LoadChipImages();
-        }
+
 
     }
 
@@ -40,6 +40,11 @@ public class ActiveChipUI : MonoBehaviour
             chipImage.color = new Color(chipImage.color.r, chipImage.color.g, chipImage.color.b, 1f);
 
         }
+
+
+        
+
+
     }
 
 

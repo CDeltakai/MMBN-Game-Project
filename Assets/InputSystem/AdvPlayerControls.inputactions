@@ -1,0 +1,34 @@
+{
+    "name": "AdvPlayerControls",
+    "maps": [
+        {
+            "name": "Advanced Player Actions",
+            "id": "c07e54ed-8326-4338-91be-20a7adae9800",
+            "actions": [
+                {
+                    "name": "Parry",
+                    "type": "Button",
+                    "id": "28836dbc-4aae-4ff9-8949-0aa1c6ce1030",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8e525b9c-6bb5-473a-8b97-33207b92e206",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -80,6 +80,15 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Parry"",
+                    ""type"": ""Button"",
+                    ""id"": ""cf96aceb-eed6-4f7d-9944-8cddd208490a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -333,6 +342,17 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SpaceBar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c34dd6f-8f21-48d4-bc46-2a6b8d78d6ca"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": ""Hold(pressPoint=0.1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Parry"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -926,6 +946,7 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
         m_Player_OpenDeck = m_Player.FindAction("OpenDeck", throwIfNotFound: true);
         m_Player_UseChip = m_Player.FindAction("UseChip", throwIfNotFound: true);
         m_Player_SpaceBar = m_Player.FindAction("SpaceBar", throwIfNotFound: true);
+        m_Player_Parry = m_Player.FindAction("Parry", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1003,6 +1024,7 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_OpenDeck;
     private readonly InputAction m_Player_UseChip;
     private readonly InputAction m_Player_SpaceBar;
+    private readonly InputAction m_Player_Parry;
     public struct PlayerActions
     {
         private @PlayerControlInput m_Wrapper;
@@ -1013,6 +1035,7 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
         public InputAction @OpenDeck => m_Wrapper.m_Player_OpenDeck;
         public InputAction @UseChip => m_Wrapper.m_Player_UseChip;
         public InputAction @SpaceBar => m_Wrapper.m_Player_SpaceBar;
+        public InputAction @Parry => m_Wrapper.m_Player_Parry;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1040,6 +1063,9 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
                 @SpaceBar.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpaceBar;
                 @SpaceBar.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpaceBar;
                 @SpaceBar.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpaceBar;
+                @Parry.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnParry;
+                @Parry.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnParry;
+                @Parry.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnParry;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1062,6 +1088,9 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
                 @SpaceBar.started += instance.OnSpaceBar;
                 @SpaceBar.performed += instance.OnSpaceBar;
                 @SpaceBar.canceled += instance.OnSpaceBar;
+                @Parry.started += instance.OnParry;
+                @Parry.performed += instance.OnParry;
+                @Parry.canceled += instance.OnParry;
             }
         }
     }
@@ -1224,6 +1253,7 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
         void OnOpenDeck(InputAction.CallbackContext context);
         void OnUseChip(InputAction.CallbackContext context);
         void OnSpaceBar(InputAction.CallbackContext context);
+        void OnParry(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

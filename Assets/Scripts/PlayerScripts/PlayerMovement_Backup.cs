@@ -199,7 +199,7 @@ public class PlayerMovement_Backup : MonoBehaviour, IBattleStageEntity
 
     void OnOpenDeck()
     {
-        chipSelectScreenMovement.EnableChipMenu();
+        chipSelectScreenMovement.ToggleChipMenu();
     }
 
 
