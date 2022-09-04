@@ -7,6 +7,8 @@ using System;
 public class ChipSelectScreenMovement : MonoBehaviour
 {
 
+
+
     private Vector3 endPosition = new Vector3 (-690, 170, 0);
     private Vector3 startPosition = new Vector3 (-1229, 170, 0);
     ChipInventory chipInventory;
@@ -66,7 +68,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     }
 
-    public void EnableChipMenu()
+    public void ToggleChipMenu()
     {
         Debug.Log("Triggered Menu");
         isActive = true;
@@ -108,10 +110,11 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
         }
 
-            // foreach(var chip in chipInventory.getChipInventory())
-            // {
-            //     selectableChips.Add(chip);
-            // }
+            foreach(GameObject button in chipButtons)
+            {
+                button.SetActive(true);
+            }
+
 
             for (int i = 0; i < maxSelectableChips; i++)
             {
@@ -167,9 +170,11 @@ public class ChipSelectScreenMovement : MonoBehaviour
         }
 
         ActiveChipSlotAccumulator = 0;
-        chipLoadManager.calcNextChipLoad(); 
+        chipLoadManager.calcNextChipLoad();
+
+
         print("Class: ChipSelectScreenMovement, attempted calcNextChipLoad()");
-        EnableChipMenu();       
+        ToggleChipMenu();       
     }
 
 }
