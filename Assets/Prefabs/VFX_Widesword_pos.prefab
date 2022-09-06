@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3321676313948391007}
   - component: {fileID: 1639137649755462177}
   - component: {fileID: 4171638757431803172}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: VFX_Widesword_slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 35313216451449712}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: VFX_Widesword_pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

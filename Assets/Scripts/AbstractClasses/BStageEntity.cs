@@ -466,7 +466,9 @@ public abstract class BStageEntity : MonoBehaviour
     {
         //if(isMoving){yield break;}
         if(isMovingCoroutine != null)
-        {yield break;}
+        {
+            print("moving coroutine not null, cannot move again");
+            yield break;}
         //isMoving = true;
         
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);

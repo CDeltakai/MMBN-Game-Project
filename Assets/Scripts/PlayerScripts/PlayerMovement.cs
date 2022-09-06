@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,19 @@ using DG.Tweening;
 
 public class PlayerMovement : BStageEntity
 {
+
+#region Initialized Script Classes
+
+    TimeManager timeManager;
+    ChipLoadManager chipLoadManager;
+    PlayerInput playerInput;
+    PlayerChipAnimations playerChipAnimations; 
+    ChipEffects chipEffect;
+    [SerializeField] PlayerVFXController VFXController;
+    ChipSelectScreenMovement chipSelectScreenMovement;
+
+#endregion
+
     public delegate void UsedChipEvent();
     public event UsedChipEvent usedChip;
 
@@ -20,26 +34,21 @@ public class PlayerMovement : BStageEntity
     public override event MoveOffTileEvent moveOffTileOverriden;
 
 
-    TimeManager timeManager;
-    ChipLoadManager chipLoadManager;
-
-    PlayerInput playerInput;
 
 
     //firePoint is used for effects or chips that use raycasts to deal their effect.
     [SerializeField] Transform firePoint;
     [HideInInspector] public BoxCollider2D boxCollider2D;
-    PlayerChipAnimations playerChipAnimations; 
-    ChipEffects chipEffect;
     [SerializeField] bool SuperArmor = false;
 
     bool isAlive = true;
     bool isUsingChip = false;
     float animationLength;
 
-    ChipSelectScreenMovement chipSelectScreenMovement;
 
     public int shotDamage = 5;
+    public int shotDamageMultiplier = 1;
+    [SerializeField] float chargeDuration = 0.1f;
 
 
     public string Name => "Megaman";
@@ -54,16 +63,17 @@ public class PlayerMovement : BStageEntity
     public override int maxHP => 9999;
     public override ETileTeam team { get;set;} = ETileTeam.Player;
 
+    Coroutine UseChipCoroutine = null;
+
+
   [Header("Experimental Features")]
     [SerializeField] bool useTranslateMovement = false;
     [SerializeField] bool useTweenMovement = false;
 
-InputAction parry = new InputAction("parry");
 
     public override void Start()
     {
 
-        parry.AddBinding(Keyboard.current.leftShiftKey);
 
         usingOverridenMovementMethod = true;
         chipEffect = FindObjectOfType<ChipEffects>();
@@ -99,7 +109,7 @@ InputAction parry = new InputAction("parry");
 
 
 //Tied to Megaman_Shoot animation
-    public void Shoot()
+    void Shoot()
     {
       RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies","Obstacle"));
 
@@ -109,8 +119,10 @@ InputAction parry = new InputAction("parry");
           BStageEntity target = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
           if(target == null)
           {return;}
-          target.hurtEntity(shotDamage, true, false);
+          target.hurtEntity(shotDamage * shotDamageMultiplier, true, false);
+          shotDamageMultiplier = 1;
       }
+
     }
 
 
@@ -139,32 +151,30 @@ InputAction parry = new InputAction("parry");
 
 
 
-    void Parry()
+    public void OnParry()
     {
     
     }
 
 
-    void OnUseChip()
-    {
-        if(ChipSelectScreenMovement.GameIsPaused)
-        {return;}        
-        if(isUsingChip){return;}
-        if(isMoving){return;}
-        StartCoroutine(OnUseChipIEnumerator());
-    }
 
     IEnumerator OnUseChipIEnumerator()
     {
 
         if (chipLoadManager.nextChipLoad.Count == 0)
         {Debug.Log("Chip Queue Empty");
+        isUsingChip = false;
+        UseChipCoroutine = null;
+
         yield break;}
 
-        if(chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Special ){
-
-        playerChipAnimations.playAnimationEnum(chipLoadManager.nextChipLoad[0].GetChipEnum(), chipLoadManager.nextChipLoad[0].GetAnimationDuration());
         isUsingChip = true;
+
+
+        if(chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Special )
+        {
+
+            playerChipAnimations.playAnimationEnum(chipLoadManager.nextChipLoad[0].GetChipEnum(), chipLoadManager.nextChipLoad[0].GetAnimationDuration());
         } 
 
         if(chipLoadManager.nextChipLoad[0].GetChipType() == EChipTypes.Special)
@@ -172,20 +182,17 @@ InputAction parry = new InputAction("parry");
             chipEffect.ApplyChipEffectV3();
         }
 
-        yield return new WaitForSecondsRealtime(chipLoadManager.nextChipLoad[0].GetAnimationDuration());
+        yield return new WaitForSecondsRealtime(chipLoadManager.nextChipLoad[0].GetAnimationDuration() + 0.05f);
         chipLoadManager.nextChipLoad.Clear();
         chipLoadManager.calcNextChipLoad();
 
         if(usedChip != null){usedChip();}
         
         isUsingChip = false;
-        
+        UseChipCoroutine = null;
     }
 
-    void OnOpenDeck()
-    {
-        chipSelectScreenMovement.ToggleChipMenu();
-    }
+
 
     IEnumerator teleMoveWithDelay(int x, int y, float delay)
     {
@@ -209,8 +216,15 @@ InputAction parry = new InputAction("parry");
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}
         if(!isAlive){return;}
-        if(isRooted){return;}
-        if(isMoving){return;}
+        if(isUsingChip){
+            print("is using chip, cannot move");
+            return;}
+        if(isRooted){
+            print("is rooted, cannot move");
+            return;}
+        if(isMoving){
+            print("is already moving, cannot move again");
+            return;}
         int index = animator.GetLayerIndex("Base Layer");
         
         if(Keyboard.current.dKey.wasPressedThisFrame)
@@ -261,13 +275,7 @@ InputAction parry = new InputAction("parry");
    
 
 
-    void OnFire()
-    {
-        if(ChipSelectScreenMovement.GameIsPaused)
-        {return;}        
-        if(isMoving){return;}
-        animator.SetTrigger("Shoot");   
-    }
+
 
 
     public override void hurtEntity(int damage,
@@ -499,6 +507,85 @@ InputAction parry = new InputAction("parry");
 
 
     }
+
+
+#region Input Actions
+
+    Coroutine VFXCoroutine = null;
+    public void OnFire(InputAction.CallbackContext context)
+    {
+
+
+        print(context);
+
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}        
+        if(isMoving){return;}
+
+        if(context.performed)
+        {
+            VFXCoroutine = StartCoroutine(VFXController.playVFXanim(true, PlayerVFXAnims.BasicShot_Charging, PlayerVFXAnims.BasicShot_FullyCharged, chargeDuration));
+
+        }
+
+
+        if(context.canceled)
+        {
+            if(context.duration >= chargeDuration)
+            {
+                shotDamageMultiplier = 10;
+            }
+
+
+
+           if(VFXCoroutine != null)
+           {
+                print("Stopping VFXCoroutine");
+                StopCoroutine(VFXCoroutine);
+           } 
+            VFXCoroutine = StartCoroutine(VFXController.playVFXanim(false));
+
+
+            print("Megaman fired buster shot");
+            animator.SetTrigger("Shoot");
+            VFXCoroutine = null;
+        }
+
+        
+
+    }
+
+    public void OnOpenDeck(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            chipSelectScreenMovement.ToggleChipMenu();
+        }
+
+    }
+
+    public void OnUseChip(InputAction.CallbackContext context)
+    {
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}        
+        if(isUsingChip){return;}
+        if(isMoving){return;}
+        if(UseChipCoroutine != null)
+        {return;}
+
+
+        if(context.started)
+        {
+
+            UseChipCoroutine = StartCoroutine(OnUseChipIEnumerator());
+        }
+
+    }
+
+
+
+
+#endregion
 
 
 

@@ -25,16 +25,40 @@ TextureImporter:
     second: ChargingShot7
   - first:
       213: -2848027483753098434
-    second: AlmostCharged_1
+    second: FullyCharged3
   - first:
       213: -8403354722879879860
-    second: AlmostCharged_2
+    second: FullyCharged6
   - first:
       213: -6158393303424255840
-    second: AlmostCharged_3
+    second: FullyCharged9
   - first:
       213: -1849263753373250552
-    second: AlmostCharged_4
+    second: FullyCharged12
+  - first:
+      213: -7295357767516898026
+    second: FullyCharged1
+  - first:
+      213: -3979627095300791074
+    second: FullyCharged2
+  - first:
+      213: -3441590365240388017
+    second: FullyCharged4
+  - first:
+      213: 8028479222306126729
+    second: FullyCharged5
+  - first:
+      213: 7397227841094091834
+    second: FullyCharged7
+  - first:
+      213: -5470447197957842482
+    second: FullyCharged8
+  - first:
+      213: -1450188897550155956
+    second: FullyCharged10
+  - first:
+      213: 4517544751919425394
+    second: FullyCharged11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -65,7 +89,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -101,7 +125,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +137,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -271,15 +331,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AlmostCharged_1
+      name: FullyCharged3
       rect:
         serializedVersion: 2
-        x: 164
-        y: 88
-        width: 71
-        height: 71
+        x: 167
+        y: 93
+        width: 62
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -292,15 +352,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AlmostCharged_2
+      name: FullyCharged6
       rect:
         serializedVersion: 2
-        x: 388
-        y: 89
-        width: 71
-        height: 71
+        x: 394
+        y: 92
+        width: 62
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,15 +373,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AlmostCharged_3
+      name: FullyCharged9
       rect:
         serializedVersion: 2
-        x: 154
-        y: 8
-        width: 71
-        height: 71
+        x: 158
+        y: 12
+        width: 64
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -334,15 +394,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AlmostCharged_4
+      name: FullyCharged12
       rect:
         serializedVersion: 2
-        x: 384
-        y: 7
-        width: 71
-        height: 71
+        x: 388
+        y: 11
+        width: 62
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -350,6 +410,174 @@ TextureImporter:
       bones: []
       spriteID: 80c8e240a681656e0800000000000000
       internalID: -1849263753373250552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullyCharged1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 93
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61db4cd43cea1ca90800000000000000
+      internalID: -7295357767516898026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullyCharged2
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 93
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4a316ed3685c8c0800000000000000
+      internalID: -3979627095300791074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullyCharged4
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 93
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4690711cc30d30d0800000000000000
+      internalID: -3441590365240388017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullyCharged5
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 92
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b3924e053ea6f60800000000000000
+      internalID: 8028479222306126729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullyCharged7
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 93
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a340b0f778b38a660800000000000000
+      internalID: 7397227841094091834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullyCharged8
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 93
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec91133d1411514b0800000000000000
+      internalID: -5470447197957842482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullyCharged10
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 11
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4fbe4091e4efdbe0800000000000000
+      internalID: -1450188897550155956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullyCharged11
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 11
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2776613540b81be30800000000000000
+      internalID: 4517544751919425394
       vertices: []
       indices: 
       edges: []
