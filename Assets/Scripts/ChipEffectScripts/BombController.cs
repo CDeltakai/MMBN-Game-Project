@@ -67,7 +67,7 @@ public class BombController : MonoBehaviour
             BStageEntity victim = other.GetComponent<BStageEntity>();
 
             victim.hurtEntity((int)((BaseDamage + AdditionalDamage)*player.AttackMultiplier),
-            false, true, statusEffect: chipStatusEffect);
+            false, true, player, statusEffect: chipStatusEffect);
 
         }
 

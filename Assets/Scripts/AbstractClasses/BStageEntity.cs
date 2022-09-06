@@ -119,8 +119,10 @@ public abstract class BStageEntity : MonoBehaviour
     public virtual void hurtEntity(int damage,
                                    bool lightAttack,
                                    bool hitFlinch,
+                                   BStageEntity attacker,
                                    bool pierceUntargetable = false,
-                                   EStatusEffects statusEffect = EStatusEffects.Default)
+                                   EStatusEffects statusEffect = EStatusEffects.Default
+                                   )
     {
         if(fullInvincible)
         {return;}

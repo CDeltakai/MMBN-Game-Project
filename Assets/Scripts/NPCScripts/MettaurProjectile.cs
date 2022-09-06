@@ -9,7 +9,7 @@ public class MettaurProjectile : MonoBehaviour
     [SerializeField] int damage = 10;
     [SerializeField] float interval = 1f;
     float time = 0f;
-    Mettaur mettaur;
+    Mettaur_RF mettaur;
     Rigidbody2D projectileBody;
     Rigidbody2D parentBody;
     PlayerMovement player;
@@ -18,6 +18,7 @@ public class MettaurProjectile : MonoBehaviour
     bool isMoving = false;
     void Start()
     {
+        mettaur = FindObjectOfType<Mettaur_RF>();
         projectileBody = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         parentBody = transform.GetComponentInParent<Rigidbody2D>();
@@ -65,7 +66,7 @@ public class MettaurProjectile : MonoBehaviour
 
         if(other.tag == "Player" && !isTriggered)
         {
-            player.hurtEntity(damage, false, true);
+            player.hurtEntity(damage, false, true, mettaur);
             //player.healthText.text = player.currentHP.ToString();
             Debug.Log("Player damaged:" + player.currentHP.ToString());
             isTriggered = true;

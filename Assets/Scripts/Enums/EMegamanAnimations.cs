@@ -21,6 +21,8 @@ public enum EMegamanAnimations
     ShieldActivate = EChips.Reflect,
     ShieldDissipate = 5,
     Megaman_BombThrow = EChips.Bomb,
+    Megaman_Parry,
+    Megaman_ParryDissipate
 
 
     

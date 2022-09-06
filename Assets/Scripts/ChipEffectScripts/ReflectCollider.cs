@@ -46,7 +46,7 @@ public class ReflectCollider : MonoBehaviour
             if(hitInfo)
             {
                 BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
-                script.hurtEntity((int)((reflect.BaseDamage + reflect.AdditionalDamage)*player.AttackMultiplier), false, true);
+                script.hurtEntity((int)((reflect.BaseDamage + reflect.AdditionalDamage)*player.AttackMultiplier), false, true, player);
             }
         }
         
@@ -63,7 +63,7 @@ public class ReflectCollider : MonoBehaviour
             if(hitInfo)
             {
                 BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
-                script.hurtEntity((int)((reflect.BaseDamage + reflect.AdditionalDamage)*player.AttackMultiplier), false, true);
+                script.hurtEntity((int)((reflect.BaseDamage + reflect.AdditionalDamage)*player.AttackMultiplier), false, true, player);
                 
             }
         }

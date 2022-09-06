@@ -14,6 +14,7 @@ public class Airshot : MonoBehaviour, IChip
 
     public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
 
+ 
     public void Effect(int AddDamage = 0, EStatusEffects status = EStatusEffects.Default, string AddressableKey = null)
     {
 
@@ -32,7 +33,7 @@ public class Airshot : MonoBehaviour, IChip
             if(target == null)
             {return;}
 
-            target.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true, statusEffect:chipStatusEffect);
+            target.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true, player, statusEffect:chipStatusEffect);
             StartCoroutine(target.Shove(1, 0));            
         }
         

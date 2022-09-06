@@ -152,7 +152,7 @@ public class Champy_RF : BStageEntity
             BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
             if(script != null)
             {
-                script.hurtEntity(damage, true, true);
+                script.hurtEntity(damage, true, true, this);
             }
         }
     }
@@ -167,7 +167,7 @@ public class Champy_RF : BStageEntity
             BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
             if(script != null)
             {
-                script.hurtEntity(damage, false, true);
+                script.hurtEntity(damage, false, true, this);
             }
         }
 

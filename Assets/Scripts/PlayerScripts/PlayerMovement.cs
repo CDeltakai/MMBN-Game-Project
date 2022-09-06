@@ -43,6 +43,7 @@ public class PlayerMovement : BStageEntity
 
     bool isAlive = true;
     bool isUsingChip = false;
+    bool uninterruptibleAction = false;
     float animationLength;
 
 
@@ -64,6 +65,7 @@ public class PlayerMovement : BStageEntity
     public override ETileTeam team { get;set;} = ETileTeam.Player;
 
     Coroutine UseChipCoroutine = null;
+    Coroutine ParryCoroutine = null;
 
 
   [Header("Experimental Features")]
@@ -119,7 +121,7 @@ public class PlayerMovement : BStageEntity
           BStageEntity target = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
           if(target == null)
           {return;}
-          target.hurtEntity(shotDamage * shotDamageMultiplier, true, false);
+          target.hurtEntity(shotDamage * shotDamageMultiplier, true, false, this);
           shotDamageMultiplier = 1;
       }
 
@@ -151,10 +153,6 @@ public class PlayerMovement : BStageEntity
 
 
 
-    public void OnParry()
-    {
-    
-    }
 
 
 
@@ -281,6 +279,7 @@ public class PlayerMovement : BStageEntity
     public override void hurtEntity(int damage,
         bool lightAttack,
         bool hitFlinch,
+        BStageEntity attacker,
         bool pierceCloaking = false,
         EStatusEffects statusEffect = EStatusEffects.Default)
     {
@@ -525,9 +524,7 @@ public class PlayerMovement : BStageEntity
         if(context.performed)
         {
             VFXCoroutine = StartCoroutine(VFXController.playVFXanim(true, PlayerVFXAnims.BasicShot_Charging, PlayerVFXAnims.BasicShot_FullyCharged, chargeDuration));
-
         }
-
 
         if(context.canceled)
         {
@@ -536,8 +533,6 @@ public class PlayerMovement : BStageEntity
                 shotDamageMultiplier = 10;
             }
 
-
-
            if(VFXCoroutine != null)
            {
                 print("Stopping VFXCoroutine");
@@ -545,14 +540,10 @@ public class PlayerMovement : BStageEntity
            } 
             VFXCoroutine = StartCoroutine(VFXController.playVFXanim(false));
 
-
             print("Megaman fired buster shot");
             animator.SetTrigger("Shoot");
             VFXCoroutine = null;
         }
-
-        
-
     }
 
     public void OnOpenDeck(InputAction.CallbackContext context)
@@ -573,15 +564,28 @@ public class PlayerMovement : BStageEntity
         if(UseChipCoroutine != null)
         {return;}
 
-
         if(context.started)
         {
-
             UseChipCoroutine = StartCoroutine(OnUseChipIEnumerator());
         }
 
     }
 
+
+    public void OnParry(InputAction.CallbackContext context)
+    {
+    
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}        
+        if(isUsingChip){return;}
+        if(isMoving){return;}
+
+
+
+
+
+
+    }
 
 
 

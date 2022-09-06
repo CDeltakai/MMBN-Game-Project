@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class MachineGunnerVFXController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    MachineGunner gunner;
+
+
     void Start()
     {
-        
+        gunner = FindObjectOfType<MachineGunner>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 
     public void gunnerHitRegister(int damage)
     {
@@ -25,7 +24,7 @@ public class MachineGunnerVFXController : MonoBehaviour
             BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
             if(script != null)
             {
-                script.hurtEntity(damage, true, true);
+                script.hurtEntity(damage, true, true, gunner);
             }
         }
     }

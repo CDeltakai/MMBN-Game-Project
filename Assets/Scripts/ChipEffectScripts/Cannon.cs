@@ -16,6 +16,12 @@ public class Cannon : MonoBehaviour, IChip
     public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
 
 
+    void Awake()
+    {
+        player = FindObjectOfType<PlayerMovement>();
+    }
+
+
     public void Effect(int AddDamage = 0, EStatusEffects status = EStatusEffects.Default, string AddressableKey = null)
     {
 
@@ -30,7 +36,7 @@ public class Cannon : MonoBehaviour, IChip
         {
 
             BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
-            script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true, statusEffect: chipStatusEffect);
+            script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true, player, statusEffect: chipStatusEffect);
         }
         
         AdditionalDamage = 0;

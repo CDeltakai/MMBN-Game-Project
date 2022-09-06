@@ -31,7 +31,7 @@ public class Sword : MonoBehaviour, IChip
         {
           
           BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
-          script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true, statusEffect: chipStatusEffect);
+          script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true, player, statusEffect: chipStatusEffect);
           Debug.Log(hitInfo.transform.name + "HP:" + script.getHealth() + "Distance: " + hitInfo.distance.ToString() + "Chip Used: Sword");
         }
 
