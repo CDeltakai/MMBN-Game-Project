@@ -173,6 +173,68 @@ public abstract class BStageEntity : MonoBehaviour
         return; 
     }
     
+    public virtual void hurtEntity(int damage,
+                                   bool lightAttack,
+                                   bool hitFlinch,
+                                   bool pierceUntargetable = false,
+                                   EStatusEffects statusEffect = EStatusEffects.Default
+                                   )
+    {
+        if(fullInvincible)
+        {return;}
+        if(isUntargetable && !pierceUntargetable)
+        {return;}
+
+        if(statusEffect != EStatusEffects.Default)
+        {StartCoroutine(setStatusEffect(statusEffect, 1));}
+
+        if(damage >= 10)
+        {
+            isAnimatingHP = true;
+
+            if(AnimateHPCoroutine != null)
+            {
+                StopCoroutine(AnimateHPCoroutine);
+            }
+
+            AnimateHPCoroutine = StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
+
+        }
+
+
+        if(damage >= currentHP)
+        {
+            animator.speed = Mathf.Epsilon;
+            currentHP = 0;
+            healthText.text = currentHP.ToString();
+            
+            if(AnimateHPCoroutine == null)
+            {
+                healthText.enabled = false;
+            }
+
+            StartCoroutine(DestroyEntity());
+            return;
+        }
+
+        StartCoroutine(DamageFlash());
+
+        currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
+        if(AnimateHPCoroutine == null)
+        {
+            healthText.text = currentHP.ToString();
+        }
+
+
+        return; 
+    }
+    
+
+
+
+
+
+
     public int getHealth()
     {
         return currentHP;

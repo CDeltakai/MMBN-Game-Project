@@ -148,7 +148,6 @@ public class PlayerMovement : BStageEntity
         timeManager.cancelSlowMotion();
        }
 
-        
     }
 
 
