@@ -52,8 +52,7 @@ public class BattleStageHandler : MonoBehaviour
 
     private void Awake()
     {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
+
 
         tileEffectsManager = GetComponent<TileEventManager>();
         EntityList = FindObjectsOfType<BStageEntity>().ToList();

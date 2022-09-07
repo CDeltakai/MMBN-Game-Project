@@ -234,6 +234,7 @@ public class PlayerMovement : BStageEntity
     IEnumerator ParryEffect()
     {
         fullInvincible = true;
+        Parrying = false;
         VFXCoroutine = StartCoroutine( VFXController.playVFXanim(true, PlayerVFXAnims.ParryVFX));
         timeManager.SlowMotion();
         yield return new WaitForSecondsRealtime(0.24f);
@@ -270,6 +271,7 @@ public class PlayerMovement : BStageEntity
         if(!SuperArmor && hitFlinch ){
             animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
             StartCoroutine(ChangeAnimState(EMegamanAnimations.Megaman_Idle.ToString(), EMegamanAnimations.Megaman_Hurt.ToString()));
+            uninterruptibleAction = true;
             StartCoroutine(setStatusEffect(EStatusEffects.Rooted, 0.111f));
 
         }
@@ -304,7 +306,8 @@ public class PlayerMovement : BStageEntity
         if(!lightAttack){
         StartCoroutine(InvincibilityFrames(1f));
         }
-        
+        uninterruptibleAction = false;
+
         return;
     }
 
@@ -554,9 +557,13 @@ public class PlayerMovement : BStageEntity
             Parrying = false;
         }
 
-
-
     }
+
+    void EnableParry()
+    {Parrying = true;}
+    void DisableParry()
+    {Parrying = false;}
+
 
 //Megaman_Shoot
     void Shoot()
@@ -648,11 +655,13 @@ public class PlayerMovement : BStageEntity
     {
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}        
+        if(uninterruptibleAction){return;}
         if(isUsingChip){return;}
         if(isMoving){return;}
 
         if(context.started)
         {
+            Parrying = true;
             animator.SetBool("Parry", true);
         }
 
