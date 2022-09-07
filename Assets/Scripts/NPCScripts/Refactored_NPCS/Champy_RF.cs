@@ -124,11 +124,11 @@ public class Champy_RF : BStageEntity
     {
         StopCoroutine(AttackAnimation());
         tileEventManager.UnsubscribeEntity(this);
-        yield return new WaitForSeconds(0.0005f);
+        yield return new WaitForSecondsRealtime(0.0005f);
         setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
                                                 transform.rotation, transform.parent.transform);
-        yield return new WaitForSeconds(0.533f);
+        yield return new WaitForSecondsRealtime(0.533f);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.setCellEntity(previousCellPosition.x, previousCellPosition.y, this, false);
         if(deathEvent != null)

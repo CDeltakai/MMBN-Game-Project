@@ -243,8 +243,7 @@ public abstract class BStageEntity : MonoBehaviour
     public IEnumerator DamageFlash()
     {
         setSolidColor(Color.white);
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();        
+        yield return new WaitForSecondsRealtime(0.03f);
         setNormalSprite();
     }
 

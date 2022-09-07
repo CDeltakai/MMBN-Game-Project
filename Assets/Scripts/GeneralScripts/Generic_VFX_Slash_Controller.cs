@@ -46,9 +46,7 @@ public class Generic_VFX_Slash_Controller : MonoBehaviour
 
     IEnumerator SelfDestruct()
     {
-        yield return new WaitForSecondsRealtime(0.05f);
-        //boxCollider.enabled = false;
-        yield return new WaitForSecondsRealtime(0.075f);
+        yield return new WaitForSecondsRealtime(0.15f);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
 

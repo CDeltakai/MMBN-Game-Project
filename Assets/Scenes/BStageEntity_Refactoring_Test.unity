@@ -1940,7 +1940,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 8220875129404558051, guid: 52280c823d2c9a445919a36b3fd62c6c, type: 3}
-  m_Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+  m_Color: {r: 0.75, g: 0.75, b: 0.75, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3849,7 +3849,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: currentHP
-      value: 1000
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1960042378351672794, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: m_Name

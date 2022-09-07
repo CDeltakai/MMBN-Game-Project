@@ -1,10 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BackgroundController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    SpriteRenderer spriteRenderer;
+
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+
+
+
     void Start()
     {
         
@@ -14,4 +25,21 @@ public class BackgroundController : MonoBehaviour
     void Update()
     {
     }
+
+
+    public void FadeToBlack(float duration)
+    {
+
+        spriteRenderer.DOColor(Color.black, duration).SetUpdate(true);
+
+
+    }
+
+    public void FadeToNormal(float duration)
+    {
+        spriteRenderer.DOColor(new Color(0.7f, 0.7f, 0.7f, 1), duration).SetUpdate(true);
+
+    }
+
+    
 }

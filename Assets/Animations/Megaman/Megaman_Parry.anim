@@ -79,14 +79,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: ToggleParry
+    functionName: EnableParry
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: bbf6f029452a4a141ae77e52108bb313, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.13333334
-    functionName: ToggleParry
+    functionName: DisableParry
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: bbf6f029452a4a141ae77e52108bb313, type: 3}
     floatParameter: 0

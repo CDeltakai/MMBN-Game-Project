@@ -20,6 +20,7 @@ public class PlayerMovement : BStageEntity
     ChipEffects chipEffect;
     [SerializeField] PlayerVFXController VFXController;
     ChipSelectScreenMovement chipSelectScreenMovement;
+    BackgroundController bgController;
 
 #endregion
 
@@ -64,10 +65,14 @@ public class PlayerMovement : BStageEntity
     public override int maxHP => 9999;
     public override ETileTeam team { get;set;} = ETileTeam.Player;
     public bool Parrying = false;
+    public bool CanParry = true;
+    public bool canUseAbilities = true;
 
     Coroutine UseChipCoroutine = null;
     Coroutine ParryCoroutine = null;
     Coroutine VFXCoroutine = null;
+    Coroutine CooldownCoroutine = null;
+    Coroutine ParryCDCoroutine = null;
 
 
 
@@ -86,6 +91,7 @@ public class PlayerMovement : BStageEntity
         playerChipAnimations = GetComponent<PlayerChipAnimations>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         stageHandler = FindObjectOfType<BattleStageHandler>();
+        bgController = FindObjectOfType<BackgroundController>();
 
 
         chipLoadManager = GetComponent<ChipLoadManager>();
@@ -234,6 +240,12 @@ public class PlayerMovement : BStageEntity
     IEnumerator ParryEffect()
     {
         fullInvincible = true;
+        bgController.FadeToBlack(0.5f);
+        if(CooldownCoroutine != null)
+        {
+            StopCoroutine(CooldownCoroutine);
+        }
+        CooldownCoroutine =  StartCoroutine(AbilityCooldown());
         Parrying = false;
         VFXCoroutine = StartCoroutine( VFXController.playVFXanim(true, PlayerVFXAnims.ParryVFX));
         timeManager.SlowMotion();
@@ -243,6 +255,7 @@ public class PlayerMovement : BStageEntity
         fullInvincible = false;
 
         yield return new WaitForSecondsRealtime(1.25f);
+        bgController.FadeToNormal(0.25f);
         timeManager.cancelSlowMotion();
         ParryCoroutine = null;
     }
@@ -271,7 +284,7 @@ public class PlayerMovement : BStageEntity
         if(!SuperArmor && hitFlinch ){
             animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
             StartCoroutine(ChangeAnimState(EMegamanAnimations.Megaman_Idle.ToString(), EMegamanAnimations.Megaman_Hurt.ToString()));
-            uninterruptibleAction = true;
+            //uninterruptibleAction = true;
             StartCoroutine(setStatusEffect(EStatusEffects.Rooted, 0.111f));
 
         }
@@ -290,6 +303,12 @@ public class PlayerMovement : BStageEntity
 
         }
         
+        if(CooldownCoroutine != null)
+        {
+            StopCoroutine(CooldownCoroutine);
+        }
+        CooldownCoroutine =  StartCoroutine(AbilityCooldown());
+
         if(damage * DefenseMultiplier >= currentHP)
         {
             isAlive = false;
@@ -312,11 +331,28 @@ public class PlayerMovement : BStageEntity
     }
 
 
+    IEnumerator AbilityCooldown()
+    {
+        canUseAbilities = false;
+        yield return new WaitForSecondsRealtime(0.35f);
+        canUseAbilities = true;
+        CooldownCoroutine = null;
+    }
 
+
+    IEnumerator ParryCooldown()
+    {
+        CanParry = false;
+        yield return new WaitForSecondsRealtime(0.5f);
+        CanParry = true;
+        ParryCDCoroutine = null;
+    }
 
     IEnumerator ChangeAnimState(string stateName, string transitionState)
     {
+        uninterruptibleAction = true;
         yield return new WaitForSecondsRealtime(GetAnimationLength(transitionState));
+        uninterruptibleAction = false;
         animator.Play(stateName);
     }
 
@@ -593,9 +629,6 @@ public class PlayerMovement : BStageEntity
     public void OnFire(InputAction.CallbackContext context)
     {
 
-
-        //print(context);
-
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}        
         if(isMoving){return;}
@@ -655,12 +688,13 @@ public class PlayerMovement : BStageEntity
     {
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}        
-        if(uninterruptibleAction){return;}
+        //if(uninterruptibleAction){return;}
         if(isUsingChip){return;}
         if(isMoving){return;}
 
         if(context.started)
         {
+        if(!canUseAbilities){return;}
             Parrying = true;
             animator.SetBool("Parry", true);
         }
@@ -668,7 +702,11 @@ public class PlayerMovement : BStageEntity
         if(context.canceled)
         {
             animator.SetBool("Parry", false);
-            
+            // if(ParryCDCoroutine == null)
+            // {
+            //     ParryCDCoroutine = StartCoroutine(ParryCooldown());
+            // }
+
         }
 
 
