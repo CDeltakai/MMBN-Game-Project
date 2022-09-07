@@ -233,10 +233,14 @@ public class PlayerMovement : BStageEntity
 
     IEnumerator ParryEffect()
     {
-        timeManager.SlowMotion();
         fullInvincible = true;
-        yield return new WaitForSecondsRealtime(0.25f);
+        VFXCoroutine = StartCoroutine( VFXController.playVFXanim(true, PlayerVFXAnims.ParryVFX));
+        timeManager.SlowMotion();
+        yield return new WaitForSecondsRealtime(0.24f);
+        VFXCoroutine = StartCoroutine( VFXController.playVFXanim(false));
+        VFXCoroutine = null;
         fullInvincible = false;
+
         yield return new WaitForSecondsRealtime(1.25f);
         timeManager.cancelSlowMotion();
         ParryCoroutine = null;
@@ -250,17 +254,18 @@ public class PlayerMovement : BStageEntity
         bool pierceCloaking = false,
         EStatusEffects statusEffect = EStatusEffects.Default)
     {
-        if(fullInvincible){return;}
-        if(isUntargetable){return;}
+        if(isUntargetable && pierceCloaking == false){return;}
         if(Parrying)
         {
             if(ParryCoroutine == null)
             {
                 ParryCoroutine = StartCoroutine(ParryEffect());
+                StartCoroutine(DamageFlash());
             }
             return;
         }
-
+        if(fullInvincible){return;}
+        Parrying = false;
 
         if(!SuperArmor && hitFlinch ){
             animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());

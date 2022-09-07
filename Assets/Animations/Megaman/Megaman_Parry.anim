@@ -78,7 +78,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.033333335
+  - time: 0
     functionName: ToggleParry
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: bbf6f029452a4a141ae77e52108bb313, type: 3}

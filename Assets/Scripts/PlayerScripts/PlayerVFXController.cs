@@ -6,7 +6,8 @@ public enum PlayerVFXAnims
 {
     Default,
     BasicShot_Charging,
-    BasicShot_FullyCharged
+    BasicShot_FullyCharged,
+    ParryVFX
 
 
 
@@ -65,7 +66,7 @@ public class PlayerVFXController : MonoBehaviour
 
             if(transitionAnim != PlayerVFXAnims.Default)
             {
-                yield return new WaitForSeconds(duration);
+                yield return new WaitForSecondsRealtime(duration);
 
                 animator.Play(transitionAnim.ToString());
             }
@@ -75,6 +76,7 @@ public class PlayerVFXController : MonoBehaviour
         }else
         {
             spriteRenderer.enabled = false;
+            animator.Play(PlayerVFXAnims.Default.ToString());
             //animator.Play(PlayerVFXAnims.Default.ToString());
             //animator.enabled = false;
             

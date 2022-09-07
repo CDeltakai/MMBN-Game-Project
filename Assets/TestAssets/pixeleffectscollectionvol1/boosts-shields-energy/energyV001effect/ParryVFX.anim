@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShieldANim
+  m_Name: ParryVFX
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,23 +21,23 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: af6b58102f807cb4382c50b9a64585ce, type: 3}
-    - time: 0.041666668
+    - time: 0.033333335
       value: {fileID: 21300000, guid: dab53e1187fe04e48956fd2b160888ce, type: 3}
-    - time: 0.083333336
+    - time: 0.06666667
       value: {fileID: 21300000, guid: 9f0cf3a284bea7243bf31fee7e373c3a, type: 3}
-    - time: 0.125
+    - time: 0.1
       value: {fileID: 21300000, guid: 15b57453b93bb6c4291f20b3efe85555, type: 3}
-    - time: 0.16666667
+    - time: 0.13333334
       value: {fileID: 21300000, guid: ca3e5d9b66ee810489eb3d18f89e7bd4, type: 3}
-    - time: 0.20833333
+    - time: 0.16666667
       value: {fileID: 21300000, guid: cc4d697baed9e15448e29ca0c8b76d40, type: 3}
-    - time: 0.25
+    - time: 0.2
       value: {fileID: 21300000, guid: 97022cecc0d86814a8d1bddd4f714837, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 24
+  m_SampleRate: 30
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -64,12 +64,12 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.29166666
+    m_StopTime: 0.23333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
