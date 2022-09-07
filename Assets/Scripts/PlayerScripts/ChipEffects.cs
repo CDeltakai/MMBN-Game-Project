@@ -67,7 +67,6 @@ public class ChipEffects : MonoBehaviour
         //ChipScript = null;
     }
 
-//unsafe-testing message
     public void UseChipEffect(string GivenAddressableKey = null)
     {
         chipList = chipLoadManager.nextChipLoad;

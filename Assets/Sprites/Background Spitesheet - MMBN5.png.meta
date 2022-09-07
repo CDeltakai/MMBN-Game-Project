@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 52280c823d2c9a445919a36b3fd62c6c
+guid: 98916ffa74bd1ce488f19e2be12aa37b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6747163250360314596
-    second: Battle Stage - Blue Tile
+      213: -8133495312304903767
+    second: Background Spitesheet - MMBN5_0
   - first:
-      213: 8220875129404558051
-    second: Game Boy Advance - Mega Man Battle Network 6 - First Battle Stage_2
+      213: 6066814553712833113
+    second: Background Spitesheet - MMBN5_1
+  - first:
+      213: -3935269365007623489
+    second: Background Spitesheet - MMBN5_2
+  - first:
+      213: -8316153418749996773
+    second: Background Spitesheet - MMBN5_3
+  - first:
+      213: 5433740241199847285
+    second: Background Spitesheet - MMBN5_4
+  - first:
+      213: 2160267592349037832
+    second: Background Spitesheet - MMBN5_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -133,55 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Battle Stage - Red Tile
+      name: Background Spitesheet - MMBN5_0
       rect:
         serializedVersion: 2
-        x: 154
-        y: 51
-        width: 40
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35e16bbdfb3386f50800000000000000
-      internalID: 6874801730298977875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Battle Stage - Blue Tile
-      rect:
-        serializedVersion: 2
-        x: 314
-        y: 51
-        width: 40
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1514b495c24d52a0800000000000000
-      internalID: -6747163250360314596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy Advance - Mega Man Battle Network 6 - First Battle Stage_2
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 80
-        width: 240
-        height: 160
+        x: 8
+        y: 275
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,8 +159,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ea8007cf5a661270800000000000000
-      internalID: 8220875129404558051
+      spriteID: 9a9e2c74b15002f80800000000000000
+      internalID: -8133495312304903767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Spitesheet - MMBN5_1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 275
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952393871b7a13450800000000000000
+      internalID: 6066814553712833113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Spitesheet - MMBN5_2
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 275
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba5e3bcc5d1369c0800000000000000
+      internalID: -3935269365007623489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Spitesheet - MMBN5_3
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 12
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1191c9c686179c80800000000000000
+      internalID: -8316153418749996773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Spitesheet - MMBN5_4
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 11
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577567ec5f5886b40800000000000000
+      internalID: 5433740241199847285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Spitesheet - MMBN5_5
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 11
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805b0cdfdefcafd10800000000000000
+      internalID: 2160267592349037832
       vertices: []
       indices: 
       edges: []

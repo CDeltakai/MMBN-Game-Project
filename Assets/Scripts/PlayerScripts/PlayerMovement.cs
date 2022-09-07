@@ -63,9 +63,12 @@ public class PlayerMovement : BStageEntity
     public override bool isStunnable => true;
     public override int maxHP => 9999;
     public override ETileTeam team { get;set;} = ETileTeam.Player;
+    public bool Parrying = false;
 
     Coroutine UseChipCoroutine = null;
     Coroutine ParryCoroutine = null;
+    Coroutine VFXCoroutine = null;
+
 
 
   [Header("Experimental Features")]
@@ -110,22 +113,6 @@ public class PlayerMovement : BStageEntity
     }
 
 
-//Tied to Megaman_Shoot animation
-    void Shoot()
-    {
-      RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies","Obstacle"));
-
-      if(hitInfo)
-      {
-
-          BStageEntity target = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
-          if(target == null)
-          {return;}
-          target.hurtEntity(shotDamage * shotDamageMultiplier, true, false, this);
-          shotDamageMultiplier = 1;
-      }
-
-    }
 
 
     void Update()
@@ -217,62 +204,43 @@ public class PlayerMovement : BStageEntity
             print("is using chip, cannot move");
             return;}
         if(isRooted){
-            print("is rooted, cannot move");
+            //print("is rooted, cannot move");
             return;}
         if(isMoving){
             print("is already moving, cannot move again");
             return;}
-        int index = animator.GetLayerIndex("Base Layer");
         
         if(Keyboard.current.dKey.wasPressedThisFrame)
         {
-            if(useTranslateMovement)
-            {StartCoroutine(translateMoveCell(1, 0, Vector2.right));}
-            else if(useTweenMovement)
-            {
-                isMovingCoroutine = StartCoroutine(TweenMove(1, 0, 0.1f, movementEase));
-                
-            }
-            else
-            {StartCoroutine(teleMoveWithDelay(1, 0, 0.106f));}
-
+            isMovingCoroutine = StartCoroutine(TweenMove(1, 0, 0.1f, movementEase));
         }
         if(Keyboard.current.aKey.wasPressedThisFrame)
         {
-            if(useTranslateMovement)
-            {StartCoroutine(translateMoveCell(-1, 0, Vector2.left));}
-            else if(useTweenMovement)
-            {
-                isMovingCoroutine = StartCoroutine(TweenMove(-1, 0, 0.1f, movementEase));
-            }            
-            else{StartCoroutine(teleMoveWithDelay(-1, 0, 0.106f));}             
+            isMovingCoroutine = StartCoroutine(TweenMove(-1, 0, 0.1f, movementEase)); 
         }
         if(Keyboard.current.wKey.wasPressedThisFrame)
         {
-            if(useTranslateMovement)
-            {StartCoroutine(translateMoveCell(0, 1, Vector2.up));}
-            else if(useTweenMovement)
-            {
-                isMovingCoroutine = StartCoroutine(TweenMove(0, 1, 0.1f, movementEase));
-            }            
-            else{StartCoroutine(teleMoveWithDelay(0, 1, 0.106f));}               
+            isMovingCoroutine = StartCoroutine(TweenMove(0, 1, 0.1f, movementEase));     
         }
         if(Keyboard.current.sKey.wasPressedThisFrame)
         {
-            if(useTranslateMovement)
-            {StartCoroutine(translateMoveCell(0, -1, Vector2.down));}
-            else if(useTweenMovement)
-            {
-                isMovingCoroutine = StartCoroutine(TweenMove(0, -1, 0.1f, movementEase));
-            }            
-            else{StartCoroutine(teleMoveWithDelay(0, -1, 0.106f));}            
+            isMovingCoroutine = StartCoroutine(TweenMove(0, -1, 0.1f, movementEase));
         }
 
     }
    
 
 
-
+    IEnumerator ParryEffect()
+    {
+        timeManager.SlowMotion();
+        fullInvincible = true;
+        yield return new WaitForSecondsRealtime(0.25f);
+        fullInvincible = false;
+        yield return new WaitForSecondsRealtime(1.25f);
+        timeManager.cancelSlowMotion();
+        ParryCoroutine = null;
+    }
 
 
     public override void hurtEntity(int damage,
@@ -282,7 +250,17 @@ public class PlayerMovement : BStageEntity
         bool pierceCloaking = false,
         EStatusEffects statusEffect = EStatusEffects.Default)
     {
+        if(fullInvincible){return;}
         if(isUntargetable){return;}
+        if(Parrying)
+        {
+            if(ParryCoroutine == null)
+            {
+                ParryCoroutine = StartCoroutine(ParryEffect());
+            }
+            return;
+        }
+
 
         if(!SuperArmor && hitFlinch ){
             animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
@@ -301,7 +279,7 @@ public class PlayerMovement : BStageEntity
                 StopCoroutine(AnimateHPCoroutine);
             }
 
-            AnimateHPCoroutine = StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
+            AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
 
         }
         
@@ -330,7 +308,7 @@ public class PlayerMovement : BStageEntity
 
     IEnumerator ChangeAnimState(string stateName, string transitionState)
     {
-        yield return new WaitForSeconds(GetAnimationLength(transitionState));
+        yield return new WaitForSecondsRealtime(GetAnimationLength(transitionState));
         animator.Play(stateName);
     }
 
@@ -340,6 +318,9 @@ public class PlayerMovement : BStageEntity
         animationLength = animator.GetCurrentAnimatorStateInfo(index).length;
         return animationLength * 2f;
     }
+
+    
+
 
     protected override IEnumerator InvincibilityFrames(float duration)
     {
@@ -507,14 +488,101 @@ public class PlayerMovement : BStageEntity
     }
 
 
+    public IEnumerator playAnim(bool condition,
+    EMegamanAnimations animEnum = EMegamanAnimations.Megaman_Idle,
+    EMegamanAnimations transitionAnim = EMegamanAnimations.Megaman_Idle,
+    float duration = 0)
+    {
+
+        if(condition && animEnum != EMegamanAnimations.Megaman_Idle)
+        {
+            animator.Play(animEnum.ToString());
+
+            if(transitionAnim != EMegamanAnimations.Megaman_Idle)
+            {
+                yield return new WaitForSeconds(duration);
+
+                animator.Play(transitionAnim.ToString());
+            }
+
+
+
+        }else
+        {
+
+            
+        }
+
+        yield break;
+
+    }
+
+
+
+#region Animation Events
+
+
+//Megaman_Parry, Megaman_ParryDissipate
+    void ToggleShield()
+    {
+        if(!fullInvincible)
+        {
+            fullInvincible = true;
+        }else
+        {
+            fullInvincible = false;
+        }        
+
+
+    }
+
+//Megaman_Parry
+    void ToggleParry()
+    {
+        if(!Parrying)
+        {
+            print("Parry frames active");
+            Parrying = true;
+        }else
+        {
+            print("Parry frames inactive");
+            Parrying = false;
+        }
+
+
+
+    }
+
+//Megaman_Shoot
+    void Shoot()
+    {
+      RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies","Obstacle"));
+
+      if(hitInfo)
+      {
+
+          BStageEntity target = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
+          if(target == null)
+          {return;}
+          target.hurtEntity(shotDamage * shotDamageMultiplier, true, false, this);
+          shotDamageMultiplier = 1;
+      }
+
+    }
+
+
+
+#endregion
+
+
+
 #region Input Actions
 
-    Coroutine VFXCoroutine = null;
     public void OnFire(InputAction.CallbackContext context)
     {
 
 
-        print(context);
+        //print(context);
 
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}        
@@ -534,12 +602,12 @@ public class PlayerMovement : BStageEntity
 
            if(VFXCoroutine != null)
            {
-                print("Stopping VFXCoroutine");
+                //print("Stopping VFXCoroutine");
                 StopCoroutine(VFXCoroutine);
            } 
             VFXCoroutine = StartCoroutine(VFXController.playVFXanim(false));
 
-            print("Megaman fired buster shot");
+            //print("Megaman fired buster shot");
             animator.SetTrigger("Shoot");
             VFXCoroutine = null;
         }
@@ -573,17 +641,38 @@ public class PlayerMovement : BStageEntity
 
     public void OnParry(InputAction.CallbackContext context)
     {
-    
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}        
         if(isUsingChip){return;}
         if(isMoving){return;}
 
+        if(context.started)
+        {
+            animator.SetBool("Parry", true);
+        }
+
+        if(context.canceled)
+        {
+            animator.SetBool("Parry", false);
+            
+        }
 
 
 
+    }
 
 
+//Deprecated - the new input system blocks input when pressing mutliple buttons tied to the same action.
+//The resulting experience feels unresponsive and appears to break when more than one button is pressed at once.
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        Vector2Int convertedDirection = Vector2Int.RoundToInt(context.ReadValue<Vector2>()); 
+        print(context);
+
+        if(context.performed)
+        {
+            isMovingCoroutine = StartCoroutine(TweenMove(convertedDirection.x, convertedDirection.y, 0.1f, movementEase));
+        }
     }
 
 
