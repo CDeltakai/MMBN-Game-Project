@@ -141,7 +141,7 @@ public abstract class BStageEntity : MonoBehaviour
                 StopCoroutine(AnimateHPCoroutine);
             }
 
-            AnimateHPCoroutine = StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
+            AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
 
         }
 
@@ -197,7 +197,7 @@ public abstract class BStageEntity : MonoBehaviour
                 StopCoroutine(AnimateHPCoroutine);
             }
 
-            AnimateHPCoroutine = StartCoroutine(animateHP(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
+            AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
 
         }
 
@@ -553,7 +553,7 @@ public abstract class BStageEntity : MonoBehaviour
 
         //isMoving = false;
         isMovingCoroutine = null;
-        yield return null;
+        //yield return null;
 
     }
 
@@ -612,18 +612,18 @@ public abstract class BStageEntity : MonoBehaviour
 
     float countFPS = 24;
     float countDuration = 0.12f;
-    public IEnumerator animateHP(int initialHP, int finalHP)
+    public IEnumerator animateNumber(int initialNum, int finalNum)
     {
-        int startHP = initialHP;
+        int startNum = initialNum;
         //print("StartHP: " + startHP);
-        int endHP = finalHP;
+        int endNum = finalNum;
         //print("EndHP: " + endHP);
         int stepAmount;
         float defaultDelay = countDuration / countFPS;
         int numOfSteps = (int) Math.Round((countDuration/defaultDelay), MidpointRounding.AwayFromZero);
         //print("numOfSteps: " + numOfSteps);
 
-        var difference = Mathf.Abs(startHP - endHP);
+        var difference = Mathf.Abs(startNum - endNum);
 
         stepAmount = Mathf.CeilToInt(((float)difference/(float)numOfSteps));
         //print("stepAmount: " + stepAmount);
@@ -635,14 +635,14 @@ public abstract class BStageEntity : MonoBehaviour
 
 
         int stepCounter = 0;
-        if(startHP > endHP)
+        if(startNum > endNum)
         {
             while(stepCounter < updatedNumSteps)
             {
                 stepCounter++;
-                startHP -= stepAmount;
-                healthText.text = Mathf.Clamp(startHP, 0, startHP).ToString();
-                if(startHP <= 0)
+                startNum -= stepAmount;
+                healthText.text = Mathf.Clamp(startNum, 0, startNum).ToString();
+                if(startNum <= 0)
                 {
                     healthText.enabled = false;
                     AnimateHPCoroutine = null;
@@ -652,23 +652,23 @@ public abstract class BStageEntity : MonoBehaviour
                 yield return wait;
 
             }
-            healthText.text = endHP.ToString();
+            healthText.text = endNum.ToString();
             stepCounter = 0;
 
         }else 
-        if(startHP<endHP)
+        if(startNum<endNum)
         {
             while(stepCounter < updatedNumSteps)
             {
                 stepCounter++;
-                startHP += stepAmount;
-                healthText.text = Mathf.Clamp(startHP, 0, startHP).ToString();
+                startNum += stepAmount;
+                healthText.text = Mathf.Clamp(startNum, 0, startNum).ToString();
 
 
 
                 yield return wait;
             }
-            healthText.text = endHP.ToString();
+            healthText.text = endNum.ToString();
             stepCounter = 0;
     
         }

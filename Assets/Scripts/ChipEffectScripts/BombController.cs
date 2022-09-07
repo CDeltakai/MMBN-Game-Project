@@ -41,17 +41,18 @@ public class BombController : MonoBehaviour
     [SerializeField] float MoveYValue = 3;
     IEnumerator MoveBomb()
     {
-        worldTransform.DOMoveX(worldTransform.position.x + 6.7f, 0.75f);//.SetLoops(-1, LoopType.Restart);
-        worldTransform.DOMoveY(worldTransform.position.y + MoveYValue, 0.75f).SetEase(yPosCurve);//.SetLoops(-1, LoopType.Restart);
-        transform.DOLocalRotate(new Vector3(0, 0, 360), 0.25f, RotateMode.FastBeyond360).SetLoops(2, LoopType.Restart).SetEase(Ease.Linear);
+        worldTransform.DOMoveX(worldTransform.position.x + 6.7f, 0.75f).SetUpdate(true);//.SetLoops(-1, LoopType.Restart);
+        worldTransform.DOMoveY(worldTransform.position.y + MoveYValue, 0.75f).SetEase(yPosCurve).SetUpdate(true);//.SetLoops(-1, LoopType.Restart);
+        transform.DOLocalRotate(new Vector3(0, 0, 360), 0.25f, RotateMode.FastBeyond360).SetLoops(2, LoopType.Restart)
+        .SetEase(Ease.Linear).SetUpdate(true);
 
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSecondsRealtime(0.75f);
         transform.rotation.Set(0, 0, 0, 0);
         animator.Play("BombExplosionVFX");
         
         boxCollider2D.enabled = true;
         transform.DOLocalMoveY(transform.localPosition.y + 0.2f, 0.25f).SetEase(Ease.Linear);        
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSecondsRealtime(0.25f);
         boxCollider2D.enabled = false;
 
 

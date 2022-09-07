@@ -14,6 +14,7 @@ public class Generic_VFX_Slash_Controller : MonoBehaviour
     void Awake() {
         player = FindObjectOfType<PlayerMovement>();
         boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider.enabled = true;
         sword = FindObjectOfType<Generic_Sword>();
     }
     
@@ -45,9 +46,9 @@ public class Generic_VFX_Slash_Controller : MonoBehaviour
 
     IEnumerator SelfDestruct()
     {
-        yield return new WaitForSecondsRealtime(0.025f);
-        boxCollider.enabled = false;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.05f);
+        //boxCollider.enabled = false;
+        yield return new WaitForSecondsRealtime(0.075f);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
 

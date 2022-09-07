@@ -46,9 +46,19 @@ public class PlayerChipAnimations : MonoBehaviour
 
     }
 
+    // public void playAnimationEnum(Enum animEnum, float duration)
+    // {
+    //     ChangeAnimationState(animEnum.ToString());
+    //     print("Animation played: " + Enum.GetName(typeof(EMegamanAnimations), animEnum));
+    //     StartCoroutine(ReturnToIdle(duration));
+
+    // }
+
+
+
     IEnumerator ReturnToIdle(float duration)
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSecondsRealtime(duration);
         ChangeAnimationState("Megaman_Idle");
     }
 

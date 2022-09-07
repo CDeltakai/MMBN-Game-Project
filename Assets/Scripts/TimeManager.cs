@@ -23,7 +23,7 @@ public class TimeManager : MonoBehaviour
     public void SlowMotion()
     {
         Time.timeScale = slowDownFactor;
-        Time.fixedDeltaTime = Time.timeScale * 0.2f;
+        //Time.fixedDeltaTime = Time.timeScale * 0.2f;
         print("time manager used slowmotion");
         isCurrentlySlowedDown = true;
     }
