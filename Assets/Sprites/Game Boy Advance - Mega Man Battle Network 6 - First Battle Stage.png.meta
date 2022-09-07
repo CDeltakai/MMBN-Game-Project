@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -6747163250360314596
     second: Battle Stage - Blue Tile
+  - first:
+      213: 8220875129404558051
+    second: Game Boy Advance - Mega Man Battle Network 6 - First Battle Stage_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -138,7 +141,7 @@ TextureImporter:
         width: 40
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,7 +162,7 @@ TextureImporter:
         width: 40
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,6 +170,27 @@ TextureImporter:
       bones: []
       spriteID: c1514b495c24d52a0800000000000000
       internalID: -6747163250360314596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Mega Man Battle Network 6 - First Battle Stage_2
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 80
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea8007cf5a661270800000000000000
+      internalID: 8220875129404558051
       vertices: []
       indices: 
       edges: []
