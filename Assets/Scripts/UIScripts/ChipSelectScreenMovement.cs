@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using FMODUnity;
 
 public class ChipSelectScreenMovement : MonoBehaviour
 {
@@ -28,12 +29,18 @@ public class ChipSelectScreenMovement : MonoBehaviour
     ChipLoadManager chipLoadManager;
 
     int ActiveChipSlotAccumulator = 0;
+    
 
 
     private bool isTriggered = false;
     private bool isActive = false;
 
     public static bool GameIsPaused = false;
+
+    [SerializeField] EventReference ScreenOpenVFX;
+    [SerializeField] EventReference OKButtonVFX;
+    [SerializeField] EventReference ChipSelectVFX;
+    [SerializeField] EventReference ChipHoverVFX;
 
     void Start()
     {
@@ -75,6 +82,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
         if(!isTriggered)
         {
+            FMODUnity.RuntimeManager.PlayOneShotAttached(ScreenOpenVFX, this.gameObject);
             populateChipSelect();
             Pause();
             isTriggered = true;
@@ -146,16 +154,23 @@ public class ChipSelectScreenMovement : MonoBehaviour
         {
             return;
         }
-
+        FMODUnity.RuntimeManager.PlayOneShotAttached(ChipSelectVFX, this.gameObject);
         ActiveChipSlots[ActiveChipSlotAccumulator].GetComponent<ChipSlot>().changeChip(selectableChips[buttonIndex]);
         chipButtons[buttonIndex].SetActive(false);
         activeChips.Add(selectableChips[buttonIndex]);
         ActiveChipSlotAccumulator++;
     }
 
+    public void OnChipHover()
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(ChipHoverVFX, this.gameObject);
+    }
+
     //OK Button Functionality
     public void LoadIntoChipQueue()
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(OKButtonVFX, this.gameObject);
+
         foreach(ChipSO chip in activeChips)
         {
             chipLoadManager.chipQueue.Add(chip);

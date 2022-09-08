@@ -126,10 +126,10 @@
 			<value>6.5</value>
 		</property>
 		<property name="volume">
-			<value>-3.5</value>
+			<value>-4</value>
 		</property>
 		<property name="pitch">
-			<value>21</value>
+			<value>24</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{64e34e00-eda2-48de-91d5-88a637a2aeb9}</destination>

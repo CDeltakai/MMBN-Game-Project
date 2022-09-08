@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 637982667866916607
+  lastModified: 637982864167435610
   FileSizes:
   - Name: Desktop
     Value: 130560
@@ -62,10 +62,10 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637982667866587773
+  lastModified: 637982864167097573
   FileSizes:
   - Name: Desktop
-    Value: 1350
+    Value: 1636
   Exists: 1
 --- !u!114 &-2834223847602432238
 MonoBehaviour:
@@ -82,10 +82,10 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637982667866559441
+  lastModified: 637982864167053746
   FileSizes:
   - Name: Desktop
-    Value: 31008
+    Value: 51168
   Exists: 1
 --- !u!114 &-2766446061835839970
 MonoBehaviour:
@@ -222,6 +222,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-722009441508968082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 637982864167127419
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +259,8 @@ MonoBehaviour:
   - {fileID: -2834223847602432238}
   - {fileID: -8230485722005867804}
   - {fileID: 1876620492015071895}
+  - {fileID: -722009441508968082}
+  - {fileID: 822202036912703297}
   EditorEvents:
   - {fileID: -1600951516271897011}
   - {fileID: 6225590183410881686}
@@ -251,12 +273,16 @@ MonoBehaviour:
   - {fileID: 3958958850400432665}
   - {fileID: 2449754375032252007}
   - {fileID: -876190800812362065}
+  - {fileID: 7478544814841979489}
+  - {fileID: 8994157301370315410}
+  - {fileID: 7215367425252764598}
+  - {fileID: 2459235585389975159}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2834223847602432238}
   StringsBanks:
   - {fileID: -8211752414539646085}
-  cacheTime: 637982667867225086
+  cacheTime: 637982864167751868
   cacheVersion: 131591
 --- !u!114 &104925123999711182
 MonoBehaviour:
@@ -285,6 +311,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &822202036912703297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UISFXBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/UISFXBank.bank
+  Name: UISFXBank
+  StudioPath: bank:/UISFXBank
+  lastModified: 637982864167751868
+  FileSizes:
+  - Name: Desktop
+    Value: 16160
+  Exists: 1
 --- !u!114 &1156175127477755110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +373,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/ChipSFX.bank
   Name: ChipSFX
   StudioPath: bank:/ChipSFX
-  lastModified: 637982667867225086
+  lastModified: 637982864166801671
   FileSizes:
   - Name: Desktop
     Value: 75008
@@ -352,6 +398,33 @@ MonoBehaviour:
     Data4: 643041155
   Banks:
   - {fileID: -8230485722005867804}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2459235585389975159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UIEvents/ChipHover
+  m_EditorClassIdentifier: 
+  Path: event:/UIEvents/ChipHover
+  Guid:
+    Data1: 870699762
+    Data2: 1079968621
+    Data3: -1716812367
+    Data4: 546473997
+  Banks:
+  - {fileID: 822202036912703297}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -406,6 +479,87 @@ MonoBehaviour:
     Data4: 1078961485
   Banks:
   - {fileID: -8230485722005867804}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7215367425252764598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UIEvents/ChipSelect
+  m_EditorClassIdentifier: 
+  Path: event:/UIEvents/ChipSelect
+  Guid:
+    Data1: -1588080443
+    Data2: 1172420758
+    Data3: -2041037433
+    Data4: 2090081198
+  Banks:
+  - {fileID: 822202036912703297}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7478544814841979489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CustScreenOpen
+  m_EditorClassIdentifier: 
+  Path: event:/CustScreenOpen
+  Guid:
+    Data1: -1352513182
+    Data2: 1117890202
+    Data3: 2023636891
+    Data4: -827068107
+  Banks:
+  - {fileID: -2834223847602432238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8994157301370315410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CustScreenOK
+  m_EditorClassIdentifier: 
+  Path: event:/CustScreenOK
+  Guid:
+    Data1: -1078017815
+    Data2: 1149798051
+    Data3: -1597074756
+    Data4: -599607373
+  Banks:
+  - {fileID: -2834223847602432238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

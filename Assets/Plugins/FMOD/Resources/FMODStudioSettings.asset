@@ -386,7 +386,9 @@ MonoBehaviour:
   - Master
   Banks:
   - ChipSFX
+  - Music
   - PlayerSFX
+  - UISFXBank
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

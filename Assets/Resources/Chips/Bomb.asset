@@ -20,7 +20,7 @@ MonoBehaviour:
   ChipDescription: Throw bomb 4 tiles forward
   ChipElement: 0
   ChipSize: 4
-  AnimationDuration: 0.167
+  AnimationDuration: 0.2
   ChipType: 1
   EffectScript: Bomb
   SFX:
