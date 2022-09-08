@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{ff703419-8851-4e3d-b520-eacee486d5af}">
+		<property name="assetPath">
+			<value>MMBNSFX/MMBN5DTDS Sounds and Voices/Megaman/Battle Voices/3- Let's bust some viruses!.sfk</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>

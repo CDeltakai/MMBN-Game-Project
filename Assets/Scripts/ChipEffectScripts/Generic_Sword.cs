@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using FMODUnity;
 
 public class Generic_Sword : MonoBehaviour, IChip
 {
     BattleStageHandler stageHandler;
     public int BaseDamage {get;set;} = 80;
-
     public int AdditionalDamage{get; set;} = 0;
 
     public EChipTypes ChipType => EChipTypes.Active;
@@ -25,6 +25,7 @@ public class Generic_Sword : MonoBehaviour, IChip
 
     void Start()
     {
+        
         stageHandler = FindObjectOfType<BattleStageHandler>();        
     }
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a65adba4-61fa-4326-add9-c9d5a8375203}">
+		<property name="assetPath">
+			<value>MMBNSFX/OpenChipDesc HQ.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.7187528344671201</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>

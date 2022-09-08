@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b9329f7b-db49-4663-9222-63f76277b52e}">
+		<property name="assetPath">
+			<value>MMBNSFX/MMBN5DTDS Sounds and Voices/Program Advance/18- Big Noise!.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>11.0249996</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.0151473922902494</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>

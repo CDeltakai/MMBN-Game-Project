@@ -130,7 +130,10 @@ public class ChipEffects : MonoBehaviour
         //Finds the non-passive chip within the chipObjectList and attempts its effect
         // 
         if(GivenAddressableKey == null){
-            chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect();
+            
+            var chip = chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive);
+            chip.Effect();
+
 
         }else{
             chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect(AddressableKey: GivenAddressableKey);

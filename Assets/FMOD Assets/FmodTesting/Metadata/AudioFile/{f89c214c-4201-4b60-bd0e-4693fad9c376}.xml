@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f89c214c-4201-4b60-bd0e-4693fad9c376}">
+		<property name="assetPath">
+			<value>MMBNSFX/MMSF1-2 Sounds Rip/MegaMan Star Force 2 Sounds Rip/Sky-Hi Colloseum/Sample 10.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>11.0500002</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.152579185520362</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>

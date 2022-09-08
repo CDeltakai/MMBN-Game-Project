@@ -7,6 +7,7 @@ using TMPro;
 using Pathfinding.Util;
 using System;
 using DG.Tweening;
+using FMODUnity;
 
 public class PlayerMovement : BStageEntity
 {
@@ -21,6 +22,7 @@ public class PlayerMovement : BStageEntity
     [SerializeField] PlayerVFXController VFXController;
     ChipSelectScreenMovement chipSelectScreenMovement;
     BackgroundController bgController;
+    FMODUnity.StudioEventEmitter soundEventEmitter;
 
 #endregion
 
@@ -33,9 +35,6 @@ public class PlayerMovement : BStageEntity
 
     public override event MoveOffTileEvent moveOnToTileOverriden;
     public override event MoveOffTileEvent moveOffTileOverriden;
-
-
-
 
     //firePoint is used for effects or chips that use raycasts to deal their effect.
     [SerializeField] Transform firePoint;
@@ -81,6 +80,13 @@ public class PlayerMovement : BStageEntity
     [SerializeField] bool useTweenMovement = false;
 
 
+[Header("FMOD Sound Events")]
+    [SerializeField] public EventReference BasicShotEvent;
+    [SerializeField] public EventReference ParrySuccessEvent;
+    [SerializeField] public EventReference PlayerHurtEvent;
+    [SerializeField] public EventReference BasicShotChargingEvent;
+    [SerializeField] public EventReference BasicShotChargedEvent;
+
     public override void Start()
     {
 
@@ -92,6 +98,7 @@ public class PlayerMovement : BStageEntity
         boxCollider2D = GetComponent<BoxCollider2D>();
         stageHandler = FindObjectOfType<BattleStageHandler>();
         bgController = FindObjectOfType<BackgroundController>();
+        soundEventEmitter = GetComponent<FMODUnity.StudioEventEmitter>();
 
 
         chipLoadManager = GetComponent<ChipLoadManager>();
@@ -163,8 +170,18 @@ public class PlayerMovement : BStageEntity
 
         if(chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Special )
         {
+            var nextChip = chipLoadManager.nextChipLoad[0];
 
-            playerChipAnimations.playAnimationEnum(chipLoadManager.nextChipLoad[0].GetChipEnum(), chipLoadManager.nextChipLoad[0].GetAnimationDuration());
+            playerChipAnimations.playAnimationEnum(nextChip.GetChipEnum(), nextChip.GetAnimationDuration());
+
+            if(!nextChip.GetSFX().IsNull)
+            {
+                FMODUnity.RuntimeManager.PlayOneShotAttached(nextChip.GetSFX(), this.gameObject);
+            }else
+            {
+                print("Chip used does not have an Event reference for SFX");
+            }
+
         } 
 
         if(chipLoadManager.nextChipLoad[0].GetChipType() == EChipTypes.Special)
@@ -240,7 +257,14 @@ public class PlayerMovement : BStageEntity
     IEnumerator ParryEffect()
     {
         fullInvincible = true;
+        //soundEventEmitter.EventReference = ParrySuccessEvent;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(ParrySuccessEvent, transform.gameObject);
+        //soundEventEmitter.Play();
+
+
+
         bgController.FadeToBlack(0.5f);
+        
         if(CooldownCoroutine != null)
         {
             StopCoroutine(CooldownCoroutine);
@@ -249,6 +273,7 @@ public class PlayerMovement : BStageEntity
         Parrying = false;
         VFXCoroutine = StartCoroutine( VFXController.playVFXanim(true, PlayerVFXAnims.ParryVFX));
         timeManager.SlowMotion();
+
         yield return new WaitForSecondsRealtime(0.24f);
         VFXCoroutine = StartCoroutine( VFXController.playVFXanim(false));
         VFXCoroutine = null;
@@ -281,6 +306,7 @@ public class PlayerMovement : BStageEntity
         if(fullInvincible){return;}
         Parrying = false;
 
+        FMODUnity.RuntimeManager.PlayOneShotAttached(PlayerHurtEvent, this.gameObject);
         if(!SuperArmor && hitFlinch ){
             animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
             StartCoroutine(ChangeAnimState(EMegamanAnimations.Megaman_Idle.ToString(), EMegamanAnimations.Megaman_Hurt.ToString()));
@@ -576,8 +602,6 @@ public class PlayerMovement : BStageEntity
         {
             fullInvincible = false;
         }        
-
-
     }
 
 //Megaman_Parry
@@ -604,17 +628,22 @@ public class PlayerMovement : BStageEntity
 //Megaman_Shoot
     void Shoot()
     {
-      RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies","Obstacle"));
+        //soundEventEmitter.EventReference = BasicShotEvent;
+        //soundEventEmitter.Play();
+        FMODUnity.RuntimeManager.PlayOneShotAttached(BasicShotEvent, transform.gameObject);
 
-      if(hitInfo)
-      {
+        
+        RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies","Obstacle"));
 
-          BStageEntity target = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
-          if(target == null)
-          {return;}
-          target.hurtEntity(shotDamage * shotDamageMultiplier, true, false, this);
-          shotDamageMultiplier = 1;
-      }
+        if(hitInfo)
+        {
+
+            BStageEntity target = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
+            if(target == null)
+            {return;}
+            target.hurtEntity(shotDamage * shotDamageMultiplier, true, false, this);
+            shotDamageMultiplier = 1;
+        }
 
     }
 
@@ -635,6 +664,7 @@ public class PlayerMovement : BStageEntity
 
         if(context.performed)
         {
+            FMODUnity.RuntimeManager.PlayOneShotAttached(BasicShotChargingEvent, this.gameObject);
             VFXCoroutine = StartCoroutine(VFXController.playVFXanim(true, PlayerVFXAnims.BasicShot_Charging, PlayerVFXAnims.BasicShot_FullyCharged, chargeDuration));
         }
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{1641f309-aba6-42b2-8f6f-bf4e0c0157bb}">
+		<property name="assetPath">
+			<value>MMBNSFX/MMSF3 Sounds and Voices/Voices/Hunter-VG/Menus/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>

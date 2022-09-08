@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+using FMODUnity;
 
 [CreateAssetMenu(fileName = "Chip Data", menuName = "New Chip", order = 0)]
 public class ChipSO : ScriptableObject 
@@ -23,6 +23,7 @@ public class ChipSO : ScriptableObject
     // 1 = Active(Real-time usable chip), 0 = Passive(Applies effect to succeeding chip)
     [SerializeField] EChipTypes ChipType;
     [SerializeField] String EffectScript;
+    [SerializeField] EventReference SFX;
 
 
 
@@ -80,6 +81,18 @@ public class ChipSO : ScriptableObject
         return ChipType;
     }
 
+    public EventReference GetSFX()
+    {
+        if(SFX.IsNull)
+        {
+            Debug.LogWarning("Chip does not have an EventReference for SFX");
+            
+        }
+        return SFX;
+        
+    }
+
+ 
 
 
 

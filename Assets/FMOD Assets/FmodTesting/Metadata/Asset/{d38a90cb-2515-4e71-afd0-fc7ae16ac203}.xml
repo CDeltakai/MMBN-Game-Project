@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{d38a90cb-2515-4e71-afd0-fc7ae16ac203}">
+		<property name="assetPath">
+			<value>MMBNSFX/MMSF1-2 Sounds Rip/MegaMan Star Force 2 Sounds Rip/Opening/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>

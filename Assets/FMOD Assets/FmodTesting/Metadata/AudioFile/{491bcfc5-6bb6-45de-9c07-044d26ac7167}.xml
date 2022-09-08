@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{491bcfc5-6bb6-45de-9c07-044d26ac7167}">
+		<property name="assetPath">
+			<value>MMBNSFX/MMSF1-2 Sounds Rip/MMSF Battle Sound Effects/Sample 62.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>14.5459995</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.60387735459920255</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>

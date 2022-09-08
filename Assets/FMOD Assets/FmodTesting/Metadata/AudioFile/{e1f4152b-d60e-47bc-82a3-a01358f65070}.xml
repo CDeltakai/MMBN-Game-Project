@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e1f4152b-d60e-47bc-82a3-a01358f65070}">
+		<property name="assetPath">
+			<value>MMBNSFX/MMSF1-2 Sounds Rip/MegaMan Star Force 2 Sounds Rip/Battle Common/Sample 52.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>12.1780005</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.61028083429134505</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>
