@@ -16,6 +16,8 @@ public class BattleStageHandler : MonoBehaviour
 {
 
     public static BattleStageHandler instance;
+
+    
     TileEventManager tileEffectsManager;
 
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using FMODUnity;
 
 public class BombController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BombController : MonoBehaviour
     public Transform worldTransform;
     BoxCollider2D boxCollider2D;
     [SerializeField] AnimationCurve yPosCurve;
+    [SerializeField] EventReference ExplosionSoundEffect;
     float movementTime;
     Vector3 destination;
     int BaseDamage;
@@ -49,9 +51,10 @@ public class BombController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.75f);
         transform.rotation.Set(0, 0, 0, 0);
         animator.Play("BombExplosionVFX");
+        FMODUnity.RuntimeManager.PlayOneShotAttached(ExplosionSoundEffect, this.gameObject);
         
         boxCollider2D.enabled = true;
-        transform.DOLocalMoveY(transform.localPosition.y + 0.2f, 0.25f).SetEase(Ease.Linear);        
+        transform.DOLocalMoveY(transform.localPosition.y + 0.2f, 0.25f).SetEase(Ease.Linear).SetUpdate(true);        
         yield return new WaitForSecondsRealtime(0.25f);
         boxCollider2D.enabled = false;
 

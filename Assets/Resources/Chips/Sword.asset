@@ -23,3 +23,10 @@ MonoBehaviour:
   AnimationDuration: 0.375
   ChipType: 1
   EffectScript: Sword
+  SFX:
+    Guid:
+      Data1: -27198989
+      Data2: 1263281627
+      Data3: -1852463969
+      Data4: 206725983
+    Path: event:/EnergySwordSlash

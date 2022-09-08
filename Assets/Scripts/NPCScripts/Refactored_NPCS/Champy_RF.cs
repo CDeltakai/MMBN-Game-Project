@@ -125,6 +125,7 @@ public class Champy_RF : BStageEntity
         StopCoroutine(AttackAnimation());
         tileEventManager.UnsubscribeEntity(this);
         yield return new WaitForSecondsRealtime(0.0005f);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(EntityDestructionEvent, this.gameObject);
         setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
                                                 transform.rotation, transform.parent.transform);

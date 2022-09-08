@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class Generic_VFX_Slash_Controller : MonoBehaviour
 {
 
     BoxCollider2D boxCollider;
+    SpriteRenderer spriteRenderer;
     Generic_Sword sword;
     PlayerMovement player;
 
-    // Start is called before the first frame update
     
     void Awake() {
         player = FindObjectOfType<PlayerMovement>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = true;
         sword = FindObjectOfType<Generic_Sword>();
@@ -47,6 +49,11 @@ public class Generic_VFX_Slash_Controller : MonoBehaviour
     IEnumerator SelfDestruct()
     {
         yield return new WaitForSecondsRealtime(0.15f);
+        boxCollider.enabled = false;
+        spriteRenderer.enabled = false;
+        yield return new WaitForSecondsRealtime(0.25f);
+
+
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
 

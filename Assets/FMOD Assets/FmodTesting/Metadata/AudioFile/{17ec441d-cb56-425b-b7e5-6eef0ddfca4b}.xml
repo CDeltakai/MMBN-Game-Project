@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{17ec441d-cb56-425b-b7e5-6eef0ddfca4b}">
+		<property name="assetPath">
+			<value>MMBNSFX/MMSF3 Sounds and Voices/Voices/Network/Wave Battle.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>12</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.79133333333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>

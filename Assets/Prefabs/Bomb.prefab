@@ -162,7 +162,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &2385943362968139718
 MonoBehaviour:
@@ -210,6 +210,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  ExplosionSoundEffect:
+    Guid:
+      Data1: 738609693
+      Data2: 1107984400
+      Data3: 332480385
+      Data4: 1006219174
+    Path: event:/BombExplode
   MoveYValue: 1
 --- !u!95 &2385943362968139737
 Animator:
@@ -223,7 +230,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: db7a477c62aa1c9438d4ed5163eb4bb7, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 

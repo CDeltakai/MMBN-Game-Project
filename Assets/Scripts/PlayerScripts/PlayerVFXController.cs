@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public enum PlayerVFXAnims
 {
@@ -67,6 +68,11 @@ public class PlayerVFXController : MonoBehaviour
             if(transitionAnim != PlayerVFXAnims.Default)
             {
                 yield return new WaitForSecondsRealtime(duration);
+                if(transitionAnim == PlayerVFXAnims.BasicShot_FullyCharged)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(player.BasicShotChargedEvent, this.gameObject);
+                }
+
 
                 animator.Play(transitionAnim.ToString());
             }
