@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine.AddressableAssets;
 using System;
 using DG.Tweening;
+using FMODUnity;
 
 
 
@@ -79,14 +80,23 @@ public abstract class BStageEntity : MonoBehaviour
     [SerializeField] protected AnimationCurve xDistanceTimeCurve;
     [SerializeField] protected AnimationCurve yDistanceTimeCurve;
 
+
+    public EventReference EntityDestructionEvent;
+
     protected Coroutine AnimateHPCoroutine;
     protected Coroutine isMovingCoroutine;
 
 #endregion
 
+    void Reset()
+    {
+
+    }
+
     public virtual void Awake()
     {
-           
+
+
         tileEventManager = FindObjectOfType<TileEventManager>();
         stageHandler = FindObjectOfType<BattleStageHandler>();
         worldTransform = transform.parent.transform;
@@ -99,7 +109,7 @@ public abstract class BStageEntity : MonoBehaviour
         opaque = spriteRenderer.color;
         invisible.a = 0;
         opaque.a = 1;
-
+        EntityDestructionEvent = RuntimeManager.PathToEventReference("event:/EntityDestruction");
     }
 
 
@@ -109,6 +119,7 @@ public abstract class BStageEntity : MonoBehaviour
                             (int)transform.parent.position.y, 0);
         stageHandler.setCellOccupied(currentCellPos.x, currentCellPos.y, true);
         healthText.text = currentHP.ToString();
+
     }
 
     protected bool isAnimatingHP = false;
@@ -251,6 +262,7 @@ public abstract class BStageEntity : MonoBehaviour
     {
         tileEventManager.UnsubscribeEntity(this);
         yield return new WaitForSecondsRealtime(0.0005f);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(EntityDestructionEvent, this.gameObject);
         setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
                                                 transform.rotation, transform.parent.transform);

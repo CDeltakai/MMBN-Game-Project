@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0d272c6a-ff0e-4d7b-9bac-3788618d2489}">
+		<property name="assetPath">
+			<value>MMBNSFX/MMSF3 Sounds and Voices/All Sounds/WAVE_SE_CUS/Sample 9.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>15</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.1018666666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2abd8183-eb47-4af7-92b3-c436608034df}</destination>
+		</relationship>
+	</object>
+</objects>

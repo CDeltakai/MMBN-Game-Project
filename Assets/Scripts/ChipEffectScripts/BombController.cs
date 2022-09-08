@@ -51,7 +51,7 @@ public class BombController : MonoBehaviour
         animator.Play("BombExplosionVFX");
         
         boxCollider2D.enabled = true;
-        transform.DOLocalMoveY(transform.localPosition.y + 0.2f, 0.25f).SetEase(Ease.Linear);        
+        transform.DOLocalMoveY(transform.localPosition.y + 0.2f, 0.25f).SetEase(Ease.Linear).SetUpdate(true);        
         yield return new WaitForSecondsRealtime(0.25f);
         boxCollider2D.enabled = false;
 
