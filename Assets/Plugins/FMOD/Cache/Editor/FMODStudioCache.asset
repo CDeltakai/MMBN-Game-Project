@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 637982566794444126
+  lastModified: 637982667866916607
   FileSizes:
   - Name: Desktop
-    Value: 119552
+    Value: 130560
   Exists: 1
 --- !u!114 &-8211752414539646085
 MonoBehaviour:
@@ -62,10 +62,10 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637982566794113416
+  lastModified: 637982667866587773
   FileSizes:
   - Name: Desktop
-    Value: 1250
+    Value: 1350
   Exists: 1
 --- !u!114 &-2834223847602432238
 MonoBehaviour:
@@ -82,7 +82,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637982566794083417
+  lastModified: 637982667866559441
   FileSizes:
   - Name: Desktop
     Value: 31008
@@ -195,6 +195,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-876190800812362065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CannonFire
+  m_EditorClassIdentifier: 
+  Path: event:/CannonFire
+  Guid:
+    Data1: 674011879
+    Data2: 1334083413
+    Data3: -941904987
+    Data4: 1121360515
+  Banks:
+  - {fileID: 1876620492015071895}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,12 +249,14 @@ MonoBehaviour:
   - {fileID: -2766446061835839970}
   - {fileID: -8632546273097481632}
   - {fileID: 3958958850400432665}
+  - {fileID: 2449754375032252007}
+  - {fileID: -876190800812362065}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2834223847602432238}
   StringsBanks:
   - {fileID: -8211752414539646085}
-  cacheTime: 637982566794684100
+  cacheTime: 637982667867225086
   cacheVersion: 131591
 --- !u!114 &104925123999711182
 MonoBehaviour:
@@ -298,11 +327,38 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/ChipSFX.bank
   Name: ChipSFX
   StudioPath: bank:/ChipSFX
-  lastModified: 637982566794684100
+  lastModified: 637982667867225086
   FileSizes:
   - Name: Desktop
-    Value: 60800
+    Value: 75008
   Exists: 1
+--- !u!114 &2449754375032252007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FireChargedBasicShot
+  m_EditorClassIdentifier: 
+  Path: event:/FireChargedBasicShot
+  Guid:
+    Data1: 1260244657
+    Data2: 1260468301
+    Data3: -1171620945
+    Data4: 643041155
+  Banks:
+  - {fileID: -8230485722005867804}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3958958850400432665
 MonoBehaviour:
   m_ObjectHideFlags: 0

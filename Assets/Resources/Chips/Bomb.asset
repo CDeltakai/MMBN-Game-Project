@@ -23,3 +23,10 @@ MonoBehaviour:
   AnimationDuration: 0.167
   ChipType: 1
   EffectScript: Bomb
+  SFX:
+    Guid:
+      Data1: -1626498908
+      Data2: 1177197546
+      Data3: -815334010
+      Data4: 761918992
+    Path: event:/ThrowItem
