@@ -210,6 +210,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  ExplosionSoundEffect:
+    Guid:
+      Data1: 738609693
+      Data2: 1107984400
+      Data3: 332480385
+      Data4: 1006219174
+    Path: event:/BombExplode
   MoveYValue: 1
 --- !u!95 &2385943362968139737
 Animator:

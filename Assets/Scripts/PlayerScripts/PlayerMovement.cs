@@ -82,6 +82,7 @@ public class PlayerMovement : BStageEntity
 
 [Header("FMOD Sound Events")]
     [SerializeField] public EventReference BasicShotEvent;
+    [SerializeField] public EventReference ChargedShotEvent;
     [SerializeField] public EventReference ParrySuccessEvent;
     [SerializeField] public EventReference PlayerHurtEvent;
     [SerializeField] public EventReference BasicShotChargingEvent;
@@ -171,16 +172,11 @@ public class PlayerMovement : BStageEntity
         if(chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Special )
         {
             var nextChip = chipLoadManager.nextChipLoad[0];
+            activeChip = nextChip;
 
             playerChipAnimations.playAnimationEnum(nextChip.GetChipEnum(), nextChip.GetAnimationDuration());
 
-            if(!nextChip.GetSFX().IsNull)
-            {
-                FMODUnity.RuntimeManager.PlayOneShotAttached(nextChip.GetSFX(), this.gameObject);
-            }else
-            {
-                print("Chip used does not have an Event reference for SFX");
-            }
+
 
         } 
 
@@ -190,6 +186,7 @@ public class PlayerMovement : BStageEntity
         }
 
         yield return new WaitForSecondsRealtime(chipLoadManager.nextChipLoad[0].GetAnimationDuration() + 0.05f);
+        activeChip = null;
         chipLoadManager.nextChipLoad.Clear();
         chipLoadManager.calcNextChipLoad();
 
@@ -588,6 +585,28 @@ public class PlayerMovement : BStageEntity
     }
 
 
+    public void PlayChipSFX(ChipSO chip)
+    {
+            if(!chip.GetSFX().IsNull)
+            {
+                FMODUnity.RuntimeManager.PlayOneShotAttached(chip.GetSFX(), this.gameObject);
+            }else
+            {
+                Debug.LogWarning("Chip used does not have an Event reference for SFX");
+            }    
+    }
+
+    public void TriggerChipSFX()
+    {
+            if(!activeChip.GetSFX().IsNull)
+            {
+                FMODUnity.RuntimeManager.PlayOneShotAttached(activeChip.GetSFX(), this.gameObject);
+            }else
+            {
+                Debug.LogWarning("Chip used does not have an Event reference for SFX");
+            }
+    }
+
 
 #region Animation Events
 
@@ -628,11 +647,7 @@ public class PlayerMovement : BStageEntity
 //Megaman_Shoot
     void Shoot()
     {
-        //soundEventEmitter.EventReference = BasicShotEvent;
-        //soundEventEmitter.Play();
-        FMODUnity.RuntimeManager.PlayOneShotAttached(BasicShotEvent, transform.gameObject);
 
-        
         RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies","Obstacle"));
 
         if(hitInfo)
@@ -673,6 +688,10 @@ public class PlayerMovement : BStageEntity
             if(context.duration >= chargeDuration)
             {
                 shotDamageMultiplier = 10;
+                FMODUnity.RuntimeManager.PlayOneShotAttached(ChargedShotEvent, transform.gameObject);
+            }else
+            {
+                FMODUnity.RuntimeManager.PlayOneShotAttached(BasicShotEvent, transform.gameObject);
             }
 
            if(VFXCoroutine != null)

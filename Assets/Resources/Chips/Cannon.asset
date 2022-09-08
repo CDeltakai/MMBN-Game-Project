@@ -23,3 +23,10 @@ MonoBehaviour:
   AnimationDuration: 0.417
   ChipType: 1
   EffectScript: Cannon
+  SFX:
+    Guid:
+      Data1: 674011879
+      Data2: 1334083413
+      Data3: -941904987
+      Data4: 1121360515
+    Path: event:/CannonFire
