@@ -34,15 +34,15 @@ public class Cannon : MonoBehaviour, IChip
         RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies"));
         if(hitInfo)
         {
-
             BStageEntity script = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
             script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), false, true, player, statusEffect: chipStatusEffect);
         }
         
         AdditionalDamage = 0;
 
-
-
     }
+
+
+
 
 }

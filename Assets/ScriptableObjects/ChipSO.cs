@@ -13,7 +13,7 @@ public class ChipSO : ScriptableObject
     
     [SerializeField] EChips Chip;
     [SerializeField] string ChipName;
-    [SerializeField] int ChipDamage;
+    [SerializeField] int BaseDamage;
     [SerializeField] Sprite ChipImage;
     [SerializeField] string ChipDescription;
     [SerializeField] EChipElements ChipElement;
@@ -24,6 +24,11 @@ public class ChipSO : ScriptableObject
     [SerializeField] EChipTypes ChipType;
     [SerializeField] String EffectScript;
     [SerializeField] EventReference SFX;
+    [SerializeField] List<EventReference> AdditionalSFX;
+    [SerializeField] EMegamanAnimations AnimationToUse;
+    [SerializeField] GameObject ObjectSummon;
+    [SerializeField] EffectMechanism effectMechanism;
+    [SerializeField] bool UseAnimationEvent;
 
 
 
@@ -32,6 +37,25 @@ public class ChipSO : ScriptableObject
         return (int)Chip;
     }
 
+    public GameObject GetObjectSummon()
+    {
+        if(ObjectSummon != null)
+        {
+            return ObjectSummon;
+        }else
+        {
+            Debug.LogWarning("Chip does not have an ObjectSummon assigned, returned null");
+            return null;
+        }
+
+    }
+
+    public EffectMechanism GetEffectMechanism()
+    {
+        return effectMechanism;
+    }
+
+
     public string GetChipName()
     {
         return Chip.ToString();
@@ -39,7 +63,7 @@ public class ChipSO : ScriptableObject
 
     public int GetChipDamage()
     {
-        return ChipDamage;
+        return BaseDamage;
     }
 
     public string GetChipDescription()
