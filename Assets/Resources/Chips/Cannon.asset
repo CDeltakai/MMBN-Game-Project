@@ -15,13 +15,14 @@ MonoBehaviour:
   ChipID: 0
   Chip: 103
   ChipName: Cannon
-  ChipDamage: 40
+  BaseDamage: 60
   ChipImage: {fileID: -5702409653789015382, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   ChipDescription: Fire a cannon straight
   ChipElement: 0
   ChipSize: 4
   AnimationDuration: 0.417
   ChipType: 1
+  BaseStatusEffect: 0
   EffectScript: Cannon
   SFX:
     Guid:
@@ -30,3 +31,12 @@ MonoBehaviour:
       Data3: -941904987
       Data4: 1121360515
     Path: event:/CannonFire
+  AdditionalSFX: []
+  AnimationToUse: 103
+  ObjectSummon: {fileID: 0}
+  EffectPrefab: {fileID: 6733043335069161631, guid: 21bf577efffadfb4884f0d42da34ba43, type: 3}
+  effectMechanism: 0
+  pierceUntargetable: 0
+  lightAttack: 0
+  hitFlinch: 1
+  UseAnimationEvent: 1

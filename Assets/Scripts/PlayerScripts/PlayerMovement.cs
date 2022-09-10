@@ -37,7 +37,7 @@ public class PlayerMovement : BStageEntity
     public override event MoveOffTileEvent moveOffTileOverriden;
 
     //firePoint is used for effects or chips that use raycasts to deal their effect.
-    [SerializeField] Transform firePoint;
+    [SerializeField] public Transform firePoint;
     [HideInInspector] public BoxCollider2D boxCollider2D;
     [SerializeField] bool SuperArmor = false;
 
@@ -288,7 +288,9 @@ public class PlayerMovement : BStageEntity
         bool hitFlinch,
         BStageEntity attacker,
         bool pierceCloaking = false,
-        EStatusEffects statusEffect = EStatusEffects.Default)
+        EStatusEffects statusEffect = EStatusEffects.Default,
+        EChipElements attackElement = EChipElements.Normal
+        )
     {
         if(isUntargetable && pierceCloaking == false){return;}
         if(Parrying)

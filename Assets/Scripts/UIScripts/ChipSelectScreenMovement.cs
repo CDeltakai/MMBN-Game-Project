@@ -13,6 +13,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     private Vector3 endPosition = new Vector3 (-690, 170, 0);
     private Vector3 startPosition = new Vector3 (-1229, 170, 0);
     ChipInventory chipInventory;
+    ObjectPoolManager objectPoolManager;
     int chipHandCapacity = 8;
     int maxSelectableChips = 8;
     [SerializeField] float desiredDuration = 1f;
@@ -41,6 +42,11 @@ public class ChipSelectScreenMovement : MonoBehaviour
     [SerializeField] EventReference OKButtonVFX;
     [SerializeField] EventReference ChipSelectVFX;
     [SerializeField] EventReference ChipHoverVFX;
+
+    void Awake()
+    {
+        objectPoolManager = FindObjectOfType<ObjectPoolManager>();
+    }
 
     void Start()
     {
@@ -147,6 +153,52 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
             }
     }
+
+    void populateChipSelectRefType()
+    {
+        int randomIndex = 0;
+        var random = new System.Random();
+        
+        selectableChips.Clear();
+        for (int i = 0; i < 8; i++)
+        {
+            chipButtons[i].GetComponent<ChipSlot>().clearChip();
+
+        }
+
+            foreach(GameObject button in chipButtons)
+            {
+                button.SetActive(true);
+            }
+
+
+            for (int i = 0; i < maxSelectableChips; i++)
+            {
+                
+
+                randomIndex = random.Next(0, objectPoolManager.ChipRefList.Count);
+
+                if(selectableChips.Contains(chipInventory.getChipInventory()[randomIndex]))
+                {
+                    i--;
+                    continue;
+                }
+
+
+
+                selectableChips.Add(chipInventory.getChipInventory()[randomIndex]);
+            }
+
+            for (int i = 0; i < selectableChips.Count; i++)
+            {
+                chipButtons[i].GetComponent<ChipSlot>().changeChip(selectableChips[i]);
+
+            }
+    }
+
+
+
+
 
     public void OnChipSelect(int buttonIndex)
     {

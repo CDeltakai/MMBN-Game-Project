@@ -22,19 +22,59 @@ public class ChipSO : ScriptableObject
     // Chip Types: 2 = Freeze-time ability(Special chips that freeze time before applying effect)
     // 1 = Active(Real-time usable chip), 0 = Passive(Applies effect to succeeding chip)
     [SerializeField] EChipTypes ChipType;
+    [SerializeField] EStatusEffects BaseStatusEffect;
     [SerializeField] String EffectScript;
     [SerializeField] EventReference SFX;
     [SerializeField] List<EventReference> AdditionalSFX;
     [SerializeField] EMegamanAnimations AnimationToUse;
     [SerializeField] GameObject ObjectSummon;
+    [SerializeField] GameObject EffectPrefab;
     [SerializeField] EffectMechanism effectMechanism;
+    [SerializeField] bool pierceUntargetable;
+    [SerializeField] bool lightAttack;
+    [SerializeField] bool hitFlinch;
     [SerializeField] bool UseAnimationEvent;
+    [SerializeField] public GameObject TempEffectPrefabRef;
 
 
+    public void ResetEffectPrefabRef()
+    {
+        TempEffectPrefabRef = null;
+    }
 
+    public GameObject GetEffectPrefab()
+    {
+        if(EffectPrefab == null)
+        {
+            return null;
+        }
+        return EffectPrefab;
+    }
+    public EMegamanAnimations GetAnimation()
+    {
+        return AnimationToUse;
+    }
+    public bool IsLightAttack()
+    {
+        return lightAttack;
+    }
+    public bool IsHitFlinch()
+    {
+        return hitFlinch;
+    }
     public int GetChipID()
     {
         return (int)Chip;
+    }
+
+    public bool IsPierceUntargetable()
+    {
+        return pierceUntargetable;
+    }
+
+    public EStatusEffects GetStatusEffect()
+    {
+        return BaseStatusEffect;
     }
 
     public GameObject GetObjectSummon()
@@ -47,8 +87,8 @@ public class ChipSO : ScriptableObject
             Debug.LogWarning("Chip does not have an ObjectSummon assigned, returned null");
             return null;
         }
-
     }
+
 
     public EffectMechanism GetEffectMechanism()
     {

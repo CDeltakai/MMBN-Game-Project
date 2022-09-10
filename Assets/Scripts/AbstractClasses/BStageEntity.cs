@@ -132,7 +132,8 @@ public abstract class BStageEntity : MonoBehaviour
                                    bool hitFlinch,
                                    BStageEntity attacker,
                                    bool pierceUntargetable = false,
-                                   EStatusEffects statusEffect = EStatusEffects.Default
+                                   EStatusEffects statusEffect = EStatusEffects.Default,
+                                   EChipElements attackElement = EChipElements.Normal                                   
                                    )
     {
         if(fullInvincible)
@@ -188,7 +189,8 @@ public abstract class BStageEntity : MonoBehaviour
                                    bool lightAttack,
                                    bool hitFlinch,
                                    bool pierceUntargetable = false,
-                                   EStatusEffects statusEffect = EStatusEffects.Default
+                                   EStatusEffects statusEffect = EStatusEffects.Default,
+                                   EChipElements attackElement = EChipElements.Normal
                                    )
     {
         if(fullInvincible)
