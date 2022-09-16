@@ -24,6 +24,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     [SerializeField] List<ChipSO> activeChips = new List<ChipSO>();
     [SerializeField] List<ChipSO> selectableChips;
+    [SerializeField] List<ChipObjectReference> selectableChipRefs;
     [SerializeField] GameObject[] chipButtons;
     [SerializeField] GameObject[] ActiveChipSlots;
     PlayerMovement playerMovement;
@@ -174,11 +175,9 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
             for (int i = 0; i < maxSelectableChips; i++)
             {
-                
-
                 randomIndex = random.Next(0, objectPoolManager.ChipRefList.Count);
 
-                if(selectableChips.Contains(chipInventory.getChipInventory()[randomIndex]))
+                if(selectableChipRefs.Contains(objectPoolManager.ChipRefList[randomIndex]))
                 {
                     i--;
                     continue;
@@ -186,7 +185,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
 
 
-                selectableChips.Add(chipInventory.getChipInventory()[randomIndex]);
+                selectableChipRefs.Add(objectPoolManager.ChipRefList[randomIndex]);
             }
 
             for (int i = 0; i < selectableChips.Count; i++)
@@ -212,6 +211,12 @@ public class ChipSelectScreenMovement : MonoBehaviour
         activeChips.Add(selectableChips[buttonIndex]);
         ActiveChipSlotAccumulator++;
     }
+
+    public void OnChipSelectRefType(int buttonIndex)
+    {
+        
+    }
+
 
     public void OnChipHover()
     {

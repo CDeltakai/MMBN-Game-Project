@@ -12,14 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
   m_Name: Invisible
   m_EditorClassIdentifier: 
+  Id: 94c27e922d8acb44bb1536945c422a43
   ChipID: 3
   Chip: 104
   ChipName: Invisible
-  ChipDamage: 0
+  BaseDamage: 0
   ChipImage: {fileID: -7587512733787768913, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   ChipDescription: Grants temporary CONCEALMENT
   ChipElement: 0
   ChipSize: 30
   AnimationDuration: 0
   ChipType: 3
+  BaseStatusEffect: 0
   EffectScript: Invisible
+  SFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AdditionalSFX: []
+  AnimationToUse: 0
+  ObjectSummon: {fileID: 0}
+  EffectPrefab: {fileID: 0}
+  effectMechanism: 0
+  pierceUntargetable: 0
+  lightAttack: 0
+  hitFlinch: 0
+  UseAnimationEvent: 0

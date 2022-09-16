@@ -15,7 +15,8 @@ using Pathfinding.Util;
 public class BattleStageHandler : MonoBehaviour
 {
 
-    public static BattleStageHandler instance;
+    private static BattleStageHandler _instance;
+    public static BattleStageHandler Instance{get {return _instance;} }
 
     
     TileEventManager tileEffectsManager;
@@ -52,21 +53,27 @@ public class BattleStageHandler : MonoBehaviour
     public List<Vector3Int> playerBoundsList = new List<Vector3Int>();
     
 
+    private void InitializeSingleton()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.transform.parent.gameObject);
+            Destroy(this.gameObject);
+        }else
+        {
+            _instance = this;
+        }
+    }
+
+
     private void Awake()
     {
+        InitializeSingleton();
+
 
 
         tileEffectsManager = GetComponent<TileEventManager>();
         EntityList = FindObjectsOfType<BStageEntity>().ToList();
-
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
         PlayerTiles.Clear();
         NPCTiles.Clear();
         LoadTiles();

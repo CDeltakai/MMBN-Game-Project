@@ -14,6 +14,10 @@ using FMODUnity;
 public abstract class BStageEntity : MonoBehaviour
 {
 
+
+
+
+
 #region Events and Delegates
 
     public delegate void OnDeathEvent(BStageEntity entity);
@@ -93,10 +97,8 @@ public abstract class BStageEntity : MonoBehaviour
 
     }
 
-    public virtual void Awake()
+    protected void InitializeAwakeVariables()
     {
-
-
         tileEventManager = FindObjectOfType<TileEventManager>();
         stageHandler = FindObjectOfType<BattleStageHandler>();
         worldTransform = transform.parent.transform;
@@ -112,6 +114,16 @@ public abstract class BStageEntity : MonoBehaviour
         EntityDestructionEvent = RuntimeManager.PathToEventReference("event:/EntityDestruction");
     }
 
+    public virtual void Awake()
+    {
+        InitializeAwakeVariables();
+
+
+    }
+
+
+
+
 
     public virtual void Start()
     {
@@ -121,6 +133,11 @@ public abstract class BStageEntity : MonoBehaviour
         healthText.text = currentHP.ToString();
 
     }
+
+
+
+
+
 
     protected bool isAnimatingHP = false;
     ///<summary>

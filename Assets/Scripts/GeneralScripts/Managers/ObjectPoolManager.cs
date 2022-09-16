@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ChipEffectRef
+public class ChipObjectReference
 {
-    [SerializeField] internal ChipSO chipSOToReference;
+    [SerializeField] internal ChipSO chipSORef;
     [SerializeField] internal GameObject effectPrefab;
     [SerializeField] internal GameObject ObjectSummon;
 
@@ -17,7 +17,7 @@ public class ObjectPoolManager : MonoBehaviour
 
 	[SerializeField] List<GameObject> ChipObjectPool = new List<GameObject>();
     [SerializeField] GameObject ChipObjectPoolParent;
-    [SerializeField] public List<ChipEffectRef> ChipRefList = new List<ChipEffectRef>();
+    [SerializeField] public List<ChipObjectReference> ChipRefList = new List<ChipObjectReference>();
 	
     void Awake()
     {
@@ -56,9 +56,9 @@ void PoolChipObjects()
 
 
 
-            var chipEffectRef = new ChipEffectRef
+            var chipObjRef = new ChipObjectReference
             {
-                chipSOToReference = chip,
+                chipSORef = chip,
                 effectPrefab = prefab,
                 ObjectSummon = objectSummon
             };
@@ -70,7 +70,7 @@ void PoolChipObjects()
                 objectSummon.SetActive(false);
             }
 
-            ChipRefList.Add(chipEffectRef);
+            ChipRefList.Add(chipObjRef);
 
 
         }else

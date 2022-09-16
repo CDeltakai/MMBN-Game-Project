@@ -12,6 +12,13 @@ using FMODUnity;
 public class PlayerMovement : BStageEntity
 {
 
+//Singleton pattern (Not persistent, will be wiped on editor reload)
+private static PlayerMovement _instance;
+public static PlayerMovement Instance {get {return _instance;} }
+
+
+
+
 #region Initialized Script Classes
 
     TimeManager timeManager;
@@ -87,6 +94,32 @@ public class PlayerMovement : BStageEntity
     [SerializeField] public EventReference PlayerHurtEvent;
     [SerializeField] public EventReference BasicShotChargingEvent;
     [SerializeField] public EventReference BasicShotChargedEvent;
+
+    private void InitializeSingleton()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.transform.parent.gameObject);
+            Destroy(this.gameObject);
+        }else
+        {
+            _instance = this;
+        }
+    }
+
+
+    public override void Awake()
+    {
+        InitializeSingleton();
+        InitializeAwakeVariables();
+
+    }
+
+
+
+
+
+
 
     public override void Start()
     {

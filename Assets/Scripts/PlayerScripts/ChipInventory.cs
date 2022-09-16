@@ -23,7 +23,7 @@ private void Awake() {
 
 void FillChipRefInventory()
 {
-    foreach(ChipEffectRef chipRef in objectPoolManager.ChipRefList)
+    foreach(ChipObjectReference chipRef in objectPoolManager.ChipRefList)
     {
         
 

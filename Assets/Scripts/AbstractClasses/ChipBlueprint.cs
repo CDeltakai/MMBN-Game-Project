@@ -25,7 +25,8 @@ public abstract class ChipBlueprint : MonoBehaviour
 
     void Awake()
     {
-        player = FindObjectOfType<PlayerMovement>();
+        player = PlayerMovement.Instance;
+        //player = FindObjectOfType<PlayerMovement>();
         firePoint = player.firePoint;
         ObjectSummon = chip.GetObjectSummon();
 

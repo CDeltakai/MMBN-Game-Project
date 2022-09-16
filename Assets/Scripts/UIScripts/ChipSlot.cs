@@ -12,6 +12,7 @@ public class ChipSlot : MonoBehaviour
 
 
 [SerializeField] ChipSO SelectedChip;
+[SerializeField] ChipObjectReference CurrentChipReference;
 [SerializeField] Sprite chipImage;
 Image activeImage;
     
@@ -39,9 +40,22 @@ public void changeChip(ChipSO chip)
     activeImage.enabled = true;
 }
 
+public void changeChipReference(ChipObjectReference chipRef)
+{
+    CurrentChipReference = chipRef;
+    chipImage = chipRef.chipSORef.GetChipImage();
+    activeImage.enabled = true;
+}
+
+public ChipObjectReference getChipObjRef()
+{
+    return CurrentChipReference;
+}
+
 public void clearChip()
 {
     SelectedChip = null;
+    CurrentChipReference = null;
     chipImage = null;
     activeImage.enabled = false;
 }

@@ -12,16 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
   m_Name: Bomb
   m_EditorClassIdentifier: 
+  Id: 62e0d4c33fd2ad34fba87a3647304e7c
   ChipID: 0
   Chip: 111
   ChipName: Bomb
-  ChipDamage: 60
+  BaseDamage: 0
   ChipImage: {fileID: 8803355929822962066, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   ChipDescription: Throw bomb 4 tiles forward
   ChipElement: 0
   ChipSize: 4
   AnimationDuration: 0.2
   ChipType: 1
+  BaseStatusEffect: 0
   EffectScript: Bomb
   SFX:
     Guid:
@@ -30,3 +32,12 @@ MonoBehaviour:
       Data3: -815334010
       Data4: 761918992
     Path: event:/ThrowItem
+  AdditionalSFX: []
+  AnimationToUse: 0
+  ObjectSummon: {fileID: 0}
+  EffectPrefab: {fileID: 0}
+  effectMechanism: 0
+  pierceUntargetable: 0
+  lightAttack: 0
+  hitFlinch: 0
+  UseAnimationEvent: 0

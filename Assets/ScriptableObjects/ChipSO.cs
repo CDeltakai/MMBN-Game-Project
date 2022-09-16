@@ -5,12 +5,41 @@ using UnityEditor;
 using UnityEngine;
 using FMODUnity;
 
+public class ScriptableObjectIdAttribute : PropertyAttribute {}
+
+#if UNITY_EDITOR
+[CustomPropertyDrawer(typeof(ScriptableObjectIdAttribute))]
+public class ScriptableObjectIdDrawer : PropertyDrawer
+{
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        GUI.enabled = false;
+        if(string.IsNullOrEmpty(property.stringValue))
+        {
+            property.stringValue = UnityEditor.GUID.Generate().ToString();
+
+        }
+        EditorGUI.PropertyField(position, property, label, true);
+        GUI.enabled = true;
+    }
+
+}
+#endif
+
+public class ChipScriptableObject :ScriptableObject
+{
+    [ScriptableObjectId] public string Id;
+
+}
+
+
+
+
 [CreateAssetMenu(fileName = "Chip Data", menuName = "New Chip", order = 0)]
-public class ChipSO : ScriptableObject 
+public class ChipSO : ChipScriptableObject 
 {
 
     [SerializeField] int ChipID;
-    
     [SerializeField] EChips Chip;
     [SerializeField] string ChipName;
     [SerializeField] int BaseDamage;
@@ -34,8 +63,13 @@ public class ChipSO : ScriptableObject
     [SerializeField] bool lightAttack;
     [SerializeField] bool hitFlinch;
     [SerializeField] bool UseAnimationEvent;
-    [SerializeField] public GameObject TempEffectPrefabRef;
+    [HideInInspector] GameObject TempEffectPrefabRef;
 
+
+    public void ResetID()
+    {
+        Id = null;
+    }
 
     public void ResetEffectPrefabRef()
     {

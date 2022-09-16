@@ -723,7 +723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChipObjectPool: []
   ChipObjectPoolParent: {fileID: 650494357}
-  ChipEffectRefList: []
+  ChipRefList: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1435,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+--- !u!1001 &2048291202212934327
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751073, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048291202616751075, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
+      propertyPath: m_Name
+      value: Longsword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb27d6f37cad18e47a42a0a22e3e915a, type: 3}
 --- !u!1001 &3069419181280977794
 PrefabInstance:
   m_ObjectHideFlags: 0

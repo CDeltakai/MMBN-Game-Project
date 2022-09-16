@@ -12,14 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
   m_Name: AirShot
   m_EditorClassIdentifier: 
+  Id: 54b442564f59b05479c6c77481a8f5c4
   ChipID: 100
   Chip: 100
   ChipName: Airshot
-  ChipDamage: 20
+  BaseDamage: 0
   ChipImage: {fileID: -8654738730210548499, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   ChipDescription: Pushes enemy 1 tile back
   ChipElement: 1
   ChipSize: 4
   AnimationDuration: 0.25
   ChipType: 1
+  BaseStatusEffect: 0
   EffectScript: Airshot
+  SFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AdditionalSFX: []
+  AnimationToUse: 0
+  ObjectSummon: {fileID: 0}
+  EffectPrefab: {fileID: 0}
+  effectMechanism: 0
+  pierceUntargetable: 0
+  lightAttack: 0
+  hitFlinch: 0
+  UseAnimationEvent: 0

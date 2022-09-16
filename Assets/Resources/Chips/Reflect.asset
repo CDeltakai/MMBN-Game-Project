@@ -12,14 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
   m_Name: Reflect
   m_EditorClassIdentifier: 
+  Id: a6bfd56f3f3c8654fa2f51ef6add13b3
   ChipID: 2
   Chip: 107
   ChipName: Reflect
-  ChipDamage: 50
+  BaseDamage: 0
   ChipImage: {fileID: -4636090895220145685, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   ChipDescription: Reflect incoming attack
   ChipElement: 0
   ChipSize: 4
   AnimationDuration: 0.75
   ChipType: 1
+  BaseStatusEffect: 0
   EffectScript: Reflect
+  SFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AdditionalSFX: []
+  AnimationToUse: 0
+  ObjectSummon: {fileID: 0}
+  EffectPrefab: {fileID: 0}
+  effectMechanism: 0
+  pierceUntargetable: 0
+  lightAttack: 0
+  hitFlinch: 0
+  UseAnimationEvent: 0
