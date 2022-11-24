@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 637982864167435610
+  lastModified: 637999051653838010
   FileSizes:
   - Name: Desktop
     Value: 130560
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637982864167097573
+  lastModified: 637999051651063766
   FileSizes:
   - Name: Desktop
     Value: 1636
@@ -82,7 +82,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637982864167053746
+  lastModified: 637999051650993797
   FileSizes:
   - Name: Desktop
     Value: 51168
@@ -237,7 +237,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637982864167127419
+  lastModified: 637999051651123846
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -282,7 +282,7 @@ MonoBehaviour:
   - {fileID: -2834223847602432238}
   StringsBanks:
   - {fileID: -8211752414539646085}
-  cacheTime: 637982864167751868
+  cacheTime: 637999051654777819
   cacheVersion: 131591
 --- !u!114 &104925123999711182
 MonoBehaviour:
@@ -326,7 +326,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/UISFXBank.bank
   Name: UISFXBank
   StudioPath: bank:/UISFXBank
-  lastModified: 637982864167751868
+  lastModified: 637999051654777819
   FileSizes:
   - Name: Desktop
     Value: 16160
@@ -373,7 +373,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/ChipSFX.bank
   Name: ChipSFX
   StudioPath: bank:/ChipSFX
-  lastModified: 637982864166801671
+  lastModified: 637999051648663451
   FileSizes:
   - Name: Desktop
     Value: 75008

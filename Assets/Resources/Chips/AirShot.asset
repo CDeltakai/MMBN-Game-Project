@@ -16,7 +16,7 @@ MonoBehaviour:
   ChipID: 100
   Chip: 100
   ChipName: Airshot
-  BaseDamage: 0
+  BaseDamage: 20
   ChipImage: {fileID: -8654738730210548499, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   ChipDescription: Pushes enemy 1 tile back
   ChipElement: 1
