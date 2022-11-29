@@ -16,7 +16,7 @@ MonoBehaviour:
   ChipID: 0
   Chip: 103
   ChipName: Cannon
-  BaseDamage: 60
+  BaseDamage: 40
   ChipImage: {fileID: -5702409653789015382, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   ChipDescription: Fire a cannon straight
   ChipElement: 0
