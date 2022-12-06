@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class ObjectSummonAttributes : MonoBehaviour
 {
-    public int BaseDamage;
     public int AddDamage = 0;
 
-    public EStatusEffects BaseStatusEffect;
+    public EStatusEffects StatusEffect;
     public EStatusEffects AddStatusEffect = EStatusEffects.Default;
 
-    public bool lightAttack;
-    public bool hitFlinch;
-    public bool pierceUntargetable;
+
 
 
 

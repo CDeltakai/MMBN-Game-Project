@@ -82,7 +82,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.083333336
-    functionName: ApplyChipEffectV3
+    functionName: ApplyChipEffectRef
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 9ed8c7a04f6c218448493c3f796d8655, type: 3}
     floatParameter: 0

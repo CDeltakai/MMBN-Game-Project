@@ -17,11 +17,7 @@ public class PlayerChipAnimations : MonoBehaviour
     Animation currentAnimation;
 
     private void Awake() {
-        animationDictionary.Add(0, "MegamanCannon");
-        animationDictionary.Add(1, "MegamanSword");
-        animationDictionary.Add(2,"ShieldActivate");
-        animationDictionary.Add(3, "Vulcan");
-        animationDictionary.Add(4, "AreaGrab");
+
         
     }
 

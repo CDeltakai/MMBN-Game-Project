@@ -179,12 +179,12 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
 
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < objectPoolManager.ChipRefList.Count; i++)
             {
                 selectableChipRefs.Add(objectPoolManager.ChipRefList[i]);
             }
 
-            for (int i = 0; i < (2); i++)
+            for (int i = 0; i < objectPoolManager.ChipRefList.Count; i++)
             {
                 chipButtons[i].GetComponent<ChipSlot>().changeChipReference(selectableChipRefs[i]);
 

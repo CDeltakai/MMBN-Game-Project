@@ -8,20 +8,38 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
 
     BoxCollider2D boxCollider;
     SpriteRenderer spriteRenderer;
-    Generic_Sword sword;
     [SerializeField] ChipSO inheritedChip;
     PlayerMovement player;
 
     
     void Awake() {
+
         player = PlayerMovement.Instance;
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = true;
+
+
+
     }
     
-    void Start()
+
+
+
+    void OnEnable()
     {
+        if(AddStatusEffect != EStatusEffects.Default)
+        {
+            StatusEffect = AddStatusEffect;
+        }else
+        {
+            StatusEffect = inheritedChip.GetStatusEffect();
+        }
+
+        boxCollider.enabled = true;
+        spriteRenderer.enabled = true;
+
+
         StartCoroutine(SelfDestruct());
 
     }
@@ -35,8 +53,8 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
 
             if(other.GetComponent<BStageEntity>()){
             BStageEntity entity = other.GetComponent<BStageEntity>();
-            entity.hurtEntity((int)((inheritedChip.GetChipDamage() + sword.AdditionalDamage)*player.AttackMultiplier),
-            false, true, player, statusEffect: sword.chipStatusEffect);
+            entity.hurtEntity((int)((inheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
+            inheritedChip.IsLightAttack(), inheritedChip.IsHitFlinch(), player, StatusEffect);
             return;
             }
             
@@ -53,9 +71,12 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
         spriteRenderer.enabled = false;
         yield return new WaitForSecondsRealtime(0.25f);
 
+        AddDamage = 0;
+        StatusEffect = inheritedChip.GetStatusEffect();
+        AddStatusEffect = EStatusEffects.Default;
 
-        Destroy(transform.parent.gameObject);
-        Destroy(gameObject);
+        transform.parent.gameObject.SetActive(false);
+  
 
     }
 
