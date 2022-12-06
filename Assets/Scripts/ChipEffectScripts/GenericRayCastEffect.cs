@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using testExtensions;
 
-public class GenericRayCastEffect : ChipBlueprint
+public class GenericRayCastEffect : ChipEffectBlueprint
 {
 
 

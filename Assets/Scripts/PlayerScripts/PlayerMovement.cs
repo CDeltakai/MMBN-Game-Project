@@ -38,6 +38,9 @@ public static PlayerMovement Instance {get {return _instance;} }
 
 
     [SerializeField] public ChipSO activeChip;
+    [SerializeField] public ChipObjectReference activeChipRef;
+
+
     [SerializeField] public List<ChipSO> PlayerChipQueue = new List<ChipSO>();
 
     public override event MoveOffTileEvent moveOnToTileOverriden;
@@ -192,8 +195,8 @@ public static PlayerMovement Instance {get {return _instance;} }
     IEnumerator OnUseChipIEnumerator()
     {
 
-        if (chipLoadManager.nextChipLoad.Count == 0)
-        {Debug.Log("Chip Queue Empty");
+        if (chipLoadManager.nextChipRefLoad.Count == 0)
+        {Debug.Log("ChipRef Queue Empty");
         isUsingChip = false;
         UseChipCoroutine = null;
 
@@ -202,26 +205,24 @@ public static PlayerMovement Instance {get {return _instance;} }
         isUsingChip = true;
 
 
-        if(chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipLoad[0].GetChipType() != EChipTypes.Special )
+        if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Special )
         {
-            var nextChip = chipLoadManager.nextChipLoad[0];
-            activeChip = nextChip;
+            var nextChip = chipLoadManager.nextChipRefLoad[0];
+            activeChipRef = nextChip;
 
-            playerChipAnimations.playAnimationEnum(nextChip.GetChipEnum(), nextChip.GetAnimationDuration());
-
-
+            playerChipAnimations.playAnimationEnum(nextChip.chipSORef.GetChipEnum(), nextChip.chipSORef.GetAnimationDuration());
 
         } 
 
-        if(chipLoadManager.nextChipLoad[0].GetChipType() == EChipTypes.Special)
+        if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() == EChipTypes.Special)
         {
             chipEffect.ApplyChipEffectV3();
         }
 
-        yield return new WaitForSecondsRealtime(chipLoadManager.nextChipLoad[0].GetAnimationDuration() + 0.05f);
-        activeChip = null;
-        chipLoadManager.nextChipLoad.Clear();
-        chipLoadManager.calcNextChipLoad();
+        yield return new WaitForSecondsRealtime(chipLoadManager.nextChipRefLoad[0].chipSORef.GetAnimationDuration() + 0.05f);
+        activeChipRef = null;
+        chipLoadManager.nextChipRefLoad.Clear();
+        chipLoadManager.calcNextChipRefLoad();
 
         if(usedChip != null){usedChip();}
         
@@ -620,11 +621,11 @@ public static PlayerMovement Instance {get {return _instance;} }
     }
 
 
-    public void PlayChipSFX(ChipSO chip)
+    public void PlayChipSFX(ChipObjectReference chip)
     {
-            if(!chip.GetSFX().IsNull)
+            if(!chip.chipSORef.GetSFX().IsNull)
             {
-                FMODUnity.RuntimeManager.PlayOneShotAttached(chip.GetSFX(), this.gameObject);
+                FMODUnity.RuntimeManager.PlayOneShotAttached(chip.chipSORef.GetSFX(), this.gameObject);
             }else
             {
                 Debug.LogWarning("Chip used does not have an Event reference for SFX");
@@ -633,9 +634,9 @@ public static PlayerMovement Instance {get {return _instance;} }
 
     public void TriggerChipSFX()
     {
-            if(!activeChip.GetSFX().IsNull)
+            if(!activeChipRef.chipSORef.GetSFX().IsNull)
             {
-                FMODUnity.RuntimeManager.PlayOneShotAttached(activeChip.GetSFX(), this.gameObject);
+                FMODUnity.RuntimeManager.PlayOneShotAttached(activeChipRef.chipSORef.GetSFX(), this.gameObject);
             }else
             {
                 Debug.LogWarning("Chip used does not have an Event reference for SFX");

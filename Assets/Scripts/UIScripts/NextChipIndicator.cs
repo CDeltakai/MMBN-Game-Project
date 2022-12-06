@@ -32,9 +32,9 @@ public class NextChipIndicator : MonoBehaviour
 
     void UpdateChipImage()
     {
-        if(chipLoadManager.nextChipLoad.Count > 0)
+        if(chipLoadManager.nextChipRefLoad.Count > 0)
         {
-            chipSlot.changeChip(chipLoadManager.nextChipLoad[0]);
+            chipSlot.changeChipReference(chipLoadManager.nextChipRefLoad[0]);
         }else
         {
             chipSlot.clearChip();

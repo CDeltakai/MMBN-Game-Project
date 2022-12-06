@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ChipInventory : MonoBehaviour
 {
+
+private static ChipInventory _instance;
+public static ChipInventory Instance {get {return _instance;} }
+
 ObjectPoolManager objectPoolManager;
 
 
@@ -15,9 +19,24 @@ private Dictionary<int, ChipSO> chipDictionary = new Dictionary<int, ChipSO>();
 private ChipSO[] chipLoad;
 ChipSO newChip;
 
+    private void InitializeSingleton()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.transform.parent.gameObject);
+            Destroy(this.gameObject);
+        }else
+        {
+            _instance = this;
+        }
+    }
+
+
 private void Awake() {
+    InitializeSingleton();
     objectPoolManager = FindObjectOfType<ObjectPoolManager>();
     FillChipInventory();
+    FillChipDeck();
 }
 
 
@@ -43,7 +62,16 @@ void FillChipInventory()
     }
 }
 
+//Debug method; this will just fill the deck with the same chip as inventory
+void FillChipDeck()
+{
+    foreach(ChipSO chip in chipInventory)
+    {
+        chipDeck.Add(chip);
+    }
 
+
+}
 
 
 public List<ChipSO> getChipInventory()

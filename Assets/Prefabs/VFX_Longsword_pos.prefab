@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada20f781acbd7949b11665b7cfb0cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inheritedChip: {fileID: 11400000, guid: 506c134f07571ec4f958e43d904161f4, type: 2}
 --- !u!50 &4171638757431803172
 Rigidbody2D:
   serializedVersion: 4

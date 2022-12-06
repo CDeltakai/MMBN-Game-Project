@@ -40,10 +40,13 @@ public void changeChip(ChipSO chip)
     activeImage.enabled = true;
 }
 
+
+
 public void changeChipReference(ChipObjectReference chipRef)
 {
     CurrentChipReference = chipRef;
     chipImage = chipRef.chipSORef.GetChipImage();
+    activeImage.sprite = chipImage;
     activeImage.enabled = true;
 }
 

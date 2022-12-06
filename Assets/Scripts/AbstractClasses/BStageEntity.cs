@@ -142,7 +142,8 @@ public abstract class BStageEntity : MonoBehaviour
     protected bool isAnimatingHP = false;
     ///<summary>
     ///lightAttack dictates whether the attack triggers invincibility frames.
-    ///hitFlinch dictates whether the attack will trigger a flinch animation on the target.
+    ///hitFlinch dictates whether the attack will trigger a flinch animation (if it is able to) on the target.
+    ///pierceUntargetable dictates whether the attack can hurt the target through certain effects like stealth or partialInvincibility.
     ///</summary>
     public virtual void hurtEntity(int damage,
                                    bool lightAttack,

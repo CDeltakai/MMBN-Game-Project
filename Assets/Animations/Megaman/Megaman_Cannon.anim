@@ -101,7 +101,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.20833333
-    functionName: ApplyChipEffectV3
+    functionName: ApplyChipEffectRef
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 9ed8c7a04f6c218448493c3f796d8655, type: 3}
     floatParameter: 0

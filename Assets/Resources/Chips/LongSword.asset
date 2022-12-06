@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimationDuration: 0.375
   ChipType: 1
   BaseStatusEffect: 0
-  EffectScript: Generic_Sword
+  EffectScript: GenericObjectSummonEffect
   SFX:
     Guid:
       Data1: -27198989

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using testExtensions;
 
-public class Cannon : ChipBlueprint
+public class Cannon : ChipEffectBlueprint
 {
 
 

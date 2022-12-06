@@ -23,6 +23,8 @@ public class ChipSelectScreenMovement : MonoBehaviour
     private float journeyLength;
 
     [SerializeField] List<ChipSO> activeChips = new List<ChipSO>();
+    [SerializeField] List<ChipObjectReference> activeChipRefs = new List<ChipObjectReference>();
+
     [SerializeField] List<ChipSO> selectableChips;
     [SerializeField] List<ChipObjectReference> selectableChipRefs;
     [SerializeField] GameObject[] chipButtons;
@@ -57,7 +59,8 @@ public class ChipSelectScreenMovement : MonoBehaviour
         chipInventory = FindObjectOfType<ChipInventory>();
         playerMovement = FindObjectOfType<PlayerMovement>();
         chipLoadManager = FindObjectOfType<ChipLoadManager>();
-        populateChipSelect();
+        //populateChipSelect();
+        populateChipSelectRefType();
     }
 
     void Update()
@@ -90,7 +93,8 @@ public class ChipSelectScreenMovement : MonoBehaviour
         if(!isTriggered)
         {
             FMODUnity.RuntimeManager.PlayOneShotAttached(ScreenOpenVFX, this.gameObject);
-            populateChipSelect();
+            //populateChipSelect();
+            populateChipSelectRefType();
             Pause();
             isTriggered = true;
             elapsedTime = 0;
@@ -157,10 +161,10 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     void populateChipSelectRefType()
     {
-        int randomIndex = 0;
-        var random = new System.Random();
+        //int randomIndex = 0;
+        //var random = new System.Random();
         
-        selectableChips.Clear();
+        selectableChipRefs.Clear();
         for (int i = 0; i < 8; i++)
         {
             chipButtons[i].GetComponent<ChipSlot>().clearChip();
@@ -173,24 +177,16 @@ public class ChipSelectScreenMovement : MonoBehaviour
             }
 
 
-            for (int i = 0; i < maxSelectableChips; i++)
+
+
+            for (int i = 0; i < 2; i++)
             {
-                randomIndex = random.Next(0, objectPoolManager.ChipRefList.Count);
-
-                if(selectableChipRefs.Contains(objectPoolManager.ChipRefList[randomIndex]))
-                {
-                    i--;
-                    continue;
-                }
-
-
-
-                selectableChipRefs.Add(objectPoolManager.ChipRefList[randomIndex]);
+                selectableChipRefs.Add(objectPoolManager.ChipRefList[i]);
             }
 
-            for (int i = 0; i < selectableChips.Count; i++)
+            for (int i = 0; i < (2); i++)
             {
-                chipButtons[i].GetComponent<ChipSlot>().changeChip(selectableChips[i]);
+                chipButtons[i].GetComponent<ChipSlot>().changeChipReference(selectableChipRefs[i]);
 
             }
     }
@@ -214,7 +210,18 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     public void OnChipSelectRefType(int buttonIndex)
     {
-        
+        if(ActiveChipSlotAccumulator == 5)
+        {
+            return;
+        }
+        FMODUnity.RuntimeManager.PlayOneShotAttached(ChipSelectVFX, this.gameObject);
+        ActiveChipSlots[ActiveChipSlotAccumulator].GetComponent<ChipSlot>().changeChipReference(selectableChipRefs[buttonIndex]);
+        chipButtons[buttonIndex].SetActive(false);
+        activeChipRefs.Add(selectableChipRefs[buttonIndex]);
+        ActiveChipSlotAccumulator++;
+
+
+
     }
 
 
@@ -248,5 +255,33 @@ public class ChipSelectScreenMovement : MonoBehaviour
         print("Class: ChipSelectScreenMovement, attempted calcNextChipLoad()");
         ToggleChipMenu();       
     }
+
+    public void LoadRefsIntoQueue()
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(OKButtonVFX, this.gameObject);
+
+        foreach(ChipObjectReference chipRef in activeChipRefs)
+        {
+            chipLoadManager.chipRefQueue.Add(chipRef);
+        }
+
+            activeChipRefs.Clear();
+    
+
+        for (int i = 0; i < ActiveChipSlotAccumulator; i++)
+        {
+            ActiveChipSlots[i].GetComponent<ChipSlot>().clearChip();
+        }
+
+        ActiveChipSlotAccumulator = 0;
+        chipLoadManager.calcNextChipRefLoad();
+
+
+        print("Class: ChipSelectScreenMovement, attempted calcNextChipRefLoad()");
+        ToggleChipMenu(); 
+
+    }
+
+
 
 }

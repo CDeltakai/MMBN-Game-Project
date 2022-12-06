@@ -22,17 +22,16 @@ public class ChipEffects : MonoBehaviour
     float timeElapsed = 0f;
     ChipSO chip;
     List<ChipSO> chipList;
+
+    List<ChipObjectReference> chipRefList;
+
     List<Type> scriptList = new List<Type>();
     List<IChip> chipObjectList;
     ChipInventory chipInventory;
 
     
     private void Awake() {
-        chipFunctionDictionary.Add(0, Cannon);
-        chipFunctionDictionary.Add(1, Sword);
-        chipFunctionDictionary.Add(2, Reflect);
-        chipFunctionDictionary.Add(3, Vulcan);
-        chipFunctionDictionary.Add(4, AreaGrab);
+
     }
 
     private void Start() 
@@ -141,11 +140,39 @@ public class ChipEffects : MonoBehaviour
         }
         StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipObjectList.Find(x => x.ChipType != EChipTypes.Passive).GetType()));
 
-        //Destroy(GetComponent(chipObjectList.Find(x => x.ChipType != EChipTypes.Passive).GetType()));
 
-        
+    
+    }
 
 
+    public void ApplyChipEffectRef()
+    {
+
+        chipRefList = chipLoadManager.nextChipRefLoad;
+
+        if(chipLoadManager.nextChipRefLoad.Count() == 1)
+        {
+            var chip = chipLoadManager.nextChipRefLoad[0];
+            chip.effectPrefab.SetActive(true);
+            ChipEffectBlueprint chipEffectScript = chip.effectPrefab.GetComponent<ChipEffectBlueprint>();
+            chipEffectScript.Effect();
+
+            //chip.chipEffectScript.Effect();
+            StartCoroutine(disableEffectPrefab(chip.chipSORef.GetAnimationDuration(), chip.effectPrefab));
+
+        }
+
+
+
+
+    }
+
+
+
+    IEnumerator disableEffectPrefab(float duration, GameObject prefab)
+    {
+        yield return new WaitForSecondsRealtime(duration);
+        prefab.SetActive(false);
 
     }
 
@@ -156,46 +183,8 @@ public class ChipEffects : MonoBehaviour
     }
 
 
-    object Reflect(object arg)
-    {
-        Instantiate(ParryCollider, new Vector2 (player.transform.localPosition.x, player.transform.localPosition.y), player.transform.rotation);
 
-   
-        return null;
-    }
-    object Vulcan(object arg)
-    {
-        throw new NotImplementedException();
-    }
-    object Cannon(object item)
-    {
-        RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies"));
-        if(hitInfo)
-        {
-            DamageFunctions script = hitInfo.transform.gameObject.GetComponent<DamageFunctions>();
-            script.hurtEntity(40);
-            Debug.Log(hitInfo.transform.name + "HP:" + script.getHealth());
-        }
-        return null;
-    }
 
-    object AreaGrab(object arg)
-    {
-        throw new NotImplementedException();
-    }
 
-    object Sword(object item)
-    {
-        RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, 0.15f, LayerMask.GetMask("Enemies"));
-      if(hitInfo)
-      {
-          
-          DamageFunctions script = hitInfo.transform.gameObject.GetComponent<DamageFunctions>();
-          script.hurtEntity(80);
-          Debug.Log(hitInfo.transform.name + "HP:" + script.getHealth() + "Distance: " + hitInfo.distance.ToString() + "Chip Used: Sword");
-      }
-        return null;
-
-    }
 
 }

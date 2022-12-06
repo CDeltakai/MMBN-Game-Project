@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ChipBlueprint : MonoBehaviour
+public abstract class ChipEffectBlueprint : MonoBehaviour
 {
 
     protected PlayerMovement player;
