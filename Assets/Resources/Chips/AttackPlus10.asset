@@ -21,7 +21,7 @@ MonoBehaviour:
   ChipDescription: Adds 10 damage to following chip
   ChipElement: 9
   ChipSize: 4
-  AnimationDuration: 0
+  AnimationDuration: 0.1
   ChipType: 0
   BaseStatusEffect: 0
   EffectScript: AttackPlus10
@@ -35,7 +35,7 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationToUse: 0
   ObjectSummon: {fileID: 0}
-  EffectPrefab: {fileID: 0}
+  EffectPrefab: {fileID: 3464825989303368580, guid: 1226b3fb2b331d646af0fd0ffc09654d, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0
   lightAttack: 0

@@ -14,7 +14,7 @@ public class Bomb : MonoBehaviour, IChip
     public int AdditionalDamage{get; set;} = 0;
     public int BaseDamage {get;} = 60;
 
-    public EChipTypes ChipType => EChipTypes.Active;
+    public EChipTypes ChipType => EChipTypes.Attack;
 
     public EChipElements chipElement => EChipElements.Normal;
 

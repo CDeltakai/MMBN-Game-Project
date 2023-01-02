@@ -34,7 +34,7 @@ public static PlayerMovement Instance {get {return _instance;} }
 #endregion
 
     public delegate void UsedChipEvent();
-    public event UsedChipEvent usedChip;
+    public event UsedChipEvent usedChipEvent;
 
 
     [SerializeField] public ChipSO activeChip;
@@ -205,26 +205,39 @@ public static PlayerMovement Instance {get {return _instance;} }
         isUsingChip = true;
 
 
+
+
+
+
         if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Special )
         {
             var nextChip = chipLoadManager.nextChipRefLoad[0];
             activeChipRef = nextChip;
+            nextChip.effectPrefab.SetActive(true);
+
+
+            if(chipLoadManager.nextChipRefLoad.Count > 1)
+            {
+                List<ChipObjectReference> passiveChips = chipLoadManager.nextChipRefLoad.FindAll(x => x.chipSORef.GetChipType() == EChipTypes.Passive);
+                foreach (var passivechip in passiveChips)
+                {
+                    passivechip.effectPrefab.SetActive(true);
+                    passivechip.effectPrefab.GetComponent<ChipEffectBlueprint>().Effect();
+                    passivechip.effectPrefab.SetActive(false);
+                }
+            }
 
             playerChipAnimations.playAnimationEnum(nextChip.chipSORef.GetChipEnum(), nextChip.chipSORef.GetAnimationDuration());
 
         } 
 
-        if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() == EChipTypes.Special)
-        {
-            chipEffect.ApplyChipEffectV3();
-        }
 
         yield return new WaitForSecondsRealtime(chipLoadManager.nextChipRefLoad[0].chipSORef.GetAnimationDuration() + 0.05f);
         activeChipRef = null;
         chipLoadManager.nextChipRefLoad.Clear();
         chipLoadManager.calcNextChipRefLoad();
 
-        if(usedChip != null){usedChip();}
+        if(usedChipEvent != null){usedChipEvent();}
         
         isUsingChip = false;
         UseChipCoroutine = null;

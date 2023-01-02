@@ -16,7 +16,7 @@ public class NextChipIndicator : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>();
         chipLoadManager = FindObjectOfType<ChipLoadManager>();
 
-        player.usedChip += UpdateChipImage;
+        player.usedChipEvent += UpdateChipImage;
         chipLoadManager.loadChipsEvent += UpdateChipImage;
 
 

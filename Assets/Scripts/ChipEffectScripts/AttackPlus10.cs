@@ -2,46 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackPlus10 : MonoBehaviour, IChip
+public class AttackPlus10 : ChipEffectBlueprint
 {
-    public int AdditionalDamage { get; set;  } = 0;
-
-    public int BaseDamage => 0;
-
-    public EChipTypes ChipType => EChipTypes.Passive;
-    public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
-    public EChipElements chipElement => EChipElements.Multiplier;
+    ChipLoadManager chipLoadManager;
 
 
 
-    IChip[] otherchipsArray;
-    IChip chipToBuff;
-
-    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
+    void Awake() 
     {
+        chipLoadManager = ChipLoadManager.Instance;
 
-        otherchipsArray = GetComponents<IChip>();
+    }
 
-        foreach(IChip chip in otherchipsArray)
+    public override void Effect()
+    {
+        ChipObjectReference chipToBuff = chipLoadManager.nextChipRefLoad[0];
+        if (chipToBuff.chipSORef.GetChipType() == EChipTypes.Attack)
         {
-            print("AttackPlus10 attempted to buff chip: " +chip.GetType().ToString());
-            if(chip.ChipType == EChipTypes.Active || chip.ChipType == EChipTypes.OffensiveSpecial)
+            if(chipToBuff.ObjectSummon != null)
             {
-                chip.AdditionalDamage += 10;
-                return;
+                chipToBuff.ObjectSummon.GetComponentInChildren<ObjectSummonAttributes>().AddDamage += 10;
             }
-
+            chipToBuff.effectPrefab.GetComponent<ChipEffectBlueprint>().AddDamage += 10;
         }
 
     }
 
-    
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
- 
 }
+
+

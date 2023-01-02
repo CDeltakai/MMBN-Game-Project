@@ -8,24 +8,38 @@ public class ChipLoadManager : MonoBehaviour
 public delegate void LoadChipsEvent();
 public event LoadChipsEvent loadChipsEvent;
 
-[SerializeField] public List<ChipSO> nextChipLoad = new List<ChipSO>();
 [SerializeField] public List<ChipObjectReference> nextChipRefLoad = new List<ChipObjectReference>();
 
 
-[SerializeField] public List<ChipSO> chipQueue = new List<ChipSO>();
 [SerializeField] public List<ChipObjectReference> chipRefQueue = new List<ChipObjectReference>();
 
 
-List<int> chipsToRemoveIndexes = new List<int>();
-List<ChipSO> chipsToRemove = new List<ChipSO>();
 List<ChipObjectReference> chipRefsToRemove = new List<ChipObjectReference>();
 
 
-[SerializeField] public float damageAmp = 0;
-[SerializeField] public int damageAdd = 0;
+
 PlayerMovement player;
 
 
+private static ChipLoadManager _instance;
+public static ChipLoadManager Instance {get {return _instance;} }
+    private void InitializeSingleton()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.transform.parent.gameObject);
+            Destroy(this.gameObject);
+        }else
+        {
+            _instance = this;
+        }
+    }
+
+
+    private void Awake() 
+    {    
+        InitializeSingleton();
+    }
 
     void Start()
     {
@@ -38,42 +52,42 @@ PlayerMovement player;
     }
 
 
-    public void calcNextChipLoad()
-    {
+    // public void calcNextChipLoad()
+    // {
 
-        if(chipQueue.Count == 0)
-        {
-            print("Chip Qeue Empty " + "Class: ChipLoadManager");
-            return;
-        }
+    //     if(chipQueue.Count == 0)
+    //     {
+    //         print("Chip Qeue Empty " + "Class: ChipLoadManager");
+    //         return;
+    //     }
 
-        nextChipLoad.Add(chipQueue[0]);
-        chipQueue.RemoveAt(0);
+    //     nextChipLoad.Add(chipQueue[0]);
+    //     chipQueue.RemoveAt(0);
 
-        foreach(ChipSO chip in chipQueue)
-        {
-            if(chip.GetChipType() == EChipTypes.Passive)
-            {
-                nextChipLoad.Add(chip);
-                chipsToRemove.Add(chip);
+    //     foreach(ChipSO chip in chipQueue)
+    //     {
+    //         if(chip.GetChipType() == EChipTypes.Passive)
+    //         {
+    //             nextChipLoad.Add(chip);
+    //             chipsToRemove.Add(chip);
 
-            }else
-            {
-                break;
-            }
-        }
+    //         }else
+    //         {
+    //             break;
+    //         }
+    //     }
 
-        foreach(ChipSO chip in chipsToRemove)
-        {
-            chipQueue.Remove(chip);
-        }
+    //     foreach(ChipSO chip in chipsToRemove)
+    //     {
+    //         chipQueue.Remove(chip);
+    //     }
 
-        chipsToRemoveIndexes.Clear();
-        if(loadChipsEvent != null)
-        {loadChipsEvent();} 
+    //     chipsToRemoveIndexes.Clear();
+    //     if(loadChipsEvent != null)
+    //     {loadChipsEvent();} 
 
 
-    }
+    // }
 
     public void calcNextChipRefLoad()
     {

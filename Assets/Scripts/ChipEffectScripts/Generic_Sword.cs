@@ -10,7 +10,7 @@ public class Generic_Sword : MonoBehaviour, IChip
     public int BaseDamage {get;set;} = 80;
     public int AdditionalDamage{get; set;} = 0;
 
-    public EChipTypes ChipType => EChipTypes.Active;
+    public EChipTypes ChipType => EChipTypes.Attack;
     public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
     public EChipElements chipElement => EChipElements.Blade;
     //[SerializeField] GameObject vfx; 

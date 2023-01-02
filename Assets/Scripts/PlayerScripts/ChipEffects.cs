@@ -66,83 +66,83 @@ public class ChipEffects : MonoBehaviour
         //ChipScript = null;
     }
 
-    public void UseChipEffect(string GivenAddressableKey = null)
-    {
-        chipList = chipLoadManager.nextChipLoad;
+    // public void UseChipEffect(string GivenAddressableKey = null)
+    // {
+    //     chipList = chipLoadManager.nextChipLoad;
 
-        if(chipLoadManager.nextChipLoad.Count() == 1)
-        {
-            Type chipScript = Type.GetType(chipLoadManager.nextChipLoad[0].GetEffectScript());
-            StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipScript));
-            print("Used ApplyChipEffectV3, with chip count at 1");
-            return;
-        }
-    }
+    //     if(chipLoadManager.nextChipLoad.Count() == 1)
+    //     {
+    //         Type chipScript = Type.GetType(chipLoadManager.nextChipLoad[0].GetEffectScript());
+    //         StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipScript));
+    //         print("Used ApplyChipEffectV3, with chip count at 1");
+    //         return;
+    //     }
+    // }
 
 
-    public void ApplyChipEffectV3(string GivenAddressableKey = null)
-    {
+    // public void ApplyChipEffectV3(string GivenAddressableKey = null)
+    // {
 
-        chipList = chipLoadManager.nextChipLoad;
+    //     chipList = chipLoadManager.nextChipLoad;
 
-        if(chipLoadManager.nextChipLoad.Count() == 1)
-        {
-            Type chipScript = Type.GetType(chipLoadManager.nextChipLoad[0].GetEffectScript());
-            IChip chipEffect = gameObject.AddComponent(chipScript) as IChip;
-            chipEffect.Effect(AddressableKey: GivenAddressableKey);
-            StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipScript));
-            //Destroy(GetComponent(chipScript));
-            print("Used ApplyChipEffectV3, with chip count at 1");
-            return;
-        }
+    //     if(chipLoadManager.nextChipLoad.Count() == 1)
+    //     {
+    //         Type chipScript = Type.GetType(chipLoadManager.nextChipLoad[0].GetEffectScript());
+    //         IChip chipEffect = gameObject.AddComponent(chipScript) as IChip;
+    //         chipEffect.Effect(AddressableKey: GivenAddressableKey);
+    //         StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipScript));
+    //         //Destroy(GetComponent(chipScript));
+    //         print("Used ApplyChipEffectV3, with chip count at 1");
+    //         return;
+    //     }
 
-        foreach(ChipSO chip in chipLoadManager.nextChipLoad)
-        {
-            scriptList.Add(Type.GetType(chip.GetEffectScript()));
-        }
+    //     foreach(ChipSO chip in chipLoadManager.nextChipLoad)
+    //     {
+    //         scriptList.Add(Type.GetType(chip.GetEffectScript()));
+    //     }
         
-        foreach(Type script in scriptList)
-        {
-            IChip chipEffect = gameObject.AddComponent(script) as IChip;
-        }
+    //     foreach(Type script in scriptList)
+    //     {
+    //         IChip chipEffect = gameObject.AddComponent(script) as IChip;
+    //     }
 
-        chipObjectList = GetComponents<IChip>().ToList();
+    //     chipObjectList = GetComponents<IChip>().ToList();
 
 
-        foreach(IChip chip in chipObjectList)
-        {
-            if(chip.ChipType == EChipTypes.Passive)
-            {
-                print("Attempted passive chip effect");
-                chip.Effect();
+    //     foreach(IChip chip in chipObjectList)
+    //     {
+    //         if(chip.ChipType == EChipTypes.Passive)
+    //         {
+    //             print("Attempted passive chip effect");
+    //             chip.Effect();
                 
-                Destroy(GetComponent(chip.GetType()));
+    //             Destroy(GetComponent(chip.GetType()));
                 
-            } else if (chip.ChipType != EChipTypes.Passive)
-            {
-                //nonPassiveChipFound = true;
-                continue;
-            }
+    //         } else if (chip.ChipType != EChipTypes.Passive)
+    //         {
+    //             //nonPassiveChipFound = true;
+    //             continue;
+    //         }
 
-        }
+    //     }
 
-        //Finds the non-passive chip within the chipObjectList and attempts its effect
-        // 
-        if(GivenAddressableKey == null){
+    //     //Finds the non-passive chip within the chipObjectList and attempts its effect
+    //     // 
+    //     if(GivenAddressableKey == null){
             
-            var chip = chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive);
-            chip.Effect();
+    //         var chip = chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive);
+    //         chip.Effect();
 
 
-        }else{
-            chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect(AddressableKey: GivenAddressableKey);
+    //     }else{
+    //         chipObjectList.Find(chip => chip.ChipType != EChipTypes.Passive).Effect(AddressableKey: GivenAddressableKey);
 
-        }
-        StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipObjectList.Find(x => x.ChipType != EChipTypes.Passive).GetType()));
+    //     }
+    //     StartCoroutine(removeChipFromLoad(chipLoadManager.nextChipLoad[0].GetAnimationDuration(), chipObjectList.Find(x => x.ChipType != EChipTypes.Passive).GetType()));
 
 
     
-    }
+    // }
 
 
     public void ApplyChipEffectRef()
@@ -153,14 +153,28 @@ public class ChipEffects : MonoBehaviour
         if(chipLoadManager.nextChipRefLoad.Count() == 1)
         {
             var chip = chipLoadManager.nextChipRefLoad[0];
-            chip.effectPrefab.SetActive(true);
             ChipEffectBlueprint chipEffectScript = chip.effectPrefab.GetComponent<ChipEffectBlueprint>();
             chipEffectScript.Effect();
 
-            //chip.chipEffectScript.Effect();
+            StartCoroutine(disableEffectPrefab(chip.chipSORef.GetAnimationDuration(), chip.effectPrefab));
+
+        }else
+        {
+
+            var chip = chipLoadManager.nextChipRefLoad[0];
+            ChipEffectBlueprint chipEffectScript = chip.effectPrefab.GetComponent<ChipEffectBlueprint>();
+            chipEffectScript.Effect();
             StartCoroutine(disableEffectPrefab(chip.chipSORef.GetAnimationDuration(), chip.effectPrefab));
 
         }
+    
+
+
+        
+            
+
+
+
 
 
 

@@ -25,7 +25,7 @@ public class WhiteCapsule : MonoBehaviour, IChip
         foreach(IChip chip in otherchipsArray)
         {
             print("WhiteCapsule attempted to buff chip: " +chip.GetType().ToString());
-            if(chip.ChipType == EChipTypes.Active || chip.ChipType == EChipTypes.OffensiveSpecial)
+            if(chip.ChipType == EChipTypes.Attack || chip.ChipType == EChipTypes.OffensiveSpecial)
             {
                 chip.chipStatusEffect = EStatusEffects.Paralyzed;
                 return;

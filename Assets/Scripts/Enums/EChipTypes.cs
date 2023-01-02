@@ -16,7 +16,7 @@ public enum EChipTypes
 
 
     Passive = 0,
-    Active = 1,
+    Attack = 1,
     Status = 2,
     Special = 3,
     OffensiveSpecial = 4,
