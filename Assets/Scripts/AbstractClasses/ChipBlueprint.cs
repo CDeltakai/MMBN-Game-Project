@@ -10,10 +10,14 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     [SerializeField] protected ChipSO chip;
     protected GameObject ObjectSummon;
     protected int BaseDamage;
-    public int AddDamage = 0;
-
     protected EStatusEffects BaseStatusEffect;
+
+    public int AddDamage = 0;
     public EStatusEffects AddStatusEffect = EStatusEffects.Default;
+    public GameObject AddSummonObject = null;
+
+
+
 
     protected bool lightAttack;
     protected bool hitFlinch;
@@ -62,6 +66,11 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     }
 
 
+    protected void SummonObjects()
+    {
+        
+    }
+
     public abstract void Effect();
 
 
@@ -74,6 +83,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
         pierceUntargetable = chip.IsPierceUntargetable();
         AddDamage = 0;
         AddStatusEffect = EStatusEffects.Default;
+        AddSummonObject = null;
 
 
 

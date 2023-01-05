@@ -17,13 +17,6 @@ public class GenericObjectSummonEffect : ChipEffectBlueprint
         
 
 
-
-        //var summonedObject = Instantiate(ObjectSummon, new Vector2(player.worldTransform.position.x + 1.6f, player.worldTransform.position.y), transform.rotation);
-        //var objectStats = summonedObject.GetComponent<ObjectSummonAttributes>();
-        //objectStats.AddStatusEffect = AddStatusEffect;
-        //objectStats.AddDamage = AddDamage;
-
-
     }
 
 

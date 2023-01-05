@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 637999051653838010
+  lastModified: 638084654095151788
   FileSizes:
   - Name: Desktop
     Value: 130560
@@ -62,10 +62,10 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637999051651063766
+  lastModified: 638084654094621801
   FileSizes:
   - Name: Desktop
-    Value: 1636
+    Value: 1724
   Exists: 1
 --- !u!114 &-2834223847602432238
 MonoBehaviour:
@@ -82,7 +82,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637999051650993797
+  lastModified: 638084654094541781
   FileSizes:
   - Name: Desktop
     Value: 51168
@@ -237,10 +237,30 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637999051651123846
+  lastModified: 638084654094671802
   FileSizes:
   - Name: Desktop
     Value: 494
+  Exists: 1
+--- !u!114 &-432604367618198721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/NPCSFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/NPCSFX.bank
+  Name: NPCSFX
+  StudioPath: bank:/NPCSFX
+  lastModified: 638084654095721780
+  FileSizes:
+  - Name: Desktop
+    Value: 4704
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -261,6 +281,7 @@ MonoBehaviour:
   - {fileID: 1876620492015071895}
   - {fileID: -722009441508968082}
   - {fileID: 822202036912703297}
+  - {fileID: -432604367618198721}
   EditorEvents:
   - {fileID: -1600951516271897011}
   - {fileID: 6225590183410881686}
@@ -277,12 +298,13 @@ MonoBehaviour:
   - {fileID: 8994157301370315410}
   - {fileID: 7215367425252764598}
   - {fileID: 2459235585389975159}
+  - {fileID: 3093292336632789617}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2834223847602432238}
   StringsBanks:
   - {fileID: -8211752414539646085}
-  cacheTime: 637999051654777819
+  cacheTime: 638084654095721780
   cacheVersion: 131591
 --- !u!114 &104925123999711182
 MonoBehaviour:
@@ -326,7 +348,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/UISFXBank.bank
   Name: UISFXBank
   StudioPath: bank:/UISFXBank
-  lastModified: 637999051654777819
+  lastModified: 638084654095461783
   FileSizes:
   - Name: Desktop
     Value: 16160
@@ -373,7 +395,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/ChipSFX.bank
   Name: ChipSFX
   StudioPath: bank:/ChipSFX
-  lastModified: 637999051648663451
+  lastModified: 638084654094181805
   FileSizes:
   - Name: Desktop
     Value: 75008
@@ -432,6 +454,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3093292336632789617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EnemyDamaged
+  m_EditorClassIdentifier: 
+  Path: event:/EnemyDamaged
+  Guid:
+    Data1: -1182195709
+    Data2: 1298215384
+    Data3: 312876713
+    Data4: 938022413
+  Banks:
+  - {fileID: -432604367618198721}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 221
 --- !u!114 &3958958850400432665
 MonoBehaviour:
   m_ObjectHideFlags: 0

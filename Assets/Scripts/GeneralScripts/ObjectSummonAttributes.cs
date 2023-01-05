@@ -8,20 +8,12 @@ public class ObjectSummonAttributes : MonoBehaviour
 
     public EStatusEffects StatusEffect;
     public EStatusEffects AddStatusEffect = EStatusEffects.Default;
+    public GameObject AddObjectSummon = null;
 
 
 
 
 
 
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

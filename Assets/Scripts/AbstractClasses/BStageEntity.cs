@@ -22,6 +22,10 @@ public abstract class BStageEntity : MonoBehaviour
 
     public delegate void OnDeathEvent(BStageEntity entity);
     public virtual event OnDeathEvent deathEvent;
+
+    public delegate void OnHurtEvent(BStageEntity entity);
+    public virtual event OnHurtEvent hurtEvent;
+
     public delegate void OnParryEvent(BStageEntity entity);
     public virtual event OnParryEvent parryEvent;
 
@@ -91,6 +95,11 @@ public abstract class BStageEntity : MonoBehaviour
     protected Coroutine isMovingCoroutine;
 
 #endregion
+
+[Header("Generic Sound Events")]
+    [SerializeField] public EventReference HurtSFX;
+    [SerializeField] public EventReference DestroyedSFX;
+
 
     void Reset()
     {

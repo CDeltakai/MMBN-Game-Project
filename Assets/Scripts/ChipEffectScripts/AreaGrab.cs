@@ -4,34 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class AreaGrab : MonoBehaviour, IChip
+public class AreaGrab : ChipEffectBlueprint
 {
 
     BattleStageHandler stageHandler;
 
-    public Tilemap stageTilemap;
-    public CustomTile tile;
-    public int AdditionalDamage{get; set;} = 0;
-    public int BaseDamage {get;} = 10;
-
-    public EChipTypes ChipType => EChipTypes.Special;
-
-    public EChipElements chipElement => EChipElements.Normal;
-
-    public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
+    private Tilemap stageTilemap;
+    private CustomTile tile;
 
     private void Awake() 
     {
-        stageHandler = FindObjectOfType<BattleStageHandler>();
+        stageHandler = BattleStageHandler.Instance;
         stageTilemap = stageHandler.stageTilemap;
-        //tile = stageHandler.PlayerTiles.Find(tile => tile.GetTileEnum() == ETiles.Player_DefaultTile &&
-        //                                        tile.GetTileTeam() == ETileTeam.Player);
+
     }
 
 
 //NOTE: This AreaGrab will ONLY work with Variable Tiles
-    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
+
+
+    public override void Effect()
     {
+
         stageHandler.CalculatePlayerBounds();
 
         print("Attempted area grab");
@@ -53,7 +47,11 @@ public class AreaGrab : MonoBehaviour, IChip
         }
         stageHandler.CalculatePlayerBounds();
 
+
+
     }
+
+
 
 
 }

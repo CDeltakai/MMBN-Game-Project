@@ -74,6 +74,7 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
         AddDamage = 0;
         StatusEffect = inheritedChip.GetStatusEffect();
         AddStatusEffect = EStatusEffects.Default;
+        AddObjectSummon = null;
 
         transform.parent.gameObject.SetActive(false);
   

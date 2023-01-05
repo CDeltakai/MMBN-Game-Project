@@ -51,44 +51,6 @@ public static ChipLoadManager Instance {get {return _instance;} }
         
     }
 
-
-    // public void calcNextChipLoad()
-    // {
-
-    //     if(chipQueue.Count == 0)
-    //     {
-    //         print("Chip Qeue Empty " + "Class: ChipLoadManager");
-    //         return;
-    //     }
-
-    //     nextChipLoad.Add(chipQueue[0]);
-    //     chipQueue.RemoveAt(0);
-
-    //     foreach(ChipSO chip in chipQueue)
-    //     {
-    //         if(chip.GetChipType() == EChipTypes.Passive)
-    //         {
-    //             nextChipLoad.Add(chip);
-    //             chipsToRemove.Add(chip);
-
-    //         }else
-    //         {
-    //             break;
-    //         }
-    //     }
-
-    //     foreach(ChipSO chip in chipsToRemove)
-    //     {
-    //         chipQueue.Remove(chip);
-    //     }
-
-    //     chipsToRemoveIndexes.Clear();
-    //     if(loadChipsEvent != null)
-    //     {loadChipsEvent();} 
-
-
-    // }
-
     public void calcNextChipRefLoad()
     {
         if(chipRefQueue.Count == 0)
@@ -112,6 +74,8 @@ public static ChipLoadManager Instance {get {return _instance;} }
                 break;
             }
         }
+
+
 
         foreach(ChipObjectReference chipRef in chipRefsToRemove)
         {

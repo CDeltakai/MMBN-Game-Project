@@ -10,6 +10,13 @@ public class MegamanHurtBehaviour : StateMachineBehaviour
         Debug.Log("Megaman hurt - animation behaviour");
     }
 
+    void InterruptActions()
+    {
+
+        
+    }
+
+
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{

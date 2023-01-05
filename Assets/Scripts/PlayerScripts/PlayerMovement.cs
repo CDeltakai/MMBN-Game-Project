@@ -229,6 +229,16 @@ public static PlayerMovement Instance {get {return _instance;} }
 
             playerChipAnimations.playAnimationEnum(nextChip.chipSORef.GetChipEnum(), nextChip.chipSORef.GetAnimationDuration());
 
+        }else 
+        if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() == EChipTypes.Special)
+        {
+            var nextChip = chipLoadManager.nextChipRefLoad[0];
+            activeChipRef = nextChip;
+            nextChip.effectPrefab.SetActive(true);
+            nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().Effect();
+            nextChip.effectPrefab.SetActive(false);
+
+
         } 
 
 
