@@ -205,10 +205,6 @@ public static PlayerMovement Instance {get {return _instance;} }
         isUsingChip = true;
 
 
-
-
-
-
         if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Passive && chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Special )
         {
             var nextChip = chipLoadManager.nextChipRefLoad[0];

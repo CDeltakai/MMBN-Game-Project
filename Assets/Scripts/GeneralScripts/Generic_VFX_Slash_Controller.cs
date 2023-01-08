@@ -8,7 +8,6 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
 
     BoxCollider2D boxCollider;
     SpriteRenderer spriteRenderer;
-    [SerializeField] ChipSO inheritedChip;
     PlayerMovement player;
 
     
@@ -18,8 +17,6 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = true;
-
-
 
     }
     
@@ -33,14 +30,14 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
             StatusEffect = AddStatusEffect;
         }else
         {
-            StatusEffect = inheritedChip.GetStatusEffect();
+            StatusEffect = InheritedChip.GetStatusEffect();
         }
 
         boxCollider.enabled = true;
         spriteRenderer.enabled = true;
 
 
-        StartCoroutine(SelfDestruct());
+        StartCoroutine(SelfDisable());
 
     }
 
@@ -53,8 +50,12 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
 
             if(other.GetComponent<BStageEntity>()){
             BStageEntity entity = other.GetComponent<BStageEntity>();
-            entity.hurtEntity((int)((inheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
-            inheritedChip.IsLightAttack(), inheritedChip.IsHitFlinch(), player, StatusEffect);
+
+
+                
+                entity.hurtEntity((int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
+                InheritedChip.IsLightAttack(), InheritedChip.IsHitFlinch(), player, StatusEffect);
+
             return;
             }
             
@@ -64,7 +65,7 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
 
     }
 
-    IEnumerator SelfDestruct()
+    IEnumerator SelfDisable()
     {
         yield return new WaitForSecondsRealtime(0.15f);
         boxCollider.enabled = false;
@@ -72,7 +73,7 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
         yield return new WaitForSecondsRealtime(0.25f);
 
         AddDamage = 0;
-        StatusEffect = inheritedChip.GetStatusEffect();
+        StatusEffect = InheritedChip.GetStatusEffect();
         AddStatusEffect = EStatusEffects.Default;
         AddObjectSummon = null;
 

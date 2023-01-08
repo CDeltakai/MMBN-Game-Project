@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2385943362708142431}
   m_Layer: 12
-  m_Name: Bomb
+  m_Name: BombSummon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5565a42ac88c9489f2a1e720b838a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldTransform: {fileID: 0}
+  AddDamage: 0
+  StatusEffect: 0
+  AddStatusEffect: 0
+  AddObjectSummon: {fileID: 0}
+  InheritedChip: {fileID: 11400000, guid: 14412b39ecce0ca458d1f05de06c3d36, type: 2}
+  worldTransform: {fileID: 2385943362708142431}
   yPosCurve:
     serializedVersion: 2
     m_Curve:

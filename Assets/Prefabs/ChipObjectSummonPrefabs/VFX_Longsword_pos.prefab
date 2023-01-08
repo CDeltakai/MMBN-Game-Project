@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610163217507642983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.215, y: 0.647, z: 0}
+  m_LocalPosition: {x: 1.385, y: 0.647, z: 0}
   m_LocalScale: {x: 1.533, y: 1.0088, z: 1}
   m_Children: []
   m_Father: {fileID: 35313216451449712}
@@ -144,7 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada20f781acbd7949b11665b7cfb0cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inheritedChip: {fileID: 11400000, guid: 506c134f07571ec4f958e43d904161f4, type: 2}
+  AddDamage: 0
+  StatusEffect: 0
+  AddStatusEffect: 0
+  AddObjectSummon: {fileID: 0}
+  InheritedChip: {fileID: 11400000, guid: 506c134f07571ec4f958e43d904161f4, type: 2}
 --- !u!50 &4171638757431803172
 Rigidbody2D:
   serializedVersion: 4

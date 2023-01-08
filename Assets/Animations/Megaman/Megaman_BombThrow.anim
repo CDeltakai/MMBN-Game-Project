@@ -83,8 +83,8 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.041666668
-    functionName: ApplyChipEffectV3
-    data: Chip_Bomb
+    functionName: ApplyChipEffectRef
+    data: 
     objectReferenceParameter: {fileID: 11500000, guid: 9ed8c7a04f6c218448493c3f796d8655, type: 3}
     floatParameter: 0
     intParameter: 0

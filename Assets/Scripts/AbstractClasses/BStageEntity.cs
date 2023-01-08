@@ -51,6 +51,13 @@ public abstract class BStageEntity : MonoBehaviour
 
     public bool usingOverridenMovementMethod = false;
     public float objectTimeScale = 1f;
+
+    ///<summary>
+    ///worldTransform is the world position and transform of the BStageEntity.
+    ///The components which make up the entity normally fall under this worldTransform
+    ///as children. Use this when you need to set the cell position of the object in relation
+    ///to the stage grid. Do not use this if you need to set sprite positions.
+    ///</summary>
     [HideInInspector] public Transform worldTransform;
     public abstract bool isGrounded{get;set;}
     public abstract bool isStationary{get;}
@@ -181,7 +188,6 @@ public abstract class BStageEntity : MonoBehaviour
             }
 
             AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
-
         }
 
 

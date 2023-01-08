@@ -5,40 +5,59 @@ using UnityEngine;
 using DG.Tweening;
 using FMODUnity;
 
-public class BombController : MonoBehaviour
+public class BombController : ObjectSummonAttributes
 {
 
-    Bomb bomb;
     PlayerMovement player;
     Animator animator;
-    public Transform worldTransform;
+    [SerializeField] Transform worldTransform;
     BoxCollider2D boxCollider2D;
     [SerializeField] AnimationCurve yPosCurve;
     [SerializeField] EventReference ExplosionSoundEffect;
-    float movementTime;
-    Vector3 destination;
-    int BaseDamage;
-    int AdditionalDamage;
-    EStatusEffects chipStatusEffect;
+    Vector3 InitialPosition;
+
+
+  
 
     void Awake()
     {
+        InitialPosition = transform.localPosition;
 
-        bomb = FindObjectOfType<Bomb>();
         animator = GetComponent<Animator>();
-        player = FindObjectOfType<PlayerMovement>();
-        worldTransform = transform.parent.transform;
+
+        player = PlayerMovement.Instance;
+        //worldTransform.localPosition.Set(player.worldTransform.localPosition.x, player.worldTransform.localPosition.y, 0);
+        //worldTransform = transform.parent.transform;
         boxCollider2D = GetComponent<BoxCollider2D>();   
         boxCollider2D.enabled = false;
+
+        
+
     }
 
     void Start()
     {
-        BaseDamage = bomb.BaseDamage;
-        AdditionalDamage = bomb.AdditionalDamage;
-        chipStatusEffect = bomb.chipStatusEffect;        
-        StartCoroutine(MoveBomb());
+        
     }
+
+    void OnEnable()
+    {
+        //worldTransform.localPosition.Set(player.worldTransform.localPosition.x, player.worldTransform.localPosition.y, 0);
+
+        if(AddStatusEffect != EStatusEffects.Default)
+        {
+            StatusEffect = AddStatusEffect;
+        }else
+        {
+            StatusEffect = InheritedChip.GetStatusEffect();
+        }
+
+
+
+        StartCoroutine(MoveBomb());
+
+    }
+
 
     [SerializeField] float MoveYValue = 3;
     IEnumerator MoveBomb()
@@ -58,9 +77,9 @@ public class BombController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.25f);
         boxCollider2D.enabled = false;
 
+        ResetObjectToInitialState();
 
-        Destroy(transform.parent.gameObject);
-        Destroy(gameObject);
+  
     }
 
    void OnTriggerEnter2D(Collider2D other)
@@ -70,20 +89,35 @@ public class BombController : MonoBehaviour
         {
             BStageEntity victim = other.GetComponent<BStageEntity>();
 
-            victim.hurtEntity((int)((BaseDamage + AdditionalDamage)*player.AttackMultiplier),
-            false, true, player, statusEffect: chipStatusEffect);
+            victim.hurtEntity((int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
+            false, true, player, statusEffect: StatusEffect);
 
         }
 
     }
     
+    public void ResetObjectToInitialState()
+    {
+        ResetAttributesToInitialState();
+
+        transform.localPosition = InitialPosition;
+        worldTransform.localPosition = new Vector3(player.worldTransform.position.x, player.worldTransform.position.y, 0);
+        boxCollider2D.enabled = false;
+        transform.parent.gameObject.SetActive(false);
+
+
+
+    }
+
+
 
     void Update()
     {
         if(worldTransform.position.x > 12)
         {
-            Destroy(transform.parent.gameObject);
-            Destroy(gameObject);
+            transform.parent.gameObject.SetActive(false);
+            ResetObjectToInitialState();
+
         }
     }
 }
