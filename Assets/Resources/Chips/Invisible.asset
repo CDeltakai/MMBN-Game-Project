@@ -19,9 +19,9 @@ MonoBehaviour:
   BaseDamage: 0
   ChipImage: {fileID: -7587512733787768913, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   ChipDescription: Grants temporary CONCEALMENT
-  ChipElement: 0
+  ChipElement: 10
   ChipSize: 30
-  AnimationDuration: 0
+  AnimationDuration: -0.005
   ChipType: 3
   BaseStatusEffect: 0
   EffectScript: Invisible
@@ -35,8 +35,8 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationToUse: 0
   ObjectSummon: {fileID: 0}
-  EffectPrefab: {fileID: 0}
-  effectMechanism: 0
+  EffectPrefab: {fileID: 8522378739733520832, guid: c684134fd95bddc4f9549892f3265cd5, type: 3}
+  effectMechanism: 4
   pierceUntargetable: 0
   lightAttack: 0
   hitFlinch: 0

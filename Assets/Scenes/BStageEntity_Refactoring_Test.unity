@@ -148,8 +148,40 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: defaultColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: defaultColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: defaultColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: defaultColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotSFX.Path
+      value: event:/FireBasicShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: PlayerHurtSFX.Path
+      value: event:/PlayerHurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: BasicShotEvent.Path
       value: event:/FireBasicShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ChargedShotSFX.Path
+      value: event:/FireChargedBasicShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ParrySuccessSFX.Path
+      value: event:/ParrySuccess
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: PlayerHurtEvent.Path
@@ -162,6 +194,46 @@ PrefabInstance:
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: ParrySuccessEvent.Path
       value: event:/ParrySuccess
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotSFX.Guid.Data1
+      value: 112909495
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotSFX.Guid.Data2
+      value: 1262553503
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotSFX.Guid.Data3
+      value: -196282697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotSFX.Guid.Data4
+      value: 2095689120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargedSFX.Path
+      value: event:/BasicShotCharged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: PlayerHurtSFX.Guid.Data1
+      value: -1680402714
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: PlayerHurtSFX.Guid.Data2
+      value: 1228205938
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: PlayerHurtSFX.Guid.Data3
+      value: -1635522904
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: PlayerHurtSFX.Guid.Data4
+      value: -1346633860
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargingSFX.Path
+      value: event:/BasicShotCharging
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: BasicShotEvent.Guid.Data1
@@ -180,8 +252,40 @@ PrefabInstance:
       value: 2095689120
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ChargedShotSFX.Guid.Data1
+      value: 1260244657
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ChargedShotSFX.Guid.Data2
+      value: 1260468301
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ChargedShotSFX.Guid.Data3
+      value: -1171620945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ChargedShotSFX.Guid.Data4
+      value: 643041155
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: BasicShotChargedEvent.Path
       value: event:/BasicShotCharged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ParrySuccessSFX.Guid.Data1
+      value: -1304711508
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ParrySuccessSFX.Guid.Data2
+      value: 1176041730
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ParrySuccessSFX.Guid.Data3
+      value: -377567076
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: ParrySuccessSFX.Guid.Data4
+      value: 1078961485
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: PlayerHurtEvent.Guid.Data1
@@ -234,6 +338,38 @@ PrefabInstance:
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: ParrySuccessEvent.Guid.Data4
       value: 1078961485
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargedSFX.Guid.Data1
+      value: -1362373879
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargedSFX.Guid.Data2
+      value: 1261760641
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargedSFX.Guid.Data3
+      value: 706710181
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargedSFX.Guid.Data4
+      value: -1279979975
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargingSFX.Guid.Data1
+      value: -775482130
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargingSFX.Guid.Data2
+      value: 1226102857
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargingSFX.Guid.Data3
+      value: 1035503003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: BasicShotChargingSFX.Guid.Data4
+      value: 1837944466
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985704, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: BasicShotChargedEvent.Guid.Data1
@@ -374,6 +510,10 @@ PrefabInstance:
     - target: {fileID: 2717528050190985705, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985706, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2717528050190985707, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: m_UpdateMode
@@ -1358,63 +1498,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
---- !u!1001 &1550168979347810660
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1874528980879534232, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_Name
-      value: BombChip
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.979774
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.054301485
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.0110483
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186140093108356617, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
 --- !u!1001 &3069419181280977794
 PrefabInstance:
   m_ObjectHideFlags: 0

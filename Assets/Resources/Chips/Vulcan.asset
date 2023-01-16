@@ -33,7 +33,7 @@ MonoBehaviour:
       Data4: 0
     Path: 
   AdditionalSFX: []
-  AnimationToUse: 0
+  AnimationToUse: 109
   ObjectSummon: {fileID: 0}
   EffectPrefab: {fileID: 0}
   effectMechanism: 0

@@ -43,7 +43,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     protected static TileEventManager tileEventManager;
     protected static BattleStageHandler stageHandler;
-    protected SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     protected static Shader shaderGUItext;
     protected static Shader shaderSpritesDefault;
     protected Animator animator;
@@ -59,7 +59,15 @@ public abstract class BStageEntity : MonoBehaviour
     ///to the stage grid. Do not use this if you need to set sprite positions.
     ///</summary>
     [HideInInspector] public Transform worldTransform;
+
+    ///<summary>
+    ///Determines if the entity can be affected by tile effects
+    ///</summary>
     public abstract bool isGrounded{get;set;}
+
+    ///<summary>
+    ///Determines if the entity can be moved from its position
+    ///</summary>
     public abstract bool isStationary{get;}
     public abstract bool isStunnable{get;}
     public abstract int maxHP{get;}
@@ -89,6 +97,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     protected Color invisible;
     protected Color opaque;
+    public Color defaultColor;
 
     [SerializeField] protected AnimationCurve movementSpeedCurve;
     [SerializeField] protected float movementSpeedTime;
@@ -125,10 +134,34 @@ public abstract class BStageEntity : MonoBehaviour
 
         invisible = spriteRenderer.color;
         opaque = spriteRenderer.color;
+        defaultColor = spriteRenderer.color;
         invisible.a = 0;
         opaque.a = 1;
         EntityDestructionEvent = RuntimeManager.PathToEventReference("event:/EntityDestruction");
     }
+
+    public void SetUntargetable(bool condition)
+    {
+        if(condition)
+        {
+            isUntargetable = true;
+        }else
+        {
+            isUntargetable = false;
+        }
+    }
+
+    public void SetInvincible(bool condition)
+    {
+       if(condition)
+        {
+            fullInvincible = true;
+        }else
+        {
+            fullInvincible = false;
+        }
+    }
+
 
     public virtual void Awake()
     {
@@ -178,6 +211,10 @@ public abstract class BStageEntity : MonoBehaviour
         if(statusEffect != EStatusEffects.Default)
         {StartCoroutine(setStatusEffect(statusEffect, 1));}
 
+        if(hurtEvent != null)
+        {
+            hurtEvent(this);
+        }
         if(damage >= 10)
         {
             isAnimatingHP = true;
@@ -234,6 +271,11 @@ public abstract class BStageEntity : MonoBehaviour
         if(statusEffect != EStatusEffects.Default)
         {StartCoroutine(setStatusEffect(statusEffect, 1));}
 
+        if(hurtEvent != null)
+        {
+            hurtEvent(this);
+        }
+
         if(damage >= 10)
         {
             isAnimatingHP = true;
@@ -275,10 +317,6 @@ public abstract class BStageEntity : MonoBehaviour
         return; 
     }
     
-
-
-
-
 
 
     public int getHealth()
@@ -467,7 +505,7 @@ public abstract class BStageEntity : MonoBehaviour
     protected virtual IEnumerator InvincibilityFrames(float duration)
     {
         float gracePeriod = duration;
-        isUntargetable = true;
+        fullInvincible = true;
 
         while (gracePeriod>=0){
             
@@ -483,72 +521,9 @@ public abstract class BStageEntity : MonoBehaviour
             
         }
 
-        isUntargetable = false;
+        fullInvincible = false;
     }
 
-
-
-    public virtual IEnumerator translateMoveCell(int x, int y, Vector2 direction)
-    {
-        if(isMoving)
-        {yield break;}
-        Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
-        if(!checkValidTile(destinationCell.x, destinationCell.y))
-        {
-            yield break;
-        }
-        isMoving = true;
-        movementSpeedTime = 0;
-        float speed = movementSpeedCurve.Evaluate(movementSpeedTime);
-        float maxDistance = Vector3.Distance(stageHandler.stageTilemap.GetCellCenterWorld(currentCellPos),
-         stageHandler.stageTilemap.GetCellCenterWorld(destinationCell));
-        float currentDistance;
-        float percentageDone = 0;
-        float maxPercentage;
-        float speedMultiplier = 1;
-        bool changedTile = false;
-        if(Mathf.Approximately(direction.y, Vector2.up.y) || Mathf.Approximately(direction.y, Vector2.down.y))
-        {maxPercentage = 0.75f;
-        speedMultiplier = 0.6f;}
-        else
-        {maxPercentage = 0.85f;}
-
-            while(percentageDone <= maxPercentage)
-            {
-
-                if(percentageDone >= 0.3 && !changedTile)
-                {
-                    stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-                    stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
-                    moveOffTile(currentCellPos.x, currentCellPos.y, this);
-
-                    currentCellPos.Set(destinationCell.x, destinationCell.y, 0);
-
-                    moveOntoTile(currentCellPos.x, currentCellPos.y, this);
-                    stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
-                    changedTile = true;
-                }
-
-                worldTransform.Translate(direction * (speed*speedMultiplier) * Time.deltaTime);
-                movementSpeedTime += Time.deltaTime;
-                speed = movementSpeedCurve.Evaluate(movementSpeedTime);
-
-                currentDistance = Vector3.Distance(worldTransform.position,
-                stageHandler.stageTilemap.GetCellCenterWorld(destinationCell));
-
-                percentageDone = (Mathf.Clamp((maxDistance - currentDistance), 0, maxDistance)/maxDistance);
-                    
-
-                speed = movementSpeedCurve.Evaluate(movementSpeedTime);
-                //yield return null unblocks the thread and allows update to draw the next frame before 
-                //returning to this coroutine.
-                yield return null;
-            }
-        movementSpeedTime = 0;
-        worldTransform.position = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-        isMoving = false;
-    }
 
     public IEnumerator Shove(int x, int y)
     {
@@ -605,55 +580,7 @@ public abstract class BStageEntity : MonoBehaviour
 
 
 
-    public virtual IEnumerator translateMove_Fixed(int x, int y)
-    {
-        if(isMoving)
-        {yield break;}
-        Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
-        if(!checkValidTile(destinationCell.x, destinationCell.y))
-        {
-            yield break;
-        }
-        isMoving = true;
-        Vector2Int direction = new Vector2Int(x, y);
-        movementSpeedTime = 0;
-        float yPosOnCurve = 0;
-        float xPosOnCurve = 0;
-        bool changedTile = false;
 
-
-        while(movementSpeedTime <= 0.1f)
-        {
-
-            if(movementSpeedTime >= 0.05f && !changedTile)
-            {
-                stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-                stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
-                moveOffTile(currentCellPos.x, currentCellPos.y, this);
-
-                currentCellPos.Set(destinationCell.x, destinationCell.y, 0);
-
-                moveOntoTile(currentCellPos.x, currentCellPos.y, this);
-                stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
-                changedTile = true;
-            }
-
-
-            movementSpeedTime += Time.deltaTime;
-            worldTransform.position.Set(worldTransform.position.x + xPosOnCurve, worldTransform.position.y + yPosOnCurve, 0);
-            if(direction == Vector2Int.down || direction == Vector2Int.up)
-            {yPosOnCurve = Mathf.Clamp(yDistanceTimeCurve.Evaluate(movementSpeedTime), 0, 1.001f);}
-            else
-            {xPosOnCurve = Mathf.Clamp(xDistanceTimeCurve.Evaluate(movementSpeedTime), 0, 1.601f);}
-            yield return null;
-        }
-        movementSpeedTime = 0;
-        //worldTransform.position = stageHandler.stageTilemap.
-        //                            GetCellCenterWorld(currentCellPos);    
-        isMoving = false;
-
-
-    }
 
 
     float countFPS = 24;

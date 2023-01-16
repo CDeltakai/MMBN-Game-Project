@@ -7,7 +7,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
     protected PlayerMovement player;
     protected Transform firePoint;
-    [SerializeField] protected ChipSO chip;
+    [SerializeField] public ChipSO chip;
     protected GameObject ObjectSummon;
     protected int BaseDamage;
     protected EStatusEffects BaseStatusEffect;
@@ -46,13 +46,10 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
     public void applyChipDamage(BStageEntity entity)
     {
-        EStatusEffects status;
-        if(AddStatusEffect != EStatusEffects.Default)
+
+        if(AddStatusEffect == EStatusEffects.Default)
         {
-            status = BaseStatusEffect;
-        }else
-        {
-            status = AddStatusEffect;
+            AddStatusEffect = BaseStatusEffect;
         }
 
         entity.hurtEntity((int)((BaseDamage + AddDamage) * player.AttackMultiplier),
@@ -60,7 +57,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
                             hitFlinch, 
                             player, 
                             pierceUntargetable, 
-                            status);
+                            AddStatusEffect);
 
 
     }

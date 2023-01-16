@@ -70,7 +70,7 @@ public class PlayerVFXController : MonoBehaviour
                 yield return new WaitForSecondsRealtime(duration);
                 if(transitionAnim == PlayerVFXAnims.BasicShot_FullyCharged)
                 {
-                    FMODUnity.RuntimeManager.PlayOneShotAttached(player.BasicShotChargedEvent, this.gameObject);
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(player.BasicShotChargedSFX, this.gameObject);
                 }
 
 

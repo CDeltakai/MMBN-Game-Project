@@ -19,9 +19,9 @@ MonoBehaviour:
   BaseDamage: 0
   ChipImage: {fileID: -1821607153479355049, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   ChipDescription: Adds paralyze effect to following chip
-  ChipElement: 9
+  ChipElement: 10
   ChipSize: 32
-  AnimationDuration: 0
+  AnimationDuration: 0.05
   ChipType: 0
   BaseStatusEffect: 0
   EffectScript: WhiteCapsule
@@ -35,7 +35,7 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationToUse: 0
   ObjectSummon: {fileID: 0}
-  EffectPrefab: {fileID: 0}
+  EffectPrefab: {fileID: 1305357598806472437, guid: 22b43810345a2cd40b234ed3791cc3a4, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0
   lightAttack: 0

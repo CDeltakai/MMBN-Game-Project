@@ -36,6 +36,9 @@ public static PlayerMovement Instance {get {return _instance;} }
     public delegate void UsedChipEvent();
     public event UsedChipEvent usedChipEvent;
 
+    public delegate void PlayerHurtEvent();
+    public event PlayerHurtEvent playerHurtEvent;
+
 
     [SerializeField] public ChipSO activeChip;
     [SerializeField] public ChipObjectReference activeChipRef;
@@ -91,12 +94,12 @@ public static PlayerMovement Instance {get {return _instance;} }
 
 
 [Header("FMOD Sound Events")]
-    [SerializeField] public EventReference BasicShotEvent;
-    [SerializeField] public EventReference ChargedShotEvent;
-    [SerializeField] public EventReference ParrySuccessEvent;
-    [SerializeField] public EventReference PlayerHurtEvent;
-    [SerializeField] public EventReference BasicShotChargingEvent;
-    [SerializeField] public EventReference BasicShotChargedEvent;
+    [SerializeField] public EventReference BasicShotSFX;
+    [SerializeField] public EventReference ChargedShotSFX;
+    [SerializeField] public EventReference ParrySuccessSFX;
+    [SerializeField] public EventReference PlayerHurtSFX;
+    [SerializeField] public EventReference BasicShotChargingSFX;
+    [SerializeField] public EventReference BasicShotChargedSFX;
 
     private void InitializeSingleton()
     {
@@ -118,12 +121,6 @@ public static PlayerMovement Instance {get {return _instance;} }
 
     }
 
-
-
-
-
-
-
     public override void Start()
     {
 
@@ -133,7 +130,6 @@ public static PlayerMovement Instance {get {return _instance;} }
         chipSelectScreenMovement = FindObjectOfType<ChipSelectScreenMovement>();
         playerChipAnimations = GetComponent<PlayerChipAnimations>();
         boxCollider2D = GetComponent<BoxCollider2D>();
-        stageHandler = FindObjectOfType<BattleStageHandler>();
         bgController = FindObjectOfType<BackgroundController>();
         soundEventEmitter = GetComponent<FMODUnity.StudioEventEmitter>();
 
@@ -232,7 +228,11 @@ public static PlayerMovement Instance {get {return _instance;} }
             activeChipRef = nextChip;
             nextChip.effectPrefab.SetActive(true);
             nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().Effect();
-            nextChip.effectPrefab.SetActive(false);
+
+            if(nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().chip.GetAnimationDuration() >= 0f)
+            {
+                nextChip.effectPrefab.SetActive(false);
+            }
 
 
         } 
@@ -308,7 +308,7 @@ public static PlayerMovement Instance {get {return _instance;} }
     {
         fullInvincible = true;
         //soundEventEmitter.EventReference = ParrySuccessEvent;
-        FMODUnity.RuntimeManager.PlayOneShotAttached(ParrySuccessEvent, transform.gameObject);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(ParrySuccessSFX, transform.gameObject);
         //soundEventEmitter.Play();
 
 
@@ -358,7 +358,11 @@ public static PlayerMovement Instance {get {return _instance;} }
         if(fullInvincible){return;}
         Parrying = false;
 
-        FMODUnity.RuntimeManager.PlayOneShotAttached(PlayerHurtEvent, this.gameObject);
+        if(playerHurtEvent != null)
+        {
+            playerHurtEvent();
+        }
+        FMODUnity.RuntimeManager.PlayOneShotAttached(PlayerHurtSFX, this.gameObject);
         if(!SuperArmor && hitFlinch ){
             animator.Play(EMegamanAnimations.Megaman_Hurt.ToString());
             StartCoroutine(ChangeAnimState(EMegamanAnimations.Megaman_Idle.ToString(), EMegamanAnimations.Megaman_Hurt.ToString()));
@@ -395,6 +399,7 @@ public static PlayerMovement Instance {get {return _instance;} }
         }
 
         currentHP = currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999);
+
         if(AnimateHPCoroutine == null)
         {
             healthText.text = currentHP.ToString();
@@ -496,120 +501,6 @@ public static PlayerMovement Instance {get {return _instance;} }
     }
 
 
-    public override IEnumerator translateMoveCell(int x, int y, Vector2 direction)
-    {
-        if(isMoving || isUsingChip)
-        {yield break;}
-        Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
-        if(!checkValidTile(destinationCell.x, destinationCell.y))
-        {
-            yield break;
-        }
-        isMoving = true;
-        movementSpeedTime = 0;
-        float speed = movementSpeedCurve.Evaluate(movementSpeedTime);
-        float maxDistance = Vector3.Distance(stageHandler.stageTilemap.GetCellCenterWorld(currentCellPos),
-         stageHandler.stageTilemap.GetCellCenterWorld(destinationCell));
-        float currentDistance;
-        float percentageDone = 0;
-        float maxPercentage;
-        float speedMultiplier = 1;
-        bool changedTile = false;
-        if(Mathf.Approximately(direction.y, Vector2.up.y) || Mathf.Approximately(direction.y, Vector2.down.y))
-        {maxPercentage = 0.75f;
-        speedMultiplier = 0.6f;}
-        else
-        {maxPercentage = 0.85f;}
-
-            while(percentageDone <= maxPercentage)
-            {
-
-                if(percentageDone >= 0.3 && !changedTile)
-                {
-                    stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-                    stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
-                    moveOffTileOverriden(currentCellPos.x, currentCellPos.y, this);
-
-                    currentCellPos.Set(destinationCell.x, destinationCell.y, 0);
-
-                    moveOnToTileOverriden(currentCellPos.x, currentCellPos.y, this);
-                    stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
-                    changedTile = true;
-                }
-
-                worldTransform.Translate(direction * (speed*speedMultiplier) * Time.deltaTime);
-                movementSpeedTime += Time.deltaTime;
-                speed = movementSpeedCurve.Evaluate(movementSpeedTime);
-
-                currentDistance = Vector3.Distance(worldTransform.position,
-                stageHandler.stageTilemap.GetCellCenterWorld(destinationCell));
-
-                percentageDone = (Mathf.Clamp((maxDistance - currentDistance), 0, maxDistance)/maxDistance);
-                    
-
-                speed = movementSpeedCurve.Evaluate(movementSpeedTime);
-                //yield return null unblocks the thread and allows update to draw the next frame before 
-                //returning to this coroutine.
-                yield return null;
-            }
-        movementSpeedTime = 0;
-        worldTransform.position = stageHandler.stageTilemap.
-                                    GetCellCenterWorld(currentCellPos);
-        isMoving = false;
-    }
-
-    public override IEnumerator translateMove_Fixed(int x, int y)
-    {
-        if(isMoving)
-        {yield break;}
-        Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
-        if(!checkValidTile(destinationCell.x, destinationCell.y))
-        {
-            yield break;
-        }
-        isMoving = true;
-        Vector2Int direction = new Vector2Int(x, y);
-        movementSpeedTime = 0;
-        float yPosOnCurve = 0;
-        float xPosOnCurve = 0;
-        bool changedTile = false;
-
-
-        while(movementSpeedTime <= 0.1f)
-        {
-
-            if(movementSpeedTime >= 0.05f && !changedTile)
-            {
-                stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-                stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
-                moveOffTileOverriden(currentCellPos.x, currentCellPos.y, this);
-
-                currentCellPos.Set(destinationCell.x, destinationCell.y, 0);
-
-                moveOnToTileOverriden(currentCellPos.x, currentCellPos.y, this);
-                stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
-                changedTile = true;
-            }
-
-
-            movementSpeedTime += Time.deltaTime;
-            if(direction == Vector2Int.down || direction == Vector2Int.up)
-            {yPosOnCurve = Mathf.Clamp(yDistanceTimeCurve.Evaluate(movementSpeedTime), 0, 1.001f);}
-            else
-            {xPosOnCurve = Mathf.Clamp(xDistanceTimeCurve.Evaluate(movementSpeedTime), 0, 1.601f);}
-            worldTransform.position = new Vector3 (worldTransform.position.x + xPosOnCurve, worldTransform.position.y + yPosOnCurve, 0);
-
-            yield return null;
-        }
-        movementSpeedTime = 0;
-        //worldTransform.position = stageHandler.stageTilemap.
-        //                            GetCellCenterWorld(currentCellPos);    
-        isMoving = false;
-
-
-    }
-
-
     public IEnumerator playAnim(bool condition,
     EMegamanAnimations animEnum = EMegamanAnimations.Megaman_Idle,
     EMegamanAnimations transitionAnim = EMegamanAnimations.Megaman_Idle,
@@ -639,7 +530,7 @@ public static PlayerMovement Instance {get {return _instance;} }
 
     }
 
-
+//Used by animations to play sfx for chips
     public void PlayChipSFX(ChipObjectReference chip)
     {
             if(!chip.chipSORef.GetSFX().IsNull)
@@ -734,7 +625,7 @@ public static PlayerMovement Instance {get {return _instance;} }
 
         if(context.performed)
         {
-            FMODUnity.RuntimeManager.PlayOneShotAttached(BasicShotChargingEvent, this.gameObject);
+            FMODUnity.RuntimeManager.PlayOneShotAttached(BasicShotChargingSFX, this.gameObject);
             VFXCoroutine = StartCoroutine(VFXController.playVFXanim(true, PlayerVFXAnims.BasicShot_Charging, PlayerVFXAnims.BasicShot_FullyCharged, chargeDuration));
         }
 
@@ -743,10 +634,10 @@ public static PlayerMovement Instance {get {return _instance;} }
             if(context.duration >= chargeDuration)
             {
                 shotDamageMultiplier = 10;
-                FMODUnity.RuntimeManager.PlayOneShotAttached(ChargedShotEvent, transform.gameObject);
+                FMODUnity.RuntimeManager.PlayOneShotAttached(ChargedShotSFX, transform.gameObject);
             }else
             {
-                FMODUnity.RuntimeManager.PlayOneShotAttached(BasicShotEvent, transform.gameObject);
+                FMODUnity.RuntimeManager.PlayOneShotAttached(BasicShotSFX, transform.gameObject);
             }
 
            if(VFXCoroutine != null)
