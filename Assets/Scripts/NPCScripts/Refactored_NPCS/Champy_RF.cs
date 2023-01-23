@@ -14,8 +14,6 @@ internal enum ChampyAnims
 
 public class Champy_RF : BStageEntity
 {
-    public override event MoveOffTileEvent moveOnToTileOverriden;
-    public override event MoveOffTileEvent moveOffTileOverriden;
     public override event OnDeathEvent deathEvent;
 
     public override bool isGrounded { get; set; } = false;
@@ -34,7 +32,6 @@ public class Champy_RF : BStageEntity
 
     public override void Start()
     {
-        usingOverridenMovementMethod = true;
         player = FindObjectOfType<PlayerMovement>();
         champyCollider = GetComponent<BoxCollider2D>();
         currentCellPos.Set((int)(Math.Round((worldTransform.position.x/1.6f), MidpointRounding.AwayFromZero)),
@@ -85,7 +82,7 @@ public class Champy_RF : BStageEntity
         {yield break;}
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-        stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        stageHandler.SetPreviousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
         //moveOffTileOverriden(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
@@ -125,7 +122,7 @@ public class Champy_RF : BStageEntity
         StopCoroutine(AttackAnimation());
         tileEventManager.UnsubscribeEntity(this);
         yield return new WaitForSecondsRealtime(0.0005f);
-        FMODUnity.RuntimeManager.PlayOneShotAttached(EntityDestructionEvent, this.gameObject);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(DestroyedSFX, this.gameObject);
         setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
                                                 transform.rotation, transform.parent.transform);

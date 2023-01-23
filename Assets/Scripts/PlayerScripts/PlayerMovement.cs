@@ -46,8 +46,6 @@ public static PlayerMovement Instance {get {return _instance;} }
 
     [SerializeField] public List<ChipSO> PlayerChipQueue = new List<ChipSO>();
 
-    public override event MoveOffTileEvent moveOnToTileOverriden;
-    public override event MoveOffTileEvent moveOffTileOverriden;
 
     //firePoint is used for effects or chips that use raycasts to deal their effect.
     [SerializeField] public Transform firePoint;
@@ -64,11 +62,6 @@ public static PlayerMovement Instance {get {return _instance;} }
     public int shotDamageMultiplier = 1;
     [SerializeField] float chargeDuration = 0.1f;
 
-
-    public string Name => "Megaman";
-
-
-    public int ID => 3;
 
     public bool vulnerable { get;set;} = false;
     public override bool isGrounded { get ; set ; } = true;
@@ -124,8 +117,6 @@ public static PlayerMovement Instance {get {return _instance;} }
     public override void Start()
     {
 
-
-        usingOverridenMovementMethod = true;
         chipEffect = FindObjectOfType<ChipEffects>();
         chipSelectScreenMovement = FindObjectOfType<ChipSelectScreenMovement>();
         playerChipAnimations = GetComponent<PlayerChipAnimations>();

@@ -34,8 +34,7 @@ public abstract class BStageEntity : MonoBehaviour
     public event MoveOntoTileEvent moveOntoTile;
     public delegate void MoveOffTileEvent(int x, int y, BStageEntity entity);
     public event MoveOffTileEvent moveOffTile;
-    public virtual event MoveOffTileEvent moveOffTileOverriden;
-    public virtual event MoveOffTileEvent moveOnToTileOverriden;
+
 
 #endregion
 
@@ -49,7 +48,6 @@ public abstract class BStageEntity : MonoBehaviour
     protected Animator animator;
     [SerializeField] public TextMeshProUGUI healthText;
 
-    public bool usingOverridenMovementMethod = false;
     public float objectTimeScale = 1f;
 
     ///<summary>
@@ -66,7 +64,7 @@ public abstract class BStageEntity : MonoBehaviour
     public abstract bool isGrounded{get;set;}
 
     ///<summary>
-    ///Determines if the entity can be moved from its position
+    ///Determines if the entity can be moved from its initial position and cannot move from its position.
     ///</summary>
     public abstract bool isStationary{get;}
     public abstract bool isStunnable{get;}
@@ -99,15 +97,8 @@ public abstract class BStageEntity : MonoBehaviour
     protected Color opaque;
     public Color defaultColor;
 
-    [SerializeField] protected AnimationCurve movementSpeedCurve;
-    [SerializeField] protected float movementSpeedTime;
-    [SerializeField] protected AnimationCurve xDistanceTimeCurve;
-    [SerializeField] protected AnimationCurve yDistanceTimeCurve;
-
-
-    public EventReference EntityDestructionEvent;
-
     protected Coroutine AnimateHPCoroutine;
+    RectTransform DefaultHPNumberPosition;
     protected Coroutine isMovingCoroutine;
 
 #endregion
@@ -137,7 +128,9 @@ public abstract class BStageEntity : MonoBehaviour
         defaultColor = spriteRenderer.color;
         invisible.a = 0;
         opaque.a = 1;
-        EntityDestructionEvent = RuntimeManager.PathToEventReference("event:/EntityDestruction");
+
+        DefaultHPNumberPosition = (RectTransform)healthText.gameObject.transform.parent.transform;
+
     }
 
     public void SetUntargetable(bool condition)
@@ -171,9 +164,6 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
 
-
-
-
     public virtual void Start()
     {
         currentCellPos.Set((int)(Math.Round((worldTransform.position.x/1.6f), MidpointRounding.AwayFromZero)),
@@ -182,10 +172,6 @@ public abstract class BStageEntity : MonoBehaviour
         healthText.text = currentHP.ToString();
 
     }
-
-
-
-
 
 
     protected bool isAnimatingHP = false;
@@ -238,85 +224,104 @@ public abstract class BStageEntity : MonoBehaviour
             {
                 healthText.enabled = false;
             }
-
             StartCoroutine(DestroyEntity());
+            RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
             return;
         }
 
         StartCoroutine(DamageFlash());
+        RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
+
 
         currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
         if(AnimateHPCoroutine == null)
         {
             healthText.text = currentHP.ToString();
         }
+        AnimateShakeNumber(damage);
 
 
         return; 
     }
-    
-    public virtual void hurtEntity(int damage,
-                                   bool lightAttack,
-                                   bool hitFlinch,
-                                   bool pierceUntargetable = false,
-                                   EStatusEffects statusEffect = EStatusEffects.Default,
-                                   EChipElements attackElement = EChipElements.Normal
-                                   )
-    {
-        if(fullInvincible)
-        {return;}
-        if(isUntargetable && !pierceUntargetable)
-        {return;}
-
-        if(statusEffect != EStatusEffects.Default)
-        {StartCoroutine(setStatusEffect(statusEffect, 1));}
-
-        if(hurtEvent != null)
-        {
-            hurtEvent(this);
-        }
-
-        if(damage >= 10)
-        {
-            isAnimatingHP = true;
-
-            if(AnimateHPCoroutine != null)
-            {
-                StopCoroutine(AnimateHPCoroutine);
-            }
-
-            AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
-
-        }
 
 
-        if(damage >= currentHP)
-        {
-            animator.speed = Mathf.Epsilon;
-            currentHP = 0;
-            healthText.text = currentHP.ToString();
+    // public virtual void HurtEntity(int damage,
+    //                                bool lightAttack,
+    //                                bool hitFlinch,
+    //                                bool pierceUntargetable = false,
+    //                                EStatusEffects statusEffect = EStatusEffects.Default,
+    //                                EChipElements attackElement = EChipElements.Normal
+    //                                )
+    // {
+    //     if(fullInvincible)
+    //     {return;}
+    //     if(isUntargetable && !pierceUntargetable)
+    //     {return;}
+
+    //     if(statusEffect != EStatusEffects.Default)
+    //     {StartCoroutine(setStatusEffect(statusEffect, 1));}
+
+    //     if(hurtEvent != null)
+    //     {
+    //         hurtEvent(this);
+    //     }
+
+    //     if(damage >= 10)
+    //     {
+    //         isAnimatingHP = true;
+
+    //         if(AnimateHPCoroutine != null)
+    //         {
+    //             StopCoroutine(AnimateHPCoroutine);
+    //         }
+
+    //         AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
+
+    //     }
+
+
+    //     if(damage >= currentHP)
+    //     {
+    //         animator.speed = Mathf.Epsilon;
+    //         currentHP = 0;
+    //         healthText.text = currentHP.ToString();
             
-            if(AnimateHPCoroutine == null)
-            {
-                healthText.enabled = false;
-            }
+    //         if(AnimateHPCoroutine == null)
+    //         {
+    //             healthText.enabled = false;
+    //         }
 
-            StartCoroutine(DestroyEntity());
-            return;
-        }
+    //         StartCoroutine(DestroyEntity());
+    //         return;
+    //     }
 
-        StartCoroutine(DamageFlash());
-
-        currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
-        if(AnimateHPCoroutine == null)
-        {
-            healthText.text = currentHP.ToString();
-        }
+    //     StartCoroutine(DamageFlash());
+    //     RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
 
 
-        return; 
-    }
+
+    //     currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
+    //     if(AnimateHPCoroutine == null)
+    //     {
+    //         healthText.text = currentHP.ToString();
+    //     }
+
+
+    //     return; 
+    // }
     
+
+    ///<summary>
+    ///Different from HurtEntity; this one is for dealing indirect damage like poison effects
+    ///and subtracts HP directly from the target, bypassing any form of resistances. Can be
+    ///given a tickrate and duration for damage over time effects.
+    ///</summary>
+    public void DamageEntity(int damage, float tickrate = 0, float duration = 0)
+    {
+
+
+    }
+        
 
 
     public int getHealth()
@@ -335,7 +340,7 @@ public abstract class BStageEntity : MonoBehaviour
     {
         tileEventManager.UnsubscribeEntity(this);
         yield return new WaitForSecondsRealtime(0.0005f);
-        FMODUnity.RuntimeManager.PlayOneShotAttached(EntityDestructionEvent, this.gameObject);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(DestroyedSFX, this.gameObject);
         setSolidColor(Color.white);
         var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
                                                 transform.rotation, transform.parent.transform);
@@ -354,7 +359,7 @@ public abstract class BStageEntity : MonoBehaviour
     public void teleportToCell(int x, int y)
     {
             stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-            stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+            stageHandler.SetPreviousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
             previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
 
             currentCellPos.Set(x, y, 0);
@@ -422,7 +427,7 @@ public abstract class BStageEntity : MonoBehaviour
     public virtual void cellMove(int x, int y)
     {
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-        stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        stageHandler.SetPreviousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
         previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
 
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
@@ -449,6 +454,7 @@ public abstract class BStageEntity : MonoBehaviour
        switch (status) 
        {
         case EStatusEffects.Paralyzed:
+            if(!isStunnable){yield break;}
             if(nonVolatileStatus){yield break;}
             isStunned = true;
             nonVolatileStatus = true; 
@@ -467,7 +473,7 @@ public abstract class BStageEntity : MonoBehaviour
             break;
 
         case EStatusEffects.Frozen:
-
+            if(!isStunnable){yield break;}
             if(nonVolatileStatus){yield break;}
             isStunned = true;
             nonVolatileStatus = true; 
@@ -532,7 +538,7 @@ public abstract class BStageEntity : MonoBehaviour
         {yield break;}
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-        stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        stageHandler.SetPreviousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
         previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
 
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
@@ -561,7 +567,7 @@ public abstract class BStageEntity : MonoBehaviour
         {yield break;}
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-        stageHandler.previousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        stageHandler.SetPreviousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
         previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
@@ -649,5 +655,47 @@ public abstract class BStageEntity : MonoBehaviour
         AnimateHPCoroutine = null;
 
     }
+
+    [SerializeField]float HPShakeDuration = 0.12f;
+    [SerializeField]float HPShakeStrength = 0.2f;
+    [SerializeField]int HPShakeVibrato = 1000;
+
+    //Coroutine FadeColorCoroutine = null;
+    public void AnimateShakeNumber(int damage)
+    {
+        if(damage <= 10)
+        {
+            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration, HPShakeStrength*0.5f, HPShakeVibrato);
+
+        }else if(damage < 80 )
+        {
+            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration*1.5f, HPShakeStrength, HPShakeVibrato);
+
+            
+            StartCoroutine(FadeInAndOutColor(Color.white, Color.red, HPShakeDuration*1.5f));
+
+
+        }else
+        {
+            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration*2f, HPShakeStrength*1.5f, HPShakeVibrato);
+
+            StartCoroutine(FadeInAndOutColor(Color.white, Color.red, HPShakeDuration*2f));
+
+
+
+        }
+
+
+    }
+    IEnumerator FadeInAndOutColor(Color color1, Color color2, float duration)
+    {
+        healthText.DOColor(color2, duration*0.6f);
+        yield return new WaitForSecondsRealtime(duration*0.5f);
+        healthText.DOColor(color1, duration*0.4f);
+        //FadeColorCoroutine = null;
+        
+    }
+
+
 
 }

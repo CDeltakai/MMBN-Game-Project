@@ -257,7 +257,12 @@ public class BattleStageHandler : MonoBehaviour
 
     }
 
-    public void previousSeenEntity(int x, int y, BStageEntity entity, bool condition)
+    ///<summary>
+    ///Used to store what entity was previously on the given tile. Primarily used for
+    ///tile effects which occur after an entity has left the tile E.g. when a cracked tile
+    ///cracks fully.
+    ///</summary>
+    public void SetPreviousSeenEntity(int x, int y, BStageEntity entity, bool condition)
     {
         Vector3Int cell = new Vector3Int(x, y, 0);
         if(condition)

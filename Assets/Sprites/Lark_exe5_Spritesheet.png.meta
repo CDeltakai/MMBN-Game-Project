@@ -4,37 +4,37 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2302765147282936407
-    second: Lark_exe5_Spritesheet_0
+    second: LarkIdle1
   - first:
       213: -296364917832455836
-    second: Lark_exe5_Spritesheet_1
+    second: LarkIdle2
   - first:
       213: 6372079706818445139
-    second: Lark_exe5_Spritesheet_2
+    second: LarkIdle3
   - first:
       213: -1644003713257745329
-    second: Lark_exe5_Spritesheet_3
+    second: LarkIdle4
   - first:
       213: 647619865787138459
-    second: Lark_exe5_Spritesheet_4
+    second: LarkIdle5
   - first:
       213: -7060162659045087907
-    second: Lark_exe5_Spritesheet_5
+    second: LarkIdle6
   - first:
       213: 7383562410834766425
-    second: Lark_exe5_Spritesheet_6
+    second: LarkIdle7
   - first:
       213: 813568857738849014
-    second: Lark_exe5_Spritesheet_7
+    second: LarkIdle8
   - first:
       213: 6440926914534211491
-    second: Lark_exe5_Spritesheet_8
+    second: LarkFire1
   - first:
       213: -2363260431398597841
-    second: Lark_exe5_Spritesheet_9
+    second: LarkFire2
   - first:
       213: -5279668816516154340
-    second: Lark_exe5_Spritesheet_10
+    second: LarkFire3
   - first:
       213: 8475544754038588005
     second: Lark_exe5_Spritesheet_11
@@ -58,25 +58,25 @@ TextureImporter:
     second: Lark_exe5_Spritesheet_17
   - first:
       213: -2809097427517797558
-    second: Lark_exe5_Spritesheet_18
+    second: LarkProjectileInitiate1
   - first:
       213: 5839029144942229643
-    second: Lark_exe5_Spritesheet_19
+    second: LarkProjectileInitiate2
   - first:
       213: 295496173848447091
-    second: Lark_exe5_Spritesheet_20
+    second: LarkProjectileInitiate3
   - first:
       213: -2413139248747206585
-    second: Lark_exe5_Spritesheet_21
+    second: LarkProjectileContinue1
   - first:
       213: 2630573718130287394
-    second: Lark_exe5_Spritesheet_22
+    second: LarkProjectileContinue2
   - first:
       213: -6104673658179087492
-    second: Lark_exe5_Spritesheet_23
+    second: LarkProjectileContinue3
   - first:
       213: 6250372599675118606
-    second: Lark_exe5_Spritesheet_24
+    second: LarkProjectileContinue4
   - first:
       213: 3281581445621138792
     second: Lark_exe5_Spritesheet_25
@@ -205,15 +205,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_0
+      name: LarkIdle1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 336
-        width: 61
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 4
+        y: 331
+        width: 62
+        height: 49
+      alignment: 9
+      pivot: {x: 0.9354838, y: 0.20408162}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,15 +226,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_1
+      name: LarkIdle2
       rect:
         serializedVersion: 2
-        x: 73
-        y: 336
-        width: 61
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 72
+        y: 331
+        width: 62
+        height: 49
+      alignment: 9
+      pivot: {x: 0.9354838, y: 0.20408162}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,15 +247,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_2
+      name: LarkIdle3
       rect:
         serializedVersion: 2
         x: 140
         y: 331
         width: 62
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 49
+      alignment: 9
+      pivot: {x: 0.9354838, y: 0.20408162}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,15 +268,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_3
+      name: LarkIdle4
       rect:
         serializedVersion: 2
-        x: 208
+        x: 207
         y: 331
         width: 62
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 49
+      alignment: 9
+      pivot: {x: 0.9516129, y: 0.20408162}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,15 +289,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_4
+      name: LarkIdle5
       rect:
         serializedVersion: 2
-        x: 277
+        x: 276
         y: 331
-        width: 61
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 62
+        height: 49
+      alignment: 9
+      pivot: {x: 0.9354838, y: 0.20408162}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -310,15 +310,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_5
+      name: LarkIdle6
       rect:
         serializedVersion: 2
-        x: 345
+        x: 344
         y: 331
-        width: 61
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 62
+        height: 49
+      alignment: 9
+      pivot: {x: 0.9354838, y: 0.20408162}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -331,15 +331,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_6
+      name: LarkIdle7
       rect:
         serializedVersion: 2
         x: 412
-        y: 336
+        y: 331
         width: 62
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 49
+      alignment: 9
+      pivot: {x: 0.9354838, y: 0.20408162}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -352,15 +352,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_7
+      name: LarkIdle8
       rect:
         serializedVersion: 2
         x: 480
-        y: 336
+        y: 331
         width: 62
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 49
+      alignment: 9
+      pivot: {x: 0.9354838, y: 0.20408162}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -373,15 +373,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_8
+      name: LarkFire1
       rect:
         serializedVersion: 2
         x: 173
         y: 272
         width: 61
         height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.9344262, y: 0.121951215}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -394,15 +394,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_9
+      name: LarkFire2
       rect:
         serializedVersion: 2
         x: 244
         y: 272
         width: 50
         height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 1, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -415,15 +415,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_10
+      name: LarkFire3
       rect:
         serializedVersion: 2
         x: 304
         y: 272
         width: 76
         height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.881579, y: 0.1388889}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -444,7 +444,7 @@ TextureImporter:
         width: 61
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -465,7 +465,7 @@ TextureImporter:
         width: 61
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -486,7 +486,7 @@ TextureImporter:
         width: 61
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -507,7 +507,7 @@ TextureImporter:
         width: 61
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -528,7 +528,7 @@ TextureImporter:
         width: 61
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -549,7 +549,7 @@ TextureImporter:
         width: 61
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -570,7 +570,7 @@ TextureImporter:
         width: 126
         height: 55
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -583,15 +583,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_18
+      name: LarkProjectileInitiate1
       rect:
         serializedVersion: 2
         x: 231
-        y: 114
-        width: 13
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 99
+        width: 24
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -604,15 +604,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_19
+      name: LarkProjectileInitiate2
       rect:
         serializedVersion: 2
-        x: 264
-        y: 106
+        x: 265
+        y: 99
         width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -625,15 +625,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_20
+      name: LarkProjectileInitiate3
       rect:
         serializedVersion: 2
         x: 312
         y: 99
-        width: 14
+        width: 24
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -646,7 +646,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_21
+      name: LarkProjectileContinue1
       rect:
         serializedVersion: 2
         x: 200
@@ -654,7 +654,7 @@ TextureImporter:
         width: 38
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -667,7 +667,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_22
+      name: LarkProjectileContinue2
       rect:
         serializedVersion: 2
         x: 257
@@ -675,7 +675,7 @@ TextureImporter:
         width: 20
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -688,7 +688,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_23
+      name: LarkProjectileContinue3
       rect:
         serializedVersion: 2
         x: 290
@@ -696,7 +696,7 @@ TextureImporter:
         width: 32
         height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -709,7 +709,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lark_exe5_Spritesheet_24
+      name: LarkProjectileContinue4
       rect:
         serializedVersion: 2
         x: 334
@@ -717,7 +717,7 @@ TextureImporter:
         width: 23
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -738,7 +738,7 @@ TextureImporter:
         width: 82
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

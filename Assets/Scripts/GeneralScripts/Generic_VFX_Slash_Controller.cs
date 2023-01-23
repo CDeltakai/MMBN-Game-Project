@@ -54,7 +54,9 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
 
                 
                 entity.hurtEntity((int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
-                InheritedChip.IsLightAttack(), InheritedChip.IsHitFlinch(), player, StatusEffect);
+                InheritedChip.IsLightAttack(), InheritedChip.IsHitFlinch(), player, false, StatusEffect, EChipElements.Blade);
+
+          
 
             return;
             }
