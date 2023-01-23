@@ -27,11 +27,11 @@ MonoBehaviour:
   EffectScript: Airshot
   SFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1168157214
+      Data2: 1324965301
+      Data3: -1812667728
+      Data4: 1147848940
+    Path: event:/AirShot
   AdditionalSFX: []
   AnimationToUse: 100
   ObjectSummon: {fileID: 0}

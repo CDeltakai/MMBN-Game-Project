@@ -183,7 +183,7 @@ public abstract class BStageEntity : MonoBehaviour
     public virtual void hurtEntity(int damage,
                                    bool lightAttack,
                                    bool hitFlinch,
-                                   BStageEntity attacker,
+                                   BStageEntity attacker = null,
                                    bool pierceUntargetable = false,
                                    EStatusEffects statusEffect = EStatusEffects.Default,
                                    EChipElements attackElement = EChipElements.Normal                                   
@@ -244,71 +244,6 @@ public abstract class BStageEntity : MonoBehaviour
         return; 
     }
 
-
-    // public virtual void HurtEntity(int damage,
-    //                                bool lightAttack,
-    //                                bool hitFlinch,
-    //                                bool pierceUntargetable = false,
-    //                                EStatusEffects statusEffect = EStatusEffects.Default,
-    //                                EChipElements attackElement = EChipElements.Normal
-    //                                )
-    // {
-    //     if(fullInvincible)
-    //     {return;}
-    //     if(isUntargetable && !pierceUntargetable)
-    //     {return;}
-
-    //     if(statusEffect != EStatusEffects.Default)
-    //     {StartCoroutine(setStatusEffect(statusEffect, 1));}
-
-    //     if(hurtEvent != null)
-    //     {
-    //         hurtEvent(this);
-    //     }
-
-    //     if(damage >= 10)
-    //     {
-    //         isAnimatingHP = true;
-
-    //         if(AnimateHPCoroutine != null)
-    //         {
-    //             StopCoroutine(AnimateHPCoroutine);
-    //         }
-
-    //         AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
-
-    //     }
-
-
-    //     if(damage >= currentHP)
-    //     {
-    //         animator.speed = Mathf.Epsilon;
-    //         currentHP = 0;
-    //         healthText.text = currentHP.ToString();
-            
-    //         if(AnimateHPCoroutine == null)
-    //         {
-    //             healthText.enabled = false;
-    //         }
-
-    //         StartCoroutine(DestroyEntity());
-    //         return;
-    //     }
-
-    //     StartCoroutine(DamageFlash());
-    //     RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
-
-
-
-    //     currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
-    //     if(AnimateHPCoroutine == null)
-    //     {
-    //         healthText.text = currentHP.ToString();
-    //     }
-
-
-    //     return; 
-    // }
     
 
     ///<summary>
@@ -408,7 +343,7 @@ public abstract class BStageEntity : MonoBehaviour
     ///<summary>
     ///Wrapper method for cellMove which includes checkValidTile before moving
     ///</summary>
-    public void cellMove_verified(int x, int y)
+    public void cellMoveVerified(int x, int y)
     {
         if(!checkValidTile(currentCellPos.x + x, currentCellPos.y + y))
         {return;}
@@ -531,11 +466,54 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
 
+    public bool checkIfAdjacentToEntity(int x, int y)
+    {
+        return false;
+
+    }
+
+///<summary>
+///forcefully moves the entity a given distance. Will deal damage to this entity
+///if shoved into an obstacle. If the obstacle is another entity, will also deal damage
+///to that colliding entity. Damage dealt scales with the strength of the shove. 
+///</summary> 
     public IEnumerator Shove(int x, int y)
     {
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
-        if(!checkValidTile(destinationCell.x, destinationCell.y))
+        Vector3 currentWorldPosition = stageHandler.stageTilemap.GetCellCenterWorld(currentCellPos);
+        Vector3 destinationWorldPosition = stageHandler.stageTilemap.GetCellCenterWorld(destinationCell);
+
+        if(!checkValidTile(destinationCell.x, destinationCell.y) &&
+        stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y) == null)
         {yield break;}
+
+        if(stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y) != null)
+        {
+            if(Math.Abs(currentCellPos.x - destinationCell.x) == 1 )
+            {
+                worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).SetEase(Ease.OutCirc);
+                
+                yield return new WaitForSecondsRealtime(0.10f);
+                hurtEntity(40, false, true);
+                worldTransform.DOMove(currentWorldPosition, 0.15f ).SetEase(Ease.OutExpo);
+                yield return new WaitForSecondsRealtime(0.05f);
+                stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(40, false, true);                
+
+            }else if(Math.Abs(currentCellPos.y - destinationCell.y) == 1)
+            {
+                worldTransform.DOMove(new Vector3(destinationWorldPosition.x, destinationWorldPosition.y*0.5f, 0), 0.15f ).SetEase(Ease.OutCirc);
+                yield return new WaitForSecondsRealtime(0.15f);
+                worldTransform.DOMove(currentCellPos, 0.15f ).SetEase(Ease.OutExpo);
+
+
+            }
+
+            yield break;
+
+            
+
+
+        }
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.SetPreviousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
@@ -665,11 +643,11 @@ public abstract class BStageEntity : MonoBehaviour
     {
         if(damage <= 10)
         {
-            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration, HPShakeStrength*0.5f, HPShakeVibrato);
+            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration, HPShakeStrength*0.5f, HPShakeVibrato).SetUpdate(true);
 
         }else if(damage < 80 )
         {
-            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration*1.5f, HPShakeStrength, HPShakeVibrato);
+            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration*1.5f, HPShakeStrength, HPShakeVibrato).SetUpdate(true);
 
             
             StartCoroutine(FadeInAndOutColor(Color.white, Color.red, HPShakeDuration*1.5f));
@@ -677,7 +655,7 @@ public abstract class BStageEntity : MonoBehaviour
 
         }else
         {
-            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration*2f, HPShakeStrength*1.5f, HPShakeVibrato);
+            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration*2f, HPShakeStrength*1.5f, HPShakeVibrato).SetUpdate(true);
 
             StartCoroutine(FadeInAndOutColor(Color.white, Color.red, HPShakeDuration*2f));
 
@@ -689,9 +667,9 @@ public abstract class BStageEntity : MonoBehaviour
     }
     IEnumerator FadeInAndOutColor(Color color1, Color color2, float duration)
     {
-        healthText.DOColor(color2, duration*0.6f);
+        healthText.DOColor(color2, duration*0.6f).SetUpdate(true);
         yield return new WaitForSecondsRealtime(duration*0.5f);
-        healthText.DOColor(color1, duration*0.4f);
+        healthText.DOColor(color1, duration*0.4f).SetUpdate(true);
         //FadeColorCoroutine = null;
         
     }

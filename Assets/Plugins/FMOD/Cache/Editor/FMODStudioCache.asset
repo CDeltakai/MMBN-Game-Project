@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638100720061234912
+  lastModified: 638100898232566604
   FileSizes:
   - Name: Desktop
     Value: 130560
@@ -62,10 +62,10 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638100720059952484
+  lastModified: 638100898231785000
   FileSizes:
   - Name: Desktop
-    Value: 1724
+    Value: 1762
   Exists: 1
 --- !u!114 &-2834223847602432238
 MonoBehaviour:
@@ -82,7 +82,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638100720059883628
+  lastModified: 638100898231715005
   FileSizes:
   - Name: Desktop
     Value: 51168
@@ -134,6 +134,33 @@ MonoBehaviour:
     Data4: 1837944466
   Banks:
   - {fileID: -8230485722005867804}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2240635093966848894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AirShot
+  m_EditorClassIdentifier: 
+  Path: event:/AirShot
+  Guid:
+    Data1: 1168157214
+    Data2: 1324965301
+    Data3: -1812667728
+    Data4: 1147848940
+  Banks:
+  - {fileID: 1876620492015071895}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -237,7 +264,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638100720060007938
+  lastModified: 638100898231834992
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -257,10 +284,10 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/NPCSFX.bank
   Name: NPCSFX
   StudioPath: bank:/NPCSFX
-  lastModified: 638100720060287507
+  lastModified: 638100898232120056
   FileSizes:
   - Name: Desktop
-    Value: 4704
+    Value: 5056
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -299,12 +326,13 @@ MonoBehaviour:
   - {fileID: 7215367425252764598}
   - {fileID: 2459235585389975159}
   - {fileID: 3093292336632789617}
+  - {fileID: -2240635093966848894}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2834223847602432238}
   StringsBanks:
   - {fileID: -8211752414539646085}
-  cacheTime: 638100720061694922
+  cacheTime: 638100898232878281
   cacheVersion: 131591
 --- !u!114 &104925123999711182
 MonoBehaviour:
@@ -348,7 +376,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/UISFXBank.bank
   Name: UISFXBank
   StudioPath: bank:/UISFXBank
-  lastModified: 638100720061694922
+  lastModified: 638100898232878281
   FileSizes:
   - Name: Desktop
     Value: 16160
@@ -395,10 +423,10 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/ChipSFX.bank
   Name: ChipSFX
   StudioPath: bank:/ChipSFX
-  lastModified: 638100720059141138
+  lastModified: 638100898231358341
   FileSizes:
   - Name: Desktop
-    Value: 75008
+    Value: 92800
   Exists: 1
 --- !u!114 &2449754375032252007
 MonoBehaviour:

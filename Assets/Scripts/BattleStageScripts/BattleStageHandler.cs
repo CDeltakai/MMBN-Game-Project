@@ -207,10 +207,21 @@ public class BattleStageHandler : MonoBehaviour
         return null;
     }
 
+
+    ///<summary>
+    ///Returns the entity at the given coordinates. Returns null if no entity is found.
+    ///</summary>
     public BStageEntity getEntityAtCell(int x , int y)
     {
         Vector3Int cell = new Vector3Int(x, y, 0);
-        return stageTiles[stageTilemap.CellToWorld(cell)].entity;
+        if(stageTiles[stageTilemap.CellToWorld(cell)].entity != null)
+        {
+            return stageTiles[stageTilemap.CellToWorld(cell)].entity;
+        }else
+        {
+            print("No entity found at cell position " + x + ", " + y);
+            return null;
+        }
 
     }
 
@@ -256,6 +267,8 @@ public class BattleStageHandler : MonoBehaviour
         }
 
     }
+
+
 
     ///<summary>
     ///Used to store what entity was previously on the given tile. Primarily used for

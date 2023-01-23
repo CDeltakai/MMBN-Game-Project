@@ -1512,6 +1512,135 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+--- !u!1001 &1852734613
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 339450256, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: currentHP
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: HurtSFX.Path
+      value: event:/EnemyDamaged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: DestroyedSFX.Path
+      value: event:/EntityDestruction
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: HurtSFX.Guid.Data1
+      value: -1182195709
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: HurtSFX.Guid.Data2
+      value: 1298215384
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: HurtSFX.Guid.Data3
+      value: 312876713
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: HurtSFX.Guid.Data4
+      value: 938022413
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data1
+      value: -1981591353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data2
+      value: 1074667412
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data3
+      value: 1756969093
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data4
+      value: -1337237257
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777973945, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503680530704742596, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503680530704742596, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503680530704742596, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503680530704742596, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503680530704742596, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576332, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_Name
+      value: Mettaur (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8181ba0437ec144098831057b1a7631, type: 3}
 --- !u!1 &1893985269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1681,46 @@ PrefabInstance:
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: currentHP
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: HurtSFX.Path
+      value: event:/EnemyDamaged
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: DestroyedSFX.Path
+      value: event:/EntityDestruction
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: HurtSFX.Guid.Data1
+      value: -1182195709
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: HurtSFX.Guid.Data2
+      value: 1298215384
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: HurtSFX.Guid.Data3
+      value: 312876713
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: HurtSFX.Guid.Data4
+      value: 938022413
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data1
+      value: -1981591353
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data2
+      value: 1074667412
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data3
+      value: 1756969093
+      objectReference: {fileID: 0}
+    - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data4
+      value: -1337237257
       objectReference: {fileID: 0}
     - target: {fileID: 1960042378351672794, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: m_Name
@@ -1742,6 +1911,46 @@ PrefabInstance:
     - target: {fileID: 3069419181064053915, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: HurtSFX.Path
+      value: event:/EnemyDamaged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: DestroyedSFX.Path
+      value: event:/EntityDestruction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: HurtSFX.Guid.Data1
+      value: -1182195709
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: HurtSFX.Guid.Data2
+      value: 1298215384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: HurtSFX.Guid.Data3
+      value: 312876713
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: HurtSFX.Guid.Data4
+      value: 938022413
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data1
+      value: -1981591353
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data2
+      value: 1074667412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data3
+      value: 1756969093
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069419181544434901, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}
+      propertyPath: DestroyedSFX.Guid.Data4
+      value: -1337237257
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b9402eac9e0f194ab27b859e691ec1a, type: 3}

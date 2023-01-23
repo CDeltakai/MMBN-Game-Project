@@ -33,7 +33,7 @@ MonoBehaviour:
       Data4: 206725983
     Path: event:/EnergySwordSlash
   AdditionalSFX: []
-  AnimationToUse: 0
+  AnimationToUse: 105
   ObjectSummon: {fileID: 0}
   EffectPrefab: {fileID: 0}
   effectMechanism: 0
