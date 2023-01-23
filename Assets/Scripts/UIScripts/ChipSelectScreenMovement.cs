@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using FMODUnity;
+using TMPro;
 
 public class ChipSelectScreenMovement : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class ChipSelectScreenMovement : MonoBehaviour
     [SerializeField] List<ChipObjectReference> selectableChipRefs;
     [SerializeField] GameObject[] chipButtons;
     [SerializeField] GameObject[] ActiveChipSlots;
+
+    [SerializeField] GameObject ChipDescriptor;
     PlayerMovement playerMovement;
     ChipLoadManager chipLoadManager;
 
@@ -225,9 +228,15 @@ public class ChipSelectScreenMovement : MonoBehaviour
     }
 
 
-    public void OnChipHover()
+    public void OnChipHover(ChipSlot chipSlot)
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(ChipHoverVFX, this.gameObject);
+        print(chipSlot.getChipObjRef().chipSORef.GetChipDescription());
+        if(chipSlot.getChipObjRef() != null)
+        {
+            ChipDescriptor.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipDescription();
+        }
+
     }
 
     //OK Button Functionality

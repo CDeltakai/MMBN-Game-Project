@@ -44,6 +44,8 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] string ChipName;
     [SerializeField] int BaseDamage;
     [SerializeField] Sprite ChipImage;
+
+[TextArea(10,20)]
     [SerializeField] string ChipDescription;
     [SerializeField] EChipElements ChipElement;
     [SerializeField] int ChipSize;

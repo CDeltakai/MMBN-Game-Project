@@ -18,7 +18,11 @@ MonoBehaviour:
   ChipName: Airshot
   BaseDamage: 20
   ChipImage: {fileID: -8654738730210548499, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
-  ChipDescription: Pushes enemy 1 tile back
+  ChipDescription: 'Deals 20 damage and shoves an enemy 1 tile back.
+
+
+    Shoved
+    enemies take additional damage if they are shoved into an obstacle.'
   ChipElement: 1
   ChipSize: 4
   AnimationDuration: 0.25
