@@ -21,6 +21,7 @@ public class Mettaur_RF : BStageEntity
     public bool isAttacking = false;
     public const float attackAnimationDuration = 1.167f;
     BoxCollider2D mettaurCollider;
+    [SerializeField] GameObject mettaurProjectile;
 
 
 
@@ -62,9 +63,10 @@ public class Mettaur_RF : BStageEntity
         {direction = -1.6f;}
         else
         {direction = 1.6f;};
+        Instantiate(mettaurProjectile, new Vector2(worldTransform.position.x + direction, worldTransform.position.y), transform.rotation);
 
-        Addressables.InstantiateAsync
-        ("mettaurProjectile", new Vector2(worldTransform.position.x + direction, worldTransform.position.y), transform.rotation);
+        // Addressables.InstantiateAsync
+        // ("mettaurProjectile", new Vector2(worldTransform.position.x + direction, worldTransform.position.y), transform.rotation);
     }
 
 }

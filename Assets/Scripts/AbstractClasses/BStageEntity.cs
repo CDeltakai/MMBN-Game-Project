@@ -42,6 +42,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     protected static TileEventManager tileEventManager;
     protected static BattleStageHandler stageHandler;
+    [HideInInspector]
     public SpriteRenderer spriteRenderer;
     protected static Shader shaderGUItext;
     protected static Shader shaderSpritesDefault;
@@ -100,6 +101,9 @@ public abstract class BStageEntity : MonoBehaviour
     protected Coroutine AnimateHPCoroutine;
     RectTransform DefaultHPNumberPosition;
     protected Coroutine isMovingCoroutine;
+
+
+    [SerializeField] GameObject destructionVFX;
 
 #endregion
 
@@ -224,8 +228,10 @@ public abstract class BStageEntity : MonoBehaviour
             {
                 healthText.enabled = false;
             }
-            StartCoroutine(DestroyEntity());
+            fullInvincible = true;
             RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
+            AnimateShakeNumber(damage);            
+            StartCoroutine(DestroyEntity());
             return;
         }
 
@@ -277,8 +283,11 @@ public abstract class BStageEntity : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.0005f);
         FMODUnity.RuntimeManager.PlayOneShotAttached(DestroyedSFX, this.gameObject);
         setSolidColor(Color.white);
-        var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
-                                                transform.rotation, transform.parent.transform);
+        Instantiate(destructionVFX, transform.parent.transform.position, 
+                    transform.rotation, transform.parent.transform);
+
+        // var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
+        //                                         transform.rotation, transform.parent.transform);
         yield return new WaitForSecondsRealtime(0.533f);
         if(deathEvent != null)
         {
@@ -466,11 +475,6 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
 
-    public bool checkIfAdjacentToEntity(int x, int y)
-    {
-        return false;
-
-    }
 
 ///<summary>
 ///forcefully moves the entity a given distance. Will deal damage to this entity
@@ -509,8 +513,6 @@ public abstract class BStageEntity : MonoBehaviour
             }
 
             yield break;
-
-            
 
 
         }

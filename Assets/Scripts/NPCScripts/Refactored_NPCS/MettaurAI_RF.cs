@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,20 +46,20 @@ public class MettaurAI_RF : MonoBehaviour
             if(mettaurPosition.y == targetPosition.y)
             {
                 StartCoroutine(mettaur.AttackAnimation());
-                movementCooldownTimer = movementCooldown;
+                movementCooldownTimer = movementCooldown + UnityEngine.Random.Range(0.1f, 0.2f);
             }
             else
             if(mettaurPosition.y < targetPosition.y)
             {
                 //mettaur.cellMoveUp();
                 mettaur.cellMoveVerified(0, 1);
-                movementCooldownTimer = movementCooldown;
+                movementCooldownTimer = movementCooldown + UnityEngine.Random.Range(0.1f, 0.2f);;
             }else
             if(mettaurPosition.y > targetPosition.y)
             {
                 //mettaur.cellMoveDown();
                 mettaur.cellMoveVerified(0, -1);
-                movementCooldownTimer = movementCooldown;
+                movementCooldownTimer = movementCooldown + UnityEngine.Random.Range(0.1f, 0.2f);;
             }
 
         }

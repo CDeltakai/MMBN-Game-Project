@@ -231,7 +231,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     public void OnChipHover(ChipSlot chipSlot)
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(ChipHoverVFX, this.gameObject);
-        print(chipSlot.getChipObjRef().chipSORef.GetChipDescription());
+        //print(chipSlot.getChipObjRef().chipSORef.GetChipDescription());
         if(chipSlot.getChipObjRef() != null)
         {
             ChipDescriptor.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipDescription();
@@ -240,31 +240,6 @@ public class ChipSelectScreenMovement : MonoBehaviour
     }
 
     //OK Button Functionality
-    // public void LoadIntoChipQueue()
-    // {
-    //     FMODUnity.RuntimeManager.PlayOneShotAttached(OKButtonVFX, this.gameObject);
-
-    //     foreach(ChipSO chip in activeChips)
-    //     {
-    //         chipLoadManager.chipQueue.Add(chip);
-    //     }
-
-    //         activeChips.Clear();
-    
-
-    //     for (int i = 0; i < ActiveChipSlotAccumulator; i++)
-    //     {
-    //     ActiveChipSlots[i].GetComponent<ChipSlot>().clearChip();
-    //     }
-
-    //     ActiveChipSlotAccumulator = 0;
-    //     chipLoadManager.calcNextChipLoad();
-
-
-    //     print("Class: ChipSelectScreenMovement, attempted calcNextChipLoad()");
-    //     ToggleChipMenu();       
-    // }
-
     public void LoadRefsIntoQueue()
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(OKButtonVFX, this.gameObject);

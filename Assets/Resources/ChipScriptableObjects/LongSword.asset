@@ -18,7 +18,9 @@ MonoBehaviour:
   ChipName: LongSword
   BaseDamage: 80
   ChipImage: {fileID: 3702733806151467343, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
-  ChipDescription: Swing sword 2 tiles forward
+  ChipDescription: 'Longsword:
+
+    Swing sword 2 tiles forward'
   ChipElement: 2
   ChipSize: 24
   AnimationDuration: 0.375

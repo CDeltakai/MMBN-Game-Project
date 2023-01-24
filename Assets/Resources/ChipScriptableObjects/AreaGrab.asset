@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
-  m_Name: Invisible
+  m_Name: AreaGrab
   m_EditorClassIdentifier: 
-  Id: 94c27e922d8acb44bb1536945c422a43
-  ChipID: 3
-  Chip: 104
-  ChipName: Invisible
+  Id: 2e28090f069a1ac4b88f82eaae47c020
+  ChipID: 4
+  Chip: 101
+  ChipName: Area Grab
   BaseDamage: 0
-  ChipImage: {fileID: -7587512733787768913, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
-  ChipDescription: Grants temporary CONCEALMENT
-  ChipElement: 10
-  ChipSize: 30
-  AnimationDuration: -0.005
+  ChipImage: {fileID: -7076212780686466202, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
+  ChipDescription: 'Area Grab:
+
+    Steals 1 column of tiles. Will not steal tiles
+    occupied by enemies.'
+  ChipElement: 0
+  ChipSize: 8
+  AnimationDuration: 0.05
   ChipType: 3
   BaseStatusEffect: 0
-  EffectScript: Invisible
+  EffectScript: AreaGrab
   SFX:
     Guid:
       Data1: 0
@@ -35,8 +38,8 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationToUse: 0
   ObjectSummon: {fileID: 0}
-  EffectPrefab: {fileID: 8522378739733520832, guid: c684134fd95bddc4f9549892f3265cd5, type: 3}
-  effectMechanism: 4
+  EffectPrefab: {fileID: 1858245700066143820, guid: c7d2b95ebc501c6428bbcc5953c052b1, type: 3}
+  effectMechanism: 2
   pierceUntargetable: 0
   lightAttack: 0
   hitFlinch: 0

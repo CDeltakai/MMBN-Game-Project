@@ -53,7 +53,7 @@ void FillChipRefInventory()
 
 void FillChipInventory()
 {
-    chipLoad = Resources.LoadAll<ChipSO>("Chips");
+    chipLoad = Resources.LoadAll<ChipSO>("ChipScriptableObjects");
 
     foreach(ChipSO chip in chipLoad)
     {
