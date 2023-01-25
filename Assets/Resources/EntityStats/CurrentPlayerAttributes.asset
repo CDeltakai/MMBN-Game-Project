@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59d49cde25aaed34c9d56b21956f4aaa, type: 3}
-  m_Name: Default Player Attributes
+  m_Name: CurrentPlayerAttributes
   m_EditorClassIdentifier: 
   BaseHP: 100
-  CurrentMaxHP: 100
+  CurrentMaxHP: 5000
   NumberOfHPUpgrades: 0
   BaseShieldHP: 0
   MaxShieldHP: 50
-  BaseEnergy: 5
-  MaxEnergy: 5
+  BaseEnergy: 0
+  MaxEnergy: 0
   BasicShotDamage: 5
   MinimumChargeSpeed: 0.75
   ChargeSpeed: 2.5
   GlobalOffenseMultiplier: 1
   GlobalDefenseMultiplier: 1
-  MaxSelectableChips: 5
+  MaxSelectableChips: 10
   MaxActiveChips: 5
   HasSuperArmor: 0
-  IsGrounded: 1
-  IsStunnable: 1
+  IsGrounded: 0
+  IsStunnable: 0
   BaseDeckCapacity: 30
   CurrentDeckCapacity: 30
   CurrentDeckLoadouts: 2

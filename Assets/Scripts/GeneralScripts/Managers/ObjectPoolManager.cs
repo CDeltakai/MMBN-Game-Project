@@ -8,7 +8,6 @@ public class ChipObjectReference
     [SerializeField] internal ChipSO chipSORef;
     [SerializeField] internal GameObject effectPrefab;
     [SerializeField] internal GameObject ObjectSummon;
-    internal ChipEffectBlueprint chipEffectScript;
 
 }
 
@@ -66,7 +65,6 @@ public class ObjectPoolManager : MonoBehaviour
                     chipSORef = chip,
                     effectPrefab = prefab,
                     ObjectSummon = objectSummon,
-                    chipEffectScript = prefab.GetComponent<ChipEffectBlueprint>()
                 };
 
                 prefab.SetActive(false);

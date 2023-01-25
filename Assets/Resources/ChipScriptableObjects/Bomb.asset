@@ -17,15 +17,16 @@ MonoBehaviour:
   Chip: 111
   ChipName: Bomb
   BaseDamage: 80
-  ChipImage: {fileID: 8803355929822962066, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
+  ChipElement: 0
+  ChipSize: 4
+  EnergyCost: 1
+  ChipType: 1
+  BaseStatusEffect: 0
   ChipDescription: 'Bomb:
 
     Throw bomb 4 tiles forward, dealing 80 damage.'
-  ChipElement: 0
-  ChipSize: 4
+  ChipImage: {fileID: 8803355929822962066, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0.2
-  ChipType: 1
-  BaseStatusEffect: 0
   EffectScript: Bomb
   SFX:
     Guid:

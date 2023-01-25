@@ -8,8 +8,7 @@ using UnityEngine.AddressableAssets;
 using System;
 using DG.Tweening;
 using FMODUnity;
-
-
+using UnityEditor.Timeline;
 
 public abstract class BStageEntity : MonoBehaviour
 {
@@ -101,6 +100,7 @@ public abstract class BStageEntity : MonoBehaviour
     protected Coroutine AnimateHPCoroutine;
     RectTransform DefaultHPNumberPosition;
     protected Coroutine isMovingCoroutine;
+    protected Coroutine EntityDestructionCoroutine;
 
 
     [SerializeField] GameObject destructionVFX;
@@ -220,18 +220,13 @@ public abstract class BStageEntity : MonoBehaviour
 
         if(damage >= currentHP)
         {
-            animator.speed = Mathf.Epsilon;
-            currentHP = 0;
-            healthText.text = currentHP.ToString();
-            
-            if(AnimateHPCoroutine == null)
-            {
-                healthText.enabled = false;
-            }
-            fullInvincible = true;
+
             RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
-            AnimateShakeNumber(damage);            
+            AnimateShakeNumber(damage);
+
+
             StartCoroutine(DestroyEntity());
+
             return;
         }
 
@@ -262,7 +257,30 @@ public abstract class BStageEntity : MonoBehaviour
 
 
     }
-        
+    IEnumerator DamageOverTime(int damage, float tickrate, float duration)
+    {
+        float damageDuration = duration;
+        WaitForSeconds damageTick = new WaitForSeconds(tickrate);
+
+        while(damageDuration >= 0)
+        {
+            if(damage >= currentHP)
+            {
+                break;
+            }
+
+            currentHP -= damage;
+
+            yield return damageTick;
+
+            damageDuration -= tickrate;
+            
+
+        }
+
+
+        yield return null;
+    }        
 
 
     public int getHealth()
@@ -279,7 +297,16 @@ public abstract class BStageEntity : MonoBehaviour
 
     public virtual IEnumerator DestroyEntity()
     {
-        tileEventManager.UnsubscribeEntity(this);
+        animator.speed = Mathf.Epsilon;
+        currentHP = 0;
+        healthText.text = currentHP.ToString();
+            
+        if(AnimateHPCoroutine == null)
+        {
+            healthText.enabled = false;
+        }
+        fullInvincible = true;
+
         yield return new WaitForSecondsRealtime(0.0005f);
         FMODUnity.RuntimeManager.PlayOneShotAttached(DestroyedSFX, this.gameObject);
         setSolidColor(Color.white);
@@ -289,12 +316,19 @@ public abstract class BStageEntity : MonoBehaviour
         // var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
         //                                         transform.rotation, transform.parent.transform);
         yield return new WaitForSecondsRealtime(0.533f);
+
+        if(AnimateHPCoroutine == null)
+        {
+            healthText.enabled = false;
+        }        
+
         if(deathEvent != null)
         {
             deathEvent(this);
         }
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+        tileEventManager.UnsubscribeEntity(this);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
 

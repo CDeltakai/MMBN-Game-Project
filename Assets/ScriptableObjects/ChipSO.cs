@@ -42,18 +42,20 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] int ChipID;
     [SerializeField] EChips Chip;
     [SerializeField] string ChipName;
+[Header("Combat Attributes")]
     [SerializeField] int BaseDamage;
-    [SerializeField] Sprite ChipImage;
-
-[TextArea(10,20)]
-    [SerializeField] string ChipDescription;
     [SerializeField] EChipElements ChipElement;
     [SerializeField] int ChipSize;
-    [SerializeField] float AnimationDuration;
+    [SerializeField] int EnergyCost;
     // Chip Types: 2 = Freeze-time ability(Special chips that freeze time before applying effect)
     // 1 = Active(Real-time usable chip), 0 = Passive(Applies effect to succeeding chip)
     [SerializeField] EChipTypes ChipType;
     [SerializeField] EStatusEffects BaseStatusEffect;
+
+[TextArea(10,20)]
+    [SerializeField] string ChipDescription;
+    [SerializeField] Sprite ChipImage;
+    [SerializeField] float AnimationDuration;
     [SerializeField] String EffectScript;
     [SerializeField] EventReference SFX;
     [SerializeField] List<EventReference> AdditionalSFX;

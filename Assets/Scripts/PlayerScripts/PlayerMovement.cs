@@ -9,6 +9,7 @@ using System;
 using DG.Tweening;
 using FMODUnity;
 
+
 public class PlayerMovement : BStageEntity
 {
 
@@ -16,7 +17,7 @@ public class PlayerMovement : BStageEntity
 private static PlayerMovement _instance;
 public static PlayerMovement Instance {get {return _instance;} }
 
-
+public PlayerAttributeSO playerAttributes;
 
 
 #region Initialized Script Classes
@@ -106,11 +107,19 @@ public static PlayerMovement Instance {get {return _instance;} }
         }
     }
 
+    void InitializePlayerAttributes()
+    {
+        currentHP = playerAttributes.AdjustOrGetCurrentMaxHP();
+        shieldHP = playerAttributes.AdjustOrGetMaxShieldHP();
+        SuperArmor = playerAttributes.GetSuperArmor();
+        isGrounded = playerAttributes.GetIsGrounded();
+    }
 
     public override void Awake()
     {
         InitializeSingleton();
         InitializeAwakeVariables();
+        InitializePlayerAttributes();
 
     }
 
@@ -388,7 +397,7 @@ public static PlayerMovement Instance {get {return _instance;} }
             currentHP = 0;
             return;
         }
-
+        AnimateShakeNumber(damage);
         currentHP = currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999);
 
         if(AnimateHPCoroutine == null)

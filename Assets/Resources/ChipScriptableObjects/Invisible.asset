@@ -17,16 +17,17 @@ MonoBehaviour:
   Chip: 104
   ChipName: Invisible
   BaseDamage: 0
-  ChipImage: {fileID: -7587512733787768913, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
+  ChipElement: 10
+  ChipSize: 30
+  EnergyCost: 2
+  ChipType: 3
+  BaseStatusEffect: 0
   ChipDescription: 'Invisible:
 
     Grants CONCEALMENT for 10 seconds, rendering
     you untargetable by most enemy attacks.'
-  ChipElement: 10
-  ChipSize: 30
+  ChipImage: {fileID: -7587512733787768913, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   AnimationDuration: -0.005
-  ChipType: 3
-  BaseStatusEffect: 0
   EffectScript: Invisible
   SFX:
     Guid:

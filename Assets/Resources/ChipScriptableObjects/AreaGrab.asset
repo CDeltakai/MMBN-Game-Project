@@ -17,16 +17,17 @@ MonoBehaviour:
   Chip: 101
   ChipName: Area Grab
   BaseDamage: 0
-  ChipImage: {fileID: -7076212780686466202, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
+  ChipElement: 0
+  ChipSize: 8
+  EnergyCost: 2
+  ChipType: 3
+  BaseStatusEffect: 0
   ChipDescription: 'Area Grab:
 
     Steals 1 column of tiles. Will not steal tiles
     occupied by enemies.'
-  ChipElement: 0
-  ChipSize: 8
+  ChipImage: {fileID: -7076212780686466202, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   AnimationDuration: 0.05
-  ChipType: 3
-  BaseStatusEffect: 0
   EffectScript: AreaGrab
   SFX:
     Guid:
