@@ -119,13 +119,22 @@ public class Champy_RF : BStageEntity
 
     public override IEnumerator DestroyEntity()
     {
+        animator.speed = Mathf.Epsilon;
+        currentHP = 0;
+        healthText.text = currentHP.ToString();
+            
+        if(AnimateHPCoroutine == null)
+        {
+            healthText.enabled = false;
+        }
+        fullInvincible = true;        
         StopCoroutine(AttackAnimation());
         tileEventManager.UnsubscribeEntity(this);
         yield return new WaitForSecondsRealtime(0.0005f);
         FMODUnity.RuntimeManager.PlayOneShotAttached(DestroyedSFX, this.gameObject);
         setSolidColor(Color.white);
-        var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
-                                                transform.rotation, transform.parent.transform);
+        Instantiate(destructionVFX, transform.parent.transform.position, 
+                    transform.rotation, transform.parent.transform);
         yield return new WaitForSecondsRealtime(0.533f);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.setCellEntity(previousCellPosition.x, previousCellPosition.y, this, false);

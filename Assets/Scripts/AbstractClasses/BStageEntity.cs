@@ -103,7 +103,7 @@ public abstract class BStageEntity : MonoBehaviour
     protected Coroutine EntityDestructionCoroutine;
 
 
-    [SerializeField] GameObject destructionVFX;
+    [SerializeField] protected GameObject destructionVFX;
 
 #endregion
 
@@ -297,6 +297,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     public virtual IEnumerator DestroyEntity()
     {
+        AdditionalDestructionEvents();
         animator.speed = Mathf.Epsilon;
         currentHP = 0;
         healthText.text = currentHP.ToString();
@@ -331,6 +332,10 @@ public abstract class BStageEntity : MonoBehaviour
         tileEventManager.UnsubscribeEntity(this);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
+
+    }
+    public virtual void AdditionalDestructionEvents()
+    {
 
     }
 
@@ -529,19 +534,19 @@ public abstract class BStageEntity : MonoBehaviour
         {
             if(Math.Abs(currentCellPos.x - destinationCell.x) == 1 )
             {
-                worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).SetEase(Ease.OutCirc);
+                worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).SetEase(Ease.OutCirc).SetUpdate(true);
                 
                 yield return new WaitForSecondsRealtime(0.10f);
                 hurtEntity(40, false, true);
-                worldTransform.DOMove(currentWorldPosition, 0.15f ).SetEase(Ease.OutExpo);
+                worldTransform.DOMove(currentWorldPosition, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(true);
                 yield return new WaitForSecondsRealtime(0.05f);
                 stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(40, false, true);                
 
             }else if(Math.Abs(currentCellPos.y - destinationCell.y) == 1)
             {
-                worldTransform.DOMove(new Vector3(destinationWorldPosition.x, destinationWorldPosition.y*0.5f, 0), 0.15f ).SetEase(Ease.OutCirc);
+                worldTransform.DOMove(new Vector3(destinationWorldPosition.x, destinationWorldPosition.y*0.5f, 0), 0.15f ).SetEase(Ease.OutCirc).SetUpdate(true);
                 yield return new WaitForSecondsRealtime(0.15f);
-                worldTransform.DOMove(currentCellPos, 0.15f ).SetEase(Ease.OutExpo);
+                worldTransform.DOMove(currentCellPos, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(true);
 
 
             }
@@ -558,7 +563,7 @@ public abstract class BStageEntity : MonoBehaviour
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
-        worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), 0.15f ).SetEase(Ease.OutCubic);
+        worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), 0.15f ).SetEase(Ease.OutCubic).SetUpdate(true);
         yield return new WaitForSeconds(0.075f);
 
         moveOntoTile(currentCellPos.x, currentCellPos.y, this);

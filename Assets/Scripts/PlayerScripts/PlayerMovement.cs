@@ -8,7 +8,7 @@ using Pathfinding.Util;
 using System;
 using DG.Tweening;
 using FMODUnity;
-
+using System.Data.SqlClient;
 
 public class PlayerMovement : BStageEntity
 {
@@ -59,16 +59,18 @@ public PlayerAttributeSO playerAttributes;
     float animationLength;
 
 
+[Header("Player Stats")]
     public int shotDamage = 5;
     public int shotDamageMultiplier = 1;
     [SerializeField] float chargeDuration = 0.1f;
-
-
     public bool vulnerable { get;set;} = false;
     public override bool isGrounded { get ; set ; } = true;
     public override bool isStationary => false;
     public override bool isStunnable => true;
     public override int maxHP => 9999;
+    public int MaxEnergy;
+
+
     public override ETileTeam team { get;set;} = ETileTeam.Player;
     public bool Parrying = false;
     public bool CanParry = true;
@@ -111,8 +113,10 @@ public PlayerAttributeSO playerAttributes;
     {
         currentHP = playerAttributes.AdjustOrGetCurrentMaxHP();
         shieldHP = playerAttributes.AdjustOrGetMaxShieldHP();
+        MaxEnergy = playerAttributes.AdjustOrGetMaxEnergy();
         SuperArmor = playerAttributes.GetSuperArmor();
         isGrounded = playerAttributes.GetIsGrounded();
+
     }
 
     public override void Awake()
@@ -657,6 +661,10 @@ public PlayerAttributeSO playerAttributes;
     {
         if(context.started)
         {
+            if(chipSelectScreenMovement.isTriggered)
+            {
+                return;
+            }
             chipSelectScreenMovement.ToggleChipMenu();
         }
 
