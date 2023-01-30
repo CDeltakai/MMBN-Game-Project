@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2385943362708142431}
   m_Layer: 12
   m_Name: BombSummon
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

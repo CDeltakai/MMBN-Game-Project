@@ -71,6 +71,14 @@ public abstract class BStageEntity : MonoBehaviour
     public abstract int maxHP{get;}
     public abstract ETileTeam team{get; set;}
 
+    ///<summary>
+    ///If an entity is an obstacle it will block most chip effects from passing through them.
+    ///E.g. An attack which should pass through multiple entities or spawn on top of the entity
+    ///will be blocked by this entity. This property should only be used on structure-based
+    ///entities like solid blocks and is not meant for intelligent entities.
+    ///</summary>
+    public virtual bool isObstacle{get;} = false;
+
     [HideInInspector] public bool isRooted = false;
     [HideInInspector] protected bool isMoving = false;
 
