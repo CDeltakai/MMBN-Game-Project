@@ -59,7 +59,7 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] String EffectScript;
     [SerializeField] EventReference SFX;
     [SerializeField] List<EventReference> AdditionalSFX;
-    [SerializeField] EMegamanAnimations AnimationToUse;
+    [SerializeField] AnimationClip AnimationClipToUse;
     [SerializeField] GameObject ObjectSummon;
     [SerializeField] GameObject EffectPrefab;
     [SerializeField] EffectMechanism effectMechanism;
@@ -88,10 +88,11 @@ public class ChipSO : ChipScriptableObject
         }
         return EffectPrefab;
     }
-    public EMegamanAnimations GetAnimation()
+
+    public AnimationClip GetAnimationClip()
     {
-        return AnimationToUse;
-    }
+        return AnimationClipToUse;
+    }    
     public bool IsLightAttack()
     {
         return lightAttack;

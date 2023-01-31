@@ -8,49 +8,34 @@ public class PlayerChipAnimations : MonoBehaviour
 {
  
 
-    Dictionary<int, string> animationDictionary = new Dictionary<int, string>();
     float currentAnimationLength;
     private string currentState;
-    int currentAnimationID;
     bool isInAnimation = false;
 
-    Animation currentAnimation;
+    Animator animator;
 
-    private void Awake() {
+    private void Awake() 
+    {
+        animator = GetComponent<Animator>();
 
         
     }
 
-    Animator myAnimator;
 
-    private void Start() {
-        myAnimator = GetComponent<Animator>();
+
+    public void PlayAnimationClip(AnimationClip animation)
+    {
+        ChangeAnimationState(animation.name);
+        print("Animation played: " + animation.name);
+        StartCoroutine(ReturnToIdle(animation.length));
     }
 
-    public void playAnimationID(int id, float duration)
+    public void PlayAnimationOneShotString(string animationName, float duration)
     {
-        ChangeAnimationState(animationDictionary[id]);
-        StartCoroutine(ReturnToIdle(duration));
-        Debug.Log(duration.ToString() + " Animation Played:" + animationDictionary[currentAnimationID]);
-    }
-
-    public void playAnimationEnum(EChips chipAnim, float duration)
-    {
-        ChangeAnimationState(Enum.GetName(typeof(EMegamanAnimations), chipAnim));
-        print("Animation played: " + Enum.GetName(typeof(EMegamanAnimations), chipAnim));
+        ChangeAnimationState(animationName);
         StartCoroutine(ReturnToIdle(duration));
 
     }
-
-
-    // public void playAnimationEnum(Enum animEnum, float duration)
-    // {
-    //     ChangeAnimationState(animEnum.ToString());
-    //     print("Animation played: " + Enum.GetName(typeof(EMegamanAnimations), animEnum));
-    //     StartCoroutine(ReturnToIdle(duration));
-
-    // }
-
 
 
     IEnumerator ReturnToIdle(float duration)
@@ -62,7 +47,7 @@ public class PlayerChipAnimations : MonoBehaviour
     void ChangeAnimationState(string newState)
     {
         if(currentState == newState) return;
-        myAnimator.Play(newState);
+        animator.Play(newState);
         currentState = newState;
         
     }

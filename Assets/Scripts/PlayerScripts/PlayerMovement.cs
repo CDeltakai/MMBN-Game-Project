@@ -223,7 +223,7 @@ public PlayerAttributeSO playerAttributes;
                 }
             }
 
-            playerChipAnimations.playAnimationEnum(nextChip.chipSORef.GetChipEnum(), nextChip.chipSORef.GetAnimationDuration());
+            playerChipAnimations.PlayAnimationClip(nextChip.chipSORef.GetAnimationClip());
 
         }else 
         if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() == EChipTypes.Special)
@@ -233,7 +233,7 @@ public PlayerAttributeSO playerAttributes;
             nextChip.effectPrefab.SetActive(true);
             nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().Effect();
 
-            if(nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().chip.GetAnimationDuration() >= 0f)
+            if(nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().chip.GetAnimationClip().length >= 0f)
             {
                 nextChip.effectPrefab.SetActive(false);
             }
@@ -241,8 +241,8 @@ public PlayerAttributeSO playerAttributes;
 
         } 
 
+        yield return new WaitForSecondsRealtime(chipLoadManager.nextChipRefLoad[0].chipSORef.GetAnimationClip().length + 0.05f);
 
-        yield return new WaitForSecondsRealtime(chipLoadManager.nextChipRefLoad[0].chipSORef.GetAnimationDuration() + 0.05f);
         activeChipRef = null;
         chipLoadManager.nextChipRefLoad.Clear();
         chipLoadManager.calcNextChipRefLoad();
