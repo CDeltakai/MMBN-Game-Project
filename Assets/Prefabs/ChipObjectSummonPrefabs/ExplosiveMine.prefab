@@ -381,7 +381,7 @@ MonoBehaviour:
   StatusEffect: 0
   AddStatusEffect: 0
   AddObjectSummon: {fileID: 0}
-  InheritedChip: {fileID: 0}
+  InheritedChip: {fileID: 11400000, guid: 9651be442775fb243a7a7911b9f79b71, type: 2}
   stageHandler: {fileID: 0}
   MineObject: {fileID: 3964132362758702769}
   PrimaryExplosion: {fileID: 3964132364331137940}

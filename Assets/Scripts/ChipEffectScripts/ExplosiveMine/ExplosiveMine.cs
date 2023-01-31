@@ -14,6 +14,12 @@ public class ExplosiveMine : ObjectSummonAttributes
     [SerializeField] GameObject EastExplosion;
     [SerializeField] GameObject WestExplosion;
 
+    GameObject primaryExplosionObject;
+    GameObject northExplosionObject;
+    GameObject southExplosionObject;
+    GameObject eastExplosionObject;
+    GameObject westExplosionObject;
+
     SecondaryExplosions primaryExplosionScript;
     SecondaryExplosions northExplosionScript;
     SecondaryExplosions southExplosionScript;
@@ -41,6 +47,14 @@ public class ExplosiveMine : ObjectSummonAttributes
         eastExplosionScript = EastExplosion.GetComponentInChildren<SecondaryExplosions>();
         westExplosionScript = WestExplosion.GetComponentInChildren<SecondaryExplosions>();
 
+
+        primaryExplosionObject = PrimaryExplosion.transform.GetChild(0).gameObject;
+        northExplosionObject = NorthExplosion.transform.GetChild(0).gameObject;
+        southExplosionObject = SouthExplosion.transform.GetChild(0).gameObject;
+        eastExplosionObject = EastExplosion.transform.GetChild(0).gameObject;
+        westExplosionObject = WestExplosion.transform.GetChild(0).gameObject;
+
+
         gameObject.SetActive(false);
 
 
@@ -58,9 +72,16 @@ public class ExplosiveMine : ObjectSummonAttributes
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.GetComponent<BStageEntity>())
         {
+            BStageEntity victim = other.GetComponent<BStageEntity>();
             StartCoroutine(ActivateMine());
+            if(victim.isBeingShoved)
+            {
+                TriggerSecondaryExplosions();
+            }
+
+  
         }    
     }
 
@@ -70,28 +91,32 @@ public class ExplosiveMine : ObjectSummonAttributes
     {
 
         MineObjectAnimator.Play("ImpactEffectGroundSplash");
-        PrimaryExplosion.transform.GetChild(0).gameObject.SetActive(true);
-        if(CheckValidTile(NorthExplosion))
-        {
-            NorthExplosion.transform.GetChild(0).gameObject.SetActive(true);
-        }
-        if(CheckValidTile(SouthExplosion))
-        {
-            SouthExplosion.transform.GetChild(0).gameObject.SetActive(true);
-        }
-        if(CheckValidTile(EastExplosion))
-        {
-            EastExplosion.transform.GetChild(0).gameObject.SetActive(true);
-        }        
-        if(CheckValidTile(WestExplosion))
-        {
-            WestExplosion.transform.GetChild(0).gameObject.SetActive(true);
-        }
+        primaryExplosionObject.SetActive(true);
+
         yield return new WaitForSecondsRealtime(0.25f);
         gameObject.SetActive(false);
         
     }
 
+    void TriggerSecondaryExplosions()
+    {
+        if(CheckValidTile(NorthExplosion))
+        {
+            northExplosionObject.SetActive(true);
+        }
+        if(CheckValidTile(SouthExplosion))
+        {
+            southExplosionObject.SetActive(true);
+        }
+        if(CheckValidTile(EastExplosion))
+        {
+            eastExplosionObject.SetActive(true);
+        }        
+        if(CheckValidTile(WestExplosion))
+        {
+            westExplosionObject.SetActive(true);
+        }
+    }
 
     bool CheckValidTile(GameObject explosionObject)
     {
@@ -116,14 +141,5 @@ public class ExplosiveMine : ObjectSummonAttributes
     }
 
 
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

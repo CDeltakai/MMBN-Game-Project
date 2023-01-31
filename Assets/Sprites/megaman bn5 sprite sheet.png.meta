@@ -322,14 +322,14 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_12
+      name: Megaman_GenericSummon1
       rect:
         serializedVersion: 2
         x: 552
         y: 1053
         width: 35
         height: 44
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -343,15 +343,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_13
+      name: Megaman_GenericSummon2
       rect:
         serializedVersion: 2
         x: 598
         y: 1053
         width: 46
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.38043478, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,15 +364,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_14
+      name: Megaman_GenericSummon3
       rect:
         serializedVersion: 2
         x: 652
         y: 1053
         width: 38
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.46052632, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -385,15 +385,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_15
+      name: Megaman_GenericSummon4
       rect:
         serializedVersion: 2
         x: 703
         y: 1053
         width: 39
         height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.44871795, y: 0.45833334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -22,7 +22,9 @@ public enum EMegamanAnimations
     ShieldDissipate = 5,
     Megaman_BombThrow = EChips.Bomb,
     Megaman_Parry,
-    Megaman_ParryDissipate
+    Megaman_ParryDissipate,
+    Megaman_GenericSummon,
+    Megaman_Default
 
 
     

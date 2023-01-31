@@ -117,7 +117,7 @@ public class ObjectPoolManager : MonoBehaviour
 
                 if(chip.GetObjectSummon() != null)
                 {
-                    prefab.GetComponent<GenericObjectSummonEffect>().PooledObject = objectSummon;
+                    prefab.GetComponent<GenericObjectSummonEffect>().PooledSummonObject = objectSummon;
                     objectSummon.SetActive(false);
                 }
 

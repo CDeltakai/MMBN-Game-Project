@@ -37,11 +37,11 @@ MonoBehaviour:
       Data4: 0
     Path: 
   AdditionalSFX: []
-  AnimationToUse: 0
-  ObjectSummon: {fileID: 0}
+  AnimationToUse: 114
+  ObjectSummon: {fileID: 3964132362803675288, guid: d02dac95d1908a146932e4dc2bfa6dd5, type: 3}
   EffectPrefab: {fileID: 0}
-  effectMechanism: 0
+  effectMechanism: 1
   pierceUntargetable: 0
   lightAttack: 0
-  hitFlinch: 0
-  UseAnimationEvent: 0
+  hitFlinch: 1
+  UseAnimationEvent: 1

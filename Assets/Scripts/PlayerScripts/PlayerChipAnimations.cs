@@ -42,6 +42,7 @@ public class PlayerChipAnimations : MonoBehaviour
 
     }
 
+
     // public void playAnimationEnum(Enum animEnum, float duration)
     // {
     //     ChangeAnimationState(animEnum.ToString());
@@ -63,6 +64,7 @@ public class PlayerChipAnimations : MonoBehaviour
         if(currentState == newState) return;
         myAnimator.Play(newState);
         currentState = newState;
+        
     }
 
 

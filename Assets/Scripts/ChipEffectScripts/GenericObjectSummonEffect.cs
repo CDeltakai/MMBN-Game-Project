@@ -5,15 +5,15 @@ using UnityEngine;
 public class GenericObjectSummonEffect : ChipEffectBlueprint
 {
 
-    public GameObject PooledObject;
+    public GameObject PooledSummonObject;
 
   
 
 
     public override void Effect()
     {
-        PooledObject.transform.localPosition = new Vector3(player.worldTransform.position.x, player.worldTransform.position.y, 0);
-        PooledObject.SetActive(true);
+        PooledSummonObject.transform.localPosition = new Vector3(player.worldTransform.position.x, player.worldTransform.position.y, 0);
+        PooledSummonObject.SetActive(true);
         
 
 
