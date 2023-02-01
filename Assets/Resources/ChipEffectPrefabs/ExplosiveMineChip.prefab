@@ -47,4 +47,5 @@ MonoBehaviour:
   AddDamage: 0
   AddStatusEffect: 0
   AddSummonObject: {fileID: 0}
-  PooledSummonObject: {fileID: 0}
+  PooledSummonObject: {fileID: 3964132362803675288, guid: d02dac95d1908a146932e4dc2bfa6dd5, type: 3}
+  PositionModifier: {x: 6.4, y: 0, z: 0}

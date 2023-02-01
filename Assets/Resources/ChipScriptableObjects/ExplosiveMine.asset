@@ -37,9 +37,9 @@ MonoBehaviour:
       Data4: 0
     Path: 
   AdditionalSFX: []
-  AnimationToUse: 114
+  AnimationClipToUse: {fileID: 7400000, guid: 12382b18b09e87c478d63b26d467c3d4, type: 2}
   ObjectSummon: {fileID: 3964132362803675288, guid: d02dac95d1908a146932e4dc2bfa6dd5, type: 3}
-  EffectPrefab: {fileID: 0}
+  EffectPrefab: {fileID: 1431151668363687568, guid: bd7ed4d9bc986534ea7bccedb06f908e, type: 3}
   effectMechanism: 1
   pierceUntargetable: 0
   lightAttack: 0

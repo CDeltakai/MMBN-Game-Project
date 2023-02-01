@@ -2,13 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class ExplosiveMine : ObjectSummonAttributes
 {
     [SerializeField] BattleStageHandler stageHandler;
     [SerializeField] GameObject MineObject;
-    [SerializeField] GameObject PrimaryExplosion;
+    [SerializeField] EventReference MineActivateSFX;
+    [SerializeField] EventReference NormalExplosionSFX;
+    [SerializeField] EventReference BigExplosionSFX;
 
+    [SerializeField] GameObject PrimaryExplosion;
     [SerializeField] GameObject NorthExplosion;
     [SerializeField] GameObject SouthExplosion;
     [SerializeField] GameObject EastExplosion;
@@ -79,6 +83,11 @@ public class ExplosiveMine : ObjectSummonAttributes
             if(victim.isBeingShoved)
             {
                 TriggerSecondaryExplosions();
+                FMODUnity.RuntimeManager.PlayOneShotAttached(BigExplosionSFX, this.gameObject);
+
+            }else
+            {
+                FMODUnity.RuntimeManager.PlayOneShotAttached(NormalExplosionSFX, this.gameObject);
             }
 
   
