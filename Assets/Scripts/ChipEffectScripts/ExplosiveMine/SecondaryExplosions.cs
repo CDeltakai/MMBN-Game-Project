@@ -5,6 +5,8 @@ using UnityEngine;
 public class SecondaryExplosions : MonoBehaviour
 {
 
+    ExplosiveMine explosiveMineScript;
+    [SerializeField] bool IsPrimaryExplosion;
     BoxCollider2D boxCollider2D;
     SpriteRenderer spriteRenderer;
     Animator animator;
@@ -22,6 +24,15 @@ public class SecondaryExplosions : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         player = PlayerMovement.Instance;
+        explosiveMineScript = gameObject.transform.parent.transform.parent.gameObject.GetComponent<ExplosiveMine>();
+
+        if(IsPrimaryExplosion)
+        {
+            Damage = explosiveMineScript.InheritedChip.GetChipDamage();
+        }else
+        {
+            Damage = explosiveMineScript.InheritedChip.GetChipDamage()/2;
+        }
         
         boxCollider2D.enabled = false;
         gameObject.SetActive(false);
@@ -31,6 +42,13 @@ public class SecondaryExplosions : MonoBehaviour
 
     void OnEnable()
     {
+        if(IsPrimaryExplosion)
+        {
+            Damage = explosiveMineScript.InheritedChip.GetChipDamage();
+        }else
+        {
+            Damage = explosiveMineScript.InheritedChip.GetChipDamage()/2;
+        }
         StartCoroutine(InitiateExplosion());
     }
 

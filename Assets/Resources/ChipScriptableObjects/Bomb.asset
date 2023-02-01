@@ -36,7 +36,7 @@ MonoBehaviour:
       Data4: 761918992
     Path: event:/ThrowItem
   AdditionalSFX: []
-  AnimationToUse: 111
+  AnimationClipToUse: {fileID: 7400000, guid: 76f8c3a72e185e0458f3d8209c31a60b, type: 2}
   ObjectSummon: {fileID: 2385943362708142428, guid: c229946d3b6bfb949adc91fd4afd9d1b, type: 3}
   EffectPrefab: {fileID: 1874528980879534232, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
   effectMechanism: 1

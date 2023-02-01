@@ -6,8 +6,11 @@ using FMODUnity;
 
 public class ExplosiveMine : ObjectSummonAttributes
 {
+
     [SerializeField] BattleStageHandler stageHandler;
     [SerializeField] GameObject MineObject;
+    Vector3Int currentCellPos;
+
     [SerializeField] EventReference MineActivateSFX;
     [SerializeField] EventReference NormalExplosionSFX;
     [SerializeField] EventReference BigExplosionSFX;
@@ -60,6 +63,8 @@ public class ExplosiveMine : ObjectSummonAttributes
 
 
         gameObject.SetActive(false);
+        MineObjectBoxCollider2D.enabled = false;
+
 
 
 
@@ -72,7 +77,29 @@ public class ExplosiveMine : ObjectSummonAttributes
     private void OnEnable() 
     {
         stageHandler = BattleStageHandler.Instance;
+        Vector3Int currentCellPos = new Vector3Int((int)(Math.Round((transform.position.x/1.6f), MidpointRounding.AwayFromZero)),
+                            (int)transform.position.y, 0);
+
+        if(stageHandler.getEntityAtCell(currentCellPos.x, currentCellPos.y) != null)
+        {
+            gameObject.SetActive(false);
+            MineObjectBoxCollider2D.enabled = false;
+
+
+        }else
+        {
+            gameObject.SetActive(true);
+            StartCoroutine(ArmMine());
+        }
+
     }
+
+    IEnumerator ArmMine()
+    {
+        yield return new WaitForSeconds(1f);
+        MineObjectBoxCollider2D.enabled = true;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other) 
     {

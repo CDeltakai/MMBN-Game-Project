@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b91fe0159eb474ebd222d8d4d8d731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPrimaryExplosion: 0
   addStatus: 0
   Damage: 0
 --- !u!50 &3964132362739853823
@@ -384,6 +385,27 @@ MonoBehaviour:
   InheritedChip: {fileID: 11400000, guid: 9651be442775fb243a7a7911b9f79b71, type: 2}
   stageHandler: {fileID: 0}
   MineObject: {fileID: 3964132362758702769}
+  MineActivateSFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  NormalExplosionSFX:
+    Guid:
+      Data1: 738609693
+      Data2: 1107984400
+      Data3: 332480385
+      Data4: 1006219174
+    Path: event:/BombExplode
+  BigExplosionSFX:
+    Guid:
+      Data1: 738609693
+      Data2: 1107984400
+      Data3: 332480385
+      Data4: 1006219174
+    Path: event:/BombExplode
   PrimaryExplosion: {fileID: 3964132364331137940}
   NorthExplosion: {fileID: 3964132364142423345}
   SouthExplosion: {fileID: 3964132363062190553}
@@ -641,6 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b91fe0159eb474ebd222d8d4d8d731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPrimaryExplosion: 1
   addStatus: 0
   Damage: 0
 --- !u!50 &3964132363422374964
@@ -807,6 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b91fe0159eb474ebd222d8d4d8d731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPrimaryExplosion: 0
   addStatus: 0
   Damage: 0
 --- !u!50 &3964132363492439870
@@ -973,6 +997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b91fe0159eb474ebd222d8d4d8d731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPrimaryExplosion: 0
   addStatus: 0
   Damage: 0
 --- !u!50 &3964132363785072752
@@ -1170,6 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b91fe0159eb474ebd222d8d4d8d731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPrimaryExplosion: 0
   addStatus: 0
   Damage: 0
 --- !u!50 &3964132364241869191

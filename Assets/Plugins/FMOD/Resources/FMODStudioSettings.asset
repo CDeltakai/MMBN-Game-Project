@@ -387,6 +387,7 @@ MonoBehaviour:
   Banks:
   - ChipSFX
   - Music
+  - NPCSFX
   - PlayerSFX
   - UISFXBank
   BanksToLoad: []
