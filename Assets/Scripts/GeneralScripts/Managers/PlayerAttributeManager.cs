@@ -1,50 +1,9 @@
+using System.Linq;
 using System.Globalization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
-public class ChipID : IComparable
-{
-
-    public int ID;
-    public string ChipName;
-    public ChipSO chipSO;
-
-    public ChipID(int id, string chipName, ChipSO chip)
-    {
-        this.ID = id;
-        this.ChipName = chipName;
-    }
-
-
-    public int CompareTo(object incomingobject)
-    {
-      ChipID incomingChip = incomingobject as ChipID;
-    
-      return this.ID.CompareTo(incomingChip.ID);
-    }
-}
-
-
-
-
-public class TupleList<T1, T2> : List<System.Tuple<T1, T2>> where T1 : IComparable
-{
-
-    public void Add(T1 item, T2 item2)
-    {
-        Add(new Tuple<T1, T2>(item, item2));
-    }
-
-    public new void Sort()
-    {
-        Comparison<Tuple<T1, T2>> c = (a, b) => a.Item1.CompareTo(b.Item1);
-        base.Sort(c);
-    }
-
-}
 
 
 
@@ -55,15 +14,10 @@ public class PlayerAttributeManager : MonoBehaviour
 private static PlayerAttributeManager _instance;
 public static PlayerAttributeManager Instance {get {return _instance;} }
 
+[SerializeField] public PlayerAttributeSO CurrentPlayerAttributes;
 
 public int PlayerMaxHP;
 public int ShieldMaxHP;
-public List<ChipObjectReference> CurrentChipDeck;
-public TupleList<Enum, ChipObjectReference> CurrentChipInventory;
-
-
-
-
 
 
     private void InitializeSingleton()
@@ -81,9 +35,23 @@ public TupleList<Enum, ChipObjectReference> CurrentChipInventory;
     void Awake()
     {
         InitializeSingleton();
+        //Debug_FillChipDeck();
         DontDestroyOnLoad(this.gameObject);
     }
 
+
+    ///<summary>
+    ///Debug method: will fill chip deck with all chips from ChipScriptableObjects folder and arbitrary chip count.
+    ///</summary>
+    private void Debug_FillChipDeck()
+    {
+        CurrentPlayerAttributes.CurrentChipDeck.Clear();
+        ChipSO[] chipList = Resources.LoadAll<ChipSO>("ChipScriptableObjects");
+        foreach(ChipSO chip in chipList)
+        {
+            CurrentPlayerAttributes.CurrentChipDeck.Add(new ChipInventoryReference(chip, 2));
+        }
+    }
 
 
     void Start()
@@ -96,4 +64,8 @@ public TupleList<Enum, ChipObjectReference> CurrentChipInventory;
     {
         
     }
+
+
+
+
 }

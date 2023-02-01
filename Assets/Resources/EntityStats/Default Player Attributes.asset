@@ -32,4 +32,5 @@ MonoBehaviour:
   BaseDeckCapacity: 30
   CurrentDeckCapacity: 30
   CurrentDeckLoadouts: 2
+  CurrentChipDeck: []
   CurrentChipInventory: []

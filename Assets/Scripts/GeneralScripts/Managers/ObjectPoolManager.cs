@@ -15,6 +15,7 @@ public class ChipObjectReference
 public class ObjectPoolManager : MonoBehaviour
 {
     ChipInventory chipInventory;
+    PlayerAttributeManager playerAttributeManager;
 
 	[SerializeField] List<GameObject> ChipObjectPool = new List<GameObject>();
     [SerializeField] GameObject ChipObjectPoolParent;
@@ -23,14 +24,17 @@ public class ObjectPoolManager : MonoBehaviour
     void Awake()
     {
         chipInventory = FindObjectOfType<ChipInventory>();
+
+
     }
 
 	
 	void Start()
     {
-        //PoolChipObjects();
-        PoolChipsFromDeck();
-
+        //PoolChipsFromDeck();
+        playerAttributeManager = PlayerAttributeManager.Instance;
+        PoolChipsFromAttributesDeck();
+        
     }
 
     // Update is called once per frame
@@ -103,8 +107,6 @@ public class ObjectPoolManager : MonoBehaviour
                     objectSummon = Instantiate(chip.GetObjectSummon(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
                 }
 
-
-
                 var chipObjRef = new ChipObjectReference
                 {
                     chipSORef = chip,
@@ -128,6 +130,56 @@ public class ObjectPoolManager : MonoBehaviour
             {
                 Debug.LogWarning("Chip: "+ chip.GetChipName() + " does not have an effect prefab, chip will be non-functional.");
             }
+
+        }
+    }
+
+    void PoolChipsFromAttributesDeck()
+    {
+        //List<ChipSO> chipDeckLoad = chipInventory.chipDeck;
+        print(playerAttributeManager.ToString());
+        List<ChipInventoryReference> currentPlayerDeck = playerAttributeManager.CurrentPlayerAttributes.GetCurrentChipDeck();
+
+        foreach(ChipInventoryReference chipInvRef in currentPlayerDeck)
+        {
+            for(int i = 1; i <= chipInvRef.chipCount; i++)
+            {
+
+                if(chipInvRef.chip.GetEffectPrefab() != null)
+                {
+                    GameObject prefab = Instantiate(chipInvRef.chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
+                    GameObject objectSummon = null;
+
+                    if(chipInvRef.chip.GetObjectSummon() != null)
+                    {
+                        objectSummon = Instantiate(chipInvRef.chip.GetObjectSummon(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
+                    }
+
+                    var chipObjRef = new ChipObjectReference
+                    {
+                        chipSORef = chipInvRef.chip,
+                        effectPrefab = prefab,
+                        ObjectSummon = objectSummon
+                    };
+
+                    prefab.SetActive(false);
+                
+
+                    if(chipInvRef.chip.GetObjectSummon() != null)
+                    {
+                        prefab.GetComponent<GenericObjectSummonEffect>().PooledSummonObject = objectSummon;
+                        objectSummon.SetActive(false);
+                    }
+
+                    ChipRefList.Add(chipObjRef);
+
+
+                }else
+                {
+                    Debug.LogWarning("Chip: "+ chipInvRef.chip.GetChipName() + " does not have an effect prefab, chip will be non-functional.");
+                }
+
+        }
 
         }
 

@@ -16,7 +16,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     ChipInventory chipInventory;
     ObjectPoolManager objectPoolManager;
     int chipHandCapacity = 8;
-    int maxSelectableChips = 8;
+    int maxSelectableChips = 10;
     [SerializeField] float desiredDuration = 1f;
 
     private float elapsedTime = 0;
@@ -164,8 +164,6 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     void populateChipSelectRefType()
     {
-        //int randomIndex = 0;
-        //var random = new System.Random();
         
         selectableChipRefs.Clear();
         for (int i = 0; i < 10; i++)
@@ -174,24 +172,26 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
         }
 
-            foreach(GameObject button in chipButtons)
-            {
-                button.SetActive(true);
-            }
+        foreach(GameObject button in chipButtons)
+        {
+            button.SetActive(true);
+        }
 
 
+        for (int i = 0; i < objectPoolManager.ChipRefList.Count; i++)
+        {
+            selectableChipRefs.Add(objectPoolManager.ChipRefList[i]);
+        }
 
+        for (int i = 0; i < (maxSelectableChips - 1); i++)
+        {
+            int randomInt = UnityEngine.Random.Range(0, (objectPoolManager.ChipRefList.Count-1));
+            print(randomInt);
 
-            for (int i = 0; i < objectPoolManager.ChipRefList.Count; i++)
-            {
-                selectableChipRefs.Add(objectPoolManager.ChipRefList[i]);
-            }
+            chipButtons[i].GetComponent<ChipSlot>().changeChipReference
+            (selectableChipRefs[i]);
+        }
 
-            for (int i = 0; i < objectPoolManager.ChipRefList.Count; i++)
-            {
-                chipButtons[i].GetComponent<ChipSlot>().changeChipReference(selectableChipRefs[i]);
-
-            }
     }
 
 

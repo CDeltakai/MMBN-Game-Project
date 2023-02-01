@@ -1,13 +1,26 @@
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
+///<summary>
+///The ChipInventoryReference is defined in the Player Attributes Scriptable Object.
+///It is essentially a counter for the number of a 
+///specific chip the player has. This struct is used when pooling chip objects
+///in order to handle duplicate chips.
+///</summary>
 [System.Serializable]
-internal struct ChipInventoryReference
+public struct ChipInventoryReference
 {
     public ChipSO chip;
     public int chipCount;
+
+    public ChipInventoryReference(ChipSO chip, int chipCount)
+    {
+        this.chip = chip;
+        this.chipCount = chipCount;
+    }
 }
 
 [CreateAssetMenu(fileName = "Player Attributes Data", menuName = "New Player Attributes Data", order = 0)]
@@ -55,9 +68,13 @@ public class PlayerAttributeSO : ScriptableObject
     int MinDeckLoadouts = 1;
     int MaxDeckLoadouts = 10;
     [SerializeField] int CurrentDeckLoadouts = 2;
-    [SerializeField] List<ChipInventoryReference> CurrentChipDeck;
-    [SerializeField] List<ChipInventoryReference> CurrentChipInventory;
+    [SerializeField] public List<ChipInventoryReference> CurrentChipDeck = new List<ChipInventoryReference>();
+    [SerializeField] public List<ChipInventoryReference> CurrentChipInventory = new List<ChipInventoryReference>();
 
+    public List<ChipInventoryReference> GetCurrentChipDeck()
+    {
+        return CurrentChipDeck;
+    }
 
 
     public int GetBaseHP()

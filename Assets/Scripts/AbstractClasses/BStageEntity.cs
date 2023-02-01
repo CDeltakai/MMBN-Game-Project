@@ -89,7 +89,11 @@ public abstract class BStageEntity : MonoBehaviour
     ///</summary>
     [HideInInspector] public bool nonVolatileStatus = false;
     
-
+    //<summary>
+    //This is a calculated variable that is meant to define the current cell
+    //position of the entity on the battle stage grid. It is calculated by
+    //checking the worldTransform and performing a conversion function on its position
+    //to a Vector3Int which will match its derived position on the battle stage grid.
     public Vector3Int currentCellPos;
     public Vector3Int previousCellPos;
     
@@ -187,11 +191,19 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
 
+    public Vector3Int CalculateCurrentCellPosition(Transform transform)
+    {
+        Vector3Int calculatedCellPos = new Vector3Int ((int)(Math.Round((transform.position.x/1.6f), MidpointRounding.AwayFromZero)),
+                            (int)transform.parent.position.y, 0);
+
+        return calculatedCellPos;
+    }
+
     protected bool isAnimatingHP = false;
     ///<summary>
     ///lightAttack dictates whether the attack triggers invincibility frames.
     ///hitFlinch dictates whether the attack will trigger a flinch animation (if it is able to) on the target.
-    ///pierceUntargetable dictates whether the attack can hurt the target through certain effects like stealth or partialInvincibility.
+    ///pierceUntargetable dictates whether the attack can hurt the target even if they are set to isUntargetable.
     ///</summary>
     public virtual void hurtEntity(int damage,
                                    bool lightAttack,
@@ -214,6 +226,8 @@ public abstract class BStageEntity : MonoBehaviour
         {
             hurtEvent(this);
         }
+
+        //Animate HP block
         if(damage >= 10)
         {
             isAnimatingHP = true;
@@ -226,24 +240,21 @@ public abstract class BStageEntity : MonoBehaviour
             AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
         }
 
-
+        //Check if damage dealt will reduce current HP to 0 or below it. If so, destroy this entity.
         if(damage >= currentHP)
         {
-
             RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
             AnimateShakeNumber(damage);
-
-
             StartCoroutine(DestroyEntity());
-
             return;
         }
 
         StartCoroutine(DamageFlash());
         RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
 
-
+        //Calculate new current HP value after taking damage
         currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
+
         if(AnimateHPCoroutine == null)
         {
             healthText.text = currentHP.ToString();
@@ -261,11 +272,35 @@ public abstract class BStageEntity : MonoBehaviour
     ///and subtracts HP directly from the target, bypassing any form of resistances. Can be
     ///given a tickrate and duration for damage over time effects.
     ///</summary>
-    public void DamageEntity(int damage, float tickrate = 0, float duration = 0)
+    public void DamageEntity(int damage, float tickrate = float.Epsilon, float duration = float.Epsilon)
     {
+        if(tickrate > float.Epsilon && duration > float.Epsilon)
+        {
+            StartCoroutine(DamageOverTime(damage: damage, tickrate: tickrate, duration: duration));
+        }else
+        {
+            AnimateShakeNumber(damage);
+            if(damage >= 10)
+            {
+                isAnimatingHP = true;
 
+                if(AnimateHPCoroutine != null)
+                {
+                    StopCoroutine(AnimateHPCoroutine);
+                }
+
+                AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage), 1, 999999)));
+            }            
+            currentHP -= damage;
+        }
 
     }
+
+    ///<summary>
+    ///Applies a damage over time effect on this entity, reducing their health by the given
+    ///damage with a given tickrate over a given duration. E.g. 10 damage with 0.5 tickrate over 10
+    ///seconds with deal 200 damage in total.
+    ///</summary>
     IEnumerator DamageOverTime(int damage, float tickrate, float duration)
     {
         float damageDuration = duration;
@@ -273,8 +308,25 @@ public abstract class BStageEntity : MonoBehaviour
 
         while(damageDuration >= 0)
         {
+
+
+            if(damage >= 10)
+            {
+                isAnimatingHP = true;
+
+                if(AnimateHPCoroutine != null)
+                {
+                    StopCoroutine(AnimateHPCoroutine);
+                }
+
+                AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage), 1, 999999)));
+            } 
+
             if(damage >= currentHP)
             {
+                RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
+                AnimateShakeNumber(damage);
+                StartCoroutine(DestroyEntity());                
                 break;
             }
 

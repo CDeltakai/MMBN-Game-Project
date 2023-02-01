@@ -137,7 +137,7 @@ public class ChipSO : ChipScriptableObject
 
     public string GetChipName()
     {
-        return Chip.ToString();
+        return ChipName;
     }
 
     public int GetChipDamage()
