@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d49cde25aaed34c9d56b21956f4aaa, type: 3}
   m_Name: CurrentPlayerAttributes
   m_EditorClassIdentifier: 
-  BaseHP: 100
-  CurrentMaxHP: 5000
+  <BaseHP>k__BackingField: 100
+  <CurrentMaxHP>k__BackingField: 5000
   NumberOfHPUpgrades: 0
-  BaseShieldHP: 0
+  <BaseShieldHP>k__BackingField: 0
   MaxShieldHP: 50
-  BaseEnergy: 0
+  <BaseEnergy>k__BackingField: 5
   MaxEnergy: 0
   BasicShotDamage: 5
-  MinimumChargeSpeed: 0.75
+  <MinimumChargeSpeed>k__BackingField: 0.75
   ChargeSpeed: 2.5
   GlobalOffenseMultiplier: 1
   GlobalDefenseMultiplier: 1
@@ -33,30 +33,44 @@ MonoBehaviour:
   CurrentDeckCapacity: 30
   CurrentDeckLoadouts: 2
   CurrentChipDeck:
-  - chip: {fileID: 11400000, guid: a46fb94c65083d2439fd9eed2ba4200e, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: a46fb94c65083d2439fd9eed2ba4200e, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 56648c25a2e54464aa1dd805942dc27b, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 56648c25a2e54464aa1dd805942dc27b, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 70d6887d578553f47aa2f208baa3d3ae, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 70d6887d578553f47aa2f208baa3d3ae, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 14412b39ecce0ca458d1f05de06c3d36, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 14412b39ecce0ca458d1f05de06c3d36, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 4f08aaad28d8bf54a95d11b863b32ce3, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 4f08aaad28d8bf54a95d11b863b32ce3, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 9651be442775fb243a7a7911b9f79b71, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 9651be442775fb243a7a7911b9f79b71, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 0a63e155a4579f54490feea56bc9300f, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 0a63e155a4579f54490feea56bc9300f, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 506c134f07571ec4f958e43d904161f4, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 506c134f07571ec4f958e43d904161f4, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 393dd2eedcc7380498a20f9cf939ea65, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 393dd2eedcc7380498a20f9cf939ea65, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: f749453abf1bd0549bb5e8d5761a46b3, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: f749453abf1bd0549bb5e8d5761a46b3, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 044cb9ee1d4b7e945bce2baea3fe5769, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 044cb9ee1d4b7e945bce2baea3fe5769, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 7517354625132ca49ad30d0df0c50939, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 7517354625132ca49ad30d0df0c50939, type: 2}
     chipCount: 2
-  - chip: {fileID: 11400000, guid: 888cc323c87b89f44bc08826e57c9f15, type: 2}
+  - chipName: 
+    chip: {fileID: 11400000, guid: 888cc323c87b89f44bc08826e57c9f15, type: 2}
     chipCount: 2
   CurrentChipInventory: []
+  ChipDeckLoadouts: []

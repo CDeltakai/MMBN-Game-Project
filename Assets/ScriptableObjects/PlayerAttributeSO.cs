@@ -26,6 +26,8 @@ public struct ChipInventoryReference
     }
 }
 
+
+//Wrapper class for List<ChipInventoryReference to allow for serialization of a list of list of ChipInventoryReferences.
 [System.Serializable]
 public class DeckLoadout
 {
@@ -37,10 +39,11 @@ public class DeckLoadout
 public class PlayerAttributeSO : ScriptableObject
 {
 
+    int MinimumHP = 100;
     ///<summary>
     ///BaseHP is the HP of the player with only HP upgrades and no
     ///modifiers.
-    int MinimumHP = 100;
+    ///</summary>
     [field:SerializeField] public int BaseHP{get; private set;} = 100;
     [field:SerializeField] public int CurrentMaxHP{get; set;} = 100;
     [SerializeField] int NumberOfHPUpgrades = 0;
@@ -102,6 +105,7 @@ public class PlayerAttributeSO : ScriptableObject
         if(BaseHP < MinimumHP)
         {
             BaseHP = MinimumHP;
+            Debug.LogWarning("Cannot set BaseHP below minimum HP of " + MinimumHP + ", defaulted to " + MinimumHP);
         }
         return BaseHP;
     }

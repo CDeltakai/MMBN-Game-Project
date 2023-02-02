@@ -75,7 +75,16 @@ public class ChipEffects : MonoBehaviour
             ChipEffectBlueprint chipEffectScript = chip.effectPrefab.GetComponent<ChipEffectBlueprint>();
             chipEffectScript.Effect();
 
-            StartCoroutine(disableEffectPrefab(chip.chipSORef.GetAnimationDuration(), chip.effectPrefab));
+            if(chip.chipSORef.GetAnimationClip() != null)
+            {
+                StartCoroutine(disableEffectPrefab(chip.chipSORef.GetAnimationClip().length, chip.effectPrefab));
+            }else
+            {
+                Debug.LogWarning("Chip: " + chip.chipSORef.GetChipName() +
+                "has no animation clip and thus may not function correctly."+
+                " ApplyChipEffectRef may not be the correct method for this chip to use.");
+                StartCoroutine(disableEffectPrefab(0.05f, chip.effectPrefab));
+            }
 
         }else
         {
@@ -83,7 +92,17 @@ public class ChipEffects : MonoBehaviour
             var chip = chipLoadManager.nextChipRefLoad[0];
             ChipEffectBlueprint chipEffectScript = chip.effectPrefab.GetComponent<ChipEffectBlueprint>();
             chipEffectScript.Effect();
-            StartCoroutine(disableEffectPrefab(chip.chipSORef.GetAnimationDuration(), chip.effectPrefab));
+
+            if(chip.chipSORef.GetAnimationClip() != null)
+            {
+                StartCoroutine(disableEffectPrefab(chip.chipSORef.GetAnimationClip().length, chip.effectPrefab));
+            }else
+            {
+                Debug.LogWarning("Chip: " + chip.chipSORef.GetChipName() +
+                "has no animation clip. Chip may not function correctly. " +
+                "ApplyChipEffectRef may not be the correct method for this chip to use.");
+                StartCoroutine(disableEffectPrefab(0.05f, chip.effectPrefab));
+            }
 
         }
 

@@ -40,16 +40,7 @@ private void Awake() {
 }
 
 
-void FillChipRefInventory()
-{
-    foreach(ChipObjectReference chipRef in objectPoolManager.ChipRefList)
-    {
-        
 
-
-    }
-
-}
 
 void FillChipInventory()
 {
