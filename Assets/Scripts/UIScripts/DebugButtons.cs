@@ -19,7 +19,7 @@ public class DebugButtons : MonoBehaviour
     }
     public void ResetScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
         ChipSelectScreenMovement.GameIsPaused = false;
         Time.timeScale = 1;
 

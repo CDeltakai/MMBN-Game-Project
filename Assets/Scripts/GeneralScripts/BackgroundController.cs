@@ -34,6 +34,11 @@ public class BackgroundController : MonoBehaviour
 
 
     }
+    public void FadeToBlack()
+    {
+        spriteRenderer.DOColor(Color.black, 0.5f).SetUpdate(true);
+
+    }
 
     public void FadeToNormal(float duration)
     {
@@ -41,5 +46,9 @@ public class BackgroundController : MonoBehaviour
 
     }
 
+    public void FadeToNormal()
+    {
+        spriteRenderer.DOColor(new Color(0.7f, 0.7f, 0.7f, 1), 0.24f).SetUpdate(true);
+    }
     
 }

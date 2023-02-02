@@ -49,6 +49,7 @@ public class SecondaryExplosions : MonoBehaviour
         {
             Damage = explosiveMineScript.InheritedChip.GetChipDamage()/2;
         }
+        
         StartCoroutine(InitiateExplosion());
     }
 

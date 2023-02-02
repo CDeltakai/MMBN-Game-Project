@@ -597,21 +597,25 @@ public abstract class BStageEntity : MonoBehaviour
         {
             if(Math.Abs(currentCellPos.x - destinationCell.x) == 1 )
             {
+                print("Attempting shove collision damage");
                 worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).SetEase(Ease.OutCirc).SetUpdate(true);
                 isBeingShoved = true;
                 
-                
-                yield return new WaitForSeconds(0.10f);
-                hurtEntity(40, false, true);
+                print("Attempting waiting for seconds");
+
+                yield return new WaitForSecondsRealtime(0.10f);
                 worldTransform.DOMove(currentWorldPosition, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(true);
-                yield return new WaitForSeconds(0.05f);
+                print("Attempting shove back to original position");
+
+                hurtEntity(40, false, true);
+                yield return new WaitForSecondsRealtime(0.05f);
                 stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(40, false, true);     
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSecondsRealtime(0.1f);
                 isBeingShoved = false;           
 
             }else if(Math.Abs(currentCellPos.y - destinationCell.y) == 1)
             {
-                worldTransform.DOMove(new Vector3(destinationWorldPosition.x, destinationWorldPosition.y*0.5f, 0), 0.15f ).SetEase(Ease.OutCirc).SetUpdate(true);
+                worldTransform.DOMove(new Vector3(destinationWorldPosition.x, destinationWorldPosition.y*0.5f, 0), 0.15f ).SetEase(Ease.OutCirc).SetUpdate(false);
                 yield return new WaitForSecondsRealtime(0.15f);
                 worldTransform.DOMove(currentCellPos, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(true);
 
@@ -632,12 +636,12 @@ public abstract class BStageEntity : MonoBehaviour
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
         worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), 0.15f ).SetEase(Ease.OutCubic).SetUpdate(true);
         isBeingShoved = true;
-        yield return new WaitForSeconds(0.075f);
+        yield return new WaitForSecondsRealtime(0.075f);
 
         moveOntoTile(currentCellPos.x, currentCellPos.y, this);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
 
-        yield return new WaitForSeconds(0.075f);
+        yield return new WaitForSecondsRealtime(0.075f);
         isBeingShoved = false;
 
 

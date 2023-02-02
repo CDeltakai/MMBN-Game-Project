@@ -26,6 +26,7 @@ public class BombController : ObjectSummonAttributes
         animator = GetComponent<Animator>();
 
         player = PlayerMovement.Instance;
+        player = FindObjectOfType<PlayerMovement>();
         //worldTransform.localPosition.Set(player.worldTransform.localPosition.x, player.worldTransform.localPosition.y, 0);
         //worldTransform = transform.parent.transform;
         boxCollider2D = GetComponent<BoxCollider2D>();   
@@ -62,20 +63,21 @@ public class BombController : ObjectSummonAttributes
     [SerializeField] float MoveYValue = 3;
     IEnumerator MoveBomb()
     {
-        worldTransform.DOMoveX(worldTransform.position.x + 6.7f, 0.75f).SetUpdate(true);//.SetLoops(-1, LoopType.Restart);
-        worldTransform.DOMoveY(worldTransform.position.y + MoveYValue, 0.75f).SetEase(yPosCurve).SetUpdate(true);//.SetLoops(-1, LoopType.Restart);
+        worldTransform.DOMoveX(worldTransform.position.x + 6.7f, 0.75f).SetUpdate(false);//.SetLoops(-1, LoopType.Restart);
+        worldTransform.DOMoveY(worldTransform.position.y + MoveYValue, 0.75f).SetEase(yPosCurve).SetUpdate(false);//.SetLoops(-1, LoopType.Restart);
         transform.DOLocalRotate(new Vector3(0, 0, 360), 0.25f, RotateMode.FastBeyond360).SetLoops(2, LoopType.Restart)
-        .SetEase(Ease.Linear).SetUpdate(true);
+        .SetEase(Ease.Linear).SetUpdate(false);
 
-        yield return new WaitForSecondsRealtime(0.75f);
+        yield return new WaitForSeconds(0.75f);
         transform.rotation.Set(0, 0, 0, 0);
         animator.Play("BombExplosionVFX");
         FMODUnity.RuntimeManager.PlayOneShotAttached(ExplosionSoundEffect, this.gameObject);
         
         boxCollider2D.enabled = true;
-        transform.DOLocalMoveY(transform.localPosition.y + 0.2f, 0.25f).SetEase(Ease.Linear).SetUpdate(true);        
-        yield return new WaitForSecondsRealtime(0.25f);
+        transform.DOLocalMoveY(transform.localPosition.y + 0.2f, 0.25f).SetEase(Ease.Linear).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(0.1f);
         boxCollider2D.enabled = false;
+        yield return new WaitForSecondsRealtime(0.15f);
 
         ResetObjectToInitialState();
 
