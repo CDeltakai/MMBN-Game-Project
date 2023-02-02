@@ -265,7 +265,7 @@ public abstract class BStageEntity : MonoBehaviour
         return; 
     }
 
-    
+    List<Coroutine> DoTList = new List<Coroutine>();    
 
     ///<summary>
     ///Different from HurtEntity; this one is for dealing indirect damage like poison effects
@@ -277,6 +277,8 @@ public abstract class BStageEntity : MonoBehaviour
         if(tickrate > float.Epsilon && duration > float.Epsilon)
         {
             StartCoroutine(DamageOverTime(damage: damage, tickrate: tickrate, duration: duration));
+            
+            
         }else
         {
             AnimateShakeNumber(damage);

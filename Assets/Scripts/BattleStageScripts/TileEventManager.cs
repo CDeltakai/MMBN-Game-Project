@@ -44,6 +44,7 @@ public class TileEventManager : MonoBehaviour
         {
 
             case ETiles.Poison_Tile:
+                entity.DamageEntity(1, 0.5f, 2f);
 
                 break;
 
@@ -94,7 +95,10 @@ public class TileEventManager : MonoBehaviour
 
     }
 
+    void Update()
+    {
 
+    }
 
 
 
