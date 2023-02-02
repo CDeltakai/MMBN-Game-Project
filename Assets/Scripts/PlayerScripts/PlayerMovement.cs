@@ -233,15 +233,17 @@ public PlayerAttributeSO playerAttributes;
             nextChip.effectPrefab.SetActive(true);
             nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().Effect();
 
-            if(nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().chip.GetAnimationClip().length >= 0f)
-            {
-                nextChip.effectPrefab.SetActive(false);
-            }
+
+            nextChip.effectPrefab.SetActive(false);
+            
 
 
         } 
 
-        yield return new WaitForSecondsRealtime(chipLoadManager.nextChipRefLoad[0].chipSORef.GetAnimationClip().length + 0.05f);
+        if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Special)
+        {
+            yield return new WaitForSecondsRealtime(chipLoadManager.nextChipRefLoad[0].chipSORef.GetAnimationClip().length + 0.05f);
+        }
 
         activeChipRef = null;
         chipLoadManager.nextChipRefLoad.Clear();

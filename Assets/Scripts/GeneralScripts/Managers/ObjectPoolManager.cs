@@ -24,6 +24,9 @@ public class ObjectPoolManager : MonoBehaviour
     void Awake()
     {
         chipInventory = FindObjectOfType<ChipInventory>();
+        playerAttributeManager = PlayerAttributeManager.Instance;
+        playerAttributeManager = FindObjectOfType<PlayerAttributeManager>();
+        PoolChipsFromAttributesDeck();
 
 
     }
@@ -32,8 +35,6 @@ public class ObjectPoolManager : MonoBehaviour
 	void Start()
     {
         //PoolChipsFromDeck();
-        playerAttributeManager = PlayerAttributeManager.Instance;
-        PoolChipsFromAttributesDeck();
         
     }
 
@@ -90,6 +91,7 @@ public class ObjectPoolManager : MonoBehaviour
     }
 
 
+
     void PoolChipsFromDeck()
     {
         List<ChipSO> chipDeckLoad = chipInventory.chipDeck;
@@ -134,6 +136,11 @@ public class ObjectPoolManager : MonoBehaviour
         }
     }
 
+    ///<summary>
+    ///Takes chips from the current chip deck defined within the Current Player Attributes scriptable object
+    ///and instantiates their pre-defined effect prefabs and object summons (if applicable) within the StageObjectPool
+    ///game object.
+    ///</summary>
     void PoolChipsFromAttributesDeck()
     {
         //List<ChipSO> chipDeckLoad = chipInventory.chipDeck;

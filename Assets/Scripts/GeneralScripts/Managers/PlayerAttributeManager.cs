@@ -36,7 +36,6 @@ public int ShieldMaxHP;
     {
         InitializeSingleton();
         //Debug_FillChipDeck();
-        DontDestroyOnLoad(this.gameObject);
     }
 
 

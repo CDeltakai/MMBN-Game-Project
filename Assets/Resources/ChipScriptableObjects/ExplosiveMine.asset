@@ -15,17 +15,16 @@ MonoBehaviour:
   Id: 57398f1d176b6524489fca3b36bfffc5
   ChipID: 0
   Chip: 0
-  ChipName: Summon Mine
+  ChipName: Explosive Mine
   BaseDamage: 60
   ChipElement: 0
   ChipSize: 0
   EnergyCost: 1
   ChipType: 1
   BaseStatusEffect: 0
-  ChipDescription: Summons a mine 4 tiles forward. If an enemy steps onto the mine,
-    the mine explodes for 60 damage. If an enemy is shoved onto the mine, it explodes
-    with greater force, dealing additional damage as well as damaging enemies on
-    adjacent tiles for half the initial damage.
+  ChipDescription: Summons a mine 4 tiles forward. Enemeies that step onto the mine
+    will trigger an explosion. Enemies shoved onto the mine will trigger a stronger
+    explosion.
   ChipImage: {fileID: -9168428118247650306, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0
   EffectScript: 

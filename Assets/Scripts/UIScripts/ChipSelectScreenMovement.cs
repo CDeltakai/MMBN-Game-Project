@@ -28,10 +28,17 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     [SerializeField] List<ChipSO> selectableChips;
     [SerializeField] List<ChipObjectReference> selectableChipRefs;
+    [SerializeField] List<ChipObjectReference> chipRefsDeck = new List<ChipObjectReference>();
+    [SerializeField] List<ChipObjectReference> discardedChipRefsDeck = new List<ChipObjectReference>();
     [SerializeField] GameObject[] chipButtons;
     [SerializeField] GameObject[] ActiveChipSlots;
 
     [SerializeField] GameObject ChipDescriptor;
+    [SerializeField] GameObject ChipNameField;
+    [SerializeField] GameObject ChipModifiersField;
+    [SerializeField] GameObject ChipElementField;
+    [SerializeField] GameObject ChipAttributeField;
+    [SerializeField] GameObject ChipDamageField;
     PlayerMovement playerMovement;
     ChipLoadManager chipLoadManager;
 
@@ -52,6 +59,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     void Awake()
     {
         objectPoolManager = FindObjectOfType<ObjectPoolManager>();
+
     }
 
     void Start()
@@ -62,8 +70,8 @@ public class ChipSelectScreenMovement : MonoBehaviour
         chipInventory = FindObjectOfType<ChipInventory>();
         playerMovement = FindObjectOfType<PlayerMovement>();
         chipLoadManager = FindObjectOfType<ChipLoadManager>();
-        //populateChipSelect();
-        populateChipSelectRefType();
+        populateChipRefDeck();
+
     }
 
     void Update()
@@ -162,32 +170,53 @@ public class ChipSelectScreenMovement : MonoBehaviour
             }
     }
 
+    void populateChipRefDeck()
+    {
+        print("Attempting populate chiprefdeck");
+
+        for(int i = 0; i < objectPoolManager.ChipRefList.Count; i++)
+        {
+            chipRefsDeck.Add(objectPoolManager.ChipRefList[i]);
+            print("Attempted to add "+ objectPoolManager.ChipRefList[i].chipSORef.GetChipName());
+        }
+
+    }
+
     void populateChipSelectRefType()
     {
         
         selectableChipRefs.Clear();
-        for (int i = 0; i < 10; i++)
+        if(chipRefsDeck.Count <= 0)
         {
-            chipButtons[i].GetComponent<ChipSlot>().clearChip();
-
+            chipRefsDeck.AddRange(discardedChipRefsDeck);
+            discardedChipRefsDeck.Clear();            
         }
 
         foreach(GameObject button in chipButtons)
         {
+            button.GetComponent<ChipSlot>().clearChip();
             button.SetActive(true);
         }
 
 
-        for (int i = 0; i < objectPoolManager.ChipRefList.Count; i++)
+        for (int i = 0; i < maxSelectableChips; i++)
         {
-            selectableChipRefs.Add(objectPoolManager.ChipRefList[i]);
+            if(chipRefsDeck.Count <= 0)
+            {
+                break;
+            }
+            int randomInt = UnityEngine.Random.Range(0, (chipRefsDeck.Count-1));
+            selectableChipRefs.Add(chipRefsDeck[randomInt]);
+            discardedChipRefsDeck.Add(chipRefsDeck[randomInt]);
+            chipRefsDeck.RemoveAt(randomInt);
         }
 
-        for (int i = 0; i < (maxSelectableChips - 1); i++)
+        for (int i = 0; i < (maxSelectableChips); i++)
         {
-            int randomInt = UnityEngine.Random.Range(0, (objectPoolManager.ChipRefList.Count-1));
-            print(randomInt);
-
+            if(i >= selectableChipRefs.Count)
+            {
+                break;
+            }
             chipButtons[i].GetComponent<ChipSlot>().changeChipReference
             (selectableChipRefs[i]);
         }
@@ -234,7 +263,17 @@ public class ChipSelectScreenMovement : MonoBehaviour
         //print(chipSlot.getChipObjRef().chipSORef.GetChipDescription());
         if(chipSlot.getChipObjRef() != null)
         {
+            ChipNameField.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipName();            
             ChipDescriptor.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipDescription();
+            
+            if(chipSlot.getChipObjRef().chipSORef.GetChipDamage() == 0)
+            {
+                ChipDamageField.GetComponent<TextMeshProUGUI>().text = "N/A";
+            }else
+            {
+                ChipDamageField.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipDamage().ToString();
+            }
+
         }
 
     }
