@@ -233,7 +233,6 @@ public PlayerAttributeSO playerAttributes;
             nextChip.effectPrefab.SetActive(true);
             nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().Effect();
 
-
             nextChip.effectPrefab.SetActive(false);
             
 
