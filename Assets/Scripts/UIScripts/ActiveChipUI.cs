@@ -2,41 +2,92 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 
 public class ActiveChipUI : MonoBehaviour
 {
 
-    //[SerializeField] Sprite[] chipQeueImages = new Sprite[5];
+    [SerializeField] Vector3 InViewPosition = new Vector3();
+    [SerializeField] Vector3 OutOfViewPosition = new Vector3();
     [SerializeField] List<ChipSlot> ActiveChipSlots = new List<ChipSlot>();
 
+    RectTransform rect;
     PlayerMovement player;
     ChipLoadManager chipLoadManager;
+    ChipSelectScreenMovement chipSelectScreen;
     Image chipImage;
     bool hasLoadedChips;
 
-    void Start()
+    void Awake()
     {
         player = FindObjectOfType<PlayerMovement>();
         chipLoadManager = FindObjectOfType<ChipLoadManager>();
+        rect = GetComponent<RectTransform>();
+        chipSelectScreen = FindObjectOfType<ChipSelectScreenMovement>();
+        chipSelectScreen.triggerMenuEvent += MoveUIPosition;
+        chipLoadManager.loadChipsEvent += LoadChipImages;
+        player.usedChipEvent += LoadChipImages;
+
+    }
+
+    void Start()
+    {
+
 
     }
 
     void Update()
     {
-    
 
 
     }
 
+    ///<summary>
+    ///true = move UI to InViewPosition, false = move UI to OutOfViewPosition
+    ///</summary> 
+    void MoveUIPosition(bool condition)
+    {
+        if(condition)
+        {
+            //rect.DOMoveX(333, 0.2f).SetUpdate(true);
+            rect.DOMoveX(-5, 0.2f).SetUpdate(true);
+        }else
+        {
+            //rect.DOMoveX(-333, 0.2f).SetUpdate(true);
+            rect.DOLocalMoveX(-2.4f, 0.2f).SetUpdate(true);
+
+        }
+
+    }
 
     public void LoadChipImages()
     {
-        for (int i = 0; i < player.PlayerChipQueue.Count; i++)
+        foreach(ChipSlot chipSlot in ActiveChipSlots)
         {
+            chipSlot.clearChip();
+        }        
+
+        if(chipLoadManager.chipRefQueue.Count == 0 && chipLoadManager.nextChipRefLoad. Count == 0)
+        {
+            foreach(ChipSlot chipSlot in ActiveChipSlots)
+            {
+                chipSlot.clearChip();
+            }
+            return;
+                
+
+        }        
+
+        ActiveChipSlots[0].changeImage(chipLoadManager.nextChipRefLoad[0].chipSORef);
+
+
+        for (int i = 1; i < chipLoadManager.chipRefQueue.Count + 1; i++)
+        {
+
             chipImage = ActiveChipSlots[i].GetComponent<Image>();
-            //chipQeueImages[i] = player.PlayerChipQueue[i].GetChipImage();
-            ActiveChipSlots[i].GetComponent<Image>().sprite = player.PlayerChipQueue[i].GetChipImage();
+            
+            ActiveChipSlots[i].changeImage(chipLoadManager.chipRefQueue[i-1].chipSORef);
             chipImage.color = new Color(chipImage.color.r, chipImage.color.g, chipImage.color.b, 1f);
 
         }

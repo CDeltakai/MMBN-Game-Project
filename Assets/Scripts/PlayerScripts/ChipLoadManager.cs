@@ -8,9 +8,16 @@ public class ChipLoadManager : MonoBehaviour
 public delegate void LoadChipsEvent();
 public event LoadChipsEvent loadChipsEvent;
 
+///<summary>
+///This list defines the next chipload that will be used when the player presses the
+///use chip button. In most cases it will be a list of only a single element, but if
+///the player has input passive or buff chips which attach to other chips
+///the nextChipRefLoad may be larger.
+///</summary>
 [SerializeField] public List<ChipObjectReference> nextChipRefLoad = new List<ChipObjectReference>();
 
-
+///<summary>
+///Defines the list of chips loaded and ready to use in the current battle phase.
 [SerializeField] public List<ChipObjectReference> chipRefQueue = new List<ChipObjectReference>();
 
 

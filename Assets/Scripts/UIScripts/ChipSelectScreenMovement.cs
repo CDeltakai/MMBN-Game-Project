@@ -9,7 +9,8 @@ using TMPro;
 public class ChipSelectScreenMovement : MonoBehaviour
 {
 
-
+    public delegate void TriggeredMenuEvent(bool condition);
+    public event TriggeredMenuEvent triggerMenuEvent;
 
     private Vector3 endPosition = new Vector3 (-690, 170, 0);
     private Vector3 startPosition = new Vector3 (-1229, 170, 0);
@@ -80,17 +81,17 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
         if(isTriggered)
         {
-        elapsedTime += Time.unscaledDeltaTime;
-        float percentageComplete = elapsedTime/desiredDuration;
+            elapsedTime += Time.unscaledDeltaTime;
+            float percentageComplete = elapsedTime/desiredDuration;
 
-        rectTransform.anchoredPosition = Vector3.Lerp(startPosition, endPosition, percentageComplete);
+            rectTransform.anchoredPosition = Vector3.Lerp(startPosition, endPosition, percentageComplete);
         }
 
         if(!isTriggered)
         {
-        elapsedTime += Time.unscaledDeltaTime;
-        float percentageComplete = elapsedTime/desiredDuration;
-        rectTransform.anchoredPosition = Vector3.Lerp(endPosition, startPosition, percentageComplete);
+            elapsedTime += Time.unscaledDeltaTime;
+            float percentageComplete = elapsedTime/desiredDuration;
+            rectTransform.anchoredPosition = Vector3.Lerp(endPosition, startPosition, percentageComplete);
         }
 
 
@@ -107,16 +108,23 @@ public class ChipSelectScreenMovement : MonoBehaviour
             //populateChipSelect();
             populateChipSelectRefType();
             Pause();
+            if(triggerMenuEvent != null)
+            {
+                triggerMenuEvent(true);
+            }
             isTriggered = true;
             elapsedTime = 0;
-            //Debug.Log("Trigger True");
         }
         else if(isTriggered)
         {
             unPause();
+            if(triggerMenuEvent !=null)
+            {
+                triggerMenuEvent(false);
+            }
+
             isTriggered = false;
             elapsedTime = 0;
-            //Debug.Log("Trigger False");
         }
     }
 
@@ -265,7 +273,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
         {
             ChipNameField.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipName();            
             ChipDescriptor.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipDescription();
-            
+
             if(chipSlot.getChipObjRef().chipSORef.GetChipDamage() == 0)
             {
                 ChipDamageField.GetComponent<TextMeshProUGUI>().text = "N/A";

@@ -13,6 +13,8 @@ using UnityEngine.Experimental.GlobalIllumination;
 [System.Serializable]
 public struct ChipInventoryReference
 {
+    
+    public string chipName;
     public ChipSO chip;
     public int chipCount;
 
@@ -20,7 +22,15 @@ public struct ChipInventoryReference
     {
         this.chip = chip;
         this.chipCount = chipCount;
+        this.chipName = chip.GetChipName();
     }
+}
+
+[System.Serializable]
+public class DeckLoadout
+{
+    public string DeckName;
+    public List<ChipInventoryReference> Deck;
 }
 
 [CreateAssetMenu(fileName = "Player Attributes Data", menuName = "New Player Attributes Data", order = 0)]
@@ -31,18 +41,19 @@ public class PlayerAttributeSO : ScriptableObject
     ///BaseHP is the HP of the player with only HP upgrades and no
     ///modifiers.
     int MinimumHP = 100;
-    [SerializeField] int BaseHP = 100;
-    [SerializeField] int CurrentMaxHP = 100;
+    [field:SerializeField] public int BaseHP{get; private set;} = 100;
+    [field:SerializeField] public int CurrentMaxHP{get; set;} = 100;
     [SerializeField] int NumberOfHPUpgrades = 0;
 
-    [SerializeField] int BaseShieldHP = 0;
+    
+    [field:SerializeField] public int BaseShieldHP{get; private set;} = 0;
     [SerializeField] int MaxShieldHP = 50;
-
-    [SerializeField] int BaseEnergy = 5;
+    
+    [field:SerializeField] public int BaseEnergy{get; private set;} = 5;
     [SerializeField] int MaxEnergy = 5;
 
     [SerializeField] int BasicShotDamage = 1;
-    [SerializeField] float MinimumChargeSpeed = 0.75f;
+    [field:SerializeField] public float MinimumChargeSpeed{get; private set;} = 0.75f;
     [SerializeField] float ChargeSpeed = 2.5f;
 
 
@@ -53,7 +64,7 @@ public class PlayerAttributeSO : ScriptableObject
     int HardMaxSelectableChips = 10;
     int MinActiveChips = 1;
     int HardMaxActiveChips = 7;
-    [SerializeField] int MaxSelectableChips = 5;
+    [SerializeField] public int MaxSelectableChips = 5;
     [SerializeField] int MaxActiveChips = 5;
 
     [SerializeField] bool HasSuperArmor = false;
@@ -70,15 +81,18 @@ public class PlayerAttributeSO : ScriptableObject
     [SerializeField] int CurrentDeckLoadouts = 2;
     [SerializeField] public List<ChipInventoryReference> CurrentChipDeck = new List<ChipInventoryReference>();
     [SerializeField] public List<ChipInventoryReference> CurrentChipInventory = new List<ChipInventoryReference>();
+    [SerializeField] public List<DeckLoadout> ChipDeckLoadouts = new List<DeckLoadout>();
 
     public List<ChipInventoryReference> GetCurrentChipDeck()
     {
         return CurrentChipDeck;
+        
     }
 
 
     public int GetBaseHP()
     {
+        
         return BaseHP;
     }
 

@@ -30,6 +30,7 @@ public void changeImage(ChipSO chip)
 {
     chipImage = chip.GetChipImage();
     activeImage.sprite = chipImage;
+    activeImage.enabled = true;
 }
 
 public void changeChip(ChipSO chip)

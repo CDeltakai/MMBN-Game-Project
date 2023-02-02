@@ -312,11 +312,7 @@ public PlayerAttributeSO playerAttributes;
     IEnumerator ParryEffect()
     {
         fullInvincible = true;
-        //soundEventEmitter.EventReference = ParrySuccessEvent;
         FMODUnity.RuntimeManager.PlayOneShotAttached(ParrySuccessSFX, transform.gameObject);
-        //soundEventEmitter.Play();
-
-
 
         bgController.FadeToBlack(0.5f);
         
