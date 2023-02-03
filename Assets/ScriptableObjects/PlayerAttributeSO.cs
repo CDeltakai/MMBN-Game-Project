@@ -11,7 +11,7 @@ using UnityEngine.Experimental.GlobalIllumination;
 ///in order to handle duplicate chips.
 ///</summary>
 [System.Serializable]
-public struct ChipInventoryReference
+public class ChipInventoryReference
 {
     
     public string chipName;
@@ -54,6 +54,7 @@ public class PlayerAttributeSO : ScriptableObject
     
     [field:SerializeField] public int BaseEnergy{get; private set;} = 5;
     [SerializeField] int MaxEnergy = 5;
+    [field:SerializeField] float EnergyRegenRate{get; set;} = 1f;
 
     [SerializeField] int BasicShotDamage = 1;
     [field:SerializeField] public float MinimumChargeSpeed{get; private set;} = 0.75f;

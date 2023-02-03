@@ -18,7 +18,7 @@ public class Airshot : ChipEffectBlueprint
             {return;}
 
             applyChipDamage(target);
-            StartCoroutine(target.Shove(1, 0));            
+            target.AttemptShove(1, 0);            
         }
         
     

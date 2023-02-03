@@ -46,7 +46,7 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] int BaseDamage;
     [SerializeField] EChipElements ChipElement;
     [SerializeField] int ChipSize;
-    [SerializeField] int EnergyCost;
+    [field:SerializeField] public int EnergyCost{get; private set;}
     // Chip Types: 2 = Freeze-time ability(Special chips that freeze time before applying effect)
     // 1 = Active(Real-time usable chip), 0 = Passive(Applies effect to succeeding chip)
     [SerializeField] EChipTypes ChipType;

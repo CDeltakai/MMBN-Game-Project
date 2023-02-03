@@ -31,6 +31,7 @@ public PlayerAttributeSO playerAttributes;
     ChipSelectScreenMovement chipSelectScreenMovement;
     BackgroundController bgController;
     FMODUnity.StudioEventEmitter soundEventEmitter;
+    EnergyBar energyBar;
 
 #endregion
 
@@ -69,6 +70,7 @@ public PlayerAttributeSO playerAttributes;
     public override bool isStunnable => true;
     public override int maxHP => 9999;
     public int MaxEnergy;
+    public int currentEnergy;
 
 
     public override ETileTeam team { get;set;} = ETileTeam.Player;
@@ -81,12 +83,6 @@ public PlayerAttributeSO playerAttributes;
     Coroutine VFXCoroutine = null;
     Coroutine CooldownCoroutine = null;
     Coroutine ParryCDCoroutine = null;
-
-
-
-  [Header("Experimental Features")]
-    [SerializeField] bool useTranslateMovement = false;
-    [SerializeField] bool useTweenMovement = false;
 
 
 [Header("FMOD Sound Events")]
@@ -117,6 +113,8 @@ public PlayerAttributeSO playerAttributes;
         SuperArmor = playerAttributes.GetSuperArmor();
         isGrounded = playerAttributes.GetIsGrounded();
 
+        currentEnergy = MaxEnergy;
+
     }
 
     public override void Awake()
@@ -129,6 +127,13 @@ public PlayerAttributeSO playerAttributes;
 
     public override void Start()
     {
+        if(EnergyBar.Instance != null)
+        {
+            energyBar = EnergyBar.Instance;
+        }else
+        {
+            energyBar = FindObjectOfType<EnergyBar>();
+        }
 
         chipEffect = FindObjectOfType<ChipEffects>();
         chipSelectScreenMovement = FindObjectOfType<ChipSelectScreenMovement>();
@@ -232,6 +237,7 @@ public PlayerAttributeSO playerAttributes;
             activeChipRef = nextChip;
             nextChip.effectPrefab.SetActive(true);
             nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().Effect();
+            AdjustEnergy(-nextChip.chipSORef.EnergyCost);
 
             nextChip.effectPrefab.SetActive(false);
             
@@ -254,22 +260,16 @@ public PlayerAttributeSO playerAttributes;
         UseChipCoroutine = null;
     }
 
-
-
-    IEnumerator teleMoveWithDelay(int x, int y, float delay)
+    void AdjustEnergy(int cost)
     {
-        if(isMoving)
-        {yield break;}
-        if(!checkValidTile(currentCellPos.x + x, currentCellPos.y + y))
-        {
-            yield break;
-        }
-        isMoving = true; 
-        animator.SetTrigger("Move");
-        yield return new WaitForSeconds(delay);
+        currentEnergy += cost;
+        
+        energyBar.AdjustEnergy(cost);
+    }
 
-        cellMove(x, y);
-        isMoving = false;
+    IEnumerator RegenEnergy()
+    {
+        yield return null;
     }
 
     Ease movementEase = Ease.OutCubic;

@@ -3,13 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
 
+
 public class TileEventManager : MonoBehaviour
 {
 
     BattleStageHandler stageHandler;
+    Dictionary<BStageEntity, Coroutine> EntityCoroutineList = new Dictionary<BStageEntity, Coroutine>(); 
 
 
 
+    
+
+    IEnumerator testCO()
+    {
+        yield return null;
+        
+    }
 
     void Awake()
     {
@@ -22,6 +31,7 @@ public class TileEventManager : MonoBehaviour
         {
             entity.moveOntoTile += MoveOntoTileEffect;
             entity.moveOffTile += MoveOffTileEffect;
+
         }
     }
 

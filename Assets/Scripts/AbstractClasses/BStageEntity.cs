@@ -379,7 +379,7 @@ public abstract class BStageEntity : MonoBehaviour
 
         // var vfx = Addressables.InstantiateAsync("VFX_Destruction_Explosion", transform.parent.transform.position, 
         //                                         transform.rotation, transform.parent.transform);
-        yield return new WaitForSecondsRealtime(0.533f);
+        yield return new WaitForSecondsRealtime(0.4f);
 
         if(AnimateHPCoroutine == null)
         {
@@ -577,6 +577,10 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
 
+    public void AttemptShove(int x, int y)
+    {
+        StartCoroutine(Shove(x, y));
+    }
 
 ///<summary>
 ///forcefully moves the entity a given distance. Will deal damage to this entity
@@ -598,19 +602,20 @@ public abstract class BStageEntity : MonoBehaviour
             if(Math.Abs(currentCellPos.x - destinationCell.x) == 1 )
             {
                 print("Attempting shove collision damage");
-                worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).SetEase(Ease.OutCirc).SetUpdate(true);
+                worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).
+                SetEase(Ease.OutCirc).SetUpdate(false);
                 isBeingShoved = true;
                 
                 print("Attempting waiting for seconds");
 
-                yield return new WaitForSecondsRealtime(0.10f);
-                worldTransform.DOMove(currentWorldPosition, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(true);
+                yield return new WaitForSeconds(0.10f);
+                worldTransform.DOMove(currentWorldPosition, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(false);
                 print("Attempting shove back to original position");
 
                 hurtEntity(40, false, true);
-                yield return new WaitForSecondsRealtime(0.05f);
+                yield return new WaitForSeconds(0.05f);
                 stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(40, false, true);     
-                yield return new WaitForSecondsRealtime(0.1f);
+                yield return new WaitForSeconds(0.1f);
                 isBeingShoved = false;           
 
             }else if(Math.Abs(currentCellPos.y - destinationCell.y) == 1)
