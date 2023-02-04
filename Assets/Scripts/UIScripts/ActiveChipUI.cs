@@ -35,6 +35,7 @@ public class ActiveChipUI : MonoBehaviour
     {
 
 
+
     }
 
     void Update()

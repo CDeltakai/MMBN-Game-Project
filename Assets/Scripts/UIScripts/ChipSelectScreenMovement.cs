@@ -59,7 +59,9 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     void Awake()
     {
+        
         objectPoolManager = FindObjectOfType<ObjectPoolManager>();
+
 
     }
 

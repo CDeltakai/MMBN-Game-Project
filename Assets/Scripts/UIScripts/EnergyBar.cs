@@ -9,19 +9,8 @@ using TMPro;
 public class EnergyBar : MonoBehaviour
 {
 
-    private static EnergyBar _instance;
-    public static EnergyBar Instance {get {return _instance;} }
-    private void InitializeSingleton()
-    {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.transform.parent.gameObject);
-            Destroy(this.gameObject);
-        }else
-        {
-            _instance = this;
-        }
-    }
+
+
 
 
     [SerializeField] PlayerAttributeSO PlayerAttributes;
@@ -35,7 +24,6 @@ public class EnergyBar : MonoBehaviour
     
     private void Awake()
     {
-        InitializeSingleton();
         BarImage = GetComponent<Image>();
         BarImage.fillAmount = 1f;
 

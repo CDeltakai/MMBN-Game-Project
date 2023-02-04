@@ -19,9 +19,17 @@ Image activeImage;
 
 private void Awake() {
 
+    // activeImage = GetComponent<Image>();
+    // activeImage.enabled = false;
+    
+}
+
+private void Start() 
+{
     activeImage = GetComponent<Image>();
     activeImage.enabled = false;
-    
+
+
 }
 
 
@@ -58,6 +66,7 @@ public ChipObjectReference getChipObjRef()
 
 public void clearChip()
 {
+    activeImage = GetComponent<Image>();
     SelectedChip = null;
     CurrentChipReference = null;
     chipImage = null;

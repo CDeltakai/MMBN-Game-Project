@@ -31,7 +31,7 @@ public PlayerAttributeSO playerAttributes;
     ChipSelectScreenMovement chipSelectScreenMovement;
     BackgroundController bgController;
     FMODUnity.StudioEventEmitter soundEventEmitter;
-    EnergyBar energyBar;
+    [SerializeField] EnergyBar energyBar;
 
 #endregion
 
@@ -127,13 +127,9 @@ public PlayerAttributeSO playerAttributes;
 
     public override void Start()
     {
-        if(EnergyBar.Instance != null)
-        {
-            energyBar = EnergyBar.Instance;
-        }else
-        {
-            energyBar = FindObjectOfType<EnergyBar>();
-        }
+
+        //energyBar = FindObjectOfType<EnergyBar>();
+        
 
         chipEffect = FindObjectOfType<ChipEffects>();
         chipSelectScreenMovement = FindObjectOfType<ChipSelectScreenMovement>();

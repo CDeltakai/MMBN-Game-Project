@@ -19,13 +19,10 @@ MonoBehaviour:
   BaseDamage: 0
   ChipElement: 0
   ChipSize: 8
-  EnergyCost: 2
+  <EnergyCost>k__BackingField: 0
   ChipType: 3
   BaseStatusEffect: 0
-  ChipDescription: 'Area Grab:
-
-    Steals 1 column of tiles. Will not steal tiles
-    occupied by enemies.'
+  ChipDescription: Steals 1 column of tiles. Will not steal tiles occupied by enemies.
   ChipImage: {fileID: -7076212780686466202, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   AnimationDuration: 0.05
   EffectScript: AreaGrab
@@ -37,7 +34,7 @@ MonoBehaviour:
       Data4: 0
     Path: 
   AdditionalSFX: []
-  AnimationToUse: 0
+  AnimationClipToUse: {fileID: 0}
   ObjectSummon: {fileID: 0}
   EffectPrefab: {fileID: 1858245700066143820, guid: c7d2b95ebc501c6428bbcc5953c052b1, type: 3}
   effectMechanism: 2

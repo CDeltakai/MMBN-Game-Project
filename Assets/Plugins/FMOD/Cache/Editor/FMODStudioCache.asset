@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638108545484826581
+  lastModified: 638111177598824955
   FileSizes:
   - Name: Desktop
     Value: 130560
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638108545484191106
+  lastModified: 638111177597296961
   FileSizes:
   - Name: Desktop
     Value: 1762
@@ -82,7 +82,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638108545484150559
+  lastModified: 638111177597246963
   FileSizes:
   - Name: Desktop
     Value: 51168
@@ -237,7 +237,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638108545484221104
+  lastModified: 638111177597337066
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -285,7 +285,7 @@ MonoBehaviour:
   - {fileID: -2834223847602432238}
   StringsBanks:
   - {fileID: -8211752414539646085}
-  cacheTime: 638108545485071401
+  cacheTime: 638111177599456874
   cacheVersion: 131591
 --- !u!114 &104925123999711182
 MonoBehaviour:
@@ -329,7 +329,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/UISFXBank.bank
   Name: UISFXBank
   StudioPath: bank:/UISFXBank
-  lastModified: 638108545485071401
+  lastModified: 638111177599456874
   FileSizes:
   - Name: Desktop
     Value: 16160
@@ -349,7 +349,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/NPCSFX.bank
   Name: NPCSFX
   StudioPath: bank:/NPCSFX
-  lastModified: 638108545484436176
+  lastModified: 638111177597725764
   FileSizes:
   - Name: Desktop
     Value: 5056
@@ -396,7 +396,7 @@ MonoBehaviour:
   Path: Assets/FMOD Assets/FmodTesting/Build/Desktop/ChipSFX.bank
   Name: ChipSFX
   StudioPath: bank:/ChipSFX
-  lastModified: 638108545483865862
+  lastModified: 638111177596342522
   FileSizes:
   - Name: Desktop
     Value: 92800
