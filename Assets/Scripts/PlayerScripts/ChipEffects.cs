@@ -74,6 +74,7 @@ public class ChipEffects : MonoBehaviour
             var chip = chipLoadManager.nextChipRefLoad[0];
             ChipEffectBlueprint chipEffectScript = chip.effectPrefab.GetComponent<ChipEffectBlueprint>();
             chipEffectScript.Effect();
+            player.AdjustEnergy(-chip.chipSORef.EnergyCost);
 
             if(chip.chipSORef.GetAnimationClip() != null)
             {
@@ -92,6 +93,8 @@ public class ChipEffects : MonoBehaviour
             var chip = chipLoadManager.nextChipRefLoad[0];
             ChipEffectBlueprint chipEffectScript = chip.effectPrefab.GetComponent<ChipEffectBlueprint>();
             chipEffectScript.Effect();
+            player.AdjustEnergy(-chip.chipSORef.EnergyCost);
+
 
             if(chip.chipSORef.GetAnimationClip() != null)
             {

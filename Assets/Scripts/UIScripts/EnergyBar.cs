@@ -54,6 +54,15 @@ public class EnergyBar : MonoBehaviour
     public void AdjustEnergy(int amount)
     {
         float fillAdjustAmount = (float)amount/(float)MaxEnergy;
+        currentEnergy = player.currentEnergy;
+        if(currentEnergy < 0)
+        {
+            currentEnergy = 0;
+        }else if
+        (currentEnergy > player.MaxEnergy)
+        {
+            currentEnergy = player.MaxEnergy;
+        }
         
         BarImage.DOFillAmount(BarImage.fillAmount += fillAdjustAmount, 0.2f);
 

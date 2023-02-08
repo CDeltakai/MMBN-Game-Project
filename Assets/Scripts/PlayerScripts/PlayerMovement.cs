@@ -256,9 +256,16 @@ public PlayerAttributeSO playerAttributes;
         UseChipCoroutine = null;
     }
 
-    void AdjustEnergy(int cost)
+    public void AdjustEnergy(int cost)
     {
         currentEnergy += cost;
+        if(currentEnergy < 0)
+        {
+            currentEnergy = 0;
+        }else if(currentEnergy > MaxEnergy)
+        {
+            currentEnergy = MaxEnergy;
+        }
         
         energyBar.AdjustEnergy(cost);
     }

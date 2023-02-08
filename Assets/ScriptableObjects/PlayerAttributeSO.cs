@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
+
 ///<summary>
 ///The ChipInventoryReference is defined in the Player Attributes Scriptable Object.
 ///It is essentially a counter for the number of a 
@@ -86,6 +87,15 @@ public class PlayerAttributeSO : ScriptableObject
     [SerializeField] public List<ChipInventoryReference> CurrentChipDeck = new List<ChipInventoryReference>();
     [SerializeField] public List<ChipInventoryReference> CurrentChipInventory = new List<ChipInventoryReference>();
     [SerializeField] public List<DeckLoadout> ChipDeckLoadouts = new List<DeckLoadout>();
+
+
+    public void SaveToJson()
+    {
+        string saveData = JsonUtility.ToJson(this);
+        System.IO.File.WriteAllText(Application.persistentDataPath + "/playerSaveData.json", saveData);
+        Debug.Log("Attempted saving player attributes to JSON" + Application.persistentDataPath);
+    }
+
 
     public List<ChipInventoryReference> GetCurrentChipDeck()
     {
