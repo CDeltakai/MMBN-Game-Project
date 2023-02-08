@@ -19,7 +19,7 @@ MonoBehaviour:
   BaseDamage: 80
   ChipElement: 0
   ChipSize: 4
-  EnergyCost: 1
+  <EnergyCost>k__BackingField: 1
   ChipType: 1
   BaseStatusEffect: 0
   ChipDescription: Throw bomb 4 tiles forward, dealing 80 damage.

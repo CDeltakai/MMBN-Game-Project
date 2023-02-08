@@ -19,7 +19,7 @@ MonoBehaviour:
   BaseDamage: 0
   ChipElement: 0
   ChipSize: 8
-  <EnergyCost>k__BackingField: 0
+  <EnergyCost>k__BackingField: 2
   ChipType: 3
   BaseStatusEffect: 0
   ChipDescription: Steals 1 column of tiles. Will not steal tiles occupied by enemies.

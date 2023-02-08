@@ -19,7 +19,7 @@ MonoBehaviour:
   BaseDamage: 0
   ChipElement: 10
   ChipSize: 30
-  EnergyCost: 2
+  <EnergyCost>k__BackingField: 2
   ChipType: 3
   BaseStatusEffect: 0
   ChipDescription: Grants CONCEALMENT for 10 seconds, rendering you untargetable

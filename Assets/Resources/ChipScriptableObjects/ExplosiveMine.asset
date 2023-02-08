@@ -19,7 +19,7 @@ MonoBehaviour:
   BaseDamage: 60
   ChipElement: 0
   ChipSize: 0
-  EnergyCost: 1
+  <EnergyCost>k__BackingField: 1
   ChipType: 1
   BaseStatusEffect: 0
   ChipDescription: Summons a mine 4 tiles forward. Enemeies that step onto the mine

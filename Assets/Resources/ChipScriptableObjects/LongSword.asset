@@ -19,7 +19,7 @@ MonoBehaviour:
   BaseDamage: 80
   ChipElement: 2
   ChipSize: 24
-  EnergyCost: 2
+  <EnergyCost>k__BackingField: 2
   ChipType: 1
   BaseStatusEffect: 0
   ChipDescription: Swing sword 2 tiles forward

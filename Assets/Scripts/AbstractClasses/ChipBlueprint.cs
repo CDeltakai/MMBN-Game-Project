@@ -11,10 +11,12 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     protected GameObject ObjectSummon;
     protected int BaseDamage;
     protected EStatusEffects BaseStatusEffect;
+    protected int EnergyCost;
 
-    public int AddDamage = 0;
-    public EStatusEffects AddStatusEffect = EStatusEffects.Default;
-    public GameObject AddSummonObject = null;
+    public int DamageModifier = 0;
+    public EStatusEffects StatusEffectModifier = EStatusEffects.Default;
+    public GameObject SummonObjectModifier = null;
+    public int EnergyCostModifier = 0;
 
 
 
@@ -38,6 +40,8 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
         lightAttack = chip.IsLightAttack();
         hitFlinch = chip.IsHitFlinch();
         pierceUntargetable = chip.IsPierceUntargetable();
+        EnergyCost = chip.EnergyCost;
+
 
     }
 
@@ -47,17 +51,17 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     public void applyChipDamage(BStageEntity entity)
     {
 
-        if(AddStatusEffect == EStatusEffects.Default)
+        if(StatusEffectModifier == EStatusEffects.Default)
         {
-            AddStatusEffect = BaseStatusEffect;
+            StatusEffectModifier = BaseStatusEffect;
         }
 
-        entity.hurtEntity((int)((BaseDamage + AddDamage) * player.AttackMultiplier),
+        entity.hurtEntity((int)((BaseDamage + DamageModifier) * player.AttackMultiplier),
                             lightAttack,
                             hitFlinch, 
                             player, 
                             pierceUntargetable, 
-                            AddStatusEffect);
+                            StatusEffectModifier);
 
 
     }
@@ -78,9 +82,10 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
         lightAttack = chip.IsLightAttack();
         hitFlinch = chip.IsHitFlinch();
         pierceUntargetable = chip.IsPierceUntargetable();
-        AddDamage = 0;
-        AddStatusEffect = EStatusEffects.Default;
-        AddSummonObject = null;
+        DamageModifier = 0;
+        StatusEffectModifier = EStatusEffects.Default;
+        SummonObjectModifier = null;
+        EnergyCostModifier = 0;
 
 
 

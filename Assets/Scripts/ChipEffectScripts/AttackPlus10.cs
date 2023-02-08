@@ -23,7 +23,7 @@ public class AttackPlus10 : ChipEffectBlueprint
             {
                 chipToBuff.ObjectSummon.GetComponentInChildren<ObjectSummonAttributes>().AddDamage += 10;
             }
-            chipToBuff.effectPrefab.GetComponent<ChipEffectBlueprint>().AddDamage += 10;
+            chipToBuff.effectPrefab.GetComponent<ChipEffectBlueprint>().DamageModifier += 10;
         }else
         {
             print("Buff chips have no effect on Non-attack chips");

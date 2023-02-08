@@ -23,7 +23,7 @@ public class WhiteCapsule : ChipEffectBlueprint
             {
                 chipToBuff.ObjectSummon.GetComponentInChildren<ObjectSummonAttributes>().AddStatusEffect = EStatusEffects.Paralyzed;
             }
-            chipToBuff.effectPrefab.GetComponent<ChipEffectBlueprint>().AddStatusEffect = EStatusEffects.Paralyzed;
+            chipToBuff.effectPrefab.GetComponent<ChipEffectBlueprint>().StatusEffectModifier = EStatusEffects.Paralyzed;
         }else
         {
             print("Buff chips have no effect on Non-attack chips");

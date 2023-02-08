@@ -67,6 +67,11 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] bool lightAttack;
     [SerializeField] bool hitFlinch;
     [SerializeField] bool UseAnimationEvent;
+    ///<summary>
+    ///This condition dictates if this chip allows for additional objects to be summoned
+    ///through certain passive chips or other modifiers.
+    ///</summary>
+    [field:SerializeField] public bool AllowSummonObjectMod{get; private set;}
     [HideInInspector] GameObject TempEffectPrefabRef;
 
 

@@ -19,7 +19,7 @@ MonoBehaviour:
   BaseDamage: 40
   ChipElement: 0
   ChipSize: 4
-  EnergyCost: 0
+  <EnergyCost>k__BackingField: 1
   ChipType: 1
   BaseStatusEffect: 0
   ChipDescription: Fire a cannon straight
