@@ -1,7 +1,9 @@
 fileFormatVersion: 2
 guid: bd7ed4d9bc986534ea7bccedb06f908e
+labels:
+- EffectPreabs
 PrefabImporter:
   externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: effectprefabs
   assetBundleVariant: 

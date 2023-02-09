@@ -16,14 +16,15 @@ MonoBehaviour:
   ChipID: 0
   Chip: 106
   ChipName: Wide Sword
-  BaseDamage: 0
-  ChipImage: {fileID: -4611406389132694472, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
-  ChipDescription: Slash 3 tiles by column
+  BaseDamage: 80
   ChipElement: 2
   ChipSize: 16
-  AnimationDuration: 0.375
+  <EnergyCost>k__BackingField: 1
   ChipType: 1
   BaseStatusEffect: 0
+  ChipDescription: Slash a sword with a 3 tile range by column in front.
+  ChipImage: {fileID: -4611406389132694472, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
+  AnimationDuration: 0.375
   EffectScript: Generic_Sword
   SFX:
     Guid:
@@ -33,11 +34,12 @@ MonoBehaviour:
       Data4: 206725983
     Path: event:/EnergySwordSlash
   AdditionalSFX: []
-  AnimationToUse: 105
-  ObjectSummon: {fileID: 0}
-  EffectPrefab: {fileID: 0}
-  effectMechanism: 0
+  AnimationClipToUse: {fileID: 7400000, guid: 97f4ca83fb3abed46a0084a0f586c63a, type: 2}
+  ObjectSummon: {fileID: 4765144751430364555, guid: 0a1e2cb7b94970045944090e69cde296, type: 3}
+  EffectPrefab: {fileID: 6428891363949495607, guid: c7cae763b9faf264ab102bee66417372, type: 3}
+  effectMechanism: 1
   pierceUntargetable: 0
   lightAttack: 0
   hitFlinch: 0
-  UseAnimationEvent: 0
+  UseAnimationEvent: 1
+  <AllowSummonObjectMod>k__BackingField: 0

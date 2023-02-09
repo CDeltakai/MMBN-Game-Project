@@ -1,8 +1,8 @@
-using System.Globalization;
+﻿using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
+using Newtonsoft.Json;
 
 
 ///<summary>
@@ -65,37 +65,53 @@ public class PlayerAttributeSO : ScriptableObject
     [SerializeField] float GlobalOffenseMultiplier = 1;
     [SerializeField] float GlobalDefenseMultiplier = 1;
 
-    int MinimumSelectableChips = 1;
-    int HardMaxSelectableChips = 10;
-    int MinActiveChips = 1;
-    int HardMaxActiveChips = 7;
     [SerializeField] public int MaxSelectableChips = 5;
     [SerializeField] int MaxActiveChips = 5;
-
     [SerializeField] bool HasSuperArmor = false;
-    [SerializeField] bool IsGrounded = true;
-    [SerializeField] bool IsStunnable = true;
-
-    int MinDeckCapacity = 15;
-    int MaxDeckCapacity = 100;
     [SerializeField] int BaseDeckCapacity = 30;
     [SerializeField] int CurrentDeckCapacity = 30;
-
-    int MinDeckLoadouts = 1;
-    int MaxDeckLoadouts = 10;
+    [SerializeField] bool IsGrounded = true;
+    [SerializeField] bool IsStunnable = true;
     [SerializeField] int CurrentDeckLoadouts = 2;
     [SerializeField] public List<ChipInventoryReference> CurrentChipDeck = new List<ChipInventoryReference>();
     [SerializeField] public List<ChipInventoryReference> CurrentChipInventory = new List<ChipInventoryReference>();
     [SerializeField] public List<DeckLoadout> ChipDeckLoadouts = new List<DeckLoadout>();
 
+    int MaxDeckCapacity = 100;
+    int MinimumSelectableChips = 1;
+    int HardMaxSelectableChips = 10;
+    int MinActiveChips = 1;
+    int HardMaxActiveChips = 7;
+
+
+    int MinDeckCapacity = 15;
+
+    int MinDeckLoadouts = 1;
+    int MaxDeckLoadouts = 10;
+
 
     public void SaveToJson()
     {
-        string saveData = JsonUtility.ToJson(this);
-        System.IO.File.WriteAllText(Application.persistentDataPath + "/playerSaveData.json", saveData);
-        Debug.Log("Attempted saving player attributes to JSON" + Application.persistentDataPath);
+        string saveJsonUtility = JsonUtility.ToJson(this, true);
+        string saveNewtonJson = JsonConvert.SerializeObject(this, Formatting.Indented);
+        System.IO.File.WriteAllText(Application.persistentDataPath + "/playerSaveData_JsonUtility.json", saveJsonUtility);
+        System.IO.File.WriteAllText(Application.persistentDataPath + "/playerSaveData_NewtonJson.json", saveNewtonJson);
+        Debug.Log("Attempted saving player attributes to JSON " + Application.persistentDataPath);
     }
 
+    public void LoadJsonUtilitySave()
+    {
+        string savedata = System.IO.File.ReadAllText(Application.persistentDataPath + "/playerSaveData_JsonUtility.json");
+        Debug.Log(savedata);
+        JsonUtility.FromJsonOverwrite(savedata, this);
+    }
+
+    public void LoadNewtonsoftSave()
+    {
+        string savedata = System.IO.File.ReadAllText(Application.persistentDataPath + "/playerSaveData_NewtonJson.json");
+        PlayerAttributeSO testSaveNewtonJson = JsonConvert.DeserializeObject<PlayerAttributeSO>(savedata);
+
+    }
 
     public List<ChipInventoryReference> GetCurrentChipDeck()
     {

@@ -1021,7 +1021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1777973945, guid: b8181ba0437ec144098831057b1a7631, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2503680530704742596, guid: b8181ba0437ec144098831057b1a7631, type: 3}
       propertyPath: m_fontColor.a
@@ -1750,14 +1750,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 800397536, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
-      propertyPath: m_Name
-      value: DebugButtons
+    - target: {fileID: 227748423, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 800397540, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
-      propertyPath: playerStats
-      value: 
-      objectReference: {fileID: 11400000, guid: a6baf0354d392cd49a839015d6ec12ec, type: 2}
+    - target: {fileID: 227748423, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586913748111401659, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 130.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586913748111401659, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 73.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586913748111401659, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -543.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586913748111401659, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 458.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3657719753562560761, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_Name
+      value: SetInvincible
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426788701430572443, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 75.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426788701430572443, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426788701430572443, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426788701430572443, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7402807736713799716, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1850,8 +1886,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleStageUI
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 341801682, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+    - target: {fileID: 8401517846542227714, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerToggleInvincible
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401517846542227714, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DebugButtons, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969190452514732699, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_text
+      value: Toggle Invincible
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
 --- !u!1001 &8476183634375518797
 PrefabInstance:

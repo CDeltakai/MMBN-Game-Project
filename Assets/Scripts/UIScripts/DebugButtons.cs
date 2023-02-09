@@ -7,10 +7,18 @@ using UnityEngine.SceneManagement;
 public class DebugButtons : MonoBehaviour
 {
     TimeManager timeManager;
+    PlayerMovement player;
     [SerializeField] PlayerAttributeSO playerStats;
 
     private void Awake() {
+        player = FindObjectOfType<PlayerMovement>();
         timeManager = FindObjectOfType<TimeManager>();
+    }
+
+
+    public void PlayerToggleInvincible()
+    {
+        player.ToggleInvincible();
     }
 
     public void ExitApplication()
@@ -27,6 +35,17 @@ public class DebugButtons : MonoBehaviour
         ChipSelectScreenMovement.GameIsPaused = false;
         Time.timeScale = 1;
 
+    }
+
+    public void LoadSaveJsonUtility()
+    {
+        playerStats.LoadJsonUtilitySave();
+
+    }
+
+    public void LoadSaveNewtonsoft()
+    {
+        playerStats.LoadNewtonsoftSave();
     }
 
 

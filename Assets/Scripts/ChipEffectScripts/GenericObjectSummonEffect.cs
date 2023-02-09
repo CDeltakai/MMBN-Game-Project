@@ -14,7 +14,7 @@ public class GenericObjectSummonEffect : ChipEffectBlueprint
     public override void Effect()
     {
         PooledSummonObject.transform.localPosition = new Vector3(player.worldTransform.position.x + PositionModifier.x,
-        player.worldTransform.position.y + PositionModifier.y, 0);
+                                                                player.worldTransform.position.y + PositionModifier.y, 0);
         PooledSummonObject.SetActive(true);
         
 

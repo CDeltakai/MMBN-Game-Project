@@ -172,6 +172,27 @@ public abstract class BStageEntity : MonoBehaviour
         }
     }
 
+    public void ToggleInvincible()
+    {
+        if(fullInvincible)
+        {
+            fullInvincible = false;
+        }else
+        {
+            fullInvincible = true;
+        }
+    }
+
+    public void ToggleUntargetable()
+    {
+        if(isUntargetable)
+        {
+            isUntargetable = false;
+        }else
+        {
+            isUntargetable = true;
+        }        
+    }
 
     public virtual void Awake()
     {

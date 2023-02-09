@@ -144,6 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada20f781acbd7949b11665b7cfb0cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AddDamage: 0
+  StatusEffect: 0
+  AddStatusEffect: 0
+  AddObjectSummon: {fileID: 0}
+  InheritedChip: {fileID: 11400000, guid: 888cc323c87b89f44bc08826e57c9f15, type: 2}
 --- !u!50 &4171638757431803172
 Rigidbody2D:
   serializedVersion: 4

@@ -1,8 +1,10 @@
 fileFormatVersion: 2
 guid: 888cc323c87b89f44bc08826e57c9f15
+labels:
+- Chip
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  assetBundleName: chipsos
+  assetBundleVariant: chip

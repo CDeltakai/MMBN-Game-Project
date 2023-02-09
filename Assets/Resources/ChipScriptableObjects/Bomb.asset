@@ -42,3 +42,4 @@ MonoBehaviour:
   lightAttack: 0
   hitFlinch: 1
   UseAnimationEvent: 1
+  <AllowSummonObjectMod>k__BackingField: 1
