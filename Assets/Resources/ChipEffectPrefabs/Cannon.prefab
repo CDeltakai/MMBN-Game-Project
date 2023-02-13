@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chip: {fileID: 11400000, guid: 4f08aaad28d8bf54a95d11b863b32ce3, type: 2}
-  AddDamage: 0
-  AddStatusEffect: 0
+  DamageModifier: 0
+  StatusEffectModifier: 0
+  SummonObjectModifier: {fileID: 0}
+  EnergyCostModifier: 0
+  projectile: {fileID: 3450752485688358295, guid: c5bff973e1bfec34b874d5b3a7711471, type: 3}

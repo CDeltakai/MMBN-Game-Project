@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 using TMPro;
+using System;
+
 public class EnergyBar : MonoBehaviour
 {
 
@@ -23,12 +25,15 @@ public class EnergyBar : MonoBehaviour
     public int currentEnergy;
 
     public bool animatingBar;
-    float animationtime = 1f;
+    bool triggeredBar = false;
+
+
+    public float animationtime = 0.2f;
     float elapsedTime = 0;
 
     float startFillAmount;
-    [SerializeField] int cost = 1;
-    [SerializeField] float end = 0.9f;
+    [SerializeField] float start = 1;
+    [SerializeField] float end = 1;
     
     private void Awake()
     {
@@ -57,22 +62,75 @@ public class EnergyBar : MonoBehaviour
     void Update()
     {
 
+        AnimateBarUpdate();
+        
+
+    }
+    public void AnimateBarUpdate()
+    {
+
         if(animatingBar)
         {
+
             elapsedTime += Time.unscaledDeltaTime;
             float percentageComplete = elapsedTime/animationtime;
 
-            BarImage.fillAmount = Mathf.Lerp(cost, end, percentageComplete);
+            BarImage.fillAmount = Mathf.Lerp(start, end, percentageComplete);
             
 
-            if(elapsedTime > 1)
+            if(elapsedTime > animationtime)
             {
                 elapsedTime = 0f;
-                animationtime = 1f;
                 animatingBar = false;
+
             }
 
+        }        
+
+    }
+
+
+    public void InitializeBar(int energyCost)
+    {
+        if(energyCost == 0)
+        {
+            return;
         }
+
+        start = BarImage.fillAmount;
+
+        if(energyCost < 0)
+        {
+            if(Math.Abs(energyCost)  > player.currentEnergy)
+            {
+                end = 0f;
+                animatingBar = true;
+                EnergyText.text = (player.currentEnergy.ToString() + "/" + player.MaxEnergy.ToString());
+
+                return;
+            }
+
+            end  = start + ((float)energyCost/(float)player.MaxEnergy);
+            animatingBar = true;
+            EnergyText.text = (player.currentEnergy.ToString() + "/" + player.MaxEnergy.ToString());
+
+        }else
+        {
+            if(player.currentEnergy + energyCost > player.MaxEnergy)
+            {
+                end = 1;
+                animatingBar = true;
+                EnergyText.text = (player.currentEnergy.ToString() + "/" + player.MaxEnergy.ToString());
+
+                return;
+            }
+
+            end  = start + ((float)energyCost/(float)player.MaxEnergy);
+            animatingBar = true;
+            EnergyText.text = (player.currentEnergy.ToString() + "/" + player.MaxEnergy.ToString());
+                        
+        }
+
         
 
     }
@@ -105,11 +163,7 @@ public class EnergyBar : MonoBehaviour
 
     }
 
-    public void AnimateBarUpdate(int amount)
-    {
-        
 
-    }
 
     IEnumerator AnimateBarFillAmount(int energyCost, float duration)
     {

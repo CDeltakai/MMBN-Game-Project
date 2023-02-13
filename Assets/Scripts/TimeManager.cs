@@ -8,7 +8,7 @@ public class TimeManager : MonoBehaviour
     public float slowDownFactor = 0.5f;
     public float slowDownDuration = 3f;
 
-    bool isCurrentlySlowedDown = false;
+    public static bool isCurrentlySlowedDown = false;
 
     void Update()
     {

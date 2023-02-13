@@ -267,7 +267,7 @@ public PlayerAttributeSO playerAttributes;
             currentEnergy = MaxEnergy;
         }
         
-        energyBar.AdjustEnergy(cost);
+        energyBar.InitializeBar(cost);
     }
 
     IEnumerator RegenEnergy()
