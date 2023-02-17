@@ -89,6 +89,15 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenStageMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""bcb6e393-cdf6-46bd-801c-d5d52d1835b2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -278,6 +287,17 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""012b96ba-4789-40e9-b91e-951961e682d2"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""OpenStageMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1205,6 +1225,7 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
         m_Player_UseChip = m_Player.FindAction("UseChip", throwIfNotFound: true);
         m_Player_SpaceBar = m_Player.FindAction("SpaceBar", throwIfNotFound: true);
         m_Player_Parry = m_Player.FindAction("Parry", throwIfNotFound: true);
+        m_Player_OpenStageMenu = m_Player.FindAction("OpenStageMenu", throwIfNotFound: true);
         // PlayerBackup
         m_PlayerBackup = asset.FindActionMap("PlayerBackup", throwIfNotFound: true);
         m_PlayerBackup_Move = m_PlayerBackup.FindAction("Move", throwIfNotFound: true);
@@ -1292,6 +1313,7 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_UseChip;
     private readonly InputAction m_Player_SpaceBar;
     private readonly InputAction m_Player_Parry;
+    private readonly InputAction m_Player_OpenStageMenu;
     public struct PlayerActions
     {
         private @PlayerControlInput m_Wrapper;
@@ -1303,6 +1325,7 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
         public InputAction @UseChip => m_Wrapper.m_Player_UseChip;
         public InputAction @SpaceBar => m_Wrapper.m_Player_SpaceBar;
         public InputAction @Parry => m_Wrapper.m_Player_Parry;
+        public InputAction @OpenStageMenu => m_Wrapper.m_Player_OpenStageMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1333,6 +1356,9 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
                 @Parry.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnParry;
                 @Parry.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnParry;
                 @Parry.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnParry;
+                @OpenStageMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenStageMenu;
+                @OpenStageMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenStageMenu;
+                @OpenStageMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenStageMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1358,6 +1384,9 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
                 @Parry.started += instance.OnParry;
                 @Parry.performed += instance.OnParry;
                 @Parry.canceled += instance.OnParry;
+                @OpenStageMenu.started += instance.OnOpenStageMenu;
+                @OpenStageMenu.performed += instance.OnOpenStageMenu;
+                @OpenStageMenu.canceled += instance.OnOpenStageMenu;
             }
         }
     }
@@ -1602,6 +1631,7 @@ public partial class @PlayerControlInput : IInputActionCollection2, IDisposable
         void OnUseChip(InputAction.CallbackContext context);
         void OnSpaceBar(InputAction.CallbackContext context);
         void OnParry(InputAction.CallbackContext context);
+        void OnOpenStageMenu(InputAction.CallbackContext context);
     }
     public interface IPlayerBackupActions
     {

@@ -73,5 +73,14 @@ MonoBehaviour:
   - chipName: WideSword
     chip: {fileID: 11400000, guid: 888cc323c87b89f44bc08826e57c9f15, type: 2}
     chipCount: 2
-  CurrentChipInventory: []
+  CurrentChipInventory:
+  - chipName: Airshot
+    chip: {fileID: 11400000, guid: a46fb94c65083d2439fd9eed2ba4200e, type: 2}
+    chipCount: 10
+  - chipName: Bomb
+    chip: {fileID: 11400000, guid: 14412b39ecce0ca458d1f05de06c3d36, type: 2}
+    chipCount: 10
+  - chipName: LongSword
+    chip: {fileID: 11400000, guid: 506c134f07571ec4f958e43d904161f4, type: 2}
+    chipCount: 10
   ChipDeckLoadouts: []

@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 ///<summary>
 ///The ChipInventoryReference is defined in the Player Attributes Scriptable Object.
 ///It is essentially a counter for the number of a 
-///specific chip the player has. This struct is used when pooling chip objects
+///specific chip the player has. This class is used when pooling chip objects
 ///in order to handle duplicate chips.
 ///</summary>
 [System.Serializable]
