@@ -4,15 +4,41 @@ using UnityEngine;
 
 public class DeckEditMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] GameObject chipDescriptionView;
+    [SerializeField] GameObject InventoryView;
+    [SerializeField] GameObject DeckView;
+
+    [HideInInspector]
+    public  ChipDescriptionView chipDescViewScript;
+
+    private void Awake() {
+        chipDescViewScript = chipDescriptionView.GetComponent<ChipDescriptionView>();
+    }
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+
+
+    public void ConfirmChanges()
+    {
+
+    }
+
+    public void ResetChanges()
+    {
+        
+    }
+
+
+
+
+
 }

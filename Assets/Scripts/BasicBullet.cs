@@ -10,7 +10,7 @@ public class BasicBullet : MonoBehaviour
     [SerializeField] BoxCollider2D boxCollider2D;
     [SerializeField] SpriteRenderer sprite;
 
-    Sequence movement = DOTween.Sequence();
+    Sequence movement;
     RaycastHit hitPosition;
 
 

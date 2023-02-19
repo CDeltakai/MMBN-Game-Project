@@ -31,10 +31,12 @@ public class StageMenuController : MonoBehaviour
         
     }
 
+    //Input action method - Normally tied to the ESC key when using the PlayerControl Input InputActionAsset
     public void EnablePauseMenu(InputAction.CallbackContext context)
     {
         if(context.started)
         {
+            //Open up the pause menu
             if(!StageMenuTriggered)
             {
                 ChipSelectScreenMovement.GameIsPaused = true;
@@ -57,6 +59,8 @@ public class StageMenuController : MonoBehaviour
                 return;
             }
 
+            //If the a submenu like the DeckEditMenu or Option menu is open, pressing ESC will return to the pause menu
+            //instead of returning immediately to the game.
             if(StageMenuTriggered && currentActiveMenu != pauseMenu)
             {
 
@@ -66,13 +70,16 @@ public class StageMenuController : MonoBehaviour
                 return;
             }
 
-
-
-
-
         }
 
+    }
 
+
+    public void EnableDeckEditMenu()
+    {
+        currentActiveMenu.SetActive(false);
+        currentActiveMenu = deckEditMenu;
+        deckEditMenu.SetActive(true);
     }
 
 

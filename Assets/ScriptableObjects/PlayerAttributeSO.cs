@@ -9,15 +9,17 @@ using Newtonsoft.Json;
 ///The ChipInventoryReference is defined in the Player Attributes Scriptable Object.
 ///It is essentially a counter for the number of a 
 ///specific chip the player has. This class is used when pooling chip objects
-///in order to handle duplicate chips.
+///in order to handle duplicate chips and used as a list to define DeckLoadouts.
 ///</summary>
 [System.Serializable]
 public class ChipInventoryReference
 {
-    
-    public string chipName;
+    public delegate void ChipCountChanged();
+    public static event ChipCountChanged ChangedChipCountEvent;
+
+    [field:SerializeField]public string chipName{get; set;}
     public ChipSO chip;
-    public int chipCount;
+    [field:SerializeField]public int chipCount{get; private set;}
 
     public ChipInventoryReference(ChipSO chip, int chipCount)
     {
@@ -25,6 +27,16 @@ public class ChipInventoryReference
         this.chipCount = chipCount;
         this.chipName = chip.GetChipName();
     }
+
+
+    public void SetChipCount(int i)
+    {
+        chipCount = i;
+        ChangedChipCountEvent();
+    }
+
+
+
 }
 
 
@@ -33,7 +45,51 @@ public class ChipInventoryReference
 public class DeckLoadout
 {
     public string DeckName;
-    public List<ChipInventoryReference> Deck;
+    public List<ChipInventoryReference> Deck = new List<ChipInventoryReference>();
+    public Dictionary<string, ChipInventoryReference> DeckDictionary = new Dictionary<string, ChipInventoryReference>();
+
+    public DeckLoadout(List<ChipInventoryReference> Deck, Dictionary<string, ChipInventoryReference> DeckDictionary)
+    {
+        this.Deck = Deck;
+        this.DeckDictionary = DeckDictionary;
+    }
+
+
+
+
+    //Counts the total number of chips using the ChipInventoryReference's chipCount in the deck.
+    public int chipCount()
+    {
+        int chipCount = 0;
+
+        for(int i = 0; i < Deck.Count ; i++) 
+        {
+            chipCount += Deck[i].chipCount;    
+        }    
+
+        return chipCount;
+    }
+
+    public void SortByName()
+    {
+
+    }
+
+    public void SortByChipElement()
+    {
+
+    }
+
+    public void SortByChipType()
+    {
+
+    }
+
+    public void SortByChipCount()
+    {
+
+    }
+
 }
 
 [CreateAssetMenu(fileName = "Player Attributes Data", menuName = "New Player Attributes Data", order = 0)]
@@ -69,7 +125,7 @@ public class PlayerAttributeSO : ScriptableObject
     [SerializeField] int MaxActiveChips = 5;
     [SerializeField] bool HasSuperArmor = false;
     [SerializeField] int BaseDeckCapacity = 30;
-    [SerializeField] int CurrentDeckCapacity = 30;
+    [field:SerializeField] int CurrentDeckCapacity{get; set;} = 30;
     [SerializeField] bool IsGrounded = true;
     [SerializeField] bool IsStunnable = true;
     [SerializeField] int CurrentDeckLoadouts = 2;
@@ -89,6 +145,30 @@ public class PlayerAttributeSO : ScriptableObject
     int MinDeckLoadouts = 1;
     int MaxDeckLoadouts = 10;
 
+
+    public int DeckChipCount(List<ChipInventoryReference> deck)
+    {
+        int chipCount = 0;
+        for(int i = 0; i < deck.Count ; i++) 
+        {
+            chipCount += deck[i].chipCount;    
+        }
+
+        return chipCount;
+    }
+
+    public int DeckChipCount(DeckLoadout deckLoadout)
+    {
+        int chipCount = 0;
+
+        for(int i = 0; i < deckLoadout.Deck.Count ; i++) 
+        {
+            chipCount += deckLoadout.Deck[i].chipCount;    
+        }        
+
+
+        return chipCount;
+    }
 
     public void SaveToJson()
     {
