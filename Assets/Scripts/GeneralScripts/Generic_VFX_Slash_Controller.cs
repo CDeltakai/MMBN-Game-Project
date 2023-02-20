@@ -13,7 +13,7 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
     
     void Awake() {
 
-        player = PlayerMovement.Instance;
+        player = FindObjectOfType<PlayerMovement>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = true;

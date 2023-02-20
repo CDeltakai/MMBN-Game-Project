@@ -14,7 +14,8 @@ public class AreaGrab : ChipEffectBlueprint
 
     private void Awake() 
     {
-        stageHandler = BattleStageHandler.Instance;
+        //stageHandler = BattleStageHandler.Instance;
+        stageHandler = FindObjectOfType<BattleStageHandler>();
         stageTilemap = stageHandler.stageTilemap;
 
     }

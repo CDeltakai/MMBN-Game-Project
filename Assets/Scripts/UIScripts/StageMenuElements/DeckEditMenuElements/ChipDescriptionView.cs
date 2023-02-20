@@ -13,16 +13,7 @@ public class ChipDescriptionView : MonoBehaviour
     [SerializeField] TextMeshProUGUI chipDamageTxt;
     [SerializeField] TextMeshProUGUI chipDescriptionTxt;
  
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void RefreshView(ChipSO chip)
     {

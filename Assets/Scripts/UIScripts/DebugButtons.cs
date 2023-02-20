@@ -30,7 +30,7 @@ public class DebugButtons : MonoBehaviour
     }
     public void ResetScene()
     {
-        playerStats.SaveToJson();
+        //playerStats.SaveToJson();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
         ChipSelectScreenMovement.GameIsPaused = false;
         Time.timeScale = 1;
