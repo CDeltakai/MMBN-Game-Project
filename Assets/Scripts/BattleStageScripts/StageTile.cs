@@ -10,6 +10,7 @@ public class StageTile
     internal Vector3 worldPosition{get;set;}
     internal CustomTile custTile {get;set;}
 
+    internal ETileTeam tileOwnerTeam{get;set;}
     internal ETileTeam tileTeam{get;set;}
 
     internal string tileName{get;set;}

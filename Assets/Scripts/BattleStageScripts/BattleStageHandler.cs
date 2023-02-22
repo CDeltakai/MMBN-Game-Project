@@ -79,7 +79,7 @@ public class BattleStageHandler : MonoBehaviour
         PlayerTiles.Clear();
         NPCTiles.Clear();
         LoadTiles();
-        GetStageTiles();
+        InitializeStageTiles();
 
 
     }
@@ -167,7 +167,7 @@ public class BattleStageHandler : MonoBehaviour
     }
 
 
-    private void GetStageTiles()
+    private void InitializeStageTiles()
     {
         stageTiles = new Dictionary<Vector3, StageTile>();
 
@@ -176,6 +176,7 @@ public class BattleStageHandler : MonoBehaviour
         {
 
             var localPos = new Vector3Int(pos.x, pos.y, pos.z);
+            stageTilemap.GetTile<CustomTile>(localPos).setTileTeamOwner(stageTilemap.GetTile<CustomTile>(localPos).tileTeam);
 
             if(!stageTilemap.HasTile(localPos)) {continue;}
             
@@ -184,6 +185,7 @@ public class BattleStageHandler : MonoBehaviour
                 localCoords = localPos,
                 worldPosition = stageTilemap.CellToWorld(localPos),
                 custTile = stageTilemap.GetTile<CustomTile>(localPos),
+                tileOwnerTeam = stageTilemap.GetTile<CustomTile>(localPos).tileTeam,
                 TilemapMember = stageTilemap,
                 tileName = localPos.x + ", " + localPos.y
             };

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem.Interactions;
+using UnityEditor.ShaderGraph.Internal;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -16,6 +17,13 @@ public class CustomTile : Tile
 
 [SerializeField] string tileName;
 [SerializeField] ETiles tileEnum;
+
+///<summary>
+///The tileOwner is the original team that owns this tile. This should be set only once at run time and should not be changed under normal circumstances.
+///The purpose of the tileOwner is to enable the ability to revert stolen tiles back to their original owner so that a tile is
+///not permanently taken over by an opponent.
+///</summary>
+[SerializeField] ETileTeam tileOwnerTeam;
 [SerializeField] public ETileTeam tileTeam;
 
 //DO NOT CHANGE THE NAME OF THE CurrentTile OR ELSE THE WHOLE TILEMAP WILL BREAK!!!
@@ -82,6 +90,12 @@ public Tile getEnemyTile()
     return EnemyTile;
 }
 
+public void setTileTeamOwner(ETileTeam team)
+{
+    tileOwnerTeam = team;
+}
+
+
 public void switchToTileTeam(ETileTeam team)
 {   
 
@@ -98,6 +112,17 @@ public void switchToTileTeam(ETileTeam team)
     {
         CurrentTile = getEnemyTile();
     }
+}
+
+public IEnumerator revertToTileOwner(float duration)
+{
+    if(tileTeam != tileOwnerTeam)
+    {
+        yield return new WaitForSeconds(duration);
+        switchToTileTeam(tileOwnerTeam);
+    }
+
+    yield break;
 }
 
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
