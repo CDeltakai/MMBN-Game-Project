@@ -14,6 +14,7 @@ public class ChipObjectReference
 
 public class ObjectPoolManager : MonoBehaviour
 {
+    [SerializeField] PlayerMovement player;
     ChipInventory chipInventory;
     PlayerAttributeManager playerAttributeManager;
 
@@ -23,6 +24,7 @@ public class ObjectPoolManager : MonoBehaviour
 	
     void Awake()
     {
+        player = FindObjectOfType<PlayerMovement>();
         chipInventory = FindObjectOfType<ChipInventory>();
         playerAttributeManager = PlayerAttributeManager.Instance;
         playerAttributeManager = FindObjectOfType<PlayerAttributeManager>();
@@ -47,15 +49,17 @@ public class ObjectPoolManager : MonoBehaviour
 
     void PoolChipObjects()
     {
-        ChipSO[] chipLoad = Resources.LoadAll<ChipSO>("Chips");
+        ChipSO[] chipResources = Resources.LoadAll<ChipSO>("Chips");
         List<ChipSO> chipDeckLoad = chipInventory.chipDeck;
 
-        foreach(ChipSO chip in chipLoad)
+        foreach(ChipSO chip in chipResources)
         {
             if(chip.GetEffectPrefab() != null)
             {
 
                 GameObject prefab = Instantiate(chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
+                prefab.GetComponent<ChipEffectBlueprint>().player = player;
+
                 GameObject objectSummon = null;
 
                 if(chip.GetObjectSummon() != null)
@@ -104,6 +108,7 @@ public class ObjectPoolManager : MonoBehaviour
                 GameObject prefab = Instantiate(chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
                 GameObject objectSummon = null;
 
+
                 if(chip.GetObjectSummon() != null)
                 {
                     objectSummon = Instantiate(chip.GetObjectSummon(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
@@ -144,7 +149,7 @@ public class ObjectPoolManager : MonoBehaviour
     void PoolChipsFromAttributesDeck()
     {
         //List<ChipSO> chipDeckLoad = chipInventory.chipDeck;
-        print(playerAttributeManager.ToString());
+        //print(playerAttributeManager.ToString());
         List<ChipInventoryReference> currentPlayerDeck = playerAttributeManager.CurrentPlayerAttributes.GetCurrentChipDeck();
 
         foreach(ChipInventoryReference chipInvRef in currentPlayerDeck)
@@ -156,6 +161,8 @@ public class ObjectPoolManager : MonoBehaviour
                 {
                     GameObject prefab = Instantiate(chipInvRef.chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
                     GameObject objectSummon = null;
+                    prefab.GetComponent<ChipEffectBlueprint>().player = player;
+
 
                     if(chipInvRef.chip.GetObjectSummon() != null)
                     {

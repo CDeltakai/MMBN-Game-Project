@@ -14,7 +14,6 @@ public class InventoryChipSlot : MonoBehaviour
     [HideInInspector]
     public DeckEditMenu deckEditMenu;
 
-
     [SerializeField] UnityEngine.UI.Image chipImage;
     [SerializeField] TextMeshProUGUI chipCountText;
     [SerializeField] TextMeshProUGUI chipNameText;
@@ -39,6 +38,12 @@ public class InventoryChipSlot : MonoBehaviour
         chipNameText.text = chipInvRef.chipName;
         gameObject.SetActive(true);
     }
+
+    public void RefreshChipCount()
+    {
+        chipCountText.text = chipInvRef.chipCount.ToString();
+    }
+
 
     public void RefreshElement(ChipInventoryReference specificChipInvRef)
     {

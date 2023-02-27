@@ -1,9 +1,10 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
-
+using System.Linq;
 
 ///<summary>
 ///The ChipInventoryReference is defined in the Player Attributes Scriptable Object.
@@ -21,18 +22,37 @@ public class ChipInventoryReference
     public ChipSO chip;
     [field:SerializeField]public int chipCount{get; private set;}
 
-    public ChipInventoryReference(ChipSO chip, int chipCount)
+    public ChipInventoryReference(ChipSO chip, int chipCount = 1)
     {
+
         this.chip = chip;
         this.chipCount = chipCount;
         this.chipName = chip.GetChipName();
+
+        if(chipCount <= 0)
+        {
+            Debug.LogWarning("ChipInventoryReference: " + chipName + "has been created with a count of less than or equal to 0." +
+            "This normally should not happen and may cause errors down the line.");
+        }
     }
 
 
     public void SetChipCount(int i)
     {
         chipCount = i;
-        ChangedChipCountEvent();
+        if(ChangedChipCountEvent != null)
+        {
+            ChangedChipCountEvent();
+        }
+    }
+
+    public void AddChipCount(int i)
+    {
+        chipCount += i;
+        if(ChangedChipCountEvent != null)
+        {
+            ChangedChipCountEvent();
+        }
     }
 
 
@@ -48,10 +68,16 @@ public class DeckLoadout
     public List<ChipInventoryReference> Deck = new List<ChipInventoryReference>();
     public Dictionary<string, ChipInventoryReference> DeckDictionary = new Dictionary<string, ChipInventoryReference>();
 
-    public DeckLoadout(List<ChipInventoryReference> Deck, Dictionary<string, ChipInventoryReference> DeckDictionary)
+    public DeckLoadout(List<ChipInventoryReference> Deck, string DeckName = "Unnamed_Deck")
     {
         this.Deck = Deck;
-        this.DeckDictionary = DeckDictionary;
+        this.DeckName = DeckName;
+        foreach(ChipInventoryReference chipInvRef in Deck)
+        {
+            DeckDictionary.Add(chipInvRef.chipName, chipInvRef);
+        }
+
+
     }
 
 
@@ -70,14 +96,19 @@ public class DeckLoadout
         return chipCount;
     }
 
-    public void SortByName()
+    public void SortByNameDescending()
     {
+       Deck = Deck.OrderByDescending(x => x.chipName).ToList();
+    }
 
+    public void SortByNameAscending()
+    {
+       Deck = Deck.OrderBy(x => x.chipName).ToList();
     }
 
     public void SortByChipElement()
     {
-
+        Deck = Deck.OrderBy(x => x.chip.ChipElement).ToList();
     }
 
     public void SortByChipType()

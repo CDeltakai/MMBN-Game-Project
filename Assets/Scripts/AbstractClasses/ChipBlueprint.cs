@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ChipEffectBlueprint : MonoBehaviour
 {
 
-    protected PlayerMovement player;
+    public PlayerMovement player;
     protected Transform firePoint;
     [SerializeField] public ChipSO chip;
     protected GameObject ObjectSummon;
@@ -31,9 +31,8 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
     void Awake()
     {
-        player = PlayerMovement.Instance;
-        player = FindObjectOfType<PlayerMovement>();
-        firePoint = player.firePoint;
+        //player = PlayerMovement.Instance;
+
         ObjectSummon = chip.GetObjectSummon();
 
         BaseDamage = chip.GetChipDamage();
@@ -45,6 +44,19 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
     }
 
+    private void Start() 
+    {
+        if(player == null)
+        {
+            print("Chip: " + chip.GetChipName() + " did not have its player owner set on instantiation - automatically set player owner." 
+            + " This is normally not a problem, however it is less efficient than setting the player owner on instantiation." );
+            player = FindObjectOfType<PlayerMovement>();
+        }
+
+        firePoint = player.firePoint;        
+
+        
+    }
 
 
 

@@ -44,7 +44,7 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] string ChipName;
 [Header("Combat Attributes")]
     [SerializeField] int BaseDamage;
-    [SerializeField] EChipElements ChipElement;
+    [field:SerializeField] public EChipElements ChipElement{get; private set;}
     [SerializeField] int ChipSize;
     [field:SerializeField] public int EnergyCost{get; private set;}
     // Chip Types: 2 = Freeze-time ability(Special chips that freeze time before applying effect)

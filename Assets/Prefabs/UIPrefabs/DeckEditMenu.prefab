@@ -95,9 +95,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b8218f2c93ba44b34757580deeb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 0}
   chipDescriptionView: {fileID: 1502389134949743996}
   InventoryView: {fileID: 1902506881652460411}
   DeckView: {fileID: 7685956874910068677}
+  chipTableDatabase: {fileID: 0}
+  deckContentManager: {fileID: 3103015556849787246}
+  inventoryContentManager: {fileID: 7969151014660029692}
   chipDescViewScript: {fileID: 0}
 --- !u!1 &498920661913061819
 GameObject:
@@ -315,7 +319,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6506134503874538726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6184569036347876769}
+        m_TargetAssemblyTypeName: DeckEditMenu, Assembly-CSharp
+        m_MethodName: ConfirmChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &5384566386649479272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -716,9 +732,7 @@ MonoBehaviour:
   deckEditMenu: {fileID: 6184569036347876769}
   deckContentManager: {fileID: 3103015556849787246}
   inventoryElementPrefab: {fileID: 4486163844910152949, guid: b93f8546853b7e344898408a1cb8d3a3, type: 3}
-  playerStats: {fileID: 11400000, guid: a6baf0354d392cd49a839015d6ec12ec, type: 2}
-  chipInventory: []
-  chipDeck: []
+  playerData: {fileID: 0}
   temporaryChipInventory: []
   internalElementList: []
 --- !u!1 &1641059657361141068
@@ -1781,7 +1795,7 @@ MonoBehaviour:
   deckEditMenu: {fileID: 6184569036347876769}
   inventoryContentManager: {fileID: 7969151014660029692}
   deckElementPrefab: {fileID: 8146393304697019123, guid: a2af3255d909f214096b976ff694c764, type: 3}
-  playerStats: {fileID: 11400000, guid: a6baf0354d392cd49a839015d6ec12ec, type: 2}
+  playerData: {fileID: 0}
   deckCounterText: {fileID: 6576746772339180944}
   temporaryChipDeck: []
   internalElementList: []
@@ -1867,7 +1881,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5888142896734298648}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6184569036347876769}
+        m_TargetAssemblyTypeName: DeckEditMenu, Assembly-CSharp
+        m_MethodName: ResetChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3800370892594781057
 CanvasRenderer:
   m_ObjectHideFlags: 0
