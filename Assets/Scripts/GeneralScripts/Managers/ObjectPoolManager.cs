@@ -20,7 +20,7 @@ public class ObjectPoolManager : MonoBehaviour
 
 	[SerializeField] List<GameObject> ChipObjectPool = new List<GameObject>();
     [SerializeField] GameObject ChipObjectPoolParent;
-    [SerializeField] public List<ChipObjectReference> ChipRefList = new List<ChipObjectReference>();
+    [SerializeField] public List<ChipObjectReference> ChipObjectList = new List<ChipObjectReference>();
 	
     void Awake()
     {
@@ -83,7 +83,7 @@ public class ObjectPoolManager : MonoBehaviour
                     objectSummon.SetActive(false);
                 }
 
-                ChipRefList.Add(chipObjRef);
+                ChipObjectList.Add(chipObjRef);
 
 
             }else
@@ -130,7 +130,7 @@ public class ObjectPoolManager : MonoBehaviour
                     objectSummon.SetActive(false);
                 }
 
-                ChipRefList.Add(chipObjRef);
+                ChipObjectList.Add(chipObjRef);
 
 
             }else
@@ -139,6 +139,22 @@ public class ObjectPoolManager : MonoBehaviour
             }
 
         }
+    }
+
+
+    public void ReloadObjectPool()
+    {
+        foreach(ChipObjectReference chipObject in ChipObjectList)
+        {
+            Destroy(chipObject.effectPrefab.gameObject);
+            if(chipObject.ObjectSummon != null)
+            {
+                Destroy(chipObject.ObjectSummon.gameObject);
+            }
+        }
+        ChipObjectList.Clear();
+        PoolChipsFromAttributesDeck();        
+
     }
 
     ///<summary>
@@ -159,9 +175,9 @@ public class ObjectPoolManager : MonoBehaviour
 
                 if(chipInvRef.chip.GetEffectPrefab() != null)
                 {
-                    GameObject prefab = Instantiate(chipInvRef.chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
+                    GameObject effectPrefab = Instantiate(chipInvRef.chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
                     GameObject objectSummon = null;
-                    prefab.GetComponent<ChipEffectBlueprint>().player = player;
+                    effectPrefab.GetComponent<ChipEffectBlueprint>().player = player;
 
 
                     if(chipInvRef.chip.GetObjectSummon() != null)
@@ -172,20 +188,20 @@ public class ObjectPoolManager : MonoBehaviour
                     var chipObjRef = new ChipObjectReference
                     {
                         chipSORef = chipInvRef.chip,
-                        effectPrefab = prefab,
+                        effectPrefab = effectPrefab,
                         ObjectSummon = objectSummon
                     };
 
-                    prefab.SetActive(false);
+                    effectPrefab.SetActive(false);
                 
 
                     if(chipInvRef.chip.GetObjectSummon() != null)
                     {
-                        prefab.GetComponent<GenericObjectSummonEffect>().PooledSummonObject = objectSummon;
+                        effectPrefab.GetComponent<GenericObjectSummonEffect>().PooledSummonObject = objectSummon;
                         objectSummon.SetActive(false);
                     }
 
-                    ChipRefList.Add(chipObjRef);
+                    ChipObjectList.Add(chipObjRef);
 
 
                 }else

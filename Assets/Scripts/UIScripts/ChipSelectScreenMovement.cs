@@ -140,6 +140,13 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
 
 
+    public void ResetChipDeck()
+    {
+        chipRefsDeck.Clear();
+        discardedChipRefsDeck.Clear();
+        
+    }
+
 
 //Looks at the ChipRefList from the ObjectPoolManager and adds all the ChipReferences within that list
 //to an internal chip deck (chipRefsDeck) in the ChipSelectScreen.
@@ -147,10 +154,10 @@ public class ChipSelectScreenMovement : MonoBehaviour
     {
         print("Attempting populate chiprefdeck");
 
-        for(int i = 0; i < objectPoolManager.ChipRefList.Count; i++)
+        for(int i = 0; i < objectPoolManager.ChipObjectList.Count; i++)
         {
-            chipRefsDeck.Add(objectPoolManager.ChipRefList[i]);
-            print("Attempted to add "+ objectPoolManager.ChipRefList[i].chipSORef.GetChipName());
+            chipRefsDeck.Add(objectPoolManager.ChipObjectList[i]);
+            print("Attempted to add "+ objectPoolManager.ChipObjectList[i].chipSORef.GetChipName());
         }
 
     }

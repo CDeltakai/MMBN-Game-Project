@@ -470,6 +470,27 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
     ///<summary>
+    ///Allows an entity to claim additional tiles as occupied by them which will prevent other entities
+    ///or effects from moving onto those tiles whilst they are claimed by this entity
+    ///</summary>
+    public void ClaimTileOccupancy(int x, int y)
+    {
+
+    }
+
+    public void ClaimTileOccupancy(List<Tuple<int, int>> coordinateList)
+    {
+
+
+    }
+
+    public void ClearClaimedTiles()
+    {
+
+    }
+
+
+    ///<summary>
     ///Wrapper method for cellMove which includes checkValidTile before moving
     ///</summary>
     public void cellMoveVerified(int x, int y)

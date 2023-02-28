@@ -9,6 +9,7 @@ public class DebugButtons : MonoBehaviour
     TimeManager timeManager;
     PlayerMovement player;
     [SerializeField] PlayerAttributeSO playerStats;
+    [SerializeField] ObjectPoolManager objectPoolManager;
 
     private void Awake() {
         player = FindObjectOfType<PlayerMovement>();
@@ -48,5 +49,9 @@ public class DebugButtons : MonoBehaviour
         playerStats.LoadNewtonsoftSave();
     }
 
+    public void ReloadDeck()
+    {
+        objectPoolManager.ReloadObjectPool();
+    }
 
 }
