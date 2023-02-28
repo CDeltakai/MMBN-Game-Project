@@ -18,6 +18,7 @@ public event LoadChipsEvent loadChipsEvent;
 
 ///<summary>
 ///Defines the list of chips loaded and ready to use in the current battle phase.
+///</summary>
 [SerializeField] public List<ChipObjectReference> chipRefQueue = new List<ChipObjectReference>();
 
 
@@ -48,6 +49,7 @@ public static ChipLoadManager Instance {get {return _instance;} }
         InitializeSingleton();
     }
 
+
     void Start()
     {
         player = GetComponent<PlayerMovement>();
@@ -58,6 +60,13 @@ public static ChipLoadManager Instance {get {return _instance;} }
         
     }
 
+    ///<summary>
+    ///This method calculates what chip or chips will be loaded into the nextChipRefLoad.
+    ///It was always take the first element within the chipRefQueue as one of the chips to be loaded.
+    ///After that, it iterates through the chipRefQueue to find if there are any passive chips that followed
+    ///the first chip. If it finds a passive chip, it will add it onto the the nextChipRefLoad and continues
+    ///until it finds the first chip that is not a passive chip, at which point the operation will break.
+    ///</summary>
     public void calcNextChipRefLoad()
     {
         if(chipRefQueue.Count == 0)

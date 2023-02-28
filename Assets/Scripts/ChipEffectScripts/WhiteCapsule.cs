@@ -10,7 +10,8 @@ public class WhiteCapsule : ChipEffectBlueprint
 
     void Awake() 
     {
-        chipLoadManager = ChipLoadManager.Instance;
+        chipLoadManager = FindObjectOfType<ChipLoadManager>();
+        //chipLoadManager = ChipLoadManager.Instance;
 
     }
 

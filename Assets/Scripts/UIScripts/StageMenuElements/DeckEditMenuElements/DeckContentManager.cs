@@ -85,7 +85,6 @@ public class DeckContentManager : MonoBehaviour
                 deckElement.deckEditMenu = deckEditMenu;
                 deckElement.RefreshElement();
 
-
             }
 
         }
@@ -98,16 +97,14 @@ public class DeckContentManager : MonoBehaviour
         //First, search for this chip within the temporary chip deck
         //If the chip exists within the deck, increment the chip counter on that chip.
         //If it doesn't, add a new ChipInventoryReference in the temporary deck with a counter of 1.
+        //In the both cases, create a new deck element which will be displayed on screen.
         if(temporaryChipDeck.Any(x => x.chip == chip))
         {
             temporaryChipDeck.Find(x => x.chip == chip).AddChipCount(1);
-
         }
         else
         {
             temporaryChipDeck.Add(new ChipInventoryReference(chip, 1));
-
-
         }
 
         DeckChipSlot deckElement = Instantiate(deckElementPrefab, gameObject.transform).GetComponent<DeckChipSlot>();

@@ -219,8 +219,12 @@ public abstract class BStageEntity : MonoBehaviour
 
     protected bool isAnimatingHP = false;
     ///<summary>
+    ///<para>
     ///lightAttack dictates whether the attack triggers invincibility frames.
+    ///</para>
+    ///<para>
     ///hitFlinch dictates whether the attack will trigger a flinch animation (if it is able to) on the target.
+    ///</para>
     ///pierceUntargetable dictates whether the attack can hurt the target even if they are set to isUntargetable.
     ///</summary>
     public virtual void hurtEntity(int damage,
@@ -319,7 +323,7 @@ public abstract class BStageEntity : MonoBehaviour
     ///<summary>
     ///Applies a damage over time effect on this entity, reducing their health by the given
     ///damage with a given tickrate over a given duration. E.g. 10 damage with 0.5 tickrate over 10
-    ///seconds with deal 200 damage in total.
+    ///seconds will deal 200 damage in total.
     ///</summary>
     IEnumerator DamageOverTime(int damage, float tickrate, float duration)
     {
@@ -415,10 +419,13 @@ public abstract class BStageEntity : MonoBehaviour
         Destroy(gameObject);
 
     }
-    public virtual void AdditionalDestructionEvents()
-    {
 
-    }
+    ///<summary>
+    ///Empty method to allow for a specific entity to initalize events additional to the default DestroyEntity method
+    ///present on all BStageEntities. These additional events will always run first before the rest of the
+    ///DestroyEntity method is run.
+    ///</summary>
+    public virtual void AdditionalDestructionEvents(){}
 
     public void teleportToCell(int x, int y)
     {
@@ -471,7 +478,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     ///<summary>
     ///Allows an entity to claim additional tiles as occupied by them which will prevent other entities
-    ///or effects from moving onto those tiles whilst they are claimed by this entity
+    ///or effects from moving onto those tiles whilst they are claimed by this entity.
     ///</summary>
     public void ClaimTileOccupancy(int x, int y)
     {

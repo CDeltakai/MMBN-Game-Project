@@ -31,18 +31,6 @@ public class ActiveChipUI : MonoBehaviour
 
     }
 
-    void Start()
-    {
-
-
-
-    }
-
-    void Update()
-    {
-
-
-    }
 
     ///<summary>
     ///true = move UI to InViewPosition, false = move UI to OutOfViewPosition

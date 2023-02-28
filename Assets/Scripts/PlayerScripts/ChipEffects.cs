@@ -45,25 +45,9 @@ public class ChipEffects : MonoBehaviour
 
 
 
-
-  
-    public void ApplyChipEffectV2()
-    {
-
-        chip = player.activeChip;
-        Debug.Log("Chip used:" + chip.GetChipName());
-        Type CurrentChipScript = Type.GetType(chip.GetEffectScript());
-        //ChipScript = chip.GetEffectScript();
-        
-
-        IChip chipEffect = gameObject.AddComponent(CurrentChipScript) as IChip;
-
-        chipEffect.Effect();
-        Destroy(GetComponent(CurrentChipScript));
-        //ChipScript = null;
-    }
-
-
+    //Method used by chips which have an animation to apply their effects through an animation event.
+    //Normally this method is only called by an animation event on a Megaman chip-based animation and
+    //chips with an instantaneous or passive effect should use different method to apply their effect. 
     public void ApplyChipEffectRef()
     {
 

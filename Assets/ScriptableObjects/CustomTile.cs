@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.InputSystem.Interactions;
-using UnityEditor.ShaderGraph.Internal;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -26,7 +24,7 @@ public class CustomTile : Tile
 [SerializeField] ETileTeam tileOwnerTeam;
 [SerializeField] public ETileTeam tileTeam;
 
-//DO NOT CHANGE THE NAME OF THE CurrentTile OR ELSE THE WHOLE TILEMAP WILL BREAK!!!
+//DO NOT CHANGE THE NAME OF THE IDENTIFIER OF CurrentTile OR ELSE THE WHOLE TILEMAP WILL BREAK!!!
 [SerializeField] Tile CurrentTile;
 [SerializeField] Animation tileAnimation;
 [SerializeField] string tileScriptName;

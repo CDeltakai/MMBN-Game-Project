@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+///<summary>
+/// <para>
+///      Passive chips apply an additional effect on the Active or OffensiveSpecial chip they are attached to.
+/// </para>
+/// <para>
+///      Active chips deal damage and apply their effects in real-time and are tied to an animation on Megaman
+/// </para>
+/// <para>
+///      Status chips do not deal modifiable damage and apply their effects in real-time and are tied to an animation on Megaman.
+/// </para>
+/// <para>
+///      Special chips do not deal modifiable damage and apply their effects in real-time and are not tied to an animation on Megaman.
+/// </para>
+/// <para>
+///      OffensiveSpecial chips deal modifiable damage and apply their effects in real-time and are not tied to an animation on Megaman.
+/// </para>
+/// <para>
+///      Skill chips are abilities that do not need energy to cast. They are different from regular chips
+///      in that they do not require a data blueprint to cast and are more akin to abilities a character can do on their own.
+/// </para>
+///</summary>
 public enum EChipTypes
 {
-//Passive chips apply an additional effect on the closest Active or OffensiveSpecial chip
-//Active chips deal damage and apply their effects in real-time
-//Status chips do not deal damage and apply their effects in real-time
-//Special chips freeze time before applying their effects
-//OffensiveSpecial chips freeze time before dealing damage and applying effects
 
-//Skill chips are abilities that do not need energy to cast. They are different from regular chips
-//in that they do not require a data blueprint to cast and are more akin to abilities a character
-//can do on their own.
 
 
     Passive = 0,

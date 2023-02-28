@@ -20,7 +20,9 @@ public class StageTile
     internal bool isOccupied{get;set;} = false;
     internal BStageEntity entity{get;set;}
     internal BStageEntity lastSeenEntity{get;set;}
+    internal BStageEntity entityClaimant{get;set;}
     internal CustomTile tempTile{get;set;}
+
 
 
 }

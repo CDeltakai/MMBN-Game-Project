@@ -61,6 +61,10 @@ public class ChipInventoryReference
 
 
 //Wrapper class for List<ChipInventoryReference to allow for serialization of a list of list of ChipInventoryReferences.
+//Currently unused - this is a future upgrade to the current inventory system which merely uses lists of ChipInventoryReferences on its own.
+//This upgrade should allow for faster searching of chips and the ability to sort chips based on their attributes. It will also give the ability
+//to add features to Decks that would not be possible with just a list of ChipInventoryReferences.
+//Will require a significant refactoring period to fully utilize this class.
 [System.Serializable]
 public class DeckLoadout
 {

@@ -1,14 +1,11 @@
-using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
-using Pathfinding.Util;
 using System;
 using DG.Tweening;
 using FMODUnity;
-using System.Data.SqlClient;
 
 public class PlayerMovement : BStageEntity
 {
@@ -188,11 +185,7 @@ public PlayerAttributeSO playerAttributes;
 
     }
 
-
-
-
-
-
+    //Logic for what happens when the player presses the Use Chip button.
     IEnumerator OnUseChipIEnumerator()
     {
 
@@ -200,9 +193,18 @@ public PlayerAttributeSO playerAttributes;
         {Debug.Log("ChipRef Queue Empty");
         isUsingChip = false;
         UseChipCoroutine = null;
-
         yield break;}
 
+        if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() == EChipTypes.Passive)
+        {
+            print("Attempted to use a passive chip, this will not work - you need to place the passive chip underneath an applicable chip within the chipload.");
+            isUsingChip = false;
+            UseChipCoroutine = null;            
+            activeChipRef = null;
+            chipLoadManager.nextChipRefLoad.Clear();
+            chipLoadManager.calcNextChipRefLoad();
+            yield break;            
+        }
         isUsingChip = true;
 
 
@@ -212,7 +214,8 @@ public PlayerAttributeSO playerAttributes;
             activeChipRef = nextChip;
             nextChip.effectPrefab.SetActive(true);
 
-
+            //Normally, if the nextChipRefLoad has more than 1 chip in the list, that means there are passive chips attached to the actual functioning chip.
+            //This will iterate through the list in order to activate the passive chip's effects before the functioning chip is activated.
             if(chipLoadManager.nextChipRefLoad.Count > 1)
             {
                 List<ChipObjectReference> passiveChips = chipLoadManager.nextChipRefLoad.FindAll(x => x.chipSORef.GetChipType() == EChipTypes.Passive);
@@ -237,8 +240,6 @@ public PlayerAttributeSO playerAttributes;
 
             nextChip.effectPrefab.SetActive(false);
             
-
-
         } 
 
         if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Special)

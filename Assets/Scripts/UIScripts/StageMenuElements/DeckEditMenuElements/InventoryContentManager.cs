@@ -8,7 +8,6 @@ public class InventoryContentManager : MonoBehaviour
 
     public DeckEditMenu deckEditMenu;
     public DeckContentManager deckContentManager;
-    ChipTableDatabase chipDatabase;
 
 
     [SerializeField] GameObject inventoryElementPrefab;
@@ -22,16 +21,11 @@ public class InventoryContentManager : MonoBehaviour
     Dictionary<ChipSO, InventoryChipSlot> internalElementDictionary = new Dictionary<ChipSO, InventoryChipSlot>();
 
 
-    public Dictionary<ChipInventoryReference, InventoryChipSlot> inventoryChipElementsDictionary = new Dictionary<ChipInventoryReference, InventoryChipSlot>();
-
-    public Dictionary<InventoryChipSlot, ChipInventoryReference> inverseChipElementsDictionary = new Dictionary<InventoryChipSlot, ChipInventoryReference>();
-
 
     private void Awake() 
     {
         playerData = deckEditMenu.playerData;
         InitializeTemporaryChipInventory();
-        chipDatabase = deckEditMenu.chipTableDatabase;
 
         
     }
@@ -58,10 +52,8 @@ public class InventoryContentManager : MonoBehaviour
     {
         foreach(ChipInventoryReference chipInvRef in chipInvRefList)
         {
-            //temporaryChipDictionary.Add(chipInvRef.chip, chipInvRef);
 
             InventoryChipSlot inventoryElement = Instantiate(inventoryElementPrefab, gameObject.transform).GetComponent<InventoryChipSlot>();
-            //internalElementList.Add(inventoryElement);
             inventoryElement.chipInvRef = chipInvRef;
             inventoryElement.gameObject.name = (chipInvRef.chipName + "_InvElement");
             inventoryElement.contentManager = this;
@@ -70,56 +62,18 @@ public class InventoryContentManager : MonoBehaviour
 
             internalElementDictionary.Add(chipInvRef.chip, inventoryElement);
 
-            //inventoryChipElementsDictionary.Add(chipInvRef, inventoryElement);
-            //inverseChipElementsDictionary.Add(inventoryElement, chipInvRef);
-
-
         }
 
 
     }
 
-    public void AddElementToInventory_Old(ChipInventoryReference chipInvRef)
-    {
-        if(inventoryChipElementsDictionary.ContainsKey(chipInvRef))
-        {
-            //Update the chip count of the internal chip inventory reference that was originally taken from the player inventory.
-            //This will later be converted into a list of chip inventory references that will replace the player inventory list on confirmation.
-            //inverseChipElementsDictionary[inventoryChipElementsDictionary[chipInvRef]].chipCount += chipInvRef.chipCount;
-            inverseChipElementsDictionary[inventoryChipElementsDictionary[chipInvRef]].SetChipCount(
-                inverseChipElementsDictionary[inventoryChipElementsDictionary[chipInvRef]].chipCount + chipInvRef.chipCount
-            );
 
-
-            //Update the visible inventory element within the UI to show correct chip count
-            //inventoryChipElementsDictionary[chipInvRef].chipInvRef.chipCount += chipInvRef.chipCount;
-
-            inventoryChipElementsDictionary[chipInvRef].RefreshElement();     
-
-            return;
-        }
-
-
-        temporaryChipInventory.Add(chipInvRef);
-
-        InventoryChipSlot inventoryElement = Instantiate(inventoryElementPrefab, gameObject.transform).GetComponent<InventoryChipSlot>();
-        internalElementList.Add(inventoryElement);
-
-        inventoryElement.chipInvRef = chipInvRef;
-        inventoryElement.gameObject.name = (chipInvRef.chipName + "_InvElement");
-        inventoryElement.contentManager = this;
-        inventoryElement.deckEditMenu = deckEditMenu;
-        inventoryElement.RefreshElement();        
-
-    }
-
-
+    
     public void AddElementToInventory(ChipInventoryReference chipInvRef)
     {
         if(temporaryChipDictionary.ContainsKey(chipInvRef.chip))
         {
             temporaryChipDictionary[chipInvRef.chip].AddChipCount(chipInvRef.chipCount);
-            //chipDatabase.AddInventoryChipCount(chipInvRef.chip, chipInvRef.chipCount);
 
             internalElementDictionary[chipInvRef.chip].chipInvRef.SetChipCount(temporaryChipDictionary[chipInvRef.chip].chipCount);
             internalElementDictionary[chipInvRef.chip].RefreshChipCount();
@@ -136,23 +90,22 @@ public class InventoryContentManager : MonoBehaviour
             }
 
             temporaryChipDictionary.Add(chipInvRef.chip, chipInvRef);
-            //chipDatabase.AddInventoryChipCount(chipInvRef.chip, chipInvRef.chipCount);
-
 
             CreateNewInventoryElement(chipInvRef);
 
         }
 
-
     }
 
 
 
-
+    ///<summary>
+    ///This method instantiates a new inventory element prefab and sets the values
+    ///of that prefab to the corresponding values of the given ChipInventoryReference
+    ///</summary>
     void CreateNewInventoryElement(ChipInventoryReference chipInvRef)
     {
         InventoryChipSlot inventoryElement = Instantiate(inventoryElementPrefab, gameObject.transform).GetComponent<InventoryChipSlot>();
-        //internalElementList.Add(inventoryElement);
         inventoryElement.chipInvRef = chipInvRef;
         inventoryElement.gameObject.name = (chipInvRef.chipName + "_InvElement");
         inventoryElement.contentManager = this;
