@@ -19,7 +19,6 @@ public class DeckChipSlot : MonoBehaviour
 
     void Awake()
     {
-
     }
 
     void Start()
@@ -27,7 +26,11 @@ public class DeckChipSlot : MonoBehaviour
    
     }
 
+    public void ChangeParentSlot(GameObject parentObject)
+    {
+        transform.SetParent(parentObject.transform);
 
+    }
 
     public void RefreshElement()
     {

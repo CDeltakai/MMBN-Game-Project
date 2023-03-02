@@ -6,6 +6,23 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.Linq;
 
+internal interface ICompareStrategy
+{
+    int Compare(ChipInventoryReference chip1, ChipInventoryReference chip2);
+}
+
+class CompareByName : IComparer<ChipInventoryReference>
+{
+    public int Compare(ChipInventoryReference chip1, ChipInventoryReference chip2)
+    {
+
+        return chip1.chipName.CompareTo(chip2.chipName);
+
+    }
+}
+
+
+
 ///<summary>
 ///The ChipInventoryReference is defined in the Player Attributes Scriptable Object.
 ///It is essentially a counter for the number of a 
@@ -16,7 +33,7 @@ using System.Linq;
 public class ChipInventoryReference
 {
     public delegate void ChipCountChanged();
-    public static event ChipCountChanged ChangedChipCountEvent;
+    public event ChipCountChanged ChangedChipCountEvent;
 
     [field:SerializeField]public string chipName{get; set;}
     public ChipSO chip;
@@ -35,6 +52,19 @@ public class ChipInventoryReference
             "This normally should not happen and may cause errors down the line.");
         }
     }
+
+
+    public static int CompareByName(ChipInventoryReference chip1, ChipInventoryReference chip2)
+    {
+        return String.Compare(chip1.chipName, chip2.chipName);
+    }
+
+    public static int CompareByDamage(ChipInventoryReference chip1, ChipInventoryReference chip2)
+    {
+        return chip1.chip.GetChipDamage().CompareTo(chip2.chip.GetChipDamage());
+    }
+
+
 
 
     public void SetChipCount(int i)
@@ -68,6 +98,9 @@ public class ChipInventoryReference
 [System.Serializable]
 public class DeckLoadout
 {
+    public delegate void ModifiedDeckDelegate();
+    public event ModifiedDeckDelegate ModifiedDeckEvent;
+
     public string DeckName;
     public List<ChipInventoryReference> Deck = new List<ChipInventoryReference>();
     public Dictionary<string, ChipInventoryReference> DeckDictionary = new Dictionary<string, ChipInventoryReference>();
@@ -84,11 +117,99 @@ public class DeckLoadout
 
     }
 
+    public void AddChip(ChipSO chip)
+    {
 
+        if(DeckDictionary.ContainsKey(chip.GetChipName()))
+        {
+            DeckDictionary[chip.GetChipName()].AddChipCount(1);
+        }
+        else
+        {
+            ChipInventoryReference newChipInvRef = new ChipInventoryReference(chip, 1);
+            Deck.Add(newChipInvRef);
+            DeckDictionary.Add(newChipInvRef.chipName, newChipInvRef);
+
+        }
+
+        if(ModifiedDeckEvent != null)
+        {
+            ModifiedDeckEvent();
+        }
+        
+    }
+
+    public ChipSO SearchChip(ChipSO chip)
+    {
+        if(DeckDictionary.ContainsKey(chip.GetChipName()))
+        {
+           return DeckDictionary[chip.GetChipName()].chip;
+        }else
+        {
+            Debug.Log("Chip: " + chip.GetChipName() + "Could not be found within the DeckDictionary of " + DeckName + "DeckLoadout, returned null");
+        }
+
+        return null;
+    }
+
+    public bool ContainsChip(ChipSO chip)
+    {
+        return DeckDictionary.ContainsKey(chip.GetChipName());
+    }
+
+
+    ///<summary>
+    ///Removes a given amount of the specific chip. If the amount of chips to be removed
+    ///exceeds the chip count, the chip will be deleted entirely from the Deck and 
+    ///DeckDictionary.
+    ///</summary>
+    public void RemoveChips(ChipSO chip, int amount = 1)
+    {
+        if(DeckDictionary.ContainsKey(chip.GetChipName()))
+        {
+            if(DeckDictionary[chip.GetChipName()].chipCount - amount <= 0)
+            {
+                Deck.Remove(DeckDictionary[chip.GetChipName()]);
+                DeckDictionary.Remove(chip.GetChipName());
+            }else
+            {
+                DeckDictionary[chip.GetChipName()].AddChipCount(-amount);
+            }
+
+        }
+
+        if(ModifiedDeckEvent != null)
+        {
+            ModifiedDeckEvent();
+        }
+
+
+    }
+
+    ///<summary>
+    ///Completely deletes the given chip from the Deck and DeckDictionary without 
+    ///regard to chip count. Only use this in certain scenarios, use RemoveChips
+    ///for most situations as it is safer.
+    ///</summary>
+    public void DeleteChip(ChipSO chip)
+    {
+
+        if(DeckDictionary.ContainsKey(chip.GetChipName()))
+        {
+            Deck.Remove(DeckDictionary[chip.GetChipName()]);
+            DeckDictionary.Remove(chip.GetChipName());            
+        }
+
+
+        if(ModifiedDeckEvent != null)
+        {
+            ModifiedDeckEvent();
+        }
+    }
 
 
     //Counts the total number of chips using the ChipInventoryReference's chipCount in the deck.
-    public int chipCount()
+    public int TotalNumberOfChips()
     {
         int chipCount = 0;
 
@@ -102,12 +223,14 @@ public class DeckLoadout
 
     public void SortByNameDescending()
     {
-       Deck = Deck.OrderByDescending(x => x.chipName).ToList();
+        Deck.Sort(ChipInventoryReference.CompareByName);
+        Deck.Reverse();
+
     }
 
     public void SortByNameAscending()
     {
-       Deck = Deck.OrderBy(x => x.chipName).ToList();
+        Deck.Sort(ChipInventoryReference.CompareByName);
     }
 
     public void SortByChipElement()

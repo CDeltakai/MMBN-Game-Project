@@ -68,7 +68,7 @@ public class InventoryContentManager : MonoBehaviour
     }
 
 
-    
+
     public void AddElementToInventory(ChipInventoryReference chipInvRef)
     {
         if(temporaryChipDictionary.ContainsKey(chipInvRef.chip))
@@ -135,7 +135,7 @@ public class InventoryContentManager : MonoBehaviour
         {
             if(temporaryChipDictionary[chip].chipCount <= 0)
             {
-                Debug.LogError("Chip: " + chip.GetChipName() + "somehow has a less than or equal to 0 value." +
+                Debug.LogError("Chip: " + chip.GetChipName() + " chipCount somehow has a less than or equal to 0 value." +
                 "This should not be happening and means something has gone wrong. Aborted removing chip from inventory.");
                 return;
             }
@@ -152,7 +152,6 @@ public class InventoryContentManager : MonoBehaviour
                 internalElementDictionary[chip].RefreshChipCount();
             }
 
-            
         }
     }
 
@@ -161,6 +160,13 @@ public class InventoryContentManager : MonoBehaviour
     {
         TransferElementToDeck(inventoryElement);
 
+
+    }
+
+    public void SortElementsByName()
+    {
+
+        
 
     }
 

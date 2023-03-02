@@ -421,7 +421,7 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
     ///<summary>
-    ///Empty method to allow for a specific entity to initalize events additional to the default DestroyEntity method
+    ///Empty virtual method to allow for a specific entity to initalize events additional to the default DestroyEntity method
     ///present on all BStageEntities. These additional events will always run first before the rest of the
     ///DestroyEntity method is run.
     ///</summary>
