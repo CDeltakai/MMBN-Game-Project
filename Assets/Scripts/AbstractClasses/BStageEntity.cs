@@ -71,11 +71,12 @@ public abstract class BStageEntity : MonoBehaviour
     ///<summary>
     ///If an entity is an obstacle it will block most chip effects from passing through them.
     ///E.g. An attack which should pass through multiple entities or spawn on top of the entity
-    ///will be blocked by this entity. This property should only be used on structure-based
+    ///will be blocked by this entity. This property should only be true on structure-based
     ///entities like solid blocks and is not meant for intelligent entities.
     ///</summary>
     public virtual bool isObstacle{get;} = false;
     public bool isBeingShoved = false;
+    protected virtual bool isPlayer{get;} = false;
 
     [HideInInspector] public bool isRooted = false;
     [HideInInspector] protected bool isMoving = false;
@@ -86,13 +87,19 @@ public abstract class BStageEntity : MonoBehaviour
     ///</summary>
     [HideInInspector] public bool nonVolatileStatus = false;
     
-    //<summary>
-    //This is a calculated variable that is meant to define the current cell
-    //position of the entity on the battle stage grid. It is calculated by
-    //checking the worldTransform and performing a conversion function on its position
-    //to a Vector3Int which will match its derived position on the battle stage grid.
+    ///<summary>
+    ///This is a calculated variable that is meant to define the current cell
+    ///position of the entity on the battle stage grid. It is calculated by
+    ///checking the worldTransform and performing a conversion function on its position
+    ///to a Vector3Int which will match its derived position on the battle stage grid.
+    ///</summary>
     public Vector3Int currentCellPos;
     public Vector3Int previousCellPos;
+    ///<summary>
+    ///The list of tiles on the battle stage grid which are claimed by this entity.
+    ///See the ClaimTileOccupancy method for additional details.
+    ///</summary>
+    public List<StageTile> claimedTiles = new List<StageTile>();
     
     [SerializeField] public int currentHP;
     [SerializeField] public int shieldHP;
@@ -113,7 +120,7 @@ public abstract class BStageEntity : MonoBehaviour
     protected Coroutine EntityDestructionCoroutine;
 
 
-    [SerializeField] protected GameObject destructionVFX;
+    [SerializeField] protected UnityEngine.GameObject destructionVFX;
 
 #endregion
 
@@ -459,20 +466,32 @@ public abstract class BStageEntity : MonoBehaviour
     public bool checkValidTile(int x, int y)
     {
         Vector3Int coordToCheck = new Vector3Int(x, y, 0);
+
+        StageTile stageTileToCheck = stageHandler.stageTiles
+            [stageHandler.stageTilemap.CellToWorld(coordToCheck)];
+
+        CustomTile customTileToCheck = stageHandler.getCustTile(coordToCheck);
+
+        if(stageTileToCheck.entity == this)
+        {
+            return true;
+        }
         
-            if(stageHandler.stageTilemap.GetTile
+        if(stageHandler.stageTilemap.GetTile
             (coordToCheck) == null
                 ||
-            stageHandler.getCustTile(coordToCheck).GetTileTeam() != team
+            customTileToCheck.GetTileTeam() != team
                 ||
-            stageHandler.stageTiles
-            [stageHandler.stageTilemap.CellToWorld(coordToCheck)].isOccupied
+            stageTileToCheck.isOccupied
                 ||
-            (isGrounded && !stageHandler.getCustTile(coordToCheck).isPassable)
+            (isGrounded && !customTileToCheck.isPassable)
+                ||
+            (stageTileToCheck.entityClaimant != null && stageTileToCheck.entityClaimant != this)
             )
             {
                 return false;
             }
+
         return true;
     }
 
@@ -483,16 +502,53 @@ public abstract class BStageEntity : MonoBehaviour
     public void ClaimTileOccupancy(int x, int y)
     {
 
+        Vector3Int coordinate = new Vector3Int(x, y, 0);
+        StageTile stageTile = stageHandler.stageTiles
+            [stageHandler.stageTilemap.CellToWorld(coordinate)];
+
+        if(stageTile.entityClaimant != null)
+        {
+            print("Tile at " + x + ", " + y + "Has already been claimed by another entity: " + stageTile.entityClaimant.name);
+            return;
+        }
+
+        stageTile.entityClaimant = this;
+        stageTile.isOccupied = true;
+        
+        claimedTiles.Add(stageTile);
+
     }
 
-    public void ClaimTileOccupancy(List<Tuple<int, int>> coordinateList)
+    public void ClaimTileOccupancy(List<Vector3Int> coordinateList)
     {
+        foreach(Vector3Int coord in coordinateList)
+        {
+            StageTile stageTile = stageHandler.stageTiles
+            [stageHandler.stageTilemap.CellToWorld(coord)];
+
+            if(stageTile.entityClaimant != null)
+            {
+                continue;
+            }
+
+            stageTile.entityClaimant = this;
+            stageTile.isOccupied = true;
+
+            claimedTiles.Add(stageTile);            
+
+        }
 
 
     }
 
     public void ClearClaimedTiles()
     {
+        foreach(StageTile stageTile in claimedTiles)
+        {
+            stageTile.entityClaimant = null;
+            stageTile.isOccupied = false;
+        }
+        claimedTiles.Clear();
 
     }
 
@@ -633,7 +689,7 @@ public abstract class BStageEntity : MonoBehaviour
 ///if shoved into an obstacle. If the obstacle is another entity, will also deal damage
 ///to that colliding entity. Damage dealt scales with the strength of the shove. 
 ///</summary> 
-    public IEnumerator Shove(int x, int y)
+    public IEnumerator Shove(int x, int y, int damage = 40)
     {
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
         Vector3 currentWorldPosition = stageHandler.stageTilemap.GetCellCenterWorld(currentCellPos);
@@ -645,30 +701,39 @@ public abstract class BStageEntity : MonoBehaviour
 
         if(stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y) != null)
         {
+            //Horizontal Shove
             if(Math.Abs(currentCellPos.x - destinationCell.x) == 1 )
             {
-                print("Attempting shove collision damage");
                 worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).
                 SetEase(Ease.OutCirc).SetUpdate(false);
                 isBeingShoved = true;
                 
-                print("Attempting waiting for seconds");
 
                 yield return new WaitForSeconds(0.10f);
                 worldTransform.DOMove(currentWorldPosition, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(false);
-                print("Attempting shove back to original position");
 
-                hurtEntity(40, false, true);
+                hurtEntity(damage, false, true);
                 yield return new WaitForSeconds(0.05f);
-                stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(40, false, true);     
+                stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(damage, false, true);     
                 yield return new WaitForSeconds(0.1f);
                 isBeingShoved = false;           
 
-            }else if(Math.Abs(currentCellPos.y - destinationCell.y) == 1)
+            }else
+            //Vertical Shove 
+            if(Math.Abs(currentCellPos.y - destinationCell.y) == 1)
             {
-                worldTransform.DOMove(new Vector3(destinationWorldPosition.x, destinationWorldPosition.y*0.5f, 0), 0.15f ).SetEase(Ease.OutCirc).SetUpdate(false);
-                yield return new WaitForSecondsRealtime(0.15f);
+                worldTransform.DOMove(new Vector3(destinationWorldPosition.x, destinationWorldPosition.y - 0.5f, 0), 0.1f ).SetEase(Ease.OutCirc).SetUpdate(false);
+                isBeingShoved = true;
+
+                yield return new WaitForSecondsRealtime(0.1f);
                 worldTransform.DOMove(currentCellPos, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(true);
+                hurtEntity(damage, false, true);
+
+                yield return new WaitForSeconds(0.05f);
+                stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(damage, false, true);     
+                yield return new WaitForSeconds(0.1f);
+
+                isBeingShoved = false;                   
 
 
             }
@@ -701,28 +766,39 @@ public abstract class BStageEntity : MonoBehaviour
 
     public virtual IEnumerator TweenMove(int x, int y, float duration, Ease easeType)
     {
-        //if(isMoving){yield break;}
         if(isMovingCoroutine != null)
         {
             print("moving coroutine not null, cannot move again");
-            yield break;}
-        //isMoving = true;
+            yield break;
+        }
         
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
         if(!checkValidTile(destinationCell.x, destinationCell.y))
         {yield break;}
 
+
+        ClaimTileOccupancy(destinationCell.x, destinationCell.y);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.SetPreviousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
         previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
-        worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), duration ).SetEase(easeType);
-        yield return new WaitForSeconds(duration * 0.5f);
+
+        if(isPlayer && TimeManager.isCurrentlySlowedDown)
+        {
+            worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), duration*3).SetEase(easeType).SetUpdate(true);
+            yield return new WaitForSecondsRealtime((duration*3) * 0.5f);            
+        }else
+        {
+            worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), duration).SetEase(easeType);
+            yield return new WaitForSeconds(duration * 0.5f);
+        }
+
 
         moveOntoTile(currentCellPos.x, currentCellPos.y, this);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+        ClearClaimedTiles();
 
         //isMoving = false;
         isMovingCoroutine = null;

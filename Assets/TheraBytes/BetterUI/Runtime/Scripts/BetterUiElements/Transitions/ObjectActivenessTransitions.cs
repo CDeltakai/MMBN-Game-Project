@@ -23,7 +23,7 @@ namespace TheraBytes.BetterUi
         public override UnityEngine.Object Target { get { return target; } }
 
         [SerializeField]
-        GameObject target;
+        UnityEngine.GameObject target;
 
         [SerializeField]
         List<ActiveTransitionState> states = new List<ActiveTransitionState>();

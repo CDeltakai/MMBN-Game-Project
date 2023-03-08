@@ -6,12 +6,12 @@ using UnityEngine.InputSystem;
 public class StageMenuController : MonoBehaviour
 {
 
-    [SerializeField] GameObject pauseMenu;
-    [SerializeField] GameObject deckEditMenu;
-    [SerializeField] GameObject playerEditMenu;
+    [SerializeField] UnityEngine.GameObject pauseMenu;
+    [SerializeField] UnityEngine.GameObject deckEditMenu;
+    [SerializeField] UnityEngine.GameObject playerEditMenu;
 
 
-    [SerializeField] GameObject currentActiveMenu;
+    [SerializeField] UnityEngine.GameObject currentActiveMenu;
 
     bool StageMenuTriggered = false;
     bool PauseMenuTriggered = false;

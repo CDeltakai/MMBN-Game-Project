@@ -98,8 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e69ff27e2aa474e8f74468936b2784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentChip: {fileID: 0}
   boxCollider2D: {fileID: 3450752485549607568}
   sprite: {fileID: 3450752485549607575}
+  trail: {fileID: 3450752485549607571}
+  startPosition: {x: 0, y: 0}
+  endPosition: {x: 0, y: 0}
+  Damage: 0
+  velocityInSlowMotion: {x: 50, y: 0}
+  InitializeBullet: 0
 --- !u!50 &3450752485549607569
 Rigidbody2D:
   serializedVersion: 4
@@ -263,6 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3450752485688358288}
+  - component: {fileID: -2999145078479538691}
   m_Layer: 0
   m_Name: BasicBulletPos
   m_TagString: Untagged
@@ -285,3 +293,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2999145078479538691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3450752485688358295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e142c5e320bfb4d4faf80252926e10ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3450752485549607570}

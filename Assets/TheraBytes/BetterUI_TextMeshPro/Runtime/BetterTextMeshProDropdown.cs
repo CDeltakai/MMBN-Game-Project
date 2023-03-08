@@ -33,7 +33,7 @@ namespace TheraBytes.BetterUi
             }
         }
 
-        protected override GameObject CreateDropdownList(GameObject template)
+        protected override UnityEngine.GameObject CreateDropdownList(UnityEngine.GameObject template)
         {
             foreach (var tr in showHideTransitions)
             {
@@ -43,7 +43,7 @@ namespace TheraBytes.BetterUi
             return base.CreateDropdownList(template);
         }
 
-        protected override void DestroyDropdownList(GameObject dropdownList)
+        protected override void DestroyDropdownList(UnityEngine.GameObject dropdownList)
         {
             foreach (var tr in showHideTransitions)
             {

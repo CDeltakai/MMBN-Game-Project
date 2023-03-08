@@ -23,7 +23,7 @@ public class ChipEffectManager : MonoBehaviour
 
 	PlayerMovement player;
 	[SerializeField] Transform firePoint;
-	[SerializeField] List<GameObject> ChipObjectRefList = new List<GameObject>();
+	[SerializeField] List<UnityEngine.GameObject> ChipObjectRefList = new List<UnityEngine.GameObject>();
 	
 
 	void Awake()

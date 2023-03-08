@@ -76,7 +76,7 @@ namespace TheraBytes.BetterUi.Editor
             }
 
             EditorGUILayout.Space();
-            GameObject obj = EditorGUILayout.ObjectField("Add Object", null, typeof(GameObject), true) as GameObject;
+            UnityEngine.GameObject obj = EditorGUILayout.ObjectField("Add Object", null, typeof(UnityEngine.GameObject), true) as UnityEngine.GameObject;
             if(obj != null)
             {
                 if(CheckObject(obj, list, otherList))
@@ -93,7 +93,7 @@ namespace TheraBytes.BetterUi.Editor
             EditorGUI.indentLevel--;
         }
 
-        bool CheckObject(GameObject go, SerializedProperty list, SerializedProperty otherList)
+        bool CheckObject(UnityEngine.GameObject go, SerializedProperty list, SerializedProperty otherList)
         {
 #if UNITY_2018_2_OR_NEWER
             if(PrefabUtility.GetCorrespondingObjectFromSource(go) == null && PrefabUtility.GetCorrespondingObjectFromSource(go) != null)

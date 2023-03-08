@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BattleStageNPCInventory : MonoBehaviour
 {
-    [SerializeField] List<GameObject> EnemyList;
+    [SerializeField] List<UnityEngine.GameObject> EnemyList;
 
 
-    public GameObject getNPCObject(int element)
+    public UnityEngine.GameObject getNPCObject(int element)
     {
         return EnemyList[element];
 

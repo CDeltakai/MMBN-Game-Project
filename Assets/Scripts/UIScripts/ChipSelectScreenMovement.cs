@@ -31,15 +31,15 @@ public class ChipSelectScreenMovement : MonoBehaviour
     [SerializeField] List<ChipObjectReference> selectableChipRefs;
     [SerializeField] List<ChipObjectReference> chipRefsDeck = new List<ChipObjectReference>();
     [SerializeField] List<ChipObjectReference> discardedChipRefsDeck = new List<ChipObjectReference>();
-    [SerializeField] GameObject[] chipButtons;
-    [SerializeField] GameObject[] ActiveChipSlots;
+    [SerializeField] UnityEngine.GameObject[] chipButtons;
+    [SerializeField] UnityEngine.GameObject[] ActiveChipSlots;
 
-    [SerializeField] GameObject ChipDescriptor;
-    [SerializeField] GameObject ChipNameField;
-    [SerializeField] GameObject ChipModifiersField;
-    [SerializeField] GameObject ChipElementField;
-    [SerializeField] GameObject ChipAttributeField;
-    [SerializeField] GameObject ChipDamageField;
+    [SerializeField] UnityEngine.GameObject ChipDescriptor;
+    [SerializeField] UnityEngine.GameObject ChipNameField;
+    [SerializeField] UnityEngine.GameObject ChipModifiersField;
+    [SerializeField] UnityEngine.GameObject ChipElementField;
+    [SerializeField] UnityEngine.GameObject ChipAttributeField;
+    [SerializeField] UnityEngine.GameObject ChipDamageField;
     PlayerMovement playerMovement;
     ChipLoadManager chipLoadManager;
 
@@ -178,7 +178,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
             discardedChipRefsDeck.Clear();            
         }
 
-        foreach(GameObject button in chipButtons)
+        foreach(UnityEngine.GameObject button in chipButtons)
         {
             button.GetComponent<ChipSlot>().clearChip();
             button.SetActive(true);

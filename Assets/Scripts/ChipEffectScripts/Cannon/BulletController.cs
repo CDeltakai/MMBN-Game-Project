@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class BulletController : MonoBehaviour
 {
 
-    [SerializeField] List<UnityEngine.GameObject> MenuButtons;
-
-
+    public BasicBullet bullet;
 
     void Start()
     {

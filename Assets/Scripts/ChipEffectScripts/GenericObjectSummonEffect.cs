@@ -5,7 +5,7 @@ using UnityEngine;
 public class GenericObjectSummonEffect : ChipEffectBlueprint
 {
 
-    public GameObject PooledSummonObject;
+    public UnityEngine.GameObject PooledSummonObject;
     public Vector3 PositionModifier;
 
   

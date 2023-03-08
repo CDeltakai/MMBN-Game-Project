@@ -60,8 +60,8 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] EventReference SFX;
     [SerializeField] List<EventReference> AdditionalSFX;
     [SerializeField] AnimationClip AnimationClipToUse;
-    [SerializeField] GameObject ObjectSummon;
-    [SerializeField] GameObject EffectPrefab;
+    [SerializeField] UnityEngine.GameObject ObjectSummon;
+    [SerializeField] UnityEngine.GameObject EffectPrefab;
     [SerializeField] EffectMechanism effectMechanism;
     [SerializeField] bool pierceUntargetable;
     [SerializeField] bool lightAttack;
@@ -72,7 +72,7 @@ public class ChipSO : ChipScriptableObject
     ///through certain passive chips or other modifiers.
     ///</summary>
     [field:SerializeField] public bool AllowSummonObjectMod{get; private set;}
-    [HideInInspector] GameObject TempEffectPrefabRef;
+    [HideInInspector] UnityEngine.GameObject TempEffectPrefabRef;
 
 
     public void ResetID()
@@ -85,7 +85,7 @@ public class ChipSO : ChipScriptableObject
         TempEffectPrefabRef = null;
     }
 
-    public GameObject GetEffectPrefab()
+    public UnityEngine.GameObject GetEffectPrefab()
     {
         if(EffectPrefab == null)
         {
@@ -121,7 +121,7 @@ public class ChipSO : ChipScriptableObject
         return BaseStatusEffect;
     }
 
-    public GameObject GetObjectSummon()
+    public UnityEngine.GameObject GetObjectSummon()
     {
         if(ObjectSummon != null)
         {

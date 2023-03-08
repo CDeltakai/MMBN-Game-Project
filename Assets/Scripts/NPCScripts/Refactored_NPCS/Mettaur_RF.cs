@@ -21,7 +21,7 @@ public class Mettaur_RF : BStageEntity
     public bool isAttacking = false;
     public const float attackAnimationDuration = 1.167f;
     BoxCollider2D mettaurCollider;
-    [SerializeField] GameObject mettaurProjectile;
+    [SerializeField] UnityEngine.GameObject mettaurProjectile;
 
 
 

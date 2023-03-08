@@ -65,6 +65,8 @@ public PlayerAttributeSO playerAttributes;
     public override bool isGrounded { get ; set ; } = true;
     public override bool isStationary => false;
     public override bool isStunnable => true;
+    protected override bool isPlayer => true;
+
     public override int maxHP => 9999;
     public int MaxEnergy;
     public int currentEnergy;

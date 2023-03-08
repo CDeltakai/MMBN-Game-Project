@@ -26,7 +26,7 @@ public class DeckChipSlot : MonoBehaviour
    
     }
 
-    public void ChangeParentSlot(GameObject parentObject)
+    public void ChangeParentSlot(UnityEngine.GameObject parentObject)
     {
         transform.SetParent(parentObject.transform);
 

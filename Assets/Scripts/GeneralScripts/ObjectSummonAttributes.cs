@@ -8,7 +8,7 @@ public class ObjectSummonAttributes : MonoBehaviour
 
     public EStatusEffects StatusEffect;
     public EStatusEffects AddStatusEffect = EStatusEffects.Default;
-    public GameObject AddObjectSummon = null;
+    public UnityEngine.GameObject AddObjectSummon = null;
     public ChipSO InheritedChip;
 
     public virtual void ResetAttributesToInitialState()

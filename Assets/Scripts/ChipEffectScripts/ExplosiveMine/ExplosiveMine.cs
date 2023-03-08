@@ -8,24 +8,24 @@ public class ExplosiveMine : ObjectSummonAttributes
 {
 
     [SerializeField] BattleStageHandler stageHandler;
-    [SerializeField] GameObject MineObject;
+    [SerializeField] UnityEngine.GameObject MineObject;
     Vector3Int currentCellPos;
 
     [SerializeField] EventReference MineActivateSFX;
     [SerializeField] EventReference NormalExplosionSFX;
     [SerializeField] EventReference BigExplosionSFX;
 
-    [SerializeField] GameObject PrimaryExplosion;
-    [SerializeField] GameObject NorthExplosion;
-    [SerializeField] GameObject SouthExplosion;
-    [SerializeField] GameObject EastExplosion;
-    [SerializeField] GameObject WestExplosion;
+    [SerializeField] UnityEngine.GameObject PrimaryExplosion;
+    [SerializeField] UnityEngine.GameObject NorthExplosion;
+    [SerializeField] UnityEngine.GameObject SouthExplosion;
+    [SerializeField] UnityEngine.GameObject EastExplosion;
+    [SerializeField] UnityEngine.GameObject WestExplosion;
 
-    GameObject primaryExplosionObject;
-    GameObject northExplosionObject;
-    GameObject southExplosionObject;
-    GameObject eastExplosionObject;
-    GameObject westExplosionObject;
+    UnityEngine.GameObject primaryExplosionObject;
+    UnityEngine.GameObject northExplosionObject;
+    UnityEngine.GameObject southExplosionObject;
+    UnityEngine.GameObject eastExplosionObject;
+    UnityEngine.GameObject westExplosionObject;
 
     SecondaryExplosions primaryExplosionScript;
     SecondaryExplosions northExplosionScript;
@@ -154,7 +154,7 @@ public class ExplosiveMine : ObjectSummonAttributes
         }
     }
 
-    bool CheckValidTile(GameObject explosionObject)
+    bool CheckValidTile(UnityEngine.GameObject explosionObject)
     {
         Vector3Int explosionObjectPosition = new Vector3Int((int)(Math.Round((explosionObject.transform.position.x/1.6f), MidpointRounding.AwayFromZero)),
                             (int)explosionObject.transform.position.y, 0);

@@ -10,7 +10,7 @@ public class InventoryContentManager : MonoBehaviour
     public DeckContentManager deckContentManager;
 
 
-    [SerializeField] GameObject inventoryElementPrefab;
+    [SerializeField] UnityEngine.GameObject inventoryElementPrefab;
     [SerializeField] PlayerAttributeSO playerData;
 
 

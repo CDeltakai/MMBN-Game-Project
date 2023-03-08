@@ -464,7 +464,7 @@ namespace TheraBytes.BetterUi
             var allObjects = GetAllEditableObjects();
 
             // first update the "override screen properties", because other objects rely on them
-            foreach (GameObject go in allObjects)
+            foreach (UnityEngine.GameObject go in allObjects)
             {
                 var resDeps = go.GetComponents<OverrideScreenProperties>();
                 foreach (IResolutionDependency comp in resDeps)
@@ -474,7 +474,7 @@ namespace TheraBytes.BetterUi
             }
 
             // then update all other objects
-            foreach (GameObject go in allObjects)
+            foreach (UnityEngine.GameObject go in allObjects)
             {
                 var resDeps = go.GetComponents<Behaviour>().OfType<IResolutionDependency>();
                 foreach (IResolutionDependency comp in resDeps)
@@ -487,18 +487,18 @@ namespace TheraBytes.BetterUi
             }
         }
 
-        static IEnumerable<GameObject> GetAllEditableObjects()
+        static IEnumerable<UnityEngine.GameObject> GetAllEditableObjects()
         {
-            foreach (GameObject go in GameObject.FindObjectsOfType<GameObject>())
+            foreach (UnityEngine.GameObject go in UnityEngine.GameObject.FindObjectsOfType<UnityEngine.GameObject>())
                 yield return go;
 
 #if UNITY_EDITOR && UNITY_2018_3_OR_NEWER
             var prefabStage = UnityEditor.Experimental.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage();
             if (prefabStage != null)
             {
-                foreach(GameObject root in prefabStage.scene.GetRootGameObjects())
+                foreach(UnityEngine.GameObject root in prefabStage.scene.GetRootGameObjects())
                 {
-                    foreach (GameObject go in IterateHierarchy(root))
+                    foreach (UnityEngine.GameObject go in IterateHierarchy(root))
                     {
                         yield return go;
                     }
@@ -507,13 +507,13 @@ namespace TheraBytes.BetterUi
 #endif
         }
 
-        static IEnumerable<GameObject> IterateHierarchy(GameObject root)
+        static IEnumerable<UnityEngine.GameObject> IterateHierarchy(UnityEngine.GameObject root)
         {
             yield return root;
 
             foreach (Transform child in root.transform)
             {
-                foreach (GameObject subChild in IterateHierarchy(child.gameObject))
+                foreach (UnityEngine.GameObject subChild in IterateHierarchy(child.gameObject))
                 {
                     yield return subChild;
                 }

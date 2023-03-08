@@ -8,13 +8,13 @@ namespace TheraBytes.BetterUi.Editor.AlignDistribute
 {
     public static class Utility
     {
-        internal static GameObject helperObject;
+        internal static UnityEngine.GameObject helperObject;
 
         internal static void CleanUp()
         {
             if (helperObject != null)
             {
-                GameObject.DestroyImmediate(helperObject);
+                UnityEngine.GameObject.DestroyImmediate(helperObject);
             }
         }
 
@@ -247,7 +247,7 @@ namespace TheraBytes.BetterUi.Editor.AlignDistribute
         public static RectTransform GetBoundingBoxRectTransform(Transform[] selection)
         {
             // Instantiating a RectTransform doesn't work, therefore we need a temporal GameObject...
-            helperObject = new GameObject("Bounding Box Rect", typeof(RectTransform));
+            helperObject = new UnityEngine.GameObject("Bounding Box Rect", typeof(RectTransform));
             helperObject.transform.SetParent(selection[0].parent);
 
             RectTransform result = helperObject.GetComponent<RectTransform>();

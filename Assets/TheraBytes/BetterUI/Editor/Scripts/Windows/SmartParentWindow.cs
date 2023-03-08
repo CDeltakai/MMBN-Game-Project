@@ -60,7 +60,7 @@ namespace TheraBytes.BetterUi.Editor
         {
             EditorGUILayout.Space();
 
-            var go = Selection.activeObject as GameObject;
+            var go = Selection.activeObject as UnityEngine.GameObject;
             bool canSelectParent = Selection.objects.Length == 1
                 && go != null
                 && go.transform as RectTransform != null

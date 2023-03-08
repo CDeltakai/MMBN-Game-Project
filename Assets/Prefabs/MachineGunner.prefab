@@ -268,37 +268,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec65c325b338414c829fbf15c2b04dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usingOverridenMovementMethod: 0
+  spriteRenderer: {fileID: 0}
   healthText: {fileID: 3069419180809448057}
+  objectTimeScale: 1
   worldTransform: {fileID: 0}
+  isBeingShoved: 0
   isRooted: 0
-  isMoving: 0
   nonVolatileStatus: 0
   currentCellPos: {x: 0, y: 0, z: 0}
+  previousCellPos: {x: 0, y: 0, z: 0}
   currentHP: 60
-  shieldPoints: 0
+  shieldHP: 0
   DefenseMultiplier: 1
   AttackMultiplier: 1
-  isInvincible: 0
-  movementSpeedCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  movementSpeedTime: 0
-  xDistanceTimeCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  yDistanceTimeCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  isUntargetable: 0
+  fullInvincible: 0
+  isStunned: 0
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  destructionVFX: {fileID: 0}
+  HurtSFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  DestroyedSFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  HPShakeDuration: 0.12
+  HPShakeStrength: 0.2
+  HPShakeVibrato: 1000
   reticle: {fileID: 3069419181740277867}
 --- !u!114 &3069419181544434900
 MonoBehaviour:
@@ -344,7 +348,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.4316244, y: 0.18412507}

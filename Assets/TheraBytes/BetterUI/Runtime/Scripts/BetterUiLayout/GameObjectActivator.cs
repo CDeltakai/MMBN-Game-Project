@@ -20,8 +20,8 @@ namespace TheraBytes.BetterUi
         [Serializable]
         public class Settings : IScreenConfigConnection
         {
-            public List<GameObject> ActiveObjects = new List<GameObject>();
-            public List<GameObject> InactiveObjects = new List<GameObject>();
+            public List<UnityEngine.GameObject> ActiveObjects = new List<UnityEngine.GameObject>();
+            public List<UnityEngine.GameObject> InactiveObjects = new List<UnityEngine.GameObject>();
 
             [SerializeField]
             string screenConfigName;
@@ -56,7 +56,7 @@ namespace TheraBytes.BetterUi
             if (!(EditorPreview) && !(UnityEditor.EditorApplication.isPlaying))
                 return;
 #endif
-            foreach (GameObject go in CurrentSettings.ActiveObjects)
+            foreach (UnityEngine.GameObject go in CurrentSettings.ActiveObjects)
             {
                 if (go != null)
                 {
@@ -64,7 +64,7 @@ namespace TheraBytes.BetterUi
                 }
             }
 
-            foreach (GameObject go in CurrentSettings.InactiveObjects)
+            foreach (UnityEngine.GameObject go in CurrentSettings.InactiveObjects)
             {
                 if (go != null)
                 {

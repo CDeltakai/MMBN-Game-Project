@@ -8,14 +8,14 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     public PlayerMovement player;
     protected Transform firePoint;
     [SerializeField] public ChipSO chip;
-    protected GameObject ObjectSummon;
+    protected UnityEngine.GameObject ObjectSummon;
     protected int BaseDamage;
     protected EStatusEffects BaseStatusEffect;
     protected int EnergyCost;
 
     public int DamageModifier = 0;
     public EStatusEffects StatusEffectModifier = EStatusEffects.Default;
-    public GameObject SummonObjectModifier = null;
+    public UnityEngine.GameObject SummonObjectModifier = null;
     public int EnergyCostModifier = 0;
 
 
@@ -58,7 +58,11 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
         
     }
 
-
+    public int calcFinalDamage()
+    {
+        int finalDamage = (int)((BaseDamage + DamageModifier) * player.AttackMultiplier);
+        return finalDamage;        
+    }
 
     public void applyChipDamage(BStageEntity entity)
     {
@@ -68,7 +72,9 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
             StatusEffectModifier = BaseStatusEffect;
         }
 
-        entity.hurtEntity((int)((BaseDamage + DamageModifier) * player.AttackMultiplier),
+        int finalDamage = (int)((BaseDamage + DamageModifier) * player.AttackMultiplier);
+
+        entity.hurtEntity(finalDamage,
                             lightAttack,
                             hitFlinch, 
                             player, 

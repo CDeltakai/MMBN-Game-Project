@@ -23,7 +23,7 @@ public class Reflect : MonoBehaviour, IChip
 
         chipEffects = GetComponent<ChipEffects>();
         player = GetComponent<PlayerMovement>();
-        GameObject ParryCollider = chipEffects.ParryCollider;
+        UnityEngine.GameObject ParryCollider = chipEffects.ParryCollider;
         Instantiate(ParryCollider, new Vector2 (player.transform.localPosition.x, player.transform.localPosition.y), player.transform.rotation);
 
     }

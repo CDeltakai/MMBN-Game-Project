@@ -15,9 +15,9 @@ namespace TheraBytes.BetterUi
 
         [SerializeField] bool onlyPresentInThisScene= false;
 
-        public static GameObject Create()
+        public static UnityEngine.GameObject Create()
         {
-            GameObject go = new GameObject("IngameResolutionMonitor");
+            UnityEngine.GameObject go = new UnityEngine.GameObject("IngameResolutionMonitor");
             go.AddComponent<IngameResolutionMonitor>();
 
             return go;
@@ -28,14 +28,14 @@ namespace TheraBytes.BetterUi
             if(instance != null)
             {
                 Debug.LogWarning("There already is an Ingame Resolution Monitor. One is enough. Destroying the previous one now...");
-                GameObject.Destroy(instance.gameObject);
+                UnityEngine.GameObject.Destroy(instance.gameObject);
             }
 
             instance = this;
 
             if (!onlyPresentInThisScene)
             {
-                GameObject.DontDestroyOnLoad(this.gameObject);
+                UnityEngine.GameObject.DontDestroyOnLoad(this.gameObject);
             }
 
             SceneManager.sceneLoaded += SceneLoaded;

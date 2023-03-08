@@ -11,7 +11,8 @@ public class DeckContentManager : MonoBehaviour
     public DeckEditMenu deckEditMenu;
     public InventoryContentManager inventoryContentManager;
 
-    [SerializeField] GameObject deckElementPrefab;
+    [SerializeField] UnityEngine.GameObject deckElementPrefab;
+    [SerializeField] UnityEngine.GameObject elementDividerPrefab;
     [SerializeField] PlayerAttributeSO playerData;
     [SerializeField] TextMeshProUGUI deckCounterText;
 
@@ -19,6 +20,8 @@ public class DeckContentManager : MonoBehaviour
 
     [SerializeField] public List<ChipInventoryReference> temporaryChipDeck = new List<ChipInventoryReference>();
     [SerializeField] List<DeckChipSlot> internalElementList = new List<DeckChipSlot>();
+    public Dictionary<int, DeckElementDivider> dividerElementDictionary = new Dictionary<int, DeckElementDivider>();
+    [SerializeField] List<DeckElementDivider> dividerElementList = new List<DeckElementDivider>();
 
 
     private void Awake() 
@@ -91,6 +94,42 @@ public class DeckContentManager : MonoBehaviour
 
     }
 
+    public void AddContentFromDeck_New(List<ChipInventoryReference> chipInvRefList)
+    {
+        foreach(ChipInventoryReference chipInvRef in chipInvRefList)
+        {
+
+            for(int i = 0; i < chipInvRef.chipCount ; i++) 
+            {
+                DeckElementDivider deckElement = Instantiate(elementDividerPrefab, gameObject.transform).GetComponent<DeckElementDivider>();
+                deckElement.elementIndex = i;
+
+                dividerElementDictionary.Add(deckElement.elementIndex, deckElement);
+                dividerElementList.Add(deckElement);
+
+                deckElement.deckChipSlot.chip = chipInvRef.chip;
+                deckElement.deckChipSlot.gameObject.name = (deckElement.deckChipSlot.chip.GetChipName() + "_DeckElement");
+                deckElement.deckChipSlot.contentManager = this;
+                deckElement.deckChipSlot.deckEditMenu = deckEditMenu;
+                deckElement.deckChipSlot.RefreshElement();
+
+            }
+
+        }
+
+    }
+
+    public void SortContentByName()
+    {
+        IEnumerable<DeckElementDivider> query = dividerElementList.OrderBy(element => element.deckChipSlot.chip.GetChipName());
+        for(int i = 0; i < query.Count(); i++)
+        {
+            query.ElementAt(i).deckChipSlot.transform.SetParent(dividerElementDictionary[i].gameObject.transform);
+            
+
+        } 
+
+    }
 
     public void AddElementToDeck(ChipSO chip)
     {
@@ -148,9 +187,9 @@ public class DeckContentManager : MonoBehaviour
         inventoryContentManager.AddElementToInventory(new ChipInventoryReference(deckElement.chip, 1));
         RemoveDeckChipSlotFromDeck(deckElement);        
 
-
-
     }
+
+
 
 
 

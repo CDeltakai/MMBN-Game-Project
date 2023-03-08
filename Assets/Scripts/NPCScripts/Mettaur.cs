@@ -15,7 +15,7 @@ public class Mettaur : MonoBehaviour, IBattleStageEntity, IStage_MoveableEntity
     float animationLength;
     string currentAnimation;
     public Transform parentTransform;
-    [SerializeField] GameObject mettaurProjectile;
+    [SerializeField] UnityEngine.GameObject mettaurProjectile;
     [SerializeField] public int currentHP = 40;
     [SerializeField] TextMeshProUGUI healthText;
 

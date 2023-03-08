@@ -6,8 +6,8 @@ using UnityEngine;
 public class ChipObjectReference
 {
     [SerializeField] internal ChipSO chipSORef;
-    [SerializeField] internal GameObject effectPrefab;
-    [SerializeField] internal GameObject ObjectSummon;
+    [SerializeField] internal UnityEngine.GameObject effectPrefab;
+    [SerializeField] internal UnityEngine.GameObject ObjectSummon;
 
 }
 
@@ -18,8 +18,8 @@ public class ObjectPoolManager : MonoBehaviour
     ChipInventory chipInventory;
     PlayerAttributeManager playerAttributeManager;
 
-	[SerializeField] List<GameObject> ChipObjectPool = new List<GameObject>();
-    [SerializeField] GameObject ChipObjectPoolParent;
+	[SerializeField] List<UnityEngine.GameObject> ChipObjectPool = new List<UnityEngine.GameObject>();
+    [SerializeField] UnityEngine.GameObject ChipObjectPoolParent;
     [SerializeField] public List<ChipObjectReference> ChipObjectList = new List<ChipObjectReference>();
 	
     void Awake()
@@ -57,10 +57,10 @@ public class ObjectPoolManager : MonoBehaviour
             if(chip.GetEffectPrefab() != null)
             {
 
-                GameObject prefab = Instantiate(chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
+                UnityEngine.GameObject prefab = Instantiate(chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
                 prefab.GetComponent<ChipEffectBlueprint>().player = player;
 
-                GameObject objectSummon = null;
+                UnityEngine.GameObject objectSummon = null;
 
                 if(chip.GetObjectSummon() != null)
                 {
@@ -105,8 +105,8 @@ public class ObjectPoolManager : MonoBehaviour
             if(chip.GetEffectPrefab() != null)
             {
 
-                GameObject prefab = Instantiate(chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
-                GameObject objectSummon = null;
+                UnityEngine.GameObject prefab = Instantiate(chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
+                UnityEngine.GameObject objectSummon = null;
 
 
                 if(chip.GetObjectSummon() != null)
@@ -175,8 +175,8 @@ public class ObjectPoolManager : MonoBehaviour
 
                 if(chipInvRef.chip.GetEffectPrefab() != null)
                 {
-                    GameObject effectPrefab = Instantiate(chipInvRef.chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
-                    GameObject objectSummon = null;
+                    UnityEngine.GameObject effectPrefab = Instantiate(chipInvRef.chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
+                    UnityEngine.GameObject objectSummon = null;
                     effectPrefab.GetComponent<ChipEffectBlueprint>().player = player;
 
 

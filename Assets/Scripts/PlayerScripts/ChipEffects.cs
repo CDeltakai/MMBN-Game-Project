@@ -16,7 +16,7 @@ public class ChipEffects : MonoBehaviour
     public Transform firePoint;
     PlayerMovement player;
     BoxCollider2D playerCollider;
-    [SerializeField] public GameObject ParryCollider;
+    [SerializeField] public UnityEngine.GameObject ParryCollider;
     string ChipScript;
     Time time;
     float timeElapsed = 0f;
@@ -99,7 +99,7 @@ public class ChipEffects : MonoBehaviour
 
 
 
-    IEnumerator disableEffectPrefab(float duration, GameObject prefab)
+    IEnumerator disableEffectPrefab(float duration, UnityEngine.GameObject prefab)
     {
         yield return new WaitForSecondsRealtime(duration);
         prefab.SetActive(false);

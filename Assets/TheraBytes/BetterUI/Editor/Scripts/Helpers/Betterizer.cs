@@ -61,7 +61,7 @@ namespace TheraBytes.BetterUi.Editor
             var fields = CollectAllFieldValues(typeof(T), source, new HashSet<string>(skipFields)).ToArray();
             var refs = new HashSet<KeyValuePair<SerializedObject, string>>(FindReferencesTo(source));
 
-            GameObject go = source.gameObject;
+            UnityEngine.GameObject go = source.gameObject;
 
             int order = GetComponentOrder(source);
 
@@ -224,7 +224,7 @@ namespace TheraBytes.BetterUi.Editor
         private static IEnumerable<KeyValuePair<SerializedObject, string>> FindReferencesTo(UnityEngine.Component obj)
         {
             // iterate objects in the scene
-            var allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+            var allObjects = UnityEngine.Object.FindObjectsOfType<UnityEngine.GameObject>();
             for (int i = 0; i < allObjects.Length; i++)
             {
                 var go = allObjects[i];
@@ -245,7 +245,7 @@ namespace TheraBytes.BetterUi.Editor
             }
         }
 
-        private static IEnumerable<KeyValuePair<SerializedObject, string>> FindReferencesTo(Component obj, GameObject go)
+        private static IEnumerable<KeyValuePair<SerializedObject, string>> FindReferencesTo(Component obj, UnityEngine.GameObject go)
         {
             var components = go.GetComponents<Component>();
             for (int k = 0; k < components.Length; k++)

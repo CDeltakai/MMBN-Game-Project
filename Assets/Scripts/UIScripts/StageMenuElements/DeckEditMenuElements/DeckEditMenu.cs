@@ -5,9 +5,9 @@ using UnityEngine;
 public class DeckEditMenu : MonoBehaviour
 {
     [SerializeField] public PlayerAttributeSO playerData;
-    [SerializeField] GameObject chipDescriptionView;
-    [SerializeField] GameObject InventoryView;
-    [SerializeField] GameObject DeckView;
+    [SerializeField] UnityEngine.GameObject chipDescriptionView;
+    [SerializeField] UnityEngine.GameObject InventoryView;
+    [SerializeField] UnityEngine.GameObject DeckView;
     [SerializeField] public ChipTableDatabase chipTableDatabase;
 
     [SerializeField] DeckContentManager deckContentManager;
