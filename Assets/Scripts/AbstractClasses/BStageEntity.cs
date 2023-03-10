@@ -421,6 +421,7 @@ public abstract class BStageEntity : MonoBehaviour
         }
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+        ClearClaimedTiles();
         tileEventManager.UnsubscribeEntity(this);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
@@ -487,6 +488,8 @@ public abstract class BStageEntity : MonoBehaviour
             (isGrounded && !customTileToCheck.isPassable)
                 ||
             (stageTileToCheck.entityClaimant != null && stageTileToCheck.entityClaimant != this)
+                ||
+            (stageTileToCheck.entity != null && stageTileToCheck.entity !=this)
             )
             {
                 return false;
@@ -494,6 +497,43 @@ public abstract class BStageEntity : MonoBehaviour
 
         return true;
     }
+
+
+    ///<summary>
+    ///A less strict version of checkValidTile where as long as the tile being checked
+    ///is not physically occupied by another entity or claimed by another entity, the tile is
+    ///valid. This check is mainly used by attacks or movements which will step into enemy territory.
+    ///</summary>
+    public bool checkFreeTile(int x, int y)
+    {
+        Vector3Int coordToCheck = new Vector3Int(x, y, 0);
+
+        StageTile stageTileToCheck = stageHandler.stageTiles
+            [stageHandler.stageTilemap.CellToWorld(coordToCheck)];
+
+        CustomTile customTileToCheck = stageHandler.getCustTile(coordToCheck);
+
+        if(stageTileToCheck.entity == this)
+        {
+            return true;
+        }
+        
+        if(stageHandler.stageTilemap.GetTile
+            (coordToCheck) == null
+                ||
+            stageTileToCheck.entity != null
+                ||
+            (isGrounded && !customTileToCheck.isPassable)
+                ||
+            (stageTileToCheck.entityClaimant != null && stageTileToCheck.entityClaimant != this)
+            )
+            {
+                return false;
+            }
+
+        return true;
+    }
+
 
     ///<summary>
     ///Allows an entity to claim additional tiles as occupied by them which will prevent other entities
@@ -713,9 +753,9 @@ public abstract class BStageEntity : MonoBehaviour
                 worldTransform.DOMove(currentWorldPosition, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(false);
 
                 hurtEntity(damage, false, true);
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSecondsRealtime(0.05f);
                 stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(damage, false, true);     
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.15f);
                 isBeingShoved = false;           
 
             }else
@@ -729,7 +769,7 @@ public abstract class BStageEntity : MonoBehaviour
                 worldTransform.DOMove(currentCellPos, 0.15f ).SetEase(Ease.OutExpo).SetUpdate(true);
                 hurtEntity(damage, false, true);
 
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSecondsRealtime(0.05f);
                 stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(damage, false, true);     
                 yield return new WaitForSeconds(0.1f);
 
@@ -750,14 +790,14 @@ public abstract class BStageEntity : MonoBehaviour
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
-        worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), 0.15f ).SetEase(Ease.OutCubic).SetUpdate(true);
+        worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), 0.15f ).SetEase(Ease.OutCubic).SetUpdate(false);
         isBeingShoved = true;
-        yield return new WaitForSecondsRealtime(0.075f);
+        yield return new WaitForSeconds(0.075f);
 
         moveOntoTile(currentCellPos.x, currentCellPos.y, this);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
 
-        yield return new WaitForSecondsRealtime(0.075f);
+        yield return new WaitForSeconds(0.075f);
         isBeingShoved = false;
 
 

@@ -34,8 +34,10 @@ public class AreaGrab : ChipEffectBlueprint
         {
 
             Vector3Int localPos = new Vector3Int(pos.x + 1, pos.y, 0);
-            
-            if(localPos.x >= 6 || stageHandler.isOccupied(localPos.x, localPos.y))
+            StageTile stageTileToCheck = stageHandler.stageTiles
+            [stageHandler.stageTilemap.CellToWorld(localPos)];
+
+            if(localPos.x >= 6 || stageTileToCheck.entity != null || stageTileToCheck.entityClaimant != null)
             {
                 continue;
             }

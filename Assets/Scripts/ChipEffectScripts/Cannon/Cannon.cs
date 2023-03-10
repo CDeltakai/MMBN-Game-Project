@@ -29,7 +29,7 @@ public class Cannon : ChipEffectBlueprint
 
             if(!TimeManager.isCurrentlySlowedDown)
             {
-                applyChipDamage(entity);
+                OnActivationEffect(entity);
             }
 
         }else
@@ -40,13 +40,14 @@ public class Cannon : ChipEffectBlueprint
 
     }
 
-
-    IEnumerator SpawnBullet(TrailRenderer trail, RaycastHit2D hit2D)
+    public override void OnActivationEffect(BStageEntity target)
     {
-
-        yield break;
-
+        applyChipDamage(target);
     }
+
+
+
+
 
 
 

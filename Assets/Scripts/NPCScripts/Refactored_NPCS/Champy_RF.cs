@@ -48,6 +48,8 @@ public class Champy_RF : BStageEntity
     }
 
 
+
+
     public void setCellPosition_MaintainOccupied(int x, int y)
     {
 
@@ -94,7 +96,37 @@ public class Champy_RF : BStageEntity
         
     }
 
-    public IEnumerator AttackAnimation()
+    
+
+    public IEnumerator DashToTile(int x, int y, float duration, Ease easeType)
+    {
+
+        
+        Vector3Int destinationCell = new Vector3Int(x, y, 0);
+
+
+
+        ClaimTileOccupancy(destinationCell.x, destinationCell.y);
+        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+        stageHandler.SetPreviousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
+        previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
+        //moveOffTile(currentCellPos.x, currentCellPos.y, this);
+
+        currentCellPos.Set(x, y, 0);
+
+
+            worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), duration).SetEase(easeType);
+            yield return new WaitForSeconds(duration * 0.7f);
+            //moveOntoTile(currentCellPos.x, currentCellPos.y, this);
+            stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, true);
+
+            
+
+    }
+
+
+
+    public IEnumerator AttackAnimation_old()
     {
         if(currentHP <= 0){yield break;}
         previousCellPosition = currentCellPos;
@@ -117,6 +149,49 @@ public class Champy_RF : BStageEntity
         isAttacking = false;
     }
 
+    public IEnumerator AttackAnimation()
+    {
+        if(currentHP <= 0){yield break;}
+        //previousCellPosition = currentCellPos;
+        if(!checkFreeTile(player.getCellPosition().x + 1, currentCellPos.y))
+        {yield break;}
+
+        StartCoroutine(DashToTile(player.getCellPosition().x + 1, currentCellPos.y, 0.1f, Ease.OutQuad));
+        ClaimTileOccupancy(previousCellPos.x, previousCellPos.y);
+        //hasMoved = true;
+        yield return new WaitForSeconds(0.1f);
+
+        animator.Play(ChampyAnims.Champy_Attack.ToString());
+        float delay = 0.417f;
+        isAttacking = true;
+        yield return new WaitForSeconds((delay + 0.3f) * objectTimeScale);
+        animator.Play(ChampyAnims.Champy_Idle.ToString());
+        yield return new WaitForSeconds(0.6f * objectTimeScale);
+
+        //ClearClaimedTiles();
+        StartCoroutine(DashToTile(previousCellPos.x, previousCellPos.y, 0.1f, Ease.OutQuad));
+
+        yield return new WaitForSeconds(0.1f);
+        ClearClaimedTiles();
+
+        //hasMoved = false;
+
+        previousCellPosition = currentCellPos;
+
+        //Cooldown before another attack can be initiated
+        yield return new WaitForSeconds(1.25f * objectTimeScale);
+        isAttacking = false;
+    }    
+
+
+    public IEnumerator ReworkedAttackAnimation()
+    {
+        if(currentHP <= 0){yield break;}
+
+    }
+
+
+
     public override IEnumerator DestroyEntity()
     {
         animator.speed = Mathf.Epsilon;
@@ -138,6 +213,8 @@ public class Champy_RF : BStageEntity
         yield return new WaitForSecondsRealtime(0.533f);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.setCellEntity(previousCellPosition.x, previousCellPosition.y, this, false);
+        ClearClaimedTiles();
+
         if(deathEvent != null)
         {
             deathEvent(this);

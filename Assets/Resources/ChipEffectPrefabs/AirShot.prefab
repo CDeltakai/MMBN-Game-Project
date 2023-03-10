@@ -43,6 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff8db2096f531646bfb30a5d2fb579a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   chip: {fileID: 11400000, guid: a46fb94c65083d2439fd9eed2ba4200e, type: 2}
-  AddDamage: 0
-  AddStatusEffect: 0
+  DamageModifier: 0
+  StatusEffectModifier: 0
+  SummonObjectModifier: {fileID: 0}
+  EnergyCostModifier: 0
+  projectilePrefab: {fileID: 8123224645671930670, guid: 3f87ad4f56d6f174b8c716f6baf5a120, type: 3}

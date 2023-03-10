@@ -92,6 +92,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
     public abstract void Effect();
 
+    public virtual void OnActivationEffect(BStageEntity target){}
 
 
     void OnDisable()

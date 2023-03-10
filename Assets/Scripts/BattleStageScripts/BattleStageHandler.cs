@@ -175,7 +175,7 @@ public class BattleStageHandler : MonoBehaviour
         foreach (Vector3Int pos in stageTilemap.cellBounds.allPositionsWithin)
         {
 
-            var localPos = new Vector3Int(pos.x, pos.y, pos.z);
+            var localPos = new Vector3Int(pos.x, pos.y, 0);
             stageTilemap.GetTile<CustomTile>(localPos).setTileTeamOwner(stageTilemap.GetTile<CustomTile>(localPos).tileTeam);
 
             if(!stageTilemap.HasTile(localPos)) {continue;}

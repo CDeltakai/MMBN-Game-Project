@@ -10,6 +10,8 @@ public class BasicBullet : MonoBehaviour
     [SerializeField] BoxCollider2D boxCollider2D;
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] TrailRenderer trail;
+    [SerializeField] float projectileDotTweenSpeed = 0.1f;
+    
     Rigidbody2D rigbody;
 
     Sequence movement;
@@ -19,7 +21,7 @@ public class BasicBullet : MonoBehaviour
     public int Damage;
     [SerializeField] Vector2 velocityInSlowMotion = new Vector2(5, 0);
 
-    public bool InitializeBullet = false;
+    public bool InitializeSlowBullet = false;
 
 
     void Awake()
@@ -46,7 +48,7 @@ public class BasicBullet : MonoBehaviour
 
             //StartCoroutine(TimedDestruction(0.35f));
             boxCollider2D.enabled = true;
-            InitializeBullet = true;
+            InitializeSlowBullet = true;
             //transform.DOMoveX(endPosition.x+0.4f, 0.3f);
 
             yield break;
@@ -54,8 +56,8 @@ public class BasicBullet : MonoBehaviour
 
         }
 
-        transform.DOMoveX(endPosition.x+0.3f, 0.1f).SetUpdate(true);
-        yield return new WaitForSecondsRealtime(0.1f);
+        transform.DOMoveX(endPosition.x+0.3f, projectileDotTweenSpeed).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(projectileDotTweenSpeed);
         DestroyObject();
 
 
@@ -67,11 +69,11 @@ public class BasicBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) 
     {
 
-        if(other.GetComponent<BStageEntity>())
+        if(other.tag == "Enemy" || other.tag == "Obstacle")
         {
             print("projectile hit a target");
             BStageEntity target = other.GetComponent<BStageEntity>();
-            parentChip.applyChipDamage(target);
+            parentChip.OnActivationEffect(target);
             DestroyObject();
         }
 
@@ -107,8 +109,14 @@ public class BasicBullet : MonoBehaviour
 
     void Update()
     {
-        if(InitializeBullet)
+        if(InitializeSlowBullet)
         {
+            if(!TimeManager.isCurrentlySlowedDown)
+            {
+                rigbody.MovePosition(rigbody.position + (velocityInSlowMotion*2) * Time.deltaTime);
+                return;
+            }
+
             rigbody.MovePosition(rigbody.position + velocityInSlowMotion * Time.deltaTime);
         }
 

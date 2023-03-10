@@ -9,6 +9,7 @@ public class StageMenuController : MonoBehaviour
     [SerializeField] UnityEngine.GameObject pauseMenu;
     [SerializeField] UnityEngine.GameObject deckEditMenu;
     [SerializeField] UnityEngine.GameObject playerEditMenu;
+    [SerializeField] GameObject stageSelectMenu;
 
 
     [SerializeField] UnityEngine.GameObject currentActiveMenu;
@@ -82,6 +83,12 @@ public class StageMenuController : MonoBehaviour
         deckEditMenu.SetActive(true);
     }
 
+    public void EnableStageSelectMenu()
+    {
+        currentActiveMenu.SetActive(false);
+        currentActiveMenu = stageSelectMenu;
+        stageSelectMenu.SetActive(true);
+    }
 
 
 

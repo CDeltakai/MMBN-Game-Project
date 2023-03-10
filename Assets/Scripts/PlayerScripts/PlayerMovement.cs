@@ -246,7 +246,7 @@ public PlayerAttributeSO playerAttributes;
 
         if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Special)
         {
-            yield return new WaitForSecondsRealtime(chipLoadManager.nextChipRefLoad[0].chipSORef.GetAnimationClip().length + 0.05f);
+            yield return new WaitForSecondsRealtime(chipLoadManager.nextChipRefLoad[0].chipSORef.GetAnimationClip().length + 0.01f);
         }
 
         activeChipRef = null;
@@ -320,7 +320,7 @@ public PlayerAttributeSO playerAttributes;
         fullInvincible = true;
         FMODUnity.RuntimeManager.PlayOneShotAttached(ParrySuccessSFX, transform.gameObject);
 
-        bgController.FadeToBlack(0.5f);
+        bgController.FadeToBlack(0.6f);
         
         if(CooldownCoroutine != null)
         {
@@ -331,12 +331,12 @@ public PlayerAttributeSO playerAttributes;
         VFXCoroutine = StartCoroutine( VFXController.playVFXanim(true, PlayerVFXAnims.ParryVFX));
         timeManager.SlowMotion();
 
-        yield return new WaitForSecondsRealtime(0.24f);
+        yield return new WaitForSecondsRealtime(0.25f);
         VFXCoroutine = StartCoroutine( VFXController.playVFXanim(false));
         VFXCoroutine = null;
         fullInvincible = false;
 
-        yield return new WaitForSecondsRealtime(1.25f);
+        yield return new WaitForSecondsRealtime(1.5f);
         bgController.FadeToNormal(0.25f);
         timeManager.cancelSlowMotion();
         ParryCoroutine = null;

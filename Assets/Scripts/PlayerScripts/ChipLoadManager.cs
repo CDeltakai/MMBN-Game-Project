@@ -62,7 +62,7 @@ public static ChipLoadManager Instance {get {return _instance;} }
 
     ///<summary>
     ///This method calculates what chip or chips will be loaded into the nextChipRefLoad.
-    ///It was always take the first element within the chipRefQueue as one of the chips to be loaded.
+    ///It will always take the first element within the chipRefQueue as one of the chips to be loaded.
     ///After that, it iterates through the chipRefQueue to find if there are any passive chips that followed
     ///the first chip. If it finds a passive chip, it will add it onto the the nextChipRefLoad and continues
     ///until it finds the first chip that is not a passive chip, at which point the operation will break.
@@ -105,5 +105,14 @@ public static ChipLoadManager Instance {get {return _instance;} }
 
     }
 
+
+    public void clearChipLoad()
+    {
+        chipRefQueue.Clear();
+        nextChipRefLoad.Clear();
+        if(loadChipsEvent != null)
+        {print("Attempted loadChipsEvent");
+            loadChipsEvent();}         
+    }
 
 }
