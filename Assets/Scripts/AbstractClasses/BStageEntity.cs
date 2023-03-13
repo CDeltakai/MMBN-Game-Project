@@ -467,9 +467,16 @@ public abstract class BStageEntity : MonoBehaviour
     public bool checkValidTile(int x, int y)
     {
         Vector3Int coordToCheck = new Vector3Int(x, y, 0);
+        StageTile stageTileToCheck = null;        
 
-        StageTile stageTileToCheck = stageHandler.stageTiles
-            [stageHandler.stageTilemap.CellToWorld(coordToCheck)];
+        if(stageHandler.stageTiles.ContainsKey(stageHandler.stageTilemap.CellToWorld(coordToCheck)))
+        {
+            stageTileToCheck = stageHandler.stageTiles
+                [stageHandler.stageTilemap.CellToWorld(coordToCheck)];
+        }else
+        {
+            return false;
+        }
 
         CustomTile customTileToCheck = stageHandler.getCustTile(coordToCheck);
 
@@ -735,7 +742,7 @@ public abstract class BStageEntity : MonoBehaviour
         Vector3 currentWorldPosition = stageHandler.stageTilemap.GetCellCenterWorld(currentCellPos);
         Vector3 destinationWorldPosition = stageHandler.stageTilemap.GetCellCenterWorld(destinationCell);
 
-        if(!checkValidTile(destinationCell.x, destinationCell.y) &&
+        if(!checkFreeTile(destinationCell.x, destinationCell.y) &&
         stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y) == null)
         {yield break;}
 
@@ -747,6 +754,7 @@ public abstract class BStageEntity : MonoBehaviour
                 worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).
                 SetEase(Ease.OutCirc).SetUpdate(false);
                 isBeingShoved = true;
+                isRooted = true;
                 
 
                 yield return new WaitForSeconds(0.10f);
@@ -756,7 +764,9 @@ public abstract class BStageEntity : MonoBehaviour
                 yield return new WaitForSecondsRealtime(0.05f);
                 stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(damage, false, true);     
                 yield return new WaitForSeconds(0.15f);
+
                 isBeingShoved = false;           
+                isRooted = true;
 
             }else
             //Vertical Shove 
@@ -774,6 +784,7 @@ public abstract class BStageEntity : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
 
                 isBeingShoved = false;                   
+                isRooted = true;
 
 
             }
@@ -815,6 +826,10 @@ public abstract class BStageEntity : MonoBehaviour
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
         if(!checkValidTile(destinationCell.x, destinationCell.y))
         {yield break;}
+        if(isRooted)
+        {
+            yield break;
+        }
 
 
         ClaimTileOccupancy(destinationCell.x, destinationCell.y);

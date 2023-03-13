@@ -17,6 +17,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     public EStatusEffects StatusEffectModifier = EStatusEffects.Default;
     public UnityEngine.GameObject SummonObjectModifier = null;
     public int EnergyCostModifier = 0;
+    public List<Vector2Int> RangeModifier = new List<Vector2Int>();
 
 
 

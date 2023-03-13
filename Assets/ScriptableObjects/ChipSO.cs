@@ -51,6 +51,14 @@ public class ChipSO : ChipScriptableObject
     // 1 = Active(Real-time usable chip), 0 = Passive(Applies effect to succeeding chip)
     [SerializeField] EChipTypes ChipType;
     [SerializeField] EStatusEffects BaseStatusEffect;
+    ///<summary>
+    ///This list of Vector2Ints indicates what tiles in relation to the player's position
+    ///this chip has influence over (eg. what range of tiles an attack chip can hit). This
+    ///variable may be used by a chip's effect in order to modify a chip's effective range.
+    ///This variable is also used by the reticle indicator which will aid the player in aiming
+    ///the chip. Can be empty depending how the chip works.
+    ///</summary>
+    [SerializeField] List<Vector2Int> RangeOfInfluence;
 
 [TextArea(10,20)]
     [SerializeField] string ChipDescription;

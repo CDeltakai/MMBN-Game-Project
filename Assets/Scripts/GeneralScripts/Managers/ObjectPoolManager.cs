@@ -8,6 +8,7 @@ public class ChipObjectReference
     [SerializeField] internal ChipSO chipSORef;
     [SerializeField] internal UnityEngine.GameObject effectPrefab;
     [SerializeField] internal UnityEngine.GameObject ObjectSummon;
+    public int index = 0;
 
 }
 

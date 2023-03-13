@@ -33,7 +33,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &338488532
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -46,10 +46,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &794688106
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1482825201}
   - component: {fileID: 1482825202}
+  - component: {fileID: 7214785653391126320}
   m_Layer: 7
   m_Name: AimingReticle
   m_TagString: Untagged
@@ -307,6 +309,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7214785653391126320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482825200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f548a58d41f9840a39811110b64ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &497568039300456502
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +465,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &123704448
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -464,10 +478,11 @@ Animator:
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &123704449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +557,7 @@ MonoBehaviour:
   healthText: {fileID: 5850369198440397647}
   objectTimeScale: 1
   worldTransform: {fileID: 0}
+  isBeingShoved: 0
   isRooted: 0
   nonVolatileStatus: 0
   currentCellPos: {x: 0, y: 0, z: 0}
@@ -572,7 +588,9 @@ MonoBehaviour:
   HPShakeDuration: 0.12
   HPShakeStrength: 0.2
   HPShakeVibrato: 1000
+  playerAttributes: {fileID: 0}
   VFXController: {fileID: 123704449}
+  energyBar: {fileID: 0}
   activeChip: {fileID: 0}
   activeChipRef:
     chipSORef: {fileID: 0}
@@ -585,11 +603,11 @@ MonoBehaviour:
   shotDamage: 5
   shotDamageMultiplier: 1
   chargeDuration: 1.5
+  MaxEnergy: 0
+  currentEnergy: 0
   Parrying: 0
   CanParry: 1
   canUseAbilities: 1
-  useTranslateMovement: 0
-  useTweenMovement: 1
   BasicShotSFX:
     Guid:
       Data1: 112909495
@@ -911,7 +929,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &2717528050190985707
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -924,10 +942,11 @@ Animator:
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!61 &1267078712
 BoxCollider2D:
   m_ObjectHideFlags: 0
