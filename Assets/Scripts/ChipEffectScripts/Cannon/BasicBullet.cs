@@ -7,6 +7,9 @@ public class BasicBullet : MonoBehaviour
 {
 
     public ChipEffectBlueprint parentChip;
+    public EffectPropertyContainer effectPropertyContainer;
+
+    public PlayerMovement player;
     [SerializeField] BoxCollider2D boxCollider2D;
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] TrailRenderer trail;
@@ -23,6 +26,12 @@ public class BasicBullet : MonoBehaviour
 
     public bool InitializeSlowBullet = false;
 
+    // public int DamageModifier = 0;
+    // public EStatusEffects StatusEffectModifier = EStatusEffects.Default;
+    // protected bool lightAttack;
+    // protected bool hitFlinch;
+    // protected bool pierceUntargetable;
+
 
     void Awake()
     {
@@ -35,8 +44,12 @@ public class BasicBullet : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(MoveBullet());
 
+        // StatusEffectModifier = parentChip.StatusEffectModifier;
+        // DamageModifier = parentChip.DamageModifier;
+        // lightAttack = parentChip.chip.IsLightAttack();
+        // hitFlinch = parentChip.chip.IsHitFlinch();
+        // pierceUntargetable = parentChip.chip.IsPierceUntargetable();
 
     }
 
@@ -73,7 +86,10 @@ public class BasicBullet : MonoBehaviour
         {
             print("projectile hit a target");
             BStageEntity target = other.GetComponent<BStageEntity>();
-            parentChip.OnActivationEffect(target);
+
+            parentChip.OnActivationEffect(target);            
+
+            //parentChip.OnActivationEffect(target);
             DestroyObject();
         }
 

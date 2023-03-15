@@ -24,9 +24,11 @@ MonoBehaviour:
   BaseStatusEffect: 0
   RangeOfInfluence:
   - {x: 4, y: 0}
-  ChipDescription: Summons a mine 4 tiles forward. Enemeies that step onto the mine
-    will trigger an explosion. Enemies shoved onto the mine will trigger a stronger
-    explosion.
+  ChipDescription: 'Summons a mine 4 tiles forward. Enemies that step onto the mine
+    will trigger an explosion.
+
+    Enemies shoved onto the mine will trigger a stronger
+    explosion.'
   ChipImage: {fileID: -9168428118247650306, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0
   EffectScript: 

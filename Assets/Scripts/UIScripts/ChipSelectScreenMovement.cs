@@ -103,6 +103,11 @@ public class ChipSelectScreenMovement : MonoBehaviour
 //Tied to the OpenDeck keybinding within the PlayerControl InputActionAsset
     public void ToggleChipMenu()
     {
+        if(TimeManager.isCurrentlySlowedDown)
+        {
+            return;
+        }
+
         Debug.Log("Triggered Menu");
         isActive = true;
 

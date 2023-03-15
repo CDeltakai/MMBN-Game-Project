@@ -78,7 +78,7 @@ public abstract class BStageEntity : MonoBehaviour
     public bool isBeingShoved = false;
     protected virtual bool isPlayer{get;} = false;
 
-    [HideInInspector] public bool isRooted = false;
+    public bool isRooted = false;
     [HideInInspector] protected bool isMoving = false;
 
     ///<summary>
@@ -766,7 +766,7 @@ public abstract class BStageEntity : MonoBehaviour
                 yield return new WaitForSeconds(0.15f);
 
                 isBeingShoved = false;           
-                isRooted = true;
+                isRooted = false;
 
             }else
             //Vertical Shove 
@@ -784,7 +784,7 @@ public abstract class BStageEntity : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
 
                 isBeingShoved = false;                   
-                isRooted = true;
+                isRooted = false;
 
 
             }
@@ -801,6 +801,7 @@ public abstract class BStageEntity : MonoBehaviour
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
+        isRooted = true;
         worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), 0.15f ).SetEase(Ease.OutCubic).SetUpdate(false);
         isBeingShoved = true;
         yield return new WaitForSeconds(0.075f);
@@ -810,6 +811,7 @@ public abstract class BStageEntity : MonoBehaviour
 
         yield return new WaitForSeconds(0.075f);
         isBeingShoved = false;
+        isRooted = false;
 
 
 
@@ -826,10 +828,8 @@ public abstract class BStageEntity : MonoBehaviour
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
         if(!checkValidTile(destinationCell.x, destinationCell.y))
         {yield break;}
-        if(isRooted)
-        {
-            yield break;
-        }
+        if(isRooted || isStunned)
+        {yield break;}
 
 
         ClaimTileOccupancy(destinationCell.x, destinationCell.y);

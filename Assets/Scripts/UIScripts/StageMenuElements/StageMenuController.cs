@@ -35,6 +35,11 @@ public class StageMenuController : MonoBehaviour
     //Input action method - Normally tied to the ESC key when using the PlayerControl Input InputActionAsset
     public void EnablePauseMenu(InputAction.CallbackContext context)
     {
+        if(TimeManager.isCurrentlySlowedDown)
+        {
+            return;
+        }
+                
         if(context.started)
         {
             //Open up the pause menu

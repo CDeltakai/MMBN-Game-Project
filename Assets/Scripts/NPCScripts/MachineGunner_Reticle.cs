@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MachineGunner_Reticle : MonoBehaviour
 {
-    MachineGunner gunner;
-    MachineGunnerAI gunnerAI;
+    [SerializeField] MachineGunner gunner;
+    [SerializeField] MachineGunnerAI gunnerAI;
+
+
     SpriteRenderer spriteRenderer;
     Animator animator;
     BoxCollider2D boxCollider2D;
@@ -24,8 +26,8 @@ public class MachineGunner_Reticle : MonoBehaviour
 
     void Awake()
     {
-        gunner = FindObjectOfType<MachineGunner>();
-        gunnerAI = FindObjectOfType<MachineGunnerAI>();
+        //gunner = FindObjectOfType<MachineGunner>();
+        //gunnerAI = FindObjectOfType<MachineGunnerAI>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
