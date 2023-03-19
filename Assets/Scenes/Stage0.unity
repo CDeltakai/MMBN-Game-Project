@@ -1556,7 +1556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893985269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.432456, y: 0.90773994, z: 1022.82367}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2366,6 +2366,34 @@ PrefabInstance:
       propertyPath: objectPoolManager
       value: 
       objectReference: {fileID: 5714855085843833832}
+    - target: {fileID: 854223892826227303, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 854223892826227303, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 854223892826227303, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 854223892826227303, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 854223892826227303, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 854223892826227303, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ChipSelectScreenMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 854223892826227303, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7402807736713799716, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
       propertyPath: m_Camera
       value: 
