@@ -289,7 +289,6 @@ public class ChipSelectScreenMovement : MonoBehaviour
     public void OnChipHover(ChipSlot chipSlot)
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(ChipHoverVFX, this.gameObject);
-        //print(chipSlot.getChipObjRef().chipSORef.GetChipDescription());
         if(chipSlot.getChipObjRef() != null)
         {
             ChipNameField.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipName();            
