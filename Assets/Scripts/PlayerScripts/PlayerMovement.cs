@@ -240,8 +240,10 @@ public PlayerAttributeSO playerAttributes;
             nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().Effect();
             AdjustEnergy(-nextChip.chipSORef.EnergyCost);
 
-            nextChip.effectPrefab.SetActive(false);
-            
+            if(!nextChip.chipSORef.isPersistent)
+            {
+                nextChip.effectPrefab.SetActive(false);
+            }
         } 
 
         if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Special)

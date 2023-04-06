@@ -17,7 +17,7 @@ public class EnergyBar : MonoBehaviour
 
     [SerializeField] PlayerAttributeSO PlayerAttributes;
     [SerializeField] TextMeshProUGUI EnergyText;
-    PlayerMovement player;
+    [SerializeField] PlayerMovement player; 
 
     Image BarImage;
 
@@ -37,21 +37,22 @@ public class EnergyBar : MonoBehaviour
     
     private void Awake()
     {
+        if(player == null)
+        {
+            player = FindObjectOfType<PlayerMovement>();
+            Debug.LogWarning("Energy bar does not have the player script set manually,"
+             + "used FindObjectOfType to find main player script. Please manually set the player script for better efficiency.");
+        }
+        
         BarImage = GetComponent<Image>();
         BarImage.fillAmount = 1f;
+        player.usedChipEvent += TriggerBarUpdate;
 
     }
 
 
     void Start()
     {
-        if(PlayerMovement.Instance != null)
-        {
-            player = PlayerMovement.Instance;
-        }else
-        {
-            player = FindObjectOfType<PlayerMovement>();
-        }
 
         MaxEnergy = PlayerAttributes.AdjustOrGetMaxEnergy();
         currentEnergy = player.currentEnergy;
@@ -89,6 +90,10 @@ public class EnergyBar : MonoBehaviour
 
     }
 
+    public void TriggerBarUpdate()
+    {
+
+    }
 
     public void InitializeBar(int energyCost)
     {

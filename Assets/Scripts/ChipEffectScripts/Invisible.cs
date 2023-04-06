@@ -6,7 +6,7 @@ public class Invisible : ChipEffectBlueprint
 {
 
     Color cloakedColor;
-
+    Coroutine invisibleCoroutine;
 
 
 
@@ -20,8 +20,12 @@ public class Invisible : ChipEffectBlueprint
 
     public override void Effect()
     {
+        if(invisibleCoroutine != null)
+        {
+            StopCoroutine(invisibleCoroutine);
+        }
 
-        StartCoroutine(CastInvisible());
+        invisibleCoroutine = StartCoroutine(CastInvisible());
 
     }
 
@@ -34,7 +38,7 @@ public class Invisible : ChipEffectBlueprint
         player.SetUntargetable(true);
         player.spriteRenderer.color = cloakedColor;
         print("Attempted invisible");
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
 
         player.SetUntargetable(false);
         player.spriteRenderer.color = player.defaultColor;
@@ -47,7 +51,7 @@ public class Invisible : ChipEffectBlueprint
 
     void cancelInvisible()
     {
-        StopCoroutine(CastInvisible());
+        StopCoroutine(invisibleCoroutine);
         player.spriteRenderer.color = player.defaultColor;
         player.SetUntargetable(false);
         this.gameObject.SetActive(false);

@@ -58,7 +58,13 @@ public class ChipSO : ChipScriptableObject
     ///This variable is also used by the reticle indicator which will aid the player in aiming
     ///the chip. Can be empty depending how the chip works.
     ///</summary>
-    [SerializeField] List<Vector2Int> RangeOfInfluence;
+    [field:SerializeField] public List<Vector2Int> RangeOfInfluence{get; private set;}
+    ///<summary>
+    ///This list indicates what tiles on the world the chip has influence over. This list is not affected
+    ///by the player's position and is always static.
+    ///</summary>
+    [field:SerializeField] public List<Vector2Int> RangeOfInfluenceWorld{get; private set;}
+
 
 [TextArea(10,20)]
     [SerializeField] string ChipDescription;
@@ -75,6 +81,12 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] bool lightAttack;
     [SerializeField] bool hitFlinch;
     [SerializeField] bool UseAnimationEvent;
+    ///<summary>
+    ///If this is set to true, this chip will not automatically disable itself after its initial
+    ///casting period. The chip will need have its own function to disable itself after some
+    ///condition.
+    ///</summary>
+    [field:SerializeField] public bool isPersistent {get; private set;} = false;
     ///<summary>
     ///This condition dictates if this chip allows for additional objects to be summoned
     ///through certain passive chips or other modifiers.

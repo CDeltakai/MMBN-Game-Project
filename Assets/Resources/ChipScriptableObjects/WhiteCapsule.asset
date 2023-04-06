@@ -17,12 +17,21 @@ MonoBehaviour:
   Chip: 110
   ChipName: White Capsule
   BaseDamage: 0
-  ChipElement: 10
+  <ChipElement>k__BackingField: 0
   ChipSize: 32
-  EnergyCost: 0
+  <EnergyCost>k__BackingField: 0
   ChipType: 0
   BaseStatusEffect: 0
-  ChipDescription: Adds paralyze effect to following chip
+  <RangeOfInfluence>k__BackingField: []
+  <RangeOfInfluenceWorld>k__BackingField: []
+  ChipDescription: 'BUFF CHIP: Buff chips apply their effect to the chip immediately
+    above them in the Chip Payload order. They cannot be used on their own.
+
+
+    Adds
+    a paralyzing effect to the buffed chip.
+
+'
   ChipImage: {fileID: -1821607153479355049, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   AnimationDuration: 0.05
   EffectScript: WhiteCapsule
@@ -42,3 +51,5 @@ MonoBehaviour:
   lightAttack: 0
   hitFlinch: 0
   UseAnimationEvent: 0
+  <isPersistent>k__BackingField: 0
+  <AllowSummonObjectMod>k__BackingField: 0

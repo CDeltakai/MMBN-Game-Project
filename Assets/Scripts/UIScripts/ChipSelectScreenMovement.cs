@@ -25,7 +25,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     private float journeyLength;
 
     //[SerializeField] List<ChipSO> activeChips = new List<ChipSO>();
-    [SerializeField] List<ChipObjectReference> activeChipRefs = new List<ChipObjectReference>();
+    [SerializeField] List<ChipObjectReference> chipPayload = new List<ChipObjectReference>();
 
     //[SerializeField] List<ChipSO> selectableChips;
     [SerializeField] List<ChipObjectReference> selectableChipRefs;
@@ -235,6 +235,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     //     ActiveChipSlotAccumulator++;
     // }
 
+    //Logic for clicking a chip slot button
     public void OnChipSelectRefType(int buttonIndex)
     {
         // if(ActiveChipSlotAccumulator == 5)
@@ -242,12 +243,12 @@ public class ChipSelectScreenMovement : MonoBehaviour
         //     return;
         // }
 
-        if(activeChipRefs.Count == 5)
+        if(chipPayload.Count == 5)
         {
             return;
         }
 
-        ChipSlot activeChipSlot = ActiveChipButtons[activeChipRefs.Count].GetComponent<ChipSlot>();
+        ChipSlot activeChipSlot = ActiveChipButtons[chipPayload.Count].GetComponent<ChipSlot>();
 
         FMODUnity.RuntimeManager.PlayOneShotAttached(ChipSelectVFX, this.gameObject);
 
@@ -255,7 +256,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
         activeChipSlot.selectedChipIndex = buttonIndex;
 
         SelectableChipButtons[buttonIndex].SetActive(false);
-        activeChipRefs.Add(selectableChipRefs[buttonIndex]);
+        chipPayload.Add(selectableChipRefs[buttonIndex]);
         //ActiveChipSlotAccumulator++;
 
 
@@ -270,15 +271,15 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
 
         activeChipSlot.clearChip();
-        ActiveChipButtons[activeChipRefs.Count - 1].GetComponent<ChipSlot>().clearChip();      
+        ActiveChipButtons[chipPayload.Count - 1].GetComponent<ChipSlot>().clearChip();      
 
-        activeChipRefs.RemoveAt(buttonIndex);
+        chipPayload.RemoveAt(buttonIndex);
 
-        for(int i = 0; i < activeChipRefs.Count; i++)
+        for(int i = 0; i < chipPayload.Count; i++)
         {
             ChipSlot activeChip = ActiveChipButtons[i].GetComponent<ChipSlot>();
 
-            activeChip.changeChipReference(activeChipRefs[i]);
+            activeChip.changeChipReference(chipPayload[i]);
 
         }
 
@@ -311,12 +312,12 @@ public class ChipSelectScreenMovement : MonoBehaviour
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(OKButtonVFX, this.gameObject);
 
-        foreach(ChipObjectReference chipRef in activeChipRefs)
+        foreach(ChipObjectReference chipRef in chipPayload)
         {
             chipLoadManager.chipRefQueue.Add(chipRef);
         }
 
-            activeChipRefs.Clear();
+            chipPayload.Clear();
     
 
         foreach(GameObject activeChipButton in ActiveChipButtons)

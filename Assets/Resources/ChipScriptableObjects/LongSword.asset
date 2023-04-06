@@ -22,7 +22,7 @@ MonoBehaviour:
   <EnergyCost>k__BackingField: 2
   ChipType: 1
   BaseStatusEffect: 0
-  RangeOfInfluence:
+  <RangeOfInfluence>k__BackingField:
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   ChipDescription: Swing sword 2 tiles forward
@@ -45,4 +45,5 @@ MonoBehaviour:
   lightAttack: 0
   hitFlinch: 1
   UseAnimationEvent: 1
+  <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

@@ -51,7 +51,7 @@ public abstract class BStageEntity : MonoBehaviour
     ///worldTransform is the world position and transform of the BStageEntity.
     ///The components which make up the entity normally fall under this worldTransform
     ///as children. Use this when you need to set the cell position of the object in relation
-    ///to the stage grid. Do not use this if you need to set sprite positions.
+    ///to the stage grid. Do not use this if you need to set children sprite positions.
     ///</summary>
     [HideInInspector] public Transform worldTransform;
 
@@ -962,7 +962,6 @@ public abstract class BStageEntity : MonoBehaviour
 
         }
 
-
     }
     IEnumerator FadeInAndOutColor(Color color1, Color color2, float duration)
     {
@@ -974,5 +973,16 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
 
+    public void GrantUntargetableDuration(float duration)
+    {
+        StartCoroutine(UntargetableBuff(duration));
+    }
+    IEnumerator UntargetableBuff(float duration)
+    {
+        isUntargetable = true;
+        yield return new WaitForSeconds(duration);
+        isUntargetable = false;
+
+    }
 
 }
