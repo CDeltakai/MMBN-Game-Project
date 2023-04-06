@@ -50,6 +50,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Megaman
       objectReference: {fileID: 0}
+    - target: {fileID: 2717528050190985705, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[24].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 246235148274306576, guid: 42c912045a015444ca558c6b33d12908, type: 3}
     - target: {fileID: 3022468580385308911, guid: dfdc4af8a0d70504fbe5032c9e521b4d, type: 3}
       propertyPath: m_RootOrder
       value: 0

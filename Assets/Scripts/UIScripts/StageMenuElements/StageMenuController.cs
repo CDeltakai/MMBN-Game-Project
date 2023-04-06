@@ -20,6 +20,10 @@ public class StageMenuController : MonoBehaviour
     bool PlayerEditMenuTriggered = false;
 
 
+    private void Awake() 
+    {
+        currentActiveMenu = null;
+    }
 
     void Start()
     {
@@ -45,6 +49,7 @@ public class StageMenuController : MonoBehaviour
             //Open up the pause menu
             if(!StageMenuTriggered)
             {
+                print("Opened pause menu");
                 ChipSelectScreenMovement.GameIsPaused = true;
                 Time.timeScale = 0;
                 StageMenuTriggered = true;
@@ -53,6 +58,7 @@ public class StageMenuController : MonoBehaviour
                 return;
 
             }
+
 
             //Exit out of pause menu and resume
             if(StageMenuTriggered && currentActiveMenu == pauseMenu)
@@ -80,6 +86,44 @@ public class StageMenuController : MonoBehaviour
 
     }
 
+    public void ResumeButton()
+    {
+        if(StageMenuTriggered && currentActiveMenu == pauseMenu)
+        {
+            Time.timeScale = 1;
+            ChipSelectScreenMovement.GameIsPaused = false;                
+            StageMenuTriggered = false;
+            pauseMenu.SetActive(false);
+            currentActiveMenu = null;
+            return;
+        }        
+    }
+
+    public void ReturnToPauseMenu()
+    {
+        if(StageMenuTriggered && currentActiveMenu != pauseMenu)
+        {
+
+            currentActiveMenu.SetActive(false);
+            currentActiveMenu = pauseMenu;
+            pauseMenu.SetActive(true);
+            return;
+        }        
+    }
+
+    public void OpenPauseMenuButton()
+    {
+        if(!StageMenuTriggered)
+        {
+            ChipSelectScreenMovement.GameIsPaused = true;
+            Time.timeScale = 0;
+            StageMenuTriggered = true;
+            pauseMenu.SetActive(true);
+            currentActiveMenu = pauseMenu;
+            return;
+
+        }        
+    }
 
     public void EnableDeckEditMenu()
     {

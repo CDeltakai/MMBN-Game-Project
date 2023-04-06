@@ -209,7 +209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6280738354191700053
 RectTransform:
   m_ObjectHideFlags: 0
@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6280738354501602420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -578,7 +578,9 @@ MonoBehaviour:
     chipSORef: {fileID: 0}
     effectPrefab: {fileID: 0}
     ObjectSummon: {fileID: 0}
+    index: 0
   chipImage: {fileID: 0}
+  selectedChipIndex: 0
 --- !u!1 &6280738354659489109
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -695,7 +697,9 @@ MonoBehaviour:
     chipSORef: {fileID: 0}
     effectPrefab: {fileID: 0}
     ObjectSummon: {fileID: 0}
+    index: 0
   chipImage: {fileID: 0}
+  selectedChipIndex: 0
 --- !u!1 &6280738354733001838
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6280738354733001839
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1256,7 +1260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6280738355097264517
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1592,7 +1596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1625,7 +1629,9 @@ MonoBehaviour:
     chipSORef: {fileID: 0}
     effectPrefab: {fileID: 0}
     ObjectSummon: {fileID: 0}
+    index: 0
   chipImage: {fileID: 0}
+  selectedChipIndex: 0
 --- !u!1 &6280738355208409161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,7 +1981,9 @@ MonoBehaviour:
     chipSORef: {fileID: 0}
     effectPrefab: {fileID: 0}
     ObjectSummon: {fileID: 0}
+    index: 0
   chipImage: {fileID: 0}
+  selectedChipIndex: 0
 --- !u!1 &6280738355545148016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,7 +2201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2226,4 +2234,6 @@ MonoBehaviour:
     chipSORef: {fileID: 0}
     effectPrefab: {fileID: 0}
     ObjectSummon: {fileID: 0}
+    index: 0
   chipImage: {fileID: 0}
+  selectedChipIndex: 0
