@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
+  m_Name: DrillArm
+  m_EditorClassIdentifier: 
+  Id: dec280bd8eb9f4c4ca8eb5fada6ce46f
+  ChipID: 0
+  Chip: 0
+  ChipName: Drill Arm
+  BaseDamage: 70
+  <PierceCount>k__BackingField: 0
+  <ChipElement>k__BackingField: 7
+  ChipSize: 38
+  <EnergyCost>k__BackingField: 2
+  ChipType: 1
+  BaseStatusEffect: 0
+  <RangeOfInfluence>k__BackingField:
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  <RangeOfInfluenceWorld>k__BackingField: []
+  ChipDescription: 
+  ChipImage: {fileID: -2181421393321553712, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
+  AnimationDuration: 0
+  EffectScript: 
+  SFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AdditionalSFX: []
+  AnimationClipToUse: {fileID: 7400000, guid: 45c50c166af63224f810342f4932af0d, type: 2}
+  ObjectSummon: {fileID: 1383596148782366187, guid: 5c111fb6b4114de4ca76cd7e37efd64f, type: 3}
+  EffectPrefab: {fileID: 673579202784607508, guid: b258f4ab1ac3cc0439b2a568502f848f, type: 3}
+  effectMechanism: 0
+  pierceUntargetable: 0
+  lightAttack: 1
+  hitFlinch: 1
+  UseAnimationEvent: 1
+  <isPersistent>k__BackingField: 0
+  <AllowSummonObjectMod>k__BackingField: 0

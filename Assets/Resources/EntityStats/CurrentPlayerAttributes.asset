@@ -64,6 +64,12 @@ MonoBehaviour:
   - <chipName>k__BackingField: AreaGrab
     chip: {fileID: 11400000, guid: 56648c25a2e54464aa1dd805942dc27b, type: 2}
     <chipCount>k__BackingField: 2
+  - <chipName>k__BackingField: Vulcan
+    chip: {fileID: 11400000, guid: 044cb9ee1d4b7e945bce2baea3fe5769, type: 2}
+    <chipCount>k__BackingField: 2
+  - <chipName>k__BackingField: DrillArm
+    chip: {fileID: 11400000, guid: 38a71de364fc2f04aa7f1698cccd04fe, type: 2}
+    <chipCount>k__BackingField: 2
   CurrentChipInventory:
   - <chipName>k__BackingField: Airshot
     chip: {fileID: 11400000, guid: a46fb94c65083d2439fd9eed2ba4200e, type: 2}

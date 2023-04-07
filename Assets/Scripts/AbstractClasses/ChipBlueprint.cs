@@ -33,6 +33,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     public delegate void TriggeredEffectEvent();
     public event TriggeredEffectEvent triggeredEffect;
 
+    
     public PlayerMovement player;
     protected Transform firePoint;
     [SerializeField] public ChipSO chip;

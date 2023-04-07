@@ -8,6 +8,8 @@ public class BasicBullet : MonoBehaviour
 
     public ChipEffectBlueprint parentChip;
     public EffectPropertyContainer effectPropertyContainer;
+    public int pierceCount = 0;
+    public bool IsProjectileAlways = false;
 
     public PlayerMovement player;
     [SerializeField] BoxCollider2D boxCollider2D;
@@ -22,7 +24,7 @@ public class BasicBullet : MonoBehaviour
     public Vector2 endPosition;
     public RaycastHit2D hitPosition;
     public int Damage;
-    [SerializeField] Vector2 velocityInSlowMotion = new Vector2(5, 0);
+    [SerializeField] public Vector2 velocityInSlowMotion = new Vector2(5, 0);
 
     public bool InitializeSlowBullet = false;
 
@@ -53,17 +55,22 @@ public class BasicBullet : MonoBehaviour
 
     }
 
+    public void StartBullet()
+    {
+        StartCoroutine(MoveBullet());
+    }
 
     public IEnumerator MoveBullet()
     {
-        if(TimeManager.isCurrentlySlowedDown)
+        if(TimeManager.isCurrentlySlowedDown || IsProjectileAlways)
         {
 
             //StartCoroutine(TimedDestruction(0.35f));
             boxCollider2D.enabled = true;
             InitializeSlowBullet = true;
             //transform.DOMoveX(endPosition.x+0.4f, 0.3f);
-
+            yield return new WaitForSeconds(2f);
+            DestroyObject();
             yield break;
 
 
@@ -79,22 +86,38 @@ public class BasicBullet : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other) 
-    {
+    // private void OnTriggerEnter2D(Collider2D other) 
+    // {
 
-        if(other.tag == "Enemy" || other.tag == "Obstacle")
+    //     if(other.tag == "Enemy" || other.tag == "Obstacle")
+    //     {
+    //         print("projectile hit a target");
+    //         BStageEntity target = other.GetComponent<BStageEntity>();
+
+    //         parentChip.OnActivationEffect(target);            
+    //         pierceCount--;
+    //         if(pierceCount < 0)
+    //         {
+    //             DestroyObject();    
+    //         }
+    //     }
+
+    // }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Obstacle")
         {
             print("projectile hit a target");
-            BStageEntity target = other.GetComponent<BStageEntity>();
+            BStageEntity target = other.gameObject.GetComponent<BStageEntity>();
 
             parentChip.OnActivationEffect(target);            
-
-            //parentChip.OnActivationEffect(target);
-            DestroyObject();
+            pierceCount--;
+            if(pierceCount < 0)
+            {
+                DestroyObject();    
+            }
         }
-
-
-
 
     }
 

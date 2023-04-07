@@ -6,6 +6,7 @@ public class Airshot : ChipEffectBlueprint
 {
  
     [SerializeField] GameObject projectilePrefab;
+    
 
     public override void Effect()
     {

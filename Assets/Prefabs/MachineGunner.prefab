@@ -285,21 +285,21 @@ MonoBehaviour:
   fullInvincible: 0
   isStunned: 0
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  destructionVFX: {fileID: 0}
+  destructionVFX: {fileID: 3214558368501065571, guid: ddd9f48c2c7af9145b6905bf35063c60, type: 3}
   HurtSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1182195709
+      Data2: 1298215384
+      Data3: 312876713
+      Data4: 938022413
+    Path: event:/EnemyDamaged
   DestroyedSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1981591353
+      Data2: 1074667412
+      Data3: 1756969093
+      Data4: -1337237257
+    Path: event:/EntityDestruction
   HPShakeDuration: 0.12
   HPShakeStrength: 0.2
   HPShakeVibrato: 1000
@@ -349,7 +349,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.4316244, y: 0.18412507}
@@ -375,7 +375,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 3069419181544434897}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -384,7 +384,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &3069419181740277861
 GameObject:

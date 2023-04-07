@@ -44,6 +44,7 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] string ChipName;
 [Header("Combat Attributes")]
     [SerializeField] int BaseDamage;
+    [field:SerializeField] public int PierceCount {get; private set;}
     [field:SerializeField] public EChipElements ChipElement{get; private set;}
     [SerializeField] int ChipSize;
     [field:SerializeField] public int EnergyCost{get; private set;}
