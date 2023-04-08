@@ -45,7 +45,7 @@ MonoBehaviour:
     <chipCount>k__BackingField: 2
   - <chipName>k__BackingField: WideSword
     chip: {fileID: 11400000, guid: 888cc323c87b89f44bc08826e57c9f15, type: 2}
-    <chipCount>k__BackingField: 2
+    <chipCount>k__BackingField: 1
   - <chipName>k__BackingField: Airshot
     chip: {fileID: 11400000, guid: a46fb94c65083d2439fd9eed2ba4200e, type: 2}
     <chipCount>k__BackingField: 2
@@ -54,7 +54,7 @@ MonoBehaviour:
     <chipCount>k__BackingField: 2
   - <chipName>k__BackingField: Cannon
     chip: {fileID: 11400000, guid: 4f08aaad28d8bf54a95d11b863b32ce3, type: 2}
-    <chipCount>k__BackingField: 2
+    <chipCount>k__BackingField: 1
   - <chipName>k__BackingField: AttackPlus10
     chip: {fileID: 11400000, guid: 70d6887d578553f47aa2f208baa3d3ae, type: 2}
     <chipCount>k__BackingField: 2
@@ -85,5 +85,8 @@ MonoBehaviour:
     <chipCount>k__BackingField: 2
   - <chipName>k__BackingField: AttackPlus10
     chip: {fileID: 11400000, guid: 70d6887d578553f47aa2f208baa3d3ae, type: 2}
+    <chipCount>k__BackingField: 3
+  - <chipName>k__BackingField: DrillArm
+    chip: {fileID: 11400000, guid: 38a71de364fc2f04aa7f1698cccd04fe, type: 2}
     <chipCount>k__BackingField: 3
   ChipDeckLoadouts: []
