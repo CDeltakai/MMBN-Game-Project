@@ -27,13 +27,13 @@ AnimationClip:
       value: {fileID: -7650369313722042726, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
     - time: 0.25
       value: {fileID: 99511088386413870, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
-    - time: 0.375
+    - time: 0.33333334
       value: {fileID: -4842493809711000816, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
-    - time: 0.45833334
+    - time: 0.41666666
       value: {fileID: 99511088386413870, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
-    - time: 0.5833333
+    - time: 0.5
       value: {fileID: 1315077276428275650, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
-    - time: 0.6666667
+    - time: 0.5833333
       value: {fileID: 99511088386413870, guid: 2a4a8f5c407c6434eadc5fc95f390724, type: 3}
     attribute: m_Sprite
     path: 
@@ -67,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.7083334
+    m_StopTime: 0.625
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -86,4 +86,46 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.16666667
+    functionName: ApplyChipEffectRef
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 9ed8c7a04f6c218448493c3f796d8655, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.16666667
+    functionName: TriggerChipSFX
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: bbf6f029452a4a141ae77e52108bb313, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: TriggerChipSFX
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: bbf6f029452a4a141ae77e52108bb313, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: ApplyChipEffectRef
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 9ed8c7a04f6c218448493c3f796d8655, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
+    functionName: ApplyChipEffectRef
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 9ed8c7a04f6c218448493c3f796d8655, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
+    functionName: TriggerChipSFX
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: bbf6f029452a4a141ae77e52108bb313, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

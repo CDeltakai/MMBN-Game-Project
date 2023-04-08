@@ -16,28 +16,35 @@ MonoBehaviour:
   ChipID: 3
   Chip: 109
   ChipName: Vulcan
-  BaseDamage: 0
-  ChipImage: {fileID: 2373028131613329635, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
-  ChipDescription: Fire 3 shots from Vulcan
-  ChipElement: 0
+  BaseDamage: 10
+  <PierceCount>k__BackingField: 1
+  <ChipElement>k__BackingField: 0
   ChipSize: 4
-  AnimationDuration: 0.708
+  <EnergyCost>k__BackingField: 1
   ChipType: 1
   BaseStatusEffect: 0
+  <RangeOfInfluence>k__BackingField: []
+  <RangeOfInfluenceWorld>k__BackingField: []
+  ChipDescription: Fires 3 shots from a vulcan cannon in a straight line. The shots
+    can pierce through 1 enemy
+  ChipImage: {fileID: 2373028131613329635, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
+  AnimationDuration: 0.708
   EffectScript: Vulcan
   SFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1257478349
+      Data2: 1289407951
+      Data3: -1255653445
+      Data4: 833201460
+    Path: event:/VulcanShot
   AdditionalSFX: []
-  AnimationToUse: 109
+  AnimationClipToUse: {fileID: 7400000, guid: 0dd31226788c7dd49a7cbaf6197d1a54, type: 2}
   ObjectSummon: {fileID: 0}
-  EffectPrefab: {fileID: 0}
+  EffectPrefab: {fileID: 3193464833529907304, guid: a9d3bb3710fe766438ddd6e6e2c220df, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0
   lightAttack: 1
-  hitFlinch: 0
-  UseAnimationEvent: 0
+  hitFlinch: 1
+  UseAnimationEvent: 1
+  <isPersistent>k__BackingField: 1
+  <AllowSummonObjectMod>k__BackingField: 0

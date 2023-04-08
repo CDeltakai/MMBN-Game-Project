@@ -157,7 +157,7 @@ TextureImporter:
     second: Chip_icons_exe6_50
   - first:
       213: -2181421393321553712
-    second: Chip_icons_exe6_51
+    second: Chip_DrillArm
   - first:
       213: 3476773775699594281
     second: Chip_icons_exe6_52
@@ -696,7 +696,7 @@ TextureImporter:
       213: 3119652499095097773
     second: Chip_icons_exe6_230
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -755,6 +755,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1891,7 +1892,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chip_icons_exe6_51
+      name: Chip_DrillArm
       rect:
         serializedVersion: 2
         x: 59

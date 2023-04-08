@@ -1795,10 +1795,12 @@ MonoBehaviour:
   deckEditMenu: {fileID: 6184569036347876769}
   inventoryContentManager: {fileID: 7969151014660029692}
   deckElementPrefab: {fileID: 8146393304697019123, guid: a2af3255d909f214096b976ff694c764, type: 3}
+  elementDividerPrefab: {fileID: 0}
   playerData: {fileID: 0}
   deckCounterText: {fileID: 6576746772339180944}
   temporaryChipDeck: []
   internalElementList: []
+  dividerElementList: []
 --- !u!1 &3751949685339563326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,6 +2772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeckElementDivider
       objectReference: {fileID: 0}
+    - target: {fileID: 1068130409548358146, guid: 16e6dd9b675a95b40b657d8829271ec7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1181762737385284207, guid: 16e6dd9b675a95b40b657d8829271ec7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2788,7 +2794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1181762737385284207, guid: 16e6dd9b675a95b40b657d8829271ec7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1181762737385284207, guid: 16e6dd9b675a95b40b657d8829271ec7, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2796,7 +2802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1181762737385284207, guid: 16e6dd9b675a95b40b657d8829271ec7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1181762737385284207, guid: 16e6dd9b675a95b40b657d8829271ec7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2836,11 +2842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1181762737385284207, guid: 16e6dd9b675a95b40b657d8829271ec7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1181762737385284207, guid: 16e6dd9b675a95b40b657d8829271ec7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -63
       objectReference: {fileID: 0}
     - target: {fileID: 1181762737385284207, guid: 16e6dd9b675a95b40b657d8829271ec7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2898,7 +2904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4064865458791114183, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4064865458791114183, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2906,7 +2912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4064865458791114183, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4064865458791114183, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2946,11 +2952,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4064865458791114183, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4064865458791114183, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -63
       objectReference: {fileID: 0}
     - target: {fileID: 4064865458791114183, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2971,6 +2977,10 @@ PrefabInstance:
     - target: {fileID: 5723015750558798514, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
       propertyPath: m_Name
       value: InventoryElementDivider
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723015750558798514, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8064371124083618682, guid: 89cca1a0e1cf7364ca4f6ebfa6145c78, type: 3}
       propertyPath: deckEditMenu

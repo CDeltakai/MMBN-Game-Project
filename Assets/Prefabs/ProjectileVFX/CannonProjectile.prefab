@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentChip: {fileID: 0}
+  pierceCount: 0
+  IsProjectileAlways: 0
+  player: {fileID: 0}
   boxCollider2D: {fileID: 3450752485549607568}
   sprite: {fileID: 3450752485549607575}
   trail: {fileID: 3450752485549607571}
@@ -118,7 +121,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 3450752485549607573}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0

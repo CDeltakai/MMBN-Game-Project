@@ -27,7 +27,7 @@ public class Champy_RF : BStageEntity
     [HideInInspector] public bool hasMoved = false;
     [HideInInspector] public bool isAttacking = false;
 
-    Vector3Int previousCellPosition; 
+    Vector3Int originCellPos; 
 
 
     public override void Start()
@@ -109,7 +109,7 @@ public class Champy_RF : BStageEntity
         ClaimTileOccupancy(destinationCell.x, destinationCell.y);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         stageHandler.SetPreviousSeenEntity(currentCellPos.x, currentCellPos.y, this, true);
-        previousCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
+        originCellPos.Set(currentCellPos.x, currentCellPos.y, 0);
         //moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(x, y, 0);
@@ -129,7 +129,7 @@ public class Champy_RF : BStageEntity
     public IEnumerator AttackAnimation_old()
     {
         if(currentHP <= 0){yield break;}
-        previousCellPosition = currentCellPos;
+        originCellPos = currentCellPos;
         setCellPosition_MaintainOccupied(player.getCellPosition().x + 1, currentCellPos.y);
         hasMoved = true;
 
@@ -140,10 +140,10 @@ public class Champy_RF : BStageEntity
         animator.Play(ChampyAnims.Champy_Idle.ToString());
         yield return new WaitForSeconds(0.6f * objectTimeScale);
 
-        setCellPosition_MaintainOccupied(previousCellPosition.x, previousCellPosition.y);
+        setCellPosition_MaintainOccupied(originCellPos.x, originCellPos.y);
         hasMoved = false;
 
-        previousCellPosition = currentCellPos;
+        originCellPos = currentCellPos;
 
         yield return new WaitForSeconds(1.25f * objectTimeScale);
         isAttacking = false;
@@ -157,7 +157,7 @@ public class Champy_RF : BStageEntity
         {yield break;}
 
         StartCoroutine(DashToTile(player.getCellPosition().x + 1, currentCellPos.y, 0.1f, Ease.OutQuad));
-        ClaimTileOccupancy(previousCellPos.x, previousCellPos.y);
+        ClaimTileOccupancy(originCellPos.x, originCellPos.y);
         //hasMoved = true;
         yield return new WaitForSeconds(0.1f);
 
@@ -169,14 +169,14 @@ public class Champy_RF : BStageEntity
         yield return new WaitForSeconds(0.6f * objectTimeScale);
 
         //ClearClaimedTiles();
-        StartCoroutine(DashToTile(previousCellPos.x, previousCellPos.y, 0.1f, Ease.OutQuad));
+        StartCoroutine(DashToTile(originCellPos.x, originCellPos.y, 0.1f, Ease.OutQuad));
 
         yield return new WaitForSeconds(0.1f);
         ClearClaimedTiles();
 
         //hasMoved = false;
 
-        previousCellPosition = currentCellPos;
+        originCellPos = currentCellPos;
 
         //Cooldown before another attack can be initiated
         yield return new WaitForSeconds(1.25f * objectTimeScale);
@@ -212,7 +212,7 @@ public class Champy_RF : BStageEntity
                     transform.rotation, transform.parent.transform);
         yield return new WaitForSecondsRealtime(0.533f);
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-        stageHandler.setCellEntity(previousCellPosition.x, previousCellPosition.y, this, false);
+        stageHandler.setCellEntity(originCellPos.x, originCellPos.y, this, false);
         ClearClaimedTiles();
 
         if(deathEvent != null)

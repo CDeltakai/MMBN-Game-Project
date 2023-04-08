@@ -17,14 +17,18 @@ MonoBehaviour:
   Chip: 0
   ChipName: Explosive Mine
   BaseDamage: 60
-  ChipElement: 0
+  <ChipElement>k__BackingField: 0
   ChipSize: 0
   <EnergyCost>k__BackingField: 1
   ChipType: 1
   BaseStatusEffect: 0
-  ChipDescription: Summons a mine 4 tiles forward. Enemeies that step onto the mine
-    will trigger an explosion. Enemies shoved onto the mine will trigger a stronger
-    explosion.
+  <RangeOfInfluence>k__BackingField:
+  - {x: 4, y: 0}
+  ChipDescription: 'Summons a mine 4 tiles forward. Enemies that step onto the mine
+    will trigger an explosion.
+
+    Enemies shoved onto the mine will trigger a stronger
+    explosion.'
   ChipImage: {fileID: -9168428118247650306, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0
   EffectScript: 
@@ -44,3 +48,5 @@ MonoBehaviour:
   lightAttack: 0
   hitFlinch: 1
   UseAnimationEvent: 1
+  <isPersistent>k__BackingField: 0
+  <AllowSummonObjectMod>k__BackingField: 0

@@ -2,42 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vulcan : MonoBehaviour, IChip
+public class Vulcan : ChipEffectBlueprint
 {
-    public Transform firePoint;
+    [SerializeField] GameObject projectile;
+    
 
-    PlayerMovement player;
-
-    public int BaseDamage {get;set;} = 10;
-
-    public int AdditionalDamage{get; set;} = 0;
-
-    public EChipTypes ChipType => EChipTypes.Attack;
-    public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
-    public EChipElements chipElement => EChipElements.Normal;
-
-
-    public void Effect(int AddDamage = 0, EStatusEffects statusEffect = EStatusEffects.Default, string AddressableKey = null)
+    public override void Effect()
     {
+        effectProperties = new EffectPropertyContainer(DamageModifier, StatusEffectModifier, lightAttack, hitFlinch, pierceUntargetable);
 
-        AdditionalDamage += AddDamage;
+        BulletController bulletController = Instantiate(projectile, new Vector2(player.transform.parent.transform.position.x + 1.6f,
+        player.transform.parent.transform.position.y), transform.rotation).GetComponent<BulletController>();
 
-        player = GetComponent<PlayerMovement>();
-        firePoint = FindObjectOfType<ChipEffects>().firePoint;
+        BasicBullet bullet = bulletController.bullet;
+        bullet.Damage = calcFinalDamage();
+        bullet.parentChip = this;
+        bullet.player = player;
+        bullet.IsProjectileAlways = true;
+        bullet.pierceCount = 1;
+        bullet.velocityInSlowMotion = new Vector2(40, 0);
 
-        RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, Mathf.Infinity, LayerMask.GetMask("Enemies"));
+
+
+        RaycastHit2D hitInfo = Physics2D.Raycast (firePoint.position, firePoint.right, 100f, LayerMask.GetMask("Enemies", "Obstacle"));
         if(hitInfo)
         {
-            IBattleStageEntity script = hitInfo.transform.gameObject.GetComponent<IBattleStageEntity>();
-            script.hurtEntity((int)((BaseDamage + AdditionalDamage) * player.AttackMultiplier), true, false);
+            BStageEntity entity = hitInfo.transform.gameObject.GetComponent<BStageEntity>();
+            bullet.hitPosition = hitInfo;
+            //bullet.endPosition = new Vector2(16, hitInfo.point.x);
+            bullet.endPosition = new Vector2(player.currentCellPos.x + 18f, player.currentCellPos.y);
 
 
-            Debug.Log(hitInfo.transform.name + "HP:" + script.getHealth());
         }
+        bullet.StartBullet();        
 
-        AdditionalDamage = 0;
     }
 
+    public override void OnActivationEffect(BStageEntity target)
+    {
+        applyChipDamage(target);
+    }
 
 
 }

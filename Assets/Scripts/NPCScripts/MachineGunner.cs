@@ -9,6 +9,7 @@ using UnityEngine;
 public class MachineGunner : BStageEntity
 {
     public override bool isGrounded { get; set; } = true;
+    
     public override bool isStationary => true;
     public override bool isStunnable => true;
     public override int maxHP => 60;

@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 565381222}
   - component: {fileID: 565381223}
   - component: {fileID: 565381228}
+  - component: {fileID: 860235137}
   m_Layer: 9
   m_Name: ChampyModel
   m_TagString: Enemy
@@ -121,7 +122,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &1960042379803707411
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,10 +135,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!61 &1960042379803707410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,7 +150,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00004708767, y: 0.10126443}
@@ -174,7 +176,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1960042379803707420}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -183,7 +185,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &565381223
 MonoBehaviour:
@@ -197,14 +199,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f82e54b30152e4b8743ae6c78d87d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   healthText: {fileID: 1702255416732104399}
+  objectTimeScale: 1
   worldTransform: {fileID: 0}
+  isBeingShoved: 0
+  isRooted: 0
+  nonVolatileStatus: 0
   currentCellPos: {x: 0, y: 0, z: 0}
-  isInvincible: 0
-  currentHP: 0
-  shieldPoints: 0
+  previousCellPos: {x: 0, y: 0, z: 0}
+  currentHP: 100
+  shieldHP: 0
   DefenseMultiplier: 1
   AttackMultiplier: 1
+  isUntargetable: 0
+  fullInvincible: 0
+  isStunned: 0
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  destructionVFX: {fileID: 3214558368501065571, guid: ddd9f48c2c7af9145b6905bf35063c60, type: 3}
+  HurtSFX:
+    Guid:
+      Data1: -1182195709
+      Data2: 1298215384
+      Data3: 312876713
+      Data4: 938022413
+    Path: event:/EnemyDamaged
+  DestroyedSFX:
+    Guid:
+      Data1: -1981591353
+      Data2: 1074667412
+      Data3: 1756969093
+      Data4: -1337237257
+    Path: event:/EntityDestruction
+  HPShakeDuration: 0.12
+  HPShakeStrength: 0.2
+  HPShakeVibrato: 1000
   hasMoved: 0
   isAttacking: 0
 --- !u!114 &565381228
@@ -219,6 +248,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a47c57d52ded2b478106961ade66ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!96 &860235137
+TrailRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960042379803707420}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 631951225
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Time: 0.05
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.47101408
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7238093
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 0.25, b: 0.25, a: 1}
+      key1: {r: 1, g: 0.8915094, b: 0.8915094, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 42405
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+  m_Emitting: 1
 --- !u!1 &4111521783671561622
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class ChipSlot : MonoBehaviour
 [SerializeField] ChipSO SelectedChip;
 [SerializeField] ChipObjectReference CurrentChipReference;
 [SerializeField] Sprite chipImage;
+public int selectedChipIndex = 0;
 Image activeImage;
     
 

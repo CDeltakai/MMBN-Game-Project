@@ -10,6 +10,7 @@ public class ObjectSummonAttributes : MonoBehaviour
     public EStatusEffects AddStatusEffect = EStatusEffects.Default;
     public UnityEngine.GameObject AddObjectSummon = null;
     public ChipSO InheritedChip;
+    public ChipEffectBlueprint InheritedChipPrefab;
 
     public virtual void ResetAttributesToInitialState()
     {
