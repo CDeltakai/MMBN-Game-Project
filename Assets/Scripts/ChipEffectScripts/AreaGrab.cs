@@ -11,6 +11,8 @@ public class AreaGrab : ChipEffectBlueprint
 
     private Tilemap stageTilemap;
     private CustomTile tile;
+    [SerializeField] AreaGrabVFXController vfxController;
+    public float column;
 
     private void Awake() 
     {
@@ -27,8 +29,23 @@ public class AreaGrab : ChipEffectBlueprint
     public override void Effect()
     {
 
-        stageHandler.CalculatePlayerBounds();
+        StartCoroutine(TimedEffect());
 
+
+    }
+
+    IEnumerator TimedEffect()
+    {
+        stageHandler.CalculatePlayerBounds();
+        column = (stageHandler.playerBoundsList[0].x + 1) * 1.6f;
+
+        vfxController.InitialPosition = new Vector3(column, 10, 0);
+
+        vfxController.gameObject.SetActive(true);
+
+        vfxController.TriggerVFX();
+
+        yield return new WaitForSeconds(0.5f);
         print("Attempted area grab");
         foreach(Vector3Int pos in stageHandler.playerBoundsList)
         {
@@ -50,8 +67,8 @@ public class AreaGrab : ChipEffectBlueprint
         }
         stageHandler.CalculatePlayerBounds();
 
-
-
+        vfxController.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
 

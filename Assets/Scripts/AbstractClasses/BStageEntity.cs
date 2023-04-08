@@ -51,7 +51,7 @@ public abstract class BStageEntity : MonoBehaviour
     ///worldTransform is the world position and transform of the BStageEntity.
     ///The components which make up the entity normally fall under this worldTransform
     ///as children. Use this when you need to set the cell position of the object in relation
-    ///to the stage grid. Do not use this if you need to set sprite positions.
+    ///to the stage grid. Do not use this if you need to set children sprite positions.
     ///</summary>
     [HideInInspector] public Transform worldTransform;
 
@@ -78,7 +78,7 @@ public abstract class BStageEntity : MonoBehaviour
     public bool isBeingShoved = false;
     protected virtual bool isPlayer{get;} = false;
 
-    [HideInInspector] public bool isRooted = false;
+    public bool isRooted = false;
     [HideInInspector] protected bool isMoving = false;
 
     ///<summary>
@@ -467,9 +467,16 @@ public abstract class BStageEntity : MonoBehaviour
     public bool checkValidTile(int x, int y)
     {
         Vector3Int coordToCheck = new Vector3Int(x, y, 0);
+        StageTile stageTileToCheck = null;        
 
-        StageTile stageTileToCheck = stageHandler.stageTiles
-            [stageHandler.stageTilemap.CellToWorld(coordToCheck)];
+        if(stageHandler.stageTiles.ContainsKey(stageHandler.stageTilemap.CellToWorld(coordToCheck)))
+        {
+            stageTileToCheck = stageHandler.stageTiles
+                [stageHandler.stageTilemap.CellToWorld(coordToCheck)];
+        }else
+        {
+            return false;
+        }
 
         CustomTile customTileToCheck = stageHandler.getCustTile(coordToCheck);
 
@@ -735,7 +742,7 @@ public abstract class BStageEntity : MonoBehaviour
         Vector3 currentWorldPosition = stageHandler.stageTilemap.GetCellCenterWorld(currentCellPos);
         Vector3 destinationWorldPosition = stageHandler.stageTilemap.GetCellCenterWorld(destinationCell);
 
-        if(!checkValidTile(destinationCell.x, destinationCell.y) &&
+        if(!checkFreeTile(destinationCell.x, destinationCell.y) &&
         stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y) == null)
         {yield break;}
 
@@ -747,6 +754,7 @@ public abstract class BStageEntity : MonoBehaviour
                 worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).
                 SetEase(Ease.OutCirc).SetUpdate(false);
                 isBeingShoved = true;
+                isRooted = true;
                 
 
                 yield return new WaitForSeconds(0.10f);
@@ -756,7 +764,9 @@ public abstract class BStageEntity : MonoBehaviour
                 yield return new WaitForSecondsRealtime(0.05f);
                 stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y).hurtEntity(damage, false, true);     
                 yield return new WaitForSeconds(0.15f);
+
                 isBeingShoved = false;           
+                isRooted = false;
 
             }else
             //Vertical Shove 
@@ -774,6 +784,7 @@ public abstract class BStageEntity : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
 
                 isBeingShoved = false;                   
+                isRooted = false;
 
 
             }
@@ -790,6 +801,7 @@ public abstract class BStageEntity : MonoBehaviour
         moveOffTile(currentCellPos.x, currentCellPos.y, this);
 
         currentCellPos.Set(currentCellPos.x + x, currentCellPos.y + y, 0);
+        isRooted = true;
         worldTransform.DOMove(stageHandler.stageTilemap.GetCellCenterWorld(destinationCell), 0.15f ).SetEase(Ease.OutCubic).SetUpdate(false);
         isBeingShoved = true;
         yield return new WaitForSeconds(0.075f);
@@ -799,6 +811,7 @@ public abstract class BStageEntity : MonoBehaviour
 
         yield return new WaitForSeconds(0.075f);
         isBeingShoved = false;
+        isRooted = false;
 
 
 
@@ -814,6 +827,8 @@ public abstract class BStageEntity : MonoBehaviour
         
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
         if(!checkValidTile(destinationCell.x, destinationCell.y))
+        {yield break;}
+        if(isRooted || isStunned)
         {yield break;}
 
 
@@ -947,7 +962,6 @@ public abstract class BStageEntity : MonoBehaviour
 
         }
 
-
     }
     IEnumerator FadeInAndOutColor(Color color1, Color color2, float duration)
     {
@@ -959,5 +973,16 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
 
+    public void GrantUntargetableDuration(float duration)
+    {
+        StartCoroutine(UntargetableBuff(duration));
+    }
+    IEnumerator UntargetableBuff(float duration)
+    {
+        isUntargetable = true;
+        yield return new WaitForSeconds(duration);
+        isUntargetable = false;
+
+    }
 
 }

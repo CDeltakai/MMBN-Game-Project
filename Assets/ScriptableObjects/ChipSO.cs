@@ -44,6 +44,7 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] string ChipName;
 [Header("Combat Attributes")]
     [SerializeField] int BaseDamage;
+    [field:SerializeField] public int PierceCount {get; private set;}
     [field:SerializeField] public EChipElements ChipElement{get; private set;}
     [SerializeField] int ChipSize;
     [field:SerializeField] public int EnergyCost{get; private set;}
@@ -51,6 +52,20 @@ public class ChipSO : ChipScriptableObject
     // 1 = Active(Real-time usable chip), 0 = Passive(Applies effect to succeeding chip)
     [SerializeField] EChipTypes ChipType;
     [SerializeField] EStatusEffects BaseStatusEffect;
+    ///<summary>
+    ///This list of Vector2Ints indicates what tiles in relation to the player's position
+    ///this chip has influence over (eg. what range of tiles an attack chip can hit). This
+    ///variable may be used by a chip's effect in order to modify a chip's effective range.
+    ///This variable is also used by the reticle indicator which will aid the player in aiming
+    ///the chip. Can be empty depending how the chip works.
+    ///</summary>
+    [field:SerializeField] public List<Vector2Int> RangeOfInfluence{get; private set;}
+    ///<summary>
+    ///This list indicates what tiles on the world the chip has influence over. This list is not affected
+    ///by the player's position and is always static.
+    ///</summary>
+    [field:SerializeField] public List<Vector2Int> RangeOfInfluenceWorld{get; private set;}
+
 
 [TextArea(10,20)]
     [SerializeField] string ChipDescription;
@@ -67,6 +82,12 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] bool lightAttack;
     [SerializeField] bool hitFlinch;
     [SerializeField] bool UseAnimationEvent;
+    ///<summary>
+    ///If this is set to true, this chip will not automatically disable itself after its initial
+    ///casting period. The chip will need have its own function to disable itself after some
+    ///condition.
+    ///</summary>
+    [field:SerializeField] public bool isPersistent {get; private set;} = false;
     ///<summary>
     ///This condition dictates if this chip allows for additional objects to be summoned
     ///through certain passive chips or other modifiers.

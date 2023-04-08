@@ -17,12 +17,19 @@ MonoBehaviour:
   Chip: 102
   ChipName: Attack +10
   BaseDamage: 0
-  ChipElement: 9
+  <ChipElement>k__BackingField: 0
   ChipSize: 4
-  EnergyCost: 0
+  <EnergyCost>k__BackingField: 0
   ChipType: 0
   BaseStatusEffect: 0
-  ChipDescription: Adds 10 damage to following chip
+  <RangeOfInfluence>k__BackingField: []
+  <RangeOfInfluenceWorld>k__BackingField: []
+  ChipDescription: 'BUFF CHIP: Buff chips apply their effect to the chip immediately
+    above them in the Chip Payload order. They cannot be used on their own.
+
+
+    Adds
+    10 damage to the buffed chip.'
   ChipImage: {fileID: 7110083524626179408, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   AnimationDuration: 0.1
   EffectScript: AttackPlus10
@@ -42,3 +49,5 @@ MonoBehaviour:
   lightAttack: 0
   hitFlinch: 0
   UseAnimationEvent: 0
+  <isPersistent>k__BackingField: 0
+  <AllowSummonObjectMod>k__BackingField: 0

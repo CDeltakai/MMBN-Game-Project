@@ -240,8 +240,10 @@ public PlayerAttributeSO playerAttributes;
             nextChip.effectPrefab.GetComponent<ChipEffectBlueprint>().Effect();
             AdjustEnergy(-nextChip.chipSORef.EnergyCost);
 
-            nextChip.effectPrefab.SetActive(false);
-            
+            if(!nextChip.chipSORef.isPersistent)
+            {
+                nextChip.effectPrefab.SetActive(false);
+            }
         } 
 
         if(chipLoadManager.nextChipRefLoad[0].chipSORef.GetChipType() != EChipTypes.Special)
@@ -313,7 +315,37 @@ public PlayerAttributeSO playerAttributes;
 
     }
    
+    public void MovePlayer(int direction)
+    {
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}
+        if(!isAlive){return;}
+        if(isUsingChip){
+            print("is using chip, cannot move");
+            return;}
+        if(isRooted){
+            return;}
+        if(isMoving){
+            print("is already moving, cannot move again");
+            return;}
 
+        if(direction == 1)
+        {
+            isMovingCoroutine = StartCoroutine(TweenMove(1, 0, 0.1f, movementEase));
+        }
+        if(direction == -1)
+        {
+            isMovingCoroutine = StartCoroutine(TweenMove(-1, 0, 0.1f, movementEase));
+        }
+        if(direction == 2)
+        {
+            isMovingCoroutine = StartCoroutine(TweenMove(0, 1, 0.1f, movementEase));
+        }
+        if(direction == -2)
+        {
+            isMovingCoroutine = StartCoroutine(TweenMove(0, -1, 0.1f, movementEase));
+        }
+    }
 
     IEnumerator ParryEffect()
     {
@@ -689,6 +721,19 @@ public PlayerAttributeSO playerAttributes;
 
     }
 
+    public void UseChipButton()
+    {
+        if(ChipSelectScreenMovement.GameIsPaused)
+        {return;}        
+        if(isUsingChip){return;}
+        if(isMoving){return;}
+        if(UseChipCoroutine != null)
+        {return;}
+
+        UseChipCoroutine = StartCoroutine(OnUseChipIEnumerator());
+
+
+    }
 
     public void OnParry(InputAction.CallbackContext context)
     {

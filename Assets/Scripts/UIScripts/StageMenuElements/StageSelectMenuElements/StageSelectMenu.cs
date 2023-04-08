@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageSelectMenu : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class StageSelectMenu : MonoBehaviour
 
     public void SelectStage(int sceneIndex)
     {
-        
+        SceneManager.LoadScene(sceneIndex);
+        Time.timeScale = 1;
+        ChipSelectScreenMovement.GameIsPaused = false;           
     }
 
 

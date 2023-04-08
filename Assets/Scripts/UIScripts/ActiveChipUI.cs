@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-
+//Chip Payload Indicator
 public class ActiveChipUI : MonoBehaviour
 {
 
@@ -57,7 +57,7 @@ public class ActiveChipUI : MonoBehaviour
             chipSlot.clearChip();
         }        
 
-        if(chipLoadManager.chipRefQueue.Count == 0 && chipLoadManager.nextChipRefLoad. Count == 0)
+        if(chipLoadManager.chipRefQueue.Count == 0 && chipLoadManager.nextChipRefLoad.Count == 0)
         {
             foreach(ChipSlot chipSlot in ActiveChipSlots)
             {
@@ -77,7 +77,7 @@ public class ActiveChipUI : MonoBehaviour
             chipImage = ActiveChipSlots[i].GetComponent<Image>();
             
             ActiveChipSlots[i].changeImage(chipLoadManager.chipRefQueue[i-1].chipSORef);
-            chipImage.color = new Color(chipImage.color.r, chipImage.color.g, chipImage.color.b, 1f);
+            chipImage.color = new Color(chipImage.color.r, chipImage.color.g, chipImage.color.b, 0.65f);
 
         }
 

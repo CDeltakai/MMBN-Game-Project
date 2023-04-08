@@ -42,11 +42,11 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        print("Sword slash hit collider");
+        //print("Sword slash hit collider");
         if(other.tag == "Enemy")
         {
 
-            print("Sword slash hit enemy");
+            //print("Sword slash hit enemy");
 
             if(other.GetComponent<BStageEntity>()){
                 BStageEntity entity = other.GetComponent<BStageEntity>();

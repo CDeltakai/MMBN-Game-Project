@@ -9,7 +9,7 @@ TextureImporter:
       213: -695115418296982109
     second: Bomb
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -68,6 +68,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -284,7 +285,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 394
-        y: 1052
+        y: 1051
         width: 72
         height: 44
       alignment: 9
@@ -2212,15 +2213,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_117
+      name: Megaman_DrillArm1
       rect:
         serializedVersion: 2
         x: 8
         y: 634
         width: 97
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.18041237, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2233,15 +2234,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_118
+      name: Megaman_DrillArm2
       rect:
         serializedVersion: 2
         x: 116
-        y: 634
+        y: 635
         width: 96
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.18229167, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2254,15 +2255,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_119
+      name: Megaman_DrillArm3
       rect:
         serializedVersion: 2
         x: 223
         y: 634
         width: 97
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.18041237, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
