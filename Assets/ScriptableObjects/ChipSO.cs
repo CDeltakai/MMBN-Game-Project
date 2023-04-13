@@ -45,7 +45,7 @@ public class ChipSO : ChipScriptableObject
 [Header("Combat Attributes")]
     [SerializeField] int BaseDamage;
     [field:SerializeField] public int PierceCount {get; private set;}
-    [field:SerializeField] public EChipElements ChipElement{get; private set;}
+    [field:SerializeField] public AttackElement ChipElement{get; private set;}
     [SerializeField] int ChipSize;
     [field:SerializeField] public int EnergyCost{get; private set;}
     // Chip Types: 2 = Freeze-time ability(Special chips that freeze time before applying effect)
@@ -176,7 +176,7 @@ public class ChipSO : ChipScriptableObject
         return ChipDescription;
     }
 
-    public EChipElements GetChipElement()
+    public AttackElement GetChipElement()
     {
         return ChipElement;
     }

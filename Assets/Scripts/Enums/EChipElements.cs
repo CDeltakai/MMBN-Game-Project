@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EChipElements
+public enum AttackElement
 {
 
     Normal,
@@ -27,7 +27,7 @@ namespace testExtensions
     public static class EChipElementsExtensions
     {
 
-        public static string getNameOfElement(this EChipElements chipelement)
+        public static string getNameOfElement(this AttackElement chipelement)
         {
             return chipelement.ToString();
         }

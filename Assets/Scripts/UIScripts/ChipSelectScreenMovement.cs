@@ -48,7 +48,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     
 
 
-    public bool isTriggered = false;
+    public static bool isTriggered = false;
     private bool isActive = false;
 
     public static bool GameIsPaused = false;

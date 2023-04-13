@@ -13,7 +13,7 @@ public class Longsword : MonoBehaviour, IChip
 
     public EChipTypes ChipType => EChipTypes.Attack;
     public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
-    public EChipElements chipElement => EChipElements.Blade;
+    public AttackElement chipElement => AttackElement.Blade;
     //[SerializeField] GameObject vfx; 
 
     PlayerMovement player;

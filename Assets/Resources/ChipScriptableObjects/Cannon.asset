@@ -17,12 +17,15 @@ MonoBehaviour:
   Chip: 103
   ChipName: Cannon
   BaseDamage: 40
-  ChipElement: 0
+  <PierceCount>k__BackingField: 0
+  <ChipElement>k__BackingField: 0
   ChipSize: 4
   <EnergyCost>k__BackingField: 1
   ChipType: 1
   BaseStatusEffect: 0
-  ChipDescription: Fire a cannon straight
+  <RangeOfInfluence>k__BackingField: []
+  <RangeOfInfluenceWorld>k__BackingField: []
+  ChipDescription: Fire a cannon shot in straight line.
   ChipImage: {fileID: -5702409653789015382, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   AnimationDuration: 0.417
   EffectScript: Cannon
@@ -42,3 +45,5 @@ MonoBehaviour:
   lightAttack: 0
   hitFlinch: 1
   UseAnimationEvent: 1
+  <isPersistent>k__BackingField: 0
+  <AllowSummonObjectMod>k__BackingField: 0

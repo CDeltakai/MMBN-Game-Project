@@ -16,7 +16,7 @@ public class Bomb : MonoBehaviour, IChip
 
     public EChipTypes ChipType => EChipTypes.Attack;
 
-    public EChipElements chipElement => EChipElements.Normal;
+    public AttackElement chipElement => AttackElement.Normal;
 
     public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
 

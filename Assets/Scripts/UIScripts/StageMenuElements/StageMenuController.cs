@@ -63,12 +63,7 @@ public class StageMenuController : MonoBehaviour
             //Exit out of pause menu and resume
             if(StageMenuTriggered && currentActiveMenu == pauseMenu)
             {
-                Time.timeScale = 1;
-                ChipSelectScreenMovement.GameIsPaused = false;                
-                StageMenuTriggered = false;
-                pauseMenu.SetActive(false);
-                currentActiveMenu = null;
-                return;
+                ResumeButton();
             }
 
             //If the a submenu like the DeckEditMenu or Option menu is open, pressing ESC will return to the pause menu
@@ -90,8 +85,12 @@ public class StageMenuController : MonoBehaviour
     {
         if(StageMenuTriggered && currentActiveMenu == pauseMenu)
         {
-            Time.timeScale = 1;
-            ChipSelectScreenMovement.GameIsPaused = false;                
+            if(!ChipSelectScreenMovement.isTriggered)
+            {
+                Time.timeScale = 1;
+                ChipSelectScreenMovement.GameIsPaused = false;                
+            }
+
             StageMenuTriggered = false;
             pauseMenu.SetActive(false);
             currentActiveMenu = null;

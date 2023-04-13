@@ -381,7 +381,7 @@ public PlayerAttributeSO playerAttributes;
         BStageEntity attacker,
         bool pierceCloaking = false,
         EStatusEffects statusEffect = EStatusEffects.Default,
-        EChipElements attackElement = EChipElements.Normal
+        AttackElement attackElement = AttackElement.Normal
         )
     {
         if(isUntargetable && pierceCloaking == false){return;}
@@ -670,7 +670,14 @@ public PlayerAttributeSO playerAttributes;
 
         if(context.canceled)
         {
-            if(context.duration >= chargeDuration)
+           if(VFXCoroutine != null)
+           {
+                //print("Stopping VFXCoroutine");
+                StopCoroutine(VFXCoroutine);
+           } 
+            VFXCoroutine = StartCoroutine(VFXController.playVFXanim(false));
+
+            if(context.duration >= chargeDuration+0.3f)
             {
                 shotDamageMultiplier = 10;
                 FMODUnity.RuntimeManager.PlayOneShotAttached(ChargedShotSFX, transform.gameObject);
@@ -679,12 +686,6 @@ public PlayerAttributeSO playerAttributes;
                 FMODUnity.RuntimeManager.PlayOneShotAttached(BasicShotSFX, transform.gameObject);
             }
 
-           if(VFXCoroutine != null)
-           {
-                //print("Stopping VFXCoroutine");
-                StopCoroutine(VFXCoroutine);
-           } 
-            VFXCoroutine = StartCoroutine(VFXController.playVFXanim(false));
 
             //print("Megaman fired buster shot");
             animator.SetTrigger("Shoot");
@@ -696,7 +697,7 @@ public PlayerAttributeSO playerAttributes;
     {
         if(context.started)
         {
-            if(chipSelectScreenMovement.isTriggered)
+            if(ChipSelectScreenMovement.isTriggered)
             {
                 return;
             }

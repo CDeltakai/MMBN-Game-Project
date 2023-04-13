@@ -51,7 +51,7 @@ MonoBehaviour:
     <chipCount>k__BackingField: 2
   - <chipName>k__BackingField: ExplosiveMine
     chip: {fileID: 11400000, guid: 9651be442775fb243a7a7911b9f79b71, type: 2}
-    <chipCount>k__BackingField: 2
+    <chipCount>k__BackingField: 1
   - <chipName>k__BackingField: Cannon
     chip: {fileID: 11400000, guid: 4f08aaad28d8bf54a95d11b863b32ce3, type: 2}
     <chipCount>k__BackingField: 1
@@ -60,7 +60,7 @@ MonoBehaviour:
     <chipCount>k__BackingField: 2
   - <chipName>k__BackingField: Invisible
     chip: {fileID: 11400000, guid: 0a63e155a4579f54490feea56bc9300f, type: 2}
-    <chipCount>k__BackingField: 2
+    <chipCount>k__BackingField: 1
   - <chipName>k__BackingField: AreaGrab
     chip: {fileID: 11400000, guid: 56648c25a2e54464aa1dd805942dc27b, type: 2}
     <chipCount>k__BackingField: 2
@@ -69,6 +69,9 @@ MonoBehaviour:
     <chipCount>k__BackingField: 2
   - <chipName>k__BackingField: DrillArm
     chip: {fileID: 11400000, guid: 38a71de364fc2f04aa7f1698cccd04fe, type: 2}
+    <chipCount>k__BackingField: 2
+  - <chipName>k__BackingField: MarkCannon
+    chip: {fileID: 11400000, guid: c7b0641457148ba44ae8a3b8f82493e4, type: 2}
     <chipCount>k__BackingField: 2
   CurrentChipInventory:
   - <chipName>k__BackingField: Airshot

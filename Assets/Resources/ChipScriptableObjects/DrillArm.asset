@@ -27,7 +27,11 @@ MonoBehaviour:
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   <RangeOfInfluenceWorld>k__BackingField: []
-  ChipDescription: 
+  ChipDescription: 'Use a drill to attack 2 tiles forward. Hits 3 times.
+
+
+    Will
+    shove enemies back 1 tile on hit.'
   ChipImage: {fileID: -2181421393321553712, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0
   EffectScript: 

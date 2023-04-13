@@ -10,7 +10,9 @@ public enum EStatusEffects
     Rooted,
     Frozen,
     Burning,
-    Poison
+    Poison,
+    MarkForDeath,
+    Bleeding
 
     
 }

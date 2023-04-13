@@ -11,7 +11,7 @@ public class Sword : MonoBehaviour, IChip
 
     public EChipTypes ChipType => EChipTypes.Attack;
     public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
-    public EChipElements chipElement => EChipElements.Blade;
+    public AttackElement chipElement => AttackElement.Blade;
 
 
 

@@ -8,6 +8,7 @@ public class ObjectSummonAttributes : MonoBehaviour
 
     public EStatusEffects StatusEffect;
     public EStatusEffects AddStatusEffect = EStatusEffects.Default;
+    public List<EStatusEffects> AdditionalStatusEffects = new List<EStatusEffects>();
     public UnityEngine.GameObject AddObjectSummon = null;
     public ChipSO InheritedChip;
     public ChipEffectBlueprint InheritedChipPrefab;
