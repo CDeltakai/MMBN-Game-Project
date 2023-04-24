@@ -22,7 +22,8 @@ public class WhiteCapsule : ChipEffectBlueprint
         {
             if(chipToBuff.ObjectSummon != null)
             {
-                chipToBuff.ObjectSummon.GetComponentInChildren<ObjectSummonAttributes>().AddStatusEffect = EStatusEffects.Paralyzed;
+                
+                chipToBuff.ObjectSummon.GetComponentInChildren<ObjectSummonAttributes>().AdditionalStatusEffects.Add(EStatusEffects.Paralyzed);
             }
             chipToBuff.effectPrefab.GetComponent<ChipEffectBlueprint>().AdditionalStatusEffects.Add(EStatusEffects.Paralyzed);
         }else

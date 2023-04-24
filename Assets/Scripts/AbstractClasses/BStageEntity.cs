@@ -7,7 +7,8 @@ using DG.Tweening;
 using FMODUnity;
 
 ///<summary>
-///A container which stores information on the properties of an incoming attack. 
+///A container data type which stores information on the properties of an incoming attack.
+///All variables within the attack payload may be modified freely. 
 ///</summary>
 public struct AttackPayload
 {
@@ -85,7 +86,7 @@ public abstract class BStageEntity : MonoBehaviour
     ///worldTransform is the world position and transform of the BStageEntity.
     ///The components which make up the entity normally fall under this worldTransform
     ///as children. Use this when you need to set the cell position of the object in relation
-    ///to the stage grid. Do not use this if you need to set children sprite positions.
+    ///to the stage grid. Do not use this if you need to set children object sprite positions.
     ///</summary>
     [HideInInspector] public Transform worldTransform;
 
@@ -285,7 +286,7 @@ public abstract class BStageEntity : MonoBehaviour
         if(fullInvincible)
         {return;}
         if(isUntargetable && !pierceUntargetable)
-        {return;}
+        {return;}   
 
         if(statusEffect != EStatusEffects.Default)
         {StartCoroutine(setStatusEffect(statusEffect, 1));}
@@ -305,7 +306,6 @@ public abstract class BStageEntity : MonoBehaviour
         }
 
 
-        StartCoroutine(DamageFlash());
         RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
 
         //Calculate new current HP value after taking damage
@@ -323,6 +323,7 @@ public abstract class BStageEntity : MonoBehaviour
             hurtEvent(this);
         } 
 
+        StartCoroutine(DamageFlash());
 
         return; 
     }
@@ -373,7 +374,6 @@ public abstract class BStageEntity : MonoBehaviour
             AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(attackPayload.damage * DefenseMultiplier), 1, 999999)));
         }
 
-        StartCoroutine(DamageFlash());
         RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
 
         //Calculate new current HP value after taking damage
@@ -392,6 +392,7 @@ public abstract class BStageEntity : MonoBehaviour
             hurtEvent(this);
         } 
 
+        StartCoroutine(DamageFlash());
 
     }
 
@@ -479,20 +480,22 @@ public abstract class BStageEntity : MonoBehaviour
     public AttackPayload TriggerMarkEffect(AttackElement chipElement, AttackPayload payload)
     {
         AttackPayload modifiedPayload = payload;
+        print("Attempted to trigger mark effect wtih element: " + chipElement);
 
         switch (chipElement) {
             case AttackElement.Normal:
                 modifiedPayload.damage = modifiedPayload.damage * 2;
+                print("Triggered normal element mark effect");
 
                 break;
 
             case AttackElement.Air:
-
-
+                print("Triggered air element mark effect");
                 break;
 
             case AttackElement.Blade:
                 modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Bleeding);
+                print("Triggered blade element mark effect");
 
                 break;
 
@@ -542,6 +545,8 @@ public abstract class BStageEntity : MonoBehaviour
 
     public IEnumerator DamageFlash()
     {
+        if(currentHP <= 0)
+        {yield break;}
         setSolidColor(Color.white);
         yield return new WaitForSecondsRealtime(0.03f);
         setNormalSprite();

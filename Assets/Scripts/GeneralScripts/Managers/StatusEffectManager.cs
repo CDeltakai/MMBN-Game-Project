@@ -46,7 +46,7 @@ public class StatusEffectManager : MonoBehaviour
         
     }
 
-
+    //if toggle = true, will try to trigger the status effect, otherwise will attempt to cancel that effect on the entity.
     public void triggerStatusEffect(EStatusEffects status, float duration = 1, bool toggle = true)
     {
         print("Attempted to set statusEffect: " + status + " on target: " +  this.gameObject.name);
