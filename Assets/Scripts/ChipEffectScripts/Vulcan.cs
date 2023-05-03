@@ -9,7 +9,7 @@ public class Vulcan : ChipEffectBlueprint
 
     public override void Effect()
     {
-        effectProperties = new EffectPropertyContainer(DamageModifier, 
+        effectProperties = new EffectProperties(DamageModifier, 
         StatusEffectModifier, 
         AdditionalStatusEffects, 
         lightAttack, 

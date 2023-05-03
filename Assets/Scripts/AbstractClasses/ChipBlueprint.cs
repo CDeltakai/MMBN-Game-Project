@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct EffectPropertyContainer
+public struct EffectProperties
 {
 
     public int DamageModifier;
@@ -14,13 +14,13 @@ public struct EffectPropertyContainer
     public AttackElement attackElement;
 
 
-    public EffectPropertyContainer(int dmgMod, 
-                                    EStatusEffects statEffect, 
-                                    List<EStatusEffects> additionalStatEffects, 
-                                    bool lightAttack, 
-                                    bool hitFlinch, 
-                                    bool pierceUntargetable, 
-                                    AttackElement attackElement)
+    public EffectProperties(int dmgMod, 
+                            EStatusEffects statEffect, 
+                            List<EStatusEffects> additionalStatEffects, 
+                            bool lightAttack, 
+                            bool hitFlinch, 
+                            bool pierceUntargetable, 
+                            AttackElement attackElement)
     {
         DamageModifier = dmgMod;
         StatusEffectModifier = statEffect;
@@ -48,7 +48,8 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     protected Transform firePoint;
     [SerializeField] public ChipSO chip;
     protected UnityEngine.GameObject ObjectSummon;
-    protected int BaseDamage;
+    [HideInInspector]
+    public int BaseDamage{get; protected set;}
     protected EStatusEffects BaseStatusEffect;
     protected int EnergyCost;
 
@@ -66,13 +67,13 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     protected bool hitFlinch;
     protected bool pierceUntargetable;
 
-    protected EffectPropertyContainer effectProperties = new EffectPropertyContainer(0, 
-                                                                                    EStatusEffects.Default, 
-                                                                                    new List<EStatusEffects>(),  
-                                                                                    false, 
-                                                                                    false, 
-                                                                                    false, 
-                                                                                    AttackElement.Normal);
+    public EffectProperties effectProperties = new EffectProperties(0, 
+                                                                        EStatusEffects.Default, 
+                                                                        new List<EStatusEffects>(),  
+                                                                        false, 
+                                                                        false, 
+                                                                        false, 
+                                                                        AttackElement.Normal);
 
 
 

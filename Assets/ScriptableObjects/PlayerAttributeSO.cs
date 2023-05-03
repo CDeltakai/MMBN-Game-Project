@@ -3,7 +3,6 @@ using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Newtonsoft.Json;
 using System.Linq;
 
 internal interface ICompareStrategy
@@ -331,9 +330,9 @@ public class PlayerAttributeSO : ScriptableObject
     public void SaveToJson()
     {
         string saveJsonUtility = JsonUtility.ToJson(this, true);
-        string saveNewtonJson = JsonConvert.SerializeObject(this, Formatting.Indented);
+        //string saveNewtonJson = JsonConvert.SerializeObject(this, Formatting.Indented);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/playerSaveData_JsonUtility.json", saveJsonUtility);
-        System.IO.File.WriteAllText(Application.persistentDataPath + "/playerSaveData_NewtonJson.json", saveNewtonJson);
+        //System.IO.File.WriteAllText(Application.persistentDataPath + "/playerSaveData_NewtonJson.json", saveNewtonJson);
         Debug.Log("Attempted saving player attributes to JSON " + Application.persistentDataPath);
     }
 
@@ -347,7 +346,7 @@ public class PlayerAttributeSO : ScriptableObject
     public void LoadNewtonsoftSave()
     {
         string savedata = System.IO.File.ReadAllText(Application.persistentDataPath + "/playerSaveData_NewtonJson.json");
-        PlayerAttributeSO testSaveNewtonJson = JsonConvert.DeserializeObject<PlayerAttributeSO>(savedata);
+        //PlayerAttributeSO testSaveNewtonJson = JsonConvert.DeserializeObject<PlayerAttributeSO>(savedata);
 
     }
 

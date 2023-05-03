@@ -15,6 +15,7 @@ public class BombController : ObjectSummonAttributes
     [SerializeField] AnimationCurve yPosCurve;
     [SerializeField] EventReference ExplosionSoundEffect;
     Vector3 InitialPosition;
+    
 
 
   
