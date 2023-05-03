@@ -22,6 +22,25 @@ public class ObjectSummonAttributes : MonoBehaviour
     }
 
 
+    public void applyDamage(BStageEntity entity)
+    {
+        EffectProperties effectProperties = InheritedChipPrefab.effectProperties;
+        
+        int finalDamage = (int)((InheritedChipPrefab.BaseDamage + effectProperties.DamageModifier) * InheritedChipPrefab.player.AttackMultiplier);
+
+        AttackPayload attackPayload = new AttackPayload(finalDamage,
+                                                        effectProperties.lightAttack,
+                                                        effectProperties.hitFlinch,
+                                                        effectProperties.pierceUntargetable,
+                                                        InheritedChipPrefab.player,
+                                                        effectProperties.StatusEffectModifier,
+                                                        effectProperties.AdditionalStatusEffects,
+                                                        InheritedChip.GetChipElement());
+
+        entity.hurtEntity(attackPayload);
+
+
+    }
 
 
 
