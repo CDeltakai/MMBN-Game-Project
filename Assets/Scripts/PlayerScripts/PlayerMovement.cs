@@ -295,8 +295,8 @@ public PlayerAttributeSO playerAttributes;
         if(isMoving){
             print("is already moving, cannot move again");
             return;}
-        
-        if(Keyboard.current.dKey.wasPressedThisFrame)
+        if (Keyboard.current.shiftKey.isPressed){ return;}
+        if (Keyboard.current.dKey.wasPressedThisFrame)
         {
             isMovingCoroutine = StartCoroutine(TweenMove(1, 0, 0.1f, movementEase));
         }
