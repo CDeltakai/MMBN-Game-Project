@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
 public class ObjectSummonAttributes : MonoBehaviour
@@ -18,6 +19,7 @@ public class ObjectSummonAttributes : MonoBehaviour
         AddDamage = 0;
         StatusEffect = InheritedChip.GetStatusEffect();
         AddStatusEffect = EStatusEffects.Default;
+        AdditionalStatusEffects.Clear();
         AddObjectSummon = null;
     }
 
@@ -25,7 +27,7 @@ public class ObjectSummonAttributes : MonoBehaviour
     public void applyDamage(BStageEntity entity)
     {
         EffectProperties effectProperties = InheritedChipPrefab.effectProperties;
-        
+
         int finalDamage = (int)((InheritedChipPrefab.BaseDamage + effectProperties.DamageModifier) * InheritedChipPrefab.player.AttackMultiplier);
 
         AttackPayload attackPayload = new AttackPayload(finalDamage,

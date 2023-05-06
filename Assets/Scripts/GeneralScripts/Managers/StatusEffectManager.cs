@@ -57,6 +57,9 @@ public class StatusEffectManager : MonoBehaviour
     {
         switch(status)
         {
+            case EStatusEffects.Default:
+            break;
+            
             case EStatusEffects.Paralyzed:
                         
                 if(!entity.isStunnable){yield break;}
@@ -113,8 +116,10 @@ public class StatusEffectManager : MonoBehaviour
 
             break;
 
+            
+
             default:
-                Debug.LogWarning("The given status effect:  " +  status + "does not exist or has not been implemented, aborted setting status effect.");
+                Debug.LogWarning("The given status effect:  " +  status + " does not exist or has not been implemented, aborted setting status effect.");
             break;
 
 

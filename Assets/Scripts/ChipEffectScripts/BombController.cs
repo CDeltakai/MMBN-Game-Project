@@ -15,7 +15,7 @@ public class BombController : ObjectSummonAttributes
     [SerializeField] AnimationCurve yPosCurve;
     [SerializeField] EventReference ExplosionSoundEffect;
     Vector3 InitialPosition;
-    
+
 
 
   
@@ -92,8 +92,10 @@ public class BombController : ObjectSummonAttributes
         {
             BStageEntity victim = other.GetComponent<BStageEntity>();
 
-            victim.hurtEntity((int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
-            false, true, player, statusEffect: StatusEffect);
+            applyDamage(victim);
+
+            // victim.hurtEntity((int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
+            // false, true, player, statusEffect: StatusEffect);
 
         }
 
