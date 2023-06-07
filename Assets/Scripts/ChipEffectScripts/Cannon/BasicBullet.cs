@@ -7,7 +7,7 @@ public class BasicBullet : MonoBehaviour
 {
 
     public ChipEffectBlueprint parentChip;
-    public EffectPropertyContainer effectPropertyContainer;
+    public EffectProperties effectPropertyContainer;
     public int pierceCount = 0;
     public bool IsProjectileAlways = false;
 

@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 565381223}
   - component: {fileID: 565381228}
   - component: {fileID: 860235137}
+  - component: {fileID: 6922640965249474261}
   m_Layer: 9
   m_Name: ChampyModel
   m_TagString: Enemy
@@ -204,6 +205,7 @@ MonoBehaviour:
   objectTimeScale: 1
   worldTransform: {fileID: 0}
   isBeingShoved: 0
+  MarkedForDeath: 0
   isRooted: 0
   nonVolatileStatus: 0
   currentCellPos: {x: 0, y: 0, z: 0}
@@ -355,6 +357,18 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &6922640965249474261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960042379803707420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4645355c949724e91a9a9abd063e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4111521783671561622
 GameObject:
   m_ObjectHideFlags: 0

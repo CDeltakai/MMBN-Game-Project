@@ -17,7 +17,8 @@ MonoBehaviour:
   Chip: 105
   ChipName: Long Sword
   BaseDamage: 80
-  <ChipElement>k__BackingField: 0
+  <PierceCount>k__BackingField: 0
+  <ChipElement>k__BackingField: 2
   ChipSize: 24
   <EnergyCost>k__BackingField: 2
   ChipType: 1
@@ -25,6 +26,7 @@ MonoBehaviour:
   <RangeOfInfluence>k__BackingField:
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  <RangeOfInfluenceWorld>k__BackingField: []
   ChipDescription: Swing sword 2 tiles forward
   ChipImage: {fileID: 3702733806151467343, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0.375

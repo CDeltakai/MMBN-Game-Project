@@ -2,23 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct EffectPropertyContainer
+public struct EffectProperties
 {
 
     public int DamageModifier;
     public EStatusEffects StatusEffectModifier;
+    public List<EStatusEffects> AdditionalStatusEffects;
     public bool lightAttack;
     public bool hitFlinch;
     public bool pierceUntargetable; 
+    public AttackElement attackElement;
 
 
-    public EffectPropertyContainer(int dmgMod, EStatusEffects statEffect, bool lightAttack, bool hitFlinch, bool pierceUntargetable)
+    public EffectProperties(int dmgMod, 
+                            EStatusEffects statEffect, 
+                            List<EStatusEffects> additionalStatEffects, 
+                            bool lightAttack, 
+                            bool hitFlinch, 
+                            bool pierceUntargetable, 
+                            AttackElement attackElement)
     {
         DamageModifier = dmgMod;
         StatusEffectModifier = statEffect;
+        AdditionalStatusEffects = additionalStatEffects;
         this.lightAttack = lightAttack;
         this.hitFlinch = hitFlinch;
         this.pierceUntargetable = pierceUntargetable;
+        this.attackElement = attackElement;
 
 
     }
@@ -38,7 +48,8 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     protected Transform firePoint;
     [SerializeField] public ChipSO chip;
     protected UnityEngine.GameObject ObjectSummon;
-    protected int BaseDamage;
+    [HideInInspector]
+    public int BaseDamage{get; protected set;}
     protected EStatusEffects BaseStatusEffect;
     protected int EnergyCost;
 
@@ -50,23 +61,30 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
 
     public int DamageModifier = 0;
-    public EStatusEffects StatusEffectModifier = EStatusEffects.Default;
+    public EStatusEffects StatusEffectModifier;
+    public List<EStatusEffects> AdditionalStatusEffects = new List<EStatusEffects>();
     protected bool lightAttack;
     protected bool hitFlinch;
     protected bool pierceUntargetable;
 
-    protected EffectPropertyContainer effectProperties = new EffectPropertyContainer(0, EStatusEffects.Default, false, false, false);
+    public EffectProperties effectProperties = new EffectProperties(0, 
+                                                                        EStatusEffects.Default, 
+                                                                        new List<EStatusEffects>(),  
+                                                                        false, 
+                                                                        false, 
+                                                                        false, 
+                                                                        AttackElement.Normal);
 
 
 
-
+    protected virtual void AdditionalAwakeEvents(){}
 
     void Awake()
     {
         //player = PlayerMovement.Instance;
 
         ObjectSummon = chip.GetObjectSummon();
-
+        BaseStatusEffect = chip.GetStatusEffect();
         BaseDamage = chip.GetChipDamage();
         lightAttack = chip.IsLightAttack();
         hitFlinch = chip.IsHitFlinch();
@@ -74,9 +92,12 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
         EnergyCost = chip.EnergyCost;
 
         effectProperties.DamageModifier = DamageModifier;
-        effectProperties.StatusEffectModifier = StatusEffectModifier;
+        effectProperties.StatusEffectModifier = BaseStatusEffect;
         effectProperties.hitFlinch = hitFlinch;
         effectProperties.pierceUntargetable = pierceUntargetable;
+
+
+        AdditionalAwakeEvents();
 
     }
 
@@ -115,12 +136,25 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
         int finalDamage = (int)((BaseDamage + effectProperties.DamageModifier) * player.AttackMultiplier);
 
-        entity.hurtEntity(finalDamage,
-                            effectProperties.lightAttack,
-                            effectProperties.hitFlinch, 
-                            player, 
-                            effectProperties.pierceUntargetable, 
-                            effectProperties.StatusEffectModifier);
+        AttackPayload attackPayload = new AttackPayload(finalDamage,
+                                                        effectProperties.lightAttack,
+                                                        effectProperties.hitFlinch,
+                                                        effectProperties.pierceUntargetable,
+                                                        player,
+                                                        effectProperties.StatusEffectModifier,
+                                                        effectProperties.AdditionalStatusEffects,
+                                                        chip.GetChipElement());
+
+        entity.hurtEntity(attackPayload);
+
+
+        // entity.hurtEntity(finalDamage,
+        //                     effectProperties.lightAttack,
+        //                     effectProperties.hitFlinch, 
+        //                     player, 
+        //                     effectProperties.pierceUntargetable, 
+        //                     effectProperties.StatusEffectModifier,
+        //                     chip.GetChipElement());
 
     }
 

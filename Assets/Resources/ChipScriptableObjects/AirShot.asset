@@ -17,12 +17,14 @@ MonoBehaviour:
   Chip: 100
   ChipName: Airshot
   BaseDamage: 20
-  <ChipElement>k__BackingField: 0
+  <PierceCount>k__BackingField: 0
+  <ChipElement>k__BackingField: 1
   ChipSize: 4
   <EnergyCost>k__BackingField: 0
   ChipType: 1
   BaseStatusEffect: 0
   <RangeOfInfluence>k__BackingField: []
+  <RangeOfInfluenceWorld>k__BackingField: []
   ChipDescription: 'Airshot:
 
     Deals 20 damage and shoves an enemy 1 tile back.

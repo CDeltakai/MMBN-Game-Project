@@ -13,7 +13,7 @@ TextureImporter:
     second: Chip_icons_exe6_2
   - first:
       213: -8926504595820933864
-    second: Chip_icons_exe6_3
+    second: Chip_BigCannon
   - first:
       213: -8654738730210548499
     second: Chip_AirShot
@@ -884,7 +884,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chip_icons_exe6_3
+      name: Chip_BigCannon
       rect:
         serializedVersion: 2
         x: 59

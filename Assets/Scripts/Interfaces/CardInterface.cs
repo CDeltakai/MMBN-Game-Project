@@ -15,7 +15,7 @@ public interface IChip
 
     public EStatusEffects chipStatusEffect{get; set;}
 
-    public EChipElements chipElement{get;}
+    public AttackElement chipElement{get;}
 
 
 

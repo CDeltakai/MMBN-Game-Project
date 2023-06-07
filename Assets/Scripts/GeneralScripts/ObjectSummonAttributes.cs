@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
 public class ObjectSummonAttributes : MonoBehaviour
@@ -8,6 +9,7 @@ public class ObjectSummonAttributes : MonoBehaviour
 
     public EStatusEffects StatusEffect;
     public EStatusEffects AddStatusEffect = EStatusEffects.Default;
+    public List<EStatusEffects> AdditionalStatusEffects = new List<EStatusEffects>();
     public UnityEngine.GameObject AddObjectSummon = null;
     public ChipSO InheritedChip;
     public ChipEffectBlueprint InheritedChipPrefab;
@@ -17,10 +19,30 @@ public class ObjectSummonAttributes : MonoBehaviour
         AddDamage = 0;
         StatusEffect = InheritedChip.GetStatusEffect();
         AddStatusEffect = EStatusEffects.Default;
+        AdditionalStatusEffects.Clear();
         AddObjectSummon = null;
     }
 
 
+    public void applyDamage(BStageEntity entity)
+    {
+        EffectProperties effectProperties = InheritedChipPrefab.effectProperties;
+
+        int finalDamage = (int)((InheritedChipPrefab.BaseDamage + effectProperties.DamageModifier) * InheritedChipPrefab.player.AttackMultiplier);
+
+        AttackPayload attackPayload = new AttackPayload(finalDamage,
+                                                        effectProperties.lightAttack,
+                                                        effectProperties.hitFlinch,
+                                                        effectProperties.pierceUntargetable,
+                                                        InheritedChipPrefab.player,
+                                                        effectProperties.StatusEffectModifier,
+                                                        effectProperties.AdditionalStatusEffects,
+                                                        InheritedChip.GetChipElement());
+
+        entity.hurtEntity(attackPayload);
+
+
+    }
 
 
 

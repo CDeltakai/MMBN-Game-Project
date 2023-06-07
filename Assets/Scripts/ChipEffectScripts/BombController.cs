@@ -17,6 +17,7 @@ public class BombController : ObjectSummonAttributes
     Vector3 InitialPosition;
 
 
+
   
 
     void Awake()
@@ -91,8 +92,10 @@ public class BombController : ObjectSummonAttributes
         {
             BStageEntity victim = other.GetComponent<BStageEntity>();
 
-            victim.hurtEntity((int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
-            false, true, player, statusEffect: StatusEffect);
+            applyDamage(victim);
+
+            // victim.hurtEntity((int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
+            // false, true, player, statusEffect: StatusEffect);
 
         }
 

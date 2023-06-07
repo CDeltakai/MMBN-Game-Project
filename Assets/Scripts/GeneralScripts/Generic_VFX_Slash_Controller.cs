@@ -58,7 +58,7 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
                     player,
                     false,
                     StatusEffect,
-                    EChipElements.Blade);
+                    AttackElement.Blade);
 
           
 

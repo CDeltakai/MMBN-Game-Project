@@ -42,7 +42,7 @@ public class DrillArmHitbox : ObjectSummonAttributes
     {
         if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Obstacle")
         {
-            //print("DrillArm hit target: " + other.gameObject.name);
+            print("DrillArm hit target: " + other.gameObject.name);
 
             if(other.gameObject.GetComponent<BStageEntity>())
             {
@@ -55,7 +55,7 @@ public class DrillArmHitbox : ObjectSummonAttributes
                     InheritedChipPrefab.player,
                     InheritedChip.IsPierceUntargetable(),
                     StatusEffect,
-                    EChipElements.Breaking);
+                    AttackElement.Breaking);
                 target.AttemptShove(1, 0);                    
             }                
 

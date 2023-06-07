@@ -17,7 +17,8 @@ MonoBehaviour:
   Chip: 106
   ChipName: Wide Sword
   BaseDamage: 80
-  <ChipElement>k__BackingField: 0
+  <PierceCount>k__BackingField: 0
+  <ChipElement>k__BackingField: 2
   ChipSize: 16
   <EnergyCost>k__BackingField: 1
   ChipType: 1
@@ -26,6 +27,7 @@ MonoBehaviour:
   - {x: 1, y: 0}
   - {x: 1, y: 1}
   - {x: 1, y: -1}
+  <RangeOfInfluenceWorld>k__BackingField: []
   ChipDescription: Slash a sword with a 3 tile range by column in front.
   ChipImage: {fileID: -4611406389132694472, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0.375

@@ -10,7 +10,7 @@ public class Airshot : ChipEffectBlueprint
 
     public override void Effect()
     {
-        effectProperties = new EffectPropertyContainer(DamageModifier, StatusEffectModifier, lightAttack, hitFlinch, pierceUntargetable);
+        effectProperties = new EffectProperties(DamageModifier, BaseStatusEffect, AdditionalStatusEffects, lightAttack, hitFlinch, pierceUntargetable, chip.GetChipElement());
 
         BulletController bulletController = Instantiate(projectilePrefab, new Vector2(player.transform.parent.transform.position.x + 1.6f,
         player.transform.parent.transform.position.y), transform.rotation).GetComponent<BulletController>();

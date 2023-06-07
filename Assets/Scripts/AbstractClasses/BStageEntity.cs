@@ -6,13 +6,47 @@ using System;
 using DG.Tweening;
 using FMODUnity;
 
+///<summary>
+///A container data type which stores information on the properties of an incoming attack.
+///All variables within the attack payload may be modified freely. 
+///</summary>
+public struct AttackPayload
+{
+    public int damage;
+    public bool lightAttack;
+    public bool hitFlinch;
+    public bool pierceUntargetable;
+    public BStageEntity attacker;
+    public EStatusEffects statusEffect;
+    public List<EStatusEffects> additionalStatusEffects;
+    public AttackElement attackElement;
 
+    public AttackPayload(int damage,
+                         bool lightAttack,
+                          bool hitFlinch, 
+                          bool pierceUntargetable, 
+                          BStageEntity attacker, 
+                          EStatusEffects statusEffect, 
+                          List<EStatusEffects> additionalStatusEffects,  
+                          AttackElement attackElement)
+    {
+        this.damage = damage;
+        this.lightAttack = lightAttack;
+        this.hitFlinch = hitFlinch;
+        this.pierceUntargetable = pierceUntargetable;
+        this.attacker = attacker;
+        this.statusEffect = statusEffect;
+        this.additionalStatusEffects = additionalStatusEffects;
+        this.attackElement = attackElement;
+
+    }
+
+}
+
+
+[RequireComponent(typeof(StatusEffectManager))]
 public abstract class BStageEntity : MonoBehaviour
 {
-
-
-
-
 
 #region Events and Delegates
 
@@ -38,6 +72,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     protected static TileEventManager tileEventManager;
     protected static BattleStageHandler stageHandler;
+    protected StatusEffectManager statusManager;
     [HideInInspector]
     public SpriteRenderer spriteRenderer;
     protected static Shader shaderGUItext;
@@ -51,7 +86,7 @@ public abstract class BStageEntity : MonoBehaviour
     ///worldTransform is the world position and transform of the BStageEntity.
     ///The components which make up the entity normally fall under this worldTransform
     ///as children. Use this when you need to set the cell position of the object in relation
-    ///to the stage grid. Do not use this if you need to set children sprite positions.
+    ///to the stage grid. Do not use this if you need to set children object sprite positions.
     ///</summary>
     [HideInInspector] public Transform worldTransform;
 
@@ -76,6 +111,7 @@ public abstract class BStageEntity : MonoBehaviour
     ///</summary>
     public virtual bool isObstacle{get;} = false;
     public bool isBeingShoved = false;
+    public bool MarkedForDeath = false;
     protected virtual bool isPlayer{get;} = false;
 
     public bool isRooted = false;
@@ -105,6 +141,7 @@ public abstract class BStageEntity : MonoBehaviour
     [SerializeField] public int shieldHP;
     [SerializeField] public double DefenseMultiplier = 1;
     [SerializeField] public double AttackMultiplier = 1;
+    public float stunResistance = 1;  
     [SerializeField] public bool isUntargetable = false;
     [SerializeField] public bool fullInvincible = false;
     [SerializeField] public bool isStunned = false;
@@ -141,6 +178,7 @@ public abstract class BStageEntity : MonoBehaviour
         worldTransform = transform.parent.transform;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        statusManager = GetComponent<StatusEffectManager>();
         shaderGUItext = Shader.Find("GUI/Text Shader");
         shaderSpritesDefault = shaderSpritesDefault = Shader.Find("Sprites/Default");
 
@@ -151,6 +189,8 @@ public abstract class BStageEntity : MonoBehaviour
         opaque.a = 1;
 
         DefaultHPNumberPosition = (RectTransform)healthText.gameObject.transform.parent.transform;
+
+        hurtEvent += CheckFinalHPForDeath;
 
     }
 
@@ -240,21 +280,17 @@ public abstract class BStageEntity : MonoBehaviour
                                    BStageEntity attacker = null,
                                    bool pierceUntargetable = false,
                                    EStatusEffects statusEffect = EStatusEffects.Default,
-                                   EChipElements attackElement = EChipElements.Normal                                   
+                                   AttackElement attackElement = AttackElement.Normal                                   
                                    )
     {
         if(fullInvincible)
         {return;}
         if(isUntargetable && !pierceUntargetable)
-        {return;}
+        {return;}   
 
         if(statusEffect != EStatusEffects.Default)
         {StartCoroutine(setStatusEffect(statusEffect, 1));}
 
-        if(hurtEvent != null)
-        {
-            hurtEvent(this);
-        }
 
         //Animate HP block
         if(damage >= 10)
@@ -269,30 +305,97 @@ public abstract class BStageEntity : MonoBehaviour
             AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999)));
         }
 
-        //Check if damage dealt will reduce current HP to 0 or below it. If so, destroy this entity.
-        if(damage >= currentHP)
-        {
-            RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
-            AnimateShakeNumber(damage);
-            StartCoroutine(DestroyEntity());
-            return;
-        }
 
-        StartCoroutine(DamageFlash());
         RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
 
         //Calculate new current HP value after taking damage
         currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damage * DefenseMultiplier), 1, 999999), 0, currentHP);
+        AnimateShakeNumber(damage);
+       
 
         if(AnimateHPCoroutine == null)
         {
             healthText.text = currentHP.ToString();
         }
-        AnimateShakeNumber(damage);
 
+        if(hurtEvent != null)
+        {
+            hurtEvent(this);
+        } 
+
+        StartCoroutine(DamageFlash());
 
         return; 
     }
+
+    public virtual void hurtEntity(AttackPayload payload)
+    {
+        if(fullInvincible)
+        {return;}
+        if(isUntargetable && !payload.pierceUntargetable)
+        {return;}
+
+
+        AttackPayload attackPayload = payload; 
+        
+        if(MarkedForDeath)
+        {
+           attackPayload = TriggerMarkEffect(payload.attackElement, payload);
+           MarkedForDeath = false;
+           statusManager.triggerStatusEffect(EStatusEffects.MarkForDeath, 0, false);
+        }
+
+        if(attackPayload.statusEffect != EStatusEffects.Default)
+        {
+            
+            statusManager.triggerStatusEffect(payload.statusEffect);
+            //StartCoroutine(setStatusEffect(attackPayload.statusEffect, 1));
+        }else
+        {
+            print("Chip payload used default status effect");
+        }
+
+        foreach(EStatusEffects statusEffect in payload.additionalStatusEffects)
+        {
+            StartCoroutine(setStatusEffect(statusEffect, 1));
+            statusManager.triggerStatusEffect(payload.statusEffect);
+
+        }
+
+        if(attackPayload.damage >= 10)
+        {
+            isAnimatingHP = true;
+
+            if(AnimateHPCoroutine != null)
+            {
+                StopCoroutine(AnimateHPCoroutine);
+            }
+
+            AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(attackPayload.damage * DefenseMultiplier), 1, 999999)));
+        }
+
+        RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
+
+        //Calculate new current HP value after taking damage
+        currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(attackPayload.damage * DefenseMultiplier), 1, 999999), 0, currentHP);
+        AnimateShakeNumber(attackPayload.damage);
+       
+
+        if(AnimateHPCoroutine == null)
+        {
+            healthText.text = currentHP.ToString();
+        }
+
+
+        if(hurtEvent != null)
+        {
+            hurtEvent(this);
+        } 
+
+        StartCoroutine(DamageFlash());
+
+    }
+
 
     List<Coroutine> DoTList = new List<Coroutine>();    
 
@@ -374,6 +477,66 @@ public abstract class BStageEntity : MonoBehaviour
         yield return null;
     }        
 
+    public AttackPayload TriggerMarkEffect(AttackElement chipElement, AttackPayload payload)
+    {
+        AttackPayload modifiedPayload = payload;
+        print("Attempted to trigger mark effect wtih element: " + chipElement);
+
+        switch (chipElement) {
+            case AttackElement.Normal:
+                modifiedPayload.damage = modifiedPayload.damage * 2;
+                print("Triggered normal element mark effect");
+
+                break;
+
+            case AttackElement.Air:
+                print("Triggered air element mark effect");
+                break;
+
+            case AttackElement.Blade:
+                modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Bleeding);
+                print("Triggered blade element mark effect");
+
+                break;
+
+            case AttackElement.Fire:
+                modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Burning);
+
+                break;
+
+            case AttackElement.Water:
+                modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Frozen);
+
+                break;
+
+            case AttackElement.Electric:
+                modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Paralyzed);
+
+                break;
+
+            case AttackElement.Grass:
+
+                break;
+
+            case AttackElement.Breaking:
+
+                break;
+
+            default:
+            Debug.LogWarning("Chip element: " + chipElement + " does not have a mark effect implemented. Aborted triggering mark effect.");
+            break;
+        }
+
+        return modifiedPayload;
+    }
+
+    protected void CheckFinalHPForDeath(BStageEntity entity)
+    {
+        if(currentHP <= 0)
+        {
+            StartCoroutine(DestroyEntity());   
+        }
+    }
 
     public int getHealth()
     {
@@ -382,6 +545,8 @@ public abstract class BStageEntity : MonoBehaviour
 
     public IEnumerator DamageFlash()
     {
+        if(currentHP <= 0)
+        {yield break;}
         setSolidColor(Color.white);
         yield return new WaitForSecondsRealtime(0.03f);
         setNormalSprite();
@@ -682,7 +847,7 @@ public abstract class BStageEntity : MonoBehaviour
 
     }
 
-    protected IEnumerator FlashColor(Color color, float duration)
+    public IEnumerator FlashColor(Color color, float duration)
     {
         float gracePeriod = duration;
 
@@ -692,16 +857,19 @@ public abstract class BStageEntity : MonoBehaviour
             setSolidColor(color);
             gracePeriod -= 0.05f;
 
-            yield return new WaitForSecondsRealtime(0.05f);
+            yield return new WaitForSeconds(0.05f);
             setNormalSprite();
             gracePeriod -= 0.05f;
 
-            yield return new WaitForSecondsRealtime(0.05f);
+            yield return new WaitForSeconds(0.05f);
             
         }
 
-
     }
+
+
+
+
 
     protected virtual IEnumerator InvincibilityFrames(float duration)
     {
@@ -751,7 +919,7 @@ public abstract class BStageEntity : MonoBehaviour
             //Horizontal Shove
             if(Math.Abs(currentCellPos.x - destinationCell.x) == 1 )
             {
-                worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.5f), destinationWorldPosition.y, 0), 0.10f ).
+                worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.3f), destinationWorldPosition.y, 0), 0.10f ).
                 SetEase(Ease.OutCirc).SetUpdate(false);
                 isBeingShoved = true;
                 isRooted = true;
@@ -937,7 +1105,7 @@ public abstract class BStageEntity : MonoBehaviour
     [SerializeField]float HPShakeStrength = 0.2f;
     [SerializeField]int HPShakeVibrato = 1000;
 
-    //Coroutine FadeColorCoroutine = null;
+    //Logic for shaking the HP number when damaged.
     public void AnimateShakeNumber(int damage)
     {
         if(damage <= 10)
@@ -950,19 +1118,15 @@ public abstract class BStageEntity : MonoBehaviour
 
             
             StartCoroutine(FadeInAndOutColor(Color.white, Color.red, HPShakeDuration*1.5f));
-
-
         }else
         {
-            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration*2f, HPShakeStrength*1.5f, HPShakeVibrato).SetUpdate(true);
+            DefaultHPNumberPosition.DOShakePosition(HPShakeDuration*2f, HPShakeStrength*2f, HPShakeVibrato).SetUpdate(true);
 
             StartCoroutine(FadeInAndOutColor(Color.white, Color.red, HPShakeDuration*2f));
-
-
-
         }
 
     }
+
     IEnumerator FadeInAndOutColor(Color color1, Color color2, float duration)
     {
         healthText.DOColor(color2, duration*0.6f).SetUpdate(true);

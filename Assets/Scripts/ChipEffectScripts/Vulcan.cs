@@ -9,7 +9,13 @@ public class Vulcan : ChipEffectBlueprint
 
     public override void Effect()
     {
-        effectProperties = new EffectPropertyContainer(DamageModifier, StatusEffectModifier, lightAttack, hitFlinch, pierceUntargetable);
+        effectProperties = new EffectProperties(DamageModifier, 
+        StatusEffectModifier, 
+        AdditionalStatusEffects, 
+        lightAttack, 
+        hitFlinch, 
+        pierceUntargetable, 
+        chip.GetChipElement());
 
         BulletController bulletController = Instantiate(projectile, new Vector2(player.transform.parent.transform.position.x + 1.6f,
         player.transform.parent.transform.position.y), transform.rotation).GetComponent<BulletController>();

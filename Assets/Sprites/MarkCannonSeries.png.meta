@@ -1,0 +1,1681 @@
+fileFormatVersion: 2
+guid: 6819ca811c71cc8498cc0c38e4bd55c7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5270887845583588558
+    second: MarkCannonSeries_0
+  - first:
+      213: 6468156036920952737
+    second: MarkCannonSeries_1
+  - first:
+      213: -8403187965736783879
+    second: MarkCannonSeries_2
+  - first:
+      213: -1367902438681511302
+    second: MarkCannonSeries_3
+  - first:
+      213: 5677329113406975596
+    second: MarkCannonSeries_4
+  - first:
+      213: -6947919951729716171
+    second: MarkCannonSeries_5
+  - first:
+      213: 359927234574458312
+    second: MarkCannonSeries_6
+  - first:
+      213: 6751678676814199124
+    second: MarkCannonSeries_7
+  - first:
+      213: -5294254306068330155
+    second: MarkCannonSeries_8
+  - first:
+      213: -262800963190144964
+    second: MarkCannonSeries_9
+  - first:
+      213: 7561845093327165073
+    second: MarkCannonSeries_10
+  - first:
+      213: 7143059064726696603
+    second: MarkCannonSeries_11
+  - first:
+      213: -5068202371079201551
+    second: MarkCannonSeries_12
+  - first:
+      213: -5173166842769615722
+    second: MarkCannonSeries_13
+  - first:
+      213: -878708743782285451
+    second: MarkCannonSeries_14
+  - first:
+      213: -8315604536424979044
+    second: MarkCannonSeries_15
+  - first:
+      213: 8828502783641261089
+    second: MarkCannonSeries_16
+  - first:
+      213: 2721348239495502786
+    second: MarkCannonSeries_17
+  - first:
+      213: 170443411599150767
+    second: MarkCannonSeries_18
+  - first:
+      213: 6958102194340316328
+    second: MarkCannonSeries_19
+  - first:
+      213: 5276196665554377335
+    second: MarkCannonSeries_20
+  - first:
+      213: 8585761788003742665
+    second: MarkCannonSeries_21
+  - first:
+      213: -6391294374701172310
+    second: MarkCannonSeries_22
+  - first:
+      213: 4699021762823130474
+    second: MarkCannonSeries_23
+  - first:
+      213: 7164661909712410393
+    second: MarkCannonSeries_24
+  - first:
+      213: 7520984009965825652
+    second: MarkCannonSeries_25
+  - first:
+      213: 307592387917340692
+    second: MarkCannonSeries_26
+  - first:
+      213: 7128537923491805545
+    second: MarkCannonSeries_27
+  - first:
+      213: 7712636630306661565
+    second: MarkCannonSeries_28
+  - first:
+      213: -2628919698754437859
+    second: MarkCannonSeries_29
+  - first:
+      213: -3654780459940078985
+    second: MarkCannonSeries_30
+  - first:
+      213: -2576465930749759103
+    second: MarkCannonSeries_31
+  - first:
+      213: 181070552561409174
+    second: MarkCannonSeries_32
+  - first:
+      213: -5674393021108648677
+    second: MarkCannonSeries_33
+  - first:
+      213: 6737443486061986368
+    second: MarkCannonSeries_34
+  - first:
+      213: -2957753657054625369
+    second: MarkCannonSeries_35
+  - first:
+      213: -4504638636365686986
+    second: MarkCannonSeries_36
+  - first:
+      213: -819131765625821884
+    second: MarkCannonSeries_37
+  - first:
+      213: -3776198205035072823
+    second: MarkCannonSeries_38
+  - first:
+      213: 6909685059690256317
+    second: MarkCannonSeries_39
+  - first:
+      213: -8197828903607798592
+    second: MarkCannonSeries_40
+  - first:
+      213: 1272336241535193315
+    second: MarkCannonSeries_41
+  - first:
+      213: -8393746135944133489
+    second: MarkCannonSeries_42
+  - first:
+      213: 5027616063386774393
+    second: MarkCannonSeries_43
+  - first:
+      213: 1051189196424989869
+    second: MarkCannonSeries_44
+  - first:
+      213: -4325171532675186129
+    second: MarkCannonSeries_45
+  - first:
+      213: -2701968795417978001
+    second: MarkCannonSeries_46
+  - first:
+      213: 4718947926355916237
+    second: MarkCannonSeries_47
+  - first:
+      213: 7616446904991161557
+    second: MarkCannonSeries_48
+  - first:
+      213: 8632858395068982154
+    second: MarkCannonSeries_49
+  - first:
+      213: 4478438325966436818
+    second: MarkCannonSeries_50
+  - first:
+      213: -8047779003977079549
+    second: MarkCannonSeries_51
+  - first:
+      213: 2937849191108142788
+    second: MarkCannonSeries_52
+  - first:
+      213: 1605544839833085523
+    second: MarkCannonSeries_53
+  - first:
+      213: 6915784322834376512
+    second: MarkCannonSeries_54
+  - first:
+      213: 3741836439181622913
+    second: MarkCannonSeries_55
+  - first:
+      213: 2207343844520012275
+    second: MarkCannonSeries_56
+  - first:
+      213: 7537118291295042822
+    second: MarkCannonSeries_57
+  - first:
+      213: 7324404358323872115
+    second: MarkCannonSeries_58
+  - first:
+      213: -4703164440903311299
+    second: MarkCannonSeries_59
+  - first:
+      213: -7564135227666047669
+    second: MarkForDeath_1
+  - first:
+      213: -6302431169463284020
+    second: MarkForDeath_2
+  - first:
+      213: -2400082227365879748
+    second: MarkForDeath_3
+  - first:
+      213: 6458008882730716552
+    second: MarkCannonSeries_72
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MarkCannonSeries_0
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 202
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233f0194e6b0ad6b0800000000000000
+      internalID: -5270887845583588558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_1
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 197
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7c87455a183c950800000000000000
+      internalID: 6468156036920952737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_2
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 239
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffeb613111e16b80800000000000000
+      internalID: -8403187965736783879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_3
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 238
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a7ffebafb340de0800000000000000
+      internalID: -1367902438681511302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 210
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e2b95bfbce9ce40800000000000000
+      internalID: 5677329113406975596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 210
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5341d459d97049f90800000000000000
+      internalID: -6947919951729716171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 210
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd9cc1b9e7bef400800000000000000
+      internalID: 359927234574458312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_7
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 210
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459f6111cf7c2bd50800000000000000
+      internalID: 6751678676814199124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_8
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 207
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 559073042c70786b0800000000000000
+      internalID: -5294254306068330155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_9
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 210
+        width: 36
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30cb669ae75a5cf0800000000000000
+      internalID: -262800963190144964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_10
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 232
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196db4a4c0211f860800000000000000
+      internalID: 7561845093327165073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_11
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 235
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b923ba2bf5e312360800000000000000
+      internalID: 7143059064726696603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_12
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 227
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc1806cbc02aa9b0800000000000000
+      internalID: -5068202371079201551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_13
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 225
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69453e44a283538b0800000000000000
+      internalID: -5173166842769615722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_14
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 215
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fb3d99d033ec3f0800000000000000
+      internalID: -878708743782285451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_15
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 216
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9523c96bb9099c80800000000000000
+      internalID: -8315604536424979044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_16
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 209
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1241c7d9184258a70800000000000000
+      internalID: 8828502783641261089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_17
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 207
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb93453ecb24c520800000000000000
+      internalID: 2721348239495502786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_18
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 195
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae4caa31698d5200800000000000000
+      internalID: 170443411599150767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_19
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 204
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a445848415209060800000000000000
+      internalID: 6958102194340316328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_20
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 141
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a187fa9e0d83940800000000000000
+      internalID: 5276196665554377335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_21
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 136
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3f51c5bd0c62770800000000000000
+      internalID: 8585761788003742665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_22
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 178
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9fbf4f0af8d47a0800000000000000
+      internalID: -6391294374701172310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_23
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 177
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d07e49567463140800000000000000
+      internalID: 4699021762823130474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 149
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9171e200c0efd6360800000000000000
+      internalID: 7164661909712410393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_25
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 149
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ee763fb17ef5860800000000000000
+      internalID: 7520984009965825652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_26
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 149
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4106d69a5a9c44400800000000000000
+      internalID: 307592387917340692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_27
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 149
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96931a90977ade260800000000000000
+      internalID: 7128537923491805545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_28
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 146
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db42817e62ac80b60800000000000000
+      internalID: 7712636630306661565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_29
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 149
+        width: 36
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1df6bc6673348bd0800000000000000
+      internalID: -2628919698754437859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_30
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 171
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a9b39198c974dc0800000000000000
+      internalID: -3654780459940078985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_31
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 174
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181b3cdf2ed8e3cd0800000000000000
+      internalID: -2576465930749759103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_32
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 166
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69cd4bc45ba438200800000000000000
+      internalID: 181070552561409174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_33
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 164
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b150ddc8c918041b0800000000000000
+      internalID: -5674393021108648677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_34
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 154
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0428ef07725308d50800000000000000
+      internalID: 6737443486061986368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_35
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 155
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1852248b2f3f6d0800000000000000
+      internalID: -2957753657054625369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_36
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 148
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6375cedd60f4c71c0800000000000000
+      internalID: -4504638636365686986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_37
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 146
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44562a5cffbd1a4f0800000000000000
+      internalID: -819131765625821884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_38
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 134
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2ba6b5dbf389bc0800000000000000
+      internalID: -3776198205035072823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_39
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 143
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db759a4e3f124ef50800000000000000
+      internalID: 6909685059690256317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_40
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 80
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4f60fcb067b3e80800000000000000
+      internalID: -8197828903607798592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_41
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 75
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e09f8f021f38a110800000000000000
+      internalID: 1272336241535193315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_42
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 117
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f840e308c5c638b80800000000000000
+      internalID: -8393746135944133489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_43
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 116
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b67351c2ea5c540800000000000000
+      internalID: 5027616063386774393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_44
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 88
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dacc3a43103969e00800000000000000
+      internalID: 1051189196424989869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_45
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 88
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2283422867e9f3c0800000000000000
+      internalID: -4325171532675186129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_46
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 88
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6bdbea32bda08ad0800000000000000
+      internalID: -2701968795417978001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_47
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 88
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5b20013221d7140800000000000000
+      internalID: 4718947926355916237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_48
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 85
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc1f9e3b1e03b960800000000000000
+      internalID: 7616446904991161557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_49
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 88
+        width: 36
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83e552b8f21ec770800000000000000
+      internalID: 8632858395068982154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_50
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 110
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d979bffdeb962e30800000000000000
+      internalID: 4478438325966436818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_51
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 113
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305691582ab805090800000000000000
+      internalID: -8047779003977079549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_52
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 105
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c66baf164655c820800000000000000
+      internalID: 2937849191108142788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_53
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 103
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3566639768a084610800000000000000
+      internalID: 1605544839833085523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_54
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 93
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04722c1433dc9ff50800000000000000
+      internalID: 6915784322834376512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_55
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 94
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e78059a6cade330800000000000000
+      internalID: 3741836439181622913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_56
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 87
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9a2c5188f02ae10800000000000000
+      internalID: 2207343844520012275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_57
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 85
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d7dbe0729399860800000000000000
+      internalID: 7537118291295042822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_58
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 73
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371a73125f285a560800000000000000
+      internalID: 7324404358323872115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_59
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 82
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30a5b30cd00bbeb0800000000000000
+      internalID: -4703164440903311299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkForDeath_1
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 5
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d52f1461bc60790800000000000000
+      internalID: -7564135227666047669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkForDeath_2
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 4
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce8aca3e344988a0800000000000000
+      internalID: -6302431169463284020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkForDeath_3
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 9
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30e02e2ee131bed0800000000000000
+      internalID: -2400082227365879748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarkCannonSeries_72
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 13
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d4b73ecd47f9950800000000000000
+      internalID: 6458008882730716552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

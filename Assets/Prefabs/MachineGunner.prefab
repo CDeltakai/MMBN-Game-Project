@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 3069419181544434906}
   - component: {fileID: 3069419181544434907}
   - component: {fileID: 3069419181544434904}
+  - component: {fileID: 24426503039693403}
   m_Layer: 9
   m_Name: MachineGunnerObject
   m_TagString: Enemy
@@ -273,6 +274,7 @@ MonoBehaviour:
   objectTimeScale: 1
   worldTransform: {fileID: 0}
   isBeingShoved: 0
+  MarkedForDeath: 0
   isRooted: 0
   nonVolatileStatus: 0
   currentCellPos: {x: 0, y: 0, z: 0}
@@ -386,6 +388,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &24426503039693403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069419181544434897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4645355c949724e91a9a9abd063e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3069419181740277861
 GameObject:
   m_ObjectHideFlags: 0
