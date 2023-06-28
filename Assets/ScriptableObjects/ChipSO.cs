@@ -61,7 +61,7 @@ public class ChipSO : ChipScriptableObject
     ///</summary>
     [field:SerializeField] public List<Vector2Int> RangeOfInfluence{get; private set;}
     ///<summary>
-    ///This list indicates what tiles on the world the chip has influence over. This list is not affected
+    ///This list indicates what tiles on the stage the chip has influence over. This list is not affected
     ///by the player's position and is always static.
     ///</summary>
     [field:SerializeField] public List<Vector2Int> RangeOfInfluenceWorld{get; private set;}

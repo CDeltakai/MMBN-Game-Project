@@ -1134,14 +1134,6 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[24].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1613347908}
-    - target: {fileID: 7434248646846221763, guid: 9c1e12d2f671b9147851a3b2ae17dfd3, type: 3}
-      propertyPath: m_Name
-      value: PlayerVFXController
-      objectReference: {fileID: 0}
-    - target: {fileID: 8476183634375518799, guid: 9c1e12d2f671b9147851a3b2ae17dfd3, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8476183634830123114, guid: 9c1e12d2f671b9147851a3b2ae17dfd3, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1365,6 +1357,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &896959330
 SpriteRenderer:
   m_ObjectHideFlags: 0

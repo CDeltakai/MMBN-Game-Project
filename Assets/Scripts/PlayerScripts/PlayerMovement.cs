@@ -747,6 +747,7 @@ public PlayerAttributeSO playerAttributes;
         if(context.started)
         {
         if(!canUseAbilities){return;}
+            isRooted = true;
             Parrying = true;
             animator.SetBool("Parry", true);
         }
@@ -754,6 +755,8 @@ public PlayerAttributeSO playerAttributes;
         if(context.canceled)
         {
             animator.SetBool("Parry", false);
+            isRooted = false;
+            Parrying = false;
             // if(ParryCDCoroutine == null)
             // {
             //     ParryCDCoroutine = StartCoroutine(ParryCooldown());

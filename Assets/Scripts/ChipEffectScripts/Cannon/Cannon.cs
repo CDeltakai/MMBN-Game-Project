@@ -21,6 +21,8 @@ public class Cannon : ChipEffectBlueprint
         BulletController bulletController = Instantiate(projectile, new Vector2(player.transform.parent.transform.position.x + 1.6f,
         player.transform.parent.transform.position.y), transform.rotation).GetComponent<BulletController>();
 
+        
+
         BasicBullet bullet = bulletController.bullet;
         bullet.Damage = calcFinalDamage();
         bullet.parentChip = this;

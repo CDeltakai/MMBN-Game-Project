@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: currentHP
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: HurtSFX.Path
@@ -1323,6 +1323,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &896959330
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2264,7 +2265,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: currentHP
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: HurtSFX.Path
