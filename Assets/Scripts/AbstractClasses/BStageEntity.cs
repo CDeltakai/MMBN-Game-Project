@@ -400,8 +400,8 @@ public abstract class BStageEntity : MonoBehaviour
     List<Coroutine> DoTList = new List<Coroutine>();    
 
     ///<summary>
-    ///Different from HurtEntity; this one is for dealing indirect damage like poison effects
-    ///and subtracts HP directly from the target, bypassing any form of resistances. Can be
+    ///Different from HurtEntity; this one
+    ///subtracts HP directly from the target, bypassing any form of resistances. Can be
     ///given a tickrate and duration for damage over time effects.
     ///</summary>
     public void DamageEntity(int damage, float tickrate = float.Epsilon, float duration = float.Epsilon)
@@ -413,8 +413,16 @@ public abstract class BStageEntity : MonoBehaviour
             
         }else
         {
+            if(damage >= currentHP)
+            {
+                RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
+                AnimateShakeNumber(damage);
+                StartCoroutine(DestroyEntity());                
+                return;
+            }
+            
             AnimateShakeNumber(damage);
-            if(damage >= 10)
+            if(damage >= 5)
             {
                 isAnimatingHP = true;
 
@@ -444,7 +452,7 @@ public abstract class BStageEntity : MonoBehaviour
         {
 
 
-            if(damage >= 10)
+            if(damage >= 5)
             {
                 isAnimatingHP = true;
 

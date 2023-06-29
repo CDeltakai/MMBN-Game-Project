@@ -17,7 +17,8 @@ MonoBehaviour:
   Chip: 110
   ChipName: White Capsule
   BaseDamage: 0
-  <ChipElement>k__BackingField: 0
+  <PierceCount>k__BackingField: 0
+  <ChipElement>k__BackingField: 9
   ChipSize: 32
   <EnergyCost>k__BackingField: 0
   ChipType: 0

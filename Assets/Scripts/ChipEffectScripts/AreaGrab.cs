@@ -12,7 +12,7 @@ public class AreaGrab : ChipEffectBlueprint
     private Tilemap stageTilemap;
     private CustomTile tile;
     [SerializeField] AreaGrabVFXController vfxController;
-    public float column;
+    public float startingColumn;
 
     private void Awake() 
     {
@@ -37,9 +37,9 @@ public class AreaGrab : ChipEffectBlueprint
     IEnumerator TimedEffect()
     {
         stageHandler.CalculatePlayerBounds();
-        column = (stageHandler.playerBoundsList[0].x + 1) * 1.6f;
+        startingColumn = (stageHandler.playerBoundsList[0].x + 1) * 1.6f;
 
-        vfxController.InitialPosition = new Vector3(column, 10, 0);
+        vfxController.InitialPosition = new Vector3(startingColumn, 10, 0);
 
         vfxController.gameObject.SetActive(true);
 
@@ -61,10 +61,11 @@ public class AreaGrab : ChipEffectBlueprint
             tile = stageTilemap.GetTile<CustomTile>(localPos);
             
 
-
             stageTilemap.SetTile(new Vector3Int(pos.x + 1, pos.y, 0) , tile.getCustomPlayerTile());
+            print( "Tile Team: " + stageTileToCheck.tileTeam.ToString() + ", Tile Owner Team: " + stageTileToCheck.tileOwnerTeam.ToString());
             
         }
+        
         stageHandler.CalculatePlayerBounds();
 
         vfxController.gameObject.SetActive(false);

@@ -5,6 +5,7 @@ using UnityEngine;
 using System;
 using FMODUnity;
 using TMPro;
+using UnityEngine.UI;
 
 public class ChipSelectScreenMovement : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     private RectTransform rectTransform;
     private float journeyLength;
 
-    //[SerializeField] List<ChipSO> activeChips = new List<ChipSO>();
+    [SerializeField] DynamicUIElementsSO DynamicUIElements;
     [SerializeField] List<ChipObjectReference> chipPayload = new List<ChipObjectReference>();
 
     //[SerializeField] List<ChipSO> selectableChips;
@@ -222,26 +223,10 @@ public class ChipSelectScreenMovement : MonoBehaviour
 //UI Events
 
 
-    // public void OnChipSelect(int buttonIndex)
-    // {
-    //     if(ActiveChipSlotAccumulator == 5)
-    //     {
-    //         return;
-    //     }
-    //     FMODUnity.RuntimeManager.PlayOneShotAttached(ChipSelectVFX, this.gameObject);
-    //     ActiveChipSlots[ActiveChipSlotAccumulator].GetComponent<ChipSlot>().changeChip(selectableChips[buttonIndex]);
-    //     chipButtons[buttonIndex].SetActive(false);
-    //     activeChips.Add(selectableChips[buttonIndex]);
-    //     ActiveChipSlotAccumulator++;
-    // }
-
     //Logic for clicking a chip slot button
     public void OnChipSelectRefType(int buttonIndex)
     {
-        // if(ActiveChipSlotAccumulator == 5)
-        // {
-        //     return;
-        // }
+
 
         if(chipPayload.Count == 5)
         {
@@ -294,6 +279,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
         {
             ChipNameField.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipName();            
             ChipDescriptor.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipDescription();
+            ChipElementField.GetComponent<Image>().sprite = DynamicUIElements.GetChipElementIcon(chipSlot.getChipObjRef().chipSORef.GetChipElement());
 
             if(chipSlot.getChipObjRef().chipSORef.GetChipDamage() == 0)
             {

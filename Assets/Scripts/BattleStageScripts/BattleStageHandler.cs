@@ -13,6 +13,7 @@ using UnityEditor.UIElements;
 using Pathfinding.Util;
 using UnityEngine.InputSystem.OnScreen;
 
+
 public class BattleStageHandler : MonoBehaviour
 {
 
@@ -23,6 +24,8 @@ public class BattleStageHandler : MonoBehaviour
     TileEventManager tileEffectsManager;
 
 
+    Coroutine stolenTileTimer;
+    public Dictionary<Vector3, StageTile> recentlyModifiedTiles = new Dictionary<Vector3, StageTile>();
 
 
     [SerializeField] public Tilemap stageTilemap;
@@ -182,6 +185,7 @@ public class BattleStageHandler : MonoBehaviour
             
             var tile = new StageTile
             {
+                hasBeenModified = false,
                 localCoords = localPos,
                 worldPosition = stageTilemap.CellToWorld(localPos),
                 custTile = stageTilemap.GetTile<CustomTile>(localPos),
@@ -211,6 +215,21 @@ public class BattleStageHandler : MonoBehaviour
         return null;
     }
 
+
+    public void ResetBoardToDefaultTeams()
+    {
+        foreach(KeyValuePair<Vector3, StageTile> tile in stageTiles)
+        {
+            if(tile.Value.tileTeam != tile.Value.tileOwnerTeam)
+            {
+
+            }
+
+        }
+
+
+
+    }
 
     ///<summary>
     ///Returns the entity at the given coordinates. Returns null if no entity is found.
