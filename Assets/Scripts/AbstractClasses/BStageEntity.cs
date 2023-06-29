@@ -440,7 +440,7 @@ public abstract class BStageEntity : MonoBehaviour
         float damageDuration = duration;
         WaitForSeconds damageTick = new WaitForSeconds(tickrate);
 
-        while(damageDuration >= 0)
+        while(damageDuration > 0)
         {
 
 

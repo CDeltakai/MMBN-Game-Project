@@ -10,25 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
-  m_Name: MarkCannon
+  m_Name: BleedCannon
   m_EditorClassIdentifier: 
   Id: 0788cd3ba7d54194690bc772963a08e8
   ChipID: 0
   Chip: 0
-  ChipName: Mark Cannon
+  ChipName: Bleed Cannon
   BaseDamage: 20
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 0
   ChipSize: 0
   <EnergyCost>k__BackingField: 0
   ChipType: 1
-  BaseStatusEffect: 6
+  BaseStatusEffect: 7
   <RangeOfInfluence>k__BackingField: []
   <RangeOfInfluenceWorld>k__BackingField: []
-  ChipDescription: "Fire a cannon shot in a straight line. The shot marks the first
-    enemy hit. \n\nMARK: Enemies that are marked take additional effects from chips
-    which hit them depending on the attack element of the chip."
-  ChipImage: {fileID: -7879312815606531093, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
+  ChipDescription: 'Fire a cannon shot in a straight line. The shot inflicts bleeding
+    on the target.
+
+
+    BLEEDING: Deals 2x its base damage over 3 seconds.'
+  ChipImage: {fileID: -8926504595820933864, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0.417
   EffectScript: 
   SFX:
@@ -41,7 +43,7 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: 9165cc028e82a8e49b0f2c104b8f12d0, type: 2}
   ObjectSummon: {fileID: 0}
-  EffectPrefab: {fileID: 7753810546485766501, guid: 461c3e6808318bc4b866024ec0dc552d, type: 3}
+  EffectPrefab: {fileID: 7753810546485766501, guid: d148eefba8d344647b413de3eac73a06, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0
   lightAttack: 0
