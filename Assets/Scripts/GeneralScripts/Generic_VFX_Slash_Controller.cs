@@ -50,15 +50,16 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
 
             if(other.GetComponent<BStageEntity>()){
                 BStageEntity entity = other.GetComponent<BStageEntity>();
+                applyDamage(entity);
 
-                entity.hurtEntity(
-                    (int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
-                    InheritedChip.IsLightAttack(),
-                    InheritedChip.IsHitFlinch(),
-                    player,
-                    false,
-                    StatusEffect,
-                    AttackElement.Blade);
+                // entity.hurtEntity(
+                //     (int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
+                //     InheritedChip.IsLightAttack(),
+                //     InheritedChip.IsHitFlinch(),
+                //     player,
+                //     false,
+                //     StatusEffect,
+                //     AttackElement.Blade);
 
           
 
@@ -70,6 +71,7 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
         }
 
     }
+    
 
     IEnumerator SelfDisable()
     {

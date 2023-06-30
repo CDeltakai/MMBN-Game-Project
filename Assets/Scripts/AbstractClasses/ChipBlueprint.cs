@@ -179,6 +179,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
         pierceUntargetable = chip.IsPierceUntargetable();
         DamageModifier = 0;
         StatusEffectModifier = EStatusEffects.Default;
+        AdditionalStatusEffects.Clear();
         SummonObjectModifier = null;
         EnergyCostModifier = 0;
 

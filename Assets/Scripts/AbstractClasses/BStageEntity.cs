@@ -340,6 +340,7 @@ public abstract class BStageEntity : MonoBehaviour
         
         if(MarkedForDeath)
         {
+           
            attackPayload = TriggerMarkEffect(payload.attackElement, payload);
            MarkedForDeath = false;
            statusManager.triggerStatusEffect(EStatusEffects.MarkForDeath, 0, false);
@@ -355,10 +356,15 @@ public abstract class BStageEntity : MonoBehaviour
             print("Chip payload used default status effect");
         }
 
+        if(payload.additionalStatusEffects.Count == 0)
+        {
+            print("additional status effects is empty");
+        }
         foreach(EStatusEffects statusEffect in payload.additionalStatusEffects)
         {
+            print("Additional status effects: " + statusEffect);
+            statusManager.triggerStatusEffect(statusEffect);
             StartCoroutine(setStatusEffect(statusEffect, 1));
-            statusManager.triggerStatusEffect(payload.statusEffect);
 
         }
 
@@ -420,7 +426,7 @@ public abstract class BStageEntity : MonoBehaviour
                 StartCoroutine(DestroyEntity());                
                 return;
             }
-            
+
             AnimateShakeNumber(damage);
             if(damage >= 5)
             {
@@ -509,25 +515,25 @@ public abstract class BStageEntity : MonoBehaviour
 
             case AttackElement.Fire:
                 modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Burning);
-
+                print("Triggered fire element mark effect");
                 break;
 
             case AttackElement.Water:
                 modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Frozen);
-
+                print("Triggered water element mark effect");
                 break;
 
             case AttackElement.Electric:
                 modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Paralyzed);
-
+                print("Triggered electric element mark effect");
                 break;
 
             case AttackElement.Grass:
-
+                print("Triggered grass element mark effect");
                 break;
 
             case AttackElement.Breaking:
-
+                print("Triggered breaking element mark effect");
                 break;
 
             default:
@@ -815,7 +821,7 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
 
-
+    //Old method, needs to be deprecated
     public virtual IEnumerator setStatusEffect(EStatusEffects status, float duration)
     {
 
@@ -852,6 +858,7 @@ public abstract class BStageEntity : MonoBehaviour
 
         break;
        }
+       Debug.LogWarning("using old setStatusEffect method on BStageEntity, need to switch to StatusEffectManager methods.");
 
     }
 

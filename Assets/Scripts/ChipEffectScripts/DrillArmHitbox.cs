@@ -48,14 +48,17 @@ public class DrillArmHitbox : ObjectSummonAttributes
             {
                 BStageEntity target = other.gameObject.GetComponent<BStageEntity>();
 
-                target.hurtEntity(
-                    (int)((InheritedChip.GetChipDamage() + AddDamage)* InheritedChipPrefab.player.AttackMultiplier),
-                    InheritedChip.IsLightAttack(),
-                    InheritedChip.IsHitFlinch(),
-                    InheritedChipPrefab.player,
-                    InheritedChip.IsPierceUntargetable(),
-                    StatusEffect,
-                    AttackElement.Breaking);
+                // target.hurtEntity(
+                //     (int)((InheritedChip.GetChipDamage() + AddDamage)* InheritedChipPrefab.player.AttackMultiplier),
+                //     InheritedChip.IsLightAttack(),
+                //     InheritedChip.IsHitFlinch(),
+                //     InheritedChipPrefab.player,
+                //     InheritedChip.IsPierceUntargetable(),
+                //     StatusEffect,
+                //     AttackElement.Breaking);
+
+                applyDamage(target);
+
                 target.AttemptShove(1, 0);                    
             }                
 

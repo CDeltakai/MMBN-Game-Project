@@ -22,8 +22,21 @@ public class WhiteCapsule : ChipEffectBlueprint
         {
             if(chipToBuff.ObjectSummon != null)
             {
-                
-                chipToBuff.ObjectSummon.GetComponentInChildren<ObjectSummonAttributes>().AdditionalStatusEffects.Add(EStatusEffects.Paralyzed);
+                ObjectSummonAttributes objectSummonAttributes = chipToBuff.ObjectSummon.GetComponentInChildren<ObjectSummonAttributes>();
+
+
+                if(objectSummonAttributes == null)
+                {
+                    Debug.LogWarning("Object Summon GetComponentInChildren<ObjectSummonAttributes>() returned null");
+                }else
+                {
+                    print("WhiteCapsule attempted to buff object summon: " +objectSummonAttributes.gameObject.name);
+                }
+
+
+
+                objectSummonAttributes.AdditionalStatusEffects.Add(EStatusEffects.Paralyzed);
+
             }
             chipToBuff.effectPrefab.GetComponent<ChipEffectBlueprint>().AdditionalStatusEffects.Add(EStatusEffects.Paralyzed);
         }else
