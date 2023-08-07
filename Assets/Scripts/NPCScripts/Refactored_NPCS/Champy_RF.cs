@@ -14,7 +14,7 @@ internal enum ChampyAnims
 
 public class Champy_RF : BStageEntity
 {
-    public override event OnDeathEvent deathEvent;
+    public override event OnDeathEvent DeathEvent;
 
     public override bool isGrounded { get; set; } = false;
     public override bool isStationary => false;
@@ -190,40 +190,44 @@ public class Champy_RF : BStageEntity
 
     }
 
-
-
-    public override IEnumerator DestroyEntity()
+    public override void AdditionalDestructionEvents()
     {
-        animator.speed = Mathf.Epsilon;
-        currentHP = 0;
-        healthText.text = currentHP.ToString();
-            
-        if(AnimateHPCoroutine == null)
-        {
-            healthText.enabled = false;
-        }
-        fullInvincible = true;        
         StopCoroutine(AttackAnimation());
-        tileEventManager.UnsubscribeEntity(this);
-        yield return new WaitForSecondsRealtime(0.0005f);
-        FMODUnity.RuntimeManager.PlayOneShotAttached(DestroyedSFX, this.gameObject);
-        setSolidColor(Color.white);
-        Instantiate(destructionVFX, transform.parent.transform.position, 
-                    transform.rotation, transform.parent.transform);
-        yield return new WaitForSecondsRealtime(0.533f);
-        stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
-        stageHandler.setCellEntity(originCellPos.x, originCellPos.y, this, false);
-        ClearClaimedTiles();
-
-        if(deathEvent != null)
-        {
-            deathEvent(this);
-        }
-
-        Destroy(transform.parent.gameObject);
-        Destroy(gameObject);
-
     }
+
+
+    // public override IEnumerator DestroyEntity()
+    // {
+    //     animator.speed = Mathf.Epsilon;
+    //     currentHP = 0;
+    //     healthText.text = currentHP.ToString();
+            
+    //     if(AnimateHPCoroutine == null)
+    //     {
+    //         healthText.enabled = false;
+    //     }
+    //     fullInvincible = true;        
+    //     StopCoroutine(AttackAnimation());
+    //     tileEventManager.UnsubscribeEntity(this);
+    //     yield return new WaitForSecondsRealtime(0.0005f);
+    //     FMODUnity.RuntimeManager.PlayOneShotAttached(DestroyedSFX, this.gameObject);
+    //     setSolidColor(Color.white);
+    //     Instantiate(destructionVFX, transform.parent.transform.position, 
+    //                 transform.rotation, transform.parent.transform);
+    //     yield return new WaitForSecondsRealtime(0.533f);
+    //     stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
+    //     stageHandler.setCellEntity(originCellPos.x, originCellPos.y, this, false);
+    //     ClearClaimedTiles();
+
+    //     if(deathEvent != null)
+    //     {
+    //         deathEvent(this);
+    //     }
+
+    //     Destroy(transform.parent.gameObject);
+    //     Destroy(gameObject);
+
+    // }
 
     public void straightHitRegister(int damage)
     {

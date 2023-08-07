@@ -51,7 +51,7 @@ public abstract class BStageEntity : MonoBehaviour
 #region Events and Delegates
 
     public delegate void OnDeathEvent(BStageEntity entity);
-    public virtual event OnDeathEvent deathEvent;
+    public virtual event OnDeathEvent DeathEvent;
 
     public delegate void OnHurtEvent(BStageEntity entity);
     public virtual event OnHurtEvent hurtEvent;
@@ -364,7 +364,7 @@ public abstract class BStageEntity : MonoBehaviour
         {
             print("Additional status effects: " + statusEffect);
             statusManager.triggerStatusEffect(statusEffect);
-            StartCoroutine(setStatusEffect(statusEffect, 1));
+            //StartCoroutine(setStatusEffect(statusEffect, 1));
 
         }
 
@@ -594,14 +594,15 @@ public abstract class BStageEntity : MonoBehaviour
             healthText.enabled = false;
         }        
 
-        if(deathEvent != null)
+        if(DeathEvent != null)
         {
-            deathEvent(this);
+            DeathEvent(this);
         }
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         ClearClaimedTiles();
         tileEventManager.UnsubscribeEntity(this);
+        //yield return new WaitForSecondsRealtime(0.1f);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
 

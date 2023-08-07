@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DrillArmHitbox : ObjectSummonAttributes
 {
-
+    int hitCount = 0;
     BoxCollider2D boxCollider2D;
 
     private void Awake() 
@@ -28,7 +28,7 @@ public class DrillArmHitbox : ObjectSummonAttributes
             StatusEffect = InheritedChip.GetStatusEffect();
         }
 
-        yield return new WaitForSecondsRealtime(0.02f);
+        yield return new WaitForSecondsRealtime(0.05f);
         gameObject.SetActive(false);
     }
 
@@ -40,6 +40,7 @@ public class DrillArmHitbox : ObjectSummonAttributes
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
+        
         if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Obstacle")
         {
             print("DrillArm hit target: " + other.gameObject.name);
@@ -59,7 +60,10 @@ public class DrillArmHitbox : ObjectSummonAttributes
 
                 applyDamage(target);
 
-                target.AttemptShove(1, 0);                    
+                target.AttemptShove(1, 0);
+
+                
+                                   
             }                
 
 
