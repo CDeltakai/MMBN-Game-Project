@@ -47,13 +47,13 @@ public class StatusEffectManager : MonoBehaviour
     }
 
     //if toggle = true, will try to trigger the status effect, otherwise will attempt to cancel that effect on the entity.
-    public void triggerStatusEffect(EStatusEffects status, float duration = 1, bool toggle = true)
+    public void triggerStatusEffect(EStatusEffects status, float duration = 1, bool toggle = true, int strength = 0)
     {
         print("Attempted to set statusEffect: " + status + " on target: " +  this.gameObject.name);
-        StartCoroutine(setStatusEffect(status, duration, toggle));
+        StartCoroutine(setStatusEffect(status, duration, toggle, strength));
     }
 
-    public IEnumerator setStatusEffect(EStatusEffects status, float duration = 1, bool toggle = true)
+    public IEnumerator setStatusEffect(EStatusEffects status, float duration = 1, bool toggle = true, int strength = 0)
     {
         switch(status)
         {
@@ -94,6 +94,10 @@ public class StatusEffectManager : MonoBehaviour
             break;
 
             case EStatusEffects.Bleeding:
+            print("Triggered Bleeding Effect");
+
+            entity.DamageEntity(10, 0.25f, 2f);
+
             break;
 
             case EStatusEffects.MarkForDeath:

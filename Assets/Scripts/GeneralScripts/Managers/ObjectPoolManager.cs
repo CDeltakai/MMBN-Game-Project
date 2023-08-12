@@ -6,8 +6,8 @@ using UnityEngine;
 public class ChipObjectReference
 {
     [SerializeField] internal ChipSO chipSORef;
-    [SerializeField] internal UnityEngine.GameObject effectPrefab;
-    [SerializeField] internal UnityEngine.GameObject ObjectSummon;
+    [SerializeField] internal GameObject effectPrefab;
+    [SerializeField] internal GameObject ObjectSummon;
     public int index = 0;
 
 }
@@ -19,8 +19,8 @@ public class ObjectPoolManager : MonoBehaviour
     ChipInventory chipInventory;
     PlayerAttributeManager playerAttributeManager;
 
-	[SerializeField] List<UnityEngine.GameObject> ChipObjectPool = new List<UnityEngine.GameObject>();
-    [SerializeField] UnityEngine.GameObject ChipObjectPoolParent;
+	[SerializeField] List<GameObject> ChipObjectPool = new List<GameObject>();
+    [SerializeField] GameObject ChipObjectPoolParent;
     [SerializeField] public List<ChipObjectReference> ChipObjectList = new List<ChipObjectReference>();
 	
     void Awake()
@@ -58,10 +58,10 @@ public class ObjectPoolManager : MonoBehaviour
             if(chip.GetEffectPrefab() != null)
             {
 
-                UnityEngine.GameObject prefab = Instantiate(chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
+                GameObject prefab = Instantiate(chip.GetEffectPrefab(), transform.position, Quaternion.identity, ChipObjectPoolParent.transform);
                 prefab.GetComponent<ChipEffectBlueprint>().player = player;
 
-                UnityEngine.GameObject objectSummon = null;
+                GameObject objectSummon = null;
 
                 if(chip.GetObjectSummon() != null)
                 {

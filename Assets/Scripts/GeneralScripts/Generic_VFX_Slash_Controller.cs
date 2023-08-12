@@ -46,19 +46,9 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
         if(other.tag == "Enemy")
         {
 
-            //print("Sword slash hit enemy");
-
             if(other.GetComponent<BStageEntity>()){
                 BStageEntity entity = other.GetComponent<BStageEntity>();
-
-                entity.hurtEntity(
-                    (int)((InheritedChip.GetChipDamage() + AddDamage)*player.AttackMultiplier),
-                    InheritedChip.IsLightAttack(),
-                    InheritedChip.IsHitFlinch(),
-                    player,
-                    false,
-                    StatusEffect,
-                    AttackElement.Blade);
+                applyDamage(entity);
 
           
 
@@ -70,6 +60,7 @@ public class Generic_VFX_Slash_Controller : ObjectSummonAttributes
         }
 
     }
+    
 
     IEnumerator SelfDisable()
     {

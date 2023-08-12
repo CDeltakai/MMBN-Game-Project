@@ -76,7 +76,8 @@ public static ChipLoadManager Instance {get {return _instance;} }
         }
 
         nextChipRefLoad.Add(chipRefQueue[0]);
-        chipRefQueue.RemoveAt(0);
+        //chipRefQueue.RemoveAt(0);
+        chipRefQueue.Remove(chipRefQueue[0]);
 
         foreach(ChipObjectReference chipRef in chipRefQueue)
         {
@@ -93,15 +94,15 @@ public static ChipLoadManager Instance {get {return _instance;} }
 
 
 
-        foreach(ChipObjectReference chipRef in chipRefsToRemove)
-        {
-            chipRefQueue.Remove(chipRef);
-        }
 
         if(loadChipsEvent != null)
         {print("Attempted loadChipsEvent");
             loadChipsEvent();} 
 
+        foreach(ChipObjectReference chipRef in chipRefsToRemove)
+        {
+            chipRefQueue.Remove(chipRef);
+        }
 
     }
 

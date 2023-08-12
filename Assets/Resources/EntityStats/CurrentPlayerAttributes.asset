@@ -73,6 +73,9 @@ MonoBehaviour:
   - <chipName>k__BackingField: MarkCannon
     chip: {fileID: 11400000, guid: c7b0641457148ba44ae8a3b8f82493e4, type: 2}
     <chipCount>k__BackingField: 2
+  - <chipName>k__BackingField: BleedCannon
+    chip: {fileID: 11400000, guid: 555efc2ef3b22d44d80b24ab5ac2efae, type: 2}
+    <chipCount>k__BackingField: 2
   CurrentChipInventory:
   - <chipName>k__BackingField: Airshot
     chip: {fileID: 11400000, guid: a46fb94c65083d2439fd9eed2ba4200e, type: 2}

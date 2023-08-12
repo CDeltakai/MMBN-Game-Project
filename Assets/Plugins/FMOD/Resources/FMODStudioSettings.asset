@@ -357,10 +357,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
+  HasSourceProject: 0
+  HasPlatforms: 0
   sourceProjectPath: Assets/FMOD Assets/FmodTesting/FmodTesting.fspro
-  sourceBankPath: Assets/FMOD Assets/FmodTesting/Build
+  sourceBankPath: Assets/FMOD Assets/FmodTesting/Build/Desktop
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
 public class ObjectSummonAttributes : MonoBehaviour
@@ -29,6 +28,7 @@ public class ObjectSummonAttributes : MonoBehaviour
         EffectProperties effectProperties = InheritedChipPrefab.effectProperties;
 
         int finalDamage = (int)((InheritedChipPrefab.BaseDamage + effectProperties.DamageModifier) * InheritedChipPrefab.player.AttackMultiplier);
+        print("Chip element used: " + InheritedChip.GetChipElement());
 
         AttackPayload attackPayload = new AttackPayload(finalDamage,
                                                         effectProperties.lightAttack,
@@ -36,7 +36,7 @@ public class ObjectSummonAttributes : MonoBehaviour
                                                         effectProperties.pierceUntargetable,
                                                         InheritedChipPrefab.player,
                                                         effectProperties.StatusEffectModifier,
-                                                        effectProperties.AdditionalStatusEffects,
+                                                        AdditionalStatusEffects,
                                                         InheritedChip.GetChipElement());
 
         entity.hurtEntity(attackPayload);
@@ -44,6 +44,10 @@ public class ObjectSummonAttributes : MonoBehaviour
 
     }
 
+    private void OnDisable()
+    {
+        ResetAttributesToInitialState();   
+    }
 
 
 }

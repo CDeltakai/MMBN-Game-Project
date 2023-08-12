@@ -51,7 +51,7 @@ public abstract class BStageEntity : MonoBehaviour
 #region Events and Delegates
 
     public delegate void OnDeathEvent(BStageEntity entity);
-    public virtual event OnDeathEvent deathEvent;
+    public virtual event OnDeathEvent DeathEvent;
 
     public delegate void OnHurtEvent(BStageEntity entity);
     public virtual event OnHurtEvent hurtEvent;
@@ -340,6 +340,7 @@ public abstract class BStageEntity : MonoBehaviour
         
         if(MarkedForDeath)
         {
+           
            attackPayload = TriggerMarkEffect(payload.attackElement, payload);
            MarkedForDeath = false;
            statusManager.triggerStatusEffect(EStatusEffects.MarkForDeath, 0, false);
@@ -355,10 +356,15 @@ public abstract class BStageEntity : MonoBehaviour
             print("Chip payload used default status effect");
         }
 
+        if(payload.additionalStatusEffects.Count == 0)
+        {
+            print("additional status effects is empty");
+        }
         foreach(EStatusEffects statusEffect in payload.additionalStatusEffects)
         {
-            StartCoroutine(setStatusEffect(statusEffect, 1));
-            statusManager.triggerStatusEffect(payload.statusEffect);
+            print("Additional status effects: " + statusEffect);
+            statusManager.triggerStatusEffect(statusEffect);
+            //StartCoroutine(setStatusEffect(statusEffect, 1));
 
         }
 
@@ -400,8 +406,8 @@ public abstract class BStageEntity : MonoBehaviour
     List<Coroutine> DoTList = new List<Coroutine>();    
 
     ///<summary>
-    ///Different from HurtEntity; this one is for dealing indirect damage like poison effects
-    ///and subtracts HP directly from the target, bypassing any form of resistances. Can be
+    ///Different from HurtEntity; this one
+    ///subtracts HP directly from the target, bypassing any form of resistances. Can be
     ///given a tickrate and duration for damage over time effects.
     ///</summary>
     public void DamageEntity(int damage, float tickrate = float.Epsilon, float duration = float.Epsilon)
@@ -413,8 +419,16 @@ public abstract class BStageEntity : MonoBehaviour
             
         }else
         {
+            if(damage >= currentHP)
+            {
+                RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
+                AnimateShakeNumber(damage);
+                StartCoroutine(DestroyEntity());                
+                return;
+            }
+
             AnimateShakeNumber(damage);
-            if(damage >= 10)
+            if(damage >= 5)
             {
                 isAnimatingHP = true;
 
@@ -440,11 +454,11 @@ public abstract class BStageEntity : MonoBehaviour
         float damageDuration = duration;
         WaitForSeconds damageTick = new WaitForSeconds(tickrate);
 
-        while(damageDuration >= 0)
+        while(damageDuration > 0)
         {
 
 
-            if(damage >= 10)
+            if(damage >= 5)
             {
                 isAnimatingHP = true;
 
@@ -501,25 +515,25 @@ public abstract class BStageEntity : MonoBehaviour
 
             case AttackElement.Fire:
                 modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Burning);
-
+                print("Triggered fire element mark effect");
                 break;
 
             case AttackElement.Water:
                 modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Frozen);
-
+                print("Triggered water element mark effect");
                 break;
 
             case AttackElement.Electric:
                 modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Paralyzed);
-
+                print("Triggered electric element mark effect");
                 break;
 
             case AttackElement.Grass:
-
+                print("Triggered grass element mark effect");
                 break;
 
             case AttackElement.Breaking:
-
+                print("Triggered breaking element mark effect");
                 break;
 
             default:
@@ -580,14 +594,15 @@ public abstract class BStageEntity : MonoBehaviour
             healthText.enabled = false;
         }        
 
-        if(deathEvent != null)
+        if(DeathEvent != null)
         {
-            deathEvent(this);
+            DeathEvent(this);
         }
 
         stageHandler.setCellEntity(currentCellPos.x, currentCellPos.y, this, false);
         ClearClaimedTiles();
         tileEventManager.UnsubscribeEntity(this);
+        //yield return new WaitForSecondsRealtime(0.1f);
         Destroy(transform.parent.gameObject);
         Destroy(gameObject);
 
@@ -807,7 +822,7 @@ public abstract class BStageEntity : MonoBehaviour
     }
 
 
-
+    //Old method, needs to be deprecated
     public virtual IEnumerator setStatusEffect(EStatusEffects status, float duration)
     {
 
@@ -844,6 +859,7 @@ public abstract class BStageEntity : MonoBehaviour
 
         break;
        }
+       Debug.LogWarning("using old setStatusEffect method on BStageEntity, need to switch to StatusEffectManager methods.");
 
     }
 

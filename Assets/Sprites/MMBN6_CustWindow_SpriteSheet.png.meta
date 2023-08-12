@@ -17,8 +17,38 @@ TextureImporter:
   - first:
       213: -2529966487141736732
     second: CustWindow_Shuffle3
+  - first:
+      213: 1751357243214048438
+    second: Icon_FireElement
+  - first:
+      213: -4315367859385881470
+    second: Icon_WaterElement
+  - first:
+      213: -4445992610463906116
+    second: Icon_ElectricElement
+  - first:
+      213: -1791532966318021717
+    second: Icon_GrassElement
+  - first:
+      213: -6749531021427196014
+    second: Icon_BladeElement
+  - first:
+      213: -7153716559415209783
+    second: Icon_AirElement
+  - first:
+      213: -2111792562918702418
+    second: Icon_CursorElement
+  - first:
+      213: -2445249519537452583
+    second: Icon_MultiplierElement
+  - first:
+      213: -1457220902991884167
+    second: Icon_BreakingElement
+  - first:
+      213: 8346835114328481094
+    second: Icon_NormalElement
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -77,6 +107,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -171,7 +202,7 @@ TextureImporter:
         width: 22
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,7 +223,7 @@ TextureImporter:
         width: 28
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,7 +244,7 @@ TextureImporter:
         width: 28
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -234,7 +265,7 @@ TextureImporter:
         width: 28
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -242,6 +273,216 @@ TextureImporter:
       bones: []
       spriteID: 4ee164062e0c3ecd0800000000000000
       internalID: -2529966487141736732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_FireElement
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 316
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bca49432221e4810800000000000000
+      internalID: 1751357243214048438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_WaterElement
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 316
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28caa22bbcbbc14c0800000000000000
+      internalID: -4315367859385881470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_ElectricElement
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 316
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb68943d649ac42c0800000000000000
+      internalID: -4445992610463906116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_GrassElement
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 316
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3663352423327e0800000000000000
+      internalID: -1791532966318021717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_BladeElement
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 316
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f3a5beb49d452a0800000000000000
+      internalID: -6749531021427196014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_AirElement
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 316
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c01a34f0b4e8bc90800000000000000
+      internalID: -7153716559415209783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_CursorElement
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 299
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea24bef4ad761b2e0800000000000000
+      internalID: -2111792562918702418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_MultiplierElement
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 299
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d986c8748ab01ed0800000000000000
+      internalID: -2445249519537452583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_BreakingElement
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 299
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97015e53f49e6cbe0800000000000000
+      internalID: -1457220902991884167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_NormalElement
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 299
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d5e44205ae5d370800000000000000
+      internalID: 8346835114328481094
       vertices: []
       indices: 
       edges: []

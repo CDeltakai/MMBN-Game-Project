@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class StageTile
 {
-
+    internal bool hasBeenModified{get;set;}
     internal Vector3Int localCoords{get;set;}
     internal Vector3 worldPosition{get;set;}
     internal CustomTile custTile {get;set;}

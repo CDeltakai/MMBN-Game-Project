@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: currentHP
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: HurtSFX.Path
@@ -184,7 +184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960042378351672794, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1960042378351672795, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: m_RootOrder
@@ -1323,6 +1323,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &896959330
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1888,11 +1889,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1777973944, guid: b8181ba0437ec144098831057b1a7631, type: 3}
       propertyPath: currentHP
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1777973945, guid: b8181ba0437ec144098831057b1a7631, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5140241249680576332, guid: b8181ba0437ec144098831057b1a7631, type: 3}
       propertyPath: m_Name
@@ -1904,7 +1905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 5140241249680576333, guid: b8181ba0437ec144098831057b1a7631, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2264,7 +2265,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: currentHP
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 565381223, guid: 7f1ef71d312f89c4a813f5db969ff0aa, type: 3}
       propertyPath: HurtSFX.Path
@@ -3252,6 +3253,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 854214470, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1082469985, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
       propertyPath: animationtime
       value: 0.05
@@ -3419,6 +3424,34 @@ PrefabInstance:
     - target: {fileID: 7402807736713799771, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
       propertyPath: m_Name
       value: BattleStageUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402807737631265348, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: DynamicUIElements
+      value: 
+      objectReference: {fileID: 11400000, guid: 915df0c788a9edc43bfd788f260e316a, type: 2}
+    - target: {fileID: 7883232774096774452, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883232774096774452, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883232774447421352, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8346835114328481094, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
+    - target: {fileID: 7883232774447421353, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883232774447421353, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883232774447421353, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 31.84
       objectReference: {fileID: 0}
     - target: {fileID: 8401517846542227714, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

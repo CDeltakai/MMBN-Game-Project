@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b74aaa7ee218d243954e59274a68ca9, type: 3}
+  m_Name: Dynamic UI Elements
+  m_EditorClassIdentifier: 
+  Air: {fileID: -7153716559415209783, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
+  Blade: {fileID: -6749531021427196014, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
+  Breaking: {fileID: -1457220902991884167, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
+  Buff: {fileID: 0}
+  Cursor: {fileID: -2111792562918702418, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
+  Electric: {fileID: -4445992610463906116, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
+  Fire: {fileID: 1751357243214048438, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
+  Grass: {fileID: -1791532966318021717, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
+  Healing: {fileID: 0}
+  Multiplier: {fileID: -2445249519537452583, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
+  Normal: {fileID: 8346835114328481094, guid: 2b62c5b2dc8155947a1ccfb7e2cb959d, type: 3}
