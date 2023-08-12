@@ -6,6 +6,10 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
+/// <summary>
+///  This class handles the activation of animation-based chips whenever the player uses them.
+/// </summary>
+
 public class ChipEffects : MonoBehaviour
 {
 
@@ -44,10 +48,11 @@ public class ChipEffects : MonoBehaviour
     }
 
 
-
-    //Method used by chips which have an animation to apply their effects through an animation event.
-    //Normally this method is only called by an animation event on a Megaman chip-based animation and
-    //chips with an instantaneous or passive effect should use different method to apply their effect. 
+    /// <summary>
+    /// Method used by chips which have an animation to apply their effects through an animation event.
+    /// Normally this method is only called by an animation event on a Megaman chip-based animation and
+    /// chips with an instantaneous or passive effect should use different method to apply their effect.
+    /// </summary>
     public void ApplyChipEffectRef()
     {
 

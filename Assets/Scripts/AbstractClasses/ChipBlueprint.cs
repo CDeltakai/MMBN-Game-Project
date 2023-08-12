@@ -47,13 +47,13 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     public PlayerMovement player;
     protected Transform firePoint;
     [SerializeField] public ChipSO chip;
-    protected UnityEngine.GameObject ObjectSummon;
+    protected GameObject ObjectSummon;
     [HideInInspector]
     public int BaseDamage{get; protected set;}
     protected EStatusEffects BaseStatusEffect;
     protected int EnergyCost;
 
-    public UnityEngine.GameObject SummonObjectModifier = null;
+    public GameObject SummonObjectModifier = null;
     public int EnergyCostModifier = 0;
     public List<Vector2Int> RangeModifier = new List<Vector2Int>();
 
@@ -68,12 +68,12 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
     protected bool pierceUntargetable;
 
     public EffectProperties effectProperties = new EffectProperties(0, 
-                                                                        EStatusEffects.Default, 
-                                                                        new List<EStatusEffects>(),  
-                                                                        false, 
-                                                                        false, 
-                                                                        false, 
-                                                                        AttackElement.Normal);
+                                                                    EStatusEffects.Default, 
+                                                                    new List<EStatusEffects>(),  
+                                                                    false, 
+                                                                    false, 
+                                                                    false, 
+                                                                    AttackElement.Normal);
 
 
 
@@ -81,7 +81,6 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
     void Awake()
     {
-        //player = PlayerMovement.Instance;
 
         ObjectSummon = chip.GetObjectSummon();
         BaseStatusEffect = chip.GetStatusEffect();
@@ -126,6 +125,10 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
         return finalDamage;        
     }
 
+    /// <summary>
+    /// Wrapper method for applying damage to an entity with an attack payload
+    /// </summary>
+    /// <param name="entity"></param>
     public void applyChipDamage(BStageEntity entity)
     {
 
@@ -147,15 +150,6 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
         entity.hurtEntity(attackPayload);
 
-
-        // entity.hurtEntity(finalDamage,
-        //                     effectProperties.lightAttack,
-        //                     effectProperties.hitFlinch, 
-        //                     player, 
-        //                     effectProperties.pierceUntargetable, 
-        //                     effectProperties.StatusEffectModifier,
-        //                     chip.GetChipElement());
-
     }
 
     
@@ -166,7 +160,13 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
         
     }
 
+
+    ///<summary>
+    ///The main function that gets called whenever the chip is activated. This method should contain all the necessary statements
+    ///and calls to make the chip work. 
+    ///</summary>
     public abstract void Effect();
+
 
     public virtual void OnActivationEffect(BStageEntity target){}
 
