@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6512ac110cd564cb6601fa5613a001, type: 3}
   m_Name: Customizer Block
   m_EditorClassIdentifier: 
+  blockSize:
+    rows:
+    - row: 01010100000000
+    - row: 00000000000000
+    - row: 00000000000000
+    - row: 00000000000000
+    - row: 00000000000000
+    - row: 00000000000000
+    - row: 00000000000000
