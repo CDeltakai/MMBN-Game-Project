@@ -13,7 +13,7 @@ using UnityEditor;
 [CustomPropertyDrawer(typeof(InspectorArrayLayout))]
 public class CustomizerBlockSizeDrawer : PropertyDrawer
 {
-    GUIContent arrayLabel = new GUIContent ("S");
+    
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) 
     {
         EditorGUI.PrefixLabel(position, label);

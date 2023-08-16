@@ -12,10 +12,15 @@ public class CustomizationGrid : MonoBehaviour
     Vector2 positionOnGrid = new Vector2();
     Vector2Int tileGridPosition = new Vector2Int();
 
+    GridTileElement[,] gridTileElements;
+
+    [SerializeField] Vector2Int gridSize;
+
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-
+        Init(gridSize.x, gridSize.y);
     }
 
     // Update is called once per frame
@@ -23,6 +28,15 @@ public class CustomizationGrid : MonoBehaviour
     {
         
     }
+
+    private void Init(int width, int height)
+    {
+        gridTileElements = new GridTileElement[width, height];
+        Vector2 size = new Vector2(width * tileSizeWidth, height * tileSizeHeight);
+        rectTransform.sizeDelta = size;
+
+    }
+
 
     public Vector2Int GetTileGridPosition(Vector2 mousePosition)
     {
