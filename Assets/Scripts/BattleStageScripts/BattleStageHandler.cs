@@ -169,7 +169,8 @@ public class BattleStageHandler : MonoBehaviour
 
     }
 
-
+    //Initializes StageTiles with set variables according to positions on the stageTilemap and places 
+    //them into the stageTiles dictionary
     private void InitializeStageTiles()
     {
         stageTiles = new Dictionary<Vector3, StageTile>();

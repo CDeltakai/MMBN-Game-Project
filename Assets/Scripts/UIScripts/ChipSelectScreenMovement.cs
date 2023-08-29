@@ -1,4 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -185,7 +184,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
             discardedChipRefsDeck.Clear();            
         }
 
-        foreach(UnityEngine.GameObject button in SelectableChipButtons)
+        foreach(GameObject button in SelectableChipButtons)
         {
             button.GetComponent<ChipSlot>().clearChip();
             button.SetActive(true);
@@ -235,7 +234,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
         ChipSlot activeChipSlot = ActiveChipButtons[chipPayload.Count].GetComponent<ChipSlot>();
 
-        FMODUnity.RuntimeManager.PlayOneShotAttached(ChipSelectVFX, this.gameObject);
+        RuntimeManager.PlayOneShotAttached(ChipSelectVFX, this.gameObject);
 
         activeChipSlot.changeChipReference(selectableChipRefs[buttonIndex]);
         activeChipSlot.selectedChipIndex = buttonIndex;
@@ -274,7 +273,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
 
     public void OnChipHover(ChipSlot chipSlot)
     {
-        FMODUnity.RuntimeManager.PlayOneShotAttached(ChipHoverVFX, this.gameObject);
+        RuntimeManager.PlayOneShotAttached(ChipHoverVFX, this.gameObject);
         if(chipSlot.getChipObjRef() != null)
         {
             ChipNameField.GetComponent<TextMeshProUGUI>().text = chipSlot.getChipObjRef().chipSORef.GetChipName();            
@@ -296,7 +295,7 @@ public class ChipSelectScreenMovement : MonoBehaviour
     //OK Button Functionality
     public void LoadRefsIntoQueue()
     {
-        FMODUnity.RuntimeManager.PlayOneShotAttached(OKButtonVFX, this.gameObject);
+        RuntimeManager.PlayOneShotAttached(OKButtonVFX, this.gameObject);
 
         foreach(ChipObjectReference chipRef in chipPayload)
         {

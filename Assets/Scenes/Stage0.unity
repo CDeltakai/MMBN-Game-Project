@@ -3055,7 +3055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 246235148274306667, guid: 42c912045a015444ca558c6b33d12908, type: 3}
       propertyPath: m_Name
-      value: StageMenuController
+      value: Stage Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 246235148452344592, guid: 42c912045a015444ca558c6b33d12908, type: 3}
       propertyPath: chipTableDatabase
@@ -3694,6 +3694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleStageUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7402807737631265348, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
+      propertyPath: DynamicUIElements
+      value: 
+      objectReference: {fileID: 11400000, guid: 915df0c788a9edc43bfd788f260e316a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f2ebb5cb1f0cb4ba2738ef591c60f3, type: 3}
 --- !u!1001 &8890333288782456515

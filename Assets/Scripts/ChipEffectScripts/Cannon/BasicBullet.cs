@@ -86,23 +86,7 @@ public class BasicBullet : MonoBehaviour
     }
 
 
-    // private void OnTriggerEnter2D(Collider2D other) 
-    // {
 
-    //     if(other.tag == "Enemy" || other.tag == "Obstacle")
-    //     {
-    //         print("projectile hit a target");
-    //         BStageEntity target = other.GetComponent<BStageEntity>();
-
-    //         parentChip.OnActivationEffect(target);            
-    //         pierceCount--;
-    //         if(pierceCount < 0)
-    //         {
-    //             DestroyObject();    
-    //         }
-    //     }
-
-    // }
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
