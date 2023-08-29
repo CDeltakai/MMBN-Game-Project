@@ -23,9 +23,6 @@ public class BlockElement : MonoBehaviour
 
     void Start()
     {
-
-
-
         foreach(Vector2Int coord in blockProperties.blockCoordinates) 
         {
             print(coord.ToString());    

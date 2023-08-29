@@ -649,6 +649,7 @@ public abstract class BStageEntity : MonoBehaviour
         Vector3Int coordToCheck = new Vector3Int(x, y, 0);
         StageTile stageTileToCheck = null;        
 
+        //Checks if the tile exists within the stageTiles dictionary (i.e it is not empty space), else return false.
         if(stageHandler.stageTiles.ContainsKey(stageHandler.stageTilemap.CellToWorld(coordToCheck)))
         {
             stageTileToCheck = stageHandler.stageTiles
