@@ -20,32 +20,32 @@ MonoBehaviour:
       m_Hash: 130111906
       m_Sprite: {fileID: 21300000, guid: cc7586140aa6bac4ab484e8dc1a41a4c, type: 3}
   - m_Name: Body
-    m_Hash: 2073732236
+    m_Hash: 999990412
     m_CategoryList:
     - m_Name: Body
-      m_Hash: 2073732236
+      m_Hash: 999990412
       m_Sprite: {fileID: 21300006, guid: cc7586140aa6bac4ab484e8dc1a41a4c, type: 3}
   - m_Name: Arm Right
-    m_Hash: -1619980263
+    m_Hash: 527503385
     m_CategoryList:
     - m_Name: Arm Right
-      m_Hash: -1619980263
+      m_Hash: 527503385
       m_Sprite: {fileID: 21300010, guid: cc7586140aa6bac4ab484e8dc1a41a4c, type: 3}
   - m_Name: Arm Left
-    m_Hash: 1968732370
+    m_Hash: 894990546
     m_CategoryList:
     - m_Name: Arm Left
-      m_Hash: 1968732370
+      m_Hash: 894990546
       m_Sprite: {fileID: 21300002, guid: cc7586140aa6bac4ab484e8dc1a41a4c, type: 3}
   - m_Name: Leg Right
-    m_Hash: -1137668046
+    m_Hash: 1009815602
     m_CategoryList:
     - m_Name: Leg Right
-      m_Hash: -1137668046
+      m_Hash: 1009815602
       m_Sprite: {fileID: 21300008, guid: cc7586140aa6bac4ab484e8dc1a41a4c, type: 3}
   - m_Name: Leg Left
-    m_Hash: -306189275
+    m_Hash: 767552549
     m_CategoryList:
     - m_Name: Leg Right
-      m_Hash: -1137668046
+      m_Hash: 1009815602
       m_Sprite: {fileID: 21300004, guid: cc7586140aa6bac4ab484e8dc1a41a4c, type: 3}
