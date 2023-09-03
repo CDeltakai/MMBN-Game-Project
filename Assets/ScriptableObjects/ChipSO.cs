@@ -76,6 +76,7 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] List<EventReference> AdditionalSFX;
     [SerializeField] AnimationClip AnimationClipToUse;
     [SerializeField] UnityEngine.GameObject ObjectSummon;
+    [field:SerializeField] public List<GameObject> ObjectSummmonList {get; private set;}
     [SerializeField] UnityEngine.GameObject EffectPrefab;
     [SerializeField] EffectMechanism effectMechanism;
     [SerializeField] bool pierceUntargetable;
