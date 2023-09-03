@@ -30,7 +30,7 @@ public class ObjectSummonAttributes : MonoBehaviour
         int finalDamage = (int)((InheritedChipPrefab.BaseDamage + effectProperties.DamageModifier) * InheritedChipPrefab.player.AttackMultiplier);
         print("Chip element used: " + InheritedChip.GetChipElement());
 
-        AttackPayload attackPayload = new AttackPayload(finalDamage,
+        AttckPayload attackPayload = new AttckPayload(finalDamage,
                                                         effectProperties.lightAttack,
                                                         effectProperties.hitFlinch,
                                                         effectProperties.pierceUntargetable,

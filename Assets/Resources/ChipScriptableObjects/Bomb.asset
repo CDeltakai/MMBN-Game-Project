@@ -15,8 +15,9 @@ MonoBehaviour:
   Id: 62e0d4c33fd2ad34fba87a3647304e7c
   ChipID: 0
   Chip: 111
-  ChipName: Bomb
+  <ChipName>k__BackingField: Bomb
   BaseDamage: 80
+  <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 0
   ChipSize: 4
   <EnergyCost>k__BackingField: 1
@@ -24,6 +25,7 @@ MonoBehaviour:
   BaseStatusEffect: 0
   <RangeOfInfluence>k__BackingField:
   - {x: 4, y: 0}
+  <RangeOfInfluenceWorld>k__BackingField: []
   ChipDescription: Throw a bomb 4 tiles forward, dealing 80 damage.
   ChipImage: {fileID: 8803355929822962066, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0.2
@@ -38,6 +40,7 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: 76f8c3a72e185e0458f3d8209c31a60b, type: 2}
   ObjectSummon: {fileID: 2385943362708142428, guid: c229946d3b6bfb949adc91fd4afd9d1b, type: 3}
+  <ObjectSummmonList>k__BackingField: []
   EffectPrefab: {fileID: 1874528980879534232, guid: d68ff1e500f535f459e43f1fad100b0a, type: 3}
   effectMechanism: 1
   pierceUntargetable: 0

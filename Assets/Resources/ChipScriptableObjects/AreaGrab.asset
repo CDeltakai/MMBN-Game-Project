@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 2e28090f069a1ac4b88f82eaae47c020
   ChipID: 4
   Chip: 101
-  ChipName: Area Grab
+  <ChipName>k__BackingField: Area Grab
   BaseDamage: 0
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 0
@@ -39,6 +39,7 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 0}
   ObjectSummon: {fileID: 0}
+  <ObjectSummmonList>k__BackingField: []
   EffectPrefab: {fileID: 1858245700066143820, guid: c7d2b95ebc501c6428bbcc5953c052b1, type: 3}
   effectMechanism: 2
   pierceUntargetable: 0

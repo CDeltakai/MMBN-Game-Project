@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 16e582a8cf33d754c8e55e655ef1a614
   ChipID: 5
   Chip: 102
-  ChipName: Attack +10
+  <ChipName>k__BackingField: Attack+10
   BaseDamage: 0
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 9
@@ -44,6 +44,7 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 0}
   ObjectSummon: {fileID: 0}
+  <ObjectSummmonList>k__BackingField: []
   EffectPrefab: {fileID: 3464825989303368580, guid: 1226b3fb2b331d646af0fd0ffc09654d, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0

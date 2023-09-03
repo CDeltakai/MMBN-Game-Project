@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 54b442564f59b05479c6c77481a8f5c4
   ChipID: 100
   Chip: 100
-  ChipName: Airshot
+  <ChipName>k__BackingField: Air Shot
   BaseDamage: 20
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 1
@@ -45,6 +45,7 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: 951c2d11b2416534bb4f24700fbd536e, type: 2}
   ObjectSummon: {fileID: 0}
+  <ObjectSummmonList>k__BackingField: []
   EffectPrefab: {fileID: 5452489971154207791, guid: f5fe25f3408e4834da109154a1099573, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0

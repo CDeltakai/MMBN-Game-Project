@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 0788cd3ba7d54194690bc772963a08e8
   ChipID: 0
   Chip: 0
-  ChipName: Bleed Cannon
+  <ChipName>k__BackingField: Bleed Cannon
   BaseDamage: 20
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 0
@@ -43,6 +43,7 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: 9165cc028e82a8e49b0f2c104b8f12d0, type: 2}
   ObjectSummon: {fileID: 0}
+  <ObjectSummmonList>k__BackingField: []
   EffectPrefab: {fileID: 7753810546485766501, guid: d148eefba8d344647b413de3eac73a06, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0

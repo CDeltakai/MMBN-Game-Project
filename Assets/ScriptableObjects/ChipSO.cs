@@ -41,7 +41,7 @@ public class ChipSO : ChipScriptableObject
 
     [SerializeField] int ChipID;
     [SerializeField] EChips Chip;
-    [SerializeField] string ChipName;
+    [field:SerializeField] public string ChipName{get; private set;}
 [Header("Combat Attributes")]
     [SerializeField] int BaseDamage;
     [field:SerializeField] public int PierceCount {get; private set;}
@@ -75,9 +75,10 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] EventReference SFX;
     [SerializeField] List<EventReference> AdditionalSFX;
     [SerializeField] AnimationClip AnimationClipToUse;
-    [SerializeField] UnityEngine.GameObject ObjectSummon;
-    [field:SerializeField] public List<GameObject> ObjectSummmonList {get; private set;}
-    [SerializeField] UnityEngine.GameObject EffectPrefab;
+    [SerializeField] GameObject ObjectSummon;
+    [field:SerializeField] public List<GameObject> ObjectSummonList {get; private set;}
+    [field:SerializeField] public bool ObjectSummonsArePooled {get; private set;}
+    [SerializeField] GameObject EffectPrefab;
     [SerializeField] EffectMechanism effectMechanism;
     [SerializeField] bool pierceUntargetable;
     [SerializeField] bool lightAttack;
@@ -107,7 +108,7 @@ public class ChipSO : ChipScriptableObject
         TempEffectPrefabRef = null;
     }
 
-    public UnityEngine.GameObject GetEffectPrefab()
+    public GameObject GetEffectPrefab()
     {
         if(EffectPrefab == null)
         {
@@ -143,7 +144,7 @@ public class ChipSO : ChipScriptableObject
         return BaseStatusEffect;
     }
 
-    public UnityEngine.GameObject GetObjectSummon()
+    public GameObject GetObjectSummon()
     {
         if(ObjectSummon != null)
         {
