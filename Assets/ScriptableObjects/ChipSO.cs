@@ -48,9 +48,8 @@ public class ChipSO : ChipScriptableObject
     [field:SerializeField] public AttackElement ChipElement{get; private set;}
     [SerializeField] int ChipSize;
     [field:SerializeField] public int EnergyCost{get; private set;}
-    // Chip Types: 2 = Freeze-time ability(Special chips that freeze time before applying effect)
-    // 1 = Active(Real-time usable chip), 0 = Passive(Applies effect to succeeding chip)
-    [SerializeField] EChipTypes ChipType;
+
+    [field:SerializeField] public EChipTypes ChipType{get; private set;}
     [SerializeField] EStatusEffects BaseStatusEffect;
     ///<summary>
     ///This list of Vector2Ints indicates what tiles in relation to the player's position
@@ -74,6 +73,8 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] String EffectScript;
     [SerializeField] EventReference SFX;
     [SerializeField] List<EventReference> AdditionalSFX;
+    //What animation will the player trigger when they use this chip? Can be left empty, in which case the chip effect will
+    //trigger instantly on use.
     [SerializeField] AnimationClip AnimationClipToUse;
     [SerializeField] GameObject ObjectSummon;
     [field:SerializeField] public List<GameObject> ObjectSummonList {get; private set;}
@@ -83,7 +84,9 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] bool pierceUntargetable;
     [SerializeField] bool lightAttack;
     [SerializeField] bool hitFlinch;
-    [SerializeField] bool UseAnimationEvent;
+    //If true, the chip will attempt to trigger an animation where an event is called on said animation which activates
+    //this chip's effect. This means that this chip can be interrupted by flinching if the player does not have super armor. 
+    [field:SerializeField] public bool UseAnimationEvent{get; private set;}
     ///<summary>
     ///If this is set to true, this chip will not automatically disable itself after its initial
     ///casting period. The chip will need have its own function to disable itself after some

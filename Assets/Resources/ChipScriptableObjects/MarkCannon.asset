@@ -15,13 +15,13 @@ MonoBehaviour:
   Id: 0788cd3ba7d54194690bc772963a08e8
   ChipID: 0
   Chip: 0
-  ChipName: Mark Cannon
+  <ChipName>k__BackingField: 
   BaseDamage: 20
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 0
   ChipSize: 0
   <EnergyCost>k__BackingField: 0
-  ChipType: 1
+  <ChipType>k__BackingField: 1
   BaseStatusEffect: 6
   <RangeOfInfluence>k__BackingField: []
   <RangeOfInfluenceWorld>k__BackingField: []
@@ -41,11 +41,13 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: 9165cc028e82a8e49b0f2c104b8f12d0, type: 2}
   ObjectSummon: {fileID: 0}
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 7753810546485766501, guid: 461c3e6808318bc4b866024ec0dc552d, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0
   lightAttack: 0
   hitFlinch: 1
-  UseAnimationEvent: 1
+  <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

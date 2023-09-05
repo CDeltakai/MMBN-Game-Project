@@ -9,7 +9,9 @@ using UnityEngine;
 ///      Passive chips apply an additional effect on the Active or OffensiveSpecial chip they are attached to.
 /// </para>
 /// <para>
-///      Active chips deal damage and apply their effects in real-time and are tied to an animation on Megaman
+///      Active chips apply some kind of quantifiable direct effect on either the player or on enemies, usually in the form of dealing <br/>
+///      damage to enemies in some way, or healing/shielding the player in some way. This quantifiable effect may be modified by<br/>
+///      passive chips should the passive chip's effect be compatible.
 /// </para>
 /// <para>
 ///      Status chips do not deal modifiable damage and apply their effects in real-time and are tied to an animation on Megaman.
@@ -31,7 +33,7 @@ public enum EChipTypes
 
 
     Passive = 0,
-    Attack = 1,
+    Active = 1,
     Status = 2,
     Special = 3,
     OffensiveSpecial = 4,

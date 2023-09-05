@@ -15,13 +15,13 @@ MonoBehaviour:
   Id: dec280bd8eb9f4c4ca8eb5fada6ce46f
   ChipID: 0
   Chip: 0
-  ChipName: Drill Arm
+  <ChipName>k__BackingField: 
   BaseDamage: 70
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 7
   ChipSize: 38
   <EnergyCost>k__BackingField: 2
-  ChipType: 1
+  <ChipType>k__BackingField: 1
   BaseStatusEffect: 0
   <RangeOfInfluence>k__BackingField:
   - {x: 1, y: 0}
@@ -45,11 +45,13 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: 45c50c166af63224f810342f4932af0d, type: 2}
   ObjectSummon: {fileID: 1383596148782366187, guid: 5c111fb6b4114de4ca76cd7e37efd64f, type: 3}
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 673579202784607508, guid: b258f4ab1ac3cc0439b2a568502f848f, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0
   lightAttack: 1
   hitFlinch: 1
-  UseAnimationEvent: 1
+  <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

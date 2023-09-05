@@ -11,6 +11,7 @@ public class DeckElement
 
 }
 
+[CreateAssetMenu(fileName = "Deck Data", menuName = "New Deck", order = 0)]
 public class DeckSO : ScriptableObject
 {
     [field:SerializeField] public string DeckName{get; private set;}

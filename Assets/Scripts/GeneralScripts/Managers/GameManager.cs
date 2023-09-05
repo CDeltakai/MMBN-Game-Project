@@ -5,10 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    //If true, prevents the game from pausing.
     public static bool BlockPausing = false;
 
-    //Static player reference such that all classes have easy access to it
     [SerializeField] PlayerMovement PlayerReference; //Must be set in inspector
+    //Static player reference such that all classes have easy access to it
     public static PlayerMovement player{get; private set;}
 
     private void Awake()

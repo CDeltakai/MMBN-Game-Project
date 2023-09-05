@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class CardSelectionMenu : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class CardSelectionMenu : MonoBehaviour
     [SerializeField] GameObject cardSelectPanel; //Must be set in inspector
     [SerializeField] GameObject cardLoadPanel; //Must be set in inspector
 
+    [SerializeField] List<Image> connectorIndicators;
+
     //List of references to all the card slots within the cardSelectPanel and cardLoad panel
     [SerializeField] List<CardSlot> selectableCardSlots;
     [SerializeField] List<CardSlot> cardLoadSlots;
@@ -27,6 +30,8 @@ public class CardSelectionMenu : MonoBehaviour
     //List of run-time references to all the cardObjectReferences within the card slots within the cardSelectPanel and cardLoadPanel
     [SerializeField] List<CardObjectReference> cardObjectReferencesInSelectPanel;
     [SerializeField] List<CardObjectReference> cardObjectReferencesInLoadPanel;
+
+    [SerializeField] List<CardObjectReference> currentDeckReference = new List<CardObjectReference>();
 
     RectTransform rectTransform;
     public bool isActive{get; private set;} = false;
@@ -116,7 +121,13 @@ public class CardSelectionMenu : MonoBehaviour
     //from the CardObjectReferences and updates each of the card slots with said CardObjectReference
     private void PopulateCardSelect()
     {
-        List<CardObjectReference> currentDeck = cardPoolManager.CardObjectReferences;
+        currentDeckReference.Clear();
+
+        //Create a deep copy of the CardObjectReferences from the CardPoolManager that we can modify freely
+        foreach(CardObjectReference card in cardPoolManager.CardObjectReferences)
+        {
+            currentDeckReference.Add(card);
+        }
 
         //Wipe the panels clean of any leftover card objects and clear all card slots
         cardObjectReferencesInSelectPanel.Clear();
@@ -126,10 +137,49 @@ public class CardSelectionMenu : MonoBehaviour
         foreach(CardSlot cardSlot in cardLoadSlots)
         {cardSlot.ClearCardSlot();}
 
+        
         foreach(CardSlot cardSlot in selectableCardSlots)
         {
-            int randomIndex = Random.Range(0, currentDeck.Count - 1);
-            cardSlot.ChangeCard(currentDeck[randomIndex]);
+            int randomIndex = Random.Range(0, currentDeckReference.Count - 1);
+            currentDeckReference.RemoveAt(randomIndex);
+            cardSlot.ChangeCard(currentDeckReference[randomIndex]);
+
+        }
+    }
+
+
+    //Checks the cardload to see if passive chips are correctly attached to active chips, then activates the corresponding
+    //connector indicators to show the user that an active chip has attached passive chips. 
+    public void ValidateCardLoad()
+    {
+        for(int i = 0; i < cardLoadSlots.Count; i++) 
+        {
+            CardObjectReference currentCard = cardLoadSlots[i].cardObjectReference;
+            CardObjectReference mostRecentActiveCard = new CardObjectReference();
+
+            if(currentCard.chipSO.ChipType == EChipTypes.Active)
+            {
+                mostRecentActiveCard = currentCard;
+            }
+
+            if(currentCard.chipSO.ChipType == EChipTypes.Passive)
+            {
+                //If the first card is a passive card, continue - passive cards must be placed before the most recent active card, not after
+                if(i == 0)
+                {
+                    continue;
+                }
+
+                if(!mostRecentActiveCard.IsEmpty())
+                {
+                    mostRecentActiveCard.attachedPassiveCards.Add(currentCard);
+                }
+
+
+            }
+
+
+
         }
 
 
@@ -164,6 +214,8 @@ public class CardSelectionMenu : MonoBehaviour
 
         }
 
+        ValidateCardLoad();
+
     }
 
     //Logic for what happens when clicking on a card slot in the cardLoadPanel
@@ -189,9 +241,11 @@ public class CardSelectionMenu : MonoBehaviour
             selectSlot.TransferCardToSlot(loadSlot);
 
             cardObjectReferencesInLoadPanel.Add(loadSlot.cardObjectReference);
-            
-           
+              
         }
+
+        ValidateCardLoad();
+
 
     }
 

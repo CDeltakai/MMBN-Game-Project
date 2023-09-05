@@ -21,7 +21,7 @@ MonoBehaviour:
   <ChipElement>k__BackingField: 0
   ChipSize: 4
   <EnergyCost>k__BackingField: 1
-  ChipType: 1
+  <ChipType>k__BackingField: 1
   BaseStatusEffect: 0
   <RangeOfInfluence>k__BackingField: []
   <RangeOfInfluenceWorld>k__BackingField: []
@@ -39,12 +39,13 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: dc0fbdcc7ab53664795fce3835b81266, type: 2}
   ObjectSummon: {fileID: 0}
-  <ObjectSummmonList>k__BackingField: []
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 6733043335069161631, guid: 21bf577efffadfb4884f0d42da34ba43, type: 3}
   effectMechanism: 0
   pierceUntargetable: 0
   lightAttack: 0
   hitFlinch: 1
-  UseAnimationEvent: 1
+  <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

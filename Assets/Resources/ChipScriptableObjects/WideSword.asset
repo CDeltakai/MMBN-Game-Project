@@ -15,13 +15,13 @@ MonoBehaviour:
   Id: 69a47b7b0084a2649ab8e8c1121c206d
   ChipID: 0
   Chip: 106
-  ChipName: Wide Sword
+  <ChipName>k__BackingField: 
   BaseDamage: 80
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 2
   ChipSize: 16
   <EnergyCost>k__BackingField: 1
-  ChipType: 1
+  <ChipType>k__BackingField: 1
   BaseStatusEffect: 0
   <RangeOfInfluence>k__BackingField:
   - {x: 1, y: 0}
@@ -42,11 +42,13 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: 97f4ca83fb3abed46a0084a0f586c63a, type: 2}
   ObjectSummon: {fileID: 4765144751430364555, guid: 0a1e2cb7b94970045944090e69cde296, type: 3}
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 6428891363949495607, guid: c7cae763b9faf264ab102bee66417372, type: 3}
   effectMechanism: 1
   pierceUntargetable: 0
   lightAttack: 0
   hitFlinch: 0
-  UseAnimationEvent: 1
+  <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0
