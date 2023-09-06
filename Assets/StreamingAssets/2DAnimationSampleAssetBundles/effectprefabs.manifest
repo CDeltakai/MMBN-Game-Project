@@ -1,0 +1,83 @@
+ManifestFileVersion: 0
+CRC: 1549569146
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c6c539deea6c93db581a468e3b8973a4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ee86fa0d1071e562185795367274c8be
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 96
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: c8e69ff27e2aa474e8f74468936b2784, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aca625fb93bc9c249b6cfab54ba44043, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 29236a259c3e8de4ca052e5854b62cd4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a1cdd247c987a7843859c4a16f0313a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6ff8db2096f531646bfb30a5d2fb579a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9a85b7a105eaffc48af1a942a1f69a3a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e8db19268e60198488e74dbd6813f765, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 88b91fe0159eb474ebd222d8d4d8d731, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 733b0bb1711cfcd4ca76eab96f39554d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e5a21ff742df85f4eb19ffe656bb6f17, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fec797f1cfe20534ca4abc2837358135, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e142c5e320bfb4d4faf80252926e10ef, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: FMODUnity
+  ClassName: FMOD.GUID
+- AssemblyName: FMODUnity
+  ClassName: FMODUnity.EventReference
+Assets:
+- Assets/Resources/ChipEffectPrefabs/Widesword.prefab
+- Assets/Resources/ChipEffectPrefabs/AirShot.prefab
+- Assets/Resources/ChipEffectPrefabs/BombChip.prefab
+- Assets/Resources/ChipEffectPrefabs/WhiteCapsule.prefab
+- Assets/Resources/ChipEffectPrefabs/Cannon.prefab
+- Assets/Resources/ChipEffectPrefabs/Longsword.prefab
+- Assets/Resources/ChipEffectPrefabs/ExplosiveMineChip.prefab
+- Assets/Resources/ChipEffectPrefabs/AreaGrab.prefab
+- Assets/Resources/ChipEffectPrefabs/AttackPlus10.prefab
+- Assets/Resources/ChipEffectPrefabs/Invisible.prefab
+Dependencies:
+- C:/Users/Matthew Qiu/MMBN RecreationGame Repo/MMBN-Game-Project/Assets/StreamingAssets/2DAnimationSampleAssetBundles/chipsos.chip

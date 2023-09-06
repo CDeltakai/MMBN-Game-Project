@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3503485838
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: effectprefabs
+      Dependencies:
+        Dependency_0: chipsos.chip
+    Info_1:
+      Name: chipsos.chip
+      Dependencies:
+        Dependency_0: effectprefabs
+    Info_2:
+      Name: rikrpoison
+      Dependencies: {}
+    Info_3:
+      Name: rikrrage
+      Dependencies: {}

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
+  m_Name: Chip Data 1
+  m_EditorClassIdentifier: 
+  Id: 64412d6f78ab1ab4cb6e5416dc877bb2
+  ChipID: 0
+  Chip: 0
+  <ChipName>k__BackingField: 
+  BaseDamage: 0
+  <PierceCount>k__BackingField: 0
+  <ChipElement>k__BackingField: 0
+  ChipSize: 0
+  <EnergyCost>k__BackingField: 0
+  <ChipType>k__BackingField: 0
+  BaseStatusEffect: 0
+  <RangeOfInfluence>k__BackingField: []
+  <RangeOfInfluenceWorld>k__BackingField: []
+  ChipDescription: 
+  ChipImage: {fileID: 0}
+  AnimationDuration: 0
+  EffectScript: 
+  SFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AdditionalSFX: []
+  AnimationClipToUse: {fileID: 0}
+  ObjectSummon: {fileID: 0}
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
+  EffectPrefab: {fileID: 0}
+  effectMechanism: 0
+  pierceUntargetable: 0
+  lightAttack: 0
+  hitFlinch: 0
+  <UseAnimationEvent>k__BackingField: 0
+  <isPersistent>k__BackingField: 0
+  <AllowSummonObjectMod>k__BackingField: 0
