@@ -172,7 +172,7 @@ public class CardSelectionMenu : MonoBehaviour
 
                 if(!mostRecentActiveCard.IsEmpty())
                 {
-                    mostRecentActiveCard.attachedPassiveCards.Add(currentCard);
+                    mostRecentActiveCard.AddCardToPassives(currentCard);
                 }
 
 
