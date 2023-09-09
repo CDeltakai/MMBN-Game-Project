@@ -124,7 +124,7 @@ public class CardSelectionMenu : MonoBehaviour
         currentDeckReference.Clear();
 
         //Create a deep copy of the CardObjectReferences from the CardPoolManager that we can modify freely
-        foreach(CardObjectReference card in cardPoolManager.CardObjectReferences)
+        foreach(ActiveCardObjReference card in cardPoolManager.CardObjectReferences)
         {
             currentDeckReference.Add(card);
         }
@@ -148,18 +148,17 @@ public class CardSelectionMenu : MonoBehaviour
     }
 
 
-    //Checks the cardload to see if passive chips are correctly attached to active chips, then activates the corresponding
-    //connector indicators to show the user that an active chip has attached passive chips. 
+    //Checks the cardload to see if passive chips are correctly attached to active chips, then. 
     public void ValidateCardLoad()
     {
         for(int i = 0; i < cardLoadSlots.Count; i++) 
         {
             CardObjectReference currentCard = cardLoadSlots[i].cardObjectReference;
-            CardObjectReference mostRecentActiveCard = new CardObjectReference();
+            ActiveCardObjReference mostRecentActiveCard = new ActiveCardObjReference();
 
             if(currentCard.chipSO.ChipType == EChipTypes.Active)
             {
-                mostRecentActiveCard = currentCard;
+                mostRecentActiveCard = (ActiveCardObjReference)currentCard;
             }
 
             if(currentCard.chipSO.ChipType == EChipTypes.Passive)
@@ -172,7 +171,7 @@ public class CardSelectionMenu : MonoBehaviour
 
                 if(!mostRecentActiveCard.IsEmpty())
                 {
-                    mostRecentActiveCard.AddCardToPassives(currentCard);
+                    //mostRecentActiveCard.attachedPassiveCards.Add(currentCard);
                 }
 
 

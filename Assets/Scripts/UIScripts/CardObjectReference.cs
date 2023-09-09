@@ -8,10 +8,6 @@ public class CardObjectReference
 {
     public ChipSO chipSO;
     public GameObject effectPrefab;
-    [SerializeField] CardObjectReference passiveCard1;
-    [SerializeField] CardObjectReference passiveCard2;
-    [SerializeField] CardObjectReference passiveCard3;
-    [SerializeField] CardObjectReference passiveCard4;
     public GameObject ObjectSummon;
     public List<GameObject> ObjectSummonList;
     public CardSlot cardSlot;
@@ -20,25 +16,10 @@ public class CardObjectReference
     {
         chipSO = null;
         effectPrefab = null;
-        
-        passiveCard1 = null;
-        passiveCard2 = null;
-        passiveCard3 = null;
-        passiveCard4 = null;        
-
-
         ObjectSummon = null;
         ObjectSummonList.Clear();
     }
 
-    public void ClearPassiveCards()
-    {
-        passiveCard1 = null;
-        passiveCard2 = null;
-        passiveCard3 = null;
-        passiveCard4 = null;   
-
-    }
 
     public bool IsEmpty()
     {
@@ -49,34 +30,29 @@ public class CardObjectReference
         return false;
     }
 
-    public void AddCardToPassives(CardObjectReference card)
-    {
-        if(passiveCard1 == null || passiveCard1.IsEmpty())
-        {
-            passiveCard1 = card;
-        }else
-        if(passiveCard2 == null || passiveCard2.IsEmpty())
-        {
-            passiveCard2 = card;
-        }else
-        if(passiveCard3 == null || passiveCard3.IsEmpty())
-        {
-            passiveCard3 = card;
-        }else
-        if(passiveCard4 == null || passiveCard4.IsEmpty())
-        {
-            passiveCard4 = card;
-        }
+}
 
-    }
 
-    public List<CardObjectReference> GetPassiveCards()
-    {
-        List<CardObjectReference> passiveCards = new List<CardObjectReference>
-        {
-            passiveCard1
-        };
-        return passiveCards;
-    }
+[System.Serializable]
+public class ActiveCardObjReference : CardObjectReference
+{
+
+    [SerializeReference] public List<ActiveCardObjReference> attachedPassiveCards = new List<ActiveCardObjReference>();
+
+
+
+
+
+}
+
+
+
+
+[System.Serializable]
+public class PassiveCardObjReference : CardObjectReference
+{
+
+
+
 
 }

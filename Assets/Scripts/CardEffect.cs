@@ -10,6 +10,7 @@ public abstract class CardEffect : MonoBehaviour
     public ChipSO chipSO;
     public List<GameObject> ObjectSummonList = new List<GameObject>();
     public AttackPayload attackPayload = new AttackPayload();
+    protected Transform firePoint;
 
 
     protected void InitializeAwakeVariables()

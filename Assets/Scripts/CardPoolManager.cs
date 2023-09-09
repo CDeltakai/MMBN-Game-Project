@@ -68,16 +68,32 @@ public class CardPoolManager : MonoBehaviour
             
                 PooledObjects.Add(effectPrefab.gameObject);
 
-                //Create a new CardObjectReference that references the instantiated EffectPrefab and its ObjectSummons
-                CardObjectReference cardObjectReference = new CardObjectReference
+                CardObjectReference cardObject;
+
+                if(deckElement.card.ChipType == EChipTypes.Passive)
+                {   
+                    cardObject = new PassiveCardObjReference
+                    {
+                        chipSO = deckElement.card,
+                        effectPrefab = effectPrefab.gameObject,
+                        ObjectSummonList = effectPrefab.ObjectSummonList
+                        
+                    };
+                }else
                 {
-                    chipSO = deckElement.card,
-                    effectPrefab = effectPrefab.gameObject,
-                    ObjectSummonList = effectPrefab.ObjectSummonList
+                    //Create a new CardObjectReference that references the instantiated EffectPrefab and its ObjectSummons
+                    cardObject = new ActiveCardObjReference
+                    {
+                        chipSO = deckElement.card,
+                        effectPrefab = effectPrefab.gameObject,
+                        ObjectSummonList = effectPrefab.ObjectSummonList
+                        
+                    };
 
-                };
+                }
 
-                CardObjectReferences.Add(cardObjectReference);
+
+                CardObjectReferences.Add(cardObject);
 
             }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
 
-    public static float slowDownFactor = 0.5f;
+    public static float slowDownFactor = 0.15f;
     public static float slowDownDuration = 3f;
 
     public static bool isCurrentlySlowedDown = false;
@@ -22,7 +22,7 @@ public class TimeManager : MonoBehaviour
     }
 
 
-    public void SlowMotion(float slowDownFactor = 0.5f)
+    public void SlowMotion(float slowDownFactor = 0.15f)
     {
         Time.timeScale = slowDownFactor;
         print("time manager used slowmotion");

@@ -15,8 +15,9 @@ MonoBehaviour:
   Id: dec280bd8eb9f4c4ca8eb5fada6ce46f
   ChipID: 0
   Chip: 0
-  <ChipName>k__BackingField: 
+  <ChipName>k__BackingField: Drill Arm
   BaseDamage: 70
+  <QuantifiableEffects>k__BackingField: []
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 7
   ChipSize: 38
@@ -34,7 +35,6 @@ MonoBehaviour:
     shove enemies back 1 tile on hit.'
   ChipImage: {fileID: -2181421393321553712, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0
-  EffectScript: 
   SFX:
     Guid:
       Data1: 0
@@ -49,9 +49,9 @@ MonoBehaviour:
   <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 673579202784607508, guid: b258f4ab1ac3cc0439b2a568502f848f, type: 3}
   effectMechanism: 0
-  pierceUntargetable: 0
-  lightAttack: 1
-  hitFlinch: 1
+  <PierceConcealment>k__BackingField: 0
+  <LightAttack>k__BackingField: 0
+  <HitFlinch>k__BackingField: 0
   <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

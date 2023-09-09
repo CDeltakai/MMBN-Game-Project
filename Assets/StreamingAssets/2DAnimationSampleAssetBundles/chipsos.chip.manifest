@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3116810330
+CRC: 822298433
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 81b55714ce0c0b6225d530e2ed8961e5
+    Hash: dbd3d14f1a0525739c39061d4393f6cd
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 48b0fcc92bb3fee131f6880a8eb01247
+    Hash: fc90566d33960ffb92636e028bc4dd1e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -56,6 +56,8 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: QuantifiableEffect
 - AssemblyName: FMODUnity
   ClassName: FMOD.GUID
 - AssemblyName: FMODUnity
