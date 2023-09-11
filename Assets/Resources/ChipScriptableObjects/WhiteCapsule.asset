@@ -15,13 +15,14 @@ MonoBehaviour:
   Id: 017dd90cd4a55d84380b60290d708224
   ChipID: 6
   Chip: 110
-  ChipName: White Capsule
+  <ChipName>k__BackingField: White Capsule
   BaseDamage: 0
+  <QuantifiableEffects>k__BackingField: []
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 9
   ChipSize: 32
   <EnergyCost>k__BackingField: 0
-  ChipType: 0
+  <ChipType>k__BackingField: 0
   BaseStatusEffect: 0
   <RangeOfInfluence>k__BackingField: []
   <RangeOfInfluenceWorld>k__BackingField: []
@@ -35,7 +36,6 @@ MonoBehaviour:
 '
   ChipImage: {fileID: -1821607153479355049, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   AnimationDuration: 0.05
-  EffectScript: WhiteCapsule
   SFX:
     Guid:
       Data1: 0
@@ -46,11 +46,13 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 0}
   ObjectSummon: {fileID: 0}
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 1305357598806472437, guid: 22b43810345a2cd40b234ed3791cc3a4, type: 3}
   effectMechanism: 0
-  pierceUntargetable: 0
-  lightAttack: 0
-  hitFlinch: 0
-  UseAnimationEvent: 0
+  <PierceConcealment>k__BackingField: 0
+  <LightAttack>k__BackingField: 0
+  <HitFlinch>k__BackingField: 0
+  <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static bool GameIsPaused = false;
+    //If true, prevents the game from pausing.
+    public static bool BlockPausing = false;
+
+    [SerializeField] PlayerMovement PlayerReference; //Must be set in inspector
+    //Static player reference such that all classes have easy access to it
+    public static PlayerMovement player{get; private set;}
+
+    private void Awake()
     {
-        
+        player = PlayerReference;    
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public static void PauseGame()
     {
-        
+        if(BlockPausing){return;}
+
+        Time.timeScale = 0;
+        GameIsPaused = true;
     }
+
+    public static void UnpauseGame()
+    {
+        Time.timeScale = 1;
+        GameIsPaused = false;
+    }
+
+
+
+
 }

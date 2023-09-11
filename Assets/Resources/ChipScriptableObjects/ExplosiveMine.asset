@@ -15,15 +15,18 @@ MonoBehaviour:
   Id: 57398f1d176b6524489fca3b36bfffc5
   ChipID: 0
   Chip: 0
-  ChipName: Explosive Mine
+  <ChipName>k__BackingField: Explosive Mine
   BaseDamage: 60
+  <QuantifiableEffects>k__BackingField: []
+  <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 0
   ChipSize: 0
   <EnergyCost>k__BackingField: 1
-  ChipType: 1
+  <ChipType>k__BackingField: 1
   BaseStatusEffect: 0
   <RangeOfInfluence>k__BackingField:
   - {x: 4, y: 0}
+  <RangeOfInfluenceWorld>k__BackingField: []
   ChipDescription: 'Summons a mine 4 tiles forward. Enemies that step onto the mine
     will trigger an explosion.
 
@@ -31,7 +34,6 @@ MonoBehaviour:
     explosion.'
   ChipImage: {fileID: -9168428118247650306, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0
-  EffectScript: 
   SFX:
     Guid:
       Data1: 0
@@ -42,11 +44,13 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: 12382b18b09e87c478d63b26d467c3d4, type: 2}
   ObjectSummon: {fileID: 3964132362803675288, guid: d02dac95d1908a146932e4dc2bfa6dd5, type: 3}
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 1431151668363687568, guid: bd7ed4d9bc986534ea7bccedb06f908e, type: 3}
   effectMechanism: 1
-  pierceUntargetable: 0
-  lightAttack: 0
-  hitFlinch: 1
-  UseAnimationEvent: 1
+  <PierceConcealment>k__BackingField: 0
+  <LightAttack>k__BackingField: 0
+  <HitFlinch>k__BackingField: 0
+  <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

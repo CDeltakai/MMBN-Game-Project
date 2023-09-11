@@ -33,6 +33,17 @@ public class ChipScriptableObject :ScriptableObject
 }
 
 
+[Serializable]
+public class QuantifiableEffect
+{
+    [field:SerializeField] public string EffectName{get; private set;}
+    [field:SerializeField] public int IntegerQuantity{get; private set;}
+    [field:SerializeField] public float FloatQuantity{get; private set;}
+    [field:SerializeField] public bool CanBeModified{get; private set;} = false;
+
+
+}
+
 
 
 [CreateAssetMenu(fileName = "Chip Data", menuName = "New Chip", order = 0)]
@@ -41,16 +52,16 @@ public class ChipSO : ChipScriptableObject
 
     [SerializeField] int ChipID;
     [SerializeField] EChips Chip;
-    [SerializeField] string ChipName;
+    [field:SerializeField] public string ChipName{get; private set;}
 [Header("Combat Attributes")]
     [SerializeField] int BaseDamage;
+    [field:SerializeField] public List<QuantifiableEffect> QuantifiableEffects{get;private set;}
     [field:SerializeField] public int PierceCount {get; private set;}
     [field:SerializeField] public AttackElement ChipElement{get; private set;}
     [SerializeField] int ChipSize;
     [field:SerializeField] public int EnergyCost{get; private set;}
-    // Chip Types: 2 = Freeze-time ability(Special chips that freeze time before applying effect)
-    // 1 = Active(Real-time usable chip), 0 = Passive(Applies effect to succeeding chip)
-    [SerializeField] EChipTypes ChipType;
+
+    [field:SerializeField] public EChipTypes ChipType{get; private set;}
     [SerializeField] EStatusEffects BaseStatusEffect;
     ///<summary>
     ///This list of Vector2Ints indicates what tiles in relation to the player's position
@@ -71,17 +82,22 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] string ChipDescription;
     [SerializeField] Sprite ChipImage;
     [SerializeField] float AnimationDuration;
-    [SerializeField] String EffectScript;
     [SerializeField] EventReference SFX;
     [SerializeField] List<EventReference> AdditionalSFX;
+    //What animation will the player trigger when they use this chip? Can be left empty, in which case the chip effect will
+    //trigger instantly on use.
     [SerializeField] AnimationClip AnimationClipToUse;
-    [SerializeField] UnityEngine.GameObject ObjectSummon;
-    [SerializeField] UnityEngine.GameObject EffectPrefab;
+    [SerializeField] GameObject ObjectSummon;
+    [field:SerializeField] public List<GameObject> ObjectSummonList {get; private set;}
+    [field:SerializeField] public bool ObjectSummonsArePooled {get; private set;}
+    [SerializeField] GameObject EffectPrefab;
     [SerializeField] EffectMechanism effectMechanism;
-    [SerializeField] bool pierceUntargetable;
-    [SerializeField] bool lightAttack;
-    [SerializeField] bool hitFlinch;
-    [SerializeField] bool UseAnimationEvent;
+    [field:SerializeField] public bool PierceConcealment {get; private set;}
+    [field:SerializeField] public bool LightAttack {get; private set;}
+    [field:SerializeField] public bool HitFlinch {get; private set;}
+    //If true, the chip will attempt to trigger an animation where an event is called on said animation which activates
+    //this chip's effect. This means that this chip can be interrupted by flinching if the player does not have super armor. 
+    [field:SerializeField] public bool UseAnimationEvent{get; private set;}
     ///<summary>
     ///If this is set to true, this chip will not automatically disable itself after its initial
     ///casting period. The chip will need have its own function to disable itself after some
@@ -93,7 +109,7 @@ public class ChipSO : ChipScriptableObject
     ///through certain passive chips or other modifiers.
     ///</summary>
     [field:SerializeField] public bool AllowSummonObjectMod{get; private set;}
-    [HideInInspector] UnityEngine.GameObject TempEffectPrefabRef;
+   
 
 
     public void ResetID()
@@ -101,12 +117,9 @@ public class ChipSO : ChipScriptableObject
         Id = null;
     }
 
-    public void ResetEffectPrefabRef()
-    {
-        TempEffectPrefabRef = null;
-    }
 
-    public UnityEngine.GameObject GetEffectPrefab()
+
+    public GameObject GetEffectPrefab()
     {
         if(EffectPrefab == null)
         {
@@ -121,11 +134,11 @@ public class ChipSO : ChipScriptableObject
     }    
     public bool IsLightAttack()
     {
-        return lightAttack;
+        return LightAttack;
     }
     public bool IsHitFlinch()
     {
-        return hitFlinch;
+        return HitFlinch;
     }
     public int GetChipID()
     {
@@ -134,7 +147,7 @@ public class ChipSO : ChipScriptableObject
 
     public bool IsPierceUntargetable()
     {
-        return pierceUntargetable;
+        return PierceConcealment;
     }
 
     public EStatusEffects GetStatusEffect()
@@ -142,7 +155,7 @@ public class ChipSO : ChipScriptableObject
         return BaseStatusEffect;
     }
 
-    public UnityEngine.GameObject GetObjectSummon()
+    public GameObject GetObjectSummon()
     {
         if(ObjectSummon != null)
         {
@@ -200,10 +213,6 @@ public class ChipSO : ChipScriptableObject
         return AnimationDuration;
     }
 
-    public string GetEffectScript()
-    {
-        return EffectScript;
-    }
 
     public EChipTypes GetChipType()
     {

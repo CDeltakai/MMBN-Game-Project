@@ -15,20 +15,20 @@ MonoBehaviour:
   Id: d6f05c099b9f2a742b834aa9c588a6db
   ChipID: 0
   Chip: 103
-  ChipName: Cannon
+  <ChipName>k__BackingField: Cannon
   BaseDamage: 40
+  <QuantifiableEffects>k__BackingField: []
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 0
   ChipSize: 4
   <EnergyCost>k__BackingField: 1
-  ChipType: 1
+  <ChipType>k__BackingField: 1
   BaseStatusEffect: 0
   <RangeOfInfluence>k__BackingField: []
   <RangeOfInfluenceWorld>k__BackingField: []
   ChipDescription: Fire a cannon shot in straight line.
   ChipImage: {fileID: -5702409653789015382, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   AnimationDuration: 0.417
-  EffectScript: Cannon
   SFX:
     Guid:
       Data1: 674011879
@@ -39,11 +39,13 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: dc0fbdcc7ab53664795fce3835b81266, type: 2}
   ObjectSummon: {fileID: 0}
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 6733043335069161631, guid: 21bf577efffadfb4884f0d42da34ba43, type: 3}
   effectMechanism: 0
-  pierceUntargetable: 0
-  lightAttack: 0
-  hitFlinch: 1
-  UseAnimationEvent: 1
+  <PierceConcealment>k__BackingField: 0
+  <LightAttack>k__BackingField: 0
+  <HitFlinch>k__BackingField: 0
+  <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

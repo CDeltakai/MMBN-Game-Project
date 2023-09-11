@@ -11,7 +11,7 @@ public class Reflect : MonoBehaviour, IChip
 
     public int BaseDamage {get;set;} = 60;
     public int AdditionalDamage{get; set;} = 0;
-    public EChipTypes ChipType => EChipTypes.Attack;
+    public EChipTypes ChipType => EChipTypes.Active;
     public AttackElement chipElement => AttackElement.Normal;
 
     public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;

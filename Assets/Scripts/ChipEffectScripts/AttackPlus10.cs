@@ -18,7 +18,7 @@ public class AttackPlus10 : ChipEffectBlueprint
     public override void Effect()
     {
         ChipObjectReference chipToBuff = chipLoadManager.nextChipRefLoad[0];
-        if (chipToBuff.chipSORef.GetChipType() == EChipTypes.Attack)
+        if (chipToBuff.chipSORef.GetChipType() == EChipTypes.Active)
         {
             if(chipToBuff.ObjectSummon != null)
             {

@@ -15,13 +15,14 @@ MonoBehaviour:
   Id: 5474ed25cbcf39a40ab9500f71415273
   ChipID: 3
   Chip: 109
-  ChipName: Vulcan
+  <ChipName>k__BackingField: Vulcan
   BaseDamage: 10
+  <QuantifiableEffects>k__BackingField: []
   <PierceCount>k__BackingField: 1
   <ChipElement>k__BackingField: 0
   ChipSize: 4
   <EnergyCost>k__BackingField: 1
-  ChipType: 1
+  <ChipType>k__BackingField: 1
   BaseStatusEffect: 0
   <RangeOfInfluence>k__BackingField: []
   <RangeOfInfluenceWorld>k__BackingField: []
@@ -29,7 +30,6 @@ MonoBehaviour:
     can pierce through 1 enemy
   ChipImage: {fileID: 2373028131613329635, guid: 6f426017257e93d4190ce509171cd07e, type: 3}
   AnimationDuration: 0.708
-  EffectScript: Vulcan
   SFX:
     Guid:
       Data1: -1257478349
@@ -40,11 +40,13 @@ MonoBehaviour:
   AdditionalSFX: []
   AnimationClipToUse: {fileID: 7400000, guid: 0dd31226788c7dd49a7cbaf6197d1a54, type: 2}
   ObjectSummon: {fileID: 0}
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 3193464833529907304, guid: a9d3bb3710fe766438ddd6e6e2c220df, type: 3}
   effectMechanism: 0
-  pierceUntargetable: 0
-  lightAttack: 1
-  hitFlinch: 1
-  UseAnimationEvent: 1
+  <PierceConcealment>k__BackingField: 0
+  <LightAttack>k__BackingField: 0
+  <HitFlinch>k__BackingField: 0
+  <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 1
   <AllowSummonObjectMod>k__BackingField: 0

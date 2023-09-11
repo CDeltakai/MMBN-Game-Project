@@ -182,7 +182,7 @@ public PlayerAttributeSO playerAttributes;
        if(Keyboard.current.spaceKey.wasReleasedThisFrame)
        {
         print("Canceled slowmotion");
-        timeManager.cancelSlowMotion();
+        timeManager.CancelSlowMotion();
        }
 
     }
@@ -370,7 +370,7 @@ public PlayerAttributeSO playerAttributes;
 
         yield return new WaitForSecondsRealtime(1.5f);
         bgController.FadeToNormal(0.25f);
-        timeManager.cancelSlowMotion();
+        timeManager.CancelSlowMotion();
         ParryCoroutine = null;
     }
 

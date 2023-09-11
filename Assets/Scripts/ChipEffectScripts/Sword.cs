@@ -9,7 +9,7 @@ public class Sword : MonoBehaviour, IChip
 
     public int AdditionalDamage{get; set;} = 0;
 
-    public EChipTypes ChipType => EChipTypes.Attack;
+    public EChipTypes ChipType => EChipTypes.Active;
     public EStatusEffects chipStatusEffect {get;set;} = EStatusEffects.Default;
     public AttackElement chipElement => AttackElement.Blade;
 

@@ -1,0 +1,5443 @@
+fileFormatVersion: 2
+guid: 2a4a8f5c407c6434eadc5fc95f390724
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5647245890535358377
+    second: Megaman Idle
+  - first:
+      213: -695115418296982109
+    second: Bomb
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Megaman Idle
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1052
+        width: 35
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7500b5f68c3f0a1b0800000000000000
+      internalID: -5647245890535358377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Move1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1052
+        width: 35
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47826087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5cf746381105fd10800000000000000
+      internalID: 2158632799895551071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Move2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1052
+        width: 35
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43137255}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6d266efe42dcee0800000000000000
+      internalID: -1239293709675997458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Move3
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 1052
+        width: 31
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4074074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8622221b6c47a10800000000000000
+      internalID: 1906367006368753880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Shoot1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1052
+        width: 46
+        height: 44
+      alignment: 9
+      pivot: {x: 0.38043478, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e666b3684b4d5d0800000000000000
+      internalID: -3038605359953056226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Shoot2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1052
+        width: 44
+        height: 44
+      alignment: 9
+      pivot: {x: 0.39772728, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc39013af4286d00800000000000000
+      internalID: 966062777054084315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Shoot3
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 1052
+        width: 72
+        height: 44
+      alignment: 9
+      pivot: {x: 0.24305555, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436e72619c2dbd3a0800000000000000
+      internalID: -6639481464525691340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Shoot4
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 1051
+        width: 72
+        height: 44
+      alignment: 9
+      pivot: {x: 0.24305555, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021e7ef2c79237d00800000000000000
+      internalID: 969163958171197728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Shoot5
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 1052
+        width: 65
+        height: 44
+      alignment: 9
+      pivot: {x: 0.26923078, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff52a4a5017a73450800000000000000
+      internalID: 6068502711581156863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_GenericSummon1
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1053
+        width: 35
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4baa3036d1513f2a0800000000000000
+      internalID: -6704992204265117004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_GenericSummon2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1053
+        width: 46
+        height: 44
+      alignment: 9
+      pivot: {x: 0.38043478, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c713d92118678eae0800000000000000
+      internalID: -1519834577502391940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_GenericSummon3
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1053
+        width: 38
+        height: 44
+      alignment: 9
+      pivot: {x: 0.46052632, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc111673d04f7bbe0800000000000000
+      internalID: -1461431216457575989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_GenericSummon4
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1053
+        width: 39
+        height: 48
+      alignment: 9
+      pivot: {x: 0.44871795, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3805c726422da37b0800000000000000
+      internalID: -5243647762406551421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Hurt 1
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1054
+        width: 28
+        height: 48
+      alignment: 9
+      pivot: {x: 0.625, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2d5ba9b2b0432d0800000000000000
+      internalID: -3300000345048624459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman Hurt 2
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1057
+        width: 28
+        height: 48
+      alignment: 9
+      pivot: {x: 0.625, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d5de12eec2fb4d0800000000000000
+      internalID: -3116723015834051327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Sword1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 981
+        width: 35
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9847fbffc5116cc20800000000000000
+      internalID: 3226285274182939785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Sword2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 981
+        width: 64
+        height: 44
+      alignment: 9
+      pivot: {x: 0.2734375, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeabc80845a075df0800000000000000
+      internalID: -191673101089719570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Sword3
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 981
+        width: 62
+        height: 45
+      alignment: 9
+      pivot: {x: 0.28225806, y: 0.4888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab53e30f495364bf0800000000000000
+      internalID: -340525808017852998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Sword4
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 981
+        width: 64
+        height: 56
+      alignment: 9
+      pivot: {x: 0.2734375, y: 0.39285713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b3ddd9e88c78110800000000000000
+      internalID: 1263198735360146187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Sword5
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 982
+        width: 47
+        height: 56
+      alignment: 9
+      pivot: {x: 0.3723404, y: 0.39285713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14f4dd3cd16260f0800000000000000
+      internalID: -1125229358331136993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Sword6
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 982
+        width: 42
+        height: 56
+      alignment: 9
+      pivot: {x: 0.41666666, y: 0.39285713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b274a69af9a73010800000000000000
+      internalID: 1168589522060210872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Sword7
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 982
+        width: 42
+        height: 56
+      alignment: 9
+      pivot: {x: 0.41666666, y: 0.39285713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00dc250752e18bb10800000000000000
+      internalID: 1997379580885912832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_25
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 983
+        width: 43
+        height: 50
+      alignment: 9
+      pivot: {x: 0.40697673, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91f05966b6122ae0800000000000000
+      internalID: -1575671946919480932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_26
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 982
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd02f7139bd0fbf50800000000000000
+      internalID: 6899248243205415135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_ReleaseThrow1
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 982
+        width: 55
+        height: 44
+      alignment: 9
+      pivot: {x: 0.3181818, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa4cbafb23e706c0800000000000000
+      internalID: -4177120351333102862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_ReleaseThrow2
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 982
+        width: 44
+        height: 42
+      alignment: 9
+      pivot: {x: 0.39772728, y: 0.52380955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922c1089a299cb140800000000000000
+      internalID: 4736829316304847401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_29
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 984
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ba66488f7aea280800000000000000
+      internalID: -9030095517016216702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_30
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 984
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0dd9aaa375c6c100800000000000000
+      internalID: 128006740001807630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 911
+        width: 75
+        height: 48
+      alignment: 9
+      pivot: {x: 0.23333333, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18e8a1b053aa2c10800000000000000
+      internalID: 2029614149057177630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 911
+        width: 44
+        height: 44
+      alignment: 9
+      pivot: {x: 0.39772728, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38e58d0de6fb64f0800000000000000
+      internalID: -834301807952533446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 911
+        width: 54
+        height: 44
+      alignment: 9
+      pivot: {x: 0.32407406, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af559e182aed15e0800000000000000
+      internalID: -1937134806666747991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon3
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 911
+        width: 54
+        height: 44
+      alignment: 9
+      pivot: {x: 0.32407406, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8cae6cbfff952e0800000000000000
+      internalID: -2136395091371439904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon4
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 911
+        width: 67
+        height: 44
+      alignment: 9
+      pivot: {x: 0.26119402, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead1a08628d7b51f0800000000000000
+      internalID: -1055111688643535442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon6
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 911
+        width: 76
+        height: 46
+      alignment: 9
+      pivot: {x: 0.23026316, y: 0.47826087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f76b560ade588a10800000000000000
+      internalID: 1911882332321310705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon7
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 911
+        width: 80
+        height: 46
+      alignment: 9
+      pivot: {x: 0.21875, y: 0.47826087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9d694e2742f02d0800000000000000
+      internalID: -3310387125214062081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon8
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 911
+        width: 90
+        height: 58
+      alignment: 9
+      pivot: {x: 0.19444445, y: 0.37931034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba40e3b6d1ed41a0800000000000000
+      internalID: -6823549548139361602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon9
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 911
+        width: 91
+        height: 60
+      alignment: 9
+      pivot: {x: 0.1923077, y: 0.36666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903ed8db773e0aca0800000000000000
+      internalID: -6007551799491435767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Cannon10
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 911
+        width: 53
+        height: 44
+      alignment: 9
+      pivot: {x: 0.3301887, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0bc03237ec4a9bc0800000000000000
+      internalID: -3775620781733524723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_56
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 845
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc7fe334f09aaf10800000000000000
+      internalID: 2281795539734330572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_57
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 887
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749768af18d00d6c0800000000000000
+      internalID: -4120778807138944697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_58
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 886
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3863977342b0b60800000000000000
+      internalID: 7713298607477523368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_59
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 839
+        width: 75
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c966b25308406ff0800000000000000
+      internalID: -44956817163916860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_60
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 857
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede6e2ed1680d5640800000000000000
+      internalID: 5070217971921481438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_61
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 857
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d424525671606e050800000000000000
+      internalID: 5829353465228640845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_62
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 880
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019b3cbe542062270800000000000000
+      internalID: 8225264268770261264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_63
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 883
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c2eaea989f27fd0800000000000000
+      internalID: -2345538086170121156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_64
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 839
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63198c83603405e30800000000000000
+      internalID: 4490162522489917750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_65
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 839
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4371a558234434630800000000000000
+      internalID: 3910043885264049972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_66
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 839
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dcf7d607a44d34d0800000000000000
+      internalID: -3153288679924433705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_67
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 839
+        width: 67
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2162506bfbff250800000000000000
+      internalID: 5980709618662642376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_68
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 839
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb71c82c6646f0cb0800000000000000
+      internalID: -4895583877415036996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_69
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 839
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc76963b109570cd0800000000000000
+      internalID: -2592005196688562225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_70
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 839
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccbc0028c647469f0800000000000000
+      internalID: -476127651208049716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_71
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 839
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9beadc4789c6c750800000000000000
+      internalID: 6324964309635623837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_72
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 872
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2eceaa10f50e9a20800000000000000
+      internalID: 3070898524711210542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_73
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 873
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729720d09453c1110800000000000000
+      internalID: 1232918985859823911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_74
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 839
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e070e140037e38360800000000000000
+      internalID: 7170829225117484814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_75
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 863
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51aaae621846eee60800000000000000
+      internalID: 7993436894495681045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_76
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 864
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d0f9ab24d336720800000000000000
+      internalID: 2838179546981666108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_77
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 857
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d661bf5af24e81fd0800000000000000
+      internalID: -2370894310511274387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_78
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 855
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2855d9bcf35b28b50800000000000000
+      internalID: 6594032090027480450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_79
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 843
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a6b642856041720800000000000000
+      internalID: 2815882642651310599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_80
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 852
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8397f80cbca82a7d0800000000000000
+      internalID: -2908609801614296776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 768
+        width: 75
+        height: 48
+      alignment: 9
+      pivot: {x: 0.23333333, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b075b436fd9201e0800000000000000
+      internalID: -2233048784450522956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 769
+        width: 38
+        height: 40
+      alignment: 9
+      pivot: {x: 0.46052632, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb1e9e9d79a472ba0800000000000000
+      internalID: -6113835953075658308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 769
+        width: 54
+        height: 44
+      alignment: 9
+      pivot: {x: 0.32407406, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b02e24aea409a9f0800000000000000
+      internalID: -456828739076087631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed3
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 769
+        width: 54
+        height: 44
+      alignment: 9
+      pivot: {x: 0.32407406, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a4660b90741bf10800000000000000
+      internalID: 2283684592993323561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed4
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 769
+        width: 67
+        height: 44
+      alignment: 9
+      pivot: {x: 0.26119402, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d8a632fcfbc2f10800000000000000
+      internalID: 2246381210524355942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed6
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 769
+        width: 76
+        height: 46
+      alignment: 9
+      pivot: {x: 0.23026316, y: 0.47826087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042a4d0a0f8adc010800000000000000
+      internalID: 1210809626276438592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed7
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 769
+        width: 80
+        height: 46
+      alignment: 9
+      pivot: {x: 0.21875, y: 0.47826087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 050f77b41a8ec3ea0800000000000000
+      internalID: -5891578433053921200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed8
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 769
+        width: 90
+        height: 58
+      alignment: 9
+      pivot: {x: 0.19444445, y: 0.37931034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6676295865af7c8f0800000000000000
+      internalID: -520171982422907034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed9
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 768
+        width: 91
+        height: 60
+      alignment: 9
+      pivot: {x: 0.1923077, y: 0.36666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed112ad2afbe90910800000000000000
+      internalID: 1804232585478541790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_CannonRed10
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 769
+        width: 53
+        height: 44
+      alignment: 9
+      pivot: {x: 0.3301887, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31f908e550c424f0800000000000000
+      internalID: -854346554095832769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_106
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 697
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1fa7bafbc44e0d00800000000000000
+      internalID: 940765015042404124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_107
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 697
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d247721569c3640800000000000000
+      internalID: 5061085356556037468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_108
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 697
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc771da9e6adbc80800000000000000
+      internalID: -8305298615239738123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_109
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 697
+        width: 67
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bdb64239a4686b0800000000000000
+      internalID: -5294462316095743172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_110
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 697
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92aadf3506f9d4f70800000000000000
+      internalID: 9173163252098378281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_111
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 697
+        width: 67
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bac9ddc41e8f60d0800000000000000
+      internalID: -3427364571401565519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_112
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 697
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa3e85df5b9ced80800000000000000
+      internalID: -8220024383950931212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_113
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 697
+        width: 67
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40199eb2a511bd630800000000000000
+      internalID: 3952772176929198340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_114
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 697
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de51f7ff66dcbc10800000000000000
+      internalID: 2070765705073090263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_115
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 697
+        width: 67
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febef2585564da8f0800000000000000
+      internalID: -527688248211805201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_116
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 699
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5945ecfe1c03fe0800000000000000
+      internalID: -1211255064059669047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_DrillArm1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 634
+        width: 97
+        height: 44
+      alignment: 9
+      pivot: {x: 0.18041237, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f483f0353820c6070800000000000000
+      internalID: 8100852592790157391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_DrillArm2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 635
+        width: 96
+        height: 44
+      alignment: 9
+      pivot: {x: 0.18229167, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8e8756e67f103d0800000000000000
+      internalID: -3242038203209160478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_DrillArm3
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 634
+        width: 97
+        height: 44
+      alignment: 9
+      pivot: {x: 0.18041237, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c753dd665a1ccc0800000000000000
+      internalID: -3692488358250578927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_120
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 636
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f472995efedab80800000000000000
+      internalID: -8381779562070585575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_121
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 636
+        width: 60
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187b4d21ed1d10eb0800000000000000
+      internalID: -4755288979797657727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_122
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 636
+        width: 61
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830f52b1008cdb350800000000000000
+      internalID: 6034198978527359032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_123
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 636
+        width: 55
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e581d9374da70e0f0800000000000000
+      internalID: -1089736056932329378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_124
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 636
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b250ddffeaf736e0800000000000000
+      internalID: -1857740412604624207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_125
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 636
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202bd57789e58dfe0800000000000000
+      internalID: -1164076494744604158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_126
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 563
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eae9bc3e413ad740800000000000000
+      internalID: 5177504933711833828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_127
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 563
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb8e11e463bdc670800000000000000
+      internalID: 8560695712556157885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_128
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 563
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55e86b4669fe4370800000000000000
+      internalID: 8308852580292289887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_129
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 560
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf594077d2d082a0800000000000000
+      internalID: -6737153219802603597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_130
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 560
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc8a8e32d0fdb7d0800000000000000
+      internalID: -2900897799173665612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_131
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 560
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0cb8fcaa1fcad9c0800000000000000
+      internalID: -3901578413685031926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_132
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 562
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b377a8e8ea30d4310800000000000000
+      internalID: 1390771908177983291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_133
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 562
+        width: 60
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a2924b5c1f907f0800000000000000
+      internalID: -645719240117507469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_134
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 562
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d32b32a2e60aeec0800000000000000
+      internalID: -3537006986891942956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_135
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 562
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa654aa7ec5c4c8b0800000000000000
+      internalID: -5132760184683997526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_136
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 562
+        width: 45
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33c6d7a250477d70800000000000000
+      internalID: 9040765500716925756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_BombThrow1
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 564
+        width: 45
+        height: 50
+      alignment: 9
+      pivot: {x: 0.3888889, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0afe4bb49445694f0800000000000000
+      internalID: -822377208169042016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_BombThrow2
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 564
+        width: 39
+        height: 56
+      alignment: 9
+      pivot: {x: 0.44871795, y: 0.39285713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487456bc942a0d2d0800000000000000
+      internalID: -3255924092760143996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_TankCannon5
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 494
+        width: 84
+        height: 58
+      alignment: 9
+      pivot: {x: 0.20833333, y: 0.37931034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95cf3216d8228df0800000000000000
+      internalID: -179536135247116899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_TankCannon6
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 494
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.21144578, y: 0.37931034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd47b2c43e398f00800000000000000
+      internalID: 1119494378704293342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_143
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 493
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0979be82251d04ca0800000000000000
+      internalID: -6034593349872412784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_144
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 492
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442833a96c257f900800000000000000
+      internalID: 718133678532952644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_TankCannon4
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 494
+        width: 92
+        height: 48
+      alignment: 9
+      pivot: {x: 0.19021739, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc56f29e3b66e190800000000000000
+      internalID: -7933535777068786484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_TankCannon1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 494
+        width: 55
+        height: 44
+      alignment: 9
+      pivot: {x: 0.3181818, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7825b42a551842450800000000000000
+      internalID: 6063113203142578823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_TankCannon2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 494
+        width: 63
+        height: 44
+      alignment: 9
+      pivot: {x: 0.2777778, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f53f4bfc1505d30800000000000000
+      internalID: 4418121186986385281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_TankCannon3
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 494
+        width: 64
+        height: 44
+      alignment: 9
+      pivot: {x: 0.27421874, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e094f7a8f2cfd35d0800000000000000
+      internalID: -3081029288934291186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_TankCannon7
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 494
+        width: 85
+        height: 59
+      alignment: 9
+      pivot: {x: 0.20588236, y: 0.37288135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c3fbc773b0ae270800000000000000
+      internalID: 8280443197818092702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_TankCannon8
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 494
+        width: 63
+        height: 44
+      alignment: 9
+      pivot: {x: 0.2777778, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7abc9813d4c555f0800000000000000
+      internalID: -768491750466733441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_161
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 431
+        width: 76
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a984950a6f41dbc90800000000000000
+      internalID: -7152537583709763430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_162
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 431
+        width: 76
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c811d00fce6fdcc30800000000000000
+      internalID: 4381429510001463692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_163
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 472
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d06a0e64f89a8a40800000000000000
+      internalID: 5371273681178353878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_164
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 475
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86edcba9fae5cbe10800000000000000
+      internalID: 2214749225067798120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_165
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 474
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b0cdaea84912a20800000000000000
+      internalID: 3035870948191111994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_166
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 466
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673248422a1cc9e60800000000000000
+      internalID: 7970458342680437622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_167
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 449
+        width: 40
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77894dbc4aa794b0800000000000000
+      internalID: -5433687178829265027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_168
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 447
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8143973937f1b6d80800000000000000
+      internalID: -8256470910597778408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_169
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 447
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7233de2ffa224760800000000000000
+      internalID: 7440556809860100730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_170
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 431
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a6e82f5773731f0800000000000000
+      internalID: -1065321807129712011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_171
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 431
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f5731910b286080800000000000000
+      internalID: -9194051353545580681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_172
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 431
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772e6a4b654772f40800000000000000
+      internalID: 5703655368834867831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_173
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 431
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58a9466d538598b0800000000000000
+      internalID: -5146062562029623205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_174
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 448
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3edb89138bc7e50800000000000000
+      internalID: 6808519259832837110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_175
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 453
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d2d4d2febb990c0800000000000000
+      internalID: -4568413711059047107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_176
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 431
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd98da6bdb26bec0800000000000000
+      internalID: -3551603034744644148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_177
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 430
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f8e4e63e3504860800000000000000
+      internalID: 7512096414727311137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_178
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 430
+        width: 51
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c7938cb2a308000800000000000000
+      internalID: 36092756736179328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_179
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 447
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d8055966adc1920800000000000000
+      internalID: 2962482789029547365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_180
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 448
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 443bc6260c9656080800000000000000
+      internalID: -9194826789201071292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_181
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 373
+        width: 47
+        height: 46
+      alignment: 9
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e93f24cf39299e60800000000000000
+      internalID: 7969446369459911141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_182
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 373
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0939d0592108c00800000000000000
+      internalID: 900740356861300962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_183
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 373
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940f8f87f34e0c360800000000000000
+      internalID: 7187995966546964553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_ShieldActive
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 372
+        width: 47
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3723404, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f48dbe9ccd51b20800000000000000
+      internalID: 3104630277945184128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_ShieldDissipate1
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 372
+        width: 47
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3723404, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee72f52d5a64b960800000000000000
+      internalID: 7616829818091503335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_ShieldDissipate2
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 372
+        width: 47
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3723404, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 154eaaf55e379f160800000000000000
+      internalID: 7059801319869703249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_ShieldDissipate3
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 372
+        width: 47
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3723404, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9148230c76a5940800000000000000
+      internalID: 5285651187851598277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_ShieldDissipate4
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 372
+        width: 47
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3723404, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcdb9fefe66628350800000000000000
+      internalID: 6017484679030619599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_ShieldDissipate5
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 372
+        width: 47
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3723404, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636473f757a4fbfd0800000000000000
+      internalID: -2324057014193928650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_ShieldDissipate6
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 372
+        width: 47
+        height: 49
+      alignment: 9
+      pivot: {x: 0.3723404, y: 0.4489796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddbb50ae771fcf0c0800000000000000
+      internalID: -4540488826966656035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_191
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 375
+        width: 55
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45171cec9db1de40800000000000000
+      internalID: 5679529086764389708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_192
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 375
+        width: 55
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27abfe00214cd7620800000000000000
+      internalID: 2773588527134259826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_193
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 375
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 473a6da69b8e85060800000000000000
+      internalID: 6942554708650664820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_194
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 375
+        width: 55
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2043c5234e8b2860800000000000000
+      internalID: 7506249622990569516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Airshot3
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 309
+        width: 76
+        height: 45
+      alignment: 9
+      pivot: {x: 0.23026316, y: 0.4888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64061084eea5346a0800000000000000
+      internalID: -6466224660517134266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_199
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 305
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2611e5a314c023590800000000000000
+      internalID: -7696075338931105438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_200
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 305
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72271e6b5068ff480800000000000000
+      internalID: -8863218182540660185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Airshot1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 309
+        width: 49
+        height: 44
+      alignment: 9
+      pivot: {x: 0.35714287, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed75c6c003bc8b590800000000000000
+      internalID: -7658147759116232738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Airshot2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 309
+        width: 63
+        height: 44
+      alignment: 9
+      pivot: {x: 0.2777778, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f701a73946647bf30800000000000000
+      internalID: 4591215742912434303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Airshot4
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 309
+        width: 78
+        height: 45
+      alignment: 9
+      pivot: {x: 0.22435898, y: 0.4888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d2c71dd6a7f0970800000000000000
+      internalID: 8723325615324540313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Airshot5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 309
+        width: 78
+        height: 51
+      alignment: 9
+      pivot: {x: 0.22435898, y: 0.43137255}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2f43c921ab9c4d0800000000000000
+      internalID: -3113753078257093962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Airshot6
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 309
+        width: 50
+        height: 44
+      alignment: 9
+      pivot: {x: 0.35, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477e798adc16113f0800000000000000
+      internalID: -931856111964264588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_208
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 309
+        width: 61
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6bfbb8590c3b0570800000000000000
+      internalID: 8433900738022472555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_209
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 309
+        width: 59
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311ac797b547123b0800000000000000
+      internalID: -5539018130459942637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_210
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 308
+        width: 57
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16a7133f4c1c0a30800000000000000
+      internalID: 4182749280405530140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_214
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 240
+        width: 51
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b004e91e9bb6cb0800000000000000
+      internalID: -4869594193397281920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_215
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 240
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d812cf0f89d18e0800000000000000
+      internalID: -1721051321796031112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_216
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 240
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea659cbd327fa070800000000000000
+      internalID: 8119834262654773996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_217
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 240
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f429d6230af5900800000000000000
+      internalID: 675434607575977730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_218
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 240
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc248d2570935ea0800000000000000
+      internalID: -5885201455093895982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_219
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 266
+        width: 45
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a3f171d58aa5ca0800000000000000
+      internalID: -6027320033508640213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Vulcan_1
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 244
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a524ca7ee08ee3d70800000000000000
+      internalID: 9024905854011064922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Vulcan_2
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 243
+        width: 56
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136f54bfdfbe02ab0800000000000000
+      internalID: -5034764907325295055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Vulcan_3
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 243
+        width: 65
+        height: 44
+      alignment: 9
+      pivot: {x: 0.43076923, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037baf33d063e2140800000000000000
+      internalID: 4696750891728549680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_Vulcan_4
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 243
+        width: 64
+        height: 44
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5fed10e2abd7a660800000000000000
+      internalID: 7397122405570572126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Megaman_vulcan_5
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 244
+        width: 65
+        height: 44
+      alignment: 9
+      pivot: {x: 0.43076923, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ff0d4e646236690800000000000000
+      internalID: -7610196859397537897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_225
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 241
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e45edc3eff7b380800000000000000
+      internalID: -8955407980125925739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_226
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 241
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936b93821df936d30800000000000000
+      internalID: 4423554979679811129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_227
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 165
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362398ec1691804e0800000000000000
+      internalID: -2015332925380677021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_228
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 164
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521cfc76153a5e070800000000000000
+      internalID: 8135087871944016165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_229
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 165
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561d373bc6fcaeb50800000000000000
+      internalID: 6623334267775865189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_230
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 165
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aaff146822e61d50800000000000000
+      internalID: 6707797358121319072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_231
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 166
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc98f8d517522de0800000000000000
+      internalID: -1359428386166366980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_232
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 166
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f76f11dfa0c8c10800000000000000
+      internalID: 2057031211845844855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_233
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 165
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbc9152bc8578970800000000000000
+      internalID: 8757065629969271737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_234
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 164
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b55f8cf7928223a0800000000000000
+      internalID: -6691642507030211150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_235
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 166
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a91ce9e4f4cff550800000000000000
+      internalID: 6196888168460720550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_236
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 166
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60ba695eae7e4560800000000000000
+      internalID: 7299911333303726191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_237
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 166
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74eefac00d5998b0800000000000000
+      internalID: -5144978841306995590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_238
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 167
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411f6dbd0cfe70890800000000000000
+      internalID: -7491755843506474732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_239
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 167
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b175430f065dbb290800000000000000
+      internalID: -7873464911203641573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_240
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 167
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc582f186f795d50800000000000000
+      internalID: 6726547603630611662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_241
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 101
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e83b49b5910c510800000000000000
+      internalID: 1567280551452446300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_242
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 101
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bea4783e9885fa20800000000000000
+      internalID: 3095530532020465332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_243
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 101
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c35b8c2fccf549b0800000000000000
+      internalID: -5096389436564089920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_244
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 102
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4be8f3dedeab250800000000000000
+      internalID: 5961338660007621840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_245
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 102
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04cd0de231b41bbb0800000000000000
+      internalID: -4922070371977339840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_246
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 102
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ea474d3c3d9eba0800000000000000
+      internalID: -6059078985613791627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_247
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 102
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6c4cd5263ecefa0800000000000000
+      internalID: -5769987010948970782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_248
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 87
+        width: 64
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349fa0983241fe360800000000000000
+      internalID: 7200996472044321091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_249
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 6
+        width: 365
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2912a3c06a2721b50800000000000000
+      internalID: 6562433664527507858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_250
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 88
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 545ddcc3527c129b0800000000000000
+      internalID: -5106581539713591995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_251
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 86
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d11230725c1c337a0800000000000000
+      internalID: -6398557593056108259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_252
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 26
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8958fb80475364a0800000000000000
+      internalID: -6601336694057182838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_253
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 26
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b504c7fb9384e1940800000000000000
+      internalID: 5268728026932985947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_254
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 27
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5cf068c15cac7020800000000000000
+      internalID: 2340935373579943006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_255
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 27
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3018a291cd1c4ea0800000000000000
+      internalID: -5887297895653699523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_256
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 54
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9c420529b84c340800000000000000
+      internalID: 4883181356502534614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_257
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 54
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973d05db04f6970a0800000000000000
+      internalID: -6883348231614311559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_258
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 46
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580e60aa863ba32a0800000000000000
+      internalID: -6756891028805459835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_259
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 46
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa698cea2cb0e9180800000000000000
+      internalID: -9106828465712621910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_260
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 45
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910619b764c023060800000000000000
+      internalID: 6931616273336983577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_261
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 45
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05cbfa879e6aa3350800000000000000
+      internalID: 5997289375479610448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_262
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 45
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e0c0eff52f91060800000000000000
+      internalID: 6924832396156866058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_263
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 45
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41291a172edcf7040800000000000000
+      internalID: 4647659712922358292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_264
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 45
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0bf25203e7a4ea0800000000000000
+      internalID: -5887754817586089758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_265
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 36
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ea2b5984c2b5c10800000000000000
+      internalID: 2043275546203434529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_266
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 36
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0e867384a778bf0800000000000000
+      internalID: -322154397747846953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_267
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 28
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767e0993c53597f10800000000000000
+      internalID: 2267935542925649767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_268
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 28
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3cb6555843393f00800000000000000
+      internalID: 1096964370003835962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_269
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 28
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d011bca68c3034810800000000000000
+      internalID: 1748245239669920013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_270
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 28
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78bb670d60cf8510800000000000000
+      internalID: 1553671970974578814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_271
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 28
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061860d670f891150800000000000000
+      internalID: 5843859253546615136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_272
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 28
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f3cea8e9db07730800000000000000
+      internalID: 3994901358110850921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_273
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 28
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a1c409caa436eb0800000000000000
+      internalID: -4727853078793151954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_274
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 12
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f27aa9421f82ec0800000000000000
+      internalID: -3591355563312205966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_275
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 12
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d7dddd0462db730800000000000000
+      internalID: 4016408502726393246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_276
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 12
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574ab70a603e6c6c0800000000000000
+      internalID: -4123358791209343883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_277
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 10
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1add531539d410ac0800000000000000
+      internalID: -3890743307953381983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_278
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 12
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f88922b227084d60800000000000000
+      internalID: 7874551794056661241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_279
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 12
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6398d797a9b788d90800000000000000
+      internalID: -7095285309528766154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_280
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 12
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f4ba85e020e8110800000000000000
+      internalID: 1264950805978107676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_281
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 12
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd23c91f408990ab0800000000000000
+      internalID: -5041331160863722785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_282
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 12
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29653f3229da3de00800000000000000
+      internalID: 1068388379796919954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_283
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 12
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fbfc3a9384e83a0800000000000000
+      internalID: -6661307386435748017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_284
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 12
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e65b2d3c05a9e90800000000000000
+      internalID: -7018208267319546271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_285
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 12
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 808872e631a5ff000800000000000000
+      internalID: 71875158560180232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_286
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 12
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8741e78be20fccb60800000000000000
+      internalID: 7767847540761695352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_287
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 18
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c215a1c10f631720800000000000000
+      internalID: 2815716245371163337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_288
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 18
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9597ce8fe2715090800000000000000
+      internalID: -8047524685916170849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_289
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 12
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b88c9af3258df4c0800000000000000
+      internalID: -4252096083592968013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_290
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf5407141bee54b0800000000000000
+      internalID: -5449660027553685577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_291
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 10
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ccc41de08c39f80800000000000000
+      internalID: -8100911338742821870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_292
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4dd8500ba202b820800000000000000
+      internalID: 2932409240840101194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_293
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed02ff8b9a057520800000000000000
+      internalID: 2699075214929694184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_294
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296e349f1b287e1b0800000000000000
+      internalID: -5627385508473346414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_295
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 10
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28ad871a59a3f1e0800000000000000
+      internalID: -2165200791427766225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_296
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68261fe101dab6640800000000000000
+      internalID: 5074339689913213574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_297
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75be870a403c16150800000000000000
+      internalID: 5864182614452661079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_298
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47975ab1ac9eda540800000000000000
+      internalID: 5020926213844466036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_299
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 10
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fa24034adfe06d0800000000000000
+      internalID: -3022199418292883563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_300
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf286ae45b7aa2ad0800000000000000
+      internalID: -2726182227268959493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_301
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d44f08b285525140800000000000000
+      internalID: 4706918580477707480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_302
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 12
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9bf3ba0cfbbd2b0800000000000000
+      internalID: -5558638480831038983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman bn5 sprite sheet_303
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 10
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36404a8c91a934560800000000000000
+      internalID: 7296845256801387619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 609
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5e28eb5347a56f0800000000000000
+      internalID: -695115418296982109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

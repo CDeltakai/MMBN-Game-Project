@@ -21,19 +21,4 @@ public enum AttackElement
 
 }
 
-namespace testExtensions
-{
-    
-    public static class EChipElementsExtensions
-    {
 
-        public static string getNameOfElement(this AttackElement chipelement)
-        {
-            return chipelement.ToString();
-        }
-
-        
-
-    }
-
-}

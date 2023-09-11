@@ -139,7 +139,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
         int finalDamage = (int)((BaseDamage + effectProperties.DamageModifier) * player.AttackMultiplier);
 
-        AttackPayload attackPayload = new AttackPayload(finalDamage,
+        AttckPayload attackPayload = new AttckPayload(finalDamage,
                                                         effectProperties.lightAttack,
                                                         effectProperties.hitFlinch,
                                                         effectProperties.pierceUntargetable,

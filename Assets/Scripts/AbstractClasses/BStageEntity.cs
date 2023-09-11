@@ -10,7 +10,7 @@ using FMODUnity;
 ///A container data type which stores information on the properties of an incoming attack.
 ///All variables within the attack payload may be modified freely. 
 ///</summary>
-public struct AttackPayload
+public struct AttckPayload
 {
     public int damage;
     public bool lightAttack;
@@ -21,7 +21,7 @@ public struct AttackPayload
     public List<EStatusEffects> additionalStatusEffects;
     public AttackElement attackElement;
 
-    public AttackPayload(int damage,
+    public AttckPayload(int damage,
                          bool lightAttack,
                           bool hitFlinch, 
                           bool pierceUntargetable, 
@@ -328,7 +328,7 @@ public abstract class BStageEntity : MonoBehaviour
         return; 
     }
 
-    public virtual void hurtEntity(AttackPayload payload)
+    public virtual void hurtEntity(AttckPayload payload)
     {
         if(fullInvincible)
         {return;}
@@ -336,7 +336,7 @@ public abstract class BStageEntity : MonoBehaviour
         {return;}
 
 
-        AttackPayload attackPayload = payload; 
+        AttckPayload attackPayload = payload; 
         
         if(MarkedForDeath)
         {
@@ -491,9 +491,9 @@ public abstract class BStageEntity : MonoBehaviour
         yield return null;
     }        
 
-    public AttackPayload TriggerMarkEffect(AttackElement chipElement, AttackPayload payload)
+    public AttckPayload TriggerMarkEffect(AttackElement chipElement, AttckPayload payload)
     {
-        AttackPayload modifiedPayload = payload;
+        AttckPayload modifiedPayload = payload;
         print("Attempted to trigger mark effect wtih element: " + chipElement);
 
         switch (chipElement) {
