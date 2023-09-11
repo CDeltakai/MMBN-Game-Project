@@ -9,8 +9,11 @@ public abstract class CardEffect : MonoBehaviour
     public PlayerMovement player;
     public ChipSO chipSO;
     public List<GameObject> ObjectSummonList = new List<GameObject>();
-    public AttackPayload attackPayload = new AttackPayload();
+    public List<QuantifiableEffect> quantifiableEffects = new List<QuantifiableEffect>(); 
+    private AttackPayload defaultAttackPayload = new AttackPayload();
     protected Transform firePoint;
+
+
 
 
     protected void InitializeAwakeVariables()
@@ -20,10 +23,21 @@ public abstract class CardEffect : MonoBehaviour
         {
             ObjectSummonList = chipSO.ObjectSummonList;
         }
+        quantifiableEffects = chipSO.QuantifiableEffects;
 
-        attackPayload.attacker = player;
-        attackPayload.damage = chipSO.GetChipDamage();
+        //Setting the default attack payload based on the ChipSO stats
+        defaultAttackPayload.attacker = player;
+        defaultAttackPayload.damage = chipSO.GetChipDamage();
+        defaultAttackPayload.lightAttack = chipSO.LightAttack;
+        defaultAttackPayload.hitFlinch = chipSO.HitFlinch;
+        defaultAttackPayload.pierceUntargetable = chipSO.PierceConcealment;
+        defaultAttackPayload.statusEffect = chipSO.GetStatusEffect();
+        defaultAttackPayload.attackElement = chipSO.ChipElement;
+    }
 
+    public AttackPayload GetDefaultPayload()
+    {
+        return defaultAttackPayload;
     }
 
     protected virtual void Awake()
@@ -53,6 +67,19 @@ public abstract class CardEffect : MonoBehaviour
     //The main method that gets called whenever the card is used. Should contain all necessary statements and calls
     //to make the card work.
     public abstract void ActivateCardEffect();
+
+    //Generic method to apply a payload to a BStageEntity
+    public void ApplyPayloadToTarget(BStageEntity entity, AttackPayload payload)
+    {
+
+
+
+
+
+        //entity.hurtEntity(payload);
+
+    }
+
 
 
     //Method to call when it is time to disable the effect prefab

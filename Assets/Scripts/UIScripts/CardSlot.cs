@@ -9,7 +9,7 @@ public class CardSlot : MonoBehaviour
     public int slotIndex;
 
     public CardObjectReference cardObjectReference;
-    public ActiveCardObjReference activeCardObjReference;
+
 
     [SerializeField] Image cardImage;
     [SerializeField] GameObject popOutPanel;

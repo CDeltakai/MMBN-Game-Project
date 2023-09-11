@@ -2152,6 +2152,8 @@ MonoBehaviour:
   cardObjectReferencesInSelectPanel: []
   cardObjectReferencesInLoadPanel: []
   currentDeckReference: []
+  references:
+    version: 1
 --- !u!1001 &692089386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3584,6 +3586,8 @@ MonoBehaviour:
   CardPoolParent: {fileID: 118879017}
   <CardObjectReferences>k__BackingField: []
   PooledObjects: []
+  references:
+    version: 1
 --- !u!4 &1058193283
 Transform:
   m_ObjectHideFlags: 0
@@ -7085,22 +7089,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 146509233}
     m_Modifications:
     - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 515619475}
@@ -7108,62 +7096,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 515619475}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateDescription
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisablePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CardDescriptionPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CardDescriptionPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 8088656160349084268}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: CardSlot, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630984, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630991, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: cardObjectReference.attachedPassiveCards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630991, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: activeCardObjReference.attachedPassiveCards.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630991, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: activeCardObjReference.attachedPassiveCards.Array.data[0].data
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630991, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: cardObjectReference.attachedPassiveCards.passiveCards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088656161455630991, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-      propertyPath: cardObjectReference.attachedPassiveCards.passiveCards.Array.data[0].attachedPassiveCards.passiveCards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8088656161455631028, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7254,17 +7186,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
---- !u!114 &8088656160349084268 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8088656161455630991, guid: 0facabd8fe8923c4b897494040030a55, type: 3}
-  m_PrefabInstance: {fileID: 8088656160349084267}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c78eea0004a960f439fca53e7f44505e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8890333288782456515
 PrefabInstance:
   m_ObjectHideFlags: 0

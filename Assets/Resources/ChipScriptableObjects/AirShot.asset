@@ -18,10 +18,10 @@ MonoBehaviour:
   <ChipName>k__BackingField: Air Shot
   BaseDamage: 20
   <QuantifiableEffects>k__BackingField:
-  - EffectName: Pierce Count
-    IntegerQuantity: 0
-    FloatQuantity: 0
-    CanBeModified: 0
+  - <EffectName>k__BackingField: Shove Distance
+    <IntegerQuantity>k__BackingField: 1
+    <FloatQuantity>k__BackingField: 0
+    <CanBeModified>k__BackingField: 0
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 1
   ChipSize: 4

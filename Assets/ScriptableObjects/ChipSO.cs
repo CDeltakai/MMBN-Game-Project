@@ -36,10 +36,11 @@ public class ChipScriptableObject :ScriptableObject
 [Serializable]
 public class QuantifiableEffect
 {
-    public string EffectName;
-    public int IntegerQuantity;
-    public float FloatQuantity;
-    public bool CanBeModified = false;
+    [field:SerializeField] public string EffectName{get; private set;}
+    [field:SerializeField] public int IntegerQuantity{get; private set;}
+    [field:SerializeField] public float FloatQuantity{get; private set;}
+    [field:SerializeField] public bool CanBeModified{get; private set;} = false;
+
 
 }
 

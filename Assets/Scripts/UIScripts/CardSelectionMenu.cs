@@ -124,7 +124,7 @@ public class CardSelectionMenu : MonoBehaviour
         currentDeckReference.Clear();
 
         //Create a deep copy of the CardObjectReferences from the CardPoolManager that we can modify freely
-        foreach(ActiveCardObjReference card in cardPoolManager.CardObjectReferences)
+        foreach(CardObjectReference card in cardPoolManager.CardObjectReferences)
         {
             currentDeckReference.Add(card);
         }
@@ -154,11 +154,11 @@ public class CardSelectionMenu : MonoBehaviour
         for(int i = 0; i < cardLoadSlots.Count; i++) 
         {
             CardObjectReference currentCard = cardLoadSlots[i].cardObjectReference;
-            ActiveCardObjReference mostRecentActiveCard = new ActiveCardObjReference();
+            CardObjectReference mostRecentActiveCard = new CardObjectReference();
 
             if(currentCard.chipSO.ChipType == EChipTypes.Active)
             {
-                mostRecentActiveCard = (ActiveCardObjReference)currentCard;
+                mostRecentActiveCard = currentCard;
             }
 
             if(currentCard.chipSO.ChipType == EChipTypes.Passive)
@@ -171,7 +171,7 @@ public class CardSelectionMenu : MonoBehaviour
 
                 if(!mostRecentActiveCard.IsEmpty())
                 {
-                    //mostRecentActiveCard.attachedPassiveCards.Add(currentCard);
+                    mostRecentActiveCard.AttachPassiveCard(currentCard);
                 }
 
 
@@ -183,6 +183,9 @@ public class CardSelectionMenu : MonoBehaviour
 
 
     }
+
+    
+
 
 
     //Logic for what happens when clicking on a card slot in the cardSelectPanel

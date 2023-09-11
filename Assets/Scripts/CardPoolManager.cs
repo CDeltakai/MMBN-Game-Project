@@ -70,19 +70,9 @@ public class CardPoolManager : MonoBehaviour
 
                 CardObjectReference cardObject;
 
-                if(deckElement.card.ChipType == EChipTypes.Passive)
-                {   
-                    cardObject = new PassiveCardObjReference
-                    {
-                        chipSO = deckElement.card,
-                        effectPrefab = effectPrefab.gameObject,
-                        ObjectSummonList = effectPrefab.ObjectSummonList
-                        
-                    };
-                }else
-                {
+
                     //Create a new CardObjectReference that references the instantiated EffectPrefab and its ObjectSummons
-                    cardObject = new ActiveCardObjReference
+                    cardObject = new CardObjectReference
                     {
                         chipSO = deckElement.card,
                         effectPrefab = effectPrefab.gameObject,
@@ -90,7 +80,7 @@ public class CardPoolManager : MonoBehaviour
                         
                     };
 
-                }
+                
 
 
                 CardObjectReferences.Add(cardObject);
