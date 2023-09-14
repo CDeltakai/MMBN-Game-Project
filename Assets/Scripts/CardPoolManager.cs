@@ -85,6 +85,7 @@ public class CardPoolManager : MonoBehaviour
 
 
                 CardObjectReferences.Add(cardObject);
+                effectPrefab.SetCardObjectReference(cardObject);
 
             }
 

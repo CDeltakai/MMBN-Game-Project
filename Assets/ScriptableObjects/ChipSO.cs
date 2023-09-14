@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using FMODUnity;
+using TMPro;
+
 
 public class ScriptableObjectIdAttribute : PropertyAttribute {}
 

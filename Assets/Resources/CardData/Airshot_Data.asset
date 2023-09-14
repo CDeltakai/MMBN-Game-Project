@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
-  m_Name: Airshot_Card
+  m_Name: Airshot_Data
   m_EditorClassIdentifier: 
   Id: e13efee69f62f76458b718228df34277
   ChipID: 0
@@ -34,7 +34,8 @@ MonoBehaviour:
   <PierceConcealment>k__BackingField: 0
   <LightAttack>k__BackingField: 1
   <HitFlinch>k__BackingField: 0
-  ChipDescription: Fire a shot which deals damage and shoves an enemy back 1 tile.
+  ChipDescription: Fire a shot which deals *BD* damage and shoves an enemy back 1
+    tile.
   ChipImage: {fileID: -8654738730210548499, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0
   SFX:

@@ -12,6 +12,7 @@ public class CardDescriptionPanel : MonoBehaviour
     [SerializeField] TextMeshProUGUI damageText;
     [SerializeField] Image elementIcon;
     [SerializeField] Image typeIcon;
+    [SerializeField] string testValue;
     
 
     void Start()
@@ -33,7 +34,12 @@ public class CardDescriptionPanel : MonoBehaviour
 
         ChipSO cardSO = cardSlot.cardObjectReference.chipSO;
 
-        textDescription.text = cardSO.GetChipDescription();
+        string cardDescription = cardSO.GetChipDescription();
+        cardDescription = cardDescription.Replace("Q0", testValue);
+
+
+
+        textDescription.text = cardDescription;
         cardName.text = cardSO.ChipName;
         //cardImage.sprite = cardSO.GetChipImage();
         damageText.text = cardSO.GetChipDamage().ToString();
@@ -47,6 +53,16 @@ public class CardDescriptionPanel : MonoBehaviour
         cardImage.sprite = cardSO.GetChipImage();
         damageText.text = cardSO.GetChipDamage().ToString();
         gameObject.SetActive(true);
+    }
+
+    string FormatDescription(ChipSO card, string description)
+    {
+        string formattedDescription = description;
+
+
+
+
+        return formattedDescription;
     }
 
 

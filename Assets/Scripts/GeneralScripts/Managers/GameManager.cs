@@ -21,13 +21,14 @@ public class GameManager : MonoBehaviour
     public static void PauseGame()
     {
         if(BlockPausing){return;}
-
+        print("Paused game");
         Time.timeScale = 0;
         GameIsPaused = true;
     }
 
     public static void UnpauseGame()
     {
+        print("Unpaused game");
         Time.timeScale = 1;
         GameIsPaused = false;
     }

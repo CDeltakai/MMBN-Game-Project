@@ -174,16 +174,16 @@ public PlayerAttributeSO playerAttributes;
         if(!isMoving && !isUsingChip)
         {simpleMove();}else{return;}
 
-       if(Keyboard.current.spaceKey.wasPressedThisFrame)
-       {
-        print("Attempted slow motion");
-        timeManager.SlowMotion();
-       }
-       if(Keyboard.current.spaceKey.wasReleasedThisFrame)
-       {
-        print("Canceled slowmotion");
-        timeManager.CancelSlowMotion();
-       }
+    //    if(Keyboard.current.spaceKey.wasPressedThisFrame)
+    //    {
+    //     print("Attempted slow motion");
+    //     timeManager.SlowMotion();
+    //    }
+    //    if(Keyboard.current.spaceKey.wasReleasedThisFrame)
+    //    {
+    //     print("Canceled slowmotion");
+    //     timeManager.CancelSlowMotion();
+    //    }
 
     }
 

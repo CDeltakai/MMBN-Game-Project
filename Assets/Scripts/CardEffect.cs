@@ -8,7 +8,7 @@ public abstract class CardEffect : MonoBehaviour
     public delegate void TriggeredEffectEvent();
     public event TriggeredEffectEvent triggeredEffect;
 
-
+    [SerializeReference] protected CardObjectReference cardObjectReference;
     public PlayerMovement player;
     public ChipSO chipSO;
     public List<GameObject> ObjectSummonList = new List<GameObject>();
@@ -42,6 +42,11 @@ public abstract class CardEffect : MonoBehaviour
         defaultAttackPayload.attackElement = chipSO.ChipElement;
     }
 
+    public void SetCardObjectReference(CardObjectReference card)
+    {
+        cardObjectReference = card;
+    }
+
     public AttackPayload GetDefaultPayload()
     {
         return defaultAttackPayload;
@@ -69,6 +74,17 @@ public abstract class CardEffect : MonoBehaviour
     protected virtual void Start()
     {
         InitializeStartingStates();
+    }
+
+    public void ActivatePassiveCards()
+    {
+        foreach(CardObjectReference passiveCard in cardObjectReference.GetAttachedPassiveCards())
+        {
+            CardEffect passiveEffect = passiveCard.effectPrefab.GetComponent<CardEffect>();
+            passiveEffect.ActivateCardEffect();
+
+        }
+
     }
 
     //The main method that gets called whenever the card is used. Should contain all necessary statements and calls

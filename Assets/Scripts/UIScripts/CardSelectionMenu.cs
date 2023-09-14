@@ -132,7 +132,7 @@ public class CardSelectionMenu : MonoBehaviour
     {
         currentDeckReference.Clear();
 
-        //Create a deep copy of the CardObjectReferences from the CardPoolManager that we can modify freely
+        //Create a deep copy of references of the CardObjectReferences from the CardPoolManager that we can modify freely
         foreach(CardObjectReference card in cardPoolManager.CardObjectReferences)
         {
             currentDeckReference.Add(card);
@@ -162,19 +162,21 @@ public class CardSelectionMenu : MonoBehaviour
     }
 
 
-    //Checks the cardload to see if passive chips are correctly attached to active chips, then. 
+    //Checks the cardload to see if passive chips are correctly ordered in the card load to be attached, then attach them to valid active cards. 
     public void ValidateCardLoad()
     {
-        for(int i = 0; i < cardLoadSlots.Count; i++) 
+        CardObjectReference currentCard;
+        CardObjectReference mostRecentActiveCard = null;   
+        for(int i = 0; i < cardObjectReferencesInLoadPanel.Count; i++) 
         {
-            CardObjectReference currentCard = cardLoadSlots[i].cardObjectReference;
-            CardObjectReference mostRecentActiveCard = new CardObjectReference();
-
+            currentCard = cardLoadSlots[i].cardObjectReference;
+            print("Index: " + i + " card: " + currentCard.chipSO.ChipName);
+            
             if(currentCard.chipSO.ChipType == EChipTypes.Active)
             {
                 mostRecentActiveCard = currentCard;
-            }
-
+                print("MostRecentActiveCard: " + mostRecentActiveCard.chipSO.ChipName);
+            }else
             if(currentCard.chipSO.ChipType == EChipTypes.Passive)
             {
                 //If the first card is a passive card, continue - passive cards must be placed before the most recent active card, not after
@@ -183,12 +185,10 @@ public class CardSelectionMenu : MonoBehaviour
                     continue;
                 }
 
-                if(!mostRecentActiveCard.IsEmpty())
+                if(mostRecentActiveCard != null || !mostRecentActiveCard.IsEmpty())
                 {
                     mostRecentActiveCard.AttachPassiveCard(currentCard);
                 }
-
-
             }
 
 
@@ -268,7 +268,8 @@ public class CardSelectionMenu : MonoBehaviour
     //Logic for what happens when clicking the OK button
     public void OnClickOKButton()
     {
-        //playerCardManager.LoadCardMagazine(cardObjectReferencesInLoadPanel);
+        ValidateCardLoad();
+        playerCardManager.LoadCardMagazine(cardObjectReferencesInLoadPanel);
         DisableMenu();
     }
 

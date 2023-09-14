@@ -15,7 +15,7 @@ public class PlayerCardManager : MonoBehaviour
     PlayerAnimationController animationController;
 
     //The list of cards the player can use in battle. Is loaded during the Card Selection Menu.
-    [field:SerializeField] public List<ActiveCardObjReference> cardMagazine{get; private set;} = new List<ActiveCardObjReference>(); 
+    [field:SerializeField] public List<CardObjectReference> cardMagazine{get; private set;} = new List<CardObjectReference>(); 
 
     [SerializeField] float defaultCooldown = 0.15f;
 
@@ -36,7 +36,7 @@ public class PlayerCardManager : MonoBehaviour
     {
         cardMagazine.Clear();
 
-        foreach(ActiveCardObjReference card in cardLoad)
+        foreach(CardObjectReference card in cardLoad)
         {
             cardMagazine.Add(card);
         }
@@ -55,7 +55,7 @@ public class PlayerCardManager : MonoBehaviour
     //A gatekeeper method that checks what kind of card the next card to be used is and calls the correct method to use said card.
     public void TriggerCard()
     {
-        ActiveCardObjReference cardToUse = cardMagazine[0];
+        CardObjectReference cardToUse = cardMagazine[0];
 
         //If cardToUse has an animation defined, use the animationController to play said animation, otherwise call the UseCardOneShot method.
         if(!cardToUse.chipSO.UseAnimationEvent)
@@ -119,7 +119,7 @@ public class PlayerCardManager : MonoBehaviour
     }
 
     //Removes the given card from the magazine, can be given an optional duration to remove the card only after said duration
-    IEnumerator RemoveCardFromMagazine(ActiveCardObjReference card, float duration = 0)
+    IEnumerator RemoveCardFromMagazine(CardObjectReference card, float duration = 0)
     {
         yield return new WaitForSecondsRealtime(duration);
         cardMagazine.Remove(card);

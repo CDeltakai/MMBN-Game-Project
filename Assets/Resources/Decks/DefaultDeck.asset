@@ -17,3 +17,6 @@ MonoBehaviour:
   - CardName: AirShot
     card: {fileID: 11400000, guid: 6ef61039cfae18443ac941a11901cb13, type: 2}
     cardCount: 5
+  - CardName: Attack+10
+    card: {fileID: 11400000, guid: dcbfc0e82093a834cb4b21d00084a9a6, type: 2}
+    cardCount: 2

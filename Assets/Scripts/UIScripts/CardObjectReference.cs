@@ -12,6 +12,8 @@ public class CardObjectReference
     public GameObject ObjectSummon;
     public List<GameObject> ObjectSummonList;
     [SerializeReference] List<CardObjectReference> attachedPassiveCards = new List<CardObjectReference>();
+    //This is the active card that this card is tethered to if it is a passive card. This should not be set if this card is not passive.
+    [SerializeReference] CardObjectReference activeCardTether; 
 
 
     [SerializeReference] public CardSlot cardSlot;
@@ -19,6 +21,8 @@ public class CardObjectReference
 
     public void AttachPassiveCard(CardObjectReference passiveCard)
     {
+        Debug.Log("Attempted to attach passive card");
+
         //Make sure that both this card and the incoming card are of the correct type in order to attach onto this card.
         if(chipSO.ChipType != EChipTypes.Active)
         {
@@ -33,9 +37,22 @@ public class CardObjectReference
         }
 
         attachedPassiveCards.Add(passiveCard);
-
+        passiveCard.activeCardTether = this;
     }
 
+    public List<CardObjectReference> GetAttachedPassiveCards()
+    {
+        return attachedPassiveCards;
+    }
+
+    public CardObjectReference GetActiveCardTether()
+    {
+        return activeCardTether;
+    }
+    public void BreakActiveCardTether()
+    {
+        activeCardTether = null;
+    }
     public void ClearPassiveCards()
     {
         attachedPassiveCards.Clear();
