@@ -40,6 +40,7 @@ public class QuantifiableEffect
     [field:SerializeField] public int IntegerQuantity{get; private set;}
     [field:SerializeField] public float FloatQuantity{get; private set;}
     [field:SerializeField] public bool CanBeModified{get; private set;} = false;
+    [field:SerializeField] public float ModCoefficient{get; private set;} = 1;
 
 
 }
@@ -53,6 +54,7 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] int ChipID;
     [SerializeField] EChips Chip;
     [field:SerializeField] public string ChipName{get; private set;}
+
 [Header("Combat Attributes")]
     [SerializeField] int BaseDamage;
     [field:SerializeField] public List<QuantifiableEffect> QuantifiableEffects{get;private set;}
@@ -76,6 +78,11 @@ public class ChipSO : ChipScriptableObject
     ///by the player's position and is always static.
     ///</summary>
     [field:SerializeField] public List<Vector2Int> RangeOfInfluenceWorld{get; private set;}
+    [field:SerializeField] public bool PierceConcealment {get; private set;}
+    //Light attack dictates whether the attack triggers invincibility frames on the target
+    [field:SerializeField] public bool LightAttack {get; private set;}
+    //HitFlinch dictates whether the attack causes the target to flinch (if they are able to flinch)
+    [field:SerializeField] public bool HitFlinch {get; private set;}
 
 
 [TextArea(10,20)]
@@ -92,9 +99,6 @@ public class ChipSO : ChipScriptableObject
     [field:SerializeField] public bool ObjectSummonsArePooled {get; private set;}
     [SerializeField] GameObject EffectPrefab;
     [SerializeField] EffectMechanism effectMechanism;
-    [field:SerializeField] public bool PierceConcealment {get; private set;}
-    [field:SerializeField] public bool LightAttack {get; private set;}
-    [field:SerializeField] public bool HitFlinch {get; private set;}
     //If true, the chip will attempt to trigger an animation where an event is called on said animation which activates
     //this chip's effect. This means that this chip can be interrupted by flinching if the player does not have super armor. 
     [field:SerializeField] public bool UseAnimationEvent{get; private set;}

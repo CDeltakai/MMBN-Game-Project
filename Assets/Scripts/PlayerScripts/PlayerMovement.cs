@@ -72,7 +72,7 @@ public PlayerAttributeSO playerAttributes;
     public int currentEnergy;
 
 
-    public override ETileTeam team { get;set;} = ETileTeam.Player;
+    public override ETileTeam tileTeam { get;set;} = ETileTeam.Player;
     public bool Parrying = false;
     public bool CanParry = true;
     public bool canUseAbilities = true;

@@ -5,11 +5,12 @@ using DG.Tweening;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class GenericProjectile : MonoBehaviour
+public abstract class GenericProjectile : MonoBehaviour
 {
-    public CardEffect parentCard;
+    public CardEffect parentEffectPrefab;
     public AttackPayload attackPayload;
     public int pierceCount = 0;
+    public Team team; //The team of a projectile dictates what kinds of entities it can hit
 
 
     public PlayerMovement player;
@@ -17,22 +18,33 @@ public class GenericProjectile : MonoBehaviour
     Rigidbody2D rigbody;
 
     [SerializeField] SpriteRenderer sprite;//Needs to be set in inspector
+    [SerializeField] Animator animator;//May or may not be set in inspector
     [SerializeField] TrailRenderer trail;//May or may not be set in inspector
 
     [SerializeField] public Vector2 velocity = new Vector2(25, 0);
 
+    protected virtual void InitializeAwakeVariables()
+    {
 
-    void Awake()
+    }
+
+    protected virtual void Awake()
     {
         rigbody = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
-
+        
+        InitializeAwakeVariables();
  
+    }
+
+    protected virtual void InitializeStartingStates()
+    {
+
     }
 
     void Start()
     {
-
+        InitializeStartingStates();
 
 
     }
@@ -41,27 +53,17 @@ public class GenericProjectile : MonoBehaviour
 
 
 
-    private void OnCollisionEnter2D(Collision2D other) 
+    protected virtual void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Obstacle")
-        {
-            BStageEntity target = other.gameObject.GetComponent<BStageEntity>();
 
-            //parentChip.OnActivationEffect(target);            
-            pierceCount--;
-            if(pierceCount < 0)
-            {
-                DestroyObject();    
-            }
-        }
 
     }
 
 
-    
 
 
-    void DestroyObject()
+
+    protected void DestroyProjectile()
     {
         gameObject.SetActive(false);
         Destroy(gameObject);        

@@ -53,6 +53,7 @@ public class CardPoolManager : MonoBehaviour
             {
                 CardEffect effectPrefab = Instantiate(deckElement.card.GetEffectPrefab(), CardPoolParent.transform).GetComponent<CardEffect>();
                 effectPrefab.player = player;
+                effectPrefab.quantifiableEffects = deckElement.card.QuantifiableEffects;
 
                 //Check if the card has the ObjectSummonsArePooled condition ticked and it has objects within its ObjectSummonList,
                 //then pool objects within the list if conditions are met.

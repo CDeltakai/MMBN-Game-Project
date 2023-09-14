@@ -24,8 +24,8 @@ public class CardSelectionMenu : MonoBehaviour
     [SerializeField] List<Image> connectorIndicators;
 
     //List of references to all the card slots within the cardSelectPanel and cardLoad panel
-    [SerializeField] List<CardSlot> selectableCardSlots;
-    [SerializeField] List<CardSlot> cardLoadSlots;
+    [SerializeField] List<CardSlot> selectableCardSlots; // Needs to be set in inspector with the corresponding cardslots
+    [SerializeField] List<CardSlot> cardLoadSlots; // Needs to be set in inspector with the corresponding card slots
 
     //List of run-time references to all the cardObjectReferences within the card slots within the cardSelectPanel and cardLoadPanel
     [SerializeField] List<CardObjectReference> cardObjectReferencesInSelectPanel;
@@ -53,9 +53,9 @@ public class CardSelectionMenu : MonoBehaviour
 
     void Start()
     {
+        InitializeMenu();
         PopulateCardSelect();
 
-        InitializeMenu();
     }
 
     // Update is called once per frame
@@ -216,7 +216,7 @@ public class CardSelectionMenu : MonoBehaviour
 
         }
 
-        ValidateCardLoad();
+        //ValidateCardLoad();
 
     }
 
@@ -246,7 +246,7 @@ public class CardSelectionMenu : MonoBehaviour
               
         }
 
-        ValidateCardLoad();
+        //ValidateCardLoad();
 
 
     }

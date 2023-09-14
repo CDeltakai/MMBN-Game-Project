@@ -20,7 +20,7 @@ public class Champy_RF : BStageEntity
     public override bool isStationary => false;
     public override bool isStunnable => true;
     public override int maxHP => 60;
-    public override ETileTeam team{get;set;} = ETileTeam.Enemy;
+    public override ETileTeam tileTeam{get;set;} = ETileTeam.Enemy;
 
     BoxCollider2D champyCollider;
     PlayerMovement player;

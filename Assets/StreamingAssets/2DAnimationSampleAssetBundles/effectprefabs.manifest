@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 717150510
+CRC: 1233169293
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c6c539deea6c93db581a468e3b8973a4
+    Hash: 29456f9dbda7e0423e60247e37c6ea92
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b2994a9ad3c16e45e83c7bfa78c2825e
+    Hash: 297319d68acc40b03374d2b7aff0eb73
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -57,6 +57,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: fec797f1cfe20534ca4abc2837358135, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e142c5e320bfb4d4faf80252926e10ef, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8dd6c0a35cd5e8b4fa6d33a5faf8bf60, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 437126027def3f84295e9750b73613fa, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -64,6 +68,8 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: AttackPayload
 - AssemblyName: Assembly-CSharp
   ClassName: QuantifiableEffect
 - AssemblyName: FMODUnity
@@ -77,6 +83,7 @@ Assets:
 - Assets/Resources/ChipEffectPrefabs/WhiteCapsule.prefab
 - Assets/Resources/ChipEffectPrefabs/Cannon.prefab
 - Assets/Resources/ChipEffectPrefabs/Longsword.prefab
+- Assets/Resources/CardEffectPrefabs/AirShot_CardEffect.prefab
 - Assets/Resources/ChipEffectPrefabs/ExplosiveMineChip.prefab
 - Assets/Resources/ChipEffectPrefabs/AreaGrab.prefab
 - Assets/Resources/ChipEffectPrefabs/AttackPlus10.prefab

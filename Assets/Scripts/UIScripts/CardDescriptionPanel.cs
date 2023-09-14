@@ -35,7 +35,7 @@ public class CardDescriptionPanel : MonoBehaviour
 
         textDescription.text = cardSO.GetChipDescription();
         cardName.text = cardSO.ChipName;
-        cardImage.sprite = cardSO.GetChipImage();
+        //cardImage.sprite = cardSO.GetChipImage();
         damageText.text = cardSO.GetChipDamage().ToString();
         gameObject.SetActive(true);
     }

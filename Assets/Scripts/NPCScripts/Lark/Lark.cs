@@ -12,7 +12,7 @@ public class Lark : BStageEntity
 
     public override int maxHP => 80;
 
-    public override ETileTeam team { get; set;} = ETileTeam.Enemy;
+    public override ETileTeam tileTeam { get; set;} = ETileTeam.Enemy;
 
 
 

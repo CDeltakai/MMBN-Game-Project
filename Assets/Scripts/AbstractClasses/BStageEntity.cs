@@ -101,7 +101,9 @@ public abstract class BStageEntity : MonoBehaviour
     public abstract bool isStationary{get;}
     public abstract bool isStunnable{get;}
     public abstract int maxHP{get;}
-    public abstract ETileTeam team{get; set;}
+    public abstract ETileTeam tileTeam{get; set;}
+    [field:SerializeField] public Team Team{get; private set;} 
+    
 
     ///<summary>
     ///If an entity is an obstacle it will block most chip effects from passing through them.
@@ -328,7 +330,7 @@ public abstract class BStageEntity : MonoBehaviour
         return; 
     }
 
-    public virtual void hurtEntity(AttckPayload payload)
+    public virtual void HurtEntity(AttackPayload payload)
     {
         if(fullInvincible)
         {return;}
@@ -336,7 +338,7 @@ public abstract class BStageEntity : MonoBehaviour
         {return;}
 
 
-        AttckPayload attackPayload = payload; 
+        AttackPayload attackPayload = payload; 
         
         if(MarkedForDeath)
         {
@@ -365,10 +367,12 @@ public abstract class BStageEntity : MonoBehaviour
             print("Additional status effects: " + statusEffect);
             statusManager.triggerStatusEffect(statusEffect);
             //StartCoroutine(setStatusEffect(statusEffect, 1));
-
         }
 
-        if(attackPayload.damage >= 10)
+
+        int damageAfterModifiers = (int)(attackPayload.damage * DefenseMultiplier);
+
+        if(damageAfterModifiers >= 10)
         {
             isAnimatingHP = true;
 
@@ -377,14 +381,14 @@ public abstract class BStageEntity : MonoBehaviour
                 StopCoroutine(AnimateHPCoroutine);
             }
 
-            AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(attackPayload.damage * DefenseMultiplier), 1, 999999)));
+            AnimateHPCoroutine = StartCoroutine(animateNumber(currentHP, currentHP - Mathf.Clamp((int)(damageAfterModifiers), 1, 999999)));
         }
 
         RuntimeManager.PlayOneShotAttached(HurtSFX, this.gameObject);
 
         //Calculate new current HP value after taking damage
-        currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(attackPayload.damage * DefenseMultiplier), 1, 999999), 0, currentHP);
-        AnimateShakeNumber(attackPayload.damage);
+        currentHP = Mathf.Clamp(currentHP - Mathf.Clamp((int)(damageAfterModifiers), 1, 999999), 0, currentHP);
+        AnimateShakeNumber(damageAfterModifiers);
        
 
         if(AnimateHPCoroutine == null)
@@ -393,10 +397,7 @@ public abstract class BStageEntity : MonoBehaviour
         }
 
 
-        if(hurtEvent != null)
-        {
-            hurtEvent(this);
-        } 
+        hurtEvent?.Invoke(this);
 
         StartCoroutine(DamageFlash());
 
@@ -491,9 +492,9 @@ public abstract class BStageEntity : MonoBehaviour
         yield return null;
     }        
 
-    public AttckPayload TriggerMarkEffect(AttackElement chipElement, AttckPayload payload)
+    public AttackPayload TriggerMarkEffect(AttackElement chipElement, AttackPayload payload)
     {
-        AttckPayload modifiedPayload = payload;
+        AttackPayload modifiedPayload = payload;
         print("Attempted to trigger mark effect wtih element: " + chipElement);
 
         switch (chipElement) {
@@ -669,7 +670,7 @@ public abstract class BStageEntity : MonoBehaviour
         if(stageHandler.stageTilemap.GetTile
             (coordToCheck) == null
                 ||
-            customTileToCheck.GetTileTeam() != team
+            customTileToCheck.GetTileTeam() != tileTeam
                 ||
             stageTileToCheck.isOccupied
                 ||
