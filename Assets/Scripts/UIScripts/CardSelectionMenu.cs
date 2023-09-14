@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
-
+using UnityEngine.InputSystem;
 public class CardSelectionMenu : MonoBehaviour
 {
     //Event for when the menu is activated
@@ -86,10 +86,20 @@ public class CardSelectionMenu : MonoBehaviour
 
     }
 
+    public void OpenMenuInput(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            ActivateMenu();
+        }
+
+    }    
+
     //Method for activating the menu and moving it into view. Will repopulate the card select with fresh cards on activation.
     public void ActivateMenu()
     {
         PopulateCardSelect();
+        rectTransform.DOLocalMoveX(0, 0.25f).SetUpdate(true);
         for(int i = 0; i < selectableCardSlots.Count ; i++)
         {
             if(!selectableCardSlots[i].IsEmpty())
@@ -98,7 +108,6 @@ public class CardSelectionMenu : MonoBehaviour
             }
 
         }
-        rectTransform.DOLocalMoveX(0, 0.25f).SetUpdate(true);
 
         isActive = true;
         MenuActivatedEvent?.Invoke();
@@ -109,7 +118,7 @@ public class CardSelectionMenu : MonoBehaviour
     //Moves the menu out of view so it cannot be interacted with
     public void DisableMenu()
     {
-        rectTransform.DOLocalMoveX(-1100, 0.25f).SetUpdate(true);   
+        rectTransform.DOLocalMoveX(-600, 0.25f).SetUpdate(true);   
 
         isActive = false;
         MenuDisabledEvent?.Invoke();
@@ -140,9 +149,14 @@ public class CardSelectionMenu : MonoBehaviour
         
         foreach(CardSlot cardSlot in selectableCardSlots)
         {
+            if(currentDeckReference.Count <= 0)
+            {
+                break;
+            }
             int randomIndex = Random.Range(0, currentDeckReference.Count - 1);
-            currentDeckReference.RemoveAt(randomIndex);
             cardSlot.ChangeCard(currentDeckReference[randomIndex]);
+            currentDeckReference.RemoveAt(randomIndex);
+
 
         }
     }
@@ -254,7 +268,7 @@ public class CardSelectionMenu : MonoBehaviour
     //Logic for what happens when clicking the OK button
     public void OnClickOKButton()
     {
-        playerCardManager.LoadCardMagazine(cardObjectReferencesInLoadPanel);
+        //playerCardManager.LoadCardMagazine(cardObjectReferencesInLoadPanel);
         DisableMenu();
     }
 
