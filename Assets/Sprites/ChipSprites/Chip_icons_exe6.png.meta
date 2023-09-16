@@ -217,7 +217,7 @@ TextureImporter:
     second: Chip_icons_exe6_70
   - first:
       213: 5731572295673346416
-    second: Chip_icons_exe6_71
+    second: Card_Quickblade
   - first:
       213: -4611406389132694472
     second: Chip_Widesword
@@ -2312,7 +2312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chip_icons_exe6_71
+      name: Card_Quickblade
       rect:
         serializedVersion: 2
         x: 135

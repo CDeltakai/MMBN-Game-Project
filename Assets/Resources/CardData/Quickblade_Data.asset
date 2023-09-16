@@ -10,47 +10,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
-  m_Name: Airshot_Data
+  m_Name: Quickblade_Data
   m_EditorClassIdentifier: 
-  Id: e13efee69f62f76458b718228df34277
+  Id: ca6d590f8daefe14497a5ad3cd94b422
   ChipID: 0
   Chip: 0
-  <ChipName>k__BackingField: Airshot
+  <ChipName>k__BackingField: Quickblade
   BaseDamage: 20
   <QuantifiableEffects>k__BackingField:
-  - <EffectName>k__BackingField: Shove Distance
-    <IntegerQuantity>k__BackingField: 1
+  - <EffectName>k__BackingField: Heal Player
+    <IntegerQuantity>k__BackingField: 10
+    <FloatQuantity>k__BackingField: 0
+    <CanBeModified>k__BackingField: 0
+    <ModCoefficient>k__BackingField: 0
+  - <EffectName>k__BackingField: 
+    <IntegerQuantity>k__BackingField: 0
     <FloatQuantity>k__BackingField: 0
     <CanBeModified>k__BackingField: 0
     <ModCoefficient>k__BackingField: 0
   <PierceCount>k__BackingField: 0
-  <ChipElement>k__BackingField: 1
+  <ChipElement>k__BackingField: 2
   ChipSize: 0
-  <EnergyCost>k__BackingField: 0
+  <EnergyCost>k__BackingField: 1
   <ChipType>k__BackingField: 1
-  BaseStatusEffect: 0
-  <RangeOfInfluence>k__BackingField: []
+  BaseStatusEffect: 7
+  <RangeOfInfluence>k__BackingField:
+  - {x: 0, y: 0}
   <RangeOfInfluenceWorld>k__BackingField: []
   <PierceConcealment>k__BackingField: 0
-  <LightAttack>k__BackingField: 1
+  <LightAttack>k__BackingField: 0
   <HitFlinch>k__BackingField: 0
-  ChipDescription: Fire a shot which deals <b>BD</b> damage and shoves an enemy back
-    1 tile.
-  ChipImage: {fileID: -8654738730210548499, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
+  ChipDescription: Q0
+  ChipImage: {fileID: 0}
   AnimationDuration: 0
   SFX:
     Guid:
-      Data1: 1168157214
-      Data2: 1324965301
-      Data3: -1812667728
-      Data4: 1147848940
-    Path: event:/AirShot
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   AdditionalSFX: []
-  AnimationClipToUse: {fileID: 7400000, guid: 951c2d11b2416534bb4f24700fbd536e, type: 2}
+  AnimationClipToUse: {fileID: 0}
   ObjectSummon: {fileID: 0}
   <ObjectSummonList>k__BackingField: []
   <ObjectSummonsArePooled>k__BackingField: 0
-  EffectPrefab: {fileID: 5452489971154207791, guid: 7c68346521accbe42bd1fe079af2fd8a, type: 3}
+  EffectPrefab: {fileID: 0}
   effectMechanism: 0
   <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
