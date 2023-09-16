@@ -15,7 +15,6 @@ public class AirshotProjectile : GenericProjectile
             if(target.isUntargetable && !attackPayload.pierceUntargetable)
             {return;}
 
-
             target.HurtEntity(attackPayload);
             target.AttemptShove(ShoveDistance, 0);
             DestroyProjectile();

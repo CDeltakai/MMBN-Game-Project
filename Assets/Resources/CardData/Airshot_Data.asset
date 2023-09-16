@@ -34,8 +34,8 @@ MonoBehaviour:
   <PierceConcealment>k__BackingField: 0
   <LightAttack>k__BackingField: 1
   <HitFlinch>k__BackingField: 0
-  ChipDescription: Fire a shot which deals *BD* damage and shoves an enemy back 1
-    tile.
+  ChipDescription: Fire a shot which deals <i>BD</i> damage and shoves an enemy back
+    1 tile.
   ChipImage: {fileID: -8654738730210548499, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0
   SFX:

@@ -319,6 +319,7 @@ public PlayerAttributeSO playerAttributes;
     {
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}
+        if(GameManager.GameIsPaused){return;}
         if(!isAlive){return;}
         if(isUsingChip){
             print("is using chip, cannot move");
@@ -660,6 +661,7 @@ public PlayerAttributeSO playerAttributes;
 
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}        
+        if(GameManager.GameIsPaused){return;}
         if(isMoving){return;}
 
         if(context.performed)

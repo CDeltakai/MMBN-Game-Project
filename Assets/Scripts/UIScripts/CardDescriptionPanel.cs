@@ -36,13 +36,20 @@ public class CardDescriptionPanel : MonoBehaviour
 
         string cardDescription = cardSO.GetChipDescription();
         cardDescription = cardDescription.Replace("Q0", testValue);
+        cardDescription = cardDescription.Replace("BD", cardSO.GetChipDamage().ToString());
 
 
 
         textDescription.text = cardDescription;
         cardName.text = cardSO.ChipName;
         //cardImage.sprite = cardSO.GetChipImage();
-        damageText.text = cardSO.GetChipDamage().ToString();
+        if(cardSO.GetChipDamage() == 0)
+        {
+            damageText.text = "N/A";
+        }else
+        {
+            damageText.text = cardSO.GetChipDamage().ToString();
+        }
         gameObject.SetActive(true);
     }
     public void UpdateDescription(ChipSO cardSO)
