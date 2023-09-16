@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 
 [System.Serializable]
@@ -8,37 +9,64 @@ public class CardObjectReference
 {
     public ChipSO chipSO;
     public GameObject effectPrefab;
-    [SerializeField] CardObjectReference passiveCard1;
-    [SerializeField] CardObjectReference passiveCard2;
-    [SerializeField] CardObjectReference passiveCard3;
-    [SerializeField] CardObjectReference passiveCard4;
     public GameObject ObjectSummon;
     public List<GameObject> ObjectSummonList;
-    public CardSlot cardSlot;
+    [SerializeReference] List<CardObjectReference> attachedPassiveCards = new List<CardObjectReference>();
+    //This is the active card that this card is tethered to if it is a passive card. This should not be set if this card is not passive.
+    [SerializeReference] CardObjectReference activeCardTether; 
+
+
+    [SerializeReference] public CardSlot cardSlot;
+
+
+    public void AttachPassiveCard(CardObjectReference passiveCard)
+    {
+        Debug.Log("Attempted to attach passive card");
+
+        //Make sure that both this card and the incoming card are of the correct type in order to attach onto this card.
+        if(chipSO.ChipType != EChipTypes.Active)
+        {
+            Debug.LogWarning(chipSO.ChipName + " is not an active card, passive cards cannot be attached to it.");
+            return;
+        }
+        if(passiveCard.chipSO.ChipType != EChipTypes.Passive)
+        {
+            Debug.LogWarning("Cannot attach " + passiveCard.chipSO.ChipName + " to " + chipSO.ChipName + ", " + passiveCard.chipSO.ChipName +
+            "is not a passive card.");
+            return;
+        }
+
+        attachedPassiveCards.Add(passiveCard);
+        passiveCard.activeCardTether = this;
+    }
+
+    public List<CardObjectReference> GetAttachedPassiveCards()
+    {
+        return attachedPassiveCards;
+    }
+
+    public CardObjectReference GetActiveCardTether()
+    {
+        return activeCardTether;
+    }
+    public void BreakActiveCardTether()
+    {
+        activeCardTether = null;
+    }
+    public void ClearPassiveCards()
+    {
+        attachedPassiveCards.Clear();
+    }
+
 
     public void ClearReferences()
     {
         chipSO = null;
         effectPrefab = null;
-        
-        passiveCard1 = null;
-        passiveCard2 = null;
-        passiveCard3 = null;
-        passiveCard4 = null;        
-
-
         ObjectSummon = null;
         ObjectSummonList.Clear();
     }
 
-    public void ClearPassiveCards()
-    {
-        passiveCard1 = null;
-        passiveCard2 = null;
-        passiveCard3 = null;
-        passiveCard4 = null;   
-
-    }
 
     public bool IsEmpty()
     {
@@ -49,34 +77,32 @@ public class CardObjectReference
         return false;
     }
 
-    public void AddCardToPassives(CardObjectReference card)
-    {
-        if(passiveCard1 == null || passiveCard1.IsEmpty())
-        {
-            passiveCard1 = card;
-        }else
-        if(passiveCard2 == null || passiveCard2.IsEmpty())
-        {
-            passiveCard2 = card;
-        }else
-        if(passiveCard3 == null || passiveCard3.IsEmpty())
-        {
-            passiveCard3 = card;
-        }else
-        if(passiveCard4 == null || passiveCard4.IsEmpty())
-        {
-            passiveCard4 = card;
-        }
 
-    }
 
-    public List<CardObjectReference> GetPassiveCards()
-    {
-        List<CardObjectReference> passiveCards = new List<CardObjectReference>
-        {
-            passiveCard1
-        };
-        return passiveCards;
-    }
+
+}
+
+
+[System.Serializable]
+public class ActiveCardObjReference : CardObjectReference
+{
+
+    //[SerializeReference] public List<ActiveCardObjReference> attachedPassiveCards = new List<ActiveCardObjReference>();
+
+
+
+
+
+}
+
+
+
+
+[System.Serializable]
+public class PassiveCardObjReference : CardObjectReference
+{
+
+
+
 
 }

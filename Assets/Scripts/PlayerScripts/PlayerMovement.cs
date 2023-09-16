@@ -72,7 +72,7 @@ public PlayerAttributeSO playerAttributes;
     public int currentEnergy;
 
 
-    public override ETileTeam team { get;set;} = ETileTeam.Player;
+    public override ETileTeam tileTeam { get;set;} = ETileTeam.Player;
     public bool Parrying = false;
     public bool CanParry = true;
     public bool canUseAbilities = true;
@@ -174,16 +174,16 @@ public PlayerAttributeSO playerAttributes;
         if(!isMoving && !isUsingChip)
         {simpleMove();}else{return;}
 
-       if(Keyboard.current.spaceKey.wasPressedThisFrame)
-       {
-        print("Attempted slow motion");
-        timeManager.SlowMotion();
-       }
-       if(Keyboard.current.spaceKey.wasReleasedThisFrame)
-       {
-        print("Canceled slowmotion");
-        timeManager.CancelSlowMotion();
-       }
+    //    if(Keyboard.current.spaceKey.wasPressedThisFrame)
+    //    {
+    //     print("Attempted slow motion");
+    //     timeManager.SlowMotion();
+    //    }
+    //    if(Keyboard.current.spaceKey.wasReleasedThisFrame)
+    //    {
+    //     print("Canceled slowmotion");
+    //     timeManager.CancelSlowMotion();
+    //    }
 
     }
 
@@ -319,6 +319,7 @@ public PlayerAttributeSO playerAttributes;
     {
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}
+        if(GameManager.GameIsPaused){return;}
         if(!isAlive){return;}
         if(isUsingChip){
             print("is using chip, cannot move");
@@ -660,6 +661,7 @@ public PlayerAttributeSO playerAttributes;
 
         if(ChipSelectScreenMovement.GameIsPaused)
         {return;}        
+        if(GameManager.GameIsPaused){return;}
         if(isMoving){return;}
 
         if(context.performed)

@@ -17,7 +17,7 @@ public class Mettaur_RF : BStageEntity
     public override bool isStationary => false;
     public override bool isStunnable => true;
     public override int maxHP => 40;
-    public override ETileTeam team{get; set;} = ETileTeam.Enemy;
+    public override ETileTeam tileTeam{get; set;} = ETileTeam.Enemy;
     public bool isAttacking = false;
     public const float attackAnimationDuration = 1.167f;
     BoxCollider2D mettaurCollider;
@@ -59,7 +59,7 @@ public class Mettaur_RF : BStageEntity
     void fireProjectile()
     {
         float direction;
-        if(team == ETileTeam.Enemy)
+        if(tileTeam == ETileTeam.Enemy)
         {direction = -1.6f;}
         else
         {direction = 1.6f;};

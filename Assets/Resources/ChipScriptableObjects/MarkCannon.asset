@@ -15,8 +15,9 @@ MonoBehaviour:
   Id: 0788cd3ba7d54194690bc772963a08e8
   ChipID: 0
   Chip: 0
-  <ChipName>k__BackingField: 
+  <ChipName>k__BackingField: Mark Cannon
   BaseDamage: 20
+  <QuantifiableEffects>k__BackingField: []
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 0
   ChipSize: 0
@@ -30,7 +31,6 @@ MonoBehaviour:
     which hit them depending on the attack element of the chip."
   ChipImage: {fileID: -7879312815606531093, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0.417
-  EffectScript: 
   SFX:
     Guid:
       Data1: 674011879
@@ -45,9 +45,9 @@ MonoBehaviour:
   <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 7753810546485766501, guid: 461c3e6808318bc4b866024ec0dc552d, type: 3}
   effectMechanism: 0
-  pierceUntargetable: 0
-  lightAttack: 0
-  hitFlinch: 1
+  <PierceConcealment>k__BackingField: 0
+  <LightAttack>k__BackingField: 0
+  <HitFlinch>k__BackingField: 0
   <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

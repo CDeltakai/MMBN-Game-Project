@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using FMODUnity;
+using TMPro;
+
 
 public class ScriptableObjectIdAttribute : PropertyAttribute {}
 
@@ -33,6 +35,18 @@ public class ChipScriptableObject :ScriptableObject
 }
 
 
+[Serializable]
+public class QuantifiableEffect
+{
+    [field:SerializeField] public string EffectName{get; private set;}
+    [field:SerializeField] public int IntegerQuantity{get; private set;}
+    [field:SerializeField] public float FloatQuantity{get; private set;}
+    [field:SerializeField] public bool CanBeModified{get; private set;} = false;
+    [field:SerializeField] public float ModCoefficient{get; private set;} = 1;
+
+
+}
+
 
 
 [CreateAssetMenu(fileName = "Chip Data", menuName = "New Chip", order = 0)]
@@ -42,8 +56,10 @@ public class ChipSO : ChipScriptableObject
     [SerializeField] int ChipID;
     [SerializeField] EChips Chip;
     [field:SerializeField] public string ChipName{get; private set;}
+
 [Header("Combat Attributes")]
     [SerializeField] int BaseDamage;
+    [field:SerializeField] public List<QuantifiableEffect> QuantifiableEffects{get;private set;}
     [field:SerializeField] public int PierceCount {get; private set;}
     [field:SerializeField] public AttackElement ChipElement{get; private set;}
     [SerializeField] int ChipSize;
@@ -64,13 +80,17 @@ public class ChipSO : ChipScriptableObject
     ///by the player's position and is always static.
     ///</summary>
     [field:SerializeField] public List<Vector2Int> RangeOfInfluenceWorld{get; private set;}
+    [field:SerializeField] public bool PierceConcealment {get; private set;}
+    //Light attack dictates whether the attack triggers invincibility frames on the target
+    [field:SerializeField] public bool LightAttack {get; private set;}
+    //HitFlinch dictates whether the attack causes the target to flinch (if they are able to flinch)
+    [field:SerializeField] public bool HitFlinch {get; private set;}
 
 
 [TextArea(10,20)]
     [SerializeField] string ChipDescription;
     [SerializeField] Sprite ChipImage;
     [SerializeField] float AnimationDuration;
-    [SerializeField] String EffectScript;
     [SerializeField] EventReference SFX;
     [SerializeField] List<EventReference> AdditionalSFX;
     //What animation will the player trigger when they use this chip? Can be left empty, in which case the chip effect will
@@ -81,9 +101,6 @@ public class ChipSO : ChipScriptableObject
     [field:SerializeField] public bool ObjectSummonsArePooled {get; private set;}
     [SerializeField] GameObject EffectPrefab;
     [SerializeField] EffectMechanism effectMechanism;
-    [SerializeField] bool pierceUntargetable;
-    [SerializeField] bool lightAttack;
-    [SerializeField] bool hitFlinch;
     //If true, the chip will attempt to trigger an animation where an event is called on said animation which activates
     //this chip's effect. This means that this chip can be interrupted by flinching if the player does not have super armor. 
     [field:SerializeField] public bool UseAnimationEvent{get; private set;}
@@ -98,7 +115,7 @@ public class ChipSO : ChipScriptableObject
     ///through certain passive chips or other modifiers.
     ///</summary>
     [field:SerializeField] public bool AllowSummonObjectMod{get; private set;}
-    [HideInInspector] UnityEngine.GameObject TempEffectPrefabRef;
+   
 
 
     public void ResetID()
@@ -106,10 +123,7 @@ public class ChipSO : ChipScriptableObject
         Id = null;
     }
 
-    public void ResetEffectPrefabRef()
-    {
-        TempEffectPrefabRef = null;
-    }
+
 
     public GameObject GetEffectPrefab()
     {
@@ -126,11 +140,11 @@ public class ChipSO : ChipScriptableObject
     }    
     public bool IsLightAttack()
     {
-        return lightAttack;
+        return LightAttack;
     }
     public bool IsHitFlinch()
     {
-        return hitFlinch;
+        return HitFlinch;
     }
     public int GetChipID()
     {
@@ -139,7 +153,7 @@ public class ChipSO : ChipScriptableObject
 
     public bool IsPierceUntargetable()
     {
-        return pierceUntargetable;
+        return PierceConcealment;
     }
 
     public EStatusEffects GetStatusEffect()
@@ -205,10 +219,6 @@ public class ChipSO : ChipScriptableObject
         return AnimationDuration;
     }
 
-    public string GetEffectScript()
-    {
-        return EffectScript;
-    }
 
     public EChipTypes GetChipType()
     {

@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class CardSlot : MonoBehaviour
 {
-    [HideInInspector]
+    
     public int slotIndex;
 
     public CardObjectReference cardObjectReference;
+
 
     [SerializeField] Image cardImage;
     [SerializeField] GameObject popOutPanel;

@@ -53,6 +53,7 @@ public class CardPoolManager : MonoBehaviour
             {
                 CardEffect effectPrefab = Instantiate(deckElement.card.GetEffectPrefab(), CardPoolParent.transform).GetComponent<CardEffect>();
                 effectPrefab.player = player;
+                effectPrefab.quantifiableEffects = deckElement.card.QuantifiableEffects;
 
                 //Check if the card has the ObjectSummonsArePooled condition ticked and it has objects within its ObjectSummonList,
                 //then pool objects within the list if conditions are met.
@@ -68,16 +69,23 @@ public class CardPoolManager : MonoBehaviour
             
                 PooledObjects.Add(effectPrefab.gameObject);
 
-                //Create a new CardObjectReference that references the instantiated EffectPrefab and its ObjectSummons
-                CardObjectReference cardObjectReference = new CardObjectReference
-                {
-                    chipSO = deckElement.card,
-                    effectPrefab = effectPrefab.gameObject,
-                    ObjectSummonList = effectPrefab.ObjectSummonList
+                CardObjectReference cardObject;
 
-                };
 
-                CardObjectReferences.Add(cardObjectReference);
+                    //Create a new CardObjectReference that references the instantiated EffectPrefab and its ObjectSummons
+                    cardObject = new CardObjectReference
+                    {
+                        chipSO = deckElement.card,
+                        effectPrefab = effectPrefab.gameObject,
+                        ObjectSummonList = effectPrefab.ObjectSummonList
+                        
+                    };
+
+                
+
+
+                CardObjectReferences.Add(cardObject);
+                effectPrefab.SetCardObjectReference(cardObject);
 
             }
 

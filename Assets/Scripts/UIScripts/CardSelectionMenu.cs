@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
-
+using UnityEngine.InputSystem;
 public class CardSelectionMenu : MonoBehaviour
 {
     //Event for when the menu is activated
@@ -24,8 +24,8 @@ public class CardSelectionMenu : MonoBehaviour
     [SerializeField] List<Image> connectorIndicators;
 
     //List of references to all the card slots within the cardSelectPanel and cardLoad panel
-    [SerializeField] List<CardSlot> selectableCardSlots;
-    [SerializeField] List<CardSlot> cardLoadSlots;
+    [SerializeField] List<CardSlot> selectableCardSlots; // Needs to be set in inspector with the corresponding cardslots
+    [SerializeField] List<CardSlot> cardLoadSlots; // Needs to be set in inspector with the corresponding card slots
 
     //List of run-time references to all the cardObjectReferences within the card slots within the cardSelectPanel and cardLoadPanel
     [SerializeField] List<CardObjectReference> cardObjectReferencesInSelectPanel;
@@ -53,9 +53,9 @@ public class CardSelectionMenu : MonoBehaviour
 
     void Start()
     {
+        InitializeMenu();
         PopulateCardSelect();
 
-        InitializeMenu();
     }
 
     // Update is called once per frame
@@ -86,10 +86,20 @@ public class CardSelectionMenu : MonoBehaviour
 
     }
 
+    public void OpenMenuInput(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            ActivateMenu();
+        }
+
+    }    
+
     //Method for activating the menu and moving it into view. Will repopulate the card select with fresh cards on activation.
     public void ActivateMenu()
     {
         PopulateCardSelect();
+        rectTransform.DOLocalMoveX(0, 0.25f).SetUpdate(true);
         for(int i = 0; i < selectableCardSlots.Count ; i++)
         {
             if(!selectableCardSlots[i].IsEmpty())
@@ -98,7 +108,6 @@ public class CardSelectionMenu : MonoBehaviour
             }
 
         }
-        rectTransform.DOLocalMoveX(0, 0.25f).SetUpdate(true);
 
         isActive = true;
         MenuActivatedEvent?.Invoke();
@@ -109,7 +118,7 @@ public class CardSelectionMenu : MonoBehaviour
     //Moves the menu out of view so it cannot be interacted with
     public void DisableMenu()
     {
-        rectTransform.DOLocalMoveX(-1100, 0.25f).SetUpdate(true);   
+        rectTransform.DOLocalMoveX(-600, 0.25f).SetUpdate(true);   
 
         isActive = false;
         MenuDisabledEvent?.Invoke();
@@ -123,7 +132,7 @@ public class CardSelectionMenu : MonoBehaviour
     {
         currentDeckReference.Clear();
 
-        //Create a deep copy of the CardObjectReferences from the CardPoolManager that we can modify freely
+        //Create a deep copy of references of the CardObjectReferences from the CardPoolManager that we can modify freely
         foreach(CardObjectReference card in cardPoolManager.CardObjectReferences)
         {
             currentDeckReference.Add(card);
@@ -140,28 +149,34 @@ public class CardSelectionMenu : MonoBehaviour
         
         foreach(CardSlot cardSlot in selectableCardSlots)
         {
+            if(currentDeckReference.Count <= 0)
+            {
+                break;
+            }
             int randomIndex = Random.Range(0, currentDeckReference.Count - 1);
-            currentDeckReference.RemoveAt(randomIndex);
             cardSlot.ChangeCard(currentDeckReference[randomIndex]);
+            currentDeckReference.RemoveAt(randomIndex);
+
 
         }
     }
 
 
-    //Checks the cardload to see if passive chips are correctly attached to active chips, then activates the corresponding
-    //connector indicators to show the user that an active chip has attached passive chips. 
+    //Checks the cardload to see if passive chips are correctly ordered in the card load to be attached, then attach them to valid active cards. 
     public void ValidateCardLoad()
     {
-        for(int i = 0; i < cardLoadSlots.Count; i++) 
+        CardObjectReference currentCard;
+        CardObjectReference mostRecentActiveCard = null;   
+        for(int i = 0; i < cardObjectReferencesInLoadPanel.Count; i++) 
         {
-            CardObjectReference currentCard = cardLoadSlots[i].cardObjectReference;
-            CardObjectReference mostRecentActiveCard = new CardObjectReference();
-
+            currentCard = cardLoadSlots[i].cardObjectReference;
+            print("Index: " + i + " card: " + currentCard.chipSO.ChipName);
+            
             if(currentCard.chipSO.ChipType == EChipTypes.Active)
             {
                 mostRecentActiveCard = currentCard;
-            }
-
+                print("MostRecentActiveCard: " + mostRecentActiveCard.chipSO.ChipName);
+            }else
             if(currentCard.chipSO.ChipType == EChipTypes.Passive)
             {
                 //If the first card is a passive card, continue - passive cards must be placed before the most recent active card, not after
@@ -170,12 +185,10 @@ public class CardSelectionMenu : MonoBehaviour
                     continue;
                 }
 
-                if(!mostRecentActiveCard.IsEmpty())
+                if(mostRecentActiveCard != null || !mostRecentActiveCard.IsEmpty())
                 {
-                    mostRecentActiveCard.AddCardToPassives(currentCard);
+                    mostRecentActiveCard.AttachPassiveCard(currentCard);
                 }
-
-
             }
 
 
@@ -184,6 +197,9 @@ public class CardSelectionMenu : MonoBehaviour
 
 
     }
+
+    
+
 
 
     //Logic for what happens when clicking on a card slot in the cardSelectPanel
@@ -214,7 +230,7 @@ public class CardSelectionMenu : MonoBehaviour
 
         }
 
-        ValidateCardLoad();
+        //ValidateCardLoad();
 
     }
 
@@ -244,7 +260,7 @@ public class CardSelectionMenu : MonoBehaviour
               
         }
 
-        ValidateCardLoad();
+        //ValidateCardLoad();
 
 
     }
@@ -252,6 +268,7 @@ public class CardSelectionMenu : MonoBehaviour
     //Logic for what happens when clicking the OK button
     public void OnClickOKButton()
     {
+        ValidateCardLoad();
         playerCardManager.LoadCardMagazine(cardObjectReferencesInLoadPanel);
         DisableMenu();
     }

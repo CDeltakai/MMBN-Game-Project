@@ -2360,15 +2360,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_139
+      name: Megaman_TankCannon5
       rect:
         serializedVersion: 2
         x: 327
         y: 494
         width: 84
         height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.20833333, y: 0.37931034}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2381,15 +2381,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_140
+      name: Megaman_TankCannon6
       rect:
         serializedVersion: 2
         x: 437
         y: 494
         width: 83
         height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.21144578, y: 0.37931034}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2397,48 +2397,6 @@ TextureImporter:
       bones: []
       spriteID: edd47b2c43e398f00800000000000000
       internalID: 1119494378704293342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_141
-      rect:
-        serializedVersion: 2
-        x: 609
-        y: 542
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ecb264c9730d99a0800000000000000
-      internalID: -6224815288435426077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_142
-      rect:
-        serializedVersion: 2
-        x: 619
-        y: 541
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d3ff630ea8ec43c0800000000000000
-      internalID: -4373865304003972139
       vertices: []
       indices: 
       edges: []
@@ -2486,15 +2444,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_145
+      name: Megaman_TankCannon4
       rect:
         serializedVersion: 2
         x: 222
         y: 494
         width: 92
         height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.19021739, y: 0.45833334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2507,57 +2465,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_146
-      rect:
-        serializedVersion: 2
-        x: 602
-        y: 535
-        width: 6
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37825391dd5c9f580800000000000000
-      internalID: -8792779244062824333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_147
-      rect:
-        serializedVersion: 2
-        x: 613
-        y: 538
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89cbaf9336229efd0800000000000000
-      internalID: -2312279124108198760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_148
+      name: Megaman_TankCannon1
       rect:
         serializedVersion: 2
         x: 6
         y: 494
         width: 55
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3181818, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2570,15 +2486,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_149
+      name: Megaman_TankCannon2
       rect:
         serializedVersion: 2
         x: 74
         y: 494
         width: 63
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.2777778, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2591,15 +2507,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_150
+      name: Megaman_TankCannon3
       rect:
         serializedVersion: 2
         x: 147
         y: 494
         width: 64
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.27421874, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2612,15 +2528,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_151
+      name: Megaman_TankCannon7
       rect:
         serializedVersion: 2
         x: 538
         y: 494
-        width: 66
-        height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 85
+        height: 59
+      alignment: 9
+      pivot: {x: 0.20588236, y: 0.37288135}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2633,57 +2549,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: megaman bn5 sprite sheet_152
-      rect:
-        serializedVersion: 2
-        x: 601
-        y: 530
-        width: 7
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe4639b2d7b14fdf0800000000000000
-      internalID: -147462663380441873
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_153
-      rect:
-        serializedVersion: 2
-        x: 609
-        y: 528
-        width: 12
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c92076c99b3870d30800000000000000
-      internalID: 4397628394366763676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_154
+      name: Megaman_TankCannon8
       rect:
         serializedVersion: 2
         x: 639
         y: 494
         width: 63
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.2777778, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2691,132 +2565,6 @@ TextureImporter:
       bones: []
       spriteID: f7abc9813d4c555f0800000000000000
       internalID: -768491750466733441
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_155
-      rect:
-        serializedVersion: 2
-        x: 601
-        y: 518
-        width: 7
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fece341c9972b8a20800000000000000
-      internalID: 3065587512681688303
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_156
-      rect:
-        serializedVersion: 2
-        x: 614
-        y: 519
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc72d377dd70e3420800000000000000
-      internalID: 2611533481691129803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_157
-      rect:
-        serializedVersion: 2
-        x: 602
-        y: 512
-        width: 6
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e4b6db229d9a2d20800000000000000
-      internalID: 3254586931854882025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_158
-      rect:
-        serializedVersion: 2
-        x: 609
-        y: 510
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9eb90f630ea5fee0800000000000000
-      internalID: -1227883993617547617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_159
-      rect:
-        serializedVersion: 2
-        x: 609
-        y: 498
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1abdd9720be38e40800000000000000
-      internalID: 5657623952774511134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: megaman bn5 sprite sheet_160
-      rect:
-        serializedVersion: 2
-        x: 619
-        y: 507
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e49b123c128d1a030800000000000000
-      internalID: 3504319624590244174
       vertices: []
       indices: 
       edges: []

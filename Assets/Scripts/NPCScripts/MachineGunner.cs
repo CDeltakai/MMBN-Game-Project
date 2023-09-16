@@ -13,7 +13,7 @@ public class MachineGunner : BStageEntity
     public override bool isStationary => true;
     public override bool isStunnable => true;
     public override int maxHP => 60;
-    public override ETileTeam team{get;set;} = ETileTeam.Enemy;
+    public override ETileTeam tileTeam{get;set;} = ETileTeam.Enemy;
 
     [SerializeField] MachineGunner_Reticle reticle;
     BoxCollider2D boxCollider2D;

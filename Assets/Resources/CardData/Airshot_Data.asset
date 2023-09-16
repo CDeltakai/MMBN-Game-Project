@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
+  m_Name: Airshot_Data
+  m_EditorClassIdentifier: 
+  Id: e13efee69f62f76458b718228df34277
+  ChipID: 0
+  Chip: 0
+  <ChipName>k__BackingField: Airshot
+  BaseDamage: 20
+  <QuantifiableEffects>k__BackingField:
+  - <EffectName>k__BackingField: Shove Distance
+    <IntegerQuantity>k__BackingField: 1
+    <FloatQuantity>k__BackingField: 0
+    <CanBeModified>k__BackingField: 0
+    <ModCoefficient>k__BackingField: 0
+  <PierceCount>k__BackingField: 0
+  <ChipElement>k__BackingField: 1
+  ChipSize: 0
+  <EnergyCost>k__BackingField: 0
+  <ChipType>k__BackingField: 1
+  BaseStatusEffect: 0
+  <RangeOfInfluence>k__BackingField: []
+  <RangeOfInfluenceWorld>k__BackingField: []
+  <PierceConcealment>k__BackingField: 0
+  <LightAttack>k__BackingField: 1
+  <HitFlinch>k__BackingField: 0
+  ChipDescription: Fire a shot which deals <i>BD</i> damage and shoves an enemy back
+    1 tile.
+  ChipImage: {fileID: -8654738730210548499, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
+  AnimationDuration: 0
+  SFX:
+    Guid:
+      Data1: 1168157214
+      Data2: 1324965301
+      Data3: -1812667728
+      Data4: 1147848940
+    Path: event:/AirShot
+  AdditionalSFX: []
+  AnimationClipToUse: {fileID: 7400000, guid: 951c2d11b2416534bb4f24700fbd536e, type: 2}
+  ObjectSummon: {fileID: 0}
+  <ObjectSummonList>k__BackingField: []
+  <ObjectSummonsArePooled>k__BackingField: 0
+  EffectPrefab: {fileID: 5452489971154207791, guid: 7c68346521accbe42bd1fe079af2fd8a, type: 3}
+  effectMechanism: 0
+  <UseAnimationEvent>k__BackingField: 0
+  <isPersistent>k__BackingField: 0
+  <AllowSummonObjectMod>k__BackingField: 0

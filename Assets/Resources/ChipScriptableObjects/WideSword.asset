@@ -15,8 +15,9 @@ MonoBehaviour:
   Id: 69a47b7b0084a2649ab8e8c1121c206d
   ChipID: 0
   Chip: 106
-  <ChipName>k__BackingField: 
+  <ChipName>k__BackingField: Wide Sword
   BaseDamage: 80
+  <QuantifiableEffects>k__BackingField: []
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 2
   ChipSize: 16
@@ -31,7 +32,6 @@ MonoBehaviour:
   ChipDescription: Slash a sword with a 3 tile range by column in front.
   ChipImage: {fileID: -4611406389132694472, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0.375
-  EffectScript: Generic_Sword
   SFX:
     Guid:
       Data1: -27198989
@@ -46,9 +46,9 @@ MonoBehaviour:
   <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 6428891363949495607, guid: c7cae763b9faf264ab102bee66417372, type: 3}
   effectMechanism: 1
-  pierceUntargetable: 0
-  lightAttack: 0
-  hitFlinch: 0
+  <PierceConcealment>k__BackingField: 0
+  <LightAttack>k__BackingField: 0
+  <HitFlinch>k__BackingField: 0
   <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

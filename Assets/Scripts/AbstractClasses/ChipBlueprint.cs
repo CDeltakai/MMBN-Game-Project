@@ -139,7 +139,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
 
         int finalDamage = (int)((BaseDamage + effectProperties.DamageModifier) * player.AttackMultiplier);
 
-        AttckPayload attackPayload = new AttckPayload(finalDamage,
+        AttackPayload attackPayload = new AttackPayload(finalDamage,
                                                         effectProperties.lightAttack,
                                                         effectProperties.hitFlinch,
                                                         effectProperties.pierceUntargetable,
@@ -148,7 +148,7 @@ public abstract class ChipEffectBlueprint : MonoBehaviour
                                                         effectProperties.AdditionalStatusEffects,
                                                         chip.GetChipElement());
 
-        entity.hurtEntity(attackPayload);
+        entity.HurtEntity(attackPayload);
 
     }
 

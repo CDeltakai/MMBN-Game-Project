@@ -17,6 +17,7 @@ MonoBehaviour:
   Chip: 0
   <ChipName>k__BackingField: Bleed Cannon
   BaseDamage: 20
+  <QuantifiableEffects>k__BackingField: []
   <PierceCount>k__BackingField: 0
   <ChipElement>k__BackingField: 0
   ChipSize: 0
@@ -32,7 +33,6 @@ MonoBehaviour:
     BLEEDING: Deals 2x its base damage over 3 seconds.'
   ChipImage: {fileID: -8926504595820933864, guid: bffe3a1b303a4224c90419d66aed44b4, type: 3}
   AnimationDuration: 0.417
-  EffectScript: 
   SFX:
     Guid:
       Data1: 674011879
@@ -47,9 +47,9 @@ MonoBehaviour:
   <ObjectSummonsArePooled>k__BackingField: 0
   EffectPrefab: {fileID: 7753810546485766501, guid: d148eefba8d344647b413de3eac73a06, type: 3}
   effectMechanism: 0
-  pierceUntargetable: 0
-  lightAttack: 0
-  hitFlinch: 1
+  <PierceConcealment>k__BackingField: 0
+  <LightAttack>k__BackingField: 0
+  <HitFlinch>k__BackingField: 1
   <UseAnimationEvent>k__BackingField: 0
   <isPersistent>k__BackingField: 0
   <AllowSummonObjectMod>k__BackingField: 0

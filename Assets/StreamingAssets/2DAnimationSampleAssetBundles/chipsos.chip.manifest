@@ -1,0 +1,80 @@
+ManifestFileVersion: 0
+CRC: 661638778
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3583403adbef0e06876967116a86b2a2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: d04a6e3274972863779cf468a5ee2d57
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 96
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: c8e69ff27e2aa474e8f74468936b2784, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a1cdd247c987a7843859c4a16f0313a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 88b91fe0159eb474ebd222d8d4d8d731, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7c885b3ffacc94b4e96cb3c9ea76c9b0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f76c7a1a3c0d71b49b34995c1a3a4bb9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dd5565a42ac88c9489f2a1e720b838a9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e142c5e320bfb4d4faf80252926e10ef, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ada20f781acbd7949b11665b7cfb0cec, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: QuantifiableEffect
+- AssemblyName: FMODUnity
+  ClassName: FMOD.GUID
+- AssemblyName: FMODUnity
+  ClassName: FMODUnity.EventReference
+Assets:
+- Assets/Resources/ChipScriptableObjects/AirShot.asset
+- Assets/Resources/ChipScriptableObjects/ExplosiveMine.asset
+- Assets/Resources/ChipScriptableObjects/WhiteCapsule.asset
+- Assets/Resources/ChipScriptableObjects/LongSword.asset
+- Assets/Resources/ChipScriptableObjects/Bomb.asset
+- Assets/Resources/ChipScriptableObjects/Vulcan.asset
+- Assets/Resources/ChipScriptableObjects/WideSword.asset
+- Assets/Resources/ChipScriptableObjects/Reflect.asset
+- Assets/Resources/ChipScriptableObjects/AttackPlus10.asset
+- Assets/Resources/ChipScriptableObjects/AreaGrab.asset
+- Assets/Resources/ChipScriptableObjects/Sword.asset
+- Assets/Resources/ChipScriptableObjects/Cannon.asset
+- Assets/Resources/ChipScriptableObjects/Invisible.asset
+Dependencies:
+- C:/Users/Matthew Qiu/MMBN RecreationGame Repo/MMBN-Game-Project/Assets/StreamingAssets/2DAnimationSampleAssetBundles/effectprefabs

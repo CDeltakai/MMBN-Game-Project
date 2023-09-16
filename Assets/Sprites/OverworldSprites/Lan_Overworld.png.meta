@@ -1,27 +1,33 @@
 fileFormatVersion: 2
-guid: 43ad9053a7e5c124d81dde2b4e7decd0
+guid: b479f6ef2ef316e448dddbfe069a54d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4439270813843894807
-    second: ChipSelectPanel
+      213: -463073311989253029
+    second: Lan_Idle_0
   - first:
-      213: -6562942977473075271
-    second: Cursor3
+      213: 3178263792289761599
+    second: Lan_Idle_45
   - first:
-      213: -1948778858443986458
-    second: Cursor2
+      213: -7152183155035157268
+    second: Lan_Idle_90
   - first:
-      213: -1162142722250133692
-    second: Cursor1
+      213: -8716995353049696642
+    second: Lan_Idle_135
   - first:
-      213: 9176394321739469930
-    second: Cursor4
+      213: 510430094283037313
+    second: Lan_Idle_180
   - first:
-      213: 1114338634714022616
-    second: OK Button
+      213: 6490705332475161639
+    second: Shadow1
+  - first:
+      213: -6845336344761224299
+    second: Shadow2
+  - first:
+      213: 1669733563560010537
+    second: Shadow3
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -64,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -80,6 +86,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -129,143 +136,173 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChipSelectPanel
+      name: Lan_Idle_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 78
-        width: 121
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 119
+        y: 705
+        width: 17
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ed431f07ba8462c0800000000000000
-      internalID: -4439270813843894807
+      spriteID: b5cbae5b645d299f0800000000000000
+      internalID: -463073311989253029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cursor3
+      name: Lan_Idle_45
       rect:
         serializedVersion: 2
-        x: 166
-        y: 213
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 139
+        y: 705
+        width: 15
+        height: 32
+      alignment: 9
+      pivot: {x: 0.56666666, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b7a29a422ebbe4a0800000000000000
-      internalID: -6562942977473075271
+      spriteID: f39cae574167b1c20800000000000000
+      internalID: 3178263792289761599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cursor2
+      name: Lan_Idle_90
       rect:
         serializedVersion: 2
-        x: 146
-        y: 213
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 159
+        y: 705
+        width: 14
+        height: 32
+      alignment: 9
+      pivot: {x: 0.60714287, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e9a7ac04fb84f4e0800000000000000
-      internalID: -1948778858443986458
+      spriteID: cecc89b70575ebc90800000000000000
+      internalID: -7152183155035157268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cursor1
+      name: Lan_Idle_135
       rect:
         serializedVersion: 2
-        x: 126
-        y: 213
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 179
+        y: 705
+        width: 15
+        height: 32
+      alignment: 9
+      pivot: {x: 0.56666666, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44fa9f5f95d3fdfe0800000000000000
-      internalID: -1162142722250133692
+      spriteID: e76fdb839e2070780800000000000000
+      internalID: -8716995353049696642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cursor4
+      name: Lan_Idle_180
       rect:
         serializedVersion: 2
-        x: 187
-        y: 213
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 198
+        y: 705
+        width: 17
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a64513a540a195f70800000000000000
-      internalID: 9176394321739469930
+      spriteID: 18ad8646779651700800000000000000
+      internalID: 510430094283037313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OK Button
+      name: Shadow1
       rect:
         serializedVersion: 2
-        x: 4
-        y: 250
-        width: 22
-        height: 18
+        x: 232
+        y: 726
+        width: 13
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d28f91951de67f00800000000000000
-      internalID: 1114338634714022616
+      spriteID: 72c6ae35c1e931a50800000000000000
+      internalID: 6490705332475161639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow2
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 716
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593bf62dcda7001a0800000000000000
+      internalID: -6845336344761224299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow3
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 706
+        width: 17
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 923aa8554d51c2710800000000000000
+      internalID: 1669733563560010537
       vertices: []
       indices: 
       edges: []

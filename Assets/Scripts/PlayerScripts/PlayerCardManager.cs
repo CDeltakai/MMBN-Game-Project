@@ -47,7 +47,7 @@ public class PlayerCardManager : MonoBehaviour
     }
 
     //Loads a single card into the bottom of the magazine 
-    public void LoadOneCard(CardObjectReference card)
+    public void LoadOneCard(ActiveCardObjReference card)
     {
         cardMagazine.Add(card);
     }
