@@ -7,6 +7,7 @@ using FMODUnity;
 using TMPro;
 
 
+
 public class ScriptableObjectIdAttribute : PropertyAttribute {}
 
 #if UNITY_EDITOR
@@ -43,6 +44,33 @@ public class QuantifiableEffect
     [field:SerializeField] public float FloatQuantity{get; private set;}
     [field:SerializeField] public bool CanBeModified{get; private set;} = false;
     [field:SerializeField] public float ModCoefficient{get; private set;} = 1;
+
+    public (int IntVal, float FloatVal) GetValueTuple()
+    {
+        if(IntegerQuantity == 0)
+        {
+            return (0, FloatQuantity);
+        }else
+        {
+            return(IntegerQuantity, 0);
+        }
+    }
+
+    public object GetValueDynamic()
+    {
+        if(IntegerQuantity == 0 && FloatQuantity != 0)
+        {
+            return FloatQuantity;
+        }else
+        if(FloatQuantity == 0 && IntegerQuantity != 0)
+        {
+            return IntegerQuantity;
+        }else
+        {
+            Debug.LogWarning("Quantifiable effect for " + EffectName + " was not set properly, returned 0");
+            return 0;
+        }
+    }
 
 
 }
@@ -118,12 +146,6 @@ public class ChipSO : ChipScriptableObject
    
 
 
-    public void ResetID()
-    {
-        Id = null;
-    }
-
-
 
     public GameObject GetEffectPrefab()
     {
@@ -133,6 +155,23 @@ public class ChipSO : ChipScriptableObject
         }
         return EffectPrefab;
     }
+
+    public string GetFormattedDescription()
+    {
+        string formattedDescription = ChipDescription;
+
+        formattedDescription = formattedDescription.Replace("BD", BaseDamage.ToString());
+
+        for(int i = 0; i < QuantifiableEffects.Count ; i++) 
+        {
+            string qEffect = "Q" + i;
+            formattedDescription = formattedDescription.Replace(qEffect, QuantifiableEffects[i].GetValueDynamic().ToString());
+        }
+
+
+        return formattedDescription;
+    }
+
 
     public AnimationClip GetAnimationClip()
     {
@@ -174,10 +213,6 @@ public class ChipSO : ChipScriptableObject
     }
 
 
-    public EffectMechanism GetEffectMechanism()
-    {
-        return effectMechanism;
-    }
 
 
     public string GetChipName()
@@ -199,25 +234,13 @@ public class ChipSO : ChipScriptableObject
     {
         return ChipElement;
     }
-    public EChips GetChipEnum()
-    {
-        return Chip;
-    }
 
-    public int GetChipSize()
-    {
-        return ChipSize;
-    }
 
     public Sprite GetChipImage()
     {
         return ChipImage;
     }
 
-    public float GetAnimationDuration()
-    {
-        return AnimationDuration;
-    }
 
 
     public EChipTypes GetChipType()

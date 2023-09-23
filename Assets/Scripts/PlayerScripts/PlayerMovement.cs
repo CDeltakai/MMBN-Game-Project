@@ -118,7 +118,7 @@ public PlayerAttributeSO playerAttributes;
 
     public override void Awake()
     {
-        InitializeSingleton();
+        //InitializeSingleton();
         InitializeAwakeVariables();
         InitializePlayerAttributes();
 
@@ -255,8 +255,8 @@ public PlayerAttributeSO playerAttributes;
         chipLoadManager.nextChipRefLoad.Clear();
         chipLoadManager.calcNextChipRefLoad();
 
-        if(usedChipEvent != null){usedChipEvent();}
-        
+        usedChipEvent?.Invoke();
+
         isUsingChip = false;
         UseChipCoroutine = null;
     }

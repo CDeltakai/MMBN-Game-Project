@@ -34,10 +34,7 @@ public class CardDescriptionPanel : MonoBehaviour
 
         ChipSO cardSO = cardSlot.cardObjectReference.chipSO;
 
-        string cardDescription = cardSO.GetChipDescription();
-        cardDescription = cardDescription.Replace("Q0", testValue);
-        cardDescription = cardDescription.Replace("BD", cardSO.GetChipDamage().ToString());
-
+        string cardDescription = cardSO.GetFormattedDescription();
 
 
         textDescription.text = cardDescription;
@@ -65,7 +62,8 @@ public class CardDescriptionPanel : MonoBehaviour
     string FormatDescription(ChipSO card, string description)
     {
         string formattedDescription = description;
-
+        formattedDescription = formattedDescription.Replace("Q0", testValue);
+        formattedDescription = formattedDescription.Replace("BD", card.GetChipDamage().ToString());
 
 
 

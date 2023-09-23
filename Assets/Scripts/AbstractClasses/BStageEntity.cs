@@ -922,7 +922,7 @@ public abstract class BStageEntity : MonoBehaviour
 ///if shoved into an obstacle. If the obstacle is another entity, will also deal damage
 ///to that colliding entity. Damage dealt scales with the strength of the shove. 
 ///</summary> 
-    public IEnumerator Shove(int x, int y, int damage = 40)
+    public IEnumerator Shove(int x, int y, int damage = 50, int shoveForce = 1)
     {
         Vector3Int destinationCell = new Vector3Int(currentCellPos.x + x, currentCellPos.y + y, 0);
         Vector3 currentWorldPosition = stageHandler.stageTilemap.GetCellCenterWorld(currentCellPos);
@@ -932,7 +932,7 @@ public abstract class BStageEntity : MonoBehaviour
         stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y) == null)
         {yield break;}
 
-        if(stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y) != null)
+        if(stageHandler.getEntityAtCell(destinationCell.x, destinationCell.y) != null) //Collision shove
         {
             //Horizontal Shove
             if(Math.Abs(currentCellPos.x - destinationCell.x) == 1 )
@@ -940,7 +940,7 @@ public abstract class BStageEntity : MonoBehaviour
                 worldTransform.DOMove(new Vector3((destinationWorldPosition.x - 0.3f), destinationWorldPosition.y, 0), 0.10f ).
                 SetEase(Ease.OutCirc).SetUpdate(false);
                 isBeingShoved = true;
-                isRooted = true;
+                isRooted = true;//Make sure that the entity cannot move while it is being shoved.
                 
 
                 yield return new WaitForSeconds(0.10f);

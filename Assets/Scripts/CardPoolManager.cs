@@ -25,6 +25,57 @@ public class CardPoolManager : MonoBehaviour
         PoolObjectsFromDeck(currentActiveDeck); 
     }
 
+    //Add a specific card to the CardPool with an optional count.
+    public void AddCardToPool(ChipSO card, int count = 1)
+    {
+        //Make sure that the card has an EffectPrefab defined in its cardSO, otherwise continue to the next deck element
+        if(card.GetEffectPrefab() == null)
+        {
+            Debug.LogWarning("Card: " + card.ChipName + " does not have an EffectPrefab defined in its CardSO, card will not work.");
+            return;
+        }
+
+        //Begin instantiating effect prefabs/object summons of the card and repeat card count many times.
+        for(int i = 0; i < count; i++)
+        {
+            CardEffect effectPrefab = Instantiate(card.GetEffectPrefab(), CardPoolParent.transform).GetComponent<CardEffect>();
+            effectPrefab.player = player;
+            effectPrefab.quantifiableEffects = card.QuantifiableEffects;
+
+            //Check if the card has the ObjectSummonsArePooled condition ticked and it has objects within its ObjectSummonList,
+            //then pool objects within the list if conditions are met.
+            if(card.ObjectSummonsArePooled && card.ObjectSummonList.Count > 0)
+            {
+                foreach(GameObject objectSummon in card.ObjectSummonList)
+                {
+                    //Add references to the object summons to the effectPrefab so that it may access the objects.
+                    effectPrefab.ObjectSummonList.Add(Instantiate(objectSummon, CardPoolParent.transform));
+                    PooledObjects.Add(objectSummon);
+                    objectSummon.SetActive(false);
+                }
+            }
+        
+            PooledObjects.Add(effectPrefab.gameObject);
+            effectPrefab.gameObject.SetActive(false);
+
+            CardObjectReference cardObject;
+                //Create a new CardObjectReference that references the instantiated EffectPrefab and its ObjectSummons
+                cardObject = new CardObjectReference
+                {
+                    chipSO = card,
+                    effectPrefab = effectPrefab.gameObject,
+                    ObjectSummonList = effectPrefab.ObjectSummonList
+                    
+                };
+
+            
+            CardObjectReferences.Add(cardObject);
+            effectPrefab.SetCardObjectReference(cardObject);
+
+        }
+
+
+    }
 
 
     //Primary method for pooling all effect prefabs/object summons from a given deck
@@ -82,8 +133,6 @@ public class CardPoolManager : MonoBehaviour
                     };
 
                 
-
-
                 CardObjectReferences.Add(cardObject);
                 effectPrefab.SetCardObjectReference(cardObject);
 

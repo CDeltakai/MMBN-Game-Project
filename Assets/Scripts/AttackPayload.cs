@@ -16,6 +16,8 @@ public struct AttackPayload
     public List<EStatusEffects> additionalStatusEffects;
     public AttackElement attackElement;
 
+    public bool canTriggerMark; //Can this attack trigger mark?
+
     public AttackPayload(int damage,
                             bool lightAttack,
                             bool hitFlinch, 
@@ -23,8 +25,10 @@ public struct AttackPayload
                             BStageEntity attacker, 
                             EStatusEffects statusEffect, 
                             List<EStatusEffects> additionalStatusEffects,  
-                            AttackElement attackElement)
+                            AttackElement attackElement,
+                            bool canTriggerMark = false)
     {
+
         this.damage = damage;
         this.lightAttack = lightAttack;
         this.hitFlinch = hitFlinch;
@@ -33,6 +37,7 @@ public struct AttackPayload
         this.statusEffect = statusEffect;
         this.additionalStatusEffects = additionalStatusEffects;
         this.attackElement = attackElement;
+        this.canTriggerMark = canTriggerMark;
 
     }
 
