@@ -92,16 +92,29 @@ public class MachineGunner_Reticle : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if(other.tag == "Player" || other.tag == "Player_Ally")
+    //     {
+    //         lockedOn = true;
+    //         transform.position = other.transform.position;
+    //         StartCoroutine(FireAtTarget());
+    //     }
+    //     print("Reticle found: " + other.gameObject.name);
+    // }
+
+    private void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.tag == "Player" || other.tag == "Player_Ally")
+        if(other.gameObject.tag == "Player" || other.gameObject.tag == "Player_Ally")
         {
             lockedOn = true;
             transform.position = other.transform.position;
             StartCoroutine(FireAtTarget());
         }
         print("Reticle found: " + other.gameObject.name);
+
     }
+
 
     IEnumerator FireAtTarget()
     {

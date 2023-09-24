@@ -139,14 +139,15 @@ public abstract class BStageEntity : MonoBehaviour
     ///</summary>
     public List<StageTile> claimedTiles = new List<StageTile>();
     
-    [SerializeField] public int currentHP;
-    [SerializeField] public int shieldHP;
-    [SerializeField] public double DefenseMultiplier = 1;
-    [SerializeField] public double AttackMultiplier = 1;
+    public int currentHP;
+    public int shieldHP;
+    public int armor;
+    public double DefenseMultiplier = 1;
+    public double AttackMultiplier = 1;
     public float stunResistance = 1;  
-    [SerializeField] public bool isUntargetable = false;
-    [SerializeField] public bool fullInvincible = false;
-    [SerializeField] public bool isStunned = false;
+    public bool isUntargetable = false;
+    public bool fullInvincible = false;
+    public bool isStunned = false;
 
 
     protected Color invisible;
@@ -345,13 +346,13 @@ public abstract class BStageEntity : MonoBehaviour
            
            attackPayload = TriggerMarkEffect(payload.attackElement, payload);
            MarkedForDeath = false;
-           statusManager.triggerStatusEffect(EStatusEffects.MarkForDeath, 0, false);
+           statusManager.TriggerStatusEffect(EStatusEffects.MarkForDeath, attackPayload, 0, false);
         }
 
         if(attackPayload.statusEffect != EStatusEffects.Default)
         {
             
-            statusManager.triggerStatusEffect(payload.statusEffect);
+            statusManager.TriggerStatusEffect(payload.statusEffect, attackPayload);
             //StartCoroutine(setStatusEffect(attackPayload.statusEffect, 1));
         }else
         {
@@ -365,7 +366,7 @@ public abstract class BStageEntity : MonoBehaviour
         foreach(EStatusEffects statusEffect in payload.additionalStatusEffects)
         {
             print("Additional status effects: " + statusEffect);
-            statusManager.triggerStatusEffect(statusEffect);
+            statusManager.TriggerStatusEffect(statusEffect, attackPayload);
             //StartCoroutine(setStatusEffect(statusEffect, 1));
         }
 
@@ -457,8 +458,6 @@ public abstract class BStageEntity : MonoBehaviour
 
         while(damageDuration > 0)
         {
-
-
             if(damage >= 5)
             {
                 isAnimatingHP = true;

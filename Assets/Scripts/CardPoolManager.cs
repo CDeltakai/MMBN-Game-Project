@@ -28,6 +28,12 @@ public class CardPoolManager : MonoBehaviour
     //Add a specific card to the CardPool with an optional count.
     public void AddCardToPool(ChipSO card, int count = 1)
     {
+        if(count <= 0)
+        {
+            Debug.LogWarning("Invalid count when adding card to pool.");
+            return;
+        }
+
         //Make sure that the card has an EffectPrefab defined in its cardSO, otherwise continue to the next deck element
         if(card.GetEffectPrefab() == null)
         {

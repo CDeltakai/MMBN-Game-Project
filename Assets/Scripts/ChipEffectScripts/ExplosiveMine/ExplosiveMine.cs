@@ -8,18 +8,18 @@ public class ExplosiveMine : ObjectSummonAttributes
 {
 
     [SerializeField] BattleStageHandler stageHandler;
-    [SerializeField] UnityEngine.GameObject MineObject;
+    [SerializeField] GameObject MineObject;
     Vector3Int currentCellPos;
 
     [SerializeField] EventReference MineActivateSFX;
     [SerializeField] EventReference NormalExplosionSFX;
     [SerializeField] EventReference BigExplosionSFX;
 
-    [SerializeField] UnityEngine.GameObject PrimaryExplosion;
-    [SerializeField] UnityEngine.GameObject NorthExplosion;
-    [SerializeField] UnityEngine.GameObject SouthExplosion;
-    [SerializeField] UnityEngine.GameObject EastExplosion;
-    [SerializeField] UnityEngine.GameObject WestExplosion;
+    [SerializeField] GameObject PrimaryExplosion;
+    [SerializeField] GameObject NorthExplosion;
+    [SerializeField] GameObject SouthExplosion;
+    [SerializeField] GameObject EastExplosion;
+    [SerializeField] GameObject WestExplosion;
 
     UnityEngine.GameObject primaryExplosionObject;
     UnityEngine.GameObject northExplosionObject;

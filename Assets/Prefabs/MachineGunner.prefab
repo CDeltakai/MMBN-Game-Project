@@ -273,6 +273,7 @@ MonoBehaviour:
   healthText: {fileID: 3069419180809448057}
   objectTimeScale: 1
   worldTransform: {fileID: 0}
+  <Team>k__BackingField: 0
   isBeingShoved: 0
   MarkedForDeath: 0
   isRooted: 0
@@ -281,8 +282,10 @@ MonoBehaviour:
   previousCellPos: {x: 0, y: 0, z: 0}
   currentHP: 60
   shieldHP: 0
+  armor: 0
   DefenseMultiplier: 1
   AttackMultiplier: 1
+  stunResistance: 1
   isUntargetable: 0
   fullInvincible: 0
   isStunned: 0
@@ -341,6 +344,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &3069419181544434907
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -400,6 +404,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4645355c949724e91a9a9abd063e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  EntityVFXController: {fileID: 0}
+  ParalyzeDefaultDuration: 1.25
+  FrozenDefaultDuration: 1.5
+  MarkForDeathDefaultDuration: 3
 --- !u!1 &3069419181740277861
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +516,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3069419181740277867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,7 +583,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 3069419181740277861}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -582,7 +592,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &3069419181892752701
 GameObject:
@@ -660,6 +670,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &3069419181892752705
 SpriteRenderer:
   m_ObjectHideFlags: 0

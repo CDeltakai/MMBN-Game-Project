@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Manages status effects on StageEntities and also manages Mark interactions
+[RequireComponent(typeof(BStageEntity))]
 public class StatusEffectManager : MonoBehaviour
 {
 
@@ -47,13 +50,13 @@ public class StatusEffectManager : MonoBehaviour
     }
 
     //if toggle = true, will try to trigger the status effect, otherwise will attempt to cancel that effect on the entity.
-    public void triggerStatusEffect(EStatusEffects status, float duration = 1, bool toggle = true, int strength = 0)
+    public void TriggerStatusEffect(EStatusEffects status, AttackPayload payload,  float duration = 1, bool toggle = true, int strength = 0)
     {
         print("Attempted to set statusEffect: " + status + " on target: " +  this.gameObject.name);
-        StartCoroutine(setStatusEffect(status, duration, toggle, strength));
+        StartCoroutine(SetStatusEffect(status, payload, duration, toggle, strength));
     }
 
-    public IEnumerator setStatusEffect(EStatusEffects status, float duration = 1, bool toggle = true, int strength = 0)
+    public IEnumerator SetStatusEffect(EStatusEffects status, AttackPayload payload, float duration = 1, bool toggle = true, int strength = 0)
     {
         switch(status)
         {
@@ -94,9 +97,9 @@ public class StatusEffectManager : MonoBehaviour
             break;
 
             case EStatusEffects.Bleeding:
-            print("Triggered Bleeding Effect");
+                print("Triggered Bleeding Effect");
 
-            entity.DamageEntity(10, 0.25f, 2f);
+                entity.DamageEntity(10, 0.25f, 2f);
 
             break;
 
@@ -141,18 +144,17 @@ public class StatusEffectManager : MonoBehaviour
     IEnumerator SetParalyzed(float duration)
     {
 
+        //if(entity.nonVolatileStatus){yield break;}
 
-            //if(entity.nonVolatileStatus){yield break;}
+        entity.isStunned = true;
+        //entity.nonVolatileStatus = true;
 
-            entity.isStunned = true;
-            //entity.nonVolatileStatus = true;
+        entityAnimator.speed = 0f;
+        StartCoroutine(entity.FlashColor(Color.yellow, duration));
+        yield return new WaitForSeconds(duration);
 
-            entityAnimator.speed = 0f;
-            StartCoroutine(entity.FlashColor(Color.yellow, duration));
-            yield return new WaitForSeconds(duration);
-
-            entityAnimator.speed = 1f;
-            //entity.nonVolatileStatus = false;
+        entityAnimator.speed = 1f;
+        //entity.nonVolatileStatus = false;
 
     }
 
@@ -189,6 +191,69 @@ public class StatusEffectManager : MonoBehaviour
         entity.MarkedForDeath = false;
 
         yield break;
+    }
+
+    public void ConsumeMark()
+    {
+        if(entity.MarkedForDeath == true)
+        {
+            entity.MarkedForDeath = false;
+            EntityVFXController.DisableVFX(EStatusEffects.MarkForDeath);
+        }
+    }
+
+
+    public AttackPayload TriggerMarkEffect(AttackElement chipElement, AttackPayload payload)
+    {
+        AttackPayload modifiedPayload = payload;
+        print("Attempted to trigger mark effect wtih element: " + chipElement);
+
+        switch (chipElement) {
+            case AttackElement.Normal:
+                modifiedPayload.damage = modifiedPayload.damage * 2;
+                print("Triggered normal element mark effect");
+
+                break;
+
+            case AttackElement.Air:
+                print("Triggered air element mark effect");
+                break;
+
+            case AttackElement.Blade:
+                modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Bleeding);
+                print("Triggered blade element mark effect");
+
+                break;
+
+            case AttackElement.Fire:
+                modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Burning);
+                print("Triggered fire element mark effect");
+                break;
+
+            case AttackElement.Water:
+                modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Frozen);
+                print("Triggered water element mark effect");
+                break;
+
+            case AttackElement.Electric:
+                modifiedPayload.additionalStatusEffects.Add(EStatusEffects.Paralyzed);
+                print("Triggered electric element mark effect");
+                break;
+
+            case AttackElement.Grass:
+                print("Triggered grass element mark effect");
+                break;
+
+            case AttackElement.Breaking:
+                print("Triggered breaking element mark effect");
+                break;
+
+            default:
+            Debug.LogWarning("Chip element: " + chipElement + " does not have a mark effect implemented. Aborted triggering mark effect.");
+            break;
+        }
+
+        return modifiedPayload;
     }
 
 
